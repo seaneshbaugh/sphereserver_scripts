@@ -1,0 +1,675 @@
+// A template is a collection of items.
+// Numbers are decimal not hex.
+
+[TEMPLATE rocks]
+CATEGORY=Item Templates
+SUBSECTION=Rocks and Boulders
+DESCRIPTION=Rocks
+ITEM={i_rock_plain i_rock_plain_x}
+
+[TEMPLATE boulders]
+CATEGORY=Item Templates
+SUBSECTION=Rocks and Boulders
+DESCRIPTION=Boulders
+ITEM={i_boulder i_boulder_x}
+
+[TEMPLATE poor_gold_pile]
+CATEGORY=Item Templates
+SUBSECTION=Miscellaneous
+DESCRIPTION=Poor Gold Pile
+ITEM=i_gold,{100 300}
+
+[TEMPLATE meager_gold_pile]
+CATEGORY=Item Templates
+SUBSECTION=Miscellaneous
+DESCRIPTION=Meager Gold Pile
+ITEM=i_gold,{300 750}
+
+[TEMPLATE average_gold_pile]
+CATEGORY=Item Templates
+SUBSECTION=Miscellaneous
+DESCRIPTION=Average Gold Pile
+ITEM=i_gold,{750 1000}
+
+[TEMPLATE rich_gold_pile]
+CATEGORY=Item Templates
+SUBSECTION=Miscellaneous
+DESCRIPTION=Rich Gold Pile
+ITEM=i_gold,{1000 3000}
+
+[TEMPLATE filthy_rich_gold_pile]
+CATEGORY=Item Templates
+SUBSECTION=Miscellaneous
+DESCRIPTION=Filthy Rich Gold Pile
+ITEM=i_gold,{3000 1000}
+
+[TEMPLATE bag_of_magic]
+CATEGORY=Item Templates
+SUBSECTION=Miscellaneous
+DESCRIPTION=Bag of Magic
+CONTAINER=i_bag
+ITEM=i_black_pearl,50
+ITEM=i_blood_moss,50
+ITEM=i_garlic,50
+ITEM=i_ginseng,50
+ITEM=i_mandrake_root,50
+ITEM=i_nightshade,50
+ITEM=i_sulfur_ash,50
+ITEM=i_spider_silk,50
+ITEM=i_thaumatergy_spellbook
+
+[TEMPLATE random_earth_scroll]
+CATEGORY=Item Templates
+SUBSECTION=Random Scrolls
+DESCRIPTION=Earth
+ITEM={i_stone_scroll 1 i_wall_of_stone_scroll 1 i_stoneskin_scroll 1 i_mudslide_scroll 1 i_boulder_scroll 1 i_golem_scroll 1 i_petrify_scroll 1 i_earthquake_scroll 1 i_summon_earth_elemental_scroll 1}
+
+[TEMPLATE random_water_scroll]
+CATEGORY=Item Templates
+SUBSECTION=Random Scrolls
+DESCRIPTION=Water
+ITEM={i_sprinkle_scroll 1 i_bubble_scroll 1 i_water_cannon_scroll 1 i_flood_scroll 1 i_erosion_scroll 1 i_undertow_scroll 1 i_waterfall_scroll 1 i_tidal_wave_scroll 1 i_summon_water_elemental_scroll 1}
+
+[TEMPLATE random_fire_scroll]
+CATEGORY=Item Templates
+SUBSECTION=Random Scrolls
+DESCRIPTION=Fire
+ITEM={i_flaming_arrow_scroll 1 i_fireball_scroll 1 i_flame_shield_scroll 1 i_fire_field_scroll 1 i_fire_bolt_scroll 1 i_explosion_scroll 1 i_flame_wave_scroll 1 i_flamestrike_scroll 1 i_summon_fire_elemental_scroll 1}
+
+[TEMPLATE random_wind_scroll]
+CATEGORY=Item Templates
+SUBSECTION=Random Scrolls
+DESCRIPTION=Wind
+ITEM=i_gust_scroll 1 i_fog_scroll_scroll 1 i_sonic_boom_scroll 1 i_gale_scroll 1 i_tornado_scroll 1 i_vaccum_scroll 1 i_hurricane_scroll 1 i_whirl_wind_scroll 1 i_summon_air_elemental_scroll 1}
+
+[TEMPLATE random_lightning_scroll]
+CATEGORY=Item Templates
+SUBSECTION=Random Scrolls
+DESCRIPTION=Lightning
+ITEM=i_spark_scroll 1 i_lightning_scroll 1 i_energy_field_scroll 1 i_ball_lightning_scroll 1 i_shock_scroll 1 i_chain_lightning_scroll 1 i_nova_scroll 1 luminare_scroll 1 i_summon_lightning_elemental_scroll 1}
+
+[TEMPLATE random_ice_scroll]
+CATEGORY=Item Templates
+SUBSECTION=Random Scrolls
+DESCRIPTION=Ice
+ITEM=i_ice_cube_scroll 1 i_wall_of_ice_scroll 1 i_sleet_scroll 1 i_ice_trap_scroll 1 i_icesicle_scroll 1 i_deep_freeze_scroll 1 i_absolute_zero_scroll 1 i_ice_strike_scroll 1 i_summon_ice_elemental_scroll 1}
+
+[TEMPLATE random_snow_scroll]
+CATEGORY=Item Templates
+SUBSECTION=Random Scrolls
+DESCRIPTION=Snow
+ITEM=i_snowball_scroll 1 i_snow_drift_scroll 1 i_cold_chill_scroll 1 i_frost_bite_scroll 1 i_snow_man_scroll 1 i_blizzard_scroll 1 i_avalanche_scroll 1 i_whiteout_scroll 1 i_summon_snow_elemental_scroll 1}
+
+[TEMPLATE random_poison_scroll]
+CATEGORY=Item Templates
+SUBSECTION=Random Scrolls
+DESCRIPTION=Poison
+ITEM=i_lesser_poison_scroll 1 i_toxic_gas_scroll 1 i_poison_scroll 1 i_poison_field_scroll 1 i_venom_scroll 1 i_greater_poison_scroll 1 i_bio_scroll 1 i_summon_poison_elemental_scroll 1 i_deadly_poison_scroll 1}
+
+[TEMPLATE random_swamp_scroll]
+CATEGORY=Item Templates
+SUBSECTION=Random Scrolls
+DESCRIPTION=Swamp
+ITEM=i_sludge_scroll 1 i_slime_scroll 1 i_swamp_tentacles_scroll 1 i_sewage_scroll 1 i_ensnare_scroll 1 i_swamp_gas_scroll 1 i_acid_rain_scroll 1 i_bad_breath_scroll 1 i_summon_swamp_elemental_scroll 1}
+
+[TEMPLATE random_blood_scroll]
+CATEGORY=Item Templates
+SUBSECTION=Random Scrolls
+DESCRIPTION=Blood
+ITEM=i_harm_scroll 1 i_vampire_scroll 1 i_mana_drain_scroll 1 i_mana_vampire_scroll 1 i_exhaustion_scroll 1 i_stamina_vampire_scroll 1 i_blood_lust_scroll 1 i_corpse_explode_scroll 1 i_summon_blood_elemental_scroll 1}
+
+[TEMPLATE random_holy_scroll]
+CATEGORY=Item Templates
+SUBSECTION=Random Scrolls
+DESCRIPTION=Holy
+ITEM=i_holy_light_scroll 1 i_holy_vision_scroll 1 i_holy_wind_scroll 1 i_holy_beam_scroll 1 i_destroy_sin_scroll 1 i_holy_blast_scroll 1 i_cleanse_scroll 1 i_light_pilar_scroll 1 i_summon_holy_elemental_scroll 1}
+
+[TEMPLATE random_dark_scroll]
+CATEGORY=Item Templates
+SUBSECTION=Random Scrolls
+DESCRIPTION=Dark
+ITEM=i_unholy_light_scroll 1 i_darkness_scroll 1 i_unholy_strength_scroll 1 i_demi_scroll 1 i_evil_prescence_scroll 1 i_quarter_scroll 1 i_dark_matter_scroll 1 i_dark_holy_scroll 1 i_summon_shadow_elemental_scroll 1}
+
+[TEMPLATE random_ether_scroll]
+CATEGORY=Item Templates
+SUBSECTION=Random Scrolls
+DESCRIPTION=Ether
+ITEM=i_energy_bolt_scroll 1 i_blade_spirits_scroll 1 i_meteor_swarm_scroll 1 i_comet_scroll 1 i_energy_vortex_scroll 1 i_ultima_scroll 1 i_megid_scroll 1 i_megedo_scroll 1 i_armagedon_scroll 1}
+
+[TEMPLATE random_lesser_scroll]
+CATEGORY=Item Templates
+SUBSECTION=Random Scrolls
+DESCRIPTION=Lesser Elements
+ITEM={random_earth_scroll 1 random_water_scroll 1 random_fire_scroll 1 random_wind_scroll 1}
+
+[TEMPLATE random_upper_scroll]
+CATEGORY=Item Templates
+SUBSECTION=Random Scrolls
+DESCRIPTION=Lesser Elements
+ITEM={random_lightning_scroll 1 random_ice_scroll 1 random_poison_scroll 1}
+
+[TEMPLATE random_advanced_scroll]
+CATEGORY=Item Templates
+SUBSECTION=Random Scrolls
+DESCRIPTION=Lesser Elements
+ITEM={random_snow_scroll 5 random_swamp_scroll 5 random_blood_scroll 2 random_holy_scroll 3 random_dark_scroll 3 random_ether_scroll 1}
+
+[TEMPLATE random_wand_one]
+CATEGORY=Item Templates
+SUBSECTION=Random Wands
+DESCRIPTION=First Circle
+ITEM={i_wand_clumsy 1 i_wand_create_food 1 i_wand_feeblemind 1 i_wand_heal 1 i_wand_magic_arrow 1 i_wand_night_sight 1 i_wand_react_armor 1 i_wand_weaken 1}
+
+[TEMPLATE random_wand_two]
+DEFNAME=
+CATEGORY=Item Templates
+SUBSECTION=Random Wands
+DESCRIPTION=Second Circle
+ITEM={i_wand_agility 1 i_wand_cunning 1 i_wand_cure 1 i_wand_harm 1 i_wand_magic_trap 1 i_wand_magic_untrap 1 i_wand_protection 1 i_wand_strength 1}
+
+[TEMPLATE random_wand_three]
+CATEGORY=Item Templates
+SUBSECTION=Random Wands
+DESCRIPTION=Third Circle
+ITEM={i_wand_bless 1 i_wand_fireball 1 i_wand_magic_lock 1 i_wand_poison 1 i_wand_telekinesis 1 i_wand_teleport 1 i_wand_unlock 1 i_wand_wall_of_stone 1}
+
+[TEMPLATE random_wand_four]
+CATEGORY=Item Templates
+SUBSECTION=Random Wands
+DESCRIPTION=Fourth Circle
+ITEM={i_wand_archcure 1 i_wand_archprotection 1 i_wand_curse 1 i_wand_fire_field 1 i_wand_greater_heal 1 i_wand_lightning 1 i_wand_mana_drain 1 i_wand_recall 1}
+
+[TEMPLATE random_wand_five]
+CATEGORY=Item Templates
+SUBSECTION=Random Wands
+DESCRIPTION=Fifth Circle
+ITEM={i_wand_blade_spirits 1 i_wand_dispel_field 1 i_wand_incognito 1 i_wand_magic_reflection 1 i_wand_mind_blast 1 i_wand_paralyze 1 i_wand_poison_field 1 i_wand_summon_creature 1}
+
+[TEMPLATE random_wand_six]
+CATEGORY=Item Templates
+SUBSECTION=Random Wands
+DESCRIPTION=Sixth Circle
+ITEM={i_wand_dispel 1 i_wand_energy_bolt 1 i_wand_explosion 1 i_wand_invisibility 1 i_wand_mark 1 i_wand_mass_curse 1 i_wand_paralyze_field 1 i_wand_reveal 1}
+
+[TEMPLATE random_wand_seven]
+CATEGORY=Item Templates
+SUBSECTION=Random Wands
+DESCRIPTION=Seventh Circle
+ITEM={i_wand_chain_lightning 1 i_wand_energy_field 1 i_wand_flamestrike 1 i_wand_gate_travel 1 i_wand_mana_vampire 1 i_wand_mass_dispel 1 i_wand_meteor_swarm 1 i_wand_polymorph 1}
+
+[TEMPLATE random_wand_eight]
+CATEGORY=Item Templates
+SUBSECTION=Random Wands
+DESCRIPTION=Eighth Circle
+ITEM={i_wand_earthquake 1 i_wand_energy_vortex 1 i_wand_resurrection 1 i_wand_summon_elem_air 1 i_wand_summon_daemon 1 i_wand_summon_elem_earth 1 i_wand_summon_elem_fire 1 i_wand_summon_elem_water 1}
+
+[TEMPLATE random_wand_new]
+CATEGORY=Item Templates
+SUBSECTION=Random Wands
+DESCRIPTION=New
+ITEM={i_wand_summon_undead 1 i_wand_animate_dead 1 i_wand_bone_armor 1 i_wand_light 1 i_wand_fire_bolt 1 i_wand_hallucination 1}
+
+[TEMPLATE random_magic_wands]
+CATEGORY=Item Templates
+SUBSECTION=Random Wands
+DESCRIPTION=All
+ITEM={random_wand_one 1 random_wand_two 1 random_wand_three 1 random_wand_four 1 random_wand_five 1 random_wand_six 1 random_wand_seven 1 random_wand_eight 1}
+
+[TEMPLATE random_platemail_armor]
+CATEGORY=Item Templates
+SUBSECTION=Random Armour
+DESCRIPTION=Platemail
+ITEM={i_platemail_arms 1 i_platemail_leggings 1 i_platemail_helm 1 i_platemail_gorget 1 i_platemail_gloves 1 i_platemail_chest 1 i_female_plate_armor 1}
+
+[TEMPLATE random_chainmail_armor]
+CATEGORY=Item Templates
+SUBSECTION=Random Armour
+DESCRIPTION=Chainmail
+ITEM={i_chainmail_coif 1 i_chainmail_tunic 1 i_chainmail_leggings 1}
+
+[TEMPLATE random_ringmail_armor]
+CATEGORY=Item Templates
+SUBSECTION=Random Armour
+DESCRIPTION=Ringmail
+ITEM={i_ringmail_leggings_decoration 1 i_ringmail_tunic_decoration 1 i_ringmail_sleeves_decoration 1 i_ringmail_gloves 1 i_ringmail_tunic 1 i_ringmail_sleeves 1 i_ringmail_leggings 1}
+
+[TEMPLATE random_leather_armor]
+CATEGORY=Item Templates
+SUBSECTION=Random Armour
+DESCRIPTION=Leather
+ITEM={i_armor_female_bustier 1 i_armor_female_skirt 1 i_armor_female_leather 1 i_leather_sleeves 1 i_leather_gloves 1 i_leather_gorget 1 i_leather_leggings 1 i_leather_tunic 1 013cf 1 013d1 1 013d3 1}
+
+[TEMPLATE random_studded_leather_armor]
+CATEGORY=Item Templates
+SUBSECTION=Random Armour
+DESCRIPTION=Studded
+ITEM={i_studded_leather_sleeves 1 i_studded_leather_gloves 1 i_studded_leather_gorget 1 i_studded_leather_leggings 1 i_studded_leather_tunic 1 i_female_studded_leather_armor 1 i_studded_leather_bustier 1}
+
+[TEMPLATE random_bone_armor]
+CATEGORY=Item Templates
+SUBSECTION=Random Armour
+DESCRIPTION=Bone
+ITEM={i_bone_arms 1 i_bone_chest 1 i_bone_gloves 1 i_bone_helmet 1 i_bone_leggings 1}
+
+[TEMPLATE random_swordtype_ruin]
+CATEGORY=Item Templates
+SUBSECTION=Random Swords
+DESCRIPTION=Ruin
+CONTAINER=i_bag
+ITEM={i_scimitar_ruin 1 i_halberd_ruin 1 i_bardiche_ruin 1 i_cutlass_ruin 1 i_viking_sword_ruin 1 i_katana_ruin 1 i_broadsword_ruin 1 i_longsword_ruin 1 i_longsword_skinny_ruin 1}
+
+[TEMPLATE random_swordtype_might]
+CATEGORY=Item Templates
+SUBSECTION=Random Swords
+DESCRIPTION=Might
+CONTAINER=i_bag
+ITEM={i_scimitar_might 1 i_halberd_might 1 i_bardiche_might 1 i_cutlass_might 1 i_viking_sword_might 1 i_katana_might 1 i_broadsword_might 1 i_longsword_might 1}
+
+[TEMPLATE random_swordtype_force]
+CATEGORY=Item Templates
+SUBSECTION=Random Swords
+DESCRIPTION=Force
+CONTAINER=i_bag
+ITEM={i_scimitar_force 1 i_halberd_force 1 i_bardiche_force 1 i_cutlass_force 1 i_viking_sword_force 1 i_katana_force 1 i_broadsword_force 1 i_longsword_force 1}
+
+[TEMPLATE random_swordtype_power]
+CATEGORY=Item Templates
+SUBSECTION=Random Swords
+DESCRIPTION=Power
+CONTAINER=i_bag
+ITEM={i_scimitar_power 1 i_halberd_power 1 i_bardiche_power 1 i_cutlass_power 1 i_viking_sword_power 1 i_katana_power 1 i_broadsword_power 1 i_longsword_power 1}
+
+[TEMPLATE random_swordtype_vanquishing]
+CATEGORY=Item Templates
+SUBSECTION=Random Swords
+DESCRIPTION=Vanquishing
+CONTAINER=i_bag
+ITEM={i_scimitar_vanquishing 1 i_halberd_vanquishing 1 i_bardiche_vanquishing 1 i_cutlass_vanquishing 1 i_viking_sword_vanquishing 1 i_katana_vanquishing 1 i_broadsword_vanquishing 1 i_longsword_vanquishing 1}
+
+[TEMPLATE random_bowtype_ruin]
+CATEGORY=Item Templates
+SUBSECTION=Random Bows
+DESCRIPTION=Ruin
+CONTAINER=i_bag
+ITEM={i_bow_ruin 1 i_crossbow_ruin 1 i_heavy_crossbow_ruin 1}
+
+[TEMPLATE random_bowtype_might]
+CATEGORY=Item Templates
+SUBSECTION=Random Bows
+DESCRIPTION=Might
+CONTAINER=i_bag
+ITEM={i_bow_might 1 i_crossbow_might 1 i_heavy_crossbow_might 1}
+
+[TEMPLATE random_bowtype_force]
+CATEGORY=Item Templates
+SUBSECTION=Random Bows
+DESCRIPTION=Force
+CONTAINER=i_bag
+ITEM={i_bow_force 1 i_crossbow_force 1 i_heavy_crossbow_force 1}
+
+[TEMPLATE random_bowtype_power]
+CATEGORY=Item Templates
+SUBSECTION=Random Bows
+DESCRIPTION=Power
+CONTAINER=i_bag
+ITEM={i_bow_power 1 i_crossbow_power 1 i_heavy_crossbow_power 1}
+
+[TEMPLATE random_bowtype_vanquishing]
+CATEGORY=Item Templates
+SUBSECTION=Random Bows
+DESCRIPTION=Vanquishing
+CONTAINER=i_bag
+ITEM={i_bow_vanquishing 1 i_crossbow_vanquishing 1 i_heavy_crossbow_vanquishing 1}
+
+[TEMPLATE random_fencingtype_ruin]
+CATEGORY=Item Templates
+SUBSECTION=Random Fencing Weapons
+DESCRIPTION=Ruin
+CONTAINER=i_bag
+ITEM={i_pitchfork_ruin 1 i_kryss_ruin 1 i_spear_ruin 1 i_short_spear_ruin 1 i_war_fork_ruin 1}
+
+[TEMPLATE random_fencingtype_might]
+CATEGORY=Item Templates
+SUBSECTION=Random Fencing Weapons
+DESCRIPTION=Might
+CONTAINER=i_bag
+ITEM={i_pitchfork_might 1 i_kryss_might 1 i_spear_might 1 i_short_spear_might 1 i_war_fork_might 1}
+
+[TEMPLATE random_fencingtype_force]
+CATEGORY=Item Templates
+SUBSECTION=Random Fencing Weapons
+DESCRIPTION=Force
+CONTAINER=i_bag
+item={i_pitchfork_force 1 i_kryss_force 1 i_spear_force 1 i_short_spear_force 1 i_war_fork_force 1}
+
+[TEMPLATE random_fencingtype_power]
+DEFNAME=
+CATEGORY=Item Templates
+SUBSECTION=Random Fencing Weapons
+DESCRIPTION=Power
+CONTAINER=i_bag
+ITEM={i_pitchfork_power 1 i_kryss_power 1 i_spear_power 1 i_short_spear_power 1 i_war_fork_power 1}
+
+[TEMPLATE random_fencingtype_vanquishing]
+CATEGORY=Item Templates
+SUBSECTION=Random Fencing Weapons
+DESCRIPTION=Vanquishing
+CONTAINER=i_bag
+ITEM={i_pitchfork_vanquishing 1 i_kryss_vanquishing 1 i_spear_vanquishing 1 i_short_spear_vanquishing 1 i_war_fork_vanquishing 1}
+
+[TEMPLATE random_macetype_ruin]
+CATEGORY=Item Templates
+SUBSECTION=Random Maces
+DESCRIPTION=Ruin
+CONTAINER=i_bag
+ITEM={i_club_ruin 1 i_mace_ruin 1 i_maul_ruin 1 i_mace_war_ruin 1 i_hammer_pick_ruin 1 i_hammer_war_ruin 1}
+
+[TEMPLATE random_macetype_might]
+CATEGORY=Item Templates
+SUBSECTION=Random Maces
+DESCRIPTION=Might
+CONTAINER=i_bag
+ITEM={i_club_might 1 i_mace_might 1 i_maul_might 1 i_mace_war_might 1 i_hammer_pick_might 1 i_hammer_war_might 1}
+
+[TEMPLATE random_macetype_force]
+CATEGORY=Item Templates
+SUBSECTION=Random Maces
+DESCRIPTION=Force
+CONTAINER=i_bag
+ITEM={i_club_force 1 i_mace_force 1 i_maul_force 1 i_mace_war_force 1 i_hammer_pick_force 1 i_hammer_war_force 1}
+
+[TEMPLATE random_macetype_power]
+CATEGORY=Item Templates
+SUBSECTION=Random Maces
+DESCRIPTION=Power
+CONTAINER=i_bag
+ITEM={i_club_power 1 i_mace_power 1 i_maul_power 1 i_mace_war_power 1 i_hammer_pick_power 1 i_hammer_war_power 1}
+
+[TEMPLATE random_macetype_vanquishing]
+CATEGORY=Item Templates
+SUBSECTION=Random Maces
+DESCRIPTION=Vanquishing
+CONTAINER=i_bag
+ITEM={i_club_vanquishing 1 i_mace_vanquishing 1 i_maul_vanquishing 1 i_mace_war_vanquishing 1 i_hammer_pick_vanquishing 1 i_hammer_war_vanquishing 1}
+
+[TEMPLATE random_axetype_ruin]
+CATEGORY=Item Templates
+SUBSECTION=Random Axes
+DESCRIPTION=Ruin
+CONTAINER=i_bag
+ITEM={i_axe_ruin 1 i_axe_exec_ruin 1 i_axe_battle_ruin 1 i_axe_double_ruin 1 i_axe_two_hand_ruin 1 i_axe_war_ruin 1}
+
+[TEMPLATE random_axetype_might]
+CATEGORY=Item Templates
+SUBSECTION=Random Axes
+DESCRIPTION=Might
+CONTAINER=i_bag
+ITEM={i_axe_might 1 i_axe_exec_might 1 i_axe_battle_might 1 i_axe_double_might 1 i_axe_two_hand_might 1 i_axe_war_might 1}
+
+[TEMPLATE random_axetype_force]
+CATEGORY=Item Templates
+SUBSECTION=Random Axes
+DESCRIPTION=Force
+CONTAINER=i_bag
+ITEM={i_axe_force 1 i_axe_exec_force 1 i_axe_battle_force 1 i_axe_double_force 1 i_axe_two_hand_force 1 i_axe_war_force 1}
+
+[TEMPLATE random_axetype_power]
+CATEGORY=Item Templates
+SUBSECTION=Random Axes
+DESCRIPTION=Power
+CONTAINER=i_bag
+ITEM={i_axe_power 1 i_axe_exec_power 1 i_axe_battle_power 1 i_axe_double_power 1 i_axe_two_hand_power 1 i_axe_war_power 1}
+
+[TEMPLATE random_axetype_vanquishing]
+CATEGORY=Item Templates
+SUBSECTION=Random Axes
+DESCRIPTION=Vanquishing
+CONTAINER=i_bag
+ITEM={i_axe_vanquishing 1 i_axe_exec_vanquishing 1 i_axe_battle_vanquishing 1 i_axe_double_vanquishing 1 i_axe_two_hand_vanquishing 1 i_axe_war_vanquisihng 1}
+
+[TEMPLATE random_weapon_ruin]
+CATEGORY=Item Templates
+SUBSECTION=Random Weapons
+DESCRIPTION=Ruin
+ITEM={random_swordtype_ruin 1 random_bowtype_ruin 1 random_fencingtype_ruin 1 random_macetype_ruin 1 random_axetype_ruin 1}
+
+[TEMPLATE random_weapon_might]
+CATEGORY=Item Templates
+SUBSECTION=Random Weapons
+DESCRIPTION=Might
+item={random_swordtype_might 1 random_bowtype_might 1 random_fencingtype_might 1 random_macetype_might 1 random_axetype_might 1}
+
+[TEMPLATE random_weapon_force]
+CATEGORY=Item Templates
+SUBSECTION=Random Weapons
+DESCRIPTION=Force
+ITEM={random_swordtype_force 1 random_bowtype_force 1 random_fencingtype_force 1 random_MACETYPE_force 1 random_axetype_force 1}
+
+[TEMPLATE random_weapon_power]
+CATEGORY=Item Templates
+SUBSECTION=Random Weapons
+DESCRIPTION=Power
+ITEM={random_swordtype_power 1 random_bowtype_power 1 random_fencingtype_power 1 random_MACETYPE_power 1 random_axetype_power 1}
+
+[TEMPLATE random_weapon_vanquishing]
+CATEGORY=Item Templates
+SUBSECTION=Random Weapons
+DESCRIPTION=Vanquishing
+ITEM={random_swordtype_vanquishing 1 random_bowtype_vanquishing 1 random_fencingtype_vanquishing 1 random_macetype_vanquishing 1 random_axetype_vanquishing 1}
+
+[TEMPLATE random_shield_defense]
+CATEGORY=Item Templates
+SUBSECTION=Random Shields
+DESCRIPTION=Defense
+CONTAINER=i_bag
+item={i_buckler_defense 1 i_wooden_shield_defense 1 i_round_shield_defense 1 i_metal_shield_defense 1 i_kite_shield_metal_defense 1 i_kite_shield_wood_defense 1 i_heater_shield_defense 1}
+
+[TEMPLATE random_shield_guarding]
+CATEGORY=Item Templates
+SUBSECTION=Random Shields
+DESCRIPTION=Guarding
+CONTAINER=i_bag
+ITEM={i_buckler_guarding 1 i_wooden_shield_guarding 1 i_round_shield_guarding 1 i_metal_shield_guarding 1 i_kite_shield_metal_guarding 1 i_kite_shield_wood_guarding 1 i_heater_shield_guarding 1}
+
+[TEMPLATE random_shield_hardening]
+CATEGORY=Item Templates
+SUBSECTION=Random Shields
+DESCRIPTION=Hardening
+CONTAINER=i_bag
+ITEM={i_buckler_hardening 1 i_wooden_shield_hardening 1 i_round_shield_hardening 1 i_metal_shield_hardening 1 i_kite_shield_metal_hardening 1 i_kite_shield_wood_hardening 1 i_heater_shield_hardening 1}
+
+[TEMPLATE random_shield_fortification]
+CATEGORY=Item Templates
+SUBSECTION=Random Shields
+DESCRIPTION=Fortification
+CONTAINER=i_bag
+ITEM={i_buckler_fortification 1 i_wooden_shield_fortification 1 i_round_shield_fortification 1 i_metal_shield_fortification 1 i_kite_shield_metal_fortification 1 i_kite_shield_wood_fortification 1 i_heater_shield_fortification 1}
+
+[TEMPLATE random_shield_invulnerability]
+CATEGORY=Item Templates
+SUBSECTION=Random Shields
+DESCRIPTION=Invulnerability
+CONTAINER=i_bag
+ITEM={i_buckler_invulnerability 1 i_wooden_shield_invulnerability 1 i_round_shield_invulnerability 1 i_metal_shield_invulnerability 1 i_kite_shield_metal_invulnerability 1 i_kite_shield_wood_invulnerability 1 i_heater_shield_invulnerability 1}
+
+[TEMPLATE random_platemail_defense]
+CATEGORY=Item Templates
+SUBSECTION=Random Magic Platemail
+DESCRIPTION=Defense
+CONTAINER=i_bag
+ITEM={i_platemail_chest_defense 1 i_platemail_leggings_defense 1 i_platemail_arms_defense 1 i_platemail_helm_defense 1 i_platemail_gorget_defense 1 i_platemail_gauntlets_defense 1 i_platemail_defense_female 1}
+
+[TEMPLATE random_platemail_guarding]
+CATEGORY=Item Templates
+SUBSECTION=Random Magic Platemail
+DESCRIPTION=Guarding
+CONTAINER=i_bag
+ITEM={i_platemail_chest_guarding 1 i_platemail_leggings_guarding 1 i_platemail_arms_guarding 1 i_platemail_helm_guarding 1 i_platemail_gorget_guarding 1 i_platemail_gauntlets_guarding 1 i_platemail_guarding_female 1}
+
+[TEMPLATE random_platemail_hardening]
+CATEGORY=Item Templates
+SUBSECTION=Random Magic Platemail
+DESCRIPTION=Hardening
+CONTAINER=i_bag
+ITEM={i_platemail_chest_hardening 1 i_platemail_leggings_hardening 1 i_platemail_ARMS_hardening 1 i_platemail_HELM_hardening 1 i_platemail_GORGET_hardening 1 i_platemail_GAUNTLETS_hardening 1 i_platemail_hardening_FEMALE 1}
+
+[TEMPLATE random_platemail_fortification]
+CATEGORY=Item Templates
+SUBSECTION=Random Magic Platemail
+DESCRIPTION=Fortification
+CONTAINER=i_bag
+ITEM={i_platemail_chest_fortification 1 i_platemail_leggings_fortification 1 i_platemail_ARMS_fortification 1 i_platemail_HELM_fortification 1 i_platemail_GORGET_fortification 1 i_platemail_GAUNTLETS_fortification 1 i_platemail_fortification_FEMALE 1}
+
+[TEMPLATE random_platemail_invulnerability]
+CATEGORY=Item Templates
+SUBSECTION=Random Magic Platemail
+DESCRIPTION=Invulnerability
+CONTAINER=i_bag
+ITEM={i_platemail_chest_invulnerability 1 i_platemail_leggings_invulnerability 1 i_platemail_ARMS_invulnerability 1 i_platemail_HELM_invulnerability 1 i_platemail_GORGET_invulnerability 1 i_platemail_GAUNTLETS_invulnerability 1 i_platemail_invulnerability_FEMALE 1}
+
+[TEMPLATE random_chainmail_defense]
+CATEGORY=Item Templates
+SUBSECTION=Random Magic Chainmail
+DESCRIPTION=Defense
+CONTAINER=i_bag
+ITEM={i_chainmail_coif_defense 1 i_chainmail_leggings_defense 1 i_chainmail_tunic_defense 1}
+
+[TEMPLATE random_chainmail_guarding]
+CATEGORY=Item Templates
+SUBSECTION=Random Magic Chainmail
+DESCRIPTION=Guarding
+CONTAINER=i_bag
+ITEM={i_chainmail_coif_guarding 1 i_chainmail_leggings_guarding 1 i_chainmail_tunic_guarding 1}
+
+[TEMPLATE random_chainmail_hardening]
+CATEGORY=Item Templates
+SUBSECTION=Random Magic Chainmail
+DESCRIPTION=Hardening
+CONTAINER=i_bag
+ITEM={i_chainmail_coif_hardening 1 i_chainmail_leggings_hardening 1 i_chainmail_tunic_hardening 1}
+
+[TEMPLATE random_chainmail_fortification]
+CATEGORY=Item Templates
+SUBSECTION=Random Magic Chainmail
+DESCRIPTION=Fortification
+CONTAINER=i_bag
+ITEM={i_chainmail_coif_fortification 1 i_chainmail_leggings_fortification 1 i_chainmail_tunic_fortification 1}
+
+[TEMPLATE random_chainmail_invulnerability]
+CATEGORY=Item Templates
+SUBSECTION=Random Magic Chainmail
+DESCRIPTION=Invulnerability
+CONTAINER=i_bag
+ITEM={i_chainmail_coif_invulnerability 1 i_chainmail_leggings_invulnerability 1 i_chainmail_tunic_invulnerability 1}
+
+[TEMPLATE random_ringmail_defense]
+CATEGORY=Item Templates
+SUBSECTION=Random Magic Ringmail
+DESCRIPTION=Defense
+CONTAINER=i_bag
+item={i_chainmail_leggings_defense 1 i_chainmail_tunic_defense 1 i_ringmail_leggings_defense 1 i_ringmail_sleeves_defense 1 i_ringmail_gloves_defense 1}
+
+[TEMPLATE random_ringmail_guarding]
+CATEGORY=Item Templates
+SUBSECTION=Random Magic Ringmail
+DESCRIPTION=Guarding
+CONTAINER=i_bag
+ITEM={i_chainmail_leggings_guarding 1 i_chainmail_tunic_guarding 1 i_ringmail_leggings_guarding 1 i_ringmail_sleeves_guarding 1 i_ringmail_gloves_guarding 1}
+
+[TEMPLATE random_ringmail_hardening]
+CATEGORY=Item Templates
+SUBSECTION=Random Magic Ringmail
+DESCRIPTION=Hardening
+CONTAINER=i_bag
+ITEM={i_chainmail_leggings_hardening 1 i_chainmail_tunic_hardening 1 i_ringmail_leggings_hardening 1 i_ringmail_sleeves_hardening 1 i_ringmail_gloves_hardening 1}
+
+[TEMPLATE random_ringmail_fortification]
+CATEGORY=Item Templates
+SUBSECTION=Random Magic Ringmail
+DESCRIPTION=Fortification
+CONTAINER=i_bag
+ITEM={i_chainmail_leggings_fortification 1 i_chainmail_tunic_fortification 1 i_ringmail_leggings_fortification 1 i_ringmail_sleeves_fortification 1 i_ringmail_gloves_fortification 1}
+
+[TEMPLATE random_ringmail_invulnerability]
+CATEGORY=Item Templates
+SUBSECTION=Random Magic Ringmail
+DESCRIPTION=Invulnerability
+CONTAINER=i_bag
+ITEM={i_chainmail_leggings_invulnerability 1 i_chainmail_tunic_invulnerability 1 i_ringmail_leggings_invulnerability 1 i_ringmail_sleeves_invulnerability 1 i_ringmail_gloves_invulnerability 1}
+
+[TEMPLATE random_leather_defense]
+CATEGORY=Item Templates
+SUBSECTION=Random Magic Leather
+DESCRIPTION=Defense
+
+[TEMPLATE random_leather_guarding]
+CATEGORY=Item Templates
+SUBSECTION=Random Magic Leather
+DESCRIPTION=Guarding
+
+[TEMPLATE random_leather_hardening]
+CATEGORY=Item Templates
+SUBSECTION=Random Magic Leather
+DESCRIPTION=Hardening
+
+[TEMPLATE random_leather_fortification]
+CATEGORY=Item Templates
+SUBSECTION=Random Magic Leather
+DESCRIPTION=Fortification
+
+[TEMPLATE random_leather_invulnerability]
+CATEGORY=Item Templates
+SUBSECTION=Random Magic Leather
+DESCRIPTION=Invulnerability
+
+[TEMPLATE random_studded_leather_defense]
+CATEGORY=Item Templates
+SUBSECTION=Random Magic Studded
+DESCRIPTION=Defense
+
+[TEMPLATE random_studded_leather_guarding]
+CATEGORY=Item Templates
+SUBSECTION=Random Magic Studded
+DESCRIPTION=Guarding
+
+[TEMPLATE random_studded_leather_hardening]
+CATEGORY=Item Templates
+SUBSECTION=Random Magic Studded
+DESCRIPTION=Hardening
+
+[TEMPLATE random_studded_fortification]
+CATEGORY=Item Templates
+SUBSECTION=Random Magic Studded
+DESCRIPTION=Fortification
+
+[TEMPLATE random_studded_leather_invulnerability]
+CATEGORY=Item Templates
+SUBSECTION=Random Magic Studded
+DESCRIPTION=Invulnerability
+
+[TEMPLATE random_magic_sword]
+CATEGORY=Item Templates
+SUBSECTION=Random Magic Weapons
+DESCRIPTION=Swords
+ITEM={random_swordtype_ruin 1 random_swordtype_might 1 random_swordtype_force 1 random_swordtype_power 1 random_swordtype_vanquishing 1}
+
+[TEMPLATE random_magic_bow]
+CATEGORY=Item Templates
+SUBSECTION=Random Magic Weapons
+DESCRIPTION=Bows
+ITEM={random_bowtype_ruin 1 random_bowtype_might 1 random_bowtype_force 1 random_bowtype_power 1 random_bowtype_vanquishing 1}
+
+[TEMPLATE random_daemon_armor] 
+CATEGORY=Item Templates 
+SUBSECTION=Random Armour 
+DESCRIPTION=Daemon 
+ITEM={i_daemon_arms 1 i_daemon_armor 1 i_daemon_gloves 1 i_daemon_legs 1 i_daemon_helm 1}
+
+[TEMPLATE random_mimic_chests]
+DEFNAME=random_spawn_mimics
+CATEGORY=Item Templates
+SUBSECTION=Miscellaneous
+DESCRIPTION=Mimics Spawns
+ITEM={i_mimic_chest_brass_n 1 i_mimic_chest_brass_w 1 i_mimic_chest_metal_n 1 i_mimic_chest_metal_n 1 i_mimic_chest_wood_n 1 i_mimic_chest_wood_w 1}
+
+[EOF]

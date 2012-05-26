@@ -1,0 +1,569 @@
+[ITEMDEF i_sand]
+ID=i_dirt
+NAME=Sand
+VALUE=1
+
+CATEGORY=Miscellaneous
+SUBSECTION=Resources
+DESCRIPTION=Sand
+
+ON=@Create
+COLOR=colors_yellow
+
+[ITEMDEF i_clay]
+ID=i_rock_2
+NAME=Clay
+VALUE=10
+WEIGHT=1
+
+CATEGORY=Miscellaneous
+SUBSECTION=Resources
+DESCRIPTION=Clay
+
+[ITEMDEF i_stone_marble]
+ID=i_pillow
+NAME=Marble
+VALUE=5
+WEIGHT=10
+
+CATEGORY=Miscellaneous
+SUBSECTION=Resources
+DESCRIPTION=Marble
+
+[ITEMDEF i_sandstone]
+ID=i_pillow
+NAME=Sand Stone
+VALUE=5
+WEIGHT=10
+
+CATEGORY=Miscellaneous
+SUBSECTION=Resources
+DESCRIPTION=Sand Stone
+
+ON=@Create
+COLOR=colors_yellow
+
+[ITEMDEF i_straw]
+ID=i_hay_sheaf
+NAME=Straw
+VALUE=1
+
+CATEGORY=Miscellaneous
+SUBSECTION=Resources
+DESCRIPTION=Straw
+
+[ITEMDEF i_grass]
+ID=i_hay_sheaf
+NAME=Grass
+VALUE=1
+
+CATEGORY=Miscellaneous
+SUBSECTION=Resources
+DESCRIPTION=Grass
+
+ON=@Create
+COLOR=colors_green
+
+[ITEMDEF i_canvas]
+ID=i_bedroll_open
+NAME=canvas
+VALUE=1
+
+[ITEMDEF i_egg]
+ID=i_fruit_coconut
+NAME=Egg
+VALUE=1
+
+CATEGORY=Miscellaneous
+SUBSECTION=Resources
+DESCRIPTION=Egg
+
+ON=@Create
+COLOR=colors_white
+
+[ITEMDEF i_window]
+ID=i_target
+RESOURCES=i_sand 2,i_board 2
+
+CATEGORY=Miscellaneous
+SUBSECTION=Resources
+DESCRIPTION=Window
+
+ON=@Create
+COLOR=colors_white
+
+[ITEMDEF i_flagstone_red]
+ID=i_rock_plain
+NAME=Red Flagstone
+
+CATEGORY=Miscellaneous
+SUBSECTION=Resources
+DESCRIPTION=Red Flagstone
+
+ON=@Create
+COLOR=colors_red
+
+[ITEMDEF i_flagstone_gray]
+ID=i_rock_plain
+
+ON=@Create
+COLOR=colors_gray
+
+[ITEMDEF i_stone_slate]
+ID=i_rock_plain
+
+ON=@Create
+COLOR=colors_gray
+
+[ITEMDEF i_stone_red]
+ID=i_rock_plain
+
+ON=@Create
+COLOR=colors_red
+
+[ITEMDEF i_stone_cobble]
+ID=i_rock_plain
+
+ON=@Create
+COLOR=colors_brown
+
+[ITEMDEF i_palm_tree]
+ID=i_tree_coconutpalm
+NAME=Palm Tree
+
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Palm Tree
+
+[ITEMDEF i_frostingbowl]
+ID=i_bowl_dough
+NAME=Frosting Bowl
+
+ON=@Create
+COLOR=colors_yellow
+
+[ITEMDEF i_cakepan]
+ID=i_basket
+
+ON=@Create
+COLOR=colors_gray
+
+[ITEMDEF i_jar]
+ID=i_jar_honey
+NAME=Empty Honey Jar
+
+[ITEMDEF i_linen]
+ID=i_cloth
+NAME=Linen
+VALUE=2
+NAME=Linen
+RESOURCES=6 i_flax_bundle
+WEIGHT=1
+
+CATEGORY=Items by Professions
+SUBSECTION=Tailor
+DESCRIPTION=Linen
+
+ON=@Create
+COLOR=colors_yellow
+
+[ITEMDEF i_paper]
+ID=i_bedroll_open
+NAME=Paper
+VALUE=2
+RESOURCES=i_board 1,t_water 1
+SKILLMAKE=CARPENTRY 15.7,t_carpentry
+WEIGHT=.1
+
+CATEGORY=Miscellaneous
+SUBSECTION=Resources
+DESCRIPTION=Paper
+
+[ITEMDEF i_parchment]
+ID=i_bedroll_open
+NAME=Parchment
+VALUE=2
+RESOURCES=1 i_paper, 1 i_cloth
+SKILLMAKE=CARPENTRY 20.7, t_carpentry
+WEIGHT=1
+
+CATEGORY=Miscellaneous
+SUBSECTION=Resources
+DESCRIPTION=Parchment
+
+[ITEMDEF i_crop_herb]
+ID=i_plant_grasses
+NAME=Herbs
+
+[ITEMDEF i_knitting_needles]
+ID=i_axel
+NAME=Knitting Needles
+VALUE=5
+WEIGHT=1
+NAME=Knitting Needles
+RESOURCES=1 i_board
+
+CATEGORY=Items by Professions
+SUBSECTION=Tailor
+DESCRIPTION=Knitting Needles
+
+[ITEMDEF i_screw]
+ID=i_hinge
+NAME=Screw
+VALUE=1
+WEIGHT=.2
+NAME=Screw
+RESOURCES=i_ingot_iron 1
+
+CATEGORY=Items by Professions
+SUBSECTION=Tinker
+DESCRIPTION=Screw
+
+[ITEMDEF i_ebony]
+ID=i_blackmoor
+NAME=Ebony
+WEIGHT=1
+
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewels
+DESCRIPTION=Ebony
+
+[ITEMDEF i_ivory]
+ID=i_bone_spine
+NAME=Ivory
+WEIGHT=1
+
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewels
+DESCRIPTION=Ivory
+
+ON=@Create
+COLOR=colors_white
+
+[ITEMDEF i_hair_dyes]
+ID=i_testtube_rack_full
+TYPE=t_hair_dye
+NAME=Hair Dyes
+WEIGHT=4
+
+CATEGORY=Items by Professions
+SUBSECTION=Barber
+DESCRIPTION=Hair Dyes
+
+ON=@Create
+COLOR=colors_hair
+
+[ITEMDEF i_ribbon]
+ID=i_yarn_ball
+NAME=Ribbon
+WEIGHT=1
+
+CATEGORY=Items by Professions
+SUBSECTION=Tailor
+DESCRIPTION=Ribbon
+
+ON=@Create
+COLOR=colors_all
+
+[ITEMDEF i_hinges_brass]
+ID=i_hinge
+NAME=Brass Hinges
+WEIGHT=.5
+RESOURCES=i_ingot_iron 3,i_screw
+
+CATEGORY=Items by Professions
+SUBSECTION=Tinker
+DESCRIPTION=Brass Hinges
+
+ON=@Create
+COLOR=color_o_gold
+
+[ITEMDEF i_sewing_needle]
+ID=i_scorp
+VALUE=1
+NAME=Sewing needle
+WEIGHT=.1
+RESOURCES=1 i_ingot_iron
+
+CATEGORY=Items by Professions
+SUBSECTION=Tailor
+DESCRIPTION=Sewing Needle
+
+ON=@Create
+COLOR=color_metal
+
+[ITEMDEF i_die]
+ID=i_sapphire
+NAME=Die
+WEIGHT=.2
+RESOURCES3=1 i_bone, 1 i_ink
+
+ON=@Create
+COLOR=colors_white
+
+[ITEMDEF i_ink_pot]
+ID=i_spittoon
+NAME=Inkpot
+WEIGHT=1
+
+CATEGORY=Items by Professions
+SUBSECTION=Artists
+DESCRIPTION=Inkpot
+
+ON=@Create
+COLOR=color_gray_dk
+
+[ITEMDEF i_brush]
+ID=i_daemon_bone
+NAME=Paint Brush
+WEIGHT=1
+RESOURCES=1 i_hair_cut, 1 i_board
+
+CATEGORY=Items by Professions
+SUBSECTION=Artists
+DESCRIPTION=Paint Brush
+
+ON=@Create
+COLOR=colors_brown
+
+[ITEMDEF i_marble]
+ID=i_rock_3 
+TYPE=t_arock
+NAME=Marble
+WEIGHT=5
+
+CATEGORY=Items by Professions
+SUBSECTION=Jeweler
+DESCRIPTION=Marble
+
+ON=@Create
+COLOR=color_snow
+
+[ITEMDEF i_tomato_sauce]
+ID=i_bottle_red
+NAME=Tomato Sauce
+WEIGHT=2
+
+CATEGORY=Items by Professions
+SUBSECTION=Cook
+DESCRIPTION=Tomato Sauce
+
+[ITEMDEF i_tree_sapling_planted]
+ID=i_plant_weed
+NAME=Planted Tree Sapling
+WEIGHT=4
+
+CATEGORY=Vegetation
+SUBSECTION=Planted Plants
+DESCRIPTION=Planted Tree Sapling
+
+[ITEMDEF i_bamboo]
+ID=i_staff_quarter
+RESOURCES=2 i_plant_cattails
+
+CATEGORY=Vegetation
+SUBSECTION=Sticks and Wood
+DESCRIPTION=Bamboo
+
+ON=@Create
+COLOR=09a
+
+[ITEMDEF i_cat_gut]
+ID=i_flesh_entrails
+NAME=Cat Gut
+WEIGHT=1
+
+CATEGORY=Items by Professions
+SUBSECTION=Archers/Bowyers
+DESCRIPTION=Cat Gut
+
+[ITEMDEF i_peg]
+ID=i_banner_hanger_ne
+NAME=Peg
+
+CATEGORY=Provisions - Armor
+SUBSECTION=Decorative Armor
+DESCRIPTION=Peg
+
+[ITEMDEF i_orc_skull]
+ID=i_bone_skull
+NAME=Orc Skull
+
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Bones
+DESCRIPTION=Orc Skull
+
+[ITEMDEF i_wax_seal]
+ID=i_tourmaline
+NAME=Wax Seal
+RESOURCES=1 i_beeswax
+
+CATEGORY=Items by Professions
+SUBSECTION=Beekeepers/Candlers
+DESCRIPTION=Wax Seal
+
+[ITEMDEF i_velvet]
+ID=i_flesh_entrails
+NAME=Velvet
+WEIGHT=1
+
+CATEGORY=Items by Professions
+SUBSECTION=Tailor
+DESCRIPTION=Velvet
+
+[ITEMDEF i_slot_machine]
+NAME=Slot Machine
+ID=01771
+
+ON=@CREATE
+TYPE=t_Slot_Machine
+
+CATEGORY=Items by Professions
+SUBSECTION=Gamblers
+DESCRIPTION=Slot Machine
+
+[ITEMDEF i_slot_machine_token]
+ID=i_gold
+NAME=Slot Machine Token
+
+CATEGORY=Items by Professions
+SUBSECTION=Gamblers
+DESCRIPTION=Slot Machine Token
+
+ON=@CREATE
+COLOR=0579
+TYPE=t_slot_machine_token
+
+[ITEMDEF i_beard_none]
+ID=i_eq_markr
+NAME=No Beard
+TYPE=t_beard
+LAYER=layer_beard
+VALUE=10
+
+CATEGORY=Items by Professions
+SUBSECTION=Barber
+DESCRIPTION=No Beard
+
+ON=@Create
+ATTR=attr_newbie
+TIMER=550000
+
+ON=@TIMER
+IF !<CONT>
+RETURN 0
+ENDIF
+IF <CONT.BRAIN>
+RETURN 1
+ENDIF
+CONT.NEWITEM=i_beard_mustache
+CONT.ACT.COLOR=<CONT.FINDLAYER(layer_beard).COLOR>
+CONT.EQUIP <CONT.ACT.UID>
+RETURN 1
+
+[ITEMDEF i_hair_none]
+ID=i_eq_marker
+NAME=No Hair
+TYPE=t_hair
+LAYER=layer_hair
+VALUE=10
+
+CATEGORY=Items by Professions
+SUBSECTION=Barber
+DESCRIPTION=No Hair
+
+ON=@Create
+ATTR=attr_newbie
+TIMER=550000
+
+ON=@TIMER
+IF !<CONT>
+RETURN 0
+ENDIF
+IF <CONT.BRAIN>
+RETURN 1
+ENDIF
+CONT.NEWITEM=i_hair_krisna
+CONT.ACT.COLOR=<CONT.FINDLAYER(layer_hair).COLOR>
+CONT.EQUIP <CONT.ACT.UID>
+RETURN 1
+
+[ITEMDEF i_gm_robe]
+ID=i_robe_gm
+NAME=GM Robe
+ARMOR=500
+
+CATEGORY=Provisions - GM Items
+SUBSECTION=GM Robes
+DESCRIPTION=GM Robe
+
+ON=@Create
+COLOR=021
+
+[ITEMDEF i_seer_robe]
+ID=i_robe_gm
+NAME=Seer Robe
+ARMOR=500
+
+CATEGORY=Provisions - GM Items
+SUBSECTION=GM Robes
+DESCRIPTION=Seer Robe
+
+ON=@Create
+COLOR=01D3
+
+[ITEMDEF i_counselor_robe]
+ID=i_robe_gm
+NAME=Counselor Robe
+ARMOR=500
+
+CATEGORY=Provisions - GM Items
+SUBSECTION=GM Robes
+DESCRIPTION=Counselor Robe
+
+ON=@Create
+COLOR=003
+
+[ITEMDEF i_checkerboard]
+ID=i_game_board
+NAME=Checkerboard
+TYPE=t_game_board
+SKILLMAKE=TINKERING 40.0,CARPENTRY 40.0
+RESOURCES=i_board 3,i_log 3
+
+CATEGORY=Items by Professions
+SUBSECTION=BarKeep
+DESCRIPTION=Checkerboard
+
+ON=@Create
+MORE=1
+
+[ITEMDEF i_chessboard]
+ID=i_game_board
+NAME=Chessboard
+TYPE=t_game_board
+SKILLMAKE=TINKERING 60.0,CARPENTRY 60.0
+RESOURCES=i_board 3,i_log 4
+
+CATEGORY=Items by Professions
+SUBSECTION=BarKeep
+DESCRIPTION=Chessboard
+
+[ITEMDEF i_guild_stone]
+ID=i_guildstone
+NAME=Guildstone
+TYPE=t_stone_guild
+
+CATEGORY=Provisions - Deeds
+SUBSECTION=Guild and Town Stones
+DESCRIPTION=Guild Stone
+
+[ITEMDEF i_town_stone]
+ID=i_guildstone
+NAME=Townstone
+TYPE=t_stone_town
+
+CATEGORY=Provisions - Deeds
+SUBSECTION=Guild and Town Stones
+DESCRIPTION=Town Stone
+[EOF]

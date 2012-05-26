@@ -1,0 +1,579 @@
+[ITEMDEF i_create_food_scroll]
+ID=i_map_rolled
+NAME=Create Food Scroll
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Apocrathy Scrolls
+DESCRIPTION=Create Food Scroll
+
+ON=@Create
+COLOR 07a1
+
+ON=@DClick
+SRC.NEWITEM create_food_spell
+SRC.ACT.EQUIP
+RETURN 1
+
+[ITEMDEF create_food_spell]
+ID=i_memory
+TYPE=t_eq_script
+NAME=Create Food Spell
+
+CATEGORY=Miscellaneous
+SUBSECTION=Spell Memory Items
+DESCRIPTION=Create Food
+
+ON=@Create
+ATTR attr_can_decay
+
+ON=@Equip
+VAR.SPELLCHECK 0
+SRC.f_mageryskillcheck 0
+SRC.f_manacheck 3
+IF <VAR.SPELLCHECK>0
+RETURN 1
+ENDIF
+SRC.ANIM 16
+SRC.SAY In Mani Ylem
+VAR.FIZZLECHECK 0
+SRC.f_fizzlecheck 400
+IF <VAR.FIZZLCHECK>0
+RETURN 1
+ENDIF
+f_mageryskillgain
+SRC.MANA <SRC.MANA>+-3
+
+[ITEMDEF i_heal_scroll]
+ID=i_map_rolled
+NAME=Heal Scroll
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Apocrathy Scrolls
+DESCRIPTION=Heal Scroll
+
+ON=@Create
+COLOR 07a1
+
+ON=@DClick
+SRC.NEWITEM heal_spell
+SRC.ACT.EQUIP
+RETURN 1
+
+[ITEMDEF heal_spell]
+ID=i_memory
+TYPE=t_eq_script
+NAME=Heal Spell
+
+CATEGORY=Miscellaneous
+SUBSECTION=Spell Memory Items
+DESCRIPTION=Heal
+
+ON=@Create
+ATTR attr_can_decay
+
+ON=@Equip
+VAR.SPELLCHECK 0
+SRC.f_mageryskillcheck 50
+SRC.f_manacheck 5
+IF <VAR.SPELLCHECK>0
+RETURN 1
+ENDIF
+SRC.ANIM 16
+SRC.SAY In Mani
+TARGET Select the target for the spell.
+
+ON=@Targon_Item
+SRC.SYSMESSAGE That is not a valid target.
+RETURN 1
+
+ON=@Targon_Ground
+SRC.SYSMESSAGE That is not a valid target.
+RETURN 1
+
+ON=@Targon_Char
+IF (<SRC.TARG.HITS> >= <SRC.TARG.STR>) || (<SRC.TARG.FLAGS>&statf_dead)
+SRC.SYSMESSAGE They do not need to be healed.
+REMOVE
+RETURN 1
+ELSE
+VAR.FIZZLECHECK 0
+SRC.f_fizzlecheck 450
+IF <VAR.FIZZLCHECK>0
+RETURN 1
+ENDIF
+f_mageryskillgain
+SRC.MANA <SRC.MANA>+-5
+SRC.TARG.HITS <SRC.TARG.HITS>+{5 20}
+SRC.TARG.EFFECT 3,i_fx_sparkle,6,15,1
+SOUND snd_spell_heal
+REMOVE
+RETURN 1
+ENDIF
+
+[ITEMDEF i_cure_scroll]
+ID=i_map_rolled
+NAME=Cure Scroll
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Apocrathy Scrolls
+DESCRIPTION=Cure Scroll
+
+ON=@Create
+COLOR 07a1
+
+ON=@DClick
+SRC.NEWITEM cure_spell
+SRC.ACT.EQUIP
+RETURN 1
+
+[ITEMDEF cure_spell]
+ID=i_memory
+TYPE=t_eq_script
+NAME=Cure Spell
+
+CATEGORY=Miscellaneous
+SUBSECTION=Spell Memory Items
+DESCRIPTION=Cure
+
+ON=@Create
+ATTR attr_can_decay
+
+ON=@Equip
+VAR.SPELLCHECK 0
+SRC.f_mageryskillcheck 100
+SRC.f_manacheck 6
+IF <VAR.SPELLCHECK>0
+RETURN 1
+ENDIF
+SRC.ANIM 16
+SRC.SAY An Nox
+TARGET Select the target for the spell.
+
+ON=@Targon_Item
+SRC.SYSMESSAGE That is not a valid target.
+RETURN 1
+
+ON=@Targon_Ground
+SRC.SYSMESSAGE That is not a valid target.
+RETURN 1
+
+ON=@Targon_Char
+IF !(<SRC.TARG.FLAGS>&statf_poisoned) || (<SRC.TARG.FLAGS>&statf_dead)
+SRC.SYSMESSAGE They do not need to be cured.
+REMOVE
+RETURN 1
+ELSE
+VAR.FIZZLECHECK 0
+SRC.f_fizzlecheck 500
+IF <VAR.FIZZLCHECK>0
+RETURN 1
+ENDIF
+f_mageryskillgain
+SRC.MANA <SRC.MANA>+-6
+SRC.TARG.SPELLEFFECT s_cure,<SRC.MAGERY>
+SRC.TARG.EFFECT 3,i_fx_sparkle,6,15,1
+SOUND snd_spell_cure
+REMOVE
+RETURN 1
+ENDIF
+
+[ITEMDEF i_arch_cure_scroll]
+ID=i_map_rolled
+NAME=Arch Cure Scroll
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Apocrathy Scrolls
+DESCRIPTION=Arch Cure Scroll
+
+ON=@Create
+COLOR 07a1
+
+ON=@DClick
+SRC.NEWITEM arch_cure_spell
+SRC.ACT.EQUIP
+RETURN 1
+
+[ITEMDEF arch_cure_spell]
+ID=i_memory
+TYPE=t_eq_script
+NAME=Arch Cure Spell
+
+CATEGORY=Miscellaneous
+SUBSECTION=Spell Memory Items
+DESCRIPTION=Arch Cure
+
+ON=@Create
+ATTR attr_can_decay
+
+ON=@Equip
+VAR.SPELLCHECK 0
+SRC.f_mageryskillcheck 300
+SRC.f_manacheck 15
+IF <VAR.SPELLCHECK>0
+RETURN 1
+ENDIF
+SRC.ANIM 16
+SRC.SAY Vas An Nox
+TARGET Select the target for the spell.
+
+ON=@Targon_Item
+SRC.SYSMESSAGE That is not a valid target.
+RETURN 1
+
+ON=@Targon_Ground
+SRC.SYSMESSAGE That is not a valid target.
+RETURN 1
+
+ON=@Targon_Char
+IF !(<SRC.TARG.FLAGS>&statf_poisoned) || (<SRC.TARG.FLAGS>&statf_dead)
+SRC.SYSMESSAGE They do not need to be cured.
+REMOVE
+RETURN 1
+ELSE
+VAR.FIZZLECHECK 0
+SRC.f_fizzlecheck 700
+IF <VAR.FIZZLCHECK>0
+RETURN 1
+ENDIF
+f_mageryskillgain
+SRC.MANA <SRC.MANA>+-15
+SRC.TARG.SPELLEFFECT s_arch_cure,<SRC.MAGERY>
+SRC.TARG.EFFECT 3,i_fx_sparkle,6,15,1
+SOUND snd_spell_arch_cure
+REMOVE
+RETURN 1
+ENDIF
+
+[ITEMDEF i_greater_heal_scroll]
+ID=i_map_rolled
+NAME=Greater Heal Scroll
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Apocrathy Scrolls
+DESCRIPTION=Greater Heal Scroll
+
+ON=@Create
+COLOR 07a1
+
+ON=@DClick
+SRC.NEWITEM greater_heal_spell
+SRC.ACT.EQUIP
+RETURN 1
+
+[ITEMDEF greater_heal_spell]
+ID=i_memory
+TYPE=t_eq_script
+NAME=Greater Heal Spell
+
+CATEGORY=Miscellaneous
+SUBSECTION=Spell Memory Items
+DESCRIPTION=Greater Heal
+
+ON=@Create
+ATTR attr_can_decay
+
+ON=@Equip
+VAR.SPELLCHECK 0
+SRC.f_mageryskillcheck 200
+SRC.f_manacheck 10
+IF <VAR.SPELLCHECK>0
+RETURN 1
+ENDIF
+SRC.ANIM 16
+SRC.SAY In Vas Mani
+TARGET Select the target for the spell.
+
+ON=@Targon_Item
+SRC.SYSMESSAGE That is not a valid target.
+RETURN 1
+
+ON=@Targon_Ground
+SRC.SYSMESSAGE That is not a valid target.
+RETURN 1
+
+ON=@Targon_Char
+IF (<SRC.TARG.HITS> >= <SRC.TARG.STR>) || (<SRC.TARG.FLAGS>&statf_dead)
+SRC.SYSMESSAGE They do not need to be healed.
+REMOVE
+RETURN 1
+ELSE
+VAR.FIZZLECHECK 0
+SRC.f_fizzlecheck 600
+IF <VAR.FIZZLCHECK>0
+RETURN 1
+ENDIF
+f_mageryskillgain
+SRC.MANA <SRC.MANA>+-10
+SRC.TARG.HITS <SRC.TARG.HITS>+{(<SRC.MAGERY>/100) (<SRC.MAGERY>/60)}
+SRC.TARG.EFFECT 3,i_fx_sparkle,6,15,1
+SOUND snd_spell_greater_heal
+REMOVE
+RETURN 1
+ENDIF
+
+[ITEMDEF i_regen_scroll]
+ID=i_map_rolled
+NAME=Regen Scroll
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Apocrathy Scrolls
+DESCRIPTION=Regen Scroll
+
+ON=@Create
+COLOR 07a1
+
+ON=@DClick
+SRC.NEWITEM regen_spell
+SRC.ACT.EQUIP
+RETURN 1
+
+[ITEMDEF regen_spell]
+ID=i_memory
+TYPE=t_eq_script
+NAME=Regen Heal Spell
+
+CATEGORY=Miscellaneous
+SUBSECTION=Spell Memory Items
+DESCRIPTION=Regen
+
+ON=@Create
+ATTR attr_can_decay
+
+ON=@Equip
+VAR.SPELLCHECK 0
+SRC.f_mageryskillcheck 200
+SRC.f_manacheck 10
+IF <VAR.SPELLCHECK>0
+RETURN 1
+ENDIF
+SRC.ANIM 16
+SRC.SAY In Vas Mani
+TARGET Select the target for the spell.
+
+ON=@Targon_Item
+SRC.SYSMESSAGE That is not a valid target.
+RETURN 1
+
+ON=@Targon_Ground
+SRC.SYSMESSAGE That is not a valid target.
+RETURN 1
+
+ON=@Targon_Char
+IF (<SRC.TARG.HITS> >= <SRC.TARG.STR>) || (<SRC.TARG.FLAGS>&statf_dead)
+SRC.SYSMESSAGE They do not need to be healed.
+REMOVE
+RETURN 1
+ELSE
+VAR.FIZZLECHECK 0
+SRC.f_fizzlecheck 600
+IF <VAR.FIZZLCHECK>0
+RETURN 1
+ENDIF
+f_mageryskillgain
+SRC.MANA <SRC.MANA>+-10
+SRC.TARG.HITS <SRC.TARG.HITS>+{(<SRC.MAGERY>/100) (<SRC.MAGERY>/60)}
+SRC.TARG.EFFECT 3,i_fx_sparkle,6,15,1
+SOUND snd_spell_greater_heal
+REMOVE
+RETURN 1
+ENDIF
+
+[ITEMDEF i_resurrection_scroll]
+ID=i_map_rolled
+NAME=Resurrection Scroll
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Apocrathy Scrolls
+DESCRIPTION=Resurrection Scroll
+
+ON=@Create
+COLOR 07a1
+
+ON=@DClick
+SRC.NEWITEM resurrection_spell
+SRC.ACT.EQUIP
+RETURN 1
+
+[ITEMDEF resurrection_spell]
+ID=i_memory
+TYPE=t_eq_script
+NAME=Resurrection Spell
+
+CATEGORY=Miscellaneous
+SUBSECTION=Spell Memory Items
+DESCRIPTION=Ressurection
+
+ON=@Create
+ATTR attr_can_decay
+
+ON=@Equip
+VAR.SPELLCHECK 0
+SRC.f_mageryskillcheck 500
+SRC.f_manacheck 50
+IF <VAR.SPELLCHECK>0
+RETURN 1
+ENDIF
+SRC.ANIM 16
+SRC.SAY An Corp
+TARGET Select the target for the spell.
+
+ON=@Targon_Item
+SRC.SYSMESSAGE That is not a valid target.
+RETURN 1
+
+ON=@Targon_Ground
+SRC.SYSMESSAGE That is not a valid target.
+RETURN 1
+
+ON=@Targon_Char
+IF !(<SRC.TARG.FLAGS>&statf_dead)
+SRC.SYSMESSAGE They do not need to be resurrected.
+RETURN 1
+ELSE
+VAR.FIZZLECHECK 0
+SRC.f_fizzlecheck 900
+IF <VAR.FIZZLCHECK>0
+RETURN 1
+ENDIF
+f_mageryskillgain
+SRC.MANA <SRC.MANA>+-100
+SRC.TARG.SPELLEFFECT s_resurrection,1000
+SRC.TARG.EFFECT 3,i_fx_heal_effect,6,15,1
+SOUND snd_spell_resurrection
+ENDIF
+RETURN 1
+
+[ITEMDEF i_full_heal_scroll]
+ID=i_map_rolled
+NAME=Full Heal Scroll
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Apocrathy Scrolls
+DESCRIPTION=Full Heal Scroll
+
+ON=@Create
+COLOR 07a1
+
+ON=@DClick
+SRC.NEWITEM full_heal_spell
+SRC.ACT.EQUIP
+RETURN 1
+
+[ITEMDEF full_heal_spell]
+ID=i_memory
+TYPE=t_eq_script
+NAME=Full Heal Spell
+
+CATEGORY=Miscellaneous
+SUBSECTION=Spell Memory Items
+DESCRIPTION=Full Heal
+
+ON=@Create
+ATTR attr_can_decay
+
+ON=@Equip
+VAR.SPELLCHECK 0
+SRC.f_mageryskillcheck 290.0
+SRC.f_manacheck 275
+IF <VAR.SPELLCHECK>0
+RETURN 1
+ENDIF
+SRC.ANIM 16
+SRC.SAY In Vas Mani Grav
+TARGET Select the target for the spell.
+
+ON=@Targon_Item
+SRC.SYSMESSAGE That is not a valid target.
+RETURN 1
+
+ON=@Targon_Ground
+SRC.SYSMESSAGE That is not a valid target.
+RETURN 1
+
+ON=@Targon_Char
+IF (<SRC.TARG.HITS> >= <SRC.TARG.STR>) || (<SRC.TARG.FLAGS>&statf_dead)
+SRC.SYSMESSAGE They do not need to be healed.
+REMOVE
+RETURN 1
+ELSE
+VAR.FIZZLECHECK 0
+SRC.f_fizzlecheck 3300
+IF <VAR.FIZZLCHECK>0
+RETURN 1
+ENDIF
+f_mageryskillgain
+SRC.MANA <SRC.MANA>+-275
+SRC.TARG.HITS <SRC.TARG.STR>
+SRC.TARG.EFFECT 3,i_fx_sparkle,6,15,1
+SOUND snd_spell_greater_heal
+REMOVE
+RETURN 1
+ENDIF
+
+[ITEMDEF i_greater_resurrection_scroll]
+ID=i_map_rolled
+NAME=Greater Resurrection Scroll
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Apocrathy Scrolls
+DESCRIPTION=Greater Resurrection Scroll
+
+ON=@Create
+COLOR 07a1
+
+ON=@DClick
+SRC.NEWITEM greater_resurrection_spell
+SRC.ACT.EQUIP
+RETURN 1
+
+[ITEMDEF greater_resurrection_spell]
+ID=i_memory
+TYPE=t_eq_script
+NAME=Greater Resurrection Spell
+
+CATEGORY=Miscellaneous
+SUBSECTION=Spell Memory Items
+DESCRIPTION=Greater Ressurection
+
+ON=@Create
+ATTR attr_can_decay
+
+ON=@Equip
+VAR.SPELLCHECK 0
+SRC.f_mageryskillcheck 2990
+SRC.f_manacheck 300
+IF <VAR.SPELLCHECK>0
+RETURN 1
+ENDIF
+SRC.ANIM 16
+SRC.SAY Vas An Corp
+TARGET Select the target for the spell.
+
+ON=@Targon_Item
+SRC.SYSMESSAGE That is not a valid target.
+RETURN 1
+
+ON=@Targon_Ground
+SRC.SYSMESSAGE That is not a valid target.
+RETURN 1
+
+ON=@Targon_Char
+IF !(<SRC.TARG.FLAGS>&statf_dead)
+SRC.SYSMESSAGE They do not need to be resurrected.
+RETURN 1
+ELSE
+VAR.FIZZLECHECK 0
+SRC.f_fizzlecheck 3390
+IF <VAR.FIZZLCHECK>0
+RETURN 1
+ENDIF
+f_mageryskillgain
+SRC.MANA <SRC.MANA>+-300
+SRC.TARG.SPELLEFFECT s_resurrection,1000
+SRC.TARG.HITS <SRC.TARG.STR>
+SRC.TARG.EFFECT 3,i_fx_heal_effect,6,15,1
+SOUND snd_spell_resurrection
+ENDIF
+RETURN 1
+
+[EOF]

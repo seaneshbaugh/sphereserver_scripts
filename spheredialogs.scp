@@ -1,0 +1,3138 @@
+// resizepic	// 5 = x,y,gumpback,sx,sy	// can come first if multi page. put up some background gump
+// gumppic		// 3 = x,y,gump	// put gumps in the dlg.
+// tilepic		// 3 = x,y,item	// put item tiles in the dlg.
+// text			// 4 = x,y,color,stringindex	// put some text here.
+// croppedtext	// 6 = x,y,sx,sy,color,stringindex
+// htmlgump		// 7 = x,y,sx,sy, 0 0 0
+// xmfhtmlgump	// 7 = x,y,sx,sy, 1003000 1 1
+// button		// 7 = X,Y,Down gump,Up gump,pressable(1/0),pagedest,id
+// radio		// 6 = x,y,gump1,gump2,starting state,id
+// checkbox		// 6 = x,y,gumpcheck,gumpuncheck,starting state,checkid
+// textentry	// 7 = x,y,widthpix,widthchars,color,id,startstringindex
+// page			// 1 = page number	// for multi tab dialogs.
+// group		// 1 = ?no idea. (arg = 0?)
+// nomove		// 0 = The gump cannot be moved around.
+// noclose		// 0 = not really used
+// nodispose	// 0 = not really used  (modal?)
+// NOTE: low button id's are reserved for page tabs.
+// button id 0 is reserved for the CANCEL command
+
+[FUNCTION f_adminmenu]
+dialog d_admin_ch
+
+[DIALOG d_admin_ch]
+157,77
+resizepic 0 0 5120 425 270
+text 150 3 455 0
+button 7 34 2362 2361 1 0 1 // Go
+text 24 30 455 1
+text 101 30 955 2
+button 7 54 2362 2361 1 0 2 // Summon
+text 24 50 455 3
+text 101 50 955 4
+button 7 74 2362 2361 1 0 3 // SummonCage
+text 24 70 455 5
+text 101 70 955 6
+button 7 94 2362 2361 1 0 4 // Jail
+text 24 90 455 7
+text 101 90 955 8
+button 7 114 2362 2361 1 0 5 // Kick
+text 24 110 455 9
+text 101 110 955 10
+button 7 134 2362 2361 1 0 6 // Kill
+text 24 130 455 11
+text 101 130 955 12
+button 7 154 2362 2361 1 0 7 // Res
+text 24 150 455 13
+text 101 150 955 14
+button 7 174 2362 2361 1 0 8 // Follow
+text 24 170 455 15
+text 101 170 955 16
+button 7 194 2362 2361 1 0 9 // Private
+text 24 190 455 17
+text 101 190 955 18
+button 7 214 2362 2361 1 0 10 // Verb
+text 24 210 455 19
+text 101 210 955 20
+button 7 234 2362 2361 1 0 11 // Disc!
+text 24 230 455 21
+text 101 230 955 22
+
+[DIALOG d_admin_ch TEXT]
+Client Control
+Go
+: Go to the client's location.
+Summon
+: Summon this client to you.
+Summon
+: Summon this client to you in a cage.
+Jail
+: Send this client to jail.
+Kick
+: Kick and block this client from the server.
+Kill
+: Force this client to die.
+Resurrect
+: Resurrect this client.
+Follow
+: Follow this client around.
+Tell
+: Send a private message to this client.
+Verb
+: Enter a verb to effect this client.
+Disconnect
+: Disconnect the client.
+
+[dialog d_admin_ch button]
+on=1
+ go <t.p>
+on=2
+ t.summonto
+on=3
+ t.summoncage
+on=4
+ t.jail
+on=5
+ t.kick
+on=6
+ t.kill
+on=7
+ t.resurrect
+on=8
+ t.followed
+on=9
+ EVERBTARG HEAR
+on=10
+ EVERBTARG
+on=11
+ T.DISCONNECT
+
+[DIALOG d_charprop1] 
+0,0 
+resizepic 0 0 3600 500 400 // Dark marble background 
+page 0 
+text 210 17 55 0 // Title 
+text 25 50 55 1 
+text 100 50 50 2 
+text 250 50 55 3 
+text 315 50 50 4 
+page 1 
+button 25 74 5031 5031 1 0 50 // General Information 
+text 32 73 55 5 
+button 140 74 5031 5031 1 0 51 // Skills 
+text 165 73 55 6 
+button 255 74 5031 5031 1 0 52 // Misc Information 
+text 270 73 55 7 
+button 370 74 5031 5031 1 0 55 // Flags 
+text 400 73 55 62 
+button 25 104 2224 2117 1 0 2 // Change Name 
+text 50 100 47 8 // Name 
+text 110 100 50 16 // Actual Name 
+button 25 124 2224 2117 1 0 3 // Change Title 
+text 50 120 47 9 // Title 
+text 110 120 50 17 // Actual Title 
+button 25 144 2224 2117 1 0 4 // Change Color 
+text 50 140 47 10 // Color 
+text 110 140 50 18 // Actual Color 
+button 25 164 2224 2117 1 0 26 // Change Oskin 
+text 110 160 50 19 // Actual Oskin 
+text 50 160 47 11 // Oskin 
+button 25 184 2224 2117 1 0 5 // Change ID 
+text 50 180 47 12 // ID 
+text 110 180 50 20 // Actual ID 
+button 25 204 2224 2117 1 0 6 // Change Body 
+text 110 200 50 21 // Actual Body 
+text 50 200 47 13 // Body 
+button 25 224 2224 2117 1 0 7 // Change OBody 
+text 50 220 47 14 // OBody 
+text 110 220 50 22 // Actual OBody 
+button 25 244 2224 2117 1 0 8 // Change Timer 
+text 50 240 47 15 // Timer 
+text 110 240 50 23 // Actual Timer 
+button 25 264 2224 2117 1 0 9 // Change P 
+text 50 260 47 24 // P 
+text 110 260 50 25 // Actual P 
+button 25 284 2224 2117 1 0 10 // Change Home 
+text 50 280 47 26 // Home 
+text 110 280 50 27 // Actual Home 
+button 25 304 2224 2117 1 0 11 // Change Action 
+text 50 300 47 28 // Action 
+text 110 300 50 29 // Actual Action 
+button 25 324 2224 2117 1 0 12 // Change Food 
+text 50 320 47 30 // Food 
+text 110 320 50 31 // Actual Food 
+button 25 344 2224 2117 1 0 54 // Open Bank 
+text 50 340 47 61 // BANK 
+button 275 104 2224 2117 1 0 13 // Change NPC 
+text 300 100 47 32 // NPC 
+text 360 100 50 33 // Actual NPC 
+button 275 124 2224 2117 1 0 14 // Change CLASS
+text 300 120 47 34 // CLASS 
+text 360 120 50 35 // Actual CLASS 
+button 275 144 2224 2117 1 0 15 // Change KARMA 
+text 300 140 47 36 // KARMA 
+text 360 140 50 37 // Actual KARMA 
+button 275 164 2224 2117 1 0 16 // Change KARMA 
+text 300 160 47 38 // KARMA 
+text 360 160 50 39 // Actual KARMA 
+text 300 180 47 40 // Skillsum 
+text 405 180 50 41 // Actual SKILL TOTAL 
+text 300 200 47 42 // BANK BALANCE 
+text 405 200 50 43 // Actual BANK BALANCE 
+button 275 224 2224 2117 1 0 20 // Change STR 
+text 300 220 47 47 // STR 
+text 360 220 50 48 // Actual STR 
+button 275 244 2224 2117 1 0 21 // Change DEX 
+text 300 240 47 49 // DEX 
+text 360 240 50 50 // Actual DEX 
+button 275 264 2224 2117 1 0 22 // Change INT 
+text 300 260 47 51 // INT 
+text 360 260 50 52 // Actual INT 
+button 275 284 2224 2117 1 0 23 // Change HITS 
+text 300 280 47 53 // HITS 
+text 360 280 50 54 // Actual HITS 
+button 275 304 2224 2117 1 0 24 // Change STAM 
+text 300 300 47 55 // STAM 
+text 360 300 50 56 // Actual STAM 
+button 275 324 2224 2117 1 0 25 // Change MANA 
+text 300 320 47 57 // MANA 
+text 360 320 50 58 // Actual MANA 
+button 275 344 2224 2117 1 0 53 // Change Kills 
+text 300 340 47 59 // Kills 
+text 360 340 50 60 // Actual Kills 
+
+[DIALOG d_charprop1 TEXT] 
+Tweak Menu
+Account: 
+<ACCOUNT> 
+Serial: 
+<UID> 
+General Info 
+Skills 
+Misc Info 
+Name: 
+Title: 
+Color: 
+Oskin: 
+ID: 
+Body: 
+OBody: 
+Timer: 
+<NAME> 
+<TITLE> 
+<COLOR> 
+<OSKIN> 
+<ID> 
+<BODY> 
+<OBODY> 
+<TIMER> 
+P: 
+<P> 
+Home: 
+<HOME> 
+Action: 
+<ACTION> 
+Food: 
+<FOOD> 
+NPC: 
+<NPC> 
+Class: 
+<TAG.CLASS> 
+Karma: 
+<KARMA> 
+Fame: 
+<FAME> 
+Skill Total:
+<SKILLTOTAL> 
+Bank Balance: 
+<BANKBALANCE> 
+Guild: 
+<src.targ.memoryfindtype.memory_guild.link.name> 
+Goto Guild 
+STR: 
+<STR> 
+DEX: 
+<DEX> 
+INT: 
+<INT> 
+Hits: 
+<HITS> 
+Stam: 
+<STAM> 
+Mana: 
+<MANA> 
+Kills: 
+<KILLS>//60 
+Open Bank 
+Flags 
+
+[DIALOG d_charprop1 BUTTON] 
+ONBUTTON=2 
+TRYP 3 INPDLG=NAME 30 
+ONBUTTON=3 
+TRYP 3 INPDLG=TITLE 30 
+ONBUTTON=4 
+TRYP 3 INPDLG=COLOR 8 
+ONBUTTON=5 
+TRYP 3 INPDLG=ID 15 
+ONBUTTON=6 
+TRYP 3 INPDLG=BODY 15 
+ONBUTTON=7 
+TRYP 3 INPDLG=OBODY 15 
+ONBUTTON=8 
+TRYP 3 INPDLG=TIMER 15 
+ONBUTTON=9 
+TRYP 3 INPDLG=P 16 
+ONBUTTON=10 
+TRYP 3 INPDLG=HOME 16 
+ONBUTTON=11 
+TRYP 3 INPDLG=ACTION 8 
+ONBUTTON=12 
+TRYP 3 INPDLG=FOOD 5 
+ONBUTTON=13 
+TRYP 3 INPDLG=NPC 10 
+ONBUTTON=14 
+ONBUTTON=15 
+TRYP 3 INPDLG=KARMA 10 
+ONBUTTON=16 
+TRYP 3 INPDLG=FAME 10 
+ONBUTTON=17 
+SRC.GOUID <src.targ.memoryfindtype.memory_guild.link.UID> 
+ONBUTTON=18 
+ONBUTTON=19 
+SRC.GOUID <src.targ.memoryfindtype.memory_guild.link.UID> 
+ONBUTTON=20 
+TRYP 3 INPDLG=STR 5 
+ONBUTTON=21 
+TRYP 3 INPDLG=DEX 5 
+ONBUTTON=22 
+TRYP 3 INPDLG=INT 5 
+ONBUTTON=23 
+TRYP 3 INPDLG=HITS 5 
+ONBUTTON=24 
+TRYP 3 INPDLG=STAM 5 
+ONBUTTON=25 
+TRYP 3 INPDLG=MANA 5 
+ONBUTTON=26 
+TRYP 3 INPDLG=OCOLOR 8 
+ONBUTTON=50 
+dialog d_charprop1 
+ONBUTTON=51 
+dialog d_tdl_tweak_1 
+ONBUTTON=52 
+dialog d_tdl_tweak_2 
+ONBUTTON=53 
+TRYP 3 INPDLG=KILLS 3 
+ONBUTTON=54 //Bank 
+bank 
+ONBUTTON=55 //flags 
+dialog d_tdl_tweak_flags 
+
+[DIALOG d_tdl_tweak_1] 
+0,0 
+resizepic 0 0 3600 500 400 // Dark Marble background
+page 0 
+text 210 17 55 0 // Title 
+text 25 50 55 1 
+text 100 50 50 2 
+text 250 50 55 3 
+text 315 50 50 4 
+
+page 1 
+button 25 74 5031 5031 1 0 50 // General Information 
+text 32 73 55 5 
+button 140 74 5031 5031 1 0 51 // Skills 
+text 165 73 55 6 
+button 255 74 5031 5031 1 0 52 // Misc Information 
+text 270 73 55 7 
+button 370 74 5031 5031 1 0 53 // Flags 
+text 400 73 55 61 
+button 25 104 2224 2117 1 0 2 // Change Alchemy 0 
+text 50 100 47 8 // Alchemy 0 
+text 175 100 50 16 // Actual Alchemy 0 
+button 25 124 2224 2117 1 0 3 // Change Anatomy 1 
+text 50 120 47 9 // Anatomy 1 
+text 175 120 50 17 // Actual Anatomy 1 
+button 25 144 2224 2117 1 0 4 // Change Animal Lore 2 
+text 50 140 47 10 // Animal Lore 2 
+text 175 140 50 18 // Actual Animal Lore 2 
+button 25 164 2224 2117 1 0 26 // Change Animal Taiming 
+text 175 160 50 19 // Actual Animal Taiming 
+text 50 160 47 11 // Animal Taiming 
+button 25 184 2224 2117 1 0 5 // Change Archery 
+text 50 180 47 12 // Archery 
+text 175 180 50 20 // Actual Archery 
+button 25 204 2224 2117 1 0 6 // Change Arms Lore 
+text 175 200 50 21 // Actual Arms Lore 
+text 50 200 47 13 // Arms Lore 
+button 25 224 2224 2117 1 0 7 // Change Begging 
+text 50 220 47 14 // Begging 
+text 175 220 50 22 // Actual Begging 
+button 25 244 2224 2117 1 0 8 // Change Blacksmithing 
+text 50 240 47 15 // Blacksmithing 
+text 175 240 50 23 // Actual Blacksmithing 
+button 25 264 2224 2117 1 0 9 // Change Bowcraft 
+text 50 260 47 24 // Bowcraft 
+text 175 260 50 25 // Actual bowcraft 
+button 25 284 2224 2117 1 0 10 // Change camping 
+text 50 280 47 26 // Item camping 
+text 175 280 50 27 // Actual camping 
+button 25 304 2224 2117 1 0 11 // Change carpentry 
+text 50 300 47 28 // carpentry 
+text 175 300 50 29 // Actual carpentry 
+button 25 324 2224 2117 1 0 12 // Change cartography 
+text 50 320 47 30 // cartography 
+text 175 320 50 31 // Actual cartography 
+button 275 104 2224 2117 1 0 13 // Change cooking 
+text 300 100 47 32 // cooking 
+text 425 100 50 33 // Actual cooking 
+button 275 124 2224 2117 1 0 14 // Change Detecting Hidden 
+text 300 120 47 34 // Detecting Hidden 
+text 425 120 50 35 // Actual Detecting Hidden 
+button 275 144 2224 2117 1 0 15 // Change Enticement 
+text 300 140 47 36 // Enticement 
+text 425 140 50 37 // Actual Enticement 
+button 275 164 2224 2117 1 0 16 // Change Evaluating Intelligence 
+text 300 160 47 38 // Evaluating Intelligence 
+text 425 160 50 39 // Actual Evaluating Intelligence 
+button 275 184 2224 2117 1 0 17 // Change Fencing 
+text 300 180 47 40 // SKILL Fencing 
+text 425 180 50 41 // Actual Fencing 
+button 275 204 2224 2117 1 0 18 // Change Fishing 
+text 300 200 47 42 // Fishing 
+text 425 200 50 43 // Actual Fishing 
+button 150 364 2224 2117 1 0 19 // Goto 
+text 175 360 47 44 // Guild 
+text 235 360 47 45 // Page 2 
+text 60 360 47 46 // Goto Page 2 text 
+button 275 224 2224 2117 1 0 20 // Change Forensics Evaluation 
+text 300 220 47 47 // Forensics Eveluation 
+text 425 220 50 48 // Actual Forensics Eveluation 
+button 275 244 2224 2117 1 0 21 // Change Healing 
+text 300 240 47 49 // Healing 
+text 425 240 50 50 // Actual Healing 
+button 275 264 2224 2117 1 0 22 // Change Herding 
+text 300 260 47 51 // Herding 
+text 425 260 50 52 // Actual Herding 
+button 275 284 2224 2117 1 0 23 // Change Hiding 
+text 300 280 47 53 // Hiding 
+text 425 280 50 54 // Actual Hiding 
+button 275 304 2224 2117 1 0 24 // Change Inscription 
+text 300 300 47 55 // Inscription 
+text 425 300 50 56 // Actual Inscription 
+button 275 324 2224 2117 1 0 25 // Change Item ID 
+text 300 320 47 57 // Item ID 
+text 425 320 50 58 // Actual Item ID 
+button 275 344 2224 2117 1 0 27 // Change Lock Picking 
+text 300 340 47 59 // Item Lock Picking 
+text 425 340 50 60 // Actual Lock Picking 
+
+[DIALOG d_tdl_tweak_1 TEXT] 
+Tweak Menu //0 
+Account: //1 
+<ACCOUNT> //2 
+Serial: //3 
+<UID> //4 
+General Info //5 
+Skills //6 
+Misc Info //7 
+Alchemy //8 
+Anatomy //9 
+Animal Lore //10 
+Animal Taming //11 
+Archery //12 
+Arms Lore //13 
+Begging //14 
+Black Smithing //15 
+<ALCHEMY> //16 
+<ANATOMY> //17 
+<ANIMALLORE> //18 
+<TAMING> //19 
+<ARCHERY> //20 
+<ARMSLORE> //21 
+<BEGGING> //22 
+<BLACKSMITHING> //23 
+Bowcraft //24 
+<BOWCRAFT> //25 
+Camping //26 
+<Camping> //27 
+Carpentry //28 
+<Carpentry> //29 
+Cartography //30 
+<CARTOGRAPHY> //31 
+Cooking //32 
+<COOKING> //33 
+Detect Hidden //34 
+<DETECTINGHIDDEN> //35 
+Enticement //36 
+<ENTICEMENT> //37 
+Eval Intelligence //38 
+<EVALUATINGINTEL> //39 
+Fencing //40 
+<FENCING> //41 
+Fishing //42 
+<FISHING> //43 
+Goto //44 
+Page 2 //45 
+More Skills //46 
+Forensics //47 
+<FORENSICS> //48 
+Healing //49 
+<HEALING> //50 
+Herding //51 
+<HERDING> //52 
+Hiding //53 
+<HIDING> //54 
+Inscription //55 
+<INSCRIPTION> //56 
+Item ID //57 
+<ITEMID> //58 
+Lock Picking//59 
+<LOCKPICKING>//60 
+Flags //61 
+
+[DIALOG d_tdl_tweak_1 BUTTON] 
+ONBUTTON=2 
+TRYP 3 INPDLG=ALCHEMY 4 
+ONBUTTON=3 
+TRYP 3 INPDLG=ANATOMY 4 
+ONBUTTON=4 
+TRYP 3 INPDLG=ANIMALLORE 4 
+ONBUTTON=5 
+TRYP 3 INPDLG=ARCHERY 4 
+ONBUTTON=6 
+TRYP 3 INPDLG=ARMSLORE 4 
+ONBUTTON=7 
+TRYP 3 INPDLG=BEGGING 4 
+ONBUTTON=8 
+TRYP 3 INPDLG=BLACKSMITHING 4 
+ONBUTTON=9 
+TRYP 3 INPDLG=BOWCRAFT 4 
+ONBUTTON=10 
+TRYP 3 INPDLG=CAMPING 4 
+ONBUTTON=11 
+TRYP 3 INPDLG=CARPENTRY 4 
+ONBUTTON=12 
+TRYP 3 INPDLG=CARTOGRAPHY 4 
+ONBUTTON=13 
+TRYP 3 INPDLG=COOKING 4 
+ONBUTTON=14 
+TRYP 3 INPDLG=DETECTINGHIDDEN 4 
+ONBUTTON=15 
+TRYP 3 INPDLG=ENTICEMENT 4 
+ONBUTTON=16 
+TRYP 3 INPDLG=EVALUATINGINTEL 4 
+ONBUTTON=17 
+TRYP 3 INPDLG=FENCING 4 
+ONBUTTON=18 
+TRYP 3 INPDLG=FISHING 4 
+ONBUTTON=19 
+dialog d_tdl_tweak_3 
+ONBUTTON=20 
+TRYP 3 INPDLG=FORENSICS 4 
+ONBUTTON=21 
+TRYP 3 INPDLG=HEALING 4 
+ONBUTTON=22 
+TRYP 3 INPDLG=HERDING 4 
+ONBUTTON=23 
+TRYP 3 INPDLG=HIDING 4 
+ONBUTTON=24 
+TRYP 3 INPDLG=INSCRIPTION 4 
+ONBUTTON=25 
+TRYP 3 INPDLG=ITEMID 4 
+ONBUTTON=26 
+TRYP 3 INPDLG=TAMING 4 
+ONBUTTON=27 
+TRYP 3 INPDLG=LOCKPICKING 4 
+ONBUTTON=50 
+dialog d_charprop1 
+ONBUTTON=51 
+dialog d_tdl_tweak_1 
+ONBUTTON=52 
+dialog d_tdl_tweak_2 
+ONBUTTON=53 //flags 
+dialog d_tdl_tweak_flags 
+
+[DIALOG d_tdl_tweak_3] 
+0,0 
+resizepic 0 0 3600 500 400 // Dark Marble background
+page 0 
+text 210 17 55 0 // Title 
+//button 53 74 2117 2118 1 0 27 
+//tilepic 400 50 <DISPIDDEC> 
+text 25 50 55 1 
+text 100 50 50 2 
+text 250 50 55 3 
+text 315 50 50 4 
+
+page 1 
+button 25 74 5031 5031 1 0 50 // General Information 
+text 32 73 55 5 
+button 140 74 5031 5031 1 0 51 // Skills 
+text 165 73 55 6 
+button 255 74 5031 5031 1 0 52 // Misc Information 
+text 270 73 55 7 
+button 370 74 5031 5031 1 0 53 // Flags 
+text 400 73 55 61 
+button 25 104 2224 2117 1 0 2 // Change Lumberjacking 
+text 50 100 47 8 // Lumberjacking 
+text 175 100 50 16 // Actual Lumberjacking 
+button 25 124 2224 2117 1 0 3 // Change Mace Fighting 
+text 50 120 47 9 // Mace Fighting 
+text 175 120 50 17 // Actual Mace Fighting 
+button 25 144 2224 2117 1 0 4 // Change Magery 
+text 50 140 47 10 // Magery 
+text 175 140 50 18 // Actual Magery 
+button 25 164 2224 2117 1 0 26 // Change Meditation 
+text 175 160 50 19 // Actual Meditation 
+text 50 160 47 11 // Meditation 
+button 25 184 2224 2117 1 0 5 // Change Mining 
+text 50 180 47 12 // Mining 
+text 175 180 50 20 // Actual Mining 
+button 25 204 2224 2117 1 0 6 // Change Musicianship 
+text 175 200 50 21 // Actual Musicianship 
+text 50 200 47 13 // Musicianship 
+button 25 224 2224 2117 1 0 7 // Change Parrying 
+text 50 220 47 14 // Parrying 
+text 175 220 50 22 // Actual Parrying 
+button 25 244 2224 2117 1 0 8 // Change Peacemaking 
+text 50 240 47 15 // Peacemaking 
+text 175 240 50 23 // Actual Peacemaking 
+button 25 264 2224 2117 1 0 9 // Change Poisoning 
+text 50 260 47 24 // Poisoning 
+text 175 260 50 25 // Actual Poisoning 
+button 25 284 2224 2117 1 0 10 // Change Provocation 
+text 50 280 47 26 // Provocation 
+text 175 280 50 27 // Actual Provocation 
+button 25 304 2224 2117 1 0 11 // Change Resist Magic 
+text 50 300 47 28 // Resist Magic 
+text 175 300 50 29 // Actual Resist Magic 
+button 25 324 2224 2117 1 0 12 // Change Remove Trap 
+text 50 320 47 30 // Remove Trap 
+text 175 320 50 31 // Actual Remove Trap 
+button 275 104 2224 2117 1 0 13 // Change Snooping 
+text 300 100 47 32 // Snooping 
+text 425 100 50 33 // Actual Snooping 
+button 275 124 2224 2117 1 0 14 // Change Spirit Speak 
+text 300 120 47 34 // Spirit Speak 
+text 425 120 50 35 // Actual Spirit Speak 
+button 275 144 2224 2117 1 0 15 // Change Stealing 
+text 300 140 47 36 // Stealing 
+text 425 140 50 37 // Actual Stealing 
+button 275 164 2224 2117 1 0 16 // Change Stealth 
+text 300 160 47 38 // Stealth 
+text 425 160 50 39 // Actual Stealth 
+button 275 184 2224 2117 1 0 17 // Change Swordsmanship 
+text 300 180 47 40 // Swordsmanship 
+text 425 180 50 41 // Actual Swordsmanship 
+button 275 204 2224 2117 1 0 18 // Change Tactics 
+text 300 200 47 42 // Tactics 
+text 425 200 50 43 // Actual Tactics 
+button 150 364 2224 2117 1 0 19 // Goto 
+text 175 360 47 44 // Guild 
+text 235 360 47 45 // Actual 
+text 60 360 47 46 // Goto Guild Button Tag 
+button 275 224 2224 2117 1 0 20 // Change Tailoring 
+text 300 220 47 47 // Tailoring 
+text 425 220 50 48 // Actual Tailoring 
+button 275 244 2224 2117 1 0 21 // Change Taste ID 
+text 300 240 47 49 // Taste ID 
+text 425 240 50 50 // Taste ID 
+button 275 264 2224 2117 1 0 22 // Change Tinkering 
+text 300 260 47 51 // Tinkering 
+text 425 260 50 52 // Actual Tinkering 
+button 275 284 2224 2117 1 0 23 // Change Tracking 
+text 300 280 47 53 // Tracking 
+text 425 280 50 54 // Actual Tracking 
+button 275 304 2224 2117 1 0 24 // Change Vetrinary 
+text 300 300 47 55 // Veterinary 
+text 425 300 50 56 // Actual Vetrinary 
+button 275 324 2224 2117 1 0 25 // Change Wrestling 
+text 300 320 47 57 // Wrestling 
+text 425 320 50 58 // Actual Wrestling 
+button 275 344 2224 2117 1 0 30 // Change Necro 
+text 300 340 47 59 // Necromancy 
+text 425 340 50 60 // Actual Necro 
+
+[DIALOG d_tdl_tweak_3 TEXT] 
+Tweak Menu//0 
+Account: //1 
+<ACCOUNT> //2 
+Serial: //3 
+<UID> //4 
+General Info //5 
+Skills //6 
+Misc Info //7 
+Lumberjacking //8 
+Mace Fighting //9 
+Magery //10 
+Meditation //11 
+Mining //12 
+Musicianship //13 
+Parrying //14 
+Peacemaking //15 
+<LUMBERJACKING> //16 
+<MACEFIGHTING> //17 
+<MAGERY> //18 
+<MEDITATION> //19 
+<MINING> //20 
+<MUSICIANSHIP> //21 
+<PARRYING> //22 
+<PEACEMAKING> //23 
+Poisoning //24 
+<POISONING> //25 
+Provocation //26 
+<PROVOCATION> //27 
+Magic Resist //28 
+<MAGICRESISTANCE> //29 
+Remove Trap //30 
+<REMOVETRAP> //31 
+Snooping //32 
+<SNOOPING> //33 
+Spirit Speak //34 
+<SPIRITSPEAK> //35 
+Stealing //36 
+<STEALING> //37 
+Stealth //38 
+<STEALTH> //39 
+Swordsmanship //40 
+<SWORDSMANSHIP> //41 
+Tactics //42 
+<TACTICS> //43 
+Goto //44 
+Page 1 //45 
+More Skills //46 
+Tailoring //47 
+<TAILORING> //48 
+Taste ID //49 
+<TASTEID> //50 
+Tinkering //51 
+<TINKERING> //52 
+Tracking //53 
+<TRACKING> //54 
+Veterinary //55 
+<VETERINARY> //56 
+Wrestling //57 
+<WRESTLING> //58 
+Necromancy 
+<NECROMANCY>//60 
+Flags //61 
+
+[DIALOG d_tdl_tweak_3 BUTTON] 
+ONBUTTON=2 
+TRYP 3 INPDLG=LUMBERJACKING 4 
+ONBUTTON=3 
+TRYP 3 INPDLG=MACEFIGHTING 4 
+ONBUTTON=4 
+TRYP 3 INPDLG=MAGERY 4 
+ONBUTTON=5 
+TRYP 3 INPDLG=MINING 4 
+ONBUTTON=6 
+TRYP 3 INPDLG=MUSICIANSHIP 4 
+ONBUTTON=7 
+TRYP 3 INPDLG=PARRYING 4 
+ONBUTTON=8 
+TRYP 3 INPDLG=PEACEMAKING 4 
+ONBUTTON=9 
+TRYP 3 INPDLG=POISONING 4 
+ONBUTTON=10 
+TRYP 3 INPDLG=PROVOCATION 4 
+ONBUTTON=11 
+TRYP 3 INPDLG=MAGICRESISTANCE 4 
+ONBUTTON=12 
+TRYP 3 INPDLG=REMOVETRAP 4 
+ONBUTTON=13 
+TRYP 3 INPDLG=SNOOPING 4 
+ONBUTTON=14 
+TRYP 3 INPDLG=SPIRITSPEAK 4 
+ONBUTTON=15 
+TRYP 3 INPDLG=STEALING 4 
+ONBUTTON=16 
+TRYP 3 INPDLG=STEALTH 4 
+ONBUTTON=17 
+TRYP 3 INPDLG=SWORDSMANSHIP 4 
+ONBUTTON=18 
+TRYP 3 INPDLG=TACTICS 4 
+ONBUTTON=19 
+dialog d_tdl_tweak_1 
+ONBUTTON=20 
+TRYP 3 INPDLG=TAILORING 4 
+ONBUTTON=21 
+TRYP 3 INPDLG=TASTEID 4 
+ONBUTTON=22 
+TRYP 3 INPDLG=TINKERING 4 
+ONBUTTON=23 
+TRYP 3 INPDLG=TRACKING 4 
+ONBUTTON=24 
+TRYP 3 INPDLG=VETERINARY 4 
+ONBUTTON=25 
+TRYP 3 INPDLG=WRESTLING 4 
+ONBUTTON=26 
+TRYP 3 INPDLG=MEDITATION 4 
+ONBUTTON=27 
+TRYP 3 INPDLG=LOCKPICKING 4 
+ONBUTTON=30 
+TRYP 3 INPDLG=NECROMANCY 4 
+ONBUTTON=50 
+dialog d_charprop1 
+ONBUTTON=51 
+dialog d_tdl_tweak_1 
+ONBUTTON=52 
+dialog d_tdl_tweak_2 
+ONBUTTON=53 
+dialog d_tdl_tweak_flags 
+
+[DIALOG d_tdl_tweak_2] 
+0,0 
+resizepic 0 0 3600 500 400 // Dark Marble background
+page 0 
+text 210 17 55 0 // Title 
+text 25 50 55 1 
+text 100 50 50 2 
+text 250 50 55 3 
+text 315 50 50 4 
+
+page 1 
+button 25 74 5031 5031 1 0 50 // General Information 
+text 32 73 55 5 
+button 140 74 5031 5031 1 0 51 // Skills 
+text 165 73 55 6 
+button 255 74 5031 5031 1 0 52 // Misc Information 
+text 270 73 55 7 
+button 370 74 5031 5031 1 0 53 // Flags 
+text 400 73 55 32 
+button 25 104 2224 2117 1 0 2 // Change Comment 1 
+text 50 100 47 8 // Comment 1 
+text 128 100 50 9 // Actual Comment 1 
+button 25 124 2224 2117 1 0 3 // Change Comment 2 
+text 50 120 47 10 // Comment 2 
+text 128 120 50 11 // Actual Comment 2 
+button 25 144 2224 2117 1 0 4 // Change Comment 3 
+text 50 140 47 12 // Comment 3 
+text 128 140 50 13 // Actual Comment 3 
+button 25 164 2224 2117 1 0 5 // Change Comment 4 
+text 50 160 47 14 // Actual Comment 4 
+text 128 160 50 15 // Comment 4 
+button 25 184 2224 2117 1 0 6 // Change Comment 5 
+text 50 180 47 16 // Comment 5 
+text 128 180 50 17 // Actual Comment 5 
+button 25 204 2224 2117 1 0 7 // Change Comment 6 
+text 50 200 47 18 // Comment 6 
+text 128 200 50 19 // Actual Comment 6 
+button 25 224 2224 2117 1 0 8 // Change Comment 7 
+text 50 220 47 20 
+text 128 220 50 21 
+button 25 244 2224 2117 1 0 9 // Change Comment 8 
+text 50 240 47 22 
+text 128 240 50 23 
+button 25 264 2224 2117 1 0 10 // Change Comment 9 
+text 50 260 47 24 
+text 128 260 50 25 
+button 25 284 2224 2117 1 0 11 // Change Comment 10 
+text 50 280 47 26 
+text 128 280 50 27 
+text 50 320 47 28 //guild name: 
+text 50 340 47 29 //guildmaster: 
+text 140 320 50 30 
+text 140 340 50 31 
+text 50 360 47 33//Goto Guild
+text 140 360 50 34
+button 275 364 2224 2117 1 0 12 //Go to Guild
+text 300 360 47 35 //Go to Guild:
+
+[DIALOG d_tdl_tweak_2 TEXT] 
+Tweak Menu
+Account: 
+<ACCOUNT> 
+Serial: 
+<UID> 
+General Info 
+Skills 
+Misc Info 
+Comment 1 
+<TAG.COMMENT0> 
+Comment 2 //10 
+<TAG.COMMENT1> 
+Comment 3 
+<TAG.COMMENT2> 
+Comment 4 
+<TAG.COMMENT3> 
+Comment 5 
+<TAG.COMMENT4> 
+Comment 6 
+<TAG.COMMENT5> 
+Comment 7 
+<TAG.COMMENT6> 
+Comment 8 
+<TAG.COMMENT7> 
+Comment 9 
+<TAG.COMMENT8> 
+Comment 10 
+<TAG.COMMENT9> 
+Guild Name: 
+Guildmaster: 
+<src.targ.memoryfindtype.memory_guild.link.name> //30 
+<src.targ.memoryfindtype.memory_guild.link.master> 
+Flags //32
+Guildstone: 
+<src.targ.memoryfindtype.memory_guild.link.P> 
+Go to Guild
+
+[DIALOG d_tdl_tweak_2 BUTTON] 
+ONBUTTON=2 
+TRYP 3 INPDLG=TAG.COMMENT1 30 
+ONBUTTON=3 
+TRYP 3 INPDLG=TAG.COMMENT2 30 
+ONBUTTON=4 
+TRYP 3 INPDLG=TAG.COMMENT3 30 
+ONBUTTON=5 
+TRYP 3 INPDLG=TAG.COMMENT4 30 
+ONBUTTON=6 
+TRYP 3 INPDLG=TAG.COMMENT5 30 
+ONBUTTON=7 
+TRYP 3 INPDLG=TAG.COMMENT6 30 
+ONBUTTON=50 
+dialog d_charprop1 
+ONBUTTON=51 
+dialog d_tdl_tweak_1 
+ONBUTTON=52 
+dialog d_tdl_tweak_2 
+ONBUTTON=53 
+dialog d_tdl_tweak_flags 
+ONBUTTON=12
+SRC.GO <src.targ.memoryfindtype.memory_guild.link.P>
+
+
+[DIALOG d_tdl_tweak_flags] 
+0,0 
+resizepic 0 0 3600 500 450 // Dark Marble background
+page 0 
+text 210 17 55 0 // Title 
+text 25 50 55 1 
+text 100 50 50 2 
+text 250 50 55 3 
+text 315 50 50 4 
+
+page 1 
+button 25 74 5031 5031 1 0 50 // General Information 
+text 32 73 55 5 
+button 140 74 5031 5031 1 0 51 // Skills 
+text 165 73 55 6 
+button 255 74 5031 5031 1 0 52 // Misc Information 
+text 270 73 55 7 
+button 370 74 5031 5031 1 0 53 // Flags 
+text 400 73 55 8 
+text 25 100 47 9 //Current Flags 
+text 130 100 50 10 
+//button 25 124 2224 2117 1 0 1 
+button 40 124 2224 2117 1 0 2 
+text 60 120 47 11 
+text 200 120 50 12 
+//button 25 144 2224 2117 1 0 3 
+button 40 144 2224 2117 1 0 4 
+text 60 140 47 13 
+text 200 140 50 14 
+//button 25 164 2224 2117 1 0 3 
+button 40 164 2224 2117 1 0 4 
+text 60 160 47 15 
+text 200 160 50 16 
+//button 25 184 2224 2117 1 0 3 
+button 40 184 2224 2117 1 0 4 
+text 60 180 47 17 
+text 200 180 50 18 
+//button 25 204 2224 2117 1 0 3 
+button 40 204 2224 2117 1 0 4 
+text 60 200 47 19 
+text 200 200 50 20 
+//button 25 224 2224 2117 1 0 3 
+button 40 224 2224 2117 1 0 4 
+text 60 220 47 21 
+text 200 220 50 22 
+//button 25 244 2224 2117 1 0 3 
+button 40 244 2224 2117 1 0 4 
+text 60 240 47 23 
+text 200 240 50 24 
+//button 25 264 2224 2117 1 0 3 
+button 40 264 2224 2117 1 0 4 
+text 60 260 47 25 
+text 200 260 50 26 
+//button 25 284 2224 2117 1 0 3 
+button 40 284 2224 2117 1 0 4 
+text 60 280 47 27 
+text 200 280 50 28 
+//button 25 304 2224 2117 1 0 3 
+button 40 304 2224 2117 1 0 4 
+text 60 300 47 29 
+text 200 300 50 30 
+//button 25 324 2224 2117 1 0 3 
+button 40 324 2224 2117 1 0 4 
+text 60 320 47 31 
+text 200 320 50 32 
+//button 25 344 2224 2117 1 0 3 
+button 40 344 2224 2117 1 0 4 
+text 60 340 47 33 
+text 200 340 50 34 
+//button 25 364 2224 2117 1 0 3 
+button 40 364 2224 2117 1 0 4 
+text 60 360 47 35 
+text 200 360 50 36 
+//button 25 384 2224 2117 1 0 3 
+button 40 384 2224 2117 1 0 4 
+text 60 380 47 37 
+text 200 380 50 38 
+//button 25 404 2224 2117 1 0 3 
+button 40 404 2224 2117 1 0 4 
+text 60 400 47 39 
+text 200 400 50 40 //End 1st Column 
+//button 265 104 2224 2117 1 0 3 
+button 280 104 2224 2117 1 0 4 
+text 300 100 47 41 
+text 440 100 50 42 
+//button 265 124 2224 2117 1 0 3 
+button 280 124 2224 2117 1 0 4 
+text 300 120 47 43 
+text 440 120 50 44 
+//button 265 144 2224 2117 1 0 3 
+button 280 144 2224 2117 1 0 4 
+text 300 140 47 45 
+text 440 140 50 46 
+//button 265 164 2224 2117 1 0 3 
+button 280 164 2224 2117 1 0 4 
+text 300 160 47 41 
+text 440 160 50 42 
+//button 265 184 2224 2117 1 0 3 
+button 280 184 2224 2117 1 0 4 
+text 300 180 47 43 
+text 440 180 50 44 
+//button 265 204 2224 2117 1 0 3 
+button 280 204 2224 2117 1 0 4 
+text 300 200 47 45 
+text 440 200 50 46 
+//button 265 224 2224 2117 1 0 3 
+button 280 224 2224 2117 1 0 4 
+text 300 220 47 47 
+text 440 220 50 48 
+//button 265 244 2224 2117 1 0 3 
+button 280 244 2224 2117 1 0 4 
+text 300 240 47 49 
+text 440 240 50 50 
+//button 265 264 2224 2117 1 0 3 
+button 280 264 2224 2117 1 0 4 
+text 300 260 47 51 
+text 440 260 50 52 
+//button 265 284 2224 2117 1 0 3 
+button 280 284 2224 2117 1 0 4 
+text 300 280 47 53 
+text 440 280 50 54 
+//button 265 304 2224 2117 1 0 3 
+button 280 304 2224 2117 1 0 4 
+text 300 300 47 55 
+text 440 300 50 56 
+//button 265 324 2224 2117 1 0 3 
+button 280 324 2224 2117 1 0 4 
+text 300 320 47 57 
+text 440 320 50 58 
+//button 265 344 2224 2117 1 0 3 
+button 280 344 2224 2117 1 0 4 
+text 300 340 47 59 
+text 440 340 50 60 
+//button 265 364 2224 2117 1 0 3 
+button 280 364 2224 2117 1 0 4 
+text 300 360 47 61 
+text 440 360 50 62 
+//button 265 384 2224 2117 1 0 3 
+button 280 384 2224 2117 1 0 4 
+text 300 380 47 65 
+text 440 380 50 66 
+//button 265 404 2224 2117 1 0 3 
+button 280 404 2224 2117 1 0 4 
+text 300 400 47 71 
+text 440 400 50 72 
+
+[DIALOG d_tdl_tweak_flags TEXT] 
+Tweak Menu
+Account: 
+<ACCOUNT> 
+Serial: 
+<UID> 
+General Info //5 
+Skills 
+Misc Info 
+Flags 
+Current Flags: 
+<src.targ.flags> //10 
+Invulnerable 
+<eval (<src.targ.flags>&01)==01> 
+Dead 
+<eval (<src.targ.flags>&02)==02> 
+Frozen //15 
+<eval (<src.targ.flags>&04)==04> 
+Invisible 
+<eval (<src.targ.flags>&08)==08> 
+Sleeping 
+<eval (<src.targ.flags>&010)==010>//20 
+Warmode 
+<eval (<src.targ.flags>&020)==020> 
+Reactive Armor 
+<eval (<src.targ.flags>&040)==040> 
+Poisoned 
+<eval (<src.targ.flags>&080)==080> 
+Nightsight 
+<eval (<src.targ.flags>&0100)==0100> 
+Magic Reflection 
+<eval (<src.targ.flags>&0200)==0200>//30 
+Polymorph 
+<eval (<src.targ.flags>&0400)==0400> 
+Incognito 
+<eval (<src.targ.flags>&0800)==0800> 
+Spirit Speak 
+<eval (<src.targ.flags>&01000)==01000> 
+Insubstantial? 
+<eval (<src.targ.flags>&02000)==02000> 
+Emote Action? 
+<eval (<src.targ.flags>&04000)==04000>//40 
+Has Shield 
+<eval (<src.targ.flags>&010000)==010000> 
+Script Play 
+<eval (<src.targ.flags>&020000)==020000> 
+Stone 
+<eval (<src.targ.flags>&040000)==040000> 
+Script Recording? 
+<eval (<src.targ.flags>&080000)==080000> 
+Fly 
+<eval (<src.targ.flags>&0100000)==0100000>//50 
+Stat Effect 
+<eval (<src.targ.flags>&0200000)==0200000> 
+Hallucinating 
+<eval (<src.targ.flags>&0400000)==0400000> 
+Hidden 
+<eval (<src.targ.flags>&0800000)==0800000> 
+Indoors? 
+<eval (<src.targ.flags>&01000000)==01000000> 
+Criminal 
+<eval (<src.targ.flags>&02000000)==02000000>//60 
+Conjured 
+<eval (<src.targ.flags>&04000000)==04000000> 
+Pet 
+<eval (<src.targ.flags>&08000000)==08000000> 
+Spawned 
+<eval (<src.targ.flags>&010000000)==010000000> 
+Save Parity? 
+<eval (<src.targ.flags>&020000000)==020000000> 
+Ridden? 
+<eval (<src.targ.flags>&040000000)==040000000>//70 
+On Horse 
+<eval (<src.targ.flags>&080000000)==080000000> 
+
+
+[DIALOG d_tdl_tweak_flags BUTTON] 
+ONBUTTON=1 
+
+ONBUTTON=50 
+dialog d_charprop1 
+ONBUTTON=51 
+dialog d_tdl_tweak_1 
+ONBUTTON=52 
+dialog d_tdl_tweak_2 
+ONBUTTON=53 
+dialog d_tdl_tweak_flags 
+
+//Item Tweak Menu
+[DIALOG d_ITEMPROP1]
+0,0 
+resizepic 0 0 3600 500 400 // Dark marble background 
+page 0 
+text 210 17 55 0 // Title 
+text 50 50 55 1 //Name:
+text 100 50 50 2 //actual name
+text 50 350 55 3 //Serial:
+text 100 350 50 4 //actual serial
+button 25 74 5031 5031 1 0 10 // Item Properties 1
+text 38 73 55 23 //Item Properties 1
+button 140 74 5031 5031 1 0 11 // Item Properties 2
+text 152 73 55 24 //Item Properties 2
+page 1 
+button 25 104 2224 2117 1 0 1 // BaseID
+text 50 100 47 5  //BaseID: 
+text 110 100 50 6 // Actual baseid 
+button 25 124 2224 2117 1 0 2 // Change color
+text 50 120 47 7 // color 
+text 110 120 50 8 // Actual color 
+button 25 144 2224 2117 1 0 3 // timer 
+text 50 140 47 9 // timer 
+text 110 140 50 10 // Actual timer
+button 25 164 2224 2117 1 0 4 // Change position 
+text 110 160 50 12 // Actual position 
+text 50 160 47 11 // position 
+button 25 184 2224 2117 1 0 5 // Change amount 
+text 50 180 47 13 // amount 
+text 110 180 50 14 // Actual amount 
+button 25 204 2224 2117 1 0 6 // Change type 
+text 110 200 50 16 // Actual type 
+text 50 200 47 15 // type 
+button 25 224 2224 2117 1 0 7 // Change More1 
+text 50 220 47 17 // More1 
+text 110 220 50 18 // Actual More1 
+button 25 244 2224 2117 1 0 8 // Change More2 
+text 50 240 47 19 // More2 
+text 110 240 50 20 // Actual More2 
+button 25 264 2224 2117 1 0 9 // Change MoreP 
+text 50 260 47 21 // MoreP 
+text 110 260 50 22 // Actual MoreP 
+button 25 54 2224 2117 1 0 12 //change name
+button 25 324 2224 2117 1 0 13		// continue
+text 50 320 47 25
+button 150 324 2224 2117 1 0 14	// delete
+text 175 320 47 26
+button 250 324 2224 2117 1 0 15	// bounce
+text 275 320 47 27
+
+[DIALOG d_ITEMPROP1 TEXT] 
+Tweak Menu
+Name: 
+<NAME> 
+Serial: 
+<SERIAL> 
+BaseID: 
+<BASEID>
+Color:
+<COLOR> 
+Timer:
+<TIMER>
+Position: 
+<P>
+Amount: 
+<AMOUNT> 
+Type: 
+<TYPE> 
+More1: 
+<MORE1>
+More2: 
+<MORE2>
+MoreP: 
+<MOREP>
+Properties 1
+Properties 2
+Continue
+Remove
+Bounce
+
+[DIALOG d_ITEMPROP1 BUTTON]
+ONBUTTON=0
+ONBUTTON=1
+TRYP 4 INPDLG=ID 32
+ONBUTTON=2
+TRYP 4 INPDLG=COLOR 32
+ONBUTTON=3
+TRYP 4 INPDLG=TIMER 8
+ONBUTTON=4
+TRYP 4 INPDLG=P 16
+ONBUTTON=5
+TRYP 4 INPDLG=AMOUNT 5
+ONBUTTON=6
+TRYP 4 INPDLG=TYPE 32
+ONBUTTON=7
+TRYP 4 INPDLG=MORE1 32
+ONBUTTON=8
+TRYP 4 INPDLG=MORE2 32
+ONBUTTON=9
+TRYP 4 INPDLG=MOREP 32
+ONBUTTON=10 
+dialog d_ITEMPROP1 
+ONBUTTON=11 
+dialog d_tdl_ITEMPROP2
+ONBUTTON=12
+TRYP 4 INPDLG=NAME 30
+ONBUTTON=13
+ONBUTTON=14
+TRY REMOVE
+ONBUTTON=15
+TRY BOUNCE
+
+[DIALOG d_tdl_ITEMPROP2]
+0,0 
+resizepic 0 0 3600 500 400 // Dark marble background 
+page 0 
+text 210 17 55 0 // Title 
+text 50 50 55 1 //Name:
+text 100 50 50 2 //actual name
+text 50 350 55 3 //Serial:
+text 100 350 50 4 //actual serial
+button 25 74 5031 5031 1 0 1 // Item Properties 1
+text 38 73 55 5 //Item Properties 1
+button 140 74 5031 5031 1 0 2 // Item Properties 2
+text 152 73 55 6 //Item Properties 2
+page 1 
+button 25 104 2224 2117 1 0 3 // Attr
+text 50 100 47 7 //Attributes: 
+text 110 100 50 8 // Actual attr 
+button 25 124 2224 2117 1 0 4 // Change weight
+text 50 120 47 9 // weight 
+text 110 120 50 10 // Actual weight 
+button 25 144 2224 2117 1 0 5 //layer
+text 50 140 47 11 // layer 
+text 110 140 50 12 // Actual layer
+button 25 164 2224 2117 1 0 6 // Change instances
+text 110 160 50 14 // Actual instances 
+text 50 160 47 13 // instances 
+button 25 184 2224 2117 1 0 7 // Change armor
+text 50 180 47 15 // armor 
+text 110 180 50 16 // Actual armor 
+button 25 204 2224 2117 1 0 8 // Change value 
+text 110 200 50 18 // Actual value 
+text 50 200 47 17 // value 
+button 25 224 2224 2117 1 0 9 // Change dye
+text 50 220 47 19 // dye 
+text 110 220 50 20 // Actual dyeable 
+button 25 244 2224 2117 1 0 10 // Change link 
+text 50 240 47 21 // link 
+text 110 240 50 22 // Actual link 
+button 25 264 2224 2117 1 0 11// Change dispid 
+text 50 260 47 23 // dispid 
+text 110 260 50 24 // Actual dispid 
+button 25 54 2224 2117 1 0 12 //change name
+button 25 324 2224 2117 1 0 13		// continue
+text 50 320 47 25
+button 150 324 2224 2117 1 0 14	// delete
+text 175 320 47 26
+button 250 324 2224 2117 1 0 15	// bounce
+text 275 320 47 27
+
+[DIALOG d_tdl_ITEMPROP2 TEXT] 
+Tweak Menu
+Name: 
+<NAME> 
+Serial: 
+<SERIAL> 
+Properties 1
+Properties 2
+Attr:
+<ATTR>
+Weight:
+<WEIGHT>
+Layer:
+<LAYER>
+Inst:
+<INSTANCES>
+Armor:
+<ARMOR>
+Value:
+<VALUE>
+Dyeable:
+<DYE>
+Link:
+<LINK>
+DispID:
+<DISPID>
+Continue
+Remove
+Bounce
+
+[DIALOG d_tdl_ITEMPROP2 BUTTON]
+ONBUTTON=0
+ONBUTTON=1 
+dialog d_ITEMPROP1 
+ONBUTTON=2 
+dialog d_tdl_ITEMPROP2
+ONBUTTON=3
+TRYP 4 INPDLG=ATTR 8
+ONBUTTON=4
+TRYP 4 INPDLG=WEIGHT 4
+ONBUTTON=5
+TRYP 5 INPDLG=LAYER 2
+ONBUTTON=6
+TRYP 4 INPDLG=INSTANCES 4
+ONBUTTON=7
+TRYP 4 INPDLG=ARMOR 4
+ONBUTTON=8
+TRYP 4 INPDLG=VALUE 7
+ONBUTTON=9
+TRYP 4 INPDLG=DYE 4
+ONBUTTON=10
+TRYP 4 INPDLG=LINK 8
+ONBUTTON=11
+ONBUTTON=12
+TRYP 4 INPDLG=NAME 30
+ONBUTTON=13
+ONBUTTON=14
+TRY REMOVE
+ONBUTTON=15
+TRY BOUNCE
+
+[DIALOG d_HAIR_DYE]	// HAIR DYE
+032,032	// size
+page 0
+resizepic 100 10 2600 350 355
+resizepic 120 54 5100 110 270
+text 180 25 995 0
+text 160 330 995 13
+button 330 330 247 248 1 0 1
+group 0
+text 130 59 1601 1
+button 207 60 5224 5224 0 1 1
+text 130 81 1627 2
+button 207 82 5224 5224 0 2 2
+text 130 103 1501 3
+button 207 104 5224 5224 0 3 3
+text 130 125 1301 4
+button 207 126 5224 5224 0 4 4
+text 130 147 1401 5
+button 207 148 5224 5224 0 5 5
+text 130 169 1201 6
+button 207 170 5224 5224 0 6 6
+text 130 191 2401 7
+button 207 192 5224 5224 0 7 7
+text 130 213 2212 8
+button 207 214 5224 5224 0 8 8
+text 130 235 1101 9
+button 207 236 5224 5224 0 9 9
+text 130 257 1109 10
+button 207 258 5224 5224 0 10 10
+text 130 279 1117 11
+button 207 280 5224 5224 0 11 11
+text 130 301 1133 12
+button 207 302 5224 5224 0 12 12
+page 1
+text 278 52 1601 1
+radio 260 52 210 211 0 1601
+text 278 69 1602 1
+radio 260 69 210 211 0 1602
+text 278 86 1603 1
+radio 260 86 210 211 0 1603
+text 278 103 1604 1
+radio 260 103 210 211 0 1604
+text 278 120 1605 1
+radio 260 120 210 211 0 1605
+text 278 137 1606 1
+radio 260 137 210 211 0 1606
+text 278 154 1607 1
+radio 260 154 210 211 0 1607
+text 278 171 1608 1
+radio 260 171 210 211 0 1608
+text 278 188 1609 1
+radio 260 188 210 211 0 1609
+text 278 205 1610 1
+radio 260 205 210 211 0 1610
+text 278 222 1611 1
+radio 260 222 210 211 0 1611
+text 278 239 1612 1
+radio 260 239 210 211 0 1612
+text 278 256 1613 1
+radio 260 256 210 211 0 1613
+text 278 273 1614 1
+radio 260 273 210 211 0 1614
+text 278 290 1615 1
+radio 260 290 210 211 0 1615
+text 278 307 1616 1
+radio 260 307 210 211 0 1616
+text 358 52 1617 1
+radio 340 52 210 211 0 1617
+text 358 69 1618 1
+radio 340 69 210 211 0 1618
+text 358 86 1619 1
+radio 340 86 210 211 0 1619
+text 358 103 1620 1
+radio 340 103 210 211 0 1620
+text 358 120 1621 1
+radio 340 120 210 211 0 1621
+text 358 137 1622 1
+radio 340 137 210 211 0 1622
+text 358 154 1623 1
+radio 340 154 210 211 0 1623
+text 358 171 1624 1
+radio 340 171 210 211 0 1624
+text 358 188 1625 1
+radio 340 188 210 211 0 1625
+text 358 205 1626 1
+radio 340 205 210 211 0 1626
+page 2
+text 278 52 1627 2
+radio 260 52 210 211 0 1627
+text 278 69 1628 2
+radio 260 69 210 211 0 1628
+text 278 86 1629 2
+radio 260 86 210 211 0 1629
+text 278 103 1630 2
+radio 260 103 210 211 0 1630
+text 278 120 1631 2
+radio 260 120 210 211 0 1631
+text 278 137 1632 2
+radio 260 137 210 211 0 1632
+text 278 154 1633 2
+radio 260 154 210 211 0 1633
+text 278 171 1634 2
+radio 260 171 210 211 0 1634
+text 278 188 1635 2
+radio 260 188 210 211 0 1635
+text 278 205 1636 2
+radio 260 205 210 211 0 1636
+text 278 222 1637 2
+radio 260 222 210 211 0 1637
+text 278 239 1638 2
+radio 260 239 210 211 0 1638
+text 278 256 1639 2
+radio 260 256 210 211 0 1639
+text 278 273 1640 2
+radio 260 273 210 211 0 1640
+text 278 290 1641 2
+radio 260 290 210 211 0 1641
+text 278 307 1642 2
+radio 260 307 210 211 0 1642
+text 358 52 1643 2
+radio 340 52 210 211 0 1643
+text 358 69 1644 2
+radio 340 69 210 211 0 1644
+text 358 86 1645 2
+radio 340 86 210 211 0 1645
+text 358 103 1646 2
+radio 340 103 210 211 0 1646
+text 358 120 1647 2
+radio 340 120 210 211 0 1647
+text 358 137 1648 2
+radio 340 137 210 211 0 1648
+text 358 154 1649 2
+radio 340 154 210 211 0 1649
+text 358 171 1650 2
+radio 340 171 210 211 0 1650
+text 358 188 1651 2
+radio 340 188 210 211 0 1651
+text 358 205 1652 2
+radio 340 205 210 211 0 1652
+text 358 222 1653 2
+radio 340 222 210 211 0 1653
+page 3
+text 278 52 1501 3
+radio 260 52 210 211 0 1501
+text 278 69 1502 3
+radio 260 69 210 211 0 1502
+text 278 86 1503 3
+radio 260 86 210 211 0 1503
+text 278 103 1504 3
+radio 260 103 210 211 0 1504
+text 278 120 1505 3
+radio 260 120 210 211 0 1505
+text 278 137 1506 3
+radio 260 137 210 211 0 1506
+text 278 154 1507 3
+radio 260 154 210 211 0 1507
+text 278 171 1508 3
+radio 260 171 210 211 0 1508
+text 278 188 1509 3
+radio 260 188 210 211 0 1509
+text 278 205 1510 3
+radio 260 205 210 211 0 1510
+text 278 222 1511 3
+radio 260 222 210 211 0 1511
+text 278 239 1512 3
+radio 260 239 210 211 0 1512
+text 278 256 1513 3
+radio 260 256 210 211 0 1513
+text 278 273 1514 3
+radio 260 273 210 211 0 1514
+text 278 290 1515 3
+radio 260 290 210 211 0 1515
+text 278 307 1516 3
+radio 260 307 210 211 0 1516
+text 358 52 1517 3
+radio 340 52 210 211 0 1517
+text 358 69 1518 3
+radio 340 69 210 211 0 1518
+text 358 86 1519 3
+radio 340 86 210 211 0 1519
+text 358 103 1520 3
+radio 340 103 210 211 0 1520
+text 358 120 1521 3
+radio 340 120 210 211 0 1521
+text 358 137 1522 3
+radio 340 137 210 211 0 1522
+text 358 154 1523 3
+radio 340 154 210 211 0 1523
+text 358 171 1524 3
+radio 340 171 210 211 0 1524
+text 358 188 1525 3
+radio 340 188 210 211 0 1525
+text 358 205 1526 3
+radio 340 205 210 211 0 1526
+text 358 222 1527 3
+radio 340 222 210 211 0 1527
+text 358 239 1528 3
+radio 340 239 210 211 0 1528
+text 358 256 1529 3
+radio 340 256 210 211 0 1529
+text 358 273 1530 3
+radio 340 273 210 211 0 1530
+text 358 290 1531 3
+radio 340 290 210 211 0 1531
+text 358 307 1532 3
+radio 340 307 210 211 0 1532
+page 4
+text 278 52 1301 4
+radio 260 52 210 211 0 1301
+text 278 69 1302 4
+radio 260 69 210 211 0 1302
+text 278 86 1303 4
+radio 260 86 210 211 0 1303
+text 278 103 1304 4
+radio 260 103 210 211 0 1304
+text 278 120 1305 4
+radio 260 120 210 211 0 1305
+text 278 137 1306 4
+radio 260 137 210 211 0 1306
+text 278 154 1307 4
+radio 260 154 210 211 0 1307
+text 278 171 1308 4
+radio 260 171 210 211 0 1308
+text 278 188 1309 4
+radio 260 188 210 211 0 1309
+text 278 205 1310 4
+radio 260 205 210 211 0 1310
+text 278 222 1311 4
+radio 260 222 210 211 0 1311
+text 278 239 1312 4
+radio 260 239 210 211 0 1312
+text 278 256 1313 4
+radio 260 256 210 211 0 1313
+text 278 273 1314 4
+radio 260 273 210 211 0 1314
+text 278 290 1315 4
+radio 260 290 210 211 0 1315
+text 278 307 1316 4
+radio 260 307 210 211 0 1316
+text 358 52 1317 4
+radio 340 52 210 211 0 1317
+text 358 69 1318 4
+radio 340 69 210 211 0 1318
+text 358 86 1319 4
+radio 340 86 210 211 0 1319
+text 358 103 1320 4
+radio 340 103 210 211 0 1320
+text 358 120 1321 4
+radio 340 120 210 211 0 1321
+text 358 137 1322 4
+radio 340 137 210 211 0 1322
+text 358 154 1323 4
+radio 340 154 210 211 0 1323
+text 358 171 1324 4
+radio 340 171 210 211 0 1324
+text 358 188 1325 4
+radio 340 188 210 211 0 1325
+text 358 205 1326 4
+radio 340 205 210 211 0 1326
+text 358 222 1327 4
+radio 340 222 210 211 0 1327
+text 358 239 1328 4
+radio 340 239 210 211 0 1328
+text 358 256 1329 4
+radio 340 256 210 211 0 1329
+text 358 273 1330 4
+radio 340 273 210 211 0 1330
+text 358 290 1331 4
+radio 340 290 210 211 0 1331
+text 358 307 1332 4
+radio 340 307 210 211 0 1332
+page 5
+text 278 52 1401 5
+radio 260 52 210 211 0 1401
+text 278 69 1402 5
+radio 260 69 210 211 0 1402
+text 278 86 1403 5
+radio 260 86 210 211 0 1403
+text 278 103 1404 5
+radio 260 103 210 211 0 1404
+text 278 120 1405 5
+radio 260 120 210 211 0 1405
+text 278 137 1406 5
+radio 260 137 210 211 0 1406
+text 278 154 1407 5
+radio 260 154 210 211 0 1407
+text 278 171 1408 5
+radio 260 171 210 211 0 1408
+text 278 188 1409 5
+radio 260 188 210 211 0 1409
+text 278 205 1410 5
+radio 260 205 210 211 0 1410
+text 278 222 1411 5
+radio 260 222 210 211 0 1411
+text 278 239 1412 5
+radio 260 239 210 211 0 1412
+text 278 256 1413 5
+radio 260 256 210 211 0 1413
+text 278 273 1414 5
+radio 260 273 210 211 0 1414
+text 278 290 1415 5
+radio 260 290 210 211 0 1415
+text 278 307 1416 5
+radio 260 307 210 211 0 1416
+text 358 52 1417 5
+radio 340 52 210 211 0 1417
+text 358 69 1418 5
+radio 340 69 210 211 0 1418
+text 358 86 1419 5
+radio 340 86 210 211 0 1419
+text 358 103 1420 5
+radio 340 103 210 211 0 1420
+text 358 120 1421 5
+radio 340 120 210 211 0 1421
+text 358 137 1422 5
+radio 340 137 210 211 0 1422
+text 358 154 1423 5
+radio 340 154 210 211 0 1423
+text 358 171 1424 5
+radio 340 171 210 211 0 1424
+text 358 188 1425 5
+radio 340 188 210 211 0 1425
+text 358 205 1426 5
+radio 340 205 210 211 0 1426
+text 358 222 1427 5
+radio 340 222 210 211 0 1427
+text 358 239 1428 5
+radio 340 239 210 211 0 1428
+text 358 256 1429 5
+radio 340 256 210 211 0 1429
+text 358 273 1430 5
+radio 340 273 210 211 0 1430
+text 358 290 1431 5
+radio 340 290 210 211 0 1431
+text 358 307 1432 5
+radio 340 307 210 211 0 1432
+page 6
+text 278 52 1201 6
+radio 260 52 210 211 0 1201
+text 278 69 1202 6
+radio 260 69 210 211 0 1202
+text 278 86 1203 6
+radio 260 86 210 211 0 1203
+text 278 103 1204 6
+radio 260 103 210 211 0 1204
+text 278 120 1205 6
+radio 260 120 210 211 0 1205
+text 278 137 1206 6
+radio 260 137 210 211 0 1206
+text 278 154 1207 6
+radio 260 154 210 211 0 1207
+text 278 171 1208 6
+radio 260 171 210 211 0 1208
+text 278 188 1209 6
+radio 260 188 210 211 0 1209
+text 278 205 1210 6
+radio 260 205 210 211 0 1210
+text 278 222 1211 6
+radio 260 222 210 211 0 1211
+text 278 239 1212 6
+radio 260 239 210 211 0 1212
+text 278 256 1213 6
+radio 260 256 210 211 0 1213
+text 278 273 1214 6
+radio 260 273 210 211 0 1214
+text 278 290 1215 6
+radio 260 290 210 211 0 1215
+text 278 307 1216 6
+radio 260 307 210 211 0 1216
+text 358 52 1217 6
+radio 340 52 210 211 0 1217
+text 358 69 1218 6
+radio 340 69 210 211 0 1218
+text 358 86 1219 6
+radio 340 86 210 211 0 1219
+text 358 103 1220 6
+radio 340 103 210 211 0 1220
+text 358 120 1221 6
+radio 340 120 210 211 0 1221
+text 358 137 1222 6
+radio 340 137 210 211 0 1222
+text 358 154 1223 6
+radio 340 154 210 211 0 1223
+text 358 171 1224 6
+radio 340 171 210 211 0 1224
+page 7
+text 278 52 2401 7
+radio 260 52 210 211 0 2401
+text 278 69 2402 7
+radio 260 69 210 211 0 2402
+text 278 86 2403 7
+radio 260 86 210 211 0 2403
+text 278 103 2404 7
+radio 260 103 210 211 0 2404
+text 278 120 2405 7
+radio 260 120 210 211 0 2405
+text 278 137 2406 7
+radio 260 137 210 211 0 2406
+text 278 154 2407 7
+radio 260 154 210 211 0 2407
+text 278 171 2408 7
+radio 260 171 210 211 0 2408
+text 278 188 2409 7
+radio 260 188 210 211 0 2409
+text 278 205 2410 7
+radio 260 205 210 211 0 2410
+text 278 222 2411 7
+radio 260 222 210 211 0 2411
+text 278 239 2412 7
+radio 260 239 210 211 0 2412
+text 278 256 2413 7
+radio 260 256 210 211 0 2413
+text 278 273 2414 7
+radio 260 273 210 211 0 2414
+text 278 290 2415 7
+radio 260 290 210 211 0 2415
+text 278 307 2416 7
+radio 260 307 210 211 0 2416
+text 358 52 2417 7
+radio 340 52 210 211 0 2417
+text 358 69 2418 7
+radio 340 69 210 211 0 2418
+text 358 86 2419 7
+radio 340 86 210 211 0 2419
+text 358 103 2420 7
+radio 340 103 210 211 0 2420
+text 358 120 2421 7
+radio 340 120 210 211 0 2421
+text 358 137 2422 7
+radio 340 137 210 211 0 2422
+text 358 154 2423 7
+radio 340 154 210 211 0 2423
+text 358 171 2424 7
+radio 340 171 210 211 0 2424
+text 358 188 2425 7
+radio 340 188 210 211 0 2425
+text 358 205 2426 7
+radio 340 205 210 211 0 2426
+text 358 222 2427 7
+radio 340 222 210 211 0 2427
+text 358 239 2428 7
+radio 340 239 210 211 0 2428
+text 358 256 2429 7
+radio 340 256 210 211 0 2429
+page 8
+text 278 52 2212 8
+radio 260 52 210 211 0 2212
+text 278 69 2213 8
+radio 260 69 210 211 0 2213
+text 278 86 2214 8
+radio 260 86 210 211 0 2214
+text 278 103 2215 8
+radio 260 103 210 211 0 2215
+text 278 120 2216 8
+radio 260 120 210 211 0 2216
+text 278 137 2217 8
+radio 260 137 210 211 0 2217
+page 9
+text 278 52 1101 9
+radio 260 52 210 211 0 1101
+text 278 69 1102 9
+radio 260 69 210 211 0 1102
+text 278 86 1103 9
+radio 260 86 210 211 0 1103
+text 278 103 1104 9
+radio 260 103 210 211 0 1104
+text 278 120 1105 9
+radio 260 120 210 211 0 1105
+text 278 137 1106 9
+radio 260 137 210 211 0 1106
+text 278 154 1107 9
+radio 260 154 210 211 0 1107
+text 278 171 1108 9
+radio 260 171 210 211 0 1108
+page 10
+text 278 52 1109 10
+radio 260 52 210 211 0 1109
+text 278 69 1110 10
+radio 260 69 210 211 0 1110
+text 278 86 1111 10
+radio 260 86 210 211 0 1111
+text 278 103 1112 10
+radio 260 103 210 211 0 1112
+text 278 120 1113 10
+radio 260 120 210 211 0 1113
+text 278 137 1114 10
+radio 260 137 210 211 0 1114
+text 278 154 1115 10
+radio 260 154 210 211 0 1115
+text 278 171 1116 10
+radio 260 171 210 211 0 1116
+page 11
+text 278 52 1117 11
+radio 260 52 210 211 0 1117
+text 278 69 1118 11
+radio 260 69 210 211 0 1118
+text 278 86 1119 11
+radio 260 86 210 211 0 1119
+text 278 103 1120 11
+radio 260 103 210 211 0 1120
+text 278 120 1121 11
+radio 260 120 210 211 0 1121
+text 278 137 1122 11
+radio 260 137 210 211 0 1122
+text 278 154 1123 11
+radio 260 154 210 211 0 1123
+text 278 171 1124 11
+radio 260 171 210 211 0 1124
+text 278 188 1125 11
+radio 260 188 210 211 0 1125
+text 278 205 1126 11
+radio 260 205 210 211 0 1126
+text 278 222 1127 11
+radio 260 222 210 211 0 1127
+text 278 239 1128 11
+radio 260 239 210 211 0 1128
+text 278 256 1129 11
+radio 260 256 210 211 0 1129
+text 278 273 1130 11
+radio 260 273 210 211 0 1130
+text 278 290 1131 11
+radio 260 290 210 211 0 1131
+text 278 307 1132 11
+radio 260 307 210 211 0 1132
+page 12
+text 278 52 1133 12
+radio 260 52 210 211 0 1133
+text 278 69 1134 12
+radio 260 69 210 211 0 1134
+text 278 86 1135 12
+radio 260 86 210 211 0 1135
+text 278 103 1136 12
+radio 260 103 210 211 0 1136
+text 278 120 1137 12
+radio 260 120 210 211 0 1137
+text 278 137 1138 12
+radio 260 137 210 211 0 1138
+text 278 154 1139 12
+radio 260 154 210 211 0 1139
+text 278 171 1140 12
+radio 260 171 210 211 0 1140
+text 278 188 1141 12
+radio 260 188 210 211 0 1141
+text 278 205 1142 12
+radio 260 205 210 211 0 1142
+text 278 222 1143 12
+radio 260 222 210 211 0 1143
+text 278 239 1144 12
+radio 260 239 210 211 0 1144
+text 278 256 1145 12
+radio 260 256 210 211 0 1145
+text 278 273 1146 12
+radio 260 273 210 211 0 1146
+text 278 290 1147 12
+radio 260 290 210 211 0 1147
+text 278 307 1148 12
+radio 260 307 210 211 0 1148
+
+[DIALOG d_HAIR_DYE TEXT]
+Hair Color Selection Menu
+Brown
+Chestnut
+Auburn
+Blue
+Green
+Red
+Light
+Blonde
+Black
+Beige
+Golden
+Dk Brown
+Dye my hair this color!
+
+[DIALOG d_HAIR_DYE button]
+// This is done internally.
+
+[DIALOG d_HELPGM]	// 12
+// Put up a help system dialog that lists ingame commands etc.
+0, 0	// location on the screen.
+resizepic 0 0 3600 600 450
+page 0
+gumppic 285 178 1418
+gumppic 15 50 1800
+gumppic 37 63 50468
+gumppic 15 50 1889
+gumppic 15 50 1883
+gumppic 15 50 1811
+gumppic 15 50 1812
+gumppic 15 50 1891
+gumppic 37 63 50409
+gumppic 130 91 50628
+gumppic 29 76 50984
+text 220 17 995 0
+button 250 300 243 241 1 0 0
+page 1
+text 240 40 995 1
+text 240 55 995 2
+text 240 70 995 3
+text 240 95 995 4
+button 250 115 210 211 1 0 1
+text 300 115 995 5
+button 250 140 210 211 1 0 2
+text 300 140 995 6
+button 250 165 210 211 1 0 3
+text 300 165 995 7
+button 250 190 210 211 1 0 4
+text 300 190 995 8
+button 250 215 210 211 1 0 5
+text 300 215 995 9
+button 250 240 210 211 1 0 6
+text 300 240 995 10
+button 250 265 210 211 1 0 7
+text 300 265 995 11
+
+[DIALOG d_HELPGM TEXT]
+SPHERE Help System
+Hail! Welcome to the SPHERE command help
+system. Pick the catagory of the command from
+the list below.
+Select     Category
+Administrator
+Game Master
+Counselor
+Player
+Triggers and Events
+Properties and Methods
+SPHERE FAQ
+
+[DIALOG d_HELPGM BUTTON]
+ONBUTTON=1
+
+ONBUTTON=2
+
+ONBUTTON=3
+
+ONBUTTON=4
+
+ONBUTTON=5
+
+ONBUTTON=6
+
+ONBUTTON=7
+
+[DIALOG d_Travel]
+// a travel dialog
+0, 0	// this is always the size.
+resizepic 0 0 3600 229 173
+page 0
+text 40 17 0 0   
+text 40 37 1152 1
+text 40 57 1152 2
+text 40 77 1152 3
+button 20 40 1209 1210 1 0 1      
+button 20 60 1209 1210 1 0 2
+button 20 80 1209 1210 1 0 3
+
+[DIALOG d_Travel TEXT]
+Welcome <SRC.NAME>
+Towns
+Dungeons
+Special Places
+
+[DIALOG d_Travel BUTTON]
+ONBUTTON=0
+	SYSMESSAGE=You've decided not to travel.
+ONBUTTON=1 //TOWNS
+SRC.DIALOG d_TravelTown
+ONBUTTON=2 //DUNGEONS
+SRC.DIALOG d_TravelDung
+ONBUTTON=3  //SPECIAL PLACES
+SRC.DIALOG d_TravelSpec 
+
+[DIALOG d_TravelTown]                 //TOWNS //TOWNS  //TOWNS   //TOWNS  //TOWNS  //TOWNS //TOWNS
+0, 0	// this is always the size.
+resizepic 0 0 3600 215 200
+page 0
+text 40 17 0 0   
+text 40 37 1152 1
+text 40 57 1152 2
+text 40 77 1152 3
+text 40 97 1152 4
+text 40 117 1152 5   
+text 40 137 1152 6
+text 40 157 0 7
+button 20 40 1209 1210 1 0 1
+button 20 60 1209 1210 1 0 2
+button 20 80 1209 1210 1 0 3
+button 20 100 1209 1210 1 0 4
+button 20 120 1209 1210 1 0 5
+button 20 140 1209 1210 1 0 7
+button 20 160 1209 1210 1 0 6
+
+[DIALOG d_TravelTown TEXT]
+Which Town?
+Britain
+Serpent's Hold
+Cove
+Vesper
+Bucaneer's Den
+Papua
+Previous
+
+[DIALOG d_TravelTown BUTTON]
+ONBUTTON=0
+SYSMESSAGE=Menu Aborted
+ONBUTTON=1 //BRITAIN
+SRC.GO 1427,1697,0
+ONBUTTON=2 //SERPENTS HOLD
+SRC.GO 3009,3363,15
+ONBUTTON=3 //COVE
+SRC.GO 2264,1202,0
+ONBUTTON=4 //VESPER
+SRC.GO 2892,686,0
+ONBUTTON=5 //BUCANEER'S DEN
+SRC.GO 2733,2160,0
+ONBUTTON=6//PREVIOUS
+SRC.DIALOG d_Travel
+ONBUTTON=7//PAPUA
+SRC.GO=5726,3205,-3
+
+[DIALOG d_TravelDung]               //DUNGEONS//DUNGEONS//DUNGEONS//DUNGEONS//DUNGEONS
+0, 0	// this is always the size.
+resizepic 0 0 3600 215 165
+page 0
+text 40 17 0 0   
+text 40 37 1152 1
+text 40 57 1152 2
+text 40 77 1152 3
+text 40 97 1152 4
+text 40 117 0 5   
+button 20 40 1209 1210 1 0 1
+button 20 60 1209 1210 1 0 2
+button 20 80 1209 1210 1 0 3
+button 20 100 1209 1210 1 0 4
+button 20 120 1209 1210 1 0 5
+
+[DIALOG d_TravelDung TEXT]
+Which Dungeon?
+Destard
+Despise
+Deceit
+Wrong
+Previous
+
+[DIALOG d_TravelDung BUTTON]
+ONBUTTON=0
+SYSMESSAGE=Menu Aborted
+ONBUTTON=1 //DESTARD
+SRC.GO=1182,2639,0
+ONBUTTON=2 //DESPISE
+SRC.GO=1300,1075,0
+ONBUTTON=3 //DECEIT
+SRC.GO=4115,433,5
+ONBUTTON=4 //WRONG
+SRC.GO=2049,238,10
+ONBUTTON=5 //PREVIOUS
+SRC.DIALOG d_Travel
+
+[DIALOG d_TravelSpec]	//SPECIAL PLACES
+0, 0	// this is always the size.
+resizepic 0 0 3600 205 225
+page 0
+text 40 17 0 0   
+text 40 37 1152 1
+text 40 57 1152 2
+text 40 77 1152 3
+text 40 97 1152 4
+text 40 117 1152 5  
+text 40 137 1152 6  
+text 40 157 1152 7 
+text 40 177 0 8
+button 20 40 1209 1210 1 0 1
+button 20 60 1209 1210 1 0 2
+button 20 80 1209 1210 1 0 3
+button 20 100 1209 1210 1 0 4
+button 20 120 1209 1210 1 0 5
+button 20 140 1209 1210 1 0 6
+button 20 160 1209 1210 1 0 7
+button 20 180 1209 1210 1 0 8
+
+[DIALOG d_TravelSpec TEXT]
+Which Special Place?
+Fight Night
+Green Acres
+Britain Graveyard
+Britain Mines
+Battle Arena
+Special People
+Star Chamber
+Previous
+
+[DIALOG d_TravelSpec BUTTON]
+ONBUTTON=0
+SYSMESSAGE=Menu Aborted
+ONBUTTON=1 //Fight Night
+SRC.GO=1971,811,25
+ONBUTTON=2 //Green Acres
+SRC.GO 5434,1099,0
+ONBUTTON=3 //Britain Graveyard
+SRC.GO=1384,1497,10
+ONBUTTON=4 //Britain Mines
+SRC.GO=1264,1256,0
+ONBUTTON=5 //BATTLE ARENA
+SRC.GO=5193,1180,0
+ONBUTTON=6 //SPECIAL PEOPLE
+SRC.GO=5187,1532,0
+ONBUTTON=7 //STAR CHAMBER
+SRC.GO=5146,1774,0
+ONBUTTON=8 //PREVIOUS
+SRC.DIALOG d_Travel
+
+
+[DIALOG d_travelsupply]
+// Sample dialog to travel to the supply hall.
+0, 0	// this is always the size.
+resizepic 0 0 3600 225 100
+page 0
+text 40 17 0 0   
+text 40 37 1152 1
+button 20 40 1209 1210 1 0 1
+
+[DIALOG d_TravelSupply TEXT]
+Where to?
+Supply Room
+
+[DIALOG d_TravelSupply BUTTON]
+ONBUTTON=0
+SYSMESSAGE=Menu Aborted
+ONBUTTON=1 //Supply Room
+SRC.GO=5271,1234,5
+
+[DIALOG d_thaumatergy_spellbook]
+0, 0
+PAGE 0
+gumppic 50 50 500
+PAGE 1
+button 406 50 502 502 0 2 0 //next page
+button 80 90 2117 2118 0 2 0 //go to earth spells
+button 80 115 2117 2118 0 2 0 //go to water spells
+button 80 140 2117 2118 0 3 0 //go to fire spells
+button 80 165 2117 2118 0 3 0 //go to wind spells
+button 80 190 2117 2118 0 4 0 //go to lightning spells
+button 80 215 2117 2118 0 4 0 //go to ice spells
+button 80 240 2117 2118 0 5 0 //go to snow spells
+button 275 90 2117 2118 0 5 0 //go to poison spells
+button 275 115 2117 2118 0 6 0 //go to swamp spells
+button 275 140 2117 2118 0 6 0 //go to blood spells
+button 275 165 2117 2118 0 7 0 //go to holy spells
+button 275 190 2117 2118 0 7 0 //go to dark spells
+button 275 215 2117 2118 0 8 0 //go to etherial spells
+button 275 240 2117 2118 1 0 0 //cancel and close book
+text 79 54 1101 0
+text 105 87 1101 1
+text 105 112 1101 2
+text 105 137 1101 3
+text 105 162 1101 4
+text 105 187 1101 5
+text 105 212 1101 6
+text 105 237 1101 7
+text 300 87 1101 8
+text 300 112 1101 9
+text 300 137 1101 10
+text 300 162 1101 11
+text 300 187 1101 12
+text 300 212 1101 13
+text 300 237 1101 14
+PAGE 2
+button 50 51 501 501 0 1 0 //go to last page
+button 405 50 502 502 0 3 0 //go to next page
+text 114 54 1101 15
+text 105 82 1101 16
+text 105 100 1101 17
+text 105 118 1101 18
+text 105 136 1101 19
+text 105 154 1101 20
+text 105 172 1101 21
+text 105 190 1101 22
+text 105 208 1101 23
+text 105 226 1101 24
+text 110 244 1101 25
+button 80 85 2117 2118 1 0 1
+button 80 103 2117 2118 1 0 2
+button 80 121 2117 2118 1 0 3
+button 80 139 2117 2118 1 0 4
+button 80 157 2117 2118 1 0 5
+button 80 175 2117 2118 1 0 6
+button 80 193 2117 2118 1 0 7
+button 80 211 2117 2118 1 0 8
+button 80 229 2117 2118 1 0 9
+text 288 54 1101 26
+text 300 82 1101 27
+text 300 101 1101 28
+text 300 118 1101 29
+text 300 136 1101 30
+text 300 154 1101 31
+text 300 172 1101 32
+text 300 190 1101 33
+text 300 208 1101 34
+text 300 226 1101 35
+text 310 244 1101 36
+button 275 85 2117 2118 1 0 10
+button 275 103 2117 2118 1 0 11
+button 275 121 2117 2118 1 0 12
+button 275 139 2117 2118 1 0 13
+button 275 157 2117 2118 1 0 14
+button 275 175 2117 2118 1 0 15
+button 275 193 2117 2118 1 0 16
+button 275 211 2117 2118 1 0 17
+button 275 229 2117 2118 1 0 18
+PAGE 3
+button 50 51 501 501 0 2 0
+button 405 50 502 502 0 4 0
+text 114 54 1101 37
+text 105 82 1101 38
+text 105 100 1101 39
+text 105 118 1101 40
+text 105 136 1101 41
+text 105 154 1101 42
+text 105 172 1101 43
+text 105 190 1101 44
+text 105 208 1101 45
+text 105 226 1101 46
+text 110 244 1101 47
+button 80 85 2117 2118 1 0 19
+button 80 103 2117 2118 1 0 20
+button 80 121 2117 2118 1 0 21
+button 80 139 2117 2118 1 0 22
+button 80 157 2117 2118 1 0 23
+button 80 175 2117 2118 1 0 24
+button 80 193 2117 2118 1 0 25
+button 80 211 2117 2118 1 0 26
+button 80 229 2117 2118 1 0 27
+text 288 54 1101 48
+text 300 82 1101 49
+text 300 101 1101 50
+text 300 118 1101 51
+text 300 136 1101 52
+text 300 154 1101 53
+text 300 172 1101 54
+text 300 190 1101 55
+text 300 208 1101 56
+text 300 226 1101 57
+text 310 244 1101 58
+button 275 85 2117 2118 1 0 28
+button 275 103 2117 2118 1 0 29
+button 275 121 2117 2118 1 0 30
+button 275 139 2117 2118 1 0 31
+button 275 157 2117 2118 1 0 32
+button 275 175 2117 2118 1 0 33
+button 275 193 2117 2118 1 0 34
+button 275 211 2117 2118 1 0 35
+button 275 229 2117 2118 1 0 36
+PAGE 4
+button 50 51 501 501 0 3 0
+button 405 50 502 502 0 5 0
+text 114 54 1101 59
+text 105 82 1101 60
+text 105 100 1101 61
+text 105 118 1101 62
+text 105 136 1101 63
+text 105 154 1101 64
+text 105 172 1101 65
+text 105 190 1101 66
+text 105 208 1101 67
+text 105 226 1101 68
+text 110 244 1101 69
+button 80 85 2117 2118 1 0 37
+button 80 103 2117 2118 1 0 38
+button 80 121 2117 2118 1 0 39
+button 80 139 2117 2118 1 0 40
+button 80 157 2117 2118 1 0 41
+button 80 175 2117 2118 1 0 42
+button 80 193 2117 2118 1 0 43
+button 80 211 2117 2118 1 0 44
+button 80 229 2117 2118 1 0 45
+text 288 54 1101 70
+text 300 82 1101 71
+text 300 101 1101 72
+text 300 118 1101 73
+text 300 136 1101 74
+text 300 154 1101 75
+text 300 172 1101 76
+text 300 190 1101 77
+text 300 208 1101 78
+text 300 226 1101 79
+text 310 244 1101 80
+button 275 85 2117 2118 1 0 46
+button 275 103 2117 2118 1 0 47
+button 275 121 2117 2118 1 0 48
+button 275 139 2117 2118 1 0 49
+button 275 157 2117 2118 1 0 50
+button 275 175 2117 2118 1 0 51
+button 275 193 2117 2118 1 0 52
+button 275 211 2117 2118 1 0 53
+button 275 229 2117 2118 1 0 54
+PAGE 5
+button 50 51 501 501 0 4 0
+button 405 50 502 502 0 6 0
+text 114 54 1101 81
+text 105 82 1101 82
+text 105 100 1101 83
+text 105 118 1101 84
+text 105 136 1101 85
+text 105 154 1101 86
+text 105 172 1101 87
+text 105 190 1101 88
+text 105 208 1101 89
+text 105 226 1101 90
+text 110 244 1101 91
+button 80 85 2117 2118 1 0 55
+button 80 103 2117 2118 1 0 56
+button 80 121 2117 2118 1 0 57
+button 80 139 2117 2118 1 0 58
+button 80 157 2117 2118 1 0 59
+button 80 175 2117 2118 1 0 60
+button 80 193 2117 2118 1 0 61
+button 80 211 2117 2118 1 0 62
+button 80 229 2117 2118 1 0 63
+text 288 54 1101 92
+text 300 82 1101 93
+text 300 101 1101 94
+text 300 118 1101 95
+text 300 136 1101 96
+text 300 154 1101 97
+text 300 172 1101 98
+text 300 190 1101 99
+text 300 208 1101 100
+text 310 226 1101 101
+text 300 244 1101 102
+button 275 85 2117 2118 1 0 64
+button 275 103 2117 2118 1 0 65
+button 275 121 2117 2118 1 0 66
+button 275 139 2117 2118 1 0 67
+button 275 157 2117 2118 1 0 68
+button 275 175 2117 2118 1 0 69
+button 275 193 2117 2118 1 0 70
+button 275 211 2117 2118 1 0 71
+button 275 247 2117 2118 1 0 72
+PAGE 6
+button 50 51 501 501 0 5 0
+button 405 50 502 502 0 7 0
+text 114 54 1101 103
+text 105 82 1101 104
+text 105 100 1101 105
+text 105 118 1101 106
+text 105 136 1101 107
+text 105 154 1101 108
+text 105 172 1101 109
+text 105 190 1101 110
+text 105 208 1101 111
+text 105 226 1101 112
+text 110 244 1101 113
+button 80 85 2117 2118 1 0 73
+button 80 103 2117 2118 1 0 74
+button 80 121 2117 2118 1 0 75
+button 80 139 2117 2118 1 0 76
+button 80 157 2117 2118 1 0 77
+button 80 175 2117 2118 1 0 78
+button 80 193 2117 2118 1 0 79
+button 80 211 2117 2118 1 0 80
+button 80 229 2117 2118 1 0 81
+text 288 54 1101 114
+text 300 82 1101 115
+text 300 101 1101 116
+text 300 118 1101 117
+text 300 136 1101 118
+text 300 154 1101 119
+text 300 172 1101 120
+text 300 190 1101 121
+text 300 208 1101 122
+text 300 226 1101 123
+text 310 244 1101 124
+button 275 85 2117 2118 1 0 82
+button 275 103 2117 2118 1 0 83
+button 275 121 2117 2118 1 0 84
+button 275 139 2117 2118 1 0 85
+button 275 157 2117 2118 1 0 86
+button 275 175 2117 2118 1 0 87
+button 275 193 2117 2118 1 0 88
+button 275 211 2117 2118 1 0 89
+button 275 229 2117 2118 1 0 90
+PAGE 7
+button 50 51 501 501 0 6 0
+button 405 50 502 502 0 8 0
+text 114 54 1101 125
+text 105 82 1101 126
+text 105 100 1101 127
+text 105 118 1101 128
+text 105 136 1101 129
+text 105 154 1101 130
+text 105 172 1101 131
+text 105 190 1101 132
+text 105 208 1101 133
+text 105 226 1101 134
+text 110 244 1101 135
+button 80 85 2117 2118 1 0 91
+button 80 103 2117 2118 1 0 92
+button 80 121 2117 2118 1 0 93
+button 80 139 2117 2118 1 0 94
+button 80 157 2117 2118 1 0 95
+button 80 175 2117 2118 1 0 96
+button 80 193 2117 2118 1 0 97
+button 80 211 2117 2118 1 0 98
+button 80 229 2117 2118 1 0 99
+text 288 54 1101 136
+text 300 82 1101 137
+text 300 101 1101 138
+text 300 118 1101 139
+text 300 136 1101 140
+text 300 154 1101 141
+text 300 172 1101 142
+text 300 190 1101 143
+text 300 208 1101 144
+text 300 226 1101 145
+text 310 244 1101 146
+button 275 85 2117 2118 1 0 100
+button 275 103 2117 2118 1 0 101
+button 275 121 2117 2118 1 0 102
+button 275 139 2117 2118 1 0 103
+button 275 157 2117 2118 1 0 104
+button 275 175 2117 2118 1 0 105
+button 275 193 2117 2118 1 0 106
+button 275 211 2117 2118 1 0 107
+button 275 229 2117 2118 1 0 108
+PAGE 8
+button 50 51 501 501 0 7 0
+text 114 54 1101 147
+text 105 82 1101 148
+text 105 100 1101 149
+text 105 118 1101 150
+text 105 136 1101 151
+text 105 154 1101 152
+text 105 172 1101 153
+text 105 190 1101 154
+text 105 208 1101 155
+text 105 226 1101 156
+button 80 85 2117 2118 1 0 109
+button 80 103 2117 2118 1 0 110
+button 80 121 2117 2118 1 0 111
+button 80 139 2117 2118 1 0 112
+button 80 157 2117 2118 1 0 113
+button 80 175 2117 2118 1 0 114
+button 80 193 2117 2118 1 0 115
+button 80 211 2117 2118 1 0 116
+button 80 229 2117 2118 1 0 117
+
+[DIALOG d_thaumatergy_spellbook TEXT]
+Thaumatergy Spellbook
+Earth Magic
+Water Magic
+Fire Magic
+Wind Magic
+Lightning Magic
+Ice Magic
+Snow Magic
+Poison Magic
+Swamp Magic
+Blood Magic
+Holy Magic
+Dark Magic
+Etherial Magic
+Close Spellbook
+Earth Magic
+Stone
+Wall of Stone
+Stoneskin
+Mudslide
+Boulder
+Golem
+Petrify
+Earthquake
+Summon Earth
+Elemental
+Water Magic
+Sprinkle
+Bubble
+Water Cannon
+Flood
+Erosion
+Undertow
+Waterfall
+Tidal Wave
+Summon Water
+Elemental
+Fire Magic
+Flaming Arrow
+Fireball
+Flame Shield
+Fire Field
+Fire Bolt
+Explosion
+Flame Wave
+Flamestrike
+Summon Fire
+Elemental
+Wind Magic
+Gust
+Fog
+Sonic Boom
+Gale
+Tornado
+Vaccum
+Hurricane
+Whirl Wind
+Summon Air
+Elemental
+Lightning Magic
+Spark
+Lightning
+Energy Field
+Ball Lightning
+Shock
+Chain Lightning
+Nova
+Luminare
+Summon Lightning
+Elemental
+Ice Magic
+Ice Cube
+Wall of Ice
+Sleet
+Ice Trap
+Icesicle
+Deep Freeze
+Absolute Zero
+Ice Strike
+Summon Ice
+Elemental
+Snow Magic
+Snowball
+Snow Drift
+Cold Chill
+Frost Bite
+Snow Man
+Blizzard
+Avalanche
+Whiteout
+Summon Snow
+Elemental
+Poison Magic
+Lesser Poison
+Toxic Gas
+Poison
+Poison Field
+Venom
+Greater Poison
+Bio
+Summon Poison
+Elemental
+Deadly Poison
+Swamp Magic
+Sludge
+Slime
+Swamp Tentacles
+Sewage
+Ensnare
+Swamp Gas
+Acid Rain
+Bad Breath
+Summon Swamp
+Elemental
+Blood Magic
+Harm
+Vampire
+Mana Drain
+Mana Vampire
+Exhaustion
+Stamina Vampire
+Blood Lust
+Corpse Explode
+Summon Blood
+Elemental
+Holy Magic
+Holy Light
+Holy Vision
+Holy Wind
+Holy Beam
+Destroy Sin
+Holy Blast
+Cleanse
+Light Pilar
+Summon Holy
+Elemental
+Dark Magic
+Unholy Light
+Darkness
+Unholy Strength
+Demi
+Evil Prescence
+Quarter
+Dark Matter
+Dark Holy
+Summon Shadow
+Elemental
+Etherial Magic
+Energy Bolt
+Blade Spirits
+Meteor Swarm
+Comet
+Energy Vortex
+Ultima
+Megid
+Megedo
+Armagedon
+
+[DIALOG d_thaumatergy_spellbook BUTTON]
+on=1
+SRC.NEWITEM stone_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=2
+SRC.NEWITEM wall_of_stone_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=3
+SRC.NEWITEM stoneskin_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=4
+SRC.NEWITEM mudslide_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=5
+SRC.NEWITEM boulder_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=6
+SRC.NEWITEM golem_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=7
+SRC.NEWITEM petrify_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=8
+SRC.NEWITEM earthquake_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=9
+SRC.NEWITEM summon_earth_elemental_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=10
+SRC.NEWITEM sprinkle_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=11
+SRC.NEWITEM bubble_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=12
+SRC.NEWITEM water_cannon_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=13
+SRC.NEWITEM flood_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=14
+SRC.NEWITEM erosion_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=15
+SRC.NEWITEM undertow_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=16
+SRC.NEWITEM water_fall_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=17
+SRC.NEWITEM tidal_wave_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=18
+SRC.NEWITEM summon_water_elemental_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=19
+SRC.NEWITEM flaming_arrow_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=20
+SRC.NEWITEM fireball_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=21
+SRC.NEWITEM flame_shield_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=22
+SRC.NEWITEM fire_field_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=23
+SRC.NEWITEM fire_bolt_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=24
+SRC.NEWITEM explosion_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=25
+SRC.NEWITEM flame_wave_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=26
+SRC.NEWITEM flamestrike_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=27
+SRC.NEWITEM summon_fire_elemental_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=28
+SRC.NEWITEM gust_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=29
+SRC.NEWITEM fog_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=30
+SRC.NEWITEM sonic_boom_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=31
+SRC.NEWITEM gale_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=32
+SRC.NEWITEM tornado_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=33
+SRC.NEWITEM vaccum_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=34
+SRC.NEWITEM hurricane_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=35
+SRC.NEWITEM whirl_wind_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=36
+SRC.NEWITEM summon_air_elemental_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=37
+SRC.NEWITEM spark_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=38
+SRC.NEWITEM lightning_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=39
+SRC.NEWITEM energy_field_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=40
+SRC.NEWITEM ball_lightning_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=41
+SRC.NEWITEM shock_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=42
+SRC.NEWITEM chain_lightning_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=43
+SRC.NEWITEM nova_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=44
+SRC.NEWITEM luminare_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=45
+SRC.NEWITEM summon_lightning_elemental_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=46
+SRC.NEWITEM ice_cube_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=47
+SRC.NEWITEM wall_of_ice_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=48
+SRC.NEWITEM sleet_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=49
+SRC.NEWITEM ice_trap_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=50
+SRC.NEWITEM icesicle_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=51
+SRC.NEWITEM deep_freeze_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=52
+SRC.NEWITEM absolute_zero_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=53
+SRC.NEWITEM ice_strike_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=54
+SRC.NEWITEM summon_ice_elemental_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=55
+SRC.NEWITEM snowball_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=56
+SRC.NEWITEM snow_drift_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=57
+SRC.NEWITEM cold_chill_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=58
+SRC.NEWITEM frostbite_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=59
+SRC.NEWITEM snow_man_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=60
+SRC.NEWITEM blizzard_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=61
+SRC.NEWITEM avalanche_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=62
+SRC.NEWITEM whiteout_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=63
+SRC.NEWITEM summon_snow_elemental_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=64
+SRC.NEWITEM lesser_poison_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=65
+SRC.NEWITEM toxic_gas_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=66
+SRC.NEWITEM poison_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=67
+SRC.NEWITEM poison_field_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=68
+SRC.NEWITEM venom_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=69
+SRC.NEWITEM greater_poison_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=70
+SRC.NEWITEM bio_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=71
+SRC.NEWITEM summon_poison_elemental_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=72
+SRC.NEWITEM deadly_poison_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=73
+SRC.NEWITEM sludge_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=74
+SRC.NEWITEM slime_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=75
+SRC.NEWITEM summon_swamp_tentacles_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=76
+SRC.NEWITEM sewage_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=77
+SRC.NEWITEM ensnare_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=78
+SRC.NEWITEM swamp_gas_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=79
+SRC.NEWITEM acid_rain_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=80
+SRC.NEWITEM bad_breath_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=81
+SRC.NEWITEM summon_swamp_elemental_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=82
+SRC.NEWITEM harm_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=83
+SRC.NEWITEM vampire_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=84
+SRC.NEWITEM mana_drain_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=85
+SRC.NEWITEM mana_vampire_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=86
+SRC.NEWITEM exhaustion_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=87
+SRC.NEWITEM stamina_vampire_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=88
+SRC.NEWITEM blood_lust_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=89
+SRC.NEWITEM corpse_explode_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=90
+SRC.NEWITEM summon_blood_elemental_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=91
+SRC.NEWITEM holy_light_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=92
+SRC.NEWITEM holy_vision_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=93
+SRC.NEWITEM holy_wind_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=94
+SRC.NEWITEM holy_beam_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=95
+SRC.NEWITEM destroy_sin_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=96
+SRC.NEWITEM holy_blast_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=97
+SRC.NEWITEM cleanse_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=98
+SRC.NEWITEM light_pilar_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=99
+SRC.NEWITEM summon_holy_elemental_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=100
+SRC.NEWITEM unholy_light_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=101
+SRC.NEWITEM darkness_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=102
+SRC.NEWITEM unholy_strength_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=103
+SRC.NEWITEM demi_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=104
+SRC.NEWITEM evil_prescence_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=105
+SRC.NEWITEM quarter_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=106
+SRC.NEWITEM dark_matter_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=107
+SRC.NEWITEM dark_holy_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=108
+SRC.NEWITEM summon_shadow_elemental_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=109
+SRC.NEWITEM energy_bolt_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=110
+SRC.NEWITEM blade_spirits_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=111
+SRC.NEWITEM meteor_swarm_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=112
+SRC.NEWITEM comet_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=113
+SRC.NEWITEM energy_vortex_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=114
+SRC.NEWITEM ultima_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=115
+SRC.NEWITEM megid_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=116
+SRC.NEWITEM megedo_spell
+SRC.ACT.EQUIP
+RETURN 1
+on=117
+SRC.NEWITEM armagedon_spell
+SRC.ACT.EQUIP
+RETURN 1
+
+[EOF]

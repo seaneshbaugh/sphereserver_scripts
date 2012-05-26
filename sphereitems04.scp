@@ -1,0 +1,374 @@
+// This file has all the race specific items, they are organized by race.
+
+[ITEMDEF i_elven_bow]
+ID=i_bow
+NAME=Elven Bow
+TYPE=t_weapon_bow
+FLIP=1
+SKILL=ARCHERY
+VALUE=500
+REQSTR=30
+WEIGHT=.01
+DAM={11 28}
+TWOHANDS=Y
+RESOURCES=i_log 8
+SKILLMAKE=BOWCRAFT 200.0,MAGERY 50.0
+
+CATEGORY=Provisions - Race Items
+SUBSECTION=Elves
+DESCRIPTION=Elven Bow
+
+ON=@Create
+HITPOINTS={100 200}
+COLOR=237
+
+ON=@Equip
+IF (<SRC.TAG.RACE>==Forest Elf) && (!<BRAIN>)
+SRC.TACTICS <SRC.TACTICS>+150
+SRC.ARCHERY <SRC.ARCHERY>+100
+RETURN 1
+ELSE
+SRC.SYSMESSAGE You cannot seem to figure out how to use the bow.
+RETURN 1
+ENDIF
+
+ON=@Unequip
+SRC.TACTICS <SRC.TACTICS>+-150
+SRC.ARCHERY <SRC.ARCHERY>+-100
+RETURN 1
+
+[ITEMDEF i_orcish_bow]
+ID=i_bow
+NAME=Orcish Bow
+TYPE=t_weapon_bow
+FLIP=1
+SKILL=ARCHERY
+VALUE=450
+REQSTR=30
+WEIGHT=1
+DAM={7 14}
+TWOHANDS=Y
+RESOURCES=i_log 8
+SKILLMAKE=BOWCRAFT 150.0,MAGERY 25.0
+
+CATEGORY=Provisions - Race Items
+SUBSECTION=Orcs
+DESCRIPTION=Orcish Bow
+
+ON=@Create
+HITPOINTS={100 200}
+COLOR=237
+
+ON=@Equip
+IF (<SRC.TAG.RACE>==Orc) && (!<BRAIN>)
+SRC.TACTICS <SRC.TACTICS>+50
+SRC.ARCHERY <SRC.ARCHERY>+50
+RETURN 1
+ELSE
+SRC.SYSMESSAGE You cannot seem to figure out how to use the bow.
+RETURN 1
+ENDIF
+
+ON=@Unequip
+SRC.TACTICS <SRC.TACTICS>+-50
+SRC.ARCHERY <SRC.ARCHERY>+-50
+RETURN 1
+
+[ITEMDEF i_barbarian_sewing_kit]
+ID=i_sewing_kit
+NAME=Barbarian Sewing Kit
+TYPE=t_sewing_kit
+VALUE=200
+
+CATEGORY=Provisions - Race Items
+SUBSECTION=Barbarians
+DESCRIPTION=Barbarian Sewing Kit
+
+ON=@Create
+COLOR=0ddd
+
+ON=@DClick
+IF ! (<SRC.RESTEST 1 i_knife_skinning>
+SRC.MESSAGE You need a skinning knife to make use of this.
+RETURN 1
+ENDIF
+IF (<SRC.TAG.RACE>==Barbarian) || (<SRC.ISGM>)
+SRC.MENU=m_armor_barbarian
+RETURN 1
+ELSE
+SRC.MESSAGE Only barbarians can use this tool.
+RETURN 1
+ENDIF
+
+[MENU m_armor_barbarian]
+Bone Armor
+ON=i_bone_chest Bone Tunic (40 Bones)
+IF (<SRC.TAILORING><30.0)
+SRC.MESSAGE You are not skilled enough to make that.
+RETURN 1
+ENDIF
+IF ! (<SRC.RESTEST 40 i_bone>)
+SRC.MESSAGE You do not have enough bones to make this.
+RETURN 1
+ENDIF
+IF (<SRC.TAILORING>>99.9)
+IF (RAND(3)==1) || (RAND(3)==0)
+SRC.SOUND=0248
+SRC.MESSAGE You cut and tie the bones together.
+SRC.MESSAGE You have made a bone tunic.
+SRC.CONSUME=40 i_reag_bone
+NEWITEM=i_bone_chest
+SRC.ACT.NAME=bone tunic crafted by <SRC.NAME>
+SRC.ACT.BOUNCE
+SRC.TAILORING=<SRC.TAILORING>+{ 0.1 5 0.2 5 0.3 4 0.4 3 0.0 2 0.0 3 }
+SRC.MESSAGE With your exceptional skill, you engrave your name onto this item.
+ELSE
+SRC.SOUND=0248
+SRC.MESSAGE You failed to make anything.
+SRC.CONSUME=5 i_reag_bone
+ENDIF
+ELSEIF (<SRC.TAILORING><100.0)
+IF (RAND(3)==1) || (RAND(3)==0)
+SRC.SOUND=0248
+SRC.MESSAGE You cut tie the bones together.
+SRC.MESSAGE You have made a bone tunic.
+SRC.CONSUME=20 i_bone
+SRC.NEWITEM=i_bone_chest
+SRC.ACT.BOUNCE
+SRC.TAILORING=<SRC.TAILORING>+{ 0.1 5 0.2 5 0.3 4 0.4 3 0.0 2 0.0 3 }
+ELSE
+SRC.SOUND=0248
+SRC.MESSAGE You failed to make anything.
+SRC.CONSUME=5 i_bone
+ENDIF
+ENDIF
+
+[ITEMDEF i_savage_mask_1]
+ID=i_mask_tribal_red
+NAME=Tribal Mask
+WEIGHT=2
+
+CATEGORY=Provisions - Race Items
+SUBSECTION=Savages
+DESCRIPTION=Savage Tribal Mask
+
+ON=@Create
+COLOR=0847
+
+[ITEMDEF i_savage_mask_2]
+ID=i_mask_tribal_red
+NAME=Tribal Mask
+WEIGHT=2
+
+CATEGORY=Provisions - Race Items
+SUBSECTION=Savages
+DESCRIPTION=Savage Tribal Mask
+
+ON=@Create
+COLOR=0534
+
+[ITEMDEF i_savage_mask_3]
+ID=i_mask_tribal_red
+NAME=Tribal Mask
+WEIGHT=2
+
+CATEGORY=Provisions - Race Items
+SUBSECTION=Savages
+DESCRIPTION=Savage Tribal Mask
+
+ON=@Create
+COLOR=057e
+
+[ITEMDEF i_savage_mask_4]
+ID=i_mask_tribal_red
+NAME=Tribal Mask
+WEIGHT=2
+
+CATEGORY=Provisions - Race Items
+SUBSECTION=Savages
+DESCRIPTION=Savage Tribal Mask
+
+ON=@Create
+COLOR=0774
+
+[ITEMDEF i_savage_mask_5]
+ID=i_mask_tribal_red
+NAME=Tribal Mask
+WEIGHT=2
+
+CATEGORY=Provisions - Race Items
+SUBSECTION=Savages
+DESCRIPTION=Savage Tribal Mask
+
+ON=@Create
+COLOR=0763
+
+[ITEMDEF i_savage_mask_6]
+ID=i_mask_tribal_red
+NAME=Tribal Mask
+WEIGHT=2
+
+CATEGORY=Provisions - Race Items
+SUBSECTION=Savages
+DESCRIPTION=Savage Tribal Mask
+
+ON=@Create
+COLOR=0592
+
+[ITEMDEF i_savage_mask_7]
+ID=i_mask_tribal_red
+NAME=Tribal Mask
+WEIGHT=2
+
+CATEGORY=Provisions - Race Items
+SUBSECTION=Savages
+DESCRIPTION=Savage Tribal Mask
+
+ON=@Create
+COLOR=05dd
+
+[ITEMDEF i_savage_mask_8]
+ID=i_mask_tribal_red
+NAME=Tribal Mask
+WEIGHT=2
+
+CATEGORY=Provisions - Race Items
+SUBSECTION=Savages
+DESCRIPTION=Savage Tribal Mask
+
+ON=@Create
+COLOR=0612
+
+[ITEMDEF i_tribal_berry]
+ID=i_fruit_apple
+NAME=Tribal Berry
+WEIGHT=0.1
+
+CATEGORY=Provisions - Race Items
+SUBSECTION=Savages
+DESCRIPTION=Tribal Berry
+
+ON=@Create
+COLOR=0529
+
+[ITEMDEF i_savage_paint_kit]
+ID=i_jar_honey
+NAME=Savage Paint Kit
+WEIGHT=1
+
+CATEGORY=Provisions - Race Items
+SUBSECTION=Savages
+DESCRIPTION=Savage Paint Kit
+
+ON=@Create
+COLOR=03be
+
+ON=@DCLICK
+TARGET Who shall wear the savage paint?
+RETURN 1
+
+ON=@TARGON_CHAR
+IF <SRC.TARG.SERIAL>==<SRC.SERIAL>
+IF <SRC.TAG.RACE>==Barbarian
+SRC.MESSAGE You look at the paints and feel a sense of disgust.
+SRC.SYSMESSAGE As a Barbarian you cannot use this.
+RETURN 1
+ENDIF
+
+SRC.KARMA <SRC.KARMA>+-1000
+SRC.ANIM 33
+SRC.SOUND 023e
+SRC.OSKIN=03be
+SRC.COLOR=03be
+SRC.TITLE=,the Savage
+SRC.SYSMESSAGE You have become one of the savage peoples.
+SRC.FINDID.i_savage_paint_kit.REMOVE
+SRC.TAG.RACE=Savage
+RETURN 1
+ENDIF
+
+[ITEMDEF i_tribal_spear]
+DEFNAME=i_tribal_spear
+ID=i_spear
+NAME=Tribal Spear
+
+CATEGORY=Provisions - Race Items
+SUBSECTION=Savages
+DESCRIPTION=Tribal Spear
+
+ON=@Create
+HITPOINTS={100 190}
+COLOR=0156
+
+
+
+
+
+[ITEMDEF i_blood]
+ID={0122b 1 0122b 1 0122c 1 0122d 1 0122e 1}
+NAME=Blood
+
+CATEGORY=Provisions - Race Items
+SUBSECTION=Vampires
+DESCRIPTION=Blood
+
+ON=@DClick
+IF <SRC.TAG.RACE>==Vampire
+IF <SRC.RESTEST 1 i_bottle_empty>
+SRC.MESSAGE You put some blood into a bottle.
+SRC.SOUND=0240
+SRC.CONSUME=i_bottle_empty
+SRC.NEWITEM=i_bottle_of_blood
+SRC.ACT.BOUNCE
+REMOVE
+RETURN 1
+ELSE
+SRC.MESSAGE You don't have any empty bottles.
+RETURN 1
+ENDIF
+ENDIF
+
+[ITEMDEF i_bottle_of_blood]
+ID=i_bottle_black
+NAME=bottle of blood
+WEIGHT=1
+
+CATEGORY=Provisions - Race Items
+SUBSECTION=Vampires
+DESCRIPTION=Bottle of Blood
+
+ON=@Create
+COLOR=020
+
+ON=@DClick
+IF <SRC.TAG.RACE>!=Vampire
+SRC.MESSAGE Only vampires may drink this blood.
+RETURN 1
+ELSEIF <SRC.HITS> >= <SRC.STR>
+SRC.MESSAGE You are already fully healed.
+RETURN 1
+ELSE
+SRC.SOUND=30
+SRC.SOUND=31
+SRC.HITS=<SRC.HITS> + {10 1 15 5 20 1}
+REMOVE
+SRC.NEWITEM=i_bottle_empty
+SRC.ACT.BOUNCE
+SRC.MESSAGE You feel refreshed as you drink the blood.
+RETURN 1
+ENDIF
+
+[ITEMDEF i_bloodstone]
+ID=i_rock_7
+NAME=Bloodstone
+WEIGHT=2
+RESOURCES=i_rock_7 1,i_blood 2
+
+CATEGORY=Provisions - Race Items
+SUBSECTION=Vampire
+DESCRIPTION=Bloodstone
+
+ON=@Create
+COLOR=colors_blood
+
+[EOF]

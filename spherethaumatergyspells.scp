@@ -1,0 +1,2578 @@
+//EARTH SPELLS
+
+//Stone
+[ITEMDEF i_stone_scroll]
+ID=i_map_rolled
+NAME=Stone Scroll
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Earth Scrolls
+DESCRIPTION=Stone Scroll
+
+ON=@Create
+COLOR 040C
+
+ON=@DClick
+SRC.NEWITEM stone_spell
+SRC.ACT.EQUIP
+RETURN 1
+
+[ITEMDEF i_stone_spell_stone]
+ID=i_rock_plain
+NAME=A Magical Stone
+
+ON=@Create
+TIMER 1
+
+ON=@Timer
+REMOVE
+RETURN 1
+
+[ITEMDEF stone_spell]
+ID=i_memory
+TYPE=t_eq_script
+NAME=Stone Spell
+
+CATEGORY=Miscellaneous
+SUBSECTION=Spell Memory Items
+DESCRIPTION=Stone
+
+ON=@Create
+ATTR attr_can_decay
+
+ON=@Equip
+VAR.SPELLCHECK 0
+SRC.f_mageryskillcheck 0
+SRC.f_manacheck 3
+IF <VAR.SPELLCHECK>0
+RETURN 1
+ENDIF
+SRC.ANIM 16
+SRC.SAY In Yelm Por
+TARGET Select the target for the spell.
+
+ON=@Targon_Item
+SRC.SYSMESSAGE That is not a valid target.
+RETURN 1
+
+ON=@Targon_Ground
+SRC.SYSMESSAGE That is not a valid target.
+RETURN 1
+
+ON=@Targon_Char
+IF (<SRC.TARG.SERIAL> == <SRC.SERIAL>)
+SRC.SYSMESSAGE You cannot cast that on yourself.
+RETURN 1
+ENDIF
+VAR.FIZZLECHECK 0
+SRC.f_fizzlecheck 400
+IF <VAR.FIZZLCHECK>0
+RETURN 1
+ENDIF
+f_mageryskillgain
+SRC.MANA <SRC.MANA>+-3
+SRC.TAG.EARTHSKILL <SRC.TAG.EARTHSKILL>+10
+SRC.TARG.NEWITEM i_stone_spell_stone
+SRC.TARG.ACT.P <SRC.TARG.P>
+SOUND 013F
+f_earth_check
+f_spell_damage 
+RETURN 1
+
+//Wall of Stone
+[ITEMDEF i_wall_of_stone_scroll]
+ID=i_map_rolled
+NAME=Wall of Stone Scroll
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Earth Scrolls
+DESCRIPTION=Wall of Stone Scroll
+
+ON=@Create
+COLOR 040C
+
+ON=@DCLICK
+SRC.NEWITEM wall_of_stone_spell
+SRC.ACT.EQUIP
+RETURN 1
+
+[ITEMDEF wall_of_stone_spell]
+ID=i_memory
+TYPE=t_eq_script
+NAME=Wall of Stone Spell
+
+ON=@Create
+ATTR attr_can_decay
+
+ON=@Equip
+VAR.SPELLCHECK 0
+f_earthskillcheck 2500
+f_mageryskillcheck 100
+f_manacheck 6
+IF <VAR.SPELLCHECK>0
+RETURN 1
+ENDIF
+SRC.TAG.TEMPWALLSTONETAG <SRC.MAGERY>
+SRC.CAST s_wall_of_stone
+SRC.TAG.EARTHSKILL <SRC.TAG.EARTHSKILL> + 20
+IF <SRC.MAGERY> > <SRC.TAG.TEMPWALLSTONETAG>
+SRC.MAGERY <SRC.TAG.TEMPWALLSTONETAG>
+ENDIF
+SRC.TAG.TEMPWALLSTONETAG
+f_mageryskillgain
+RETURN 1
+
+//Stoneskin
+[ITEMDEF i_stoneskin_scroll]
+ID=i_map_rolled
+NAME=Stoneskin Scroll
+
+ON=@Create
+COLOR 040C
+
+ON=@DClick
+SRC.NEWITEM stoneskin_spell
+SRC.ACT.EQUIP
+RETURN 1
+
+[ITEMDEF stoneskin_spell]
+ID=i_memory
+TYPE=t_eq_script
+NAME=Stoneskin Spell
+
+ON=@Create
+TIMER 45
+ATTR attr_can_decay
+
+ON=@Equip
+VAR.SPELLCHECK 0
+f_earthskillcheck 5000
+f_mageryskillcheck 300
+f_manacheck 6
+IF <VAR.SPELLCHECK>0
+RETURN 10
+ENDIF
+SRC.TAG.TEMPSTONESKINTAG <SRC.MAGERY>
+SRC.CAST s_stoneskin
+SRC.TAG.EARTHSKILL <SRC.TAG.EARTHSKILL> + 40
+IF <SRC.MAGERY> > <SRC.TAG.TEMPSTONESKINTAG>
+SRC.MAGERY <SRC.TAG.TEMPSTONESKINTAG>
+ENDIF
+SRC.TAG.TEMPSTONESKINTAG
+f_mageryskillgain
+RETURN 1
+
+//Mudslide
+[ITEMDEF i_mudslide_scroll]
+ID=i_map_rolled
+NAME=Mudslide Scroll
+
+ON=@Create
+COLOR 040C
+
+ON=@DClick
+SRC.NEWITEM mudslide_spell
+SRC.ACT.EQUIP
+RETURN 1
+
+[ITEMDEF mudslide_spell]
+ID=i_memory
+TYPE=t_eq_script
+NAME=Mudslide Spell
+
+ON=@Create
+ATTR attr_can_decay
+
+ON=@Equip
+VAR.SPELLCHECK 0
+SRC.f_mageryskillcheck 400
+SRC.f_manacheck 15
+SRC.f_earthskillcheck 10000
+IF <VAR.SPELLCHECK>0
+RETURN 1
+ENDIF
+SRC.ANIM 16
+SRC.SAY In Yelm Grav Por
+TARGET Select the target for the spell.
+
+ON=@Targon_Item
+SRC.SYSMESSAGE That is not a valid target.
+RETURN 1
+
+ON=@Targon_Ground
+SRC.SYSMESSAGE That is not a valid target.
+RETURN 1
+
+ON=@Targon_Char
+IF (<SRC.TARG.SERIAL> == <SRC.SERIAL>)
+SRC.SYSMESSAGE You cannot cast that on yourself.
+RETURN 1
+ENDIF
+VAR.FIZZLECHECK 0
+SRC.f_fizzlecheck 800
+IF <VAR.FIZZLCHECK>0
+RETURN 1
+ENDIF
+f_mageryskillgain
+SRC.MANA <SRC.MANA>+-15
+SRC.TAG.EARTHSKILL <SRC.TAG.EARTHSKILL> + 80
+SRC.TARG.NEWITEM i_mudslide
+SRC.TARG.ACT.P <SRC.TARG.P>
+SOUND 011
+SRC.TARG.DAMAGE <SRC.MAGERY>/150
+RETURN 1
+
+[ITEMDEF i_mudslide]
+ID=034F9
+NAME=a mudslide
+
+ON=@Create
+ATTR attr_can_decay
+COLOR 040C
+TIMER 1
+
+//Boulder
+[ITEMDEF i_boulder_scroll]
+ID=i_map_rolled
+NAME=Boulder Scroll
+
+ON=@Create
+COLOR 040C
+
+ON=@DClick
+SRC.NEWITEM boulder_spell
+SRC.ACT.EQUIP
+RETURN 1
+
+[ITEMDEF i_boulder_spell_boulder]
+ID=01358
+NAME=A Magical Boulder
+
+ON=@Create
+TIMER 1
+
+ON=@Timer
+REMOVE
+
+[ITEMDEF boulder_spell]
+ID=i_memory
+TYPE=t_eq_script
+NAME=Boulder Spell
+
+ON=@Create
+ATTR attr_decay
+
+ON=@Equip
+VAR.SPELLCHECK 0
+SRC.f_mageryskillcheck 500
+SRC.f_manacheck 20
+SRC.f_earthskillcheck 20000
+IF <VAR.SPELLCHECK>0
+RETURN 1
+ENDIF
+SRC.ANIM 16
+SRC.SAY In Vas Yelm Por
+TARGET Select the target for the spell.
+
+ON=@Targon_Item
+SRC.SYSMESSAGE That is not a valid target.
+RETURN 1
+
+ON=@Targon_Ground
+SRC.SYSMESSAGE That is not a valid target.
+RETURN 1
+
+ON=@Targon_Char
+IF (<SRC.TARG.SERIAL> == <SRC.SERIAL>)
+SRC.SYSMESSAGE You cannot cast that on yourself.
+RETURN 1
+ENDIF
+VAR.FIZZLECHECK 0
+SRC.f_fizzlecheck 900
+IF <VAR.FIZZLCHECK>0
+RETURN 1
+ENDIF
+f_mageryskillgain
+SRC.MANA <SRC.MANA>+-20
+SRC.TAG.EARTHSKILL <SRC.TAG.EARTHSKILL> + 160
+SRC.TARG.NEWITEM i_boulder_spell_boulder
+SRC.TARG.ACT.P <SRC.TARG.P>
+SOUND 013F
+SRC.TARG.DAMAGE <SRC.MAGERY>/100
+RETURN 1
+
+//Golem
+[ITEMDEF i_golem_scroll]
+ID=i_map_rolled
+NAME=Golem Scroll
+
+ON=@Create
+COLOR 040C
+
+ON=@DClick
+SRC.NEWITEM golem_spell
+SRC.ACT.EQUIP
+RETURN 1
+
+[ITEMDEF golem_spell]
+ID=i_memory
+TYPE=t_eq_script
+NAME=Golem Spell
+
+ON=@Create
+ATTR=attr_decay
+
+ON=@Equip
+VAR.SPELLCHECK 0
+SRC.f_mageryskillcheck 600
+SRC.f_manacheck 30
+SRC.f_earthskillcheck 40000
+IF <VAR.SPELLCHECK>0
+RETURN 1
+ENDIF
+SRC.ANIM 16
+SRC.SAY Kal Bet Xen Ylem
+TARGETG Where do you wish to summon the creature?
+
+ON=@Targon_Ground
+VAR.FIZZLECHECK 0
+SRC.f_fizzlecheck 1000
+IF <VAR.FIZZLCHECK>0
+RETURN 1
+ENDIF
+f_mageryskillgain
+SRC.MANA <SRC.MANA>+-30
+SRC.TAG.EARTHSKILL <SRC.TAG.EARTHSKILL> + 320
+IF <SRC.MAGERY> >= 3000
+SRC.NEWNPC c_steelgolem_make
+SRC.ACT.P <SRC.TARG.P>
+SRC.ACT.NEWITEM i_memory
+SRC.ACT.ACT.COLOR 02
+SRC.ACT.ACT.LINK <SRC.UID>
+SRC.ACT.EQUIP <SRC.ACT.ACT>
+SRC.ACT.FLAGS <SRC.ACT.FLAGS>|statf_conjured
+SRC.NEWNPC c_steelgolem_make
+SRC.ACT.P <SRC.TARG.P>
+SRC.ACT.NEWITEM i_memory
+SRC.ACT.ACT.COLOR 02
+SRC.ACT.ACT.LINK <SRC.UID>
+SRC.ACT.EQUIP <SRC.ACT.ACT>
+SRC.ACT.FLAGS <SRC.ACT.FLAGS>|statf_conjured
+ELSEIF <SRC.MAGERY> >= 2000
+SRC.NEWNPC c_steelgolem_make
+SRC.ACT.P <SRC.TARG.P>
+SRC.ACT.NEWITEM i_memory
+SRC.ACT.ACT.COLOR 02
+SRC.ACT.ACT.LINK <SRC.UID>
+SRC.ACT.EQUIP <SRC.ACT.ACT>
+SRC.ACT.FLAGS <SRC.ACT.FLAGS>|statf_conjured
+ELSEIF <SRC.MAGERY> >= 1000
+SRC.NEWNPC c_stonegolem_make
+SRC.ACT.P <SRC.TARG.P>
+SRC.ACT.NEWITEM i_memory
+SRC.ACT.ACT.COLOR 02
+SRC.ACT.ACT.LINK <SRC.UID>
+SRC.ACT.EQUIP <SRC.ACT.ACT>
+SRC.ACT.FLAGS <SRC.ACT.FLAGS>|statf_conjured
+ELSE
+SRC.NEWNPC c_claygolem_make
+SRC.ACT.P <SRC.TARG.P>
+SRC.ACT.NEWITEM i_memory
+SRC.ACT.ACT.COLOR 02
+SRC.ACT.ACT.LINK <SRC.UID>
+SRC.ACT.EQUIP <SRC.ACT.ACT>
+SRC.ACT.FLAGS <SRC.ACT.FLAGS>|statf_conjured
+
+//Petrify
+[ITEMDEF i_petrify_scroll]
+ID=i_map_rolled
+TYPE=t_scroll
+NAME=Petrify Scroll
+
+ON=@create
+COLOR 040C
+
+ON=@DClick
+SRC.NEWITEM petrify_spell
+SRC.ACT.EQUIP
+RETURN 1
+
+[ITEMDEF petrify_spell]
+ID=i_memory
+TYPE=t_eq_script
+NAME=Petrify Spell
+
+ON=@Create
+ATTR attr_decay
+
+ON=@Equip
+VAR.SPELLCHECK 0
+SRC.f_mageryskillcheck 1100
+SRC.f_manacheck 30
+SRC.f_earthskillcheck 80000
+IF <VAR.SPELLCHECK>0
+RETURN 1
+ENDIF
+SRC.ANIM 16
+SRC.SAY An Por Ylem
+TARGET Select the target for the spell.
+ENDIF
+
+ON=@Targon_Item
+SRC.SYSMESSAGE That is not a valid target.
+RETURN 1
+
+ON=@Targon_Ground
+SRC.SYSMESSAGE That is not a valid target.
+RETURN 1
+
+ON=@Targon_Char
+IF (<SRC.TARG.SERIAL> == <SRC.SERIAL>)
+SRC.SYSMESSAGE You cannot cast that on yourself.
+RETURN 1
+VAR.FIZZLECHECK 0
+SRC.f_fizzlecheck 1100
+IF <VAR.FIZZLCHECK>0
+RETURN 1
+ENDIF
+f_mageryskillgain
+SRC.MANA <SRC.MANA>+-30
+SRC.TAG.EARTHSKILL <SRC.TAG.EARTHSKILL> + 640
+SRC.TARG.EFFECT 2,037be,1,5,1
+SRC.SOUND 01E6
+SRC.NEWITEM i_petrify_memory
+SRC.TARG.EQUIP <SRC.ACT>
+SRC.ACT.TIMER <SRC.MAGERY>/50
+SRC.UPDATE
+RETURN 1
+
+[ITEMDEF i_petrify_memory]
+ID=i_memory
+TYPE=t_eq_script
+NAME=Petrify Memory
+
+ON=@Equip
+SRC.FLAGS <SRC.FLAGS>|040000
+SRC.SYSMESSAGE You have been petrified.
+SRC.UPDATE
+RETURN 1
+
+ON=@Timer
+REMOVE
+RETURN 1
+
+ON=@UnEquip
+SRC.FLAGS <SRC.FLAGS>&~040000
+SRC.SYSMESSAGE You are no longer petrified.
+SRC.UPDATE
+RETURN 1
+
+//Earthquake
+[ITEMDEF i_earthquake_scroll]
+ID=i_map_rolled
+NAME=Earthquake Scroll
+
+ON=@Create
+COLOR 040C
+
+ON=@DCLICK
+SRC.NEWITEM earthquake_spell
+SRC.ACT.EQUIP
+RETURN 1
+
+[ITEMDEF earthquake_spell]
+ID=i_memory
+TYPE=t_eq_script
+NAME=Earthquake Spell
+
+ON=@Create
+ATTR attr_decay
+
+ON=@Equip
+VAR.SPELLCHECK 0
+f_earthskillcheck 16000
+f_mageryskillcheck 800
+f_manacheck 50
+IF <VAR.SPELLCHECK>0
+RETURN 1
+ENDIF
+SRC.TAG.TEMPQUAKETAG <SRC.MAGERY>
+SRC.CAST s_earthquake
+SRC.TAG.EARTHSKILL <SRC.TAG.EARTHSKILL> + 1280
+IF <SRC.MAGERY> > <SRC.TAG.TEMPQUAKETAG>
+SRC.MAGERY <SRC.TAG.TEMPQUAKETAG>
+ENDIF
+SRC.TAG.TEMPQUAKETAG
+f_mageryskillgain
+RETURN 1
+
+//Summon Earth Elemental
+[ITEMDEF i_summon_earth_elemental_scroll]
+ID=i_map_rolled
+NAME=Summon Earth Elemental Scroll
+
+ON=@Create
+COLOR 040C
+
+ON=@DClick
+SRC.NEWITEM summon_earth_elemental_spell
+SRC.ACT.EQUIP
+RETURN 1
+
+[ITEMDEF summon_earth_elemental_spell]
+ID=i_memory
+TYPE=t_eq_script
+NAME=Summon Earth Elemental Spell
+
+ON=@Create
+ATTR=attr_decay
+
+ON=@Equip
+VAR.SPELLCHECK 0
+SRC.f_mageryskillcheck 1200
+SRC.f_manacheck 100
+SRC.f_earthskillcheck 320000
+IF <VAR.SPELLCHECK>0
+RETURN 1
+ENDIF
+SRC.ANIM 16
+SRC.SAY Kal Vas Xen Ylem
+TARGETG Where do you wish to summon the creature?
+
+ON=@Targon_Ground
+IF (<SRC.TARG.SERIAL> == <SRC.SERIAL>)
+SRC.SYSMESSAGE You cannot cast that on yourself.
+RETURN 1
+VAR.FIZZLECHECK 0
+SRC.f_fizzlecheck 1600
+IF <VAR.FIZZLCHECK>0
+RETURN 1
+ENDIF
+f_mageryskillgain
+SRC.MANA <SRC.MANA>+-100
+SRC.MANA <SRC.MANA>+-100
+SRC.NEWNPC c_elem_earth
+SRC.ACT.P <SRC.TARGP>
+SRC.ACT.NEWITEM i_memory
+SRC.ACT.ACT.COLOR 02
+SRC.ACT.ACT.LINK <SRC.UID>
+SRC.ACT.EQUIP <SRC.ACT.ACT>
+SRC.ACT.FLAGS <SRC.ACT.FLAGS>|statf_conjured
+RETURN 1
+
+//WATER SPELLS
+
+//Sprinkle
+[ITEMDEF i_sprinkle_scroll]
+ID=i_map_rolled
+NAME=Sprinkle Scroll
+
+ON=@Create
+COLOR 02
+
+ON=@DCLICK
+SRC.NEWITEM sprinkle_spell
+SRC.ACT.EQUIP
+RETURN 1
+
+[ITEMDEF i_sprinkle_spell_sparkle]
+ID=01158
+NAME=Magical Sprinkles
+
+ON=@Create
+ATTR attr_can_decay
+TIMER 1
+
+ON=@Timer
+REMOVE
+RETURN 1
+
+[ITEMDEF sprinkle_spell]
+ID=i_memory
+TYPE=t_eq_script
+NAME=Stone Spell
+
+ON=@Create
+ATTR attr_can_decay
+
+ON=@Equip
+VAR.SPELLCHECK 0
+SRC.f_mageryskillcheck 0
+SRC.f_manacheck 3
+IF <VAR.SPELLCHECK>0
+RETURN 1
+ENDIF
+SRC.ANIM 16
+SRC.SAY In An Flam Por
+TARGET Select the target for the spell.
+
+ON=@Targon_Item
+SRC.SYSMESSAGE That is not a valid target.
+RETURN 1
+
+ON=@Targon_Ground
+SRC.SYSMESSAGE That is not a valid target.
+RETURN 1
+
+ON=@Targon_Char
+IF (<SRC.TARG.SERIAL> == <SRC.SERIAL>)
+SRC.SYSMESSAGE You cannot cast that on yourself.
+RETURN 1
+ENDIF
+VAR.FIZZLECHECK 0
+SRC.f_fizzlecheck 400
+IF <VAR.FIZZLCHECK>0
+RETURN 1
+ENDIF
+f_mageryskillgain
+SRC.MANA <SRC.MANA>+-3
+SRC.TAG.EARTHSKILL <SRC.TAG.WATERSKILL>+10
+SRC.TARG.NEWITEM i_sprinkle_spell_sparkle
+SRC.TARG.ACT.P <SRC.TARG.P>
+SOUND 025
+SRC.TARG.DAMAGE <SRC.MAGERY>/300
+RETURN 1
+
+//Bubble
+[ITEMDEF i_bubble_scroll]
+ID=i_map_rolled
+NAME=Bubble Scroll
+
+ON=@Create
+COLOR=02
+
+ON=@DCLICK
+SRC.NEWITEM bubble_spell
+SRC.ACT.EQUIP
+RETURN 1
+
+[ITEMDEF i_bubble_spell_bubble]
+ID=036FE
+NAME=A Magical Bubble
+
+ON=@Create
+COLOR 0078A
+TIMER 1
+
+ON=@Timer
+REMOVE
+
+[ITEMDEF bubble_spell]
+ID=i_memory
+TYPE=t_eq_script
+NAME=Stone Spell
+
+ON=@Create
+TIMER 45
+ATTR attr_decay
+
+ON=@Equip
+IF <SRC.TAG.WATERSKILL> < 2500
+SRC.SYSMESSAGE You are not skilled enough to cast this.
+RETURN 1
+ELSEIF <SRC.MAGERY> < 100
+SRC.SYSMESSAGE You are not skilled enough to cast this.
+RETURN 1
+ELSEIF <SRC.MANA> < 6
+SRC.SYSMESSAGE Insufficient mana for this spell.
+RETURN 1
+ELSE
+SRC.ANIM 16
+SRC.SAY Kal An Flam Ort
+TARGET Select the target for the spell.
+ENDIF
+RETURN 1
+
+ON=@Targon_Item
+SRC.SYSMESSAGE That is not a valid target.
+RETURN 1
+
+ON=@Targon_Ground
+SRC.SYSMESSAGE That is not a valid target.
+RETURN 1
+
+ON=@Targon_Cgar
+IF (<SRC.TARG.SERIAL> == <SRC.SERIAL>)
+SRC.SYSMESSAGE You cannot cast that on yourself.
+RETURN 1
+ELSEIF ((<SRC.MAGERY> + {0 400}) < 500)
+SRC.SYSMESSAGE You fail in saying the words of power correctly.
+RETURN 1
+ELSEIF (<SRC.MAGERY> < 3000)
+VAR.X RAND(400)
+VAR.Y <SRC.MAGERY>
+VAR.OPPY <VAR.Y> * -1
+VAR.Z <VAR.X>+ <VAR.OPPY>
+IF (<VAR.Z> >= 100.0)
+SRC.MAGERY <SRC.MAGERY> + 1
+ENDIF
+ENDIF
+SRC.MANA <SRC.MANA>+-6
+SRC.TAG.WATERSKILL <SRC.TAG.WATERSKILL> + 20
+SRC.TARG.NEWITEM i_bubble_spell_bubble
+SRC.TARG.ACT.P <SRC.TARG.P>
+VAR.PARTA <SRC.MAGERY>
+VAR.PARTB <VAR.PARTA> / 250
+VAR.PARTC <VAR.PARTB> + RAND(15)
+VAR.PARTD <VAR.PARTC> * -1
+SRC.TARG.HITS <SRC.TARG.HITS> + <VAR.PARTD>
+SRC.TARG.UPDATE
+RETURN 1
+
+ON=@Timer
+REMOVE
+RETURN 1
+
+//Water Cannon
+
+//Flood
+
+//Erosion
+
+//Undertow
+
+//Water Fall
+
+// Tidal Wave
+[ITEMDEF i_tidal_wave_scroll]
+ID=i_map_rolled
+NAME=Tidal Wave Scroll
+
+ON=@Create
+COLOR 02
+
+ON=@DCLICK
+SRC.NEWITEM tidal_wave_spell
+SRC.ACT.EQUIP
+RETURN 1
+
+[ITEMDEF tidal_wave_spell]
+ID=i_memory
+TYPE=t_eq_script
+NAME=Stone Spell
+
+ON=@Create
+TIMER 45
+ATTR attr_decay
+
+ON=@Equip
+IF <SRC.TAG.WATERSKILL> < 160000
+SRC.SYSMESSAGE You are not skilled enough to cast this.
+RETURN 1
+ELSEIF <SRC.MAGERY> < 80.0
+SRC.SYSMESSAGE You are not skilled enough to cast this.
+RETURN 1
+ELSEIF <SRC.MANA> < 50
+SRC.SYSMESSAGE Insufficient mana for this spell.
+RETURN 1
+ELSE
+SRC.ANIM 16
+SRC.SAY Kal Vas An Flam Grav
+TARGETG Select the target for the spell.
+ENDIF
+RETURN 1
+
+ON=@Targon_Item
+SRC.SYSMESSAGE That is not a valid target.
+RETURN 1
+
+ON=@Targon_Char
+SRC.SYSMESSAGE That is not a valid target.
+RETURN 1
+
+ON=@Targon_Ground
+IF ((<SRC.MAGERY> + {0 400}) < 1200)
+SRC.SYSMESSAGE You fail in saying the words of power correctly.
+RETURN 1
+ELSEIF (<SRC.MAGERY> < 3000)
+VAR.X RAND(400)
+VAR.Y <SRC.MAGERY>
+VAR.OPPY <VAR.Y> * -1
+VAR.Z <VAR.X> + <VAR.OPPY>
+IF (<VAR.Z> >= 100.0)
+SRC.MAGERY <SRC.MAGERY> + 1
+ENDIF
+ENDIF
+SRC.MANA <SRC.MANA>+-50
+SRC.TAG.WATERSKILL <SRC.TAG.WATERSKILL> + 1280
+
+SRC.NEWITEM=i_wave1 // 01fa3
+SRC.ACT.P=<SRC.TARGP>
+SRC.ACT.MOVE -2 -2
+SRC.NEWITEM=i_wave1 // 01fa3
+SRC.ACT.P=<SRC.TARGP>
+SRC.ACT.MOVE -2 -1
+SRC.NEWITEM=i_wave1 // 01fa3
+SRC.ACT.P=<SRC.TARGP>
+SRC.ACT.MOVE 2 -2
+SRC.NEWITEM=i_wave1 // 01fa3
+SRC.ACT.P=<SRC.TARGP>
+SRC.ACT.MOVE -1 -1
+SRC.NEWITEM=i_wave1 // 01fa3
+SRC.ACT.P=<SRC.TARGP>
+SRC.ACT.MOVE 1 -1
+SRC.NEWITEM=i_wave1 // 01fa3
+SRC.ACT.P=<SRC.TARGP>
+SRC.ACT.MOVE 2 -1
+SRC.NEWITEM=i_wave1 // 01fa3
+SRC.ACT.P=<SRC.TARGP>
+SRC.ACT.MOVE 0 -1
+SRC.NEWITEM=i_wave1 // 01fa3
+SRC.ACT.P=<SRC.TARGP>
+SRC.ACT.MOVE 0 -2
+SRC.NEWITEM=i_wave1 // 01fa3
+SRC.ACT.P=<SRC.TARGP>
+SRC.ACT.MOVE -2 -1
+
+SRC.NEWITEM=i_wave2 // 01fa8
+SRC.ACT.P=<SRC.TARGP>
+SRC.ACT.MOVE -2 -3
+SRC.NEWITEM=i_wave2 // 01fa8
+SRC.ACT.P=<SRC.TARGP>
+SRC.ACT.MOVE -1 1
+SRC.NEWITEM=i_wave2 // 01fa8
+SRC.ACT.P=<SRC.TARGP>
+SRC.ACT.MOVE -1 -2
+SRC.NEWITEM=i_wave2 // 01fa8
+SRC.ACT.P=<SRC.TARGP>
+SRC.ACT.MOVE -1 0
+SRC.NEWITEM=i_wave2 // 01fa8
+SRC.ACT.P=<SRC.TARGP>
+SRC.ACT.MOVE -2 -2
+SRC.NEWITEM=i_wave2 // 01fa8
+SRC.ACT.P=<SRC.TARGP>
+SRC.ACT.MOVE -2 -1
+SRC.NEWITEM=i_wave2 // 01fa8
+SRC.ACT.P=<SRC.TARGP>
+SRC.ACT.MOVE -2 0
+SRC.NEWITEM=i_wave2 // 01fa8
+SRC.ACT.P=<SRC.TARGP>
+SRC.ACT.MOVE -2 2
+SRC.NEWITEM=i_wave2 // 01fa8
+SRC.ACT.P=<SRC.TARGP>
+SRC.ACT.MOVE -2 1
+
+SRC.NEWITEM=i_wave3
+SRC.ACT.P=<SRC.TARGP>
+SRC.ACT.MOVE 2 -2
+SRC.NEWITEM=i_wave3
+SRC.ACT.P=<SRC.TARGP>
+SRC.ACT.MOVE 2 -1
+SRC.NEWITEM=i_wave3
+SRC.ACT.P=<SRC.TARGP>
+SRC.ACT.MOVE 2 0
+SRC.NEWITEM=i_wave3
+SRC.ACT.P=<SRC.TARGP>
+SRC.ACT.MOVE 2 1
+SRC.NEWITEM=i_wave3
+SRC.ACT.P=<SRC.TARGP>
+SRC.ACT.MOVE 2 2
+SRC.NEWITEM=i_wave3
+SRC.ACT.P=<SRC.TARGP>
+SRC.ACT.MOVE 1 1
+SRC.NEWITEM=i_wave3
+SRC.ACT.P=<SRC.TARGP>
+SRC.ACT.MOVE 1 0
+SRC.NEWITEM=i_wave3
+SRC.ACT.P=<SRC.TARGP>
+SRC.ACT.MOVE 1 -2
+SRC.NEWITEM=i_wave3
+SRC.ACT.P=<SRC.TARGP>
+SRC.ACT.MOVE 1 -1
+
+SRC.NEWITEM=i_wave4
+SRC.ACT.P=<SRC.TARGP>
+SRC.ACT.MOVE 2 1
+SRC.NEWITEM=i_wave4
+SRC.ACT.P=<SRC.TARGP>
+SRC.ACT.MOVE -2 1
+SRC.NEWITEM=i_wave4
+SRC.ACT.P=<SRC.TARGP>
+SRC.ACT.MOVE -2 2
+SRC.NEWITEM=i_wave4
+SRC.ACT.P=<SRC.TARGP>
+SRC.ACT.MOVE -1 2
+SRC.NEWITEM=i_wave4
+SRC.ACT.P=<SRC.TARGP>
+SRC.ACT.MOVE -1 1
+SRC.NEWITEM=i_wave4
+SRC.ACT.P=<SRC.TARGP>
+SRC.ACT.MOVE 0 2
+SRC.NEWITEM=i_wave4
+SRC.ACT.P=<SRC.TARGP>
+SRC.ACT.MOVE 0 1
+SRC.NEWITEM=i_wave4
+SRC.ACT.P=<SRC.TARGP>
+SRC.ACT.MOVE 1 2
+SRC.NEWITEM=i_wave4
+SRC.ACT.P=<SRC.TARGP>
+SRC.ACT.MOVE 2 2
+REMOVE
+RETURN 1
+
+[ITEMDEF i_wave1]
+ID=01fb7
+
+ON=@Create
+TIMER=1
+MORE2=6
+
+ON=@Timer
+MOVE 0 -1
+MORE2=<MORE2>-1
+IF <MORE2>==0
+REMOVE
+ENDIF
+TIMER=1
+RETURN 1
+
+ON=@Step
+SRC.DAMAGE {30 50}
+RETURN 0
+
+[ITEMDEF i_wave2]
+ID=01fbc
+
+ON=@Create
+TIMER=1
+MORE2=6
+
+ON=@Timer
+MOVE -1 0
+MORE2=<MORE2>-1
+IF <MORE2>==0
+REMOVE
+ENDIF
+TIMER=1
+RETURN 1
+
+ON=@Step
+SRC.DAMAGE {30 50}
+RETURN 0
+
+[ITEMDEF i_wave3]
+ID=01fc1
+
+ON=@Create
+TIMER=1
+MORE2=6
+
+ON=@Timer
+MOVE 1 0
+MORE2=<MORE2>-1
+IF <MORE2>==0
+REMOVE
+ENDIF
+TIMER=1
+RETURN 1
+
+ON=@Step
+SRC.DAMAGE {30 50}
+RETURN 0
+
+
+[ITEMDEF i_wave4]
+ID=01fc6
+
+ON=@Create
+TIMER=1
+MORE2=6
+
+ON=@Timer
+MOVE 0 1
+MORE2=<MORE2>-1
+IF <MORE2>==0
+REMOVE
+ENDIF
+TIMER=1
+RETURN 1
+
+ON=@Step
+SRC.DAMAGE {30 50}
+RETURN 0
+
+//Summon Water Elemental
+[ITEMDEF i_summon_water_elemental_scroll]
+ID=i_map_rolled
+NAME=Summon Water Elemental Scroll
+
+ON=@DClick
+SRC.NEWITEM summon_water_elemental_spell
+SRC.ACT.EQUIP
+RETURN 1
+
+[ITEMDEF summon_water_elemental_spell]
+ID=i_memory
+TYPE=t_eq_script
+NAME=Summon Water Elemental Spell
+
+ON=@Create
+TIMER 45
+ATTR attr_decay
+
+ON=@Equip
+IF <SRC.TAG.WATERKILL> < 320000
+SRC.SYSMESSAGE You are not skilled enough to cast this.
+RETURN 1
+ELSEIF <SRC.MAGERY> < 1200
+SRC.SYSMESSAGE You are not skilled enough to cast this.
+RETURN 1
+ELSEIF <SRC.MANA> < 100
+SRC.SYSMESSAGE Insufficient mana for this spell.
+RETURN 1
+ELSE
+SRC.ANIM 16
+
+SRC.SAY Kal Vas An Flam Xen
+TARGETG Where do you wish to summon the creature?
+ENDIF
+RETURN 1
+
+ON=@Targon_Ground
+IF ((<SRC.MAGERY> + {0 400}) < 1600)
+SRC.SYSMESSAGE You fail in saying the words of power correctly
+RETURN 1
+ELSEIF (<SRC.MAGERY> < 300.0)
+VAR.X RAND(400)
+VAR.Y <SRC.MAGERY>
+VAR.OPPY <VAR.Y> * -1
+VAR.Z <VAR.X> + <VAR.OPPY>
+IF (<VAR.Z> >= 100.0)
+SRC.MAGERY <SRC.MAGERY> + 1
+ENDIF
+ENDIF
+SRC.MANA <SRC.MANA>+-100
+SRC.NEWNPC c_elem_water
+SRC.ACT.NEWITEM i_memory
+SRC.ACT.ACT.COLOR 02
+SRC.ACT.ACT.LINK <SRC.UID>
+SRC.ACT.EQUIP <SRC.ACT.ACT>
+SRC.ACT.P <SRC.TARGP>
+SRC.ACT.FLAGS <SRC.ACT.FLAGS>|statf_conjured
+RETURN 1
+
+ON=@Timer
+REMOVE
+RETURN 1
+
+
+//FIRE SPELLS
+
+//Flaming Arrow
+
+//Fireball
+
+//Flame Shield
+
+//Fire Field
+
+//Fire Bolt
+
+//Explosion
+
+//Flame Wave
+
+//Flamestrike
+
+//Summon Fire Elemental
+[ITEMDEF i_summon_fire_elemental_scroll]
+ID=i_MAP_ROLLED
+NAME=Summon Fire Elemental Scroll
+
+ON=@DCLICK
+SRC.NEWITEM summon_fire_elemental_spell
+SRC.ACT.EQUIP
+RETURN 1
+
+[ITEMDEF summon_fire_elemental_spell]
+ID=i_memory
+TYPE=t_eq_script
+NAME=Summon Fire Elemental Spell
+
+ON=@Create
+TIMER=45
+ATTR=attr_decay
+
+ON=@Equip
+IF <EVAL <SRC.TAG.FIRESKILL> < 32000.0>
+SRC.SYSMESSAGE You are not skilled enough to cast this.
+RETURN 1
+ELSEIF <SRC.MAGERY> < 120.0
+SRC.SYSMESSAGE You are not skilled enough to cast this.
+RETURN 1
+ELSEIF <SRC.MANA> < 100
+SRC.SYSMESSAGE Insufficient mana for this spell.
+RETURN 1
+ELSE
+TARGETG Where do you wish to summon the creature?
+ENDIF
+RETURN 1
+
+ON=@TARGON_GROUND
+SRC.ANIM 16
+SRC.SAY Kal Vas Xen Flam
+IF (<eval <src.magery> + rand(31)> ) < 150.0
+SRC.SYSMESSAGE You fail in saying the words of power correctly
+ELSE
+SRC.MANA <SRC.MANA>+-100
+ENDIF
+IF (<SRC.MAGERY> < 300.0)
+VAR.X=<EVAL (<SRC.MAGERY> / 4) + RAND(400)>
+ENDIF
+IF (<EVAL <VAR.X>> >= 100.0)
+SRC.MAGERY <SRC.MAGERY>+1
+ENDIF
+SRC.NEWNPC c_elem_fire
+SRC.ACT.NEWITEM i_memory
+SRC.ACT.ACT.COLOR 02
+SRC.ACT.ACT.LINK <SRC.UID>
+SRC.ACT.EQUIP <SRC.ACT.ACT>
+SRC.ACT.P <SRC.TARGP>
+SRC.ACT.FLAGS <SRC.ACT.FLAGS>|statf_conjured
+
+
+//WIND SPELLS
+
+//Gust
+
+//Fog
+
+//Sonic Boom
+
+//Gale
+
+//Tornado
+
+//Vaccum
+
+//Hurricane
+
+//Whirl Wind
+
+//Summon Air Elemental
+[ITEMDEF i_summon_air_elemental_scroll]
+ID=i_MAP_ROLLED
+NAME=Summon Air Elemental Scroll
+
+ON=@DCLICK
+SRC.NEWITEM summon_air_elemental_spell
+SRC.ACT.EQUIP
+RETURN 1
+
+[ITEMDEF summon_air_elemental_spell]
+ID=i_memory
+TYPE=t_eq_script
+NAME=Summon Air Elemental Spell
+
+ON=@Create
+TIMER=45
+ATTR=attr_decay
+
+ON=@Equip
+IF <EVAL <SRC.TAG.WINDSKILL> < 32000.0>
+SRC.SYSMESSAGE You are not skilled enough to cast this.
+RETURN 1
+ELSEIF <SRC.MAGERY> < 120.0
+SRC.SYSMESSAGE You are not skilled enough to cast this.
+RETURN 1
+ELSEIF <SRC.MANA> < 100
+SRC.SYSMESSAGE Insufficient mana for this spell.
+RETURN 1
+ELSE
+TARGETG Where do you wish to summon the creature?
+ENDIF
+RETURN 1
+
+ON=@TARGON_GROUND
+SRC.ANIM 16
+SRC.SAY Kal Vas Xen Hur
+IF (<eval <src.magery> + rand(31)> ) < 150.0
+SRC.SYSMESSAGE You fail in saying the words of power correctly
+ELSE
+SRC.MANA <SRC.MANA>+-100
+ENDIF
+IF (<SRC.MAGERY> < 300.0)
+VAR.X=<EVAL (<SRC.MAGERY> / 4) + RAND(400)>
+ENDIF
+IF (<EVAL <VAR.X>> >= 100.0)
+SRC.MAGERY <SRC.MAGERY>+1
+ENDIF
+SRC.NEWNPC c_elem_air
+SRC.ACT.NEWITEM i_memory
+SRC.ACT.ACT.COLOR 02
+SRC.ACT.ACT.LINK <SRC.UID>
+SRC.ACT.EQUIP <SRC.ACT.ACT>
+SRC.ACT.P <SRC.TARGP>
+SRC.ACT.FLAGS <SRC.ACT.FLAGS>|statf_conjured
+
+
+//LIGHTNING SPELLS
+
+//Spark
+
+//Lightning
+
+//Energy Field
+
+//Ball Lightning
+
+//Shock
+
+//Chain Lightning
+
+//Nova
+
+//Luminare
+
+//Summon Lightning Elemental
+[ITEMDEF i_summon_lightning_elemental_scroll]
+ID=i_MAP_ROLLED
+NAME=Summon Lightning Elemental Scroll
+
+ON=@DCLICK
+SRC.NEWITEM summon_lightning_elemental_spell
+SRC.ACT.EQUIP
+RETURN 1
+
+[ITEMDEF summon_lightning_elemental_spell]
+ID=i_memory
+TYPE=t_eq_script
+NAME=Summon Water Elemental Spell
+
+ON=@Create
+TIMER=45
+ATTR=attr_decay
+
+ON=@Equip
+IF <EVAL <SRC.TAG.LIGHTNINGSKILL> < 32000.0>
+SRC.SYSMESSAGE You are not skilled enough to cast this.
+RETURN 1
+ELSEIF <SRC.MAGERY> < 120.0
+SRC.SYSMESSAGE You are not skilled enough to cast this.
+RETURN 1
+ELSEIF <SRC.MANA> < 100
+SRC.SYSMESSAGE Insufficient mana for this spell.
+RETURN 1
+ELSE
+TARGETG Where do you wish to summon the creature?
+ENDIF
+RETURN 1
+
+ON=@TARGON_GROUND
+SRC.ANIM 16
+SRC.SAY Kal Vas Xen Ort Grav
+IF (<eval <src.magery> + rand(31)> ) < 150.0
+SRC.SYSMESSAGE You fail in saying the words of power correctly
+ELSE
+SRC.MANA <SRC.MANA>+-100
+ENDIF
+IF (<SRC.MAGERY> < 300.0)
+VAR.X=<EVAL (<SRC.MAGERY> / 4) + RAND(400)>
+ENDIF
+IF (<EVAL <VAR.X>> >= 100.0)
+SRC.MAGERY <SRC.MAGERY>+0.1
+ENDIF
+SRC.NEWNPC lightning_ele
+SRC.ACT.NEWITEM i_memory
+SRC.ACT.ACT.COLOR 02
+SRC.ACT.ACT.LINK <SRC.UID>
+SRC.ACT.EQUIP <SRC.ACT.ACT>
+SRC.ACT.P <SRC.TARGP>
+SRC.ACT.FLAGS <SRC.ACT.FLAGS>|statf_conjured
+
+
+//ICE SPELLS
+
+//Ice Cube
+
+//Wall of Ice
+
+//Sleet
+
+//Ice Trap
+
+//Icicle
+
+//Deep Freeze
+
+//Absolute Zero
+
+//Ice Strike
+[ITEMDEF i_ice_strike_scroll]
+ID=i_MAP_ROLLED
+TYPE=t_scroll
+NAME=Ice Strike Scroll
+
+ON=@create
+COLOR=00317
+
+on=@dclick
+target Select target
+return 1
+
+on=@targon_item
+src.sysmessage That is not a valid target
+return 1
+
+ON=@Targon_char
+IF (<src.magery> < 80.0)
+src.sysmessag You are not skilled enough to cast this.
+return 1
+ELSEIF (<eval <src.magery> + rand(31)> ) < 1000
+src.say You fail in saying the words of power correctly
+ELSE
+src.mana <src.mana>+-35
+IF (<src.magery> < 300.0)
+var.x=<eval (<src.magery> / 4) + rand(400)>
+IF (<eval <var.x>> >= 100.0)
+src.magery <src.magery>+0.1
+ENDIF
+ENDIF
+
+SRC.ANIM 16
+SRC.SAY Kal Vas Hur An Flam
+SRC.TARG.SOUND 00fc
+SRC.NEWITEM i_fire_column
+SRC.ACT.COLOR 0480
+SRC.ACT.P <SRC.TARG.P>
+SRC.ACT.ATTR 08012
+SRC.ACT.TIMER 1
+//SRC.TARG.HITS=<SRC.TARG.HITS>+(-1*{60 100})
+VAR.BASEDAM <eval <SRC.MAGERY>/20>
+VAR.EVALDAM <eval (<SRC.EVALUATINGINTEL>/2000)+1>
+VAR.INSCDAM <eval (<SRC.INSCRIPTION>/5000)+1>
+VAR.DIV <eval (<SRC.TARG.MAGICRESISTANCE>/100)+1>
+VAR.TOP <eval <VAR.BASEDAM>*<VAR.EVALDAM>*<VAR.INSCDAM>>
+VAR.DAM <eval <VAR.TOP>/<VAR.DIV>>
+SRC.TARG.HITS <SRC.TARG.HITS>+-<eval <VAR.DAM>>
+RETURN 1
+
+//Summon Ice Elemental
+[ITEMDEF i_summon_ice_elemental_scroll]
+ID=i_MAP_ROLLED
+NAME=Summon Ice Elemental Scroll
+
+ON=@DCLICK
+SRC.NEWITEM summon_ice_elemental_spell
+SRC.ACT.EQUIP
+RETURN 1
+
+[ITEMDEF summon_ice_elemental_spell]
+ID=i_memory
+TYPE=t_eq_script
+NAME=Summon Ice Elemental Spell
+
+ON=@Create
+TIMER=45
+ATTR=attr_decay
+
+ON=@Equip
+IF <EVAL <SRC.TAG.ICESKILL> < 32000.0>
+SRC.SYSMESSAGE You are not skilled enough to cast this.
+RETURN 1
+ELSEIF <SRC.MAGERY> < 120.0
+SRC.SYSMESSAGE You are not skilled enough to cast this.
+RETURN 1
+ELSEIF <SRC.MANA> < 100
+SRC.SYSMESSAGE Insufficient mana for this spell.
+RETURN 1
+ELSE
+TARGETG Where do you wish to summon the creature?
+ENDIF
+RETURN 1
+
+ON=@TARGON_GROUND
+SRC.ANIM 16
+SRC.SAY Kal Vas Xen An Flam Ylem
+IF (<eval <src.magery> + rand(31)> ) < 150.0
+SRC.SYSMESSAGE You fail in saying the words of power correctly
+ELSE
+SRC.MANA <SRC.MANA>+-100
+ENDIF
+IF (<SRC.MAGERY> < 300.0)
+VAR.X=<EVAL (<SRC.MAGERY> / 4) + RAND(400)>
+ENDIF
+IF (<EVAL <VAR.X>> >= 100.0)
+SRC.MAGERY <SRC.MAGERY>+0.1
+ENDIF
+SRC.NEWNPC c_elem_ice
+SRC.ACT.NEWITEM i_memory
+SRC.ACT.ACT.COLOR 02
+SRC.ACT.ACT.LINK <SRC.UID>
+SRC.ACT.EQUIP <SRC.ACT.ACT>
+SRC.ACT.P <SRC.TARG.P>
+SRC.ACT.FLAGS <SRC.ACT.FLAGS>|statf_conjured
+
+
+//SNOW SPELLS
+
+//Snowball
+
+//Cold Chill
+
+//Frostbite
+
+//Snow Man
+
+//Blizzard
+
+//Avalanche
+
+//Whiteout
+
+//Summon Snow Elemental
+[ITEMDEF i_summon_snow_elemental_scroll]
+ID=i_MAP_ROLLED
+NAME=Summon Snow Elemental Scroll
+
+ON=@DCLICK
+SRC.NEWITEM summon_snow_elemental_spell
+SRC.ACT.EQUIP
+RETURN 1
+
+[ITEMDEF summon_snow_elemental_spell]
+ID=i_memory
+TYPE=t_eq_script
+NAME=Summon Snow Elemental Spell
+
+ON=@Create
+TIMER=45
+ATTR=attr_decay
+
+ON=@Equip
+IF <EVAL <SRC.TAG.SNOWSKILL> < 32000.0>
+SRC.SYSMESSAGE You are not skilled enough to cast this.
+RETURN 1
+ELSEIF <SRC.MAGERY> < 120.0
+SRC.SYSMESSAGE You are not skilled enough to cast this.
+RETURN 1
+ELSEIF <SRC.MANA> < 100
+SRC.SYSMESSAGE Insufficient mana for this spell.
+RETURN 1
+ELSE
+TARGETG Where do you wish to summon the creature?
+ENDIF
+RETURN 1
+
+ON=@TARGON_GROUND
+SRC.ANIM 16
+SRC.SAY Kal Vas Xen An Flam Hur
+IF (<eval <src.magery> + rand(31)> ) < 150.0
+SRC.SYSMESSAGE You fail in saying the words of power correctly
+ELSE
+SRC.MANA <SRC.MANA>+-100
+ENDIF
+IF (<SRC.MAGERY> < 300.0)
+VAR.X=<EVAL (<SRC.MAGERY> / 4) + RAND(400)>
+ENDIF
+IF (<EVAL <VAR.X>> >= 100.0)
+SRC.MAGERY <SRC.MAGERY>+0.1
+ENDIF
+SRC.NEWNPC c_elem_snow
+SRC.ACT.NEWITEM i_memory
+SRC.ACT.ACT.COLOR 02
+SRC.ACT.ACT.LINK <SRC.UID>
+SRC.ACT.EQUIP <SRC.ACT.ACT>
+SRC.ACT.P <SRC.TARGP>
+SRC.ACT.FLAGS <SRC.ACT.FLAGS>|statf_conjured
+
+
+//POISON SPELLS
+
+//Lesser Poison
+
+//Toxic Gas
+
+//Poison
+
+//Poison Field
+
+//Venom
+
+//Greater Poison
+
+//Bio
+
+//Summon Poison Elemental
+[ITEMDEF i_summon_poison_elemental_scroll]
+ID=i_MAP_ROLLED
+NAME=Summon Poison Elemental Scroll
+
+ON=@DCLICK
+SRC.NEWITEM summon_poison_elemental_spell
+SRC.ACT.EQUIP
+RETURN 1
+
+[ITEMDEF summon_poison_elemental_spell]
+ID=i_memory
+TYPE=t_eq_script
+NAME=Summon Poison Elemental Spell
+
+ON=@Create
+TIMER=45
+ATTR=attr_decay
+
+ON=@Equip
+IF <EVAL <SRC.TAG.POISONSKILL> < 32000.0>
+SRC.SYSMESSAGE You are not skilled enough to cast this.
+RETURN 1
+ELSEIF <SRC.MAGERY> < 120.0
+SRC.SYSMESSAGE You are not skilled enough to cast this.
+RETURN 1
+ELSEIF <SRC.MANA> < 100
+SRC.SYSMESSAGE Insufficient mana for this spell.
+RETURN 1
+ELSE
+TARGETG Where do you wish to summon the creature?
+ENDIF
+RETURN 1
+
+ON=@TARGON_GROUND
+SRC.ANIM 16
+SRC.SAY Kal Vas Xen Nox
+IF (<eval <src.magery> + rand(31)> ) < 150.0
+SRC.SYSMESSAGE You fail in saying the words of power correctly
+ELSE
+SRC.MANA <SRC.MANA>+-100
+ENDIF
+IF (<SRC.MAGERY> < 300.0)
+VAR.X=<EVAL (<SRC.MAGERY> / 4) + RAND(400)>
+ENDIF
+IF (<EVAL <VAR.X>> >= 100.0)
+SRC.MAGERY <SRC.MAGERY>+0.1
+ENDIF
+SRC.NEWNPC c_elem_poison
+SRC.ACT.NEWITEM i_memory
+SRC.ACT.ACT.COLOR 02
+SRC.ACT.ACT.LINK <SRC.UID>
+SRC.ACT.EQUIP <SRC.ACT.ACT>
+SRC.ACT.P <SRC.TARGP>
+SRC.ACT.FLAGS <SRC.ACT.FLAGS>|statf_conjured
+
+//Deadly Poison
+
+
+//SWAMP SPELLS
+
+//Sludge
+
+//Slime
+
+//Summon Swamp Tentacle
+
+//Sewage
+
+//Acid Rain
+
+// Bad Breath
+
+//Summon Swamp Elemental
+[ITEMDEF i_summon_swamp_elemental_scroll]
+ID=i_MAP_ROLLED
+NAME=Summon Swamp Elemental Scroll
+
+ON=@DCLICK
+SRC.NEWITEM summon_swamp_elemental_spell
+SRC.ACT.EQUIP
+RETURN 1
+
+[ITEMDEF summon_swamp_elemental_spell]
+ID=i_memory
+TYPE=t_eq_script
+NAME=Summon Swamp Elemental Spell
+
+ON=@Create
+TIMER=45
+ATTR=attr_decay
+
+ON=@Equip
+IF <EVAL <SRC.TAG.SWAMPSKILL> < 32000.0>
+SRC.SYSMESSAGE You are not skilled enough to cast this.
+RETURN 1
+ELSEIF <SRC.MAGERY> < 120.0
+SRC.SYSMESSAGE You are not skilled enough to cast this.
+RETURN 1
+ELSEIF <SRC.MANA> < 100
+SRC.SYSMESSAGE Insufficient mana for this spell.
+RETURN 1
+ELSE
+TARGETG Where do you wish to summon the creature?
+ENDIF
+RETURN 1
+
+ON=@TARGON_GROUND
+SRC.ANIM 16
+SRC.SAY Kal Vas Xen An Por
+IF (<eval <src.magery> + rand(31)> ) < 150.0
+SRC.SYSMESSAGE You fail in saying the words of power correctly
+ELSE
+SRC.MANA <SRC.MANA>+-100
+ENDIF
+IF (<SRC.MAGERY> < 300.0)
+VAR.X=<EVAL (<SRC.MAGERY> / 4) + RAND(400)>
+ENDIF
+IF (<EVAL <VAR.X>> >= 100.0)
+SRC.MAGERY <SRC.MAGERY>+0.1
+ENDIF
+SRC.NEWNPC c_elem_swamp
+SRC.ACT.NEWITEM i_memory
+SRC.ACT.ACT.COLOR 02
+SRC.ACT.ACT.LINK <SRC.UID>
+SRC.ACT.EQUIP <SRC.ACT.ACT>
+SRC.ACT.P <SRC.TARGP>
+SRC.ACT.FLAGS <SRC.ACT.FLAGS>|statf_conjured
+
+
+//BLOOD SPELLS
+
+//Harm
+
+//Vampire
+
+//Mana Drain
+
+//Mana Vampire
+
+//Exhaustion
+
+//Stanima Vampire
+
+//Blood Lust
+[ITEMDEF i_blood_lust_scroll]
+ID=i_map_rolled
+NAME=Blood Lust Scroll
+
+ON=@Create
+COLOR 025
+
+ON=@DClick
+SRC.NEWITEM blood_lust_spell
+SRC.ACT.EQUIP
+RETURN 1
+
+//Corpse Explode
+[ITEMDEF i_corpse_explode_scroll]
+ID=i_map_rolled
+NAME=Corpse Explode Scroll
+
+ON=@Create
+COLOR 025
+
+ON=@DClick
+SRC.NEWITEM corpse_explode_spell
+SRC.ACT.EQUIP
+RETURN 1
+
+//Summon Blood Elemental
+[ITEMDEF i_summon_blood_elemental_scroll]
+ID=i_map_rolled
+NAME=Summon Blood Elemental Scroll
+
+ON=@Create
+COLOR 025
+
+ON=@DClick
+SRC.NEWITEM summon_blood_elemental_spell
+SRC.ACT.EQUIP
+RETURN 1
+
+[ITEMDEF summon_blood_elemental_spell]
+ID=i_memory
+TYPE=t_eq_script
+NAME=Summon Blood Elemental Spell
+
+ON=@Create
+TIMER=45
+ATTR=attr_decay
+
+ON=@Equip
+IF <EVAL <SRC.TAG.BLOODSKILL> < 32000.0>
+SRC.SYSMESSAGE You are not skilled enough to cast this.
+RETURN 1
+ELSEIF <SRC.MAGERY> < 120.0
+SRC.SYSMESSAGE You are not skilled enough to cast this.
+RETURN 1
+ELSEIF <SRC.MANA> < 100
+SRC.SYSMESSAGE Insufficient mana for this spell.
+RETURN 1
+ELSE
+TARGETG Where do you wish to summon the creature?
+ENDIF
+RETURN 1
+
+ON=@TARGON_GROUND
+SRC.ANIM 16
+SRC.SAY Kal Vas Xen Corp Nox
+IF (<eval <src.magery> + rand(31)> ) < 150.0
+SRC.SYSMESSAGE You fail in saying the words of power correctly
+ELSE
+SRC.MANA <SRC.MANA>+-100
+ENDIF
+IF (<SRC.MAGERY> < 300.0)
+VAR.X=<EVAL (<SRC.MAGERY> / 4) + RAND(400)>
+ENDIF
+IF (<EVAL <VAR.X>> >= 100.0)
+SRC.MAGERY <SRC.MAGERY>+0.1
+ENDIF
+SRC.NEWNPC c_elem_blood
+SRC.ACT.NEWITEM i_memory
+SRC.ACT.ACT.COLOR 02
+SRC.ACT.ACT.LINK <SRC.UID>
+SRC.ACT.EQUIP <SRC.ACT.ACT>
+SRC.ACT.P <SRC.TARGP>
+SRC.ACT.FLAGS <SRC.ACT.FLAGS>|statf_conjured
+
+
+//HOLY SPELLS
+
+//Holy Light
+[ITEMDEF i_holy_light_scroll]
+ID=i_map_rolled
+TYPE=t_scroll
+NAME=Holy Light Scroll
+
+ON=@create
+COLOR 079B
+
+ON=@DClick
+SRC.NEWITEM holy_light_spell
+SRC.ACT.EQUIP
+RETURN 1
+
+//Holy Vision
+[ITEMDEF i_holy_vision_scroll]
+ID=i_map_rolled
+TYPE=t_scroll
+NAME=Holy Vision Scroll
+
+ON=@create
+COLOR 079B
+
+ON=@DClick
+SRC.NEWITEM holy_vision_spell
+SRC.ACT.EQUIP
+RETURN 1
+
+//Holy Wind
+[ITEMDEF i_holy_wind_scroll]
+ID=i_map_rolled
+TYPE=t_scroll
+NAME=Holy Wind Scroll
+
+ON=@create
+COLOR 079B
+
+ON=@DClick
+SRC.NEWITEM holy_wind_spell
+SRC.ACT.EQUIP
+RETURN 1
+
+//Holy Beam
+[ITEMDEF i_holy_beam_scroll]
+ID=i_map_rolled
+TYPE=t_scroll
+NAME=Holy Beam Scroll
+
+ON=@create
+COLOR 079B
+
+ON=@DClick
+SRC.NEWITEM holy_beam_spell
+SRC.ACT.EQUIP
+RETURN 1
+
+//Destroy Sin
+[ITEMDEF i_destroy_sin_scroll]
+ID=i_map_rolled
+TYPE=t_scroll
+NAME=Destroy Sin Scroll
+
+ON=@create
+COLOR 079B
+
+ON=@DClick
+SRC.NEWITEM destroy_sin_spell
+SRC.ACT.EQUIP
+RETURN 1
+
+//Holy Blast
+[ITEMDEF i_holy_blast_scroll]
+ID=i_map_rolled
+TYPE=t_scroll
+NAME=Holy Blast Scroll
+
+ON=@create
+COLOR 079B
+
+ON=@DClick
+SRC.NEWITEM holy_blast_spell
+SRC.ACT.EQUIP
+RETURN 1
+
+//Cleanse
+[ITEMDEF i_cleanse_scroll]
+ID=i_map_rolled
+TYPE=t_scroll
+NAME=Cleanse Scroll
+
+ON=@create
+COLOR 079B
+
+ON=@DClick
+SRC.NEWITEM cleanse_spell
+SRC.ACT.EQUIP
+RETURN 1
+
+//Light Pilar
+[ITEMDEF i_light_pilar_scroll]
+ID=i_map_rolled
+TYPE=t_scroll
+NAME=Light Pilar Scroll
+
+ON=@create
+COLOR 079B
+
+ON=@DClick
+SRC.NEWITEM light_pilar_spell
+SRC.ACT.EQUIP
+RETURN 1
+
+//Summon Holy Elemental
+[ITEMDEF i_summon_holy_elemental_scroll]
+ID=i_MAP_ROLLED
+NAME=Summon Holy Elemental Scroll
+
+ON=@DCLICK
+SRC.NEWITEM summon_holy_elemental_spell
+SRC.ACT.EQUIP
+RETURN 1
+
+[ITEMDEF summon_holy_elemental_spell]
+ID=i_memory
+TYPE=t_eq_script
+NAME=Summon Holy Elemental Spell
+
+ON=@Create
+TIMER=45
+ATTR=attr_decay
+
+ON=@Equip
+IF <EVAL <SRC.TAG.HOLYSKILL> < 32000.0>
+SRC.SYSMESSAGE You are not skilled enough to cast this.
+RETURN 1
+ELSEIF <SRC.MAGERY> < 120.0
+SRC.SYSMESSAGE You are not skilled enough to cast this.
+RETURN 1
+ELSEIF <SRC.MANA> < 100
+SRC.SYSMESSAGE Insufficient mana for this spell.
+RETURN 1
+ELSE
+TARGETG Where do you wish to summon the creature?
+ENDIF
+RETURN 1
+
+ON=@TARGON_GROUND
+SRC.ANIM 16
+SRC.SAY Kal Vas Xen Lor
+IF (<eval <src.magery> + rand(31)> ) < 150.0
+SRC.SYSMESSAGE You fail in saying the words of power correctly
+ELSE
+SRC.MANA <SRC.MANA>+-100
+ENDIF
+IF (<SRC.MAGERY> < 300.0)
+VAR.X=<EVAL (<SRC.MAGERY> / 4) + RAND(400)>
+ENDIF
+IF (<EVAL <VAR.X>> >= 100.0)
+SRC.MAGERY <SRC.MAGERY>+0.1
+ENDIF
+SRC.NEWNPC c_elem_holy
+SRC.ACT.NEWITEM i_memory
+SRC.ACT.ACT.COLOR 02
+SRC.ACT.ACT.LINK <SRC.UID>
+SRC.ACT.EQUIP <SRC.ACT.ACT>
+SRC.ACT.P <SRC.TARGP>
+SRC.ACT.FLAGS <SRC.ACT.FLAGS>|statf_conjured
+
+
+//DARKNESS SPELLS
+
+//Unholy Light
+[ITEMDEF i_unholy_light_scroll]
+ID=i_map_rolled
+TYPE=t_scroll
+NAME=Unholy Light Scroll
+
+ON=Click
+COLOR 078C
+
+ON=@DClick
+SRC.NEWITEM unholy_light_spell
+SRC.ACT.EQUIP
+RETURN 1
+
+//Darkness
+[ITEMDEF i_darkness_scroll]
+ID=i_map_rolled
+TYPE=t_scroll
+NAME=Darkness Scroll
+
+ON=Click
+COLOR 078C
+
+ON=@DClick
+SRC.NEWITEM darkness_spell
+SRC.ACT.EQUIP
+RETURN 1
+
+//Unholy Strength
+[ITEMDEF i_unholy_strength_scroll]
+ID=i_map_rolled
+TYPE=t_scroll
+NAME=Unholy Strength Scroll
+
+ON=Click
+COLOR 078C
+
+ON=@DClick
+SRC.NEWITEM unholy_strength_spell
+SRC.ACT.EQUIP
+RETURN 1
+
+[ITEMDEF unholy_strength_spell]
+ID=i_memory
+TYPE=t_eq_script
+NAME=Unholy Strength Spell
+
+ON=@Create
+ATTR attr_can_decay
+
+ON=@Equip
+VAR.SPELLCHECK 0
+SRC.f_mageryskillcheck 500
+SRC.f_manacheck 20
+SRC.f_darkskillcheck 5000
+IF <VAR.SPELLCHECK>0
+RETURN 1
+ENDIF
+SRC.ANIM 16
+SRC.SAY An Mani Ort
+TARGET Select the target for the spell.
+
+ON=@Targon_Item
+SRC.SYSMESSAGE That is not a valid target.
+RETURN 1
+
+ON=@Targon_Ground
+SRC.SYSMESSAGE That is not a valid target.
+RETURN 1
+
+ON=@Targon_Char
+VAR.FIZZLECHECK 0
+SRC.f_fizzlecheck 900
+IF <VAR.FIZZLCHECK>0
+RETURN 1
+ENDIF
+f_mageryskillgain
+SRC.MANA <SRC.MANA>+-20
+SRC.TAG.EARTHSKILL <SRC.TAG.DARKSKILL>+40
+SRC.TAG.BEFOREUNHOLYSTR <SRC.STR>
+SRC.EVENTS +e_unholy_strength
+SRC.TIMER <SRC.MAGERY>*1.5
+RETURN 1
+
+ON=@Timer
+SRC.STR <SRC.TAG.BEFOREUNHOLYSTR>
+SRC.EVENTS -e_unholy_strength
+
+[EVENTS e_unholy_strength]
+ON=@GetHit
+SRC.STR <SRC.STR>+<ARGS>
+IF <SRC.STR> > 1000
+SRC.STR 1000
+ENDIF
+
+//Demi
+[ITEMDEF i_demi_scroll]
+ID=i_map_rolled
+TYPE=t_scroll
+NAME=Demi Scroll
+
+ON=Click
+COLOR 078C
+
+ON=@DClick
+SRC.NEWITEM demi_spell
+SRC.ACT.EQUIP
+RETURN 1
+
+[ITEMDEF demi_spell]
+ID=i_memory
+TYPE=t_eq_script
+NAME=Demi Spell
+
+ON=@Create
+ATTR attr_can_decay
+
+ON=@Equip
+VAR.SPELLCHECK 0
+SRC.f_mageryskillcheck 600
+SRC.f_manacheck 30
+SRC.f_darkskillcheck 10000
+IF <VAR.SPELLCHECK>0
+RETURN 1
+ENDIF
+SRC.ANIM 16
+SRC.SAY An Mani Ort
+TARGET Select the target for the spell.
+
+ON=@Targon_Item
+SRC.SYSMESSAGE That is not a valid target.
+RETURN 1
+
+ON=@Targon_Ground
+SRC.SYSMESSAGE That is not a valid target.
+RETURN 1
+
+ON=@Targon_Char
+IF (<SRC.TARG.SERIAL> == <SRC.SERIAL>)
+SRC.SYSMESSAGE You cannot cast that on yourself.
+RETURN 1
+ENDIF
+VAR.FIZZLECHECK 0
+SRC.f_fizzlecheck 1000
+IF <VAR.FIZZLCHECK>0
+RETURN 1
+ENDIF
+f_mageryskillgain
+SRC.MANA <SRC.MANA>+-30
+SRC.TAG.EARTHSKILL <SRC.TAG.DARKSKILL>+80
+SRC.TARG.EFFECT 2,037be,1,5,1
+SRC.SOUND 01E6
+VAR.QUATER1 <SRC.MAGERY>/100
+VAR.QUATER2 <VAR.QUATER1> + RAND(100)
+IF <VAR.QUARTER2> >= 90.0
+SRC.TARG.DAMAGE (<SRC.TARG.HITS> * (1.0/2.0))
+ELSE
+SRC.SYSMESSAGE Your target seems unaffected by the spell.
+ENDIF
+RETURN 1
+
+//Evil Prescence
+[ITEMDEF i_evil_prescence_scroll]
+ID=i_map_rolled
+TYPE=t_scroll
+NAME=Evil Prescence Scroll
+
+ON=Click
+COLOR 078C
+
+ON=@DClick
+SRC.NEWITEM evil_prescence_spell
+SRC.ACT.EQUIP
+RETURN 1
+
+[ITEMDEF evil_prescence_spell]
+ID=i_memory
+TYPE=t_eq_script
+NAME=Evil Prescence Spell
+
+ON=@Create
+ATTR attr_can_decay
+
+ON=@Equip
+VAR.SPELLCHECK 0
+SRC.f_mageryskillcheck 700
+SRC.f_manacheck 40
+SRC.f_darkskillcheck 20000
+IF <VAR.SPELLCHECK>0
+RETURN 1
+ENDIF
+SRC.ANIM 16
+SRC.SAY In Corp Sanct
+VAR.FIZZLECHECK 0
+SRC.f_fizzlecheck 1200
+IF <VAR.FIZZLCHECK>0
+RETURN 1
+ENDIF
+f_mageryskillgain
+SRC.MANA <SRC.MANA>+-40
+SRC.EVENTS +e_evil_prescence
+SCR.TIMER <SRC.MAGERY>*2.0
+RETURN 1
+
+ON=@Timer
+SRC.EVENTS -e_evil_prescence
+
+[EVENTS e_evil_prescence]
+ON=@GetHit
+IF !(RAND(5)
+SRC.EFFECT 2,037c4,1,16,1
+SRC.NEWNPC {c_lesser_daemon 1 c_dark_orc 1 c_dark_form 1 c_gargoyle 1 c_gazer 1}
+SRC.ACT.P <SRC.P>
+SRC.ACT.NEWITEM i_memory
+SRC.ACT.ACT.COLOR 02
+SRC.ACT.ACT.LINK <SRC.UID>
+SRC.ACT.EQUIP <SRC.ACT.ACT>
+SRC.ACT.FLAGS <SRC.ACT.FLAGS>|statf_conjured
+ENDIF
+
+//Quarter
+[ITEMDEF i_quarter_scroll]
+ID=i_map_rolled
+TYPE=t_scroll
+NAME=Quarter Scroll
+
+ON=Click
+COLOR 078C
+
+ON=@DClick
+SRC.NEWITEM quater_spell
+SRC.ACT.EQUIP
+RETURN 1
+
+[ITEMDEF quarter_spell]
+ID=i_memory
+TYPE=t_eq_script
+NAME=Quarter Spell
+
+ON=@Create
+ATTR attr_can_decay
+
+ON=@Equip
+VAR.SPELLCHECK 0
+SRC.f_mageryskillcheck 800
+SRC.f_manacheck 50
+SRC.f_darkskillcheck 40000
+IF <VAR.SPELLCHECK>0
+RETURN 1
+ENDIF
+SRC.ANIM 16
+SRC.SAY An Vas Mani Ort
+TARGET Select the target for the spell.
+
+ON=@Targon_Item
+SRC.SYSMESSAGE That is not a valid target.
+RETURN 1
+
+ON=@Targon_Ground
+SRC.SYSMESSAGE That is not a valid target.
+RETURN 1
+
+ON=@Targon_Char
+IF (<SRC.TARG.SERIAL> == <SRC.SERIAL>)
+SRC.SYSMESSAGE You cannot cast that on yourself.
+RETURN 1
+ENDIF
+VAR.FIZZLECHECK 0
+SRC.f_fizzlecheck 1200
+IF <VAR.FIZZLCHECK>0
+RETURN 1
+ENDIF
+f_mageryskillgain
+SRC.MANA <SRC.MANA>+-50
+SRC.TAG.EARTHSKILL <SRC.TAG.DARKSKILL>+320
+SRC.TARG.EFFECT 2,037be,1,5,1
+SRC.SOUND 01E6
+VAR.QUATER1 <SRC.MAGERY>/100
+VAR.QUATER2 <VAR.QUATER1> + RAND(100)
+IF <VAR.QUARTER2> >= 90.0
+SRC.TARG.DAMAGE (<SRC.TARG.HITS> * (3.0/4.0))
+ELSE
+SRC.SYSMESSAGE Your target seems unaffected by the spell.
+ENDIF
+RETURN 1
+
+//Dark Matter
+
+//Dark Holy
+
+//Summon Shadow Elemental
+[ITEMDEF i_summon_shadow_elemental_scroll]
+ID=i_map_rolled
+NAME=Summon Shadow Elemental Scroll
+
+ON=Click
+COLOR 078C
+
+ON=@DClick
+SRC.NEWITEM summon_shadow_elemental_spell
+SRC.ACT.EQUIP
+RETURN 1
+
+[ITEMDEF summon_shadow_elemental_spell]
+ID=i_memory
+TYPE=t_eq_script
+NAME=Stone Spell
+
+ON=@Create
+TIMER=45
+ATTR=attr_can_decay
+
+ON=@Equip
+IF <SRC.TAG.DARKSKILL> < 320000
+SRC.SYSMESSAGE You are not skilled enough to cast this.
+RETURN 1
+ELSEIF <SRC.MAGERY> < 120.0
+SRC.SYSMESSAGE You are not skilled enough to cast this.
+RETURN 1
+ELSEIF <SRC.MANA> < 100
+SRC.SYSMESSAGE Insufficient mana for this spell.
+RETURN 1
+ELSE
+TARGETG Where do you wish to summon the creature?
+ENDIF
+RETURN 1
+
+ON=@TargOn_Ground
+SRC.ANIM 16
+SRC.SAY Kal Vas Xen An Lor
+IF (<EVAL <SRC.MAGERY> + RAND(31)> ) < 150.0
+SRC.SYSMESSAGE You fail in saying the words of power correctly
+ELSE
+SRC.MANA <SRC.MANA>+-100
+ENDIF
+IF (<SRC.MAGERY> < 300.0)
+VAR.X=<EVAL (<SRC.MAGERY> / 4) + RAND(400)>
+ENDIF
+IF (<EVAL <VAR.X>> >= 100.0)
+SRC.MAGERY <SRC.MAGERY>+0.1
+ENDIF
+SRC.NEWNPC c_elem_shadow
+SRC.ACT.P <SRC.TARGP>
+SRC.ACT.NEWITEM i_memory
+SRC.ACT.ACT.COLOR 02
+SRC.ACT.ACT.LINK <SRC.UID>
+SRC.ACT.EQUIP <SRC.ACT.ACT>
+SRC.ACT.FLAGS <SRC.ACT.FLAGS>|statf_conjured
+
+//ETHER SPELLS
+
+//Energy Bolt
+[ITEMDEF i_energy_bolt_scroll]
+ID=i_map_rolled
+NAME=Energy Bolt Scroll
+WEIGHT=.1
+
+ON=@Create
+COLOR 0432
+
+ON=@DCLICK
+SRC.NEWITEM energy_bolt_spell
+SRC.ACT.EQUIP
+RETURN 1
+
+[ITEMDEF energy_bolt_spell]
+ID=i_memory
+TYPE=t_eq_script
+NAME=Energy Bolt Spell
+
+ON=@Create
+ATTR attr_can_decay
+
+ON=@Equip
+VAR.SPELLCHECK 0
+f_earthskillcheck 320000
+f_waterskillcheck 320000
+f_fireskillcheck 320000
+f_windskillcheck 320000
+f_mageryskillcheck 900
+f_manacheck 20
+IF <VAR.SPELLCHECK>0
+RETURN 1
+ENDIF
+SRC.ANIM 16
+SRC.SAY Corp Por
+TARGET Select the target for the spell.
+
+ON=@TargOn_Item
+SRC.SYSMESSAGE That is not a valid target.
+RETURN 1
+
+ON=@TargOn_Ground
+SRC.SYSMESSAGE That is not a valid target.
+RETURN 1
+
+ON=@TargOn_Char
+IF (<SRC.TARG.SERIAL> == <SRC.SERIAL>)
+SRC.SYSMESSAGE You cannot cast that on yourself.
+RETURN 1
+ENDIF
+VAR.FIZZLECHECK 0
+SRC.f_fizzlecheck 1300
+IF <VAR.FIZZLCHECK>0
+RETURN 1
+ENDIF
+f_mageryskillgain
+SRC.MANA <SRC.MANA>+-20
+SRC.TAG.ETHERIALSKILL <SRC.TAG.ETHERIALSKILL> + 10
+SRC.TARG.EFFECT 0,0379F,4,16,1
+SOUND snd_spell_energy_bolt
+//VAR.PARTA <SRC.MAGERY>
+//VAR.PARTB <VAR.PARTA> / 100
+//VAR.PARTC <VAR.PARTB> + RAND(50)
+//SRC.TARG.HITS <SRC.TARG.HITS> + -<VAR.PARTC>
+//SRC.TARG.UPDATE
+SRC.TARG.DAMAGE {(<SRC.MAGERY>/300) (<SRC.MAGERY>/100)}
+RETURN 1
+
+//Blade Spirit
+[ITEMDEF i_blade_spirits_scroll]
+ID=i_map_rolled
+NAME=Blade Spirits Scroll
+WEIGHT=.1
+
+ON=@Create
+COLOR 0432
+
+ON=@DCLICK
+SRC.NEWITEM blade_spirits_spell
+SRC.ACT.EQUIP
+RETURN 1
+
+[ITEMDEF blade_spirits_spell]
+ID=i_memory
+TYPE=t_eq_script
+NAME=Blade Spirits Spell
+
+ON=@Create
+ATTR=attr_can_decay
+
+ON=@Equip
+VAR.SPELLCHECK 0
+f_etherialskillcheck 2500
+f_earthskillcheck 320000
+f_waterskillcheck 320000
+f_fireskillcheck 320000
+f_windskillcheck 320000
+f_mageryskillcheck 1000
+f_manacheck 40
+IF <VAR.SPELLCHECK>0
+RETURN 1
+ENDIF
+SRC.ANIM 16
+SRC.SAY In Jux Hur Ylem
+TARGETG Where do you wish to summon the creature?
+
+ON=@TargOn_Ground
+VAR.FIZZLECHECK 0
+SRC.f_fizzlecheck 1400
+IF <VAR.FIZZLCHECK>0
+RETURN 1
+ENDIF
+SRC.MANA <SRC.MANA>+-40
+SOUND snd_spell_blade_spirits
+SRC.NEWNPC c_blade_spirit
+SRC.ACT.P <SRC.TARGP>
+SRC.ACT.UPDATE
+SRC.ACT.FLAGS <SRC.ACT.FLAGS>|statf_conjured
+f_mageryskillgain
+SRC.TAG.ETHERIALSKILL <SRC.TAG.ETHERIALSKILL> + 20
+RETURN 1
+
+//Meteor Swarm
+[ITEMDEF i_meteor_swarm_scroll]
+ID=i_map_rolled
+NAME=Meteor Swarm Scroll
+
+ON=@Create
+COLOR 0432
+
+ON=@DClick
+SRC.NEWITEM meteor_swarm_spell
+SRC.ACT.EQUIP
+RETURN 1
+
+[ITEMDEF i_meteor]
+ID=036D4
+NAME=Meteor
+
+ON=@Create
+COLOR 00799
+
+[ITEMDEF meteor_swarm_spell]
+ID=i_memory
+TYPE=t_eq_script
+NAME=Meteor Swarm Spell
+
+ON=@Create
+ATTR attr_can_decay
+
+ON=@Equip
+VAR.SPELLCHECK 0
+f_etherialskillcheck 5000
+f_earthskillcheck 320000
+f_waterskillcheck 320000
+f_fireskillcheck 320000
+f_windskillcheck 320000
+f_mageryskillcheck 1100
+f_manacheck 50
+IF <VAR.SPELLCHECK>0
+RETURN 1
+ENDIF
+SRC.ANIM 16
+SRC.SAY Flam Kal Des Ylem
+TARGET Select the target for the spell.
+
+ON=@TargOn_Item
+SRC.SYSMESSAGE That is not a valid target.
+RETURN 1
+
+ON=@TargOn_Ground
+SRC.SYSMESSAGE That is not a valid target.
+RETURN 1
+
+ON=@TargOn_Char
+IF (<SRC.TARG.SERIAL> == <SRC.SERIAL>)
+SRC.SYSMESSAGE You cannot cast that on yourself.
+RETURN 1
+ENDIF
+VAR.FIZZLECHECK 0
+SRC.f_fizzlecheck 1500
+IF <VAR.FIZZLCHECK>0
+RETURN 1
+ENDIF
+f_mageryskillgain
+SRC.MANA <SRC.MANA>+-50
+SRC.TAG.ETHERIALSKILL <SRC.TAG.ETHERIALSKILL> + 40
+LINK <SRC.TARG.UID>
+SRC.TARG.EFFECT 0,036fe,3,16,1
+SOUND snd_spell_meteor_swarm
+VAR.PARTA <SRC.MAGERY>
+VAR.PARTB <VAR.PARTA> / 300
+VAR.PARTC <VAR.PARTB> + RAND(10)
+SRC.TARG.HITS <SRC.TARG.HITS> + -<VAR.PARTC>
+SRC.TARG.UPDATE
+TIMER 2
+MOREX 2
+
+ON=@Timer
+IF <MOREX> > 0
+LINK.EFFECT 0,036fe,3,16,1
+SOUND snd_spell_meteor_swarm
+VAR.PARTA <SRC.MAGERY>
+VAR.PARTB <VAR.PARTA> / 300
+VAR.PARTC <VAR.PARTB> + RAND(10)
+LINK.HITS <SRC.TARG.HITS> + -<VAR.PARTC>
+LINK.UPDATE
+TIMER 2
+MOREX <MOREX>+-1
+ENDIF
+ELSE
+REMOVE
+RETURN 1
+
+//Comet
+[ITEMDEF i_comet_scroll]
+ID=i_map_rolled
+NAME=Comet Scroll
+
+ON=@Create
+COLOR 0432
+
+ON=@DCLICK
+SRC.NEWITEM comet_spell
+SRC.ACT.EQUIP
+RETURN 1
+
+//Energy Vortex
+[ITEMDEF i_energy_vortex_scroll]
+ID=i_map_rolled
+NAME=Energy Vortex Scroll
+
+ON=@Create
+COLOR 0432
+
+ON=@DCLICK
+SRC.NEWITEM energy_vortex_spell
+SRC.ACT.EQUIP
+RETURN 1
+
+//Ultima
+[ITEMDEF i_ultima_scroll]
+ID=i_map_rolled
+NAME=Ultima Scroll
+
+ON=@Create
+COLOR 0432
+
+ON=@DCLICK
+SRC.NEWITEM ultima_spell
+SRC.ACT.EQUIP
+RETURN 1
+
+//Megid
+[ITEMDEF i_megid_scroll]
+ID=i_map_rolled
+NAME=Megid Scroll
+
+ON=@Create
+COLOR 0432
+
+ON=@DCLICK
+SRC.NEWITEM megid_spell
+SRC.ACT.EQUIP
+RETURN 1
+
+[ITEMDEF megid_spell]
+ID=i_memory
+TYPE=t_eq_script
+NAME=Megid Spell
+
+ON=@Create
+ATTR attr_can_decay
+
+ON=@Equip
+SRC.SYSMESSAGE This spell is temporarily unavailable.
+RETURN 1
+
+//Megedo
+[ITEMDEF i_megedo_scroll]
+ID=i_map_rolled
+NAME=Megedo Scroll
+
+ON=@Create
+COLOR 0432
+
+ON=@DCLICK
+SRC.NEWITEM megedo_spell
+SRC.ACT.EQUIP
+RETURN 1
+
+[ITEMDEF megedo_spell]
+ID=i_memory
+TYPE=t_eq_script
+NAME=Megedo Spell
+
+ON=@Create
+ATTR attr_can_decay
+
+ON=@Equip
+SRC.SYSMESSAGE This spell is temporarily unavailable.
+RETURN 1
+
+//Armagedon
+[ITEMDEF i_armagedon_scoll]
+ID=i_map_rolled
+NAME=Armagedon Scroll
+
+ON=@Create
+COLOR 0432
+
+ON=@DCLICK
+SRC.NEWITEM armagedon_spell
+SRC.ACT.EQUIP
+RETURN 1
+
+[ITEMDEF armagedon_spell]
+ID=i_memory
+TYPE=t_eq_script
+NAME=Armagedon Spell
+
+ON=@Create
+ATTR attr_can_decay
+
+ON=@Equip
+SRC.SYSMESSAGE This spell is temporarily unavailable.
+RETURN 1
+
+[EOF]

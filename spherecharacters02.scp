@@ -1,0 +1,10145 @@
+[CHARDEF c_lesser_daemon]
+ID=c_daemon
+NAME=Lesser Daemon
+SOUND=snd_monster_daemon1
+ICON=i_pet_daemon
+ANIM=03FBC7F
+CAN=MT_WALK|MT_FLY|MT_USEHANDS
+DAM={5 10}
+ARMOR=15
+RESOURCES=9 i_ribs_raw, 8 i_daemon_bone
+FOODTYPE=
+BLOODCOLOR=colors_green
+DESIRES=i_gold,c_lesser_daemon,c_evil,c_daemon,c_balron,c_greater_daemon,c_arch_daemon
+SHELTER=r_dungeon,r_caves
+AVERSIONS=r_civilization
+
+CATEGORY=Monsters
+SUBSECTION=Daemons & Gargoyles
+DESCRIPTION=Lesser Daemon
+
+ON=@Create
+NPC=brain_monster
+COLOR=0079A
+FAME={300 1000}
+KARMA={-5000 -6000}
+STR={150 200}
+DEX={75 110}
+INT={300 350}
+
+PARRYING={35.0 50.0}
+MAGERY={65.0 80.0}
+MAGICRESISTANCE={55.0 65.0}
+EVALUATINGINTEL={70.0 85.0}
+TACTICS={45.0 75.0}
+WRESTLING={50.0 65.0}
+
+ON=@NPCRestock
+ITEM=i_gold,{100 400}
+ITEM=random_jewel,6
+ITEM=random_wands
+
+[CHARDEF c_evil]
+ID=c_daemon
+NAME=#NAMES_EVILS
+SOUND=snd_monster_daemon1
+ICON=i_pet_daemon
+CAN=MT_FLY|MT_WALK
+DAM={2 8}
+ARMOR=3
+RESOURCES=99 i_ribs_raw, 8 i_daemon_bone
+DESIRES=i_gold,c_lesser_daemon,c_evil,c_daemon,c_balron,c_greater_daemon,c_arch_daemon
+SHELTER=r_caves,r_dungeon
+AVERSIONS=r_civilization,r_water
+
+CATEGORY=Monsters
+SUBSECTION=Daemons & Gargoyles
+DESCRIPTION=The Evils
+
+ON=@Create
+NPC=brain_monster
+COLOR=1701
+FAME={3000 5000}
+KARMA={-4500 -7999}
+STR={100 170}
+DEX={80 200}
+INT={1000 1500}
+
+WRESTLING={55.0 70.0}
+TACTICS={60.0 85.0}
+PARRYING={40.0 95.0}
+MAGERY={55.0 75.0}
+EVALUATINGINTEL={110.0 135.0}
+MAGICRESISTANCE={65.0 85.0}
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_curse
+ADDSPELL=s_mass_curse
+
+ON=@NPCRestock
+ITEM=i_gold,{300 600}
+
+[CHARDEF c_greater_daemon]
+ID=c_daemon_w_sword
+NAME=Greater Daemon
+SOUND=snd_monster_daemon1
+ICON=i_pet_DAEMON
+ANIM=03FBC7F
+CAN=MT_WALK|MT_FLY|MT_USEHANDS
+DAM={45 50}
+ARMOR=30
+RESOURCES=99 i_ribs_raw, 8 i_daemon_bone
+DESIRES=i_gold,c_lesser_daemon,c_evil,c_daemon,c_balron,c_greater_daemon,c_arch_daemon
+SHELTER=r_dungeon,r_caves
+AVERSIONS=r_civilization
+CATEGORY=Monsters
+SUBSECTION=Daemons & Gargoyles
+DESCRIPTION=Greater Daemon
+
+ON=@Create
+NPC=brain_monster
+COLOR=001b5
+FAME={7000 9000}
+KARMA={-6000 -9999}
+STR={600 850}
+DEX={150 220}
+INT={750 1000}
+
+PARRYING={65.0 75.0}
+MAGERY={80.0 100.0}
+MAGICRESISTANCE={80.0 95.0}
+TACTICS={85.0 100.0}
+WRESTLING={95.0 110.0}
+EVALUATINGINTEL={200.0 350.0}
+
+ON=@NPCRestock
+ITEM=i_gold,{800 1100}
+
+[CHARDEF c_balron]
+ID=c_daemon_w_sword
+NAME=#NAMES_BALRONS
+SOUND=snd_monster_daemon1
+ICON=i_pet_daemon
+CAN=MT_WALK|MT_FLY
+DAM={30 45}
+ARMOR={18 51}
+RESOURCES=99 i_ribs_raw,8 i_daemon_bone
+DESIRES=i_gold,c_lesser_daemon,c_evil,c_daemon,c_balron,c_greater_daemon,c_arch_daemon
+SHELTER=r_dungeon,r_caves
+AVERSIONS=r_water
+
+CATEGORY=Monsters
+SUBSECTION=Daemons & Gargoyles
+DESCRIPTION=Balron
+
+ON=@Create
+NPC=brain_monster
+COLOR=colors_daemon
+FAME={9000 9100}
+KARMA={-9000 -9999}
+STR={985 1185}
+DEX={175 255}
+INT={890 1005}
+
+PARRYING={90.0 100.0}
+MAGERY={90.0 100.0}
+MAGICRESISTANCE={90.0 100.0}
+TACTICS={90.0 100.0}
+WRESTLING={90.0 100.0}
+
+ON=@NPCRestock
+ITEM=loot_balron
+
+[CHARDEF c_arch_daemon]
+ID=c_daemon_w_sword
+NAME=Arch Daemon
+SOUND=snd_monster_daemon1
+ICON=i_pet_daemon
+ANIM=03FBC7F
+CAN=MT_WALK|MT_FLY|MT_USEHANDS
+DAM={600 900}
+ARMOR=255
+BLOODCOLOR=colors_white
+RESOURCES=99 i_ribs_raw,8 i_daemon_bone
+DESIRES=i_gold,c_lesser_daemon,c_evil,c_daemon,c_balron,c_greater_daemon,c_arch_daemon
+SHELTER=r_dungeon,r_caves
+AVERSIONS=r_civilization
+TEVENTS=e_paraimmune
+
+CATEGORY=Monsters
+SUBSECTION=Daemons & Gargoyles
+DESCRIPTION=Arch Daemon
+
+ON=@Create
+NPC=brain_monster
+COLOR=007A1
+FAME=9500
+KARMA=-9999
+STR=25000
+DEX=25000
+INT=25000
+
+SWORDSMANSHIP={950.0 1000.0}
+PARRYING={950.0 1000.0}
+MAGERY={950.0 1000.0}
+MAGICRESISTANCE={950.0 1000.0}
+EVALUATINGINTEL={950.0 1000.0}
+TACTICS={950.0 1000.0}
+WRESTLING={950.0 1000.0}
+
+ON=@NPCRestock
+ITEM=i_gold,{30000 40000}
+ITEM=random_swordtype_vanq
+ITEM=random_platemail_invulnerability
+COLOR=2301
+
+[CHARDEF c_stone_gargoyle]
+ID=c_gargoyle
+NAME=Stone Gargoyle
+SOUND=snd_monster_gargyl1
+ICON=i_pet_garg
+CAN=MT_WALK|MT_FLY
+DAM={4 24}
+ARMOR=25
+RESOURCES=8 i_ribs_raw,5 tm_rocks
+FOODTYPE=2 t_arock,2 t_meat_raw
+DESIRES=c_stone_gargoyle,t_arock,t_rock,i_gold
+SHELTER=r_caves,r_dungeon,r_mountains
+AVERSIONS=r_civilization
+
+CATEGORY=Monsters
+SUBSECTION=Daemons & Gargoyles
+DESCRIPTION=Stone Gargoyle
+
+ON=@Create
+NPC=brain_monster
+COLOR=color_rock
+FAME={100 2000}
+KARMA={-3000 -3999}
+STR={96 125}
+DEX={86 105}
+INT={140 165}
+
+PARRYING={55.0 65.0}
+MAGERY={50.0 65.0}
+MAGICRESISTANCE={50.0 65.0}
+TACTICS={50.0 70.0}
+WRESTLING={50.0 70.0}
+
+ON=@NPCRestock
+ITEM=loot_stone_gargoyle
+
+[CHARDEF c_fallen_angel]
+ID=c_gargoyle
+NAME=Fallen Angel
+SOUND=snd_monster_gargyl1
+ICON=i_pet_garg
+CAN=MT_WALK|MT_FLY
+DAM={10 26}
+ARMOR=30
+RESOURCES=8 i_ribs_raw
+FOODTYPE=12 t_meat_raw
+DESIRES=c_fallen_angel
+SHELTER=r_caves,r_dungeon
+AVERSIONS=r_civilization
+
+CATEGORY=Monsters
+SUBSECTION=Daemons & Gargoyles
+DESCRIPTION=Fallen Angel
+
+ON=@Create
+NPC=brain_monster
+COLOR=007A1
+FAME={4000 7000}
+KARMA={-6000 -8999}
+STR={450 500}
+DEX={200 235}
+INT={500 765}
+
+PARRYING={85.0 100.0}
+SWORDSMANSHIP={150.0 155.0}
+MAGERY={95.0 135.0}
+MAGICRESISTANCE={75.0 90.0}
+TACTICS={110.0 170.0}
+EVALUATINGINTEL={235.0 450.0}
+WRESTLING={150.0 155.0}
+
+ON=@NPCRestock
+ITEM=i_longsword_vanquishing
+COLOR=007A1
+NAME=Arch Angel's Vengence
+ITEM=i_gold,{345 600}
+
+[CHARDEF c_earthfiend]
+ID=c_daemon
+NAME=Earth Fiend
+SOUND=snd_monster_daemon1
+ICON=i_pet_daemon
+CAN=MT_FLY|MT_WALK|MT_EQUIP
+DAM={10 25}
+ARMOR=15
+RESOURCES=9 i_ribs_raw,8 i_daemon_bone
+DESIRES=i_gold,c_earthfiend,c_elem_earth
+SHELTER=r_caves,r_dungeon
+AVERSIONS=r_civilization,r_water
+
+CATEGORY=Monsters
+SUBSECTION=Daemons & Gargoyles
+DESCRIPTION=Earth Fiend
+
+ON=@Create
+NPC=brain_monster
+COLOR=1116
+FAME={4000 7000}
+KARMA={-6000 -7999}
+STR={450 550}
+DEX={200 220}
+INT={1000 1500}
+
+WRESTLING={95.0 110.0}
+TACTICS={85.0 100.0}
+PARRYING={65.0 80.0}
+MAGERY={95.0 125.0}
+EVALUATINGINTEL={115.0 150.0}
+MAGICRESISTANCE={75.0 95.0}
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_summon_elem_earth
+ADDSPELL=s_earthquake
+
+ON=@NPCRestock
+ITEM=ttm_lvl4,R99
+ITEM=random_jewel
+ITEM=random_jewel
+ITEM=random_jewel
+ITEM=i_fertile_dirt,{3 8}
+ITEM=i_rock_armor
+ITEM=i_rock_arms
+ITEM=i_rock_leggings
+ITEM=i_rock_gorget
+ITEM=i_rock_gloves
+ITEM=i_rock_shield
+ITEM=i_rock_helm
+ITEM=i_earth_sword
+ITEM=i_gold,{800 1200}
+
+ON=@Death
+NEWNPC=c_elem_earth
+NEWNPC=c_elem_earth
+
+[CHARDEF c_waterfiend]
+ID=c_daemon
+NAME=Water Fiend
+SOUND=snd_monster_daemon1
+ICON=i_pet_daemon
+CAN=MT_FLY|MT_WALK|MT_EQUIP
+DAM={10 25}
+ARMOR=15
+RESOURCES=9 i_ribs_raw,8 i_daemon_bone
+DESIRES=i_gold,c_waterfiend,c_elem_water,r_water
+SHELTER=r_caves,r_dungeon,r_water
+AVERSIONS=r_civilization
+
+CATEGORY=Monsters
+SUBSECTION=Daemons & Gargoyles
+DESCRIPTION=Water Fiend
+
+ON=@Create
+NPC=brain_monster
+COLOR=00005
+FAME={4000 7000}
+KARMA={-6000 -7999}
+STR={450 550}
+DEX={220 300}
+INT={1000 1300}
+
+WRESTLING={95.0 110.0}
+TACTICS={85.0 100.0}
+PARRYING={65.0 80.0}
+MAGERY={95.0 125.0}
+EVALUATINGINTEL={115.0 150.0}
+MAGICRESISTANCE={75.0 95.0}
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_summon_elem_water
+ADDSPELL=s_mana_drain
+ADDSPELL=s_mind_blast
+ADDSPELL=s_paralyze
+ADDSPELL=s_invisibility
+ADDSPELL=s_paralyzation_field
+ADDSPELL=s_mana_vampire
+
+ON=@NPCRestock
+ITEM=ttm_lvl4,R99
+ITEM=random_jewel
+ITEM=random_jewel
+ITEM=random_jewel
+ITEM=i_aqua_armor
+ITEM=i_aqua_arms
+ITEM=i_aqua_leggings
+ITEM=i_aqua_gorget
+ITEM=i_aqua_gloves
+ITEM=i_aqua_shield
+ITEM=i_aqua_helm
+ITEM=i_water_sword
+ITEM=i_gold,{800 1200}
+
+ON=@Death
+NEWNPC=c_elem_water
+NEWNPC=c_elem_water
+
+[CHARDEF c_firefiend]
+ID=c_daemon
+NAME=Fire Fiend
+SOUND=snd_monster_daemon1
+ICON=i_pet_daemon
+CAN=MT_FLY|MT_WALK|MT_FIRE_IMMUNE|MT_EQUIP
+DAM={15 25}
+ARMOR=15
+RESOURCES=9 i_ribs_raw,8 i_daemon_bone
+DESIRES=i_gold,c_firefiend,c_elem_fire
+SHELTER=r_caves,r_dungeon
+AVERSIONS=r_civilization,r_water
+
+CATEGORY=Monsters
+SUBSECTION=Daemons & Gargoyles
+DESCRIPTION=Fire Fiend
+
+ON=@Create
+NPC=brain_monster
+COLOR=00020
+FAME={4000 7000}
+KARMA={-6000 -7999}
+STR={450 550}
+DEX={210 330}
+INT={1000 1300}
+
+WRESTLING={90.0 105.0}
+TACTICS={90.0 105.0}
+PARRYING={70.0 80.0}
+MAGERY={100.0 125.0}
+EVALUATINGINTEL={115.0 150.0}
+MAGICRESISTANCE={75.0 95.0}
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_magic_arrow
+ADDSPELL=s_fireball
+ADDSPELL=s_fire_field
+ADDSPELL=s_explosion
+ADDSPELL=s_flamestrike
+ADDSPELL=s_meteor_swarm
+ADDSPELL=s_summon_elem_fire
+
+ON=@NPCRestock
+ITEM=ttm_lvl4,R99
+ITEM=random_jewel
+ITEM=random_jewel
+ITEM=random_jewel
+ITEM=i_flame_armor
+ITEM=i_flame_arms
+ITEM=i_flame_leggings
+ITEM=i_flame_gorget
+ITEM=i_flame_gloves
+ITEM=i_flame_shield
+ITEM=i_flame_helm
+ITEM=i_flame_sword
+ITEM=i_gold,{800 1200}
+
+ON=@Death
+NEWNPC=c_elem_fire
+NEWNPC=c_elem_fire
+
+[CHARDEF c_airfiend]
+ID=c_daemon
+NAME=Air Fiend
+SOUND=snd_monster_daemon1
+ICON=i_pet_daemon
+DAM={10 25}
+ARMOR=15
+RESOURCES=9 i_ribs_raw,8 i_daemon_bone
+CAN=MT_FLY|MT_WALK|MT_EQUIP
+SHELTER=r_caves,r_dungeon
+DESIRES=i_gold,c_airfiend,c_elem_air
+AVERSIONS=r_civilization,r_water
+
+CATEGORY=Monsters
+SUBSECTION=Daemons & Gargoyles
+DESCRIPTION=Air Fiend
+
+ON=@Create
+COLOR=17969
+STR={450 560}
+DEX={210 290}
+INT={1000 1300}
+
+WRESTLING={95.0 110.0}
+TACTICS={85.0 100.0}
+PARRYING={65.0 80.0}
+MAGERY={95.0 125.0}
+EVALUATINGINTEL={115.0 150.0}
+MAGICRESISTANCE={75.0 95.0}
+
+NPC=brain_monster
+
+FAME={4000 7000}
+KARMA={-6000 -7999}
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_summon_elem_air
+ADDSPELL=s_curse
+
+ON=@NPCRestock
+ITEM=ttm_lvl4,R99
+ITEM=random_jewel
+ITEM=random_jewel
+ITEM=random_jewel
+ITEM=i_wind_armor
+ITEM=i_wind_arms
+ITEM=i_wind_leggings
+ITEM=i_wind_gorget
+ITEM=i_wind_gloves
+ITEM=i_wind_shield
+ITEM=i_wind_helm
+ITEM=i_air_sword
+ITEM=i_gold,{800 1200}
+
+ON=@Death
+NEWNPC=c_elem_air
+NEWNPC=c_elem_air
+
+[CHARDEF c_lightningfiend]
+ID=c_daemon
+NAME=Lightning Fiend
+SOUND=snd_monster_daemon1
+ICON=i_pet_daemon
+CAN=MT_FLY|MT_WALK|MT_EQUIP
+DAM={10 15}
+ARMOR=15
+RESOURCES=9 i_ribs_raw,8 i_daemon_bone
+DESIRES=i_gold,c_lightningfiend,c_elem_lightning
+SHELTER=r_caves,r_dungeon
+AVERSIONS=r_civilization,r_water
+
+CATEGORY=Monsters
+SUBSECTION=Daemons & Gargoyles
+DESCRIPTION=Lightning Fiend
+
+ON=@Create
+NPC=brain_monster
+COLOR=0049d
+FAME={3000 5000}
+KARMA={-4500 -7999}
+STR={450 550}
+DEX={200 235}
+INT={1000 1500}
+
+WRESTLING={85.0 95.0}
+TACTICS={95.0 125.0}
+PARRYING={65.0 85.0}
+MAGERY={85.0 95.0}
+EVALUATINGINTEL={110.0 130.0}
+MAGICRESISTANCE={70.0 90.0}
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_lightning
+ADDSPELL=s_chain_lightning
+
+ON=@NPCRestock
+ITEM=ttm_lvl4,R99
+ITEM=random_jewel
+ITEM=random_jewel
+ITEM=random_jewel
+ITEM=i_wand_lightning
+ITEM=i_wand_chain_lightning
+ITEM=i_lightning_armor
+ITEM=i_lightning_arms
+ITEM=i_lightning_leggings
+ITEM=i_lightning_gorget
+ITEM=i_lightning_gloves
+ITEM=i_lightning_shield
+ITEM=i_lightning_helm
+ITEM=i_lightning_sword
+
+ON=@Death
+NEWNPC=c_elem_lightning
+NEWNPC=c_elem_lightning
+
+[CHARDEF c_icefiend]
+ID=c_daemon
+NAME=Ice Fiend
+SOUND=snd_monster_daemon1
+ICON=i_pet_daemon
+CAN=MT_FLY|MT_WALK|MT_EQUIP
+DAM={10 25}
+ARMOR=15
+RESOURCES=9 i_ribs_raw, 8 i_daemon_bone
+DESIRES=i_gold,r_snow,c_icefiend,c_snowfiend,c_elem_ice,c_elem_snow
+SHELTER=r_caves,r_dungeon,
+AVERSIONS=r_civilization,r_water
+
+CATEGORY=Monsters
+SUBSECTION=Daemons & Gargoyles
+DESCRIPTION=Ice Fiend
+
+ON=@Create
+NPC=brain_monster
+COLOR=color_ice
+FAME={4000 7000}
+KARMA={-6000 -7999}
+STR={450 550}
+DEX={200 220}
+INT={1000 1500}
+
+WRESTLING={95.0 110.0}
+TACTICS={85.0 100.0}
+PARRYING={65.0 80.0}
+MAGERY={95.0 125.0}
+EVALUATINGINTEL={115.0 150.0}
+MAGICRESISTANCE={80.0 90.0}
+
+ON=@NPCRestock
+ITEM=ttm_lvl4,R99
+ITEM=random_jewel
+ITEM=random_jewel
+ITEM=random_jewel
+ITEM=i_ice_armor
+ITEM=i_ice_arms
+ITEM=i_ice_leggings
+ITEM=i_ice_gorget
+ITEM=i_ice_gloves
+ITEM=i_ice_shield
+ITEM=i_ice_helm
+ITEM=i_ice_sword
+ITEM=i_gold,{800 1200}
+
+[CHARDEF c_poisonfiend]
+ID=c_daemon
+NAME=Poison Fiend
+SOUND=snd_monster_daemon1
+ICON=i_pet_daemon
+CAN=MT_FLY|MT_WALK|MT_EQUIP
+DAM={12 25}
+ARMOR=18
+RESOURCES=9 i_ribs_raw,8 i_daemon_bone
+DESIRES=i_gold,c_poisonfiend,c_elem_poison
+SHELTER=r_caves,r_dungeon
+AVERSIONS=r_civilization,r_water
+
+CATEGORY=Monsters
+SUBSECTION=Daemons & Gargoyles
+DESCRIPTION=Poison Fiend
+
+ON=@Create
+NPC=brain_monster
+COLOR=colors_poison
+FAME={5000 8000}
+KARMA={-6500 -8999}
+STR={600 800}
+DEX={200 250}
+INT={1000 1300}
+
+WRESTLING={110.0 150.0}
+TACTICS={95.0 105.0}
+PARRYING={65.0 80.0}
+MAGERY={100.0 130.0}
+EVALUATINGINTEL={125.0 160.0}
+MAGICRESISTANCE={75.0 95.0}
+POISONING={80.0 95.0}
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_poison
+ADDSPELL=s_curse
+ADDSPELL=s_poison_field
+
+ON=@NPCRestock
+ITEM=ttm_lvl4,R99
+ITEM=random_jewel
+ITEM=random_jewel
+ITEM=random_jewel
+ITEM=i_potion_poisondeadly
+ITEM=i_potion_poisondeadly
+ITEM=i_potion_poisondeadly
+ITEM=i_nightshade,6
+ITEM=i_toxic_armor
+ITEM=i_toxic_arms
+ITEM=i_toxic_leggings
+ITEM=i_toxic_gorget
+ITEM=i_toxic_gloves
+ITEM=i_toxic_shield
+ITEM=i_toxic_helm
+ITEM=i_poison_blade
+ITEM=i_gold,{900 1300}
+
+ON=@Death
+NEWNPC=c_elem_poison
+NEWNPC=c_elem_poison
+
+[CHARDEF c_bloodfiend]
+ID=c_daemon
+NAME=Blood Fiend
+SOUND=snd_monster_daemon1
+ICON=i_pet_daemon
+CAN=MT_FLY|MT_WALK|MT_EQUIP
+DAM={13 30}
+ARMOR=24
+RESOURCES=9 i_ribs_raw,8 i_daemon_bone
+DESIRES=i_gold,c_bloodfiend,c_elem_blood
+SHELTER=r_caves,r_dungeon
+AVERSIONS=r_civilization,r_water
+
+CATEGORY=Monsters
+SUBSECTION=Daemons & Gargoyles
+DESCRIPTION=Blood Fiend
+
+ON=@Create
+NPC=brain_monster
+COLOR=colors_blood
+FAME={6000 9000}
+KARMA={-7500 -9999}
+STR={800 1050}
+DEX={400 550}
+INT={1500 2000}
+
+WRESTLING={85.0 95.0}
+TACTICS={110.0 175.0}
+PARRYING={85.0 105.0}
+MAGERY={150.0 185.0}
+EVALUATINGINTEL={195.0 200.0}
+MAGICRESISTANCE={65.0 95.0}
+POISONING={200.0 215.0}
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_poison
+ADDSPELL=s_curse
+ADDSPELL=s_energy_vortex
+ADDSPELL=s_summon_undead
+ADDSPELL=s_mana_vampire
+ADDSPELL=s_mass_curse
+ADDSPELL=s_energy_bolt
+ADDSPELL=s_poison_field
+
+ON=@NPCRestock
+ITEM=ttm_lvl4,R99
+ITEM=random_jewel
+ITEM=random_jewel
+ITEM=random_jewel
+ITEM=i_blood_armor
+ITEM=i_blood_arms
+ITEM=i_blood_leggings
+ITEM=i_blood_gorget
+ITEM=i_blood_gloves
+ITEM=i_blood_shield
+ITEM=i_blood_helm
+ITEM=i_blood_sword
+ITEM=i_gold,{800 2000}
+
+ON=@Death
+NEWNPC=c_elem_blood
+NEWNPC=c_elem_blood
+
+[CHARDEF c_holyangel]
+ID=c_daemon
+NAME=Holy Angel
+SOUND=snd_monster_daemon1
+ICON=i_pet_daemon
+CAN=MT_FLY|MT_WALK|MT_EQUIP
+DAM={8 30}
+ARMOR=28
+RESOURCES=9 i_ribs_raw,8 i_daemon_bone
+DESIRES=i_gold,c_holyangel,c_elem_holy
+SHELTER=r_shrines,t_shrine
+AVERSIONS=r_civilization,r_water
+
+CATEGORY=Monsters
+SUBSECTION=Daemons & Gargoyles
+DESCRIPTION=Holy Angel
+
+ON=@Create
+NPC=brain_human
+COLOR=000423
+FAME={4000 7000}
+KARMA={8000 9999}
+STR={450 550}
+DEX={210 330}
+INT={1000 1300}
+
+WRESTLING={90.0 105.0}
+TACTICS={90.0 105.0}
+PARRYING={70.0 80.0}
+MAGERY={100.0 125.0}
+EVALUATINGINTEL={115.0 150.0}
+MAGICRESISTANCE={75.0 85.0}
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_poison
+ADDSPELL=s_curse
+ADDSPELL=s_poison_field
+
+ON=@NPCRestock
+ITEM=ttm_lvl4,R99
+ITEM=random_jewel
+ITEM=random_jewel
+ITEM=random_jewel
+//ITEM=i_shadow_armor
+//ITEM=i_shadow_arms
+//ITEM=i_shadow_leggings
+//ITEM=i_shadow_gorget
+//ITEM=i_shadow_gloves
+//ITEM=i_shadow_shield
+//ITEM=i_shadow_helm
+//ITEM=i_shadow_sword
+ITEM=i_gold,{600 760}
+
+ON=@Death
+NEWNPC=c_elem_holy
+NEWNPC=c_elem_holy
+
+[CHARDEF c_shadowfiend]
+ID=c_daemon
+NAME=Shadow Fiend
+SOUND=snd_monster_daemon1
+ICON=i_pet_daemon
+CAN=MT_FLY|MT_WALK|MT_EQUIP
+DAM={8 30}
+ARMOR=28
+RESOURCES=9 i_ribs_raw,8 i_daemon_bone
+DESIRES=i_gold,c_shadowfiend,c_elem_shadow
+SHELTER=r_caves,r_dungeon
+AVERSIONS=r_civilization,r_water
+
+CATEGORY=Monsters
+SUBSECTION=Daemons & Gargoyles
+DESCRIPTION=Shadow Fiend
+
+ON=@Create
+NPC=brain_monster
+COLOR=01
+FAME={4000 7000}
+KARMA={-6000 -7999}
+STR={450 550}
+DEX={210 330}
+INT={1000 1300}
+
+WRESTLING={90.0 105.0}
+TACTICS={90.0 105.0}
+PARRYING={70.0 80.0}
+MAGERY={100.0 125.0}
+EVALUATINGINTEL={115.0 150.0}
+MAGICRESISTANCE={75.0 85.0}
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_poison
+ADDSPELL=s_curse
+ADDSPELL=s_poison_field
+
+ON=@NPCRestock
+ITEM=ttm_lvl4,R99
+ITEM=random_jewel
+ITEM=random_jewel
+ITEM=random_jewel
+ITEM=i_shadow_armor
+ITEM=i_shadow_arms
+ITEM=i_shadow_leggings
+ITEM=i_shadow_gorget
+ITEM=i_shadow_gloves
+ITEM=i_shadow_shield
+ITEM=i_shadow_helm
+ITEM=i_shadow_sword
+ITEM=i_gold,{600 760}
+
+ON=@Death
+NEWNPC=c_elem_shadow
+NEWNPC=c_elem_shadow
+
+[CHARDEF c_elem_lightning]
+ID=c_elem_fire
+NAME=Lightning Elemental
+ICON=i_pet_elem_fire
+ANIM=079DFF
+CAN=MT_WALK|MT_RUN|MT_USEHANDS
+DAM={2 10}
+ARMOR=15
+BLOODCOLOR=0049D
+DESIRES=c_elem_lightning,c_lightning_fiend
+SHELTER=r_dungeon
+
+CATEGORY=Monsters
+SUBSECTION=Elementals
+DESCRIPTION=Lightning Elemental
+
+ON=@Create
+COLOR=00630
+NPC=brain_monster
+
+STR={85 130}
+DEX={165 185}
+INT={71 95}
+
+PARRYING={55.0 65.0}
+MAGERY={60.0 75.0}
+MAGICRESISTANCE={60.0 75.0}
+SWORDSMANSHIP={70.0 100.0}
+TACTICS={80.0 100.0}
+WRESTLING={70.0 100.0}
+
+FAME={1000 6000}
+KARMA={-4000 -4999}
+
+ITEMNEWBIE=i_light_source
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_lightning
+ADDSPELL=s_chain_lightning
+
+ON=@NPCRestock
+ITEM=i_gold,{50 350}
+ITEM=i_cutlass_power
+COLOR=0049D
+NAME=Thunder Sabre
+ITEM=i_lightning_sound_maker
+
+[CHARDEF c_elem_ice]
+ID=c_elem_earth
+NAME=Ice Elemental
+SOUND=snd_elementl_erthel1
+ICON=i_pet_elem_earth
+CAN=MT_WALK
+DAM={5 26}
+ARMOR=20
+DESIRES=r_snow,c_elem_ice,c_elem_snow,c_icefiend,c_snowfiend
+SHELTER=r_caves,r_mountains
+AVERSIONS=r_lava
+
+CATEGORY=Monsters
+SUBSECTION=Elementals
+DESCRIPTION=Ice Elemental
+
+ON=@Create
+NPC=brain_monster
+COLOR=color_ice
+FAME={100 2000}
+KARMA={-3000 -3999}
+STR={155 185}
+DEX={86 115}
+INT={170 192}
+
+PARRYING={40.0 65.0}
+MAGICRESISTANCE={40.0 95.0}
+TACTICS={70.0 100.0}
+WRESTLING={60.0 100.0}
+
+ON=@NPCRestock
+ITEM=loot_elem_ice
+
+[CHARDEF c_elem_snow]
+ID=c_elem_air
+NAME=Snow Elemental
+SOUND=snd_elementl_airelem1
+ICON=i_pet_elem_air
+DAM={4 24}
+ARMOR=25
+DESIRES=r_snow,c_elem_ice,c_elem_snow,c_icefiend,c_snowfiend
+SHELTER=r_snow
+
+CATEGORY=Monsters
+SUBSECTION=Elementals
+DESCRIPTION=Snow Elemental
+
+ON=@Create
+NPC=brain_monster
+COLOR=color_snow
+FAME={1000 7000}
+KARMA={-6000 -8999}
+STR={325 355}
+DEX={165 185}
+INT={71 95}
+
+PARRYING={65.0 75.0}
+MAGICRESISTANCE={60.0 75.0}
+TACTICS={80.0 100.0}
+WRESTLING={80.0 100.0}
+
+ON=@NPCRestock
+ITEM=loot_elem_snow
+
+[CHARDEF c_elem_poison]
+NAME=Poison Elemental
+ID=c_elem_air
+SOUND=snd_elementl_watrel1
+ICON=i_pet_elem_air
+CAN=MT_WALK
+DAM={5 25}
+ARMOR=35
+DESIRES=c_elem_poison,c_poisonfiend
+SHELTER=r_dungeon
+
+CATEGORY=Monsters
+SUBSECTION=Elementals
+DESCRIPTION=Poison Elemental
+
+ON=@Create
+NPC=brain_monster
+COLOR=colors_poison
+FAME={7000 8000}
+KARMA={-7000 -8999}
+STR={425 515}
+DEX={165 185}
+INT={360 435}
+
+PARRYING={75.0 85.0}
+MAGERY={80.0 95.0}
+MAGICRESISTANCE={80.0 95.0}
+TACTICS={80.0 100.0}
+WRESTLING={70.0 90.0}
+
+ON=@NPCRestock
+ITEM=loot_elem_poison
+
+[CHARDEF c_elem_swamp]
+ID=c_elem_water
+NAME=Swamp Elemental
+SOUND=snd_elementl_watrel1
+CAN=MT_WALK|MT_SWIM
+DAM={4 20}
+ARMOR=15
+DESIRES=r_swamp,r_sewers,c_elem_swamp,c_swampfiend
+SHELTER=r_dungeon,r_sewers,r_swamp
+
+CATEGORY=Monsters
+SUBSECTION=Elementals
+DESCRIPTION=Swamp Elemental
+
+ON=@Create
+NPC=brain_monster
+COLOR=0048A
+FAME={1000 2000}
+KARMA={-3000 -4999}
+STR={200 245}
+DEX={66 85}
+INT={190 315}
+
+PARRYING={85.0 95.0}
+MAGERY={70.0 85.0}
+MAGICRESISTANCE={45.0 70.0}
+TACTICS={50.0 75.0}
+WRESTLING={65.0 80.0}
+EVALUATINGINTEL={100.0 135.0}
+
+ON=@NPCRestock
+ITEM=i_gold,{300 450}
+
+[CHARDEF c_elem_blood]
+ID=c_elem_water
+NAME=Blood Elemental
+SOUND=snd_elementl_watrel1
+CAN=MT_WALK|MT_SWIM
+DAM={12 40}
+ARMOR=30
+DESIRES=r_dungeon,t_blood,i_gold,c_elem_blood,c_bloodfiend
+SHELTER=r_dungeon
+
+CATEGORY=Monsters
+SUBSECTION=Elementals
+DESCRIPTION=Blood Elemental
+
+ON=@Create
+NPC=brain_monster
+COLOR=colors_blood
+FAME={5000 5999}
+KARMA={-5000 -5999}
+STR={526 615}
+DEX={66 85}
+INT={190 315}
+
+PARRYING={85.0 95.0}
+MAGERY={85.0 100.0}
+MAGICRESISTANCE={80.0 95.0}
+TACTICS={80.0 100.0}
+WRESTLING={80.0 100.0}
+
+ON=@NPCRestock
+ITEM=loot_elem_blood
+
+[CHARDEF c_elem_holy]
+ID=c_elem_fire
+NAME=Holy Elemental
+SOUND=snd_elementl_firelem1
+ICON=i_pet_elem_fire
+ANIM=079DFF
+CAN=MT_WALK|MT_FIRE_IMMUNE|MT_RUN|MT_USEHANDS
+DAM={7 18}
+ARMOR=23
+BLOODCOLOR=007A1
+DESIRES=c_elem_holy,c_holy_angel
+SHELTER=t_shrine,r_shrine
+
+CATEGORY=Monsters
+SUBSECTION=Elementals
+DESCRIPTION=Holy Elemental
+
+ON=@Create
+NPC=brain_human
+COLOR=07A1
+FAME={7000 9000}
+KARMA={8000 9999}
+STR={300 400}
+DEX={500 600}
+INT={100 200}
+
+PARRYING={90.0 165.0}
+MAGERY={80.0 95.0}
+MAGICRESISTANCE={90.0 95.0}
+TACTICS={120.0 160.0}
+WRESTLING={170.0 200.0}
+
+ITEMNEWBIE=i_light_source
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_magic_arrow
+ADDSPELL=s_fireball
+ADDSPELL=s_fire_field
+ADDSPELL=s_explosion
+ADDSPELL=s_flamestrike
+ADDSPELL=s_meteor_swarm
+ADDSPELL=s_summon_elem_fire
+ADDSPELL=s_fire_bolt
+
+ON=@NPCRestock
+ITEM=i_gold,{4000 5000}
+
+[CHARDEF c_elem_shadow]
+ID=c_elem_water
+NAME=Shadow Elemental
+SOUND=snd_elementl_watrel1
+CAN=MT_WALK|MT_SWIM
+DAM={8 28}
+ARMOR=23
+BLOODCOLOR=01
+DESIRES=c_elem_shadow,c_shadowfiend
+SHELTER=r_dungeon
+
+CATEGORY=Monsters
+SUBSECTION=Elementals
+DESCRIPTION=Shadow Elemental
+
+ON=@Create
+NPC=brain_monster
+COLOR=01
+FAME={8000 9000}
+KARMA={-8000 -8999}
+STR={340 445}
+DEX={70 110}
+INT={150 285}
+
+PARRYING={85.0 95.0}
+MAGERY={80.0 95.0}
+MAGICRESISTANCE={45.0 70.0}
+TACTICS={70.0 95.0}
+WRESTLING={85.0 100.0}
+EVALUATINGINTEL={145.0 190.0}
+
+ON=@NPCRestock
+ITEM=i_gold,{500 650}
+
+[CHARDEF c_elem_sand]
+ID=c_elem_earth
+NAME=Sand Elemental
+SOUND=snd_elementl_erthel1
+ICON=i_pet_elem_earth
+ANIM=079C7F
+CAN=MT_WALK|MT_EQUIP
+DAM={7 15}
+ARMOR=15
+BLOODCOLOR=007AD
+DESIRES=c_elem_sand
+SHELTER=r_mountains,r_caves
+
+CATEGORY=Monsters
+SUBSECTION=Elementals
+DESCRIPTION=Sand Elemental
+
+ON=@Create
+COLOR=007AD
+NPC=brain_monster
+FAME={5000 8000}
+KARMA={-8000 -8999}
+STR={500 655}
+DEX={166 185}
+INT={340 390}
+
+PARRYING={90.0 100.0}
+MAGICRESISTANCE={90.0 95.0}
+TACTICS={90.0 100.0}
+WRESTLING={90.0 100.0}
+MAGERY={90.0 100.0}
+EVALUATINGINTEL={90.0 100.0}
+ANATOMY={90.0 100.0}
+
+ON=@NPCRestock
+ITEM=i_gold,{600 900}
+
+[CHARDEF c_elem_magma]
+ID=c_elem_earth
+NAME=Magma Elemental
+SOUND=snd_elementl_erthel1
+ICON=i_pet_elem_earth
+ANIM=079C7F
+CAN=MT_WALK|MT_FIRE_IMMUNE
+DAM={5 20}
+ARMOR=25
+BLOODCOLOR=colors_lava
+DESIRES=r_lava,c_elem_magma
+SHELTER=r_lava,r_caves,r_dungeon
+
+CATEGORY=Monsters
+SUBSECTION=Elementals
+DESCRIPTION=Magma Elemental
+
+ON=@Create
+NPC=brain_monster
+COLOR=00486
+FAME={5000 6000}
+KARMA={-3000 -3999}
+STR={340 155}
+DEX={80 85}
+INT={75 95}
+
+PARRYING={90.0 105.0}
+MAGICRESISTANCE={80.0 95.0}
+TACTICS={90.0 120.0}
+WRESTLING={80.0 120.0}
+
+ON=@NPCRestock
+ITEM=i_gold,{450 700}
+
+[CHARDEF c_elem_lava]
+ID=c_elem_fire
+NAME=Lava Elemental
+SOUND=snd_elementl_firelem1
+ICON=i_pet_elem_fire
+ANIM=079DFF
+CAN=MT_WALK|MT_FIRE_IMMUNE|MT_RUN|MT_USEHANDS
+DAM={8 24}
+ARMOR=20
+BLOODCOLOR=colors_lava
+FOODTYPE=t_fire
+DESIRES=r_lava,c_elem_lava
+SHELTER=r_lava
+
+CATEGORY=Monsters
+SUBSECTION=Elementals
+DESCRIPTION=Lava Elemental
+
+ON=@Create
+NPC=brain_monster
+COLOR=00779
+
+STR={300 500}
+DEX={190 195}
+INT={80 120}
+
+PARRYING={90.0 95.0}
+MAGERY={90.0 105.0}
+MAGICRESISTANCE={85.0 120.0}
+TACTICS={90.0 110.0}
+WRESTLING={90.0 130.0}
+
+FAME={6000 8000}
+KARMA={-7000 -7999}
+
+ITEMNEWBIE=i_light_source
+ITEMNEWBIE=i_spellbook.
+ADDSPELL=s_magic_arrow
+ADDSPELL=s_fireball
+ADDSPELL=s_fire_field
+ADDSPELL=s_explosion
+ADDSPELL=s_flamestrike
+ADDSPELL=s_meteor_swarm
+ADDSPELL=s_summon_elem_fire
+ADDSPELL=s_fire_bolt
+
+ON=@NPCRestock
+ITEM=i_gold,{200 400}
+
+[CHARDEF c_sand_storm]
+ID=c_elem_air
+NAME=Sand Storm
+SOUND=snd_elementl_airelem1
+ICON=i_pet_elem_air
+ANIM=079DFF
+CAN=MT_WALK|MT_FLY
+DAM={4 21}
+ARMOR=8
+BLOODCOLOR=colors_white
+DESIRES=c_sand_golem,c_sand_storm,r_desert
+SHELTER=r_desert
+
+CATEGORY=Monsters
+SUBSECTION=Elementals
+DESCRIPTION=Sand Storm
+
+ON=@Create
+NPC=brain_monster
+COLOR=00903
+FAME={5000 7000}
+KARMA={-6000 -8999}
+STR={150 350}
+DEX={80 200}
+INT={20 95}
+
+PARRYING={65.0 75.0}
+MAGICRESISTANCE={15.0 70.0}
+TACTICS={80.0 120.0}
+WRESTLING={95.0 150.0}
+ANATOMY={100.0 210.0}
+
+ON=@NPCRestock
+ITEM=i_gold,{200 400}
+
+[CHARDEF c_sand_golem]
+ID=c_crystal_golem
+NAME=Sand Golem
+SOUND=snd_elementl_erthel1
+ICON=i_pet_elem_earth
+ANIM=079C7F
+CAN=MT_WALK
+DAM={5 29}
+ARMOR=15
+BLOODCOLOR=colors_brown
+DESIRES=c_sand_golem,c_sand_storm,r_desert
+SHELTER=r_mountains,r_caves,r_dungeon,r_desert
+
+CATEGORY=Monsters
+SUBSECTION=Elementals
+DESCRIPTION=Sand Golem
+
+ON=@Create
+NPC=brain_monster
+COLOR=00903
+FAME={6000 7000}
+KARMA={-5000 -8999}
+STR={215 350}
+DEX={40 85}
+INT={20 35}
+
+PARRYING={75.0 80.0}
+MAGICRESISTANCE={5.0 60.0}
+TACTICS={90.0 115.0}
+WRESTLING={85.0 105.0}
+MINING=80.0
+ANATOMY={100.0 150.0}
+
+ON=@NPCRestock
+ITEM=i_gold,{200 400}
+
+[CHARDEF c_efreet]
+ID=c_elem_air
+NAME=Efreet
+SOUND=snd_elementl_airelem1
+ICON=i_pet_elem_air
+CAN=MT_WALK
+DAM={8 16}
+ARMOR=25
+DESIRES=r_mountains,i_gold,c_efreet
+SHELTER=r_mountains
+
+CATEGORY=Monsters
+SUBSECTION=Elementals
+DESCRIPTION=Efreet
+
+ON=@Create
+NPC=brain_monster
+COLOR=color_rock
+FAME={100 2000}
+KARMA={-3000 -3999}
+STR={325 355}
+DEX={265 285}
+INT={170 195}
+
+PARRYING={65.0 75.0}
+POISONING={90.0 99.0}
+MAGERY={60.0 75.0}
+MAGICRESISTANCE={60.0 75.0}
+TACTICS={60.0 80.0}
+WRESTLING={60.0 80.0}
+
+ON=@NPCRestock
+ITEM=random_potion
+ITEM=random_potion
+ITEM=random_jewel
+ITEM=random_jewel
+ITEM=ttm_lvl4,R99
+ITEM=i_gold,{250 500}
+
+[CHARDEF c_elem_quartz]
+ID=c_elem_earth
+NAME=Quartz Elemental
+SOUND=snd_elementl_erthel1
+ICON=i_pet_elem_earth
+ANIM=079C7F
+CAN=MT_WALK|MT_GHOST
+DAM={10 20}
+ARMOR=17
+BLOODCOLOR=007A1
+DESIRES=i_quartz_crystal,c_elem_quartz
+SHELTER=r_mountains,r_caves,r_dungeon,r_crystal_tower
+
+CATEGORY=Monsters
+SUBSECTION=Elementals
+DESCRIPTION=Quartz Elemental
+
+ON=@Create
+NPC=brain_monster
+COLOR=007A1
+FAME={7000 9000}
+KARMA={-8000 -9999}
+STR=300
+DEX=300
+INT=300
+
+PARRYING=150.
+MAGICRESISTANCE=150.0
+TACTICS=150.0
+WRESTLING=150.0
+ANATOMY=150.0
+
+ON=@NPCRestock
+ITEM=i_gold,500
+ITEM=i_gem_citrine_3
+COLOR=007A1
+NAME=a large quartz crystal
+
+[CHARDEF c_clay_golem] 
+NAME=Clay Golem 
+ID=c_elem_earth 
+SOUND=snd_elementl_erthel_1 
+ICON=i_pet_elem_earth 
+ANIM=079C7F 
+DAM={5 20}
+ARMOR=20 
+RESOURCES=1 i_golem_clay 
+CAN=MT_WALK|MT_GHOST 
+SHELTER=r_mountains,r_caves,r_dungeon 
+DESIRES=r_caves 
+
+CATEGORY=Monsters 
+SUBSECTION=Golems 
+DESCRIPTION=Clay Golem 
+
+ON=@Create 
+COLOR=0747 
+NPC=brain_monster 
+FAME={1000 6000} 
+KARMA={-3000 -3999} 
+STR={145 175} 
+DEX={66 85} 
+INT={71 92} 
+PARRYING={40.0 65.0} 
+MAGICRESISTANCE={50.0 95.0} 
+TACTICS={60.0 100.0} 
+WRESTLING={60.0 100.0} 
+MINING=80.0 
+TAMING=400.0 
+
+ON=@NPCRestock 
+ITEM=POOR_MONSTER_BACKPACK 
+ITEM=RICH_MONSTER_GOODIE_1 
+
+[CHARDEF c_stonegolem] 
+NAME=Stone Golem 
+ID=c_elem_earth 
+SOUND=snd_elementl_erthel_1 
+ICON=i_pet_elem_earth 
+ANIM=079c7f 
+DAM=10,30 
+ARMOR=25 
+RESOURCES=1 i_golem_stone 
+CAN=MT_WALK|MT_GHOST 
+SHELTER=r_mountains,r_caves,r_dungeon 
+DESIRES=r_caves 
+
+CATEGORY=Monsters 
+SUBSECTION=Golems 
+DESCRIPTION=Stone Golem 
+
+ON=@Create 
+COLOR=0835 
+NPC=brain_monster 
+FAME={1000 6000} 
+KARMA={-3000 -3999} 
+STR={135 170} 
+DEX={66 85} 
+INT={71 92} 
+PARRYING={40.0 65.0} 
+MAGICRESISTANCE={50.0 95.0} 
+TACTICS={60.0 100.0} 
+WRESTLING={60.0 100.0} 
+MINING=80.0 
+TAMING=400.0 
+
+ON=@NPCRestock 
+ITEM=POOR_MONSTER_BACKPACK 
+ITEM=RICH_MONSTER_GOODIE_1 
+
+[CHARDEF c_steelgolem] 
+NAME=Steel Golem 
+ID=c_elem_earth 
+SOUND=snd_elementl_erthel_1 
+ICON=i_pet_elem_earth 
+ANIM=079c7f 
+DAM=15,40 
+ARMOR=30 
+RESOURCES=1 i_golem_clockwork 
+CAN=MT_WALK|MT_GHOST 
+SHELTER=r_mountains,r_caves,r_dungeon 
+DESIRES=r_caves 
+
+CATEGORY=Monsters 
+SUBSECTION=Golems 
+DESCRIPTION=Steel Golem 
+
+ON=@Create 
+COLOR=00967
+NPC=brain_monster 
+FAME={1000 6000} 
+KARMA={-3000 -3999} 
+STR={165 190} 
+DEX={66 85} 
+INT={71 92} 
+PARRYING={40.0 65.0} 
+MAGICRESISTANCE={50.0 95.0} 
+TACTICS={60.0 100.0} 
+WRESTLING={60.0 100.0} 
+MINING=80.0 
+TAMING=400.0 
+
+ON=@NPCRestock 
+ITEM=POOR_MONSTER_BACKPACK 
+ITEM=RICH_MONSTER_GOODIE_1 
+
+[CHARDEF c_claygolem_make] 
+NAME=Clay Golem 
+ID=c_elem_earth 
+SOUND=snd_elementl_erthel_1 
+ICON=i_pet_elem_earth 
+ANIM=079c7f 
+DAM=5,15 
+ARMOR=17 
+CAN=MT_WALK|MT_GHOST 
+FOODTYPE=15 t_arock,t_coin,t_ore,t_ingot 
+SHELTER=r_mountains,r_caves,r_dungeon 
+DESIRES=r_caves 
+
+CATEGORY=Monsters 
+SUBSECTION=Golems 
+DESCRIPTION=Clay Golem 
+
+ON=@Create 
+COLOR=0747 
+NPC=brain_monster 
+FAME={1000 6000} 
+KARMA={-3000 -3999} 
+STR={65 100} 
+DEX={36 65} 
+INT={51 72} 
+PARRYING={40.0 60.0} 
+MAGICRESISTANCE={50.0 90.0} 
+TACTICS={60.0 95.0} 
+WRESTLING={60.0 95.0} 
+MINING=80.0 
+
+[CHARDEF c_stonegolem_make] 
+NAME=Stone Golem 
+ID=c_elem_earth 
+SOUND=snd_elementl_erthel_1 
+ICON=i_pet_elem_earth 
+ANIM=079c7f 
+DAM=5,25 
+ARMOR=20 
+CAN=MT_WALK|MT_GHOST 
+FOODTYPE=15 t_arock,t_coin,t_ore,t_ingot 
+SHELTER=r_mountains,r_caves,r_dungeon 
+DESIRES=r_caves 
+
+CATEGORY=Monsters 
+SUBSECTION=Golems 
+DESCRIPTION=Stone Golem 
+
+ON=@Create 
+COLOR=0835 
+NPC=brain_monster 
+FAME={1000 6000} 
+KARMA={-3000 -3999} 
+STR={75 110} 
+DEX={36 65} 
+INT={51 72} 
+PARRYING={40.0 60.0} 
+MAGICRESISTANCE={50.0 90.0} 
+TACTICS={60.0 95.0} 
+WRESTLING={60.0 95.0} 
+MINING=80.0 
+
+[CHARDEF c_steelgolem_make] 
+NAME=Steel Golem 
+ID=c_elem_earth 
+SOUND=snd_elementl_erthel_1 
+ICON=i_pet_elem_earth 
+ANIM=079c7f 
+DAM=5,30 
+ARMOR=25 
+CAN=MT_WALK|MT_GHOST 
+FOODTYPE=15 t_arock,t_coin,t_ore,t_ingot 
+DESIRES=c_steel_golem
+SHELTER=r_mountains,r_caves,r_dungeon 
+
+
+CATEGORY=Monsters
+SUBSECTION=Golems
+DESCRIPTION=Steel Golem
+
+ON=@Create
+COLOR=00967
+NPC=brain_monster
+FAME={1000 6000}
+KARMA={-3000 -3999}
+STR={85 120}
+DEX={36 65}
+INT={51 72}
+
+PARRYING={40.0 60.0}
+MAGICRESISTANCE={50.0 90.0}
+TACTICS={60.0 95.0}
+WRESTLING={60.0 95.0}
+MINING=80.0
+
+[ITEMDEF i_claygolem_figurine]
+ID=c_elem_earth
+NAME=Clay Golem
+TYPE=t_figurine
+VALUE=0
+
+ON=@CREATE
+COLOR=0747
+MORE1=c_claygolem_make
+
+[ITEMDEF i_stonegolem_figurine]
+ID=c_elem_earth
+NAME=Stone Golem
+TYPE=t_figurine
+VALUE=0
+
+ON=@CREATE
+COLOR=0835
+MORE1=c_stonegolem_make
+
+[ITEMDEF i_steelgolem_figurine]
+ID=c_elem_earth
+NAME=Steel Golem
+TYPE=t_figurine
+VALUE=0
+
+ON=@CREATE
+COLOR=00967
+MORE1=c_steelgolem_make
+
+[ITEMDEF i_golem_clay]
+ID=01777
+NAME=Golem Clay
+TYPE=10
+VALUE=0
+
+ON=@CREATE
+COLOR=0747
+
+ON=@DCLICK
+RETURN 1
+
+[ITEMDEF i_golem_stone]
+ID=000DF
+NAME=Golem Stone
+TYPE=10
+VALUE=0
+
+ON=@CREATE
+COLOR=0835
+
+ON=@DCLICK
+RETURN 1
+
+[ITEMDEF i_golem_clockwork]
+ID=i_winch
+NAME=Golem Clockworks
+TYPE=10
+VALUE=0
+
+ON=@CREATE
+COLOR=07A1
+
+ON=@DCLICK
+RETURN 1
+
+[ITEMDEF i_clay_golem_kit]
+ID=01EB8
+NAME=Clay Golem Creation Kit
+
+TYPE=0
+SKILLMAKE=CARPENTRY 100.0, t_carpentry
+RESOURCES=i_log 10, i_ingot_iron 10
+
+ON=@Create
+COLOR=0747
+
+ON=@DCLICK
+IF !<SRC.MAGERY>>=100.0
+SAYU You are not skilled enough to use this.
+RETURN 1
+ELSEIF !(RAND(3)) && (<SRC.RESTEST 10 i_golem_clay> )
+SRC.EMOTE The conditions were not right and the Golem fell appart after creation.
+SRC.CONSUME=10 i_golem_clay
+SRC.CONSUME=i_clay_golem_kit
+RETURN 1
+ELSEIF (<SRC.RESTEST 10 i_golem_clay> )
+SRC.CONSUME=10 i_golem_clay
+SRC.CONSUME=i_clay_golem_kit
+SRC.NEWITEM=i_claygolem_figurine
+SRC.ACT.BOUNCE
+SRC.ACT.DCLICK
+RETURN 1
+ELSE
+SRC.SYSMESSAGE You need 10 Golem Clay to use this.
+RETURN 1
+ENDIF
+
+[ITEMDEF i_stone_golem_kit] 
+ID=01EB8
+NAME=Stone Golem Creation Kit 
+TYPE=t_normal
+SKILLMAKE=CARPENTRY 100.0,t_carpentry
+RESOURCES=i_log 10,i_ingot_iron 10
+
+ON=@Create
+COLOR=0835
+
+ON=@DCLICK
+IF !<SRC.MAGERY>>=100.0
+SAYU You are not skilled enough to use this.
+RETURN 1
+ELSEIF !(RAND(3)) && (<SRC.RESTEST 10 i_golem_stone> )
+SRC.EMOTE The conditions were not right and the Golem fell appart after creation.
+SRC.CONSUME=10 i_golem_stone
+SRC.CONSUME=i_stone_golem_kit
+RETURN 1
+ELSEIF (<SRC.RESTEST 10 i_golem_stone> )
+SRC.CONSUME=10 i_golem_stone
+SRC.CONSUME=i_stone_golem_kit
+SRC.NEWITEM=i_stonegolem_figurine
+SRC.ACT.BOUNCE
+SRC.ACT.DCLICK
+RETURN 1
+ELSE
+SRC.SYSMESSAGE You need 10 Golem Stone to use this.
+RETURN 1
+ENDIF
+
+[ITEMDEF i_steel_golem_kit]
+ID=01EB8
+NAME=Steel Golem Creation Kit
+TYPE=t_normal
+SKILLMAKE=CARPENTRY 100.0,t_carpentry
+RESOURCES=i_log 10,i_ingot_iron 10
+
+ON=@Create
+COLOR=0079C
+
+ON=@DCLICK
+IF !<SRC.MAGERY>>=100.0
+SAYU You are not skilled enough to use this.
+RETURN 1
+ELSEIF !(RAND(3)) && (<SRC.RESTEST 10 i_golem_clockwork> )
+SRC.EMOTE The conditions were not right and the Golem fell appart after creation.
+SRC.CONSUME=10 i_golem_clockwork
+SRC.CONSUME=i_steel_golem_kit
+RETURN 1
+ELSEIF (<SRC.RESTEST 10 i_golem_clockwork> )
+SRC.CONSUME=10 i_golem_clockwork
+SRC.CONSUME=i_steel_golem_kit
+SRC.NEWITEM=i_steelgolem_figurine
+SRC.ACT.BOUNCE
+SRC.ACT.DCLICK
+RETURN 1
+ELSE
+SAYU You need 10 Golem Clockwork to use this.
+RETURN 1
+ENDIF
+
+[CHARDEF c_ophidian_apprentice_mage]
+ID=c_ophidian_mage
+NAME=Ophidian Apprentice Mage
+SOUND=snd_monster_ophidian_mage1
+ICON=i_pet_ophid_mage
+ANIM=07FC7F
+CAN=MT_WALK|MT_USEHANDS
+DAM={2 6}
+ARMOR=8
+RESOURCES=8 i_ribs_raw
+FOODTYPE=5 t_meat_raw,5 t_food
+DESIRES=i_gold,t_reagent,c_ophidian_apprentice_mage,c_ophidian_mage,c_ophidian_archmage,c_ophidian_warrior,c_ophidian_queen,c_ophidian_knight,c_ophidian_avenger,e_ophidian
+SHELTER=r_desert
+TEVENTS=e_ophidian
+
+CATEGORY=Monsters
+SUBSECTION=T2A Monsters
+DESCRIPTION=Ophidian Apprentice Mage
+
+ON=@Create
+NPC=brain_monster
+FAME={1000 3000}
+KARMA={-4000 -4999}
+STR={50 125}
+DEX={45 89}
+INT={120 156}
+
+PARRYING={45.0 60.0}
+MAGERY={45.0 65.0}
+MAGICRESISTANCE={55.0 65.0}
+TACTICS={45.0 70.0}
+WRESTLING={5.0 50.0}
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_magic_arrow
+ADDSPELL=s_feeblemind
+ADDSPELL=s_weaken
+ADDSPELL=s_fireball
+ADDSPELL=s_poison
+
+ON=@NPCRestock
+ITEM=i_gold,{35 80}
+
+[CHARDEF c_ophidian_archmage]
+ID=c_ophidian_mage
+NAME=Ophidian Archmage
+DAM={3 12}
+ARMOR=22
+RESOURCES=8 i_ribs_raw
+FOODTYPE=5 t_meat_raw,5 t_food
+DESIRES=i_gold,t_reagent,c_ophidian_apprentice_mage,c_ophidian_mage,c_ophidian_archmage,c_ophidian_warrior,c_ophidian_queen,c_ophidian_knight,c_ophidian_avenger,e_ophidian
+SHELTER=r_desert
+
+CATEGORY=Monsters
+SUBSECTION=T2A Monsters
+DESCRIPTION=Ophidian Archmage
+
+ON=@Create
+NPC=brain_monster
+FAME={6000 7000}
+KARMA={-8000 -8999}
+STR={280 305}
+DEX={228 250}
+INT={290 315}
+
+PARRYING={65.0 87.0}
+MAGERY={95.0 100.0}
+MAGICRESISTANCE={75.0 97.0}
+TACTICS={65.0 87.0}
+WRESTLING={20.0 60.0}
+
+ON=@NPCRestock
+ITEM=loot_ophidian_archmage
+
+[CHARDEF c_ophidian_knight]
+ID=c_ophidian_warrior
+NAME=Ophidian Knight
+SOUND=snd_monster_ophidian_warrior1
+ICON=i_pet_ophid_war
+CAN=MT_WALK
+DAM={10 25}
+ARMOR=20
+RESOURCES=10 i_ribs_raw
+FOODTYPE=15 t_meat_raw
+DESIRES=i_gold,c_ophidian_apprentice_mage,c_ophidian_mage,c_ophidian_archmage,c_ophidian_warrior,c_ophidian_queen,c_ophidian_knight,c_ophidian_avenger,e_ophidian
+SHELTER=r_desert
+
+CATEGORY=Monsters
+SUBSECTION=T2A Monsters
+DESCRIPTION=Ophidian Knight
+
+ON=@Create
+NPC=brain_monster
+FAME={6000 7000}
+KARMA={-8000 -8999}
+STR={415 595}
+DEX={165 175}
+INT={46 70}
+
+PARRYING={75.0 85.0}
+MAGICRESISTANCE={65.0 80.0}
+TACTICS={90.0 100.0}
+WRESTLING={90.0 100.0}
+
+ON=@NPCRestock
+ITEM=loot_ophidian_knight
+
+[CHARDEF c_ophidian_knight_errant]
+ID=c_ophidian_warrior
+NAME=Ophidian Knight Errant
+SOUND=snd_monster_ophidian_warrior1
+ICON=i_pet_ophid_war
+CAN=MT_WALK
+DAM={17 32}
+ARMOR=28
+RESOURCES=10 i_ribs_raw
+FOODTYPE=15 t_meat_raw
+DESIRES=i_gold,c_ophidian_apprentice_mage,c_ophidian_mage,c_ophidian_archmage,c_ophidian_warrior,c_ophidian_queen,c_ophidian_knight,c_ophidian_avenger,e_ophidian
+SHELTER=r_desert
+
+CATEGORY=Monsters
+SUBSECTION=T2A Monsters
+DESCRIPTION=Ophidian Knight Errant
+
+ON=@Create
+NPC=brain_monster
+FAME={8000 9000}
+KARMA={-9000 -9999}
+STR={750 900}
+DEX={215 340}
+INT={85 90}
+
+PARRYING={135.0 155.0}
+MAGICRESISTANCE={135.0 175.0}
+TACTICS={185.0 215.0}
+WRESTLING={190.0 230.0}
+
+ON=@NPCRestock
+ITEM=loot_ophidian_knight
+ITEM=i_gold,{1000 2000}
+
+[CHARDEF c_ophidian_avenger]
+ID=c_ophidian_warrior
+NAME=Ophidian Avenger
+SOUND=snd_monster_ophidian_warrior1
+ICON=i_pet_ophid_war
+CAN=MT_WALK
+DAM={12 29}
+ARMOR=24
+RESOURCES=10 i_ribs_raw
+FOODTYPE=15 t_meat_raw
+DESIRES=i_gold,c_ophidian_apprentice_mage,c_ophidian_mage,c_ophidian_archmage,c_ophidian_warrior,c_ophidian_queen,c_ophidian_knight,c_ophidian_avenger,e_ophidian
+SHELTER=r_desert
+
+CATEGORY=Monsters
+SUBSECTION=T2A Monsters
+DESCRIPTION=Ophidian Avenger
+
+ON=@Create
+NPC=brain_monster
+FAME={8600 9000}
+KARMA={-9000 -9999}
+STR={815 995}
+DEX={265 345}
+INT={80 105}
+
+PARRYING={275.0 285.0}
+MAGICRESISTANCE={365.0 380.0}
+TACTICS={300.0 550.0}
+WRESTLING={250.0 400.0}
+
+ON=@NPCRestock
+ITEM=loot_ophidian_knight
+ITEM=i_gold,{3000 5000}
+
+[CHARDEF c_draconian_scout]
+ID=c_ophidian_warrior
+NAME=Draconian Scout
+SOUND=snd_monster_ophidian_warrior1
+ICON=i_pet_ophid_war
+ANIM=078C7F
+CAN=MT_WALK|MT_USEHANDS|MT_RUN|MT_EQUIP
+DAM={5 15}
+ARMOR=12
+RESOURCES=9 i_ribs_raw
+FOODTYPE=15 t_meat_raw
+DESIRES=c_draconian_scout,c_draconian_warrior,c_draconian_knight,c_draconian_apprentice_mage,c_draconian_sorcerer,c_draconian_archmage,c_draconian_avenger,c_draconian_queen,c_draconian_king
+SHELTER=r_caves,r_dungeon
+
+CATEGORY=Monsters
+SUBSECTION=Dragons and Drakes
+DESCRIPTION=Draconian Scout
+
+ON=@Create
+NPC=brain_monster
+COLOR=colors_snake
+FAME={1000 2000}
+KARMA={-3000 -3999}
+STR={90 110}
+DEX={60 90}
+INT={75 85}
+
+PARRYING={25.0 45.0}
+ANATOMY={60.0 85.0}
+MAGICRESISTANCE={25.0 45.0}
+TACTICS={45.0 60.0}
+SWORDSMANSHIP={55.0 70.0}
+
+ON=@NPCRestock
+ITEM=i_bardiche_might
+COLOR=2018
+NAME=Dragon's Axe of Might
+ITEM=i_gold,{50 300}
+ITEM=i_leather_sleeves_invulnerability
+COLOR=2018
+NAME=Draconian Arm Guards
+ITEM=i_leather_gorget_invulnerability
+COLOR=2018
+NAME=Draconian Gorget
+ITEM=i_leather_leggings_invulnerability
+COLOR=2018
+NAME=Draconian Leggings
+ITEM=i_leather_tunic_invulnerability
+COLOR=2018
+NAME=Draconian Armor
+ITEM=i_leather_gloves_invulnerability
+COLOR=2018
+NAME=Draconian Gloves
+ITEM=i_helm_open
+ATTR=attr_magic
+MOREY=120.0
+COLOR=2018
+NAME=Draconian Helm
+
+[CHARDEF c_draconian_warrior]
+ID=c_ophidian_warrior
+NAME=Draconian Warrior
+SOUND=snd_monster_ophidian_warrior1
+ICON=i_pet_ophid_war
+ANIM=078C7F
+CAN=MT_WALK|MT_USEHANDS|MT_RUN|MT_EQUIP
+DAM={5 20}
+ARMOR=14
+RESOURCES=9 i_ribs_raw
+FOODTYPE=15 t_meat_raw
+DESIRES=c_draconian_scout,c_draconian_warrior,c_draconian_knight,c_draconian_apprentice_mage,c_draconian_sorcerer,c_draconian_archmage,c_draconian_avenger,c_draconian_queen,c_draconian_king
+SHELTER=r_caves,r_dungeon
+
+CATEGORY=Monsters
+SUBSECTION=Dragons and Drakes
+DESCRIPTION=Draconian Warrior
+
+ON=@Create
+NPC=brain_monster
+COLOR=colors_snake
+FAME={2000 3000}
+KARMA={-4000 -4999}
+STR={150 230}
+DEX={85 95}
+INT={75 95}
+
+PARRYING={55.0 85.0}
+ANATOMY={75.0 95.0}
+MAGICRESISTANCE={45.0 55.0}
+TACTICS={75.0 100.0}
+SWORDSMANSHIP={95.0 100.0}
+
+ON=@NPCRestock
+ITEM=i_bardiche_force
+COLOR=2018
+NAME=Dragon's Axe of Force
+ITEM=i_gold,{120 500}
+ITEM=i_leather_sleeves_invulnerability
+COLOR=2018
+NAME=Draconian Arm Guards
+ITEM=i_leather_gorget_invulnerability
+COLOR=2018
+NAME=Draconian Gorget
+ITEM=i_leather_leggings_invulnerability
+COLOR=2018
+NAME=Draconian Leggings
+ITEM=i_leather_tunic_invulnerability
+COLOR=2018
+NAME=Draconian Armor
+ITEM=i_leather_gloves_invulnerability
+COLOR=2018
+NAME=Draconian Gloves
+ITEM=i_helm_open
+ATTR=attr_magic
+MOREY=120.0
+COLOR=2018
+NAME=Draconian Helm
+
+[CHARDEF c_draconian_knight]
+ID=c_ophidian_warrior
+NAME=Draconian Knight
+SOUND=snd_monster_ophidian_warrior1
+ICON=i_pet_ophid_war
+ANIM=078c7f
+CAN=MT_WALK|MT_USEHANDS|MT_RUN|MT_EQUIP
+DAM={8 23}
+ARMOR=15
+RESOURCES=9 i_ribs_raw
+FOODTYPE=15 t_meat_raw
+DESIRES=c_draconian_scout,c_draconian_warrior,c_draconian_knight,c_draconian_apprentice_mage,c_draconian_sorcerer,c_draconian_archmage,c_draconian_avenger,c_draconian_queen,c_draconian_king
+SHELTER=r_caves,r_dungeon
+
+CATEGORY=Monsters
+SUBSECTION=Dragons and Drakes
+DESCRIPTION=Draconian Knight
+
+ON=@Create
+NPC=brain_monster
+COLOR=colors_snake
+FAME={3000 4000}
+KARMA={-5000 -5999}
+STR={400 450}
+DEX={150 200}
+INT={75 105}
+
+PARRYING={95.0 110.0}
+ANATOMY={105.0 130.0}
+MAGICRESISTANCE={65.0 85.0}
+TACTICS={150.0 200.0}
+SWORDSMANSHIP={115.0 120.0}
+
+ON=@NPCRestock
+ITEM=i_bardiche_power
+COLOR=2018
+NAME=Dragon's Axe of Power
+ITEM=i_gold,{605 1000}
+ITEM=i_leather_sleeves_invulnerability
+COLOR=2018
+NAME=Draconian Arm Guards
+ITEM=i_leather_gorget_invulnerability
+COLOR=2018
+NAME=Draconian Gorget
+ITEM=i_leather_leggings_invulnerability
+COLOR=2018
+NAME=Draconian Leggings
+ITEM=i_leather_tunic_invulnerability
+COLOR=2018
+NAME=Draconian Armor
+ITEM=i_leather_gloves_invulnerability
+COLOR=2018
+NAME=Draconian Gloves
+ITEM=i_helm_open
+ATTR=attr_magic
+MOREY=120.0
+COLOR=2018
+NAME=Draconian Helm
+
+[CHARDEF c_draconian_avenger]
+ID=c_ophidian_warrior
+NAME=Draconian Avenger
+SOUND=snd_monster_ophidian_warrior1
+ICON=i_pet_ophid_war
+ANIM=078C7F
+CAN=MT_WALK|MT_USEHANDS|MT_RUN|MT_EQUIP
+DAM={10 35}
+ARMOR=20
+RESOURCES=9 i_ribs_raw
+FOODTYPE=15 t_meat_raw
+DESIRES=c_draconian_scout,c_draconian_warrior,c_draconian_knight,c_draconian_apprentice_mage,c_draconian_sorcerer,c_draconian_archmage,c_draconian_avenger,c_draconian_queen,c_draconian_king
+SHELTER=r_caves,r_dungeon
+
+CATEGORY=Monsters
+SUBSECTION=Dragons and Drakes
+DESCRIPTION=Draconian Avenger
+
+ON=@Create
+COLOR=colors_snake
+NPC=brain_monster
+FAME={5000 6000}
+KARMA={-6000 -6999}
+
+STR={1000 3500}
+DEX={600 1800}
+INT={450 900}
+
+PARRYING={125.0 150.0}
+ANATOMY={140.0 205.0}
+MAGICRESISTANCE={95.0 105.0}
+TACTICS={175.0 300.0}
+SWORDSMANSHIP={200.0 250.0}
+
+ON=@NPCRestock
+ITEM=i_bardiche_vanquishing
+COLOR=2018
+NAME=Dragon's Axe of Vanquishing
+ITEM=i_gold,{1200 3000}
+ITEM=i_leather_sleeves_invulnerability
+COLOR=2018
+NAME=Draconian Arm Guards
+ITEM=i_leather_gorget_invulnerability
+COLOR=2018
+NAME=Draconian Gorget
+ITEM=i_leather_leggings_invulnerability
+COLOR=2018
+NAME=Draconian Leggings
+ITEM=i_leather_tunic_invulnerability
+COLOR=2018
+NAME=Draconian Armor
+ITEM=i_leather_gloves_invulnerability
+COLOR=2018
+NAME=Draconian Gloves
+ITEM=i_helm_open
+ATTR=attr_magic
+MOREY=120.0
+COLOR=2018
+NAME=Draconian Helm
+
+[CHARDEF c_draconian_apprentice_mage]
+ID=c_ophidian_mage
+NAME=Draconian Apprentice Mage
+SOUND=snd_monster_ophidian_mage1
+ICON=i_pet_ophid_mage
+ANIM=07fC7F
+CAN=MT_WALK|MT_USEHANDS|MT_EQUIP
+DAM={3 8}
+ARMOR=6
+RESOURCES=8 i_ribs_raw
+FOODTYPE=5 t_meat_raw,5 t_food
+DESIRES=i_gold,t_reagent,c_draconian_scout,c_draconian_warrior,c_draconian_knight,c_draconian_apprentice_mage,c_draconian_sorcerer,c_draconian_archmage,c_draconian_avenger,c_draconian_queen,c_draconian_king
+SHELTER=r_caves,r_dungeon
+
+CATEGORY=Monsters
+SUBSECTION=Dragons and Drakes
+DESCRIPTION=Draconian Apprentice Mage
+
+ON=@Create
+NPC=brain_monster
+COLOR=colors_snake
+FAME={1000 2000}
+KARMA={-4000 -4999}
+STR={85 105}
+DEX={35 55}
+INT={150 210}
+
+PARRYING={25.0 50.0}
+MAGERY={65.0 80.0}
+MAGICRESISTANCE={45.0 70.0}
+TACTICS={35.0 45.0}
+EVALUATINGINTEL={75.0 90.0}
+WRESTLING={55.0 70.0}
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_magic_arrow
+ADDSPELL=s_feeblemind
+ADDSPELL=s_weaken
+ADDSPELL=s_fireball
+ADDSPELL=s_poison
+ADDSPELL=s_explosion
+
+ON=@NPCRestock
+ITEM=i_staff_quarter
+ITEM=i_gold,{50 150}
+ITEM=random_reagent,2
+ITEM=i_serpent_scale
+ITEM=random_lower_scroll
+
+[CHARDEF c_draconian_sorcerer]
+ID=c_ophidian_mage
+NAME=Draconian Sorcerer
+SOUND=snd_monster_ophidian_mage1
+ICON=i_pet_ophid_mage
+ANIM=07fC7F
+CAN=MT_WALK|MT_USEHANDS|MT_EQUIP
+DAM={5 10}
+ARMOR=9
+RESOURCES=8 i_ribs_raw
+FOODTYPE=5 t_meat_raw,5 t_food
+DESIRES=i_gold,t_reagent,c_draconian_scout,c_draconian_warrior,c_draconian_knight,c_draconian_apprentice_mage,c_draconian_sorcerer,c_draconian_archmage,c_draconian_avenger,c_draconian_queen,c_draconian_king
+SHELTER=r_caves,r_dungeon
+
+CATEGORY=Monsters
+SUBSECTION=Dragons and Drakes
+DESCRIPTION=Draconian Sorcerer
+
+ON=@Create
+NPC=brain_monster
+COLOR=colors_snake
+FAME={2000 3000}
+KARMA={-5000 -5999}
+STR={95 125}
+DEX={45 65}
+INT={300 450}
+
+PARRYING={35.0 70.0}
+MAGERY={75.0 95.0}
+MAGICRESISTANCE={65.0 90.0}
+TACTICS={55.0 80.0}
+EVALUATINGINTEL={85.0 110.0}
+WRESTLING={70.0 95.0}
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_magic_arrow
+ADDSPELL=s_feeblemind
+ADDSPELL=s_weaken
+ADDSPELL=s_fireball
+ADDSPELL=s_poison
+ADDSPELL=s_explosion
+
+ON=@NPCRestock
+ITEM=i_staff_quarter
+ITEM=i_gold,{200 350}
+ITEM=random_reagent,4
+ITEM=i_serpent_scale
+ITEM=random_upper_scroll
+
+[CHARDEF c_draconian_archmage]
+ID=c_ophidian_mage
+NAME=Draconian Arch Mage
+SOUND=snd_monster_ophidian_mage1
+ICON=i_pet_ophid_mage
+ANIM=07fC7F
+CAN=MT_WALK|MT_USEHANDS|MT_EQUIP
+DAM={7 14}
+ARMOR=11
+RESOURCES=8 i_ribs_raw
+FOODTYPE=5 t_meat_raw,5 t_food
+DESIRES=i_gold,t_reagent,c_draconian_scout,c_draconian_warrior,c_draconian_knight,c_draconian_apprentice_mage,c_draconian_sorcerer,c_draconian_archmage,c_draconian_avenger,c_draconian_queen,c_draconian_king
+SHELTER=r_caves,r_dungeon
+
+CATEGORY=Monsters
+SUBSECTION=Dragons and Drakes
+DESCRIPTION=Draconian Arch Mage
+
+ON=@Create
+NPC=brain_monster
+COLOR=colors_snake
+FAME={5000 6000}
+KARMA={-7000 -7999}
+STR={200 275}
+DEX={80 105}
+INT={600 900}
+
+PARRYING={65.0 80.0}
+MAGERY={105.0 145.0}
+MAGICRESISTANCE={95.0 115.0}
+TACTICS={70.0 90.0}
+EVALUATINGINTEL={150.0 225.0}
+WRESTLING={80.0 105.0}
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_magic_arrow
+ADDSPELL=s_feeblemind
+ADDSPELL=s_weaken
+ADDSPELL=s_fireball
+ADDSPELL=s_poison
+ADDSPELL=s_explosion
+
+ON=@NPCRestock
+ITEM=i_staff_quarter
+ITEM=i_gold,{400 900}
+ITEM=random_reagent,6
+ITEM=i_serpent_scale
+ITEM=random_upper_scroll
+ 
+[CHARDEF c_draconian_king]
+ID=c_ophidian_warrior
+NAME=Draconian king
+SOUND=snd_monster_ophidian_warrior1
+ICON=i_pet_ophid_war
+ANIM=078C7F
+CAN=MT_WALK|MT_RUN|MT_USEHANDS|MT_EQUIP
+DAM={25 50}
+ARMOR=35
+RESOURCES=9 i_ribs_raw
+FOODTYPE=15 t_meat_raw
+DESIRES=c_draconian_scout,c_draconian_warrior,c_draconian_knight,c_draconian_apprentice_mage,c_draconian_sorcerer,c_draconian_archmage,c_draconian_avenger,c_draconian_queen,c_draconian_king
+SHELTER=r_caves,r_dungeon
+
+CATEGORY=Monsters
+SUBSECTION=Dragons and Drakes
+DESCRIPTION=Draconian King
+
+ON=@Create
+NPC=brain_monster
+COLOR=colors_snake
+FAME={7000 8000}
+KARMA={-8000 -8999}
+STR={2500 4000}
+DEX={2000 2050}
+INT={1000 1500}
+
+PARRYING={125.0 150.0}
+ANATOMY={200.0 310.0}
+MAGICRESISTANCE={400.0 450.0}
+TACTICS={400.0 425.0}
+MAGERY={95.0 150.0}
+EVALUATINGINTEL={135.0 145.0}
+SWORDSMANSHIP={300.0 350.0}
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_magic_arrow
+ADDSPELL=s_feeblemind
+ADDSPELL=s_weaken
+ADDSPELL=s_fireball
+ADDSPELL=s_poison
+ADDSPELL=s_explosion
+
+ON=@NPCRestock
+ITEM=i_bardiche_vanquishing
+MOREY=9999999
+COLOR=2018
+NAME=Dragon's Axe of Destruction
+ITEM=i_gold,{1500 3000}
+ITEM=i_leather_sleeves_invulnerability
+COLOR=2018
+NAME=Draconian Arm Guards
+ITEM=i_leather_gorget_invulnerability
+COLOR=2018
+NAME=Draconian Gorget
+ITEM=i_leather_leggings_invulnerability
+COLOR=2018
+NAME=Draconian Leggings
+ITEM=i_leather_tunic_invulnerability
+COLOR=2018
+NAME=Draconian Armor
+ITEM=i_leather_gloves_invulnerability
+COLOR=2018
+NAME=Draconian Gloves
+ITEM=i_helm_open
+ATTR=attr_magic
+MOREY=120.0
+COLOR=2018
+NAME=Draconian Helm
+ITEM=i_longsword_vanquishing
+COLOR=2018
+NAME=Serpent's Blade
+
+[CHARDEF c_draconian_queen]
+ID=c_ophidian_queen
+NAME=Draconian Queen
+SOUND=snd_monster_ophidian_queen1
+ICON=i_pet_ophid_queen
+ANIM=078C7F
+CAN=MT_WALK|MT_USEHANDS
+DAM={6 18}
+ARMOR=25
+RESOURCES=9 i_ribs_raw
+FOODTYPE=15 t_meat_raw,5 t_food
+DESIRES=i_gold,c_draconian_scout,c_draconian_warrior,c_draconian_knight,c_draconian_apprentice_mage,c_draconian_sorcerer,c_draconian_archmage,c_draconian_avenger,c_draconian_queen,c_draconian_king
+SHELTER=r_caves,r_dungeon
+
+CATEGORY=Monsters
+SUBSECTION=Dragons and Drakes
+DESCRIPTION=Draconian Queen
+
+ON=@Create
+NPC=brain_monster
+COLOR=colors_snake
+FAME={6000 7000}
+KARMA={-8000 -9999}
+STR={2000 3500}
+DEX={1000 1500}
+INT={3000 5000}
+
+PARRYING={150.0 165.0}
+MAGERY={300.0 405.0}
+MAGICRESISTANCE={395.0 470.0}
+TACTICS={230.0 275.0}
+EVALUATINGINTEL={600.0 690.0}
+WRESTLING={150.0 210.0}
+
+ON=@NPCRestock
+ITEM=i_gold,{1000 4000}
+ITEM=i_serpents_scale,4
+
+[CHARDEF c_quake_dragon]
+ID=c_dragon
+NAME=Quake Dragon
+SOUND=snd_monster_dragon1
+ICON=i_pet_DRAGON
+ANIM=03F9C7F
+CAN=MT_WALK|MT_FLY
+DAM={7 35}
+ARMOR=30
+RESOURCES=50 i_ribs_raw,8 i_dragon_blood
+FOODTYPE=80 t_meat_raw,t_gem
+DESIRES=i_gold
+SHELTER=r_caves,r_dungeon
+AVERSIONS=r_water,r_civilization
+TEVENTS=e_carnivores3
+CATEGORY=Monsters
+SUBSECTION=Dragons and Drakes
+DESCRIPTION=Quake Dragon
+
+ON=@Create
+COLOR=00214
+NPC=brain_dragon
+FAME={7000 9000}
+KARMA={-6000 -8999}
+
+STR={1005 1565}
+DEX={80 110}
+INT=1000
+
+PARRYING={300.0 400.0}
+MAGICRESISTANCE={110.0 135.0}
+TACTICS={210.0 270.0}
+WRESTLING={150.0 300.0}
+EVALUATINGINTEL={600.0 750.0}
+MAGERY={110.0 145.0}
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_earthquake
+
+ON=@NPCRestock
+ITEM=i_fertile_dirt,{3 8}
+ITEM=i_scroll_earthquake,6
+ITEM=i_rock_armor
+ITEM=i_rock_arms
+ITEM=i_rock_leggings
+ITEM=i_rock_gorget
+ITEM=i_rock_gloves
+ITEM=i_rock_shield
+ITEM=i_rock_helm
+ITEM=i_earth_sword
+ITEM=i_gold,{400 1600}
+
+[CHARDEF c_aqua_dragon]
+ID=c_dragon
+NAME=Aqua Dragon
+SOUND=snd_monster_dragon1
+ICON=i_pet_dragon
+CAN=MT_WALK|MT_RUN|MT_FLY|MT_SWIM|MT_EQUIP
+DAM={10 30}
+ARMOR=21
+RESOURCES=99 i_ribs_raw,20 i_hide,8 i_dragon_blood
+FOODTYPE=80 t_meat_raw
+DESIRES=i_gold,r_water,c_aqua_dragon
+SHELTER=r_caves,r_dungeon,r_water
+AVERSIONS=r_civilization
+
+CATEGORY=Monsters
+SUBSECTION=Dragons and Drakes
+DESCRIPTION=Aqua Dragon
+
+ON=@Create
+NPC=brain_dragon
+COLOR=02
+FAME={4500 6000}
+KARMA={-7999 -8999}
+STR={1110 1450}
+DEX={150 210}
+INT={300 700}
+
+PARRYING={85.0 200.0}
+MAGERY={150.0 200.0
+MAGICRESISTANCE={150.0 205.0}
+TACTICS={145.0 270.0}
+WRESTLING={95.0 186.0}
+EVALUATINGINTEL={300.0 450.0}
+
+ON=@NPCRestock
+ITEM=i_aqua_armor
+ITEM=i_aqua_arms
+ITEM=i_aqua_leggings
+ITEM=i_aqua_gorget
+ITEM=i_aqua_gloves
+ITEM=i_aqua_shield
+ITEM=i_aqua_helm
+ITEM=i_broadsword_vanquishing
+COLOR=02
+NAME=Coral Sword
+ITEM=i_gold,{1300 2100}
+
+[CHARDEF c_fire_dragon]
+ID=c_dragon
+NAME=Fire Dragon
+SOUND=snd_monster_dragon1
+ICON=i_pet_dragon
+CAN=MT_WALK|MT_RUN|MT_FLY|MT_FIRE_IMMUNE
+DAM={10 20}
+ARMOR=30
+RESOURCES=99 i_ribs_raw,20 i_hide,8 i_dragon_blood
+FOODTYPE=80 t_meat_raw
+DESIRES=i_gold,c_fire_dragon,t_fire,r_lava
+SHELTER=r_caves,r_dungeon
+AVERSIONS=r_civilization,r_water
+
+CATEGORY=Monsters
+SUBSECTION=Dragons and Drakes
+DESCRIPTION=Fire Dragon
+
+ON=@Create
+NPC=brain_dragon
+COLOR=0079A
+FAME={4500 6000}
+KARMA={-7999 -8999}
+STR={1300 1500}
+DEX={90 300}
+INT={150 600}
+
+PARRYING={85.0 140.0}
+MAGERY={111.0 222.0
+MAGICRESISTANCE={85.0 150.0}
+TACTICS={150.0 210.0}
+WRESTLING={100.0 150.0}
+EVALUATINGINTEL={500.0 650.0}
+
+ON=@NPCRestock
+ITEM=i_gold,{1000 1350}
+ITEM=i_flame_armor
+ITEM=i_flame_arms
+ITEM=i_flame_leggings
+ITEM=i_flame_gorget
+ITEM=i_flame_gloves
+ITEM=i_flame_shield
+ITEM=i_flame_helm
+ITEM=i_flame_sword
+
+[CHARDEF c_aero_dragon]
+ID=c_dragon
+NAME=Aero Dragon
+SOUND=snd_monster_dragon1
+ICON=i_pet_dragon
+ANIM=03f9C7F
+CAN=MT_WALK|MT_FLY|MT_FIRE_IMMUNE|MT_EQUIP
+DAM={10 15}
+ARMOR=30
+RESOURCES=50 i_ribs_raw,8 i_dragon_blood
+FOODTYPE=80 t_meat_raw,t_gem
+DESIRES=i_gold,c_aero_dragon
+SHELTER=r_caves,r_dungeon
+AVERSIONS=r_water,r_civilization
+TEVENTS=e_carnivores3
+
+CATEGORY=Monsters
+SUBSECTION=Dragons and Drakes
+DESCRIPTION=Aero Dragon
+
+ON=@Create
+NPC=brain_dragon
+COLOR=17969
+FAME={7000 9000}
+KARMA={-6000 -8999}
+STR={950 1045}
+DEX={150 310}
+INT={95 415}
+
+PARRYING={215.0 290.0}
+MAGICRESISTANCE={90.0 130.0}
+TACTICS={150.0 275.0}
+WRESTLING={100.0 215.0}
+EVALUATINGINTEL={210.0 450.0}
+MAGERY={150.0 370.0}
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_energy_bolt
+ADDSPELL=s_lightning
+ADDSPELL=s_teleport
+ADDSPELL=s_chain_lightning
+
+ON=@NPCRestock
+ITEM=i_dagger
+ATTR=attr_magic
+MOREY=120.0
+COLOR=0011E
+NAME=The Stratos
+ITEM=i_gold,{500 1200}
+
+[CHARDEF c_ice_dragon]
+ID=c_dragon
+NAME=Ice Dragon
+SOUND=snd_monster_dragon1
+ICON=i_pet_dragon
+CAN=MT_WALK|MT_FLY|MT_RUN
+DAM={9 33}
+ARMOR=30
+RESOURCES=99 i_ribs_raw,8 i_dragon_blood,20 i_hide
+FOODTYPE=80 t_meat_raw
+DESIRES=i_gold,c_ice_dragon,r_snow
+SHELTER=r_caves,r_dungeon
+AVERSIONS=r_civilization,r_water
+
+CATEGORY=Monsters
+SUBSECTION=Dragons and Drakes
+DESCRIPTION=Ice Dragon
+
+ON=@Create
+NPC=brain_dragon
+COLOR=color_ice
+FAME={9000 9600}
+KARMA={-8999 -9999}
+STR={795 825}
+DEX={86 105}
+INT={385 425}
+
+PARRYING={155.0 195.0}
+MAGERY={250.0 300.0}
+MAGICRESISTANCE={99.0 105.0}
+TACTICS={99.0 110.0}
+WRESTLING={90.0 120.0}
+TAMING=300.0
+
+ON=@NPCRestock
+ITEM=loot_ice_dragon
+
+[CHARDEF c_white_wyrm]
+ID=c_dragon
+NAME=White Wyrm
+SOUND=snd_monster_dragon1
+ICON=i_pet_dragon
+CAN=MT_WALK|MT_FLY|MT_RUN
+DAM={9 33}
+ARMOR=30
+RESOURCES=99 i_ribs_raw,8 i_dragon_blood,20 i_hide
+FOODTYPE=80 t_meat_raw
+DESIRES=i_gold,c_ice_dragon,r_snow
+SHELTER=r_caves,r_dungeon
+AVERSIONS=r_civilization,r_water
+
+CATEGORY=Monsters
+SUBSECTION=Dragons and Drakes
+DESCRIPTION=White Wyrm
+
+ON=@Create
+NPC=brain_dragon
+COLOR=color_snow
+FAME={9000 9600}
+KARMA={-8999 -9999}
+STR={995 185}
+DEX={125 185}
+INT={385 425}
+
+PARRYING={155.0 195.0}
+MAGERY={250.0 300.0}
+MAGICRESISTANCE={99.0 105.0}
+TACTICS={99.0 110.0}
+WRESTLING={90.0 120.0}
+TAMING=300.0
+
+ON=@NPCRestock
+ITEM=loot_ice_dragon
+
+[CHARDEF c_swamp_dragon]
+ID=c_dragon
+NAME=Swamp Dragon
+SOUND=snd_monster_dragon1
+ICON=i_pet_dragon
+ANIM=03F9C7F
+CAN=MT_WALK|MT_FLY|MT_FIRE_IMMUNE
+DAM={7 35}
+ARMOR=30
+RESOURCES=50 i_ribs_raw,8 i_dragon_blood
+FOODTYPE=80 t_meat_raw,t_gem
+DESIRES=i_gold,r_swamp
+SHELTER=r_caves,r_dungeon,r_swamp
+AVERSIONS=r_water,r_civilization
+TEVENTS=e_carnivores3
+
+CATEGORY=Monsters
+SUBSECTION=Dragons and Drakes
+DESCRIPTION=Swamp Dragon
+
+ON=@Create
+NPC=brain_dragon
+COLOR=0059c
+
+FAME={7000 9000}
+KARMA={-6000 -8999}
+
+STR={1005 1565}
+DEX={80 110}
+INT={90 350}
+
+PARRYING={300.0 400.0}
+MAGICRESISTANCE={110.0 135.0}
+TACTICS={210.0 270.0}
+WRESTLING={150.0 300.0}
+EVALUATINGINTEL={600.0 750.0}
+MAGERY={110.0 145.0}
+POISONING={100.0 135.0}
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_poison
+
+ON=@NPCRestock
+ITEM=i_gold,{400 1600}
+ITEM=i_potion_poisondeadly,4
+
+[CHARDEF c_zombie_dragon]
+ID=c_dragon
+NAME=Zombie Dragon
+SOUND=snd_monster_dragon1
+ICON=i_pet_dragon
+CAN=MT_WALK|MT_FLY|MT_RUN
+DAM={9 33}
+ARMOR=30
+FOODTYPE=80 t_meat_raw
+DESIRES=i_gold,c_zombie_dragon,brain_undead
+RESOURCES=99 i_ribs_raw,8 i_dragon_blood,20 i_hide
+SHELTER=r_caves,r_dungeon,r_spooky,r_graveyard
+AVERSIONS=r_civilization,r_water
+
+CATEGORY=Monsters
+SUBSECTION=Dragons and Drakes
+DESCRIPTION=Zombie Dragon
+
+ON=@Create
+NPC=brain_undead
+COLOR=colors_gray
+FAME={3000 9000}
+KARMA={-4999 -5999}
+STR={795 825}
+DEX={86 105}
+INT={385 425}
+
+PARRYING={55.0 95.0}
+MAGERY={99.0 100.0}
+MAGICRESISTANCE={99.0 100.0}
+TACTICS={99.0 100.0}
+WRESTLING={90.0 93.0}
+
+ON=@NPCRestock
+ITEM=i_gold,(1200 1450}
+ITEM=i_bone,{3 4}
+NAME=Dragon Bone
+
+[CHARDEF c_deep_dragon]
+ID=c_dragon
+NAME=Deep Dragon
+SOUND=snd_monster_dragon1
+ICON=i_pet_dragon
+ANIM=03F9C7F
+CAN=MT_WALK|MT_FLY|MT_FIRE_IMMUNE
+DAM={10 15}
+ARMOR=30
+RESOURCES=50 i_ribs_raw,8 i_dragon_blood
+FOODTYPE=80 t_meat_raw,t_gem
+DESIRES=i_gold,c_deep_dragon
+SHELTER=r_caves,r_dungeon
+AVERSIONS=r_water,r_civilization
+TEVENTS=e_carnivores3
+
+CATEGORY=Monsters
+SUBSECTION=Dragons and Drakes
+DESCRIPTION=Deep Dragon
+
+ON=@Create
+NPC=brain_dragon
+COLOR=0079B
+FAME={7000 9000}
+KARMA={-6000 -8999}
+STR=1000
+DEX=1000
+INT=1000
+
+PARRYING=100.0
+MAGICRESISTANCE=100.0
+TACTICS=100.0
+WRESTLING=100.0
+EVALUATINGINTEL=100.0
+MAGERY=100.0
+
+ON=@NPCRestock
+ITEM=random_weapon_vanq
+ITEM=random_weapon_vanq
+ITEM=i_gold,{1 1000}
+ITEM=random_platemail_invulnerability
+ITEM=random_shield_invulnerability
+
+[CHARDEF c_wyvern]
+ID=c_dragon
+NAME=Wyvern
+DAM={4 15}
+ARMOR=13
+RESOURCES=50 i_ribs_raw, 20 i_hide
+FOODTYPE=25 t_meat_raw
+DESIRES=i_gold,c_wyvern
+SHELTER=r_caves,r_dungeon
+AVERSIONS=r_civilization,r_water
+
+CATEGORY=Monsters
+SUBSECTION=Dragons and Drakes
+DESCRIPTION=Wyvern
+
+ON=@Create
+NPC=brain_dragon
+COLOR=1023
+FAME={3000 9000}
+KARMA={-5000 -5999}
+STR={400 550}
+DEX={100 120}
+INT={130 150}
+
+PARRYING={65.0 80.0}
+MAGICRESISTANCE={40.0 55.0}
+TACTICS={65.0 85.0}
+WRESTLING={60.0 85.0}
+POISONING={85.0 110.0}
+MAGERY={28.0 39.0}
+
+ON=@NPCRestock
+ITEM=loot_wyvern
+
+[CHARDEF c_wyrm]
+ID=c_dragon
+NAME=Wyrm
+SOUND=snd_monster_dragon1
+ICON=i_pet_dragon
+ANIM=078C7F
+CAN=MT_WALK|MT_FLY|MT_EQUIP
+DAM={11 53}
+ARMOR=35
+RESOURCES=99 i_ribs_raw,20 i_hide,8 i_dragon_blood
+FOODTYPE=80 t_meat_raw
+DESIRES=i_gold,c_wyrm,c_ancient_wyrm,c_lord_ancient,wyrm
+SHELTER=r_caves,r_dungeon
+AVERSIONS=r_civilization,r_water
+
+CATEGORY=Monsters
+SUBSECTION=Dragons and Drakes
+DESCRIPTION=Wyrm
+
+ON=@Create
+NPC=brain_dragon
+COLOR=colors_wyrm
+FAME={7000 7999}
+KARMA={-7000 -7999}
+STR={5000 6000}
+DEX={5000 7000}
+INT={7000 9000}
+
+EVALUATINGINTEL={100.0 200.0}
+PARRYING={100.0 200.0}
+MAGERY={100.0 200.0}
+MAGICRESISTANCE={100.0 200.0}
+TACTICS={100.0 200.0}
+WRESTLING={100.0 200.0}
+
+ON=@NPCRestock
+ITEM=i_gold,{10000 20000}
+ITEM=random_swordtype_vanq
+ITEM=random_jewel,{5 10}
+
+[CHARDEF c_ancient_wyrm]
+ID=c_dragon
+NAME=Ancient Wyrm
+SOUND=snd_monster_dragon1
+ICON=i_pet_dragon
+ANIM=078C7F
+CAN=MT_WALK|MT_RUN|MT_FLY|MT_EQUIP
+DAM={50 97}
+ARMOR=67
+RESOURCES=99 i_ribs_raw,20 i_hide,8 i_dragon_blood
+FOODTYPE=80 t_meat_raw
+DESIRES=i_gold,c_ancient_wyrm,c_wyrm,c_lord_ancient_wyrm
+SHELTER=r_caves,r_dungeon
+AVERSIONS=r_civilization,r_water
+
+CATEGORY=Monsters
+SUBSECTION=Dragons and Drakes
+DESCRIPTION=Ancient Wyrm
+
+ON=@Create
+NPC=brain_dragon
+COLOR=colors_wyrm
+FAME={8000 8999}
+KARMA={-8000 -8999}
+STR={9000 15000}
+DEX={8000 13000}
+INT={10000 18000}
+
+ANATOMY={450.0 500.0}
+EVALUATINGINTEL={450.0 500.0}
+PARRYING={450.0 500.0}
+MAGERY={450.0 500.0}
+MAGICRESISTANCE={450.0 500.0}
+TACTICS={450.0 500.0}
+WRESTLING={450.0 500.0}
+
+ON=@NPCRestock
+ITEM=loot_ancient_wyrm
+ITEM=random_swordtype_vanq,2
+ITEM=random_fencingtyp_vanq
+ITEM=random_bowtype_vanq
+ITEM=random_macetype_vanq
+ITEM=random_chainmail_invulnerability
+COLOR=colors_wyrm
+NAME=Wyrm Armor
+ITEM=i_gold,60000
+ITEM=i_gold,{10000 20000}
+ITEM=random_jewel,25
+
+[CHARDEF c_lord_ancient_wyrm]
+ID=c_dragon
+NAME=Ancient Wyrm
+SOUND=snd_monster_dragon1
+ICON=i_pet_dragon
+CAN=MT_WALK|MT_RUN|MT_FLY|MT_EQUIP
+DAM={70 97}
+ARMOR=99
+RESOURCES=99 i_ribs_raw,20 i_hide,8 i_dragon_blood
+FOODTYPE=80 t_meat_raw
+DESIRES=i_gold,c_lord_ancient_wyrm,c_ancient_wyrm,c_wyrm
+SHELTER=r_caves,r_dungeon
+AVERSIONS=r_civilization,r_water
+
+CATEGORY=Monsters
+SUBSECTION=Dragons and Drakes
+DESCRIPTION=Lord Ancient Wyrm
+
+ON=@Create
+NPC=brain_dragon
+COLOR=colors_wyrm
+FAME=9999
+KARMA={-9995 -9999}
+STR={18000 20000}
+DEX={14000 19000}
+INT={17000 19000}
+
+ANATOMY={800.0 900.0}
+EVALUATINGINTEL={800.0 900.0}
+PARRYING={800.0 500.0}
+MAGERY={800.0 900.0
+MAGICRESISTANCE={800.0 900.0}
+TACTICS={800.0 900.0}
+WRESTLING={800.0 900.0}
+
+ON=@NPCRestock
+ITEM=loot_ancient_wyrm
+ITEM=random_swordtype_vanq,4
+ITEM=random_fencingtyp_vanq,2
+ITEM=random_bowtype_vanq,2
+ITEM=random_macetype_vanq,2
+ITEM=random_chainmail_invulnerability,2
+COLOR=colors_wyrm
+NAME=Wyrm Armor
+ITEM=i_gold,60000
+ITEM=i_gold,{30000 60000}
+ITEM=random_jewel,50
+
+[CHARDEF c_phantom_spider]
+ID=c_giant_spider
+NAME=Phantom
+SOUND=snd_monster_gispidr1
+ICON=i_pet_spider_giant
+ANIM=06147F
+CAN=0221F
+DAM=1000
+ARMOR=0
+FOODTYPE=24 t_meat_raw
+SHELTER=r_jungle,r_swamp,r_forests,r_phantom_island
+AVERSIONS=r_civilization
+
+CATEGORY=Monsters
+SUBSECTION=Phantoms
+DESCRIPTION=Phantom (spider)
+
+ON=@Create
+NPC=brain_monster
+FLAGS=statf_insubstantial
+COLOR=17969
+FAME={7000 8000}
+KARMA={-8999 -9999}
+STR={5000 6000}
+DEX={300 450}
+INT={700 900}
+
+PARRYING={65.0 85.0}
+MAGICRESISTANCE=5.0
+TACTICS={145.0 160.0}
+WRESTLING={145.0 160.0}
+MAGERY=3000.0
+EVALUATINGINTEL=3000.0
+HIDING=3000.0
+STEALTH=3000.0
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_harm
+
+ON=@NPCRestock
+ITEM=i_gold,600000
+
+[CHARDEF c_phantom_tentacles]
+ID=c_corpser
+NAME=Phantom
+SOUND=snd_monster_corpsr1
+ICON=i_pet_corpsr
+ANIM=06147F
+CAN=0221F
+DAM=1000
+ARMOR=0
+FOODTYPE=24 t_meat_raw
+SHELTER=r_jungle,r_swamp,r_forests,r_phantom_island
+AVERSIONS=r_civilization
+
+CATEGORY=Monsters
+SUBSECTION=Phantoms
+DESCRIPTION=Phantom (tentacles)
+
+ON=@Create
+NPC=brain_monster
+FLAGS=statf_insubstantial
+COLOR=17969
+FAME={7000 8000}
+KARMA={-8999 -9999}
+
+STR={5000 6000}
+DEX={300 450}
+INT={700 900}
+
+PARRYING={65.0 85.0}
+MAGICRESISTANCE=5.0
+TACTICS={145.0 160.0}
+WRESTLING={145.0 160.0}
+MAGERY=3000.0
+EVALUATINGINTEL=3000.0
+HIDING=3000.0
+STEALTH=3000.0
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_harm
+
+ON=@NPCRestock
+ITEM=i_gold,60000
+
+[CHARDEF c_phantom_serpent]
+ID=c_sea_serpent
+NAME=Phantom
+SOUND=snd_monster_seaserp1
+ICON=i_pet_shark
+ANIM=06147F
+CAN=0221F
+DAM=1000
+ARMOR=0
+FOODTYPE=24 t_meat_raw
+SHELTER=r_jungle,r_swamp,r_forests
+AVERSIONS=r_civilization
+
+CATEGORY=Monsters
+SUBSECTION=Phantoms
+DESCRIPTION=Phantom (serpent)
+
+ON=@Create
+NPC=brain_monster
+FLAGS=statf_insubstantial
+COLOR=17969
+FAME={7000 8000}
+KARMA={-8999 -9999}
+
+STR={5000 6000}
+DEX={300 450}
+INT={700 900}
+
+PARRYING={65.0 85.0}
+MAGICRESISTANCE=5.0
+TACTICS={145.0 160.0}
+WRESTLING={145.0 160.0}
+MAGERY=3000.0
+EVALUATINGINTEL=3000.0
+HIDING=3000.0
+STEALTH=3000.0
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_harm
+
+ON=@NPCRestock
+ITEM=i_gold,60000
+
+[CHARDEF c_terathan_avenger]
+ID=c_terathan_warrior
+NAME=Terathan Avenger
+SOUND=snd_monster_tera_warrior1
+ICON=i_pet_terathan_war
+CAN=MT_WALK
+DAM={10 30}
+ARMOR=25
+RESOURCES=10 i_ribs_raw
+FOODTYPE=15 t_meat_raw
+DESIRES=c_terathan_drone,c_terathan_warrior,c_terathan_avenger,c_terathan_matriarch
+AVERSIONS=r_civilization
+
+CATEGORY=Monsters
+SUBSECTION=T2A Monsters
+DESCRIPTION=Terathan Avenger
+
+ON=@Create
+NPC=brain_monster
+COLOR=0002F8
+FAME={900 9500}
+KARMA={-9000 -9999}
+STR={465 645}
+DEX={66 75}
+INT={46 70}
+
+PARRYING={75.0 85.0}
+POSIONING={135.0 190.0}
+MAGERY={70.0 80.0}
+MAGICRESISTANCE={65.0 80.0}
+TACTICS={90.0 100.0}
+WRESTLING={90.0 100.0}
+
+ON=@NPCRestock
+ITEM=loot_terathan_avenger
+
+[CHARDEF c_frost_spider]
+ID=c_giant_spider
+NAME=Frost Spider
+SOUND=snd_monster_gispidr1
+ICON=i_pet_spider_giant
+CAN=MT_WALK
+DAM={3 19}
+ARMOR=10
+RESOURCES=8 i_spider_silk
+FOODTYPE=15 t_meat_raw
+DESIRES=r_snow,t_web,c_frost_spider
+SHELTER=t_web,r_caves,r_dungeon
+
+CATEGORY=Monsters
+SUBSECTION=Giant Insects and Reptiles
+DESCRIPTION=Frost Spider
+
+ON=@Create
+NPC=brain_monster
+COLOR=color_snow
+FAME={1000 2000}
+KARMA={-1000 -5000}
+STR={76 100}
+DEX={76 95}
+INT={36 60}
+
+PARRYING={35.0 45.0}
+MAGICRESISTANCE={25.0 40.0}
+TACTICS={35.0 50.0}
+WRESTLING={50.0 65.0}
+
+ON=@NPCRestock
+ITEM=loot_frost_spider
+
+[CHARDEF c_dread_spider]
+ID=c_giant_spider
+NAME=Dread Spider
+SOUND=snd_monster_gispidr1
+ICON=i_pet_spider_giant
+ANIM=078C7F
+DAM={7 25}
+ARMOR=12
+RESOURCES=i_spider_silk,{3 8}
+CAN=MT_WALK
+FOODTYPE=15 t_meat_raw
+DESIRES=i_gold,c_dread_spider
+SHELTER=t_web,r_caves,r_dungeon
+
+CATEGORY=Monsters
+SUBSECTION=Giant Insects and Reptiles
+DESCRIPTION=Dread Spider
+
+ON=@Create
+NPC=brain_monster
+COLOR=01
+FAME={4000 8000}
+KARMA={-1999 -6999}
+STR={200 400}
+DEX={150 200}
+INT={50 60}
+
+PARRYING={55.0 75.0}
+MAGICRESISTANCE={55.0 60.0}
+MAGERY=100.0
+TACTICS={85.0 100.0}
+WRESTLING={90.0 105.0}
+POISONING={100.0 180.0}
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_energy_bolt
+
+ON=@NPCRestock
+ITEM=i_backpack
+ITEM={i_spider_silk 1 0 1},{3 6}
+
+[CHARDEF c_phasespider]
+ID=c_giant_spider
+NAME=Phasespider
+SOUND=snd_monster_gispidr1
+ICON=i_pet_spider_giant
+ANIM=078C7F
+CAN=MT_WALK|MT_USEHANDS|MT_RUN
+DAM={9 15}
+ARMOR=25
+RESOURCES=i_spider_silk,{3 8}
+FOODTYPE=15 t_meat_raw
+DESIRES=c_phasespider
+SHELTER=t_web,r_caves,r_dungeon
+
+CATEGORY=Monsters
+SUBSECTION=Giant Insects and Reptiles
+DESCRIPTION=Phasespider
+
+ON=@Create
+NPC=brain_monster
+COLOR=02
+FAME={300 4000}
+KARMA={-999 -3999}
+STR={100 150}
+DEX={100 120}
+INT={20 80}
+
+PARRYING={35.0 55.0}
+MAGICRESISTANCE={25.0 40.0}
+TACTICS={35.0 50.0}
+WRESTLING={50.0 65.0}
+POISONING={60.0 90.0}
+ 
+ON=@NPCRestock
+ITEM=i_gold,{450 600}
+ITEM=i_backpack
+ITEM={i_spider_silk 1 0 1},{3 6}
+
+ON=@NPCSeeNewPlayer
+P=<SRC.P>
+UPDATE
+SRC.UPDATE
+
+ON=@Hit
+if !(RAND(4))
+f_push 5
+RETURN 0
+
+[FUNCTION f_push]
+NEWNPC c_dummy
+ACT.P <P>
+ACT.HOME <P>
+VAR.DIST <ARGN>
+DOSWITCH (<DIR> )
+chkmove n
+chkmove ne
+chkmove e
+chkmove se
+chkmove s
+chkmove sw
+chkmove w
+chkmove nw
+ENDDO
+ACT.REMOVE
+IF (0<VAR.MOVES> > 0)
+DOSWITCH (<DIR> )
+MOVE n <VAR.MOVES>
+MOVE ne <VAR.MOVES>
+MOVE e <VAR.MOVES>
+MOVE se <VAR.MOVES>
+MOVE s <VAR.MOVES>
+MOVE sw <VAR.MOVES>
+MOVE w <VAR.MOVES>
+MOVE nw <VAR.MOVES>
+ENDDO
+FIX
+ENDIF
+VAR.CHKPX
+VAR.CHKPY
+VAR.DIST
+VAR.MOVES
+RETURN 1
+ 
+[CHARDEF c_dummy]
+ID=c_man_invisible
+NAME=Invisible Dummy
+
+CATEGORY=Miscellaneous
+SUBSECTION=Other Bodies
+DESCRIPTION=Dummy Body
+ 
+ON=@Create
+FLAGS statf_invisible
+
+ON=@Click
+RETURN 1
+
+ON=@Death
+HITS <STR>
+RETURN 1
+
+[FUNCTION chkmove]
+ACT.P <ACT.HOME>
+ACT.MOVE <ARGS>
+VAR.CHKPX <ACT.P.X>
+VAR.CHKPY <ACT.P.Y>
+ACT.P <ACT.HOME>
+ACT.WALK <ARGS>
+IF (<VAR.CHKPX> == <ACT.P.X> ) && (<VAR.CHKPY> == <ACT.P.Y> )
+ACT.HOME <ACT.P>
+VAR.MOVES <EVAL 0<VAR.MOVES> + 1>
+IF (<VAR.DIST> > 1)
+VAR.DIST <EVAL <VAR.DIST> - 1>
+chkmove <ARGS>
+ENDIF
+RETURN 1
+ENDIF
+RETURN 0
+
+[CHARDEF c_orc_scout]
+ID=c_orc
+NAME=Orc Scout
+SOUND=snd_monster_orc1
+ICON=i_pet_orc
+ANIM=078C7F
+CAN=MT_WALK|MT_USEHANDS|MT_EQUIP
+DAM={3 9}
+ARMOR=14
+RESOURCES=8 i_ribs_raw
+FOODTYPE=15 t_meat_raw
+DESIRES=i_gold,spk_orc,c_orc_lord,c_orc,c_orc_w_club,c_orc_scout,c_orc_lord,c_orc_mage
+SHELTER=r_caves,r_dungeon,r_orc_camp
+TSPEECH=spk_orc
+ 
+CATEGORY=Monsters
+SUBSECTION=Orcs
+DESCRIPTION=Orc Scout
+ 
+ON=@Create
+NPC=brain_thief
+COLOR=001DE
+FAME={100 1000}
+KARMA={-1000 -5000}
+STR={100 120}
+DEX={80 105}
+INT={35 60}
+
+ARCHERY={100.0}
+PARRYING={50.0 75.0}
+HIDING={50.0 90.0}
+TACTICS={55.0 80.0}
+WRESTLING={50.0 70.0}
+ 
+ON=@NPCRestock
+ITEM=i_orcish_bow
+ITEM=i_arrow,{10 70}
+ITEM=i_potion_healgreat
+ITEM=i_potion_healgreat
+ITEM=i_backpack
+ITEM=loot_orc
+ 
+ON=@Hit
+IF (<HITS> < 75)
+IF (<RESTEST 1 i_potion_healgreat>)
+SPELLEFFECT s_greater_heal,1000
+CONSUME i_potion_healgreat
+ELSE
+RETURN 1
+ENDIF
+ENDIF
+ 
+ON=@FEAROFDEATH
+IF (<HITS> < 50)
+SPELLEFFECT s_invisibility
+ELSE
+RETURN 1
+ENDIF
+
+[CHARDEF c_orc_mage]
+ID=c_orc
+NAME=#NAMES_ORC the Orc Mage
+DAM={2 16}
+ARMOR=15
+RESOURCES=8 i_ribs_raw
+FOODTYPE=15 t_meat_raw
+SHELTER=r_caves,r_dungeon,r_orc_camp
+DESIRES=i_gold,spk_orc,c_orc_lord,c_orc,c_orc_w_club,c_orc_scout,c_orc_lord,c_orc_mage
+AVERSIONS=r_civilization
+TSPEECH=spk_orc
+
+CATEGORY=Monsters
+SUBSECTION=Orcs
+DESCRIPTION=Orc Mage
+
+ON=@Create
+NPC=brain_monster
+COLOR=colors_green
+STR={115 150}
+DEX={91 115}
+INT={160 185}
+
+PARRYING={60.0 85.0}
+MAGERY={70.0 95.0}
+MAGICRESISTANCE={70.0 85.0}
+TACTICS={75.0 90.0}
+
+FAME={1000 2000}
+KARMA={-3000 -3999}
+
+ITEMNEWBIE=i_spellbook
+MORE1=06C0A0895
+MORE2=00000000
+
+ON=@NPCRestock
+ITEM=loot_orchish_mage
+
+[CHARDEF c_orc_captain]
+ID=c_orc_lord
+NAME=#NAMES_ORC the Orc Captain
+DAM={2 18}
+ARMOR=17
+RESOURCES=8 i_ribs_raw
+FOODTYPE=15 t_meat_raw
+DESIRES=i_gold,spk_orc,c_orc_lord,c_orc,c_orc_w_club,c_orc_scout,c_orc_lord,c_orc_mage
+SHELTER=r_caves,r_dungeon,r_orc_camp
+AVERSIONS=r_civilization
+TSPEECH=spk_orc
+
+CATEGORY=Monsters
+SUBSECTION=Orcs
+DESCRIPTION=Orc Captain
+
+ON=@Create
+NPC=brain_monster
+FAME={2000 4000}
+KARMA={-2000 -2999}
+
+STR={110 145}
+DEX={100 135}
+INT={86 110}
+
+SWORDSMANSHIP={70.0 85.0}
+PARRYING={70.0 95.0}
+MAGICRESISTANCE={70.0 85.0}
+TACTICS={85.0 100.0}
+
+ON=@NPCRestock
+CONTAINER=i_backpack
+ITEM=loot_orc_captain
+
+[CHARDEF c_goblin]
+ID=c_orc
+NAME=#NAMES_GOBLIN the Goblin
+SOUND=snd_monster_orc1
+ICON=i_pet_orc
+ANIM=078C7F
+CAN=MT_WALK|MT_USEHANDS|MT_EQUIP
+DAM={3 9}
+ARMOR=10
+RESOURCES=6 i_ribs_raw
+FOODTYPE=15 t_meat_raw
+DESIRES=i_gold,spk_goblin,c_goblin,c_goblin_mage,c_goblin_shaman,c_goblin_cheif,c_goblin_lord
+SHELTER=r_caves,r_dungeon,r_goblin_camp
+AVERSIONS=r_civilization
+TSPEECH=spk_goblin
+
+CATEGORY=Monsters
+SUBSECTION=Goblins
+DESCRIPTION=Goblin
+
+ON=@Create
+NPC=brain_monster
+COLOR=colors_green
+KARMA={-3000 -1000}
+FAME={1000 200}
+STR={50 75}
+DEX={50 75}
+INT={36 60}
+
+MAGICRESISTANCE={50.0 75.0}
+PARRYING={35.0 55.0}
+TACTICS={55.0 80.0}
+WRESTLING={35.0 55.0}
+
+ON=@NPCRestock
+ITEM=i_gold,{25 60}
+
+[CHARDEF c_goblin_mage]
+ID=c_orc
+NAME=#NAMES_GOBLIN the Goblin Mage
+SOUND=snd_monster_orc1
+ICON=i_pet_orc
+ANIM=078C7F
+CAN=MT_WALK|MT_USEHANDS|MT_EQUIP
+DAM={3 9}
+ARMOR=10
+RESOURCES=6 i_ribs_raw
+FOODTYPE=15 t_meat_raw
+DESIRES=i_gold,spk_goblin,c_goblin,c_goblin_mage,c_goblin_shaman,c_goblin_cheif,c_goblin_lord
+SHELTER=r_caves,r_dungeon,r_goblin_camp
+AVERSIONS=r_civilization
+TSPEECH=spk_goblin
+
+CATEGORY=Monsters
+SUBSECTION=Goblins
+DESCRIPTION=Goblin Mage
+
+ON=@Create
+NPC=brain_monster
+COLOR=colors_green
+KARMA={-3000 -4000}
+FAME={3000 3500}
+STR={50 75}
+DEX={50 75}
+INT={60 90}
+
+MAGERY={35.0 60.0}
+MAGICRESISTANCE={50.0 75.0}
+PARRYING={35.0 55.0}
+TACTICS={55.0 80.0}
+WRESTLING={35.0 55.0}
+
+ITEMNEWBIE=i_spellbook
+MORE1=068020811
+MORE2=00000000
+
+ON=@NPCRestock
+ITEM=i_gold,{50 100}
+ITEM=random_reagent,4
+ITEM=random_first_circle,{1 3}
+ITEM=random_second_circle,{1 2}
+
+[CHARDEF c_goblin_shaman]
+ID=c_orc
+NAME=#NAMES_GOBLIN the Goblin Shaman
+SOUND=snd_monster_orc1
+ICON=i_pet_orc
+ANIM=078C7F
+CAN=MT_WALK|MT_USEHANDS|MT_EQUIP
+DAM={3 12}
+ARMOR=9
+RESOURCES=9 i_ribs_raw
+FOODTYPE=15 t_meat_raw
+DESIRES=i_gold,spk_goblin,c_goblin,c_goblin_mage,c_goblin_shaman,c_goblin_cheif,c_goblin_lord
+SHELTER=r_caves,r_dungeon,r_goblin_camp
+AVERSIONS=r_civilization
+TSPEECH=spk_goblin
+
+CATEGORY=Monsters
+SUBSECTION=Goblins
+DESCRIPTION=Goblin Shaman
+
+ON=@Create
+NPC=brain_monster
+COLOR=colors_green
+KARMA={-5000 -6000}
+FAME={3000 3999}
+STR={45 65}
+DEX={60 70}
+INT={55 80}
+
+MAGICRESISTANCE={51.6 75.2}
+PARRYING={56.2 75.2}
+TACTICS={55.7 88.5}
+MAGERY={60.0 75.0}
+WRESTLING={46.5 68.6}
+
+ITEMNEWBIE=i_spellbook
+MORE1=068020811
+MORE2=00000000
+
+ON=@NPCRestock
+CONTAINER=i_backpack
+ITEM=random_coin_purse
+ITEM=i_boots_thigh
+ITEM=average_gold_pile,{1 3}
+ITEM=random_scroll
+ITEM=random_scroll
+ITEM=random_scroll
+ITEM=random_body_armor,{1 2},R5
+ITEM=random_eighth_circle,R25
+
+[CHARDEF c_goblin_chief]
+ID=c_orc_lord
+NAME=#NAMES_GOBLIN the Goblin Chief
+CAN=MT_WALK|MT_USEHANDS|MT_EQUIP
+DAM={5 12}
+ARMOR=11
+RESOURCES=6 i_ribs_raw
+FOODTYPE=15 t_meat_raw
+DESIRES=i_gold,spk_goblin,c_goblin,c_goblin_mage,c_goblin_shaman,c_goblin_cheif,c_goblin_lord
+SHELTER=r_caves,r_dungeon,r_orc_camp
+AVERSIONS=r_civilization
+TSPEECH=spk_goblin
+
+CATEGORY=Monsters
+SUBSECTION=Goblins
+DESCRIPTION=Goblin Chief
+
+ON=@Create
+NPC=brain_monster
+COLOR=colors_green
+STR={100 140}
+DEX={60 80}
+INT={36 60}
+
+MAGICRESISTANCE={50.0 75.0}
+PARRYING={50.0 70.0}
+TACTICS={90.0 110.0}
+WRESTLING={85.0 120.0}
+
+KARMA={-3000 -6000}
+FAME={4000 4500}
+
+ON=@NPCRestock
+ITEM=i_gold,{350 600}
+ITEM=random_weapons
+ITEM=i_boots_thigh
+
+[CHARDEF c_goblin_lord]
+ID=c_orc_lord
+NAME=#NAMES_GOBLIN the Goblin Lord
+SOUND=snd_monster_orc1
+ICON=i_pet_orc
+ANIM=078C7F
+CAN=MT_WALK|MT_USEHANDS|MT_EQUIP
+DAM={5 10}
+ARMOR={10 12}
+RESOURCES=9 i_ribs_raw
+FOODTYPE=15 t_meat_raw
+DESIRES=i_gold,spk_goblin,c_goblin,c_goblin_mage,c_goblin_shaman,c_goblin_cheif,c_goblin_lord
+SHELTER=r_caves,r_dungeon,r_orc_camp
+AVERSIONS=r_civilization
+TSPEECH=spk_goblin
+
+CATEGORY=Monsters
+SUBSECTION=Goblins
+DESCRIPTION=Goblin Lord
+
+ON=@Create
+NPC=brain_monster
+COLOR=colors_green
+KARMA={-6000 -6999}
+FAME={4500 5000}
+STR={150 175}
+DEX={90 180}
+INT={25 35}
+
+SWORDSMANSHIP={100.0 195.0}
+MAGICRESISTANCE={85.0 105.0}
+PARRYING={145.0 160.0}
+TACTICS={125.0 155.5}
+WRESTLING={90.0 135.0}
+
+ON=@NPCRestock
+ITEM=i_axe_double
+ITEM=i_boots_thigh
+
+[CHARDEF c_dark_orc]
+ID=c_orc
+NAME=Dark Orc
+SOUND=snd_monster_orc1
+ICON=i_pet_orc
+ANIM=078C7F
+CAN=MT_WALK|MT_USEHANDS|MT_EQUIP
+DAM={12 19}
+ARMOR=24
+RESOURCES=8 i_ribs_raw
+FOODTYPE=15 t_meat_raw
+DESIRES=i_gold,spk_orc,c_dark_orc,c_dark_orc_lord,c_dark_orc_magi
+SHELTER=r_caves,r_dungeon,r_orc_camp
+AVERSIONS=r_civilization
+TSPEECH=spk_orc
+
+CATEGORY=Monsters
+SUBSECTION=Dark Orcs
+DESCRIPTION=Dark Orc
+
+ON=@Create
+NPC=brain_monster
+COLOR=0038B
+FAME={1000 6000}
+KARMA={-5000 -8000}
+STR={200 320}
+DEX={100 200}
+INT={40 60}
+
+PARRYING={60.0 100.0}
+MAGICRESISTANCE={130.0 175.0}
+TACTICS={155.0 180.0}
+WRESTLING={150.0 170.0}
+
+ON=@NPCRestock
+ITEM=i_gold{300 500}
+
+[CHARDEF c_dark_orc_magi]
+ID=c_orc
+NAME=Dark Orc Magi
+SOUND=snd_monster_orc1
+ICON=i_pet_orc
+ANIM=078C7F
+CAN=MT_WALK|MT_USEHANDS|MT_EQUIP
+DAM={11 15}
+ARMOR=19
+RESOURCES=8 i_ribs_raw
+FOODTYPE=15 t_meat_raw
+DESIRES=i_gold,spk_orc,c_dark_orc,c_dark_orc_lord,c_dark_orc_magi
+SHELTER=r_caves,r_dungeon,r_orc_camp
+AVERSIONS=r_civilization
+TSPEECH=spk_orc
+
+CATEGORY=Monsters
+SUBSECTION=Dark Orcs
+DESCRIPTION=Dark Orc Mage
+
+ON=@Create
+NPC=brain_monster
+COLOR=0038B
+FAME={6000 7000}
+KARMA={-5000 -8000}
+STR={150 250}
+DEX={90 140}
+INT={300 600}
+
+PARRYING={60.0 100.0}
+MAGICRESISTANCE={130.0 175.0}
+TACTICS={155.0 180.0}
+WRESTLING={150.0 170.0}
+MAGERY={125.0 195.0}
+MEDITATION={200.0 250.0}
+EVALUATINGINTEL={450.0 670.0}
+
+ITEMNEWBIE=i_spellbook
+MORE1=0FFFFFFFF
+MORE2=0FFFFFFFF
+
+ON=@NPCRestock
+ITEM=i_gold{300 500}
+
+[CHARDEF c_dark_orc_lord]
+ID=c_orc_lord
+SOUND=snd_monster_orc1
+ICON=i_pet_orc
+ANIM=078C7F
+CAN=MT_WALK|MT_USEHANDS|MT_EQUIP
+DAM={20 30}
+ARMOR=25
+RESOURCES=8 i_ribs_raw
+FOODTYPE=15 t_meat_raw
+DESIRES=i_gold,spk_orc,c_dark_orc,c_dark_orc_lord,c_dark_orc_magi
+SHELTER=r_caves,r_dungeon,r_orc_camp
+AVERSIONS=r_civilization
+TSPEECH=spk_orc
+
+CATEGORY=Monsters
+SUBSECTION=Dark Orcs
+DESCRIPTION=Dark Orc Lord
+
+ON=@Create
+COLOR=0038B
+NPC=brain_monster
+FAME={2000 4000}
+KARMA={-2000 -2999}
+
+STR={300 500}
+DEX={80 160}
+INT={95 190}
+
+PARRYING={100.0 120.0}
+MAGICRESISTANCE={200.0 240.0}
+TACTICS={190.0 230.0}
+SWORDSMANSHIP={160.0 185.0}
+
+ON=@NPCRestock
+ITEM=i_gold,{500 1000}
+ITEM=i_axe_two_hand_vanq
+COLOR=0038B
+NAME=Orcish Battle Axe
+ITEM=i_ringmail_leggings_invulnerability
+COLOR=0038B
+NAME=Orchish Ringmail Leggings
+ITEM=i_ringmail_tunic_invulnerability
+COLOR=0038B
+NAME=Orchish Ringmail Armor
+ITEM=i_ringmail_sleeves_invulnerability
+COLOR=0038B
+NAME=Orchish Ringmail Sleeves
+ITEM=i_ringmail_gloves_invulnerability
+COLOR=0038B
+NAME=Orchish Ringmail Gloves
+ITEM=i_studded_leather_gorget_invulnerability
+COLOR=0038B
+NAME=Orchish Studded Leather Gorget
+ITEM=i_orc_helm
+COLOR=0038B
+ATTR=attr_magic
+MOREY=100.0
+NAME=Orchish Helm
+
+[CHARDEF c_frost_ettin]
+ID=c_ettin
+NAME=Frost Ettin
+SOUND=snd_monster_ettin1
+ICON=i_pet_ettin
+CAN=MT_USEHANDS|MT_WALK
+DAM={3 15}
+ARMOR=17
+FOODTYPE=5 t_meat_raw
+RESOURCES=i_ribs_raw,{5 10}
+DESIRES=r_snow,i_gold,c_ettin_lord,c_ettin,c_ettin_w_axe,c_frost_ettin
+SHELTER=r_snow,r_caves,r_dungeon
+AVERSIONS=r_civilization
+
+CATEGORY=Monsters
+SUBSECTION=Ettins, Ogres, Trolls, Cyclops, and Titans
+DESCRIPTION=Frost Ettin
+
+ON=@Create
+NPC=brain_monster
+COLOR=color_snow
+FAME={4000 5000}
+KARMA={-2000 -5999}
+STR={135 155}
+INT={31 55}
+DEX={50 70}
+
+PARRYING={56.6 65.8}
+MAGICRESISTANCE={46.9 55.8}
+TACTICS={52.1 78.8}
+WRESTLING={58.4 67.6}
+
+ON=@NPCRestock
+ITEM=i_gold,{235 340}
+
+[CHARDEF c_ettin_lord]
+ID=c_ettin_w_axe
+NAME=Ettin Lord
+SOUND=snd_monster_ettin1
+ICON=i_pet_ettin
+CAN=MT_USEHANDS|MT_WALK
+DAM={15 20}
+ARMOR={20 22}
+RESOURCES=20 i_ribs_raw
+FOODTYPE=15 t_meat_raw
+DESIRES=c_ettin_lord,c_ettin,c_ettin_w_axe,c_frost_ettin,i_gold
+SHELTER=r_forests,r_caves,r_dungeon
+AVERSIONS=r_civilization
+
+CATEGORY=Monsters
+SUBSECTION=Ettins, Ogres, Trolls, Cyclops, and Titans
+DESCRIPTION=Ettin Lord
+
+ON=@Create
+NPC=brain_monster
+KARMA={-5000 -7999}
+FAME={4500 6999}
+STR={540 700}
+DEX={120 345}
+INT={31 55}
+
+MAGERY={30.0 50.0}
+MAGICRESISTANCE={60.0 85.0}
+PARRYING={150.0 160.0}
+SWORDSMANSHIP={160.0 175.0}
+TACTICS={95.0 135.0}
+WRESTLING={90.0 140.0}
+
+ITEMNEWBIE=i_spellbook
+MORE1=000000d1
+MORE2=00000000
+
+ON=@NPCRestock
+ITEM=i_gold,{540 900}
+ITEM=random_chest_armor_male
+ITEM=random_axes
+ITEM=random_pole_arms,R3
+ITEM=random_masks
+ITEM=i_gem_diamond,{3 5}
+
+[CHARDEF c_ogre_mage]
+ID=c_ogre
+NAME=Ogre Mage
+SOUND=snd_monster_ogre1
+ICON=i_pet_ogre
+ANIM=078C7F
+CAN=MT_WALK|MT_USEHANDS
+DAM={3 11}
+ARMOR=12
+RESOURCES=6 i_ribs_raw
+FOODTYPE=15 t_meat_raw
+DESIRES=c_ogre_lord,c_ogre,c_ogre_mage,c_frost_ogre,i_gold,t_reagent
+
+SHELTER=r_forests,r_dungeon,r_caves
+AVERSIONS=r_civilization
+
+CATEGORY=Monsters
+SUBSECTION=Ettins, Ogres, Trolls, Cyclops, and Titans
+DESCRIPTION=Ogre Mage
+
+ON=@Create
+NPC=brain_monster
+COLOR=000014
+FAME=(4500 6000}
+KARMA={-5000 -6999}
+STR={200 350}
+DEX={50 65}
+INT={450 800}
+
+PARRYING={35.0 50.0}
+MAGICRESISTANCE={45.0 60.0}
+TACTICS={60.0 70.0}
+WRESTLING={50.0 70.0}
+MAGERY={80.0 95.0}
+EVALUATINGINTEL={165.0 210.0}
+
+ON=@NPCRestock
+ITEM=i_gold,{500 600}
+ITEM=random_reagents,(5 9)
+ITEM=i_crystal_ball
+
+[CHARDEF c_frost_ogre]
+ID=c_ogre
+NAME=Frost Ogre
+SOUND=snd_monster_ogre1
+ICON=i_pet_ogre
+CAN=MT_USEHANDS|MT_WALK
+DAM={3 15}
+ARMOR=17
+FOODTYPE=5 t_meat_raw
+RESOURCES=i_ribs_raw,{5 10}
+DESIRES=r_snow,i_gold,c_ogre_lord,c_ogre,c_ogre_mage,c_frost_ogre
+SHELTER=r_snow,r_caves,r_dungeon
+AVERSIONS=r_civilization
+
+CATEGORY=Monsters
+SUBSECTION=Ettins, Ogres, Trolls, Cyclops, and Titans
+DESCRIPTION=Frost Ogre
+
+ON=@Create
+NPC=brain_monster
+COLOR=color_snow
+FAME={4000 5000}
+KARMA={-2000 -5999}
+STR={155 195}
+INT={31 55}
+DEX={50 70}
+
+ON=@NPCRestock
+ITEM=i_gold,{235 340}
+
+[CHARDEF c_ogre_lord]
+ID=c_ogre
+NAME=Ogre Lord
+SOUND=snd_monster_ogre1
+ICON=i_pet_ogre
+ANIM=078C7F
+CAN=MT_WALK|MT_USEHANDS
+DAM={10 42}
+ARMOR=25
+RESOURCES=10 i_ribs_raw
+FOODTYPE=15 t_meat_raw
+SHELTER=r_forests,r_mountains
+DESIRES=c_ogre_lord,c_ogre,c_ogre_mage,c_frost_ogre
+AVERSIONS=r_civilization
+
+ON=@Create
+STR={765 945}
+DEX={66 75}
+INT={46 70}
+
+PARRYING={75.0 85.0}
+MAGICRESISTANCE={65.0 80.0}
+TACTICS={90.0 100.0}
+WRESTLING={90.0 100.0}
+
+NPC=BRAIN_MONSTER
+
+FAME={100 2000}
+KARMA={-4000 -4999}
+
+ON=@NPCRestock
+ITEM=loot_ORGE_LORD
+
+CATEGORY=Monsters
+SUBSECTION=Ettins, Ogres, Trolls, Cyclops, and Titans
+DESCRIPTION=Ogre Lord
+
+[CHARDEF c_frost_troll]
+ID=c_troll
+NAME=Frost Troll
+SOUND=snd_monster_troll1
+ICON=i_pet_troll
+CAN=MT_WALK|MT_USEHANDS
+DAM={4 18}
+ARMOR=25
+RESOURCES=10 i_ribs_raw
+FOODTYPE=15 t_meat_raw
+DESIRES=i_gold,c_troll_berserker,c_troll,c_troll_w_axe,c_frost_troll
+SHELTER=r_forests,r_mountains
+AVERSIONS=r_civilization
+
+CATEGORY=Monsters
+SUBSECTION=Ettins, Ogres, Trolls, Cyclops, and Titans
+DESCRIPTION=Frost Troll
+
+ON=@Create
+NPC=brain_monster
+COLOR=color_snow
+FAME={4000 5000}
+KARMA={-4000 -5999}
+STR={175 05}
+DEX={46 65}
+INT={46 70}
+
+PARRYING={65.0 80.0}
+MAGICRESISTANCE={65.0 80.0}
+TACTICS={80.0 100.0}
+WRESTLING={80.0 100.0}
+
+ON=@NPCRestock
+ITEM=random_potion
+ITEM=random_potion
+ITEM=random_jewel
+ITEM=random_jewel
+ITEM=random_weapon
+ITEM=ttm_lvl2,R99
+ITEM=i_gold,{50 150}
+
+[CHARDEF c_troll_berserker]
+ID=c_troll_w_axe
+NAME=Troll Berserker
+SOUND=snd_monster_troll1
+ICON=i_pet_troll
+ANIM=078C7F
+CAN=MT_WALK|MT_USEHANDS
+DAM={8 24}
+ARMOR=17
+RESOURCES=10 i_ribs_raw
+FOODTYPE=15 t_meat_raw
+DESIRES=i_gold,c_troll_berserker,c_troll,c_troll_w_axe,c_frost_troll
+SHELTER=r_forests,r_mountains
+AVERSIONS=r_civilization
+
+CATEGORY=Monsters
+SUBSECTION=Ettins, Ogres, Trolls, Cyclops, and Titans
+DESCRIPTION=Troll Berserker
+
+ON=@Create
+NPC=brain_monster
+COLOR=00796
+FAME={6000 8000}
+KARMA={-5000 -7999}
+STR={150 240}
+DEX={600 1050}
+INT={45 70}
+
+SWORDSMANSHIP={75.0 90.0}
+PARRYING={45.0 85.0}
+MAGICRESISTANCE={35.0 60.0}
+TACTICS={65.0 90.0}
+WRESTLING={75.0 90.0}
+ANATOMY={95.0 105.0}
+
+ON=@NPCRestock
+ITEM=i_battle_axe_power
+COLOR=00796
+NAME=Troll Berserker Axe
+ITEM=loot_troll
+
+[CHARDEF c_cyclops_king]
+ID=c_cyclops
+NAME=Cyclop King
+SOUND=snd_monster_cyclops1
+CAN=MT_WALK|MT_USEHANDS
+DAM={14 30}
+ARMOR=28
+RESOURCES=30 i_ribs_raw
+FOODTYPE=15 t_meat_raw
+DESIRES=c_cyclops,c_cyclops_king
+SHELTER=c_caves,c_dungeon
+
+CATEGORY=Monsters
+SUBSECTION=Ettins, Ogres, Trolls, Cyclops, and Titans
+DESCRIPTION=Cyclops King
+
+ON=@Create
+NPC=brain_monster
+KARMA={-6000 -8999}
+FAME={7000 8000}
+
+STR={350 390}
+DEX={95 115}
+INT={37 58}
+
+ANATOMY={450.0 500.0}
+MAGICRESISTANCE={150.0 350.0}
+PARRYING={200.0 300.0}
+TACTICS={80.0 100.0}
+WRESTLING={80.0 90.0}
+
+ON=@NPCRestock
+ITEM=random_hammers
+ITEM=random_chest_armor_male
+ITEM=i_gold,{500 1500}
+
+[CHARDEF c_elder_gazer]
+ID=c_gazer
+NAME=Elder Gazer
+SOUND=snd_MONSTER_GAZER1
+CAN=MT_WALK
+DAM={9 24}
+ARMOR=25
+RESOURCES=8 i_ribs_raw
+DESIRES=c_elder_gazer,c_gazer
+SHELTER=r_caves,r_dungeon
+AVERSIONS=r_civilization
+
+CATEGORY=Monsters
+SUBSECTION=Miscellaneous
+DESCRIPTION=Elder Gazer
+
+ON=@Create
+STR={295 355}
+DEX={325 345}
+INT={290 385}
+
+PARRYING={55.0 65.0}
+MAGERY={2300.0 300.0}
+MAGICRESISTANCE={185.0 200.0}
+TACTICS={80.0 100.0}
+WRESTLING={80.0 100.0}
+
+NPC=brain_monster
+
+FAME={7000 9000}
+KARMA={-9000 -9999}
+
+ON=@NPCRestock
+ITEM=loot_elder_gazer
+
+[CHARDEF c_beholder]
+ID=c_gazer
+NAME=Beholder
+SOUND=snd_monster_gazer1
+ICON=i_pet_gazer
+ANIM=06007F
+CAN=MT_WALK
+DAM={7 20}
+ARMOR=19
+RESOURCES=4 i_ribs_raw
+SHELTER=r_caves,r_dungeon
+DESIRES=c_beholder,c_beholder_lord
+AVERSIONS=r_civilization
+
+CATEGORY=Monsters
+SUBSECTION=Miscellaneous
+DESCRIPTION=Beholder
+
+ON=@Create
+COLOR=000527
+NPC=brain_monster
+FAME={1900 5000}
+KARMA={-5000 -6999}
+
+STR={160 210}
+DEX={40 90}
+INT={300 450}
+
+PARRYING={30.0 50.0}
+MAGERY={60.0 85.0}
+MAGICRESISTANCE={45.0 60.0}
+TACTICS={55.0 90.0}
+WRESTLING={65.0 80.0}
+EVALUATINGINTEL={70.0 110.0}
+
+ON=@NPCRestock
+ITEM=random_armor
+ITEM=random_armor
+ITEM=random_armor
+ITEM=i_gold,{300 450}
+ITEM=random_jewel,{3 5}
+ITEM=random_magic_sword
+
+[CHARDEF c_beholder_lord]
+ID=c_gazer
+NAME=Beholder Lord
+SOUND=snd_monster_gazer1
+ICON=i_pet_gazer
+ANIM=06007F
+CAN=MT_WALK
+DAM={10 29}
+ARMOR=25
+RESOURCES=4 i_ribs_raw
+SHELTER=r_caves,r_dungeon
+DESIRES=c_beholder,c_beholder_lord
+AVERSIONS=r_civilization
+
+CATEGORY=Monsters
+SUBSECTION=Miscellaneous
+DESCRIPTION=Beholder Lord
+
+ON=@Create
+NPC=brain_monster
+FAME={7900 9000}
+KARMA={-7000 -8999}
+COLOR=00527
+
+STR={400 650}
+DEX={150 300}
+INT={800 1050}
+
+PARRYING={65.0 90.0}
+MAGERY={150.0 210.0}
+MAGICRESISTANCE={90.0 110.0}
+TACTICS={80.0 130.0}
+WRESTLING={95.0 120.0}
+EVALUATINGINTEL={200.0 450.0}
+
+ON=@NPCRestock
+ITEM=random_platemail_invulnerability,{2 5}
+ITEM=i_gold,{600 1000}
+ITEM=random_weapon_vanq
+
+[CHARDEF c_bomb]
+ID=c_gazer
+NAME=Bomb
+SOUND=snd_monster_gazer1
+ICON=i_pet_gazer
+ANIM=06007F
+CAN=MT_EQUIP|MT_RUN|MT_WALK|MT_FLY
+DAM={3 24}
+ARMOR=25
+RESOURCES=8 i_ribs_raw
+DESIRES=c_bomb,c_grenade,c_balloon,i_gold,r_lava,t_fire
+SHELTER=r_caves,r_lava
+AVERSIONS=r_civilization
+
+CATEGORY=Monsters
+SUBSECTION=Miscellaneous
+DESCRIPTION=Bomb
+
+ON=@Create
+NPC=brain_monster
+COLOR=0077A
+FAME={3600 5000}
+KARMA={-4000 -4999}
+STR=295
+DEX=325
+INT={290 385}
+
+PARRYING={55.0 65.0}
+MAGERY={90.0 100.0}
+MAGICRESISTANCE={85.0 100.0}
+TACTICS={80.0 100.0}
+WRESTLING={80.0 100.0}
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_fireball
+ADDSPELL=s_explosion
+ADDSPELL=s_flamestrike
+ADDSPELL=s_fire_field
+ADDSPELL=s_magic_arrow
+
+ON=@NPCRestock
+ITEM=i_sulfur_ash,{5 10}
+ITEM=i_gold,{345 500}
+
+ON=@Death
+NEWITEM=i_fx_explode
+ACT.TYPE=t_explosion
+ACT.ATTR=attr_move_never | attr_can_decay
+ACT.LINK=<UID>
+ACT.MOREX=10 //amount of damage
+ACT.MOREY=090 //set flags to general damage
+ACT.MOREZ=2 //distance
+ACT.P=<P>
+ACT.TIMERD=1
+
+[CHARDEF c_grenade]
+ID=c_gazer
+NAME=Grenade
+SOUND=snd_monster_gazer1
+ICON=i_pet_gazer
+ANIM=06007F
+CAN=MT_EQUIP|MT_RUN|MT_WALK|MT_FLY
+DAM={6 30}
+ARMOR=30
+RESOURCES=8 i_ribs_raw
+DESIRES=c_bomb,c_grenade,c_balloon,i_gold,r_lava,t_fire
+SHELTER=r_caves,r_lava
+AVERSIONS=r_civilization
+
+CATEGORY=Monsters
+SUBSECTION=Miscellaneous
+DESCRIPTION=Grenade
+
+ON=@Create
+NPC=brain_monster
+COLOR=904
+FAME={2000 8000}
+KARMA={-7000 -8999}
+STR=450
+DEX=600
+INT={290 385}
+
+PARRYING={85.0 95.0}
+MAGERY={150.0 180.0}
+MAGICRESISTANCE={95.0 120.0}
+TACTICS={100.0 135.0}
+WRESTLING={100.0 135.0}
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_fireball
+ADDSPELL=s_explosion
+ADDSPELL=s_flamestrike
+ADDSPELL=s_fire_field
+ADDSPELL=s_magic_arrow
+
+ON=@NPCRestock
+ITEM=i_sulfur_ash,{5 10}
+ITEM=i_gold,{600 1000}
+
+ON=@Death
+NEWITEM=i_fx_explode
+ACT.TYPE=t_explosion
+ACT.ATTR=attr_move_never | attr_can_decay
+ACT.LINK=<UID>
+ACT.MOREX=35
+ACT.MOREY=090
+ACT.MOREZ=7
+ACT.P=<P>
+ACT.TIMERD=1
+
+[CHARDEF c_balloon]
+ID=c_gazer
+NAME=Balloon
+SOUND=snd_monster_gazer1
+ICON=i_pet_gazer
+ANIM=06007F
+CAN=MT_EQUIP|MT_RUN|MT_WALK|MT_FLY
+DAM={7 35}
+ARMOR=30
+RESOURCES=8 i_ribs_raw
+DESIRES=c_bomb,c_grenade,c_balloon,i_gold,r_lava,t_fire
+SHELTER=r_caves,r_lava
+AVERSIONS=r_civilization
+
+CATEGORY=Monsters
+SUBSECTION=Miscellaneous
+DESCRIPTION=Balloon
+
+ON=@Create
+NPC=brain_monster
+COLOR=025
+FAME={6000 8000}
+KARMA={-8000 -9999}
+STR=600
+DEX=800
+INT={500 600}
+
+PARRYING={135.0 150.0}
+MAGERY={170.0 210.0}
+MAGICRESISTANCE={150.0 180.0}
+TACTICS={180.0 235.0}
+WRESTLING={200.0 240.0}
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_fireball
+ADDSPELL=s_explosion
+ADDSPELL=s_flamestrike
+ADDSPELL=s_fire_field
+ADDSPELL=s_magic_arrow
+
+ON=@NPCRestock
+ITEM=i_sulfur_ash,{5 10}
+ITEM=i_gold,{2000 3000}
+
+ON=@Death
+NEWITEM=i_fx_explode
+ACT.TYPE=t_explosion
+ACT.ATTR=attr_move_never | attr_can_decay
+ACT.LINK=<UID>
+ACT.MOREX=50
+ACT.MOREY=090
+ACT.MOREZ=12
+ACT.P=<P>
+ACT.TIMERD=1
+
+[CHARDEF c_kraken]
+ID=c_corpser
+NAME=Kraken
+SOUND=snd_monster_corpsr1
+ICON=i_pet_corpser
+CAN=MT_WALK|MT_SWIM
+DAM={4 48}
+ARMOR=25
+FOODTYPE=24 t_meat_raw
+DESIRES=t_ship,r_water,c_kraken,i_gold
+SHELTER=r_water
+AVERSIONS=r_civilization
+
+CATEGORY=Monsters
+SUBSECTION=Miscellaneous
+DESCRIPTION=Kraken
+
+ON=@Create
+NPC=brain_monster
+COLOR=01E9
+FAME={6000 8000}
+KARMA={-7000 -8999}
+STR={755 780}
+DEX={225 245}
+INT={26 40}
+
+PARRYING={115.0 125.0}
+MAGICRESISTANCE={115.0 120.0}
+TACTICS={245.0 260.0}
+WRESTLING={250.0 260.0}
+HIDING=250.0
+
+ON=@NPCRestock
+ITEM=loot_kraken
+
+[CHARDEF c_swamp_tentacles]
+ID=c_corpser
+NAME=Swamp Tentacles
+SOUND=snd_monster_corpsr1
+ICON=i_pet_corpser
+CAN=MT_WALK|MT_SWIM
+DAM={3 15}
+ARMOR=15
+FOODTYPE=24 t_meat_raw
+DESIRES=c_swamp_tentacles,r_swamp
+SHELTER=r_swamp
+AVERSIONS=r_civilization
+
+ON=@Create
+NPC=brain_monster
+COLOR=colors_green
+FAME={1000 2000}
+KARMA={-1000 -5000}
+STR={96 120}
+DEX={66 85}
+INT={66 80}
+
+PARRYING={15.0 25.0}
+MAGICRESISTANCE={15.0 20.0}
+TACTICS={65.0 80.0}
+WRESTLING={65.0 80.0}
+HIDING=75.0
+
+ON=@NPCRestock
+ITEM=loot_swamp_tentacle
+
+CATEGORY=Monsters
+SUBSECTION=Miscellaneous
+DESCRIPTION=Swamp Tentacles
+
+[CHARDEF c_blood_tentacles]
+ID=c_corpser
+NAME=Blood Tentacles
+SOUND=snd_monster_corpsr1
+ICON=i_pet_corpser
+ANIM=06147F
+CAN=MT_NONMOVER
+DAM={15 45}
+ARMOR=20
+FOODTYPE=24 t_meat_raw
+DESIRES=t_blood,c_blood_tentacles
+SHELTER=r_dungeon
+AVERSIONS=r_civilization
+
+CATEGORY=Monsters
+SUBSECTION=Miscellaneous
+DESCRIPTION=Blood Tentacles
+
+ON=@Create
+NPC=brain_monster
+COLOR=colors_blood
+FAME={7000 8000}
+KARMA={-5999 -7000}
+STR={750 1080}
+DEX={260 450}
+INT={700 900}
+
+PARRYING={65.0 85.0}
+MAGICRESISTANCE={15.0 20.0}
+TACTICS={145.0 160.0}
+WRESTLING={145.0 160.0}
+MAGERY={135.0 145.0}
+EVALUATINGINTEL={200.0 245.0}
+HIDING={90.0 100.0}
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_harm
+ADDSPELL=s_poison
+
+ON=@NPCRestock
+ITEM=i_gold,{2000 4500}
+ITEM=random_body_parts_1
+ITEM=i_blood_vial,3
+
+[CHARDEF c_stone_harpy]
+ID=c_harpy
+NAME=Stone Harpy
+SOUND=snd_monster_harpy1
+ICON=i_pet_harpy
+CAN=MT_FLY|MT_WALK|MT_FEMALE
+DAM={3 21}
+ARMOR=25
+RESOURCES=3 i_ribs_raw,50 i_feather,5 tm_rocks
+FOODTYPE=5 t_meat_raw,5 t_arock
+DESIRES=i_gold,t_arock,c_harpy,c_stone_harpy
+SHELTER=r_forests,r_mountains
+AVERSIONS=r_water,r_civilization
+
+CATEGORY=Monsters
+SUBSECTION=Miscellaneous
+DESCRIPTION=Stone Harpy
+
+ON=@Create
+NPC=brain_monster
+COLOR=color_rock
+FAME={5000 6000}
+KARMA={-4000 -4999}
+STR={295 320}
+DEX={86 110}
+INT={51 75}
+
+PARRYING={75.0 90.0}
+MAGICRESISTANCE={50.0 65.0}
+TACTICS={70.0 100.0}
+WRESTLING={60.0 90.0}
+
+ON=@NPCRestock
+ITEM=loot_stone_harpy
+
+[CHARDEF c_direwolf]
+ID=c_wolf
+NAME=Dire Wolf
+CAN=MT_WALK
+DAM={6 22}
+ARMOR=11
+RESOURCES=6 i_ribs_raw, 4 i_fur_dark
+FOODTYPE=15 t_meat_raw
+DESIRES=c_direwolf
+SHELTER=r_forests,r_caves
+AVERSIONS=r_civilization
+
+DESCRIPTION=Dire Wolf
+SUBSECTION=Land (Wild)
+CATEGORY=Animals
+
+ON=@Create
+NPC=brain_animal
+COLOR=colors_black
+FAME=150
+KARMA={-600 -999}
+STR={75 150}
+DEX={153 172}
+INT={51 90}
+
+PARRYING={63.0 75.0}
+MAGICRESISTANCE={58.0 75.0}
+TACTICS={50.0 70.0}
+WRESTLING={60.0 80.0}
+TAMING=90.0
+
+[CHARDEF c_hellhound]
+ID=c_wolf
+NAME=Hell Hound
+SOUND=snd_animals_wolf1
+CAN=MT_WALK|MT_FIRE_IMMUNE
+DAM={6 19}
+ARMOR=11
+RESOURCES=6 i_ribs_raw
+FOODTYPE=15 t_meat_raw
+DESIRES=c_hellhound,c_daemon,c_daemon_w_sword
+SHELTER=r_dungeon
+
+CATEGORY=Monsters
+SUBSECTION=Miscellaneous
+DESCRIPTION=Hell Hound
+
+ON=@Create
+NPC=brain_monster
+COLOR=colors_red
+FAME={800 1800}
+KARMA={-3000 -3999}
+STR={96 120}
+DEX={81 105}
+INT={36 60}
+
+PARRYING={63.0 75.0}
+MAGICRESISTANCE={58.0 75.0}
+TACTICS={50.0 70.0}
+WRESTLING={60.0 80.0}
+TAMING=90.0
+MAGERY={60.0 90.0}
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_fireball
+
+ON=@NPCRestock
+CONTAINER=i_backpack
+ITEM=i_sulfur_ash,{1 5}
+
+[CHARDEF c_hellcat]
+ID=c_cat
+NAME=Hellcat
+SOUND=snd_animals_panther1
+ICON=i_pet_panther_2
+CAN=MT_WALK
+DAM={3 15}
+ARMOR=15
+RESOURCES=6 i_ribs_raw,2 i_fur_dark
+FOODTYPE=2 t_meat_raw
+DESIRES=c_predator_hellcat,c_hellcat,c_daemon,c_daemon_w_sword
+SHELTER=r_caves,r_dungeon
+AVERSIONS=r_water,r_civilization
+
+CATEGORY=Monsters
+SUBSECTION=Miscellaneous
+DESCRIPTION=Hellcat
+
+ON=@Create
+NPC=brain_monster
+COLOR=colors_red
+STR={15 55}
+DEX={13 85}
+INT={70 150}
+
+PARRYING={23.0 45.0}
+MAGICRESISTANCE={15.0 30.0}
+TACTICS={9.0 18.0}
+WRESTLING={9.0 18.0}
+TAMING=80.0
+
+FAME={1000 2000}
+KARMA={-1000 -1999}
+
+[CHARDEF c_predator_hellcat]
+ID=c_panther
+NAME=Predator Hellcat
+SOUND=snd_animals_panther1
+ICON=i_pet_panther_2
+CAN=MT_WALK
+DAM={6 20}
+ARMOR=15
+RESOURCES=6 i_ribs_raw,4 i_fur_dark
+FOODTYPE=15 t_meat_raw
+DESIRES=c_predator_hellcat,c_hellcat,c_daemon,c_daemon_w_sword
+SHELTER=r_caves
+AVERSIONS=r_civilization,r_water
+
+CATEGORY=Monsters
+SUBSECTION=Miscellaneous
+DESCRIPTION=Predator Hellcat
+
+ON=@Create
+NPC=brain_monster
+COLOR=colors_red
+FAME={1000 2000}
+KARMA={-3000 -3999}
+STR={160 185}
+DEX={96 115}
+INT={76 100}
+
+PARRYING={55.0 65.0}
+MAGICRESISTANCE={15.0 30.0}
+TACTICS={50.0 65.0}
+WRESTLING={50.0 65.0}
+TAMING=95.0
+
+[CHARDEF c_time_rift]
+ID=c_wisp
+NAME=Time Rift
+SOUND=snd_monster_wisp1
+ICON=i_pet_wisp
+ANIM=078C7F
+DAM={50 90}
+ARMOR=255
+CAN=MT_WALK|MT_FLY|MT_FIRE_IMMUNE|MT_USEHANDS
+FOODTYPE=t_spell
+RESOURCES=t_magic
+DESIRES=c_space_rift,c_time_rift
+SHELTER=r_end_of_time
+AVERSIONS=r_civilization
+
+CATEGORY=Miscellaneous
+SUBSECTION=Wisp
+DESCRIPTION=Time Rift
+
+ON=@Create
+NPC=brain_monster
+COLOR=007A0
+FAME=8999
+KARMA=-9999
+STR=9999
+DEX=9999
+INT=9999
+
+PARRYING=300.0
+MAGERY=300.0
+MAGICRESISTANCE=300.0
+TACTICS=300.0
+WRESTLING=300.0
+
+ITEMNEWBIE=i_light_source
+ATTR=attr_magic|attr_newbie
+
+ON=@NPCRestock
+ITEM=i_gold,60000
+ITEM=i_gold,60000
+ITEM=i_ragnarok
+
+[CHARDEF c_space_rift]
+ID=c_wisp
+NAME=Space Rift
+SOUND=snd_monster_wisp1
+ICON=i_pet_wisp
+ANIM=078C7F
+DAM={50 90}
+ARMOR=255
+CAN=MT_WALK|MT_FLY|MT_FIRE_IMMUNE|MT_USEHANDS
+FOODTYPE=t_spell
+RESOURCES=t_magic
+DESIRES=c_space_rift,c_time_rift
+SHELTER=r_end_of_time
+AVERSIONS=r_civilization
+
+CATEGORY=Miscellaneous
+SUBSECTION=Wisp
+DESCRIPTION=Space Rift
+
+ON=@Create
+NPC=brain_monster
+COLOR=00799
+FAME=8999
+KARMA=-9999
+STR=9999
+DEX=9999
+INT=9999
+
+PARRYING=300.0
+MAGERY=300.0
+MAGICRESISTANCE=300.0
+TACTICS=300.0
+WRESTLING=300.0
+
+ITEMNEWBIE=i_light_source
+ATTR=attr_magic|attr_newbie
+
+ON=@NPCRestock
+ITEM=i_gold,60000
+ITEM=i_gold,60000
+ITEM=i_ragnarok
+
+[CHARDEF c_phoenix]
+ID=c_eagle
+NAME=Phoenix
+SOUND=snd_animals_eagle1
+ICON=i_pet_eagle
+CAN=MT_FLY|MT_WALK|MT_FIRE_IMMUNE
+DAM={7 25}
+ARMOR=25
+RESOURCES=2 i_ribs_raw,36 i_feather
+FOODTYPE=5 t_meat_raw
+DESIRES=i_gold,r_lava,c_phoenix
+SHELTER=r_mountains,r_lava
+
+CATEGORY=Monsters
+SUBSECTION=Miscellaneous
+DESCRIPTION=Phoenix
+
+ON=@Create
+NPC=brain_monster
+COLOR=colors_lava
+FAME={1000 2000}
+KARMA={-5000 -5999}
+STR={500 600}
+DEX={300 400}
+INT={50 65}
+
+MAGERY={90.0 100.0}
+MAGICRESISTANCE={85.0 100.0}
+TACTICS={80.0 90.0}
+WRESTLING={90.0 100.0}
+
+ON=@NPCRestock
+ITEM=loot_phoenix
+
+[CHARDEF c_deep_sea_serpent]
+ID=c_sea_serpent
+NAME=Deep Sea Serpent
+SOUND=snd_monster_seaserp1
+ICON=i_pet_shark
+ANIM=01FF
+CAN=MT_SWIM
+DAM={100 150}
+ARMOR=100
+RESOURCES=50 i_ribs_raw,8 i_serpent_scale
+FOODTYPE=25 t_meat_raw
+DESIRES=t_ship,i_gold,c_sea_serpent,c_deep_sea_serpent
+SHELTER=r_water
+AVERSIONS=r_civilization
+
+CATEGORY=Monsters
+SUBSECTION=Miscellaneous
+DESCRIPTION=Sea Serpent
+
+ON=@Create
+NPC=brain_monster
+FAME={2000 6000}
+KARMA={-3000 -3999}
+COLOR=colors_blue
+STR={8500 9000}
+DEX={8500 9000}
+INT={8500 9000}
+
+PARRYING={850.0 900.0}
+MAGICRESISTANCE={850.0 900.0}
+TACTICS={850.0 900.0}
+WRESTLING={850.0 900.0}
+MAGERY={850.0 900.0}
+FISHING=300.0
+
+ON=@NPCRestock
+ITEM=loot_sea_serpent
+ITEM=i_gold,{2000 3000}
+
+[CHARDEF c_sand_worm]
+ID=c_sea_serpent
+NAME=Sand Worm
+SOUND=snd_monster_seaserp1
+ICON=i_pet_shark
+ANIM=01FF
+CAN=MT_WALK|MT_RUN
+DAM={5 15}
+ARMOR=15
+RESOURCES=50 i_ribs_raw,8 i_serpent_scale
+FOODTYPE=25 t_meat_raw,t_fish
+DESIRES=c_sand_worm,r_desert
+SHELTER=r_desert
+AVERSIONS=r_civilization
+
+CATEGORY=Monsters
+SUBSECTION=Miscellaneous
+DESCRIPTION=Sand Worm
+
+ON=@Create
+NPC=brain_monster
+COLOR=00037
+FAME={2000 6000}
+KARMA={-3000 -3999}
+STR={165 185}
+DEX={58 85}
+INT={53 85}
+
+PARRYING={65.0 75.0}
+MAGICRESISTANCE={60.0 75.0}
+TACTICS={60.0 70.0}
+WRESTLING={60.0 75.0}
+ANATOMY={130. 145.0}
+
+ON=@NPCRestock
+ITEM=i_gold,{350 600}
+
+[CHARDEF c_shapeshifter]
+ID=c_slime
+NAME=Shapeshifter
+ANIM=078C7F
+CAN=MT_WALK|MT_RUN|MT_USEHANDS
+DAM={10 50}
+ARMOR=21
+FOODTYPE=35 t_meat_raw,t_garbage,t_leather,t_food,t_fruit,t_cloth,t_crops
+DESIRES=c_shapeshifter
+SHELTER=r_caves,r_dungeon
+AVERSIONS=r_civilization
+TEVENTS=e_shapedeath
+
+CATEGORY=Monsters
+SUBSECTION=Miscellaneous
+DESCRIPTION=Shapeshifter
+
+ON=@Create
+NPC=brain_monster
+COLOR=0044B
+FAME={3500 7000}
+KARMA={-6000 -9999}
+STR={200 300}
+DEX={500 900}
+INT={800 1200}
+
+PARRYING=350.0
+MAGERY=350.0
+ANATOMY=350.0
+POISONING=350.0
+MAGICRESISTANCE=350.0
+TACTICS=350.0
+WRESTLING=350.0
+EVALUATINGINTEL=350.0
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_polymorph
+
+ON=@NPCRestock
+ITEMNEWBIE=i_mem_monster_poly
+ITEM=i_gold,{300 500}
+
+ON=@NPCSeeNewPlayer
+TIMER 10
+
+ON=@Timer
+f_shapeshifter
+TIMER 30
+
+[FUNCTION f_shapeshifter]
+IF !( RAND(100) > 5 )
+DORAND 100
+SRC.BODY=000001 // ogre
+SRC.BODY=000002 // ettin
+SRC.BODY=000003 // zombie
+SRC.BODY=000004 // gargoyle
+SRC.BODY=000005 // eagle
+SRC.BODY=000006 // bird
+SRC.BODY=000007 // orc lord
+SRC.BODY=000008 // corpser
+SRC.BODY=000009 // daemon
+SRC.BODY=00000A // daemon with sword
+SRC.BODY=00000B // crystal golem
+SRC.BODY=00000C // dragon
+SRC.BODY=00000D // air elemental
+SRC.BODY=00000E // earth elemental
+SRC.BODY=00000F // fire elemental
+SRC.BODY=000010 // water elemental
+SRC.BODY=000011 // orc
+SRC.BODY=000012 // ettin with axe
+SRC.BODY=000015 // giant snake
+SRC.BODY=000016 // gazer
+SRC.BODY=000018 // liche
+SRC.BODY=00001A // spectre or ghoul
+SRC.BODY=00001C // giant spider
+SRC.BODY=00001D // gorilla
+SRC.BODY=00001E // harpy
+SRC.BODY=00001F // headless
+SRC.BODY=000021 // lizard man
+SRC.BODY=000023 // lizard man with spear
+SRC.BODY=000024 // lizard man with mace
+SRC.BODY=000027 // mongbat
+SRC.BODY=000029 // orc with club
+SRC.BODY=00002A // ratman
+SRC.BODY=00002C // ratman with mace
+SRC.BODY=00002D // ratman with sword
+SRC.BODY=00002F // reaper
+SRC.BODY=000030 // giant scorpion
+SRC.BODY=000032 // skeleton
+SRC.BODY=000033 // slime
+SRC.BODY=000034 // snake
+SRC.BODY=000035 // troll with axe
+SRC.BODY=000036 // troll
+SRC.BODY=000037 // troll with mace
+SRC.BODY=000038 // skeleton with axe
+SRC.BODY=000039 // skeleton with sword
+SRC.BODY=00003A // wisp
+SRC.BODY=00003C // drake
+SRC.BODY=000046 // terathan warrior
+SRC.BODY=000047 // terathan drone
+SRC.BODY=000048 // terathan matriarch
+SRC.BODY=00004B // titan
+SRC.BODY=00004C // cyclops
+SRC.BODY=000050 // giant toad
+SRC.BODY=000051 // bullfrog
+SRC.BODY=000055 // ophidian mage
+SRC.BODY=000056 // ophidian warrior
+SRC.BODY=000057 // ophidian matriarch
+SRC.BODY=00005F // sea monster
+SRC.BODY=000096 // sea serpent
+SRC.BODY=000097 // dolphin
+SRC.BODY=0000C8 // light brown horse
+SRC.BODY=0000C9 // cat
+SRC.BODY=0000CA // alligaor
+SRC.BODY=0000CB // pig
+SRC.BODY=0000CC // dark brown horse
+SRC.BODY=0000CD // rabbit
+SRC.BODY=0000CF // wooly sheep
+SRC.BODY=0000D0 // chicken
+SRC.BODY=0000D1 // goat
+SRC.BODY=0000D2 // desert ostard
+SRC.BODY=0000D3 // brown bear
+SRC.BODY=0000D4 // grizzly bear
+SRC.BODY=0000D5 // polar bear
+SRC.BODY=0000D6 // panther
+SRC.BODY=0000D7 // giant rat
+SRC.BODY=0000D8 // black and white cow
+SRC.BODY=0000D9 // dog
+SRC.BODY=0000DA // frenzied ostard
+SRC.BODY=0000DB // forest ostard
+SRC.BODY=0000DC // llama
+SRC.BODY=0000DD // walrus
+SRC.BODY=0000DF // shorn sheep
+SRC.BODY=0000E1 // wolf
+SRC.BODY=0000E2 // grey horse
+SRC.BODY=0000E4 // light tan horse
+SRC.BODY=0000E7 // light brown cow
+SRC.BODY=0000E8 // light brown bull
+SRC.BODY=0000E9 // dark brown bull
+SRC.BODY=0000EA // stag
+SRC.BODY=0000ED // doe
+SRC.BODY=0000EE // rat
+SRC.BODY=000122 // boar
+SRC.BODY=000123 // pack horse
+SRC.BODY=000124 // pack llama
+SRC.BODY=000140 // skeleton archer
+SRC.BODY=000190 // man
+SRC.BODY=000191 // woman
+SRC.BODY=0001A4 // blonde haired male child
+SRC.BODY=0001A5 // brown haired male child
+SRC.BODY=0001A6 // blonde haired female child
+SRC.BODY=0001A7 // brown haired female child
+SRC.BODY=0001A8 // invisible man
+SRC.BODY=00023D // old energy vortex
+SRC.BODY=00023E // blade spirit
+SRC.BODY=0003CA // grim reaper
+SRC.BODY=0003DB // gm
+ENDDO
+SRC.BARK
+SRC.RESEND
+ENDIF
+RETURN 1
+
+[CHARDEF c_nightmare]
+ID=c_horse_brown_dk
+NAME=Nightmare
+SOUND=snd_monster_dragon1
+ICON=i_pet_horse_brown_dk
+CAN=MT_WALK
+DAM={9 29}
+ARMOR=30
+RESOURCES=25 i_ribs_raw,10 i_hide
+FOODTYPE=99 t_meat_raw
+SHELTER=r_caves,r_dungeon
+DESIRES=i_gold,c_nightmare
+AVERSIONS=r_civilization,r_water
+
+CATEGORY=Monsters
+SUBSECTION=Miscellaneous
+DESCRIPTION=Nightmare
+
+ON=@Create
+NPC=brain_dragon
+COLOR=colors_black
+FAME={8000 9000}
+KARMA={-9000 -9999}
+STR={995 1020}
+DEX={86 105}
+INT={385 425}
+
+PARRYING={155.0 195.0}
+MAGICRESISTANCE={199.0 200.0}
+TACTICS={198.0 200.0}
+WRESTLING={190.0 193.0}
+TAMING=150.0
+
+ON=@NPCRestock
+ITEM=loot_nightmare
+
+[CHARDEF c_blood_steed]
+ID=c_horse_brown_dk
+NAME=Blood Steed
+SOUND=snd_animals_horse1
+ICON=i_pet_horse_brown_dk
+CAN=MT_WALK|MT_RUN
+DAM={35 50}
+ARMOR=30
+RESOURCES=25 i_ribs_raw,10 i_hide
+FOODTYPE=5 t_meat_raw
+SHELTER=r_caves,r_dungeon
+DESIRES=i_gold,c_blood_steed
+AVERSIONS=r_civilization,r_water
+TEVENTS=e_paraimmune
+
+CATEGORY=Monsters
+SUBSECTION=Miscellaneous
+DESCRIPTION=Blood Steed
+
+ON=@Create
+NPC=brain_monster
+COLOR=colors_blood
+FAME={6000 8000}
+KARMA={-6000 -6999}
+STR={1500 1720}
+DEX={450 800}
+INT={1500 2000}
+
+PARRYING={500.0 600.0}
+MAGICRESISTANCE={500.0 600.0}
+TACTICS={500.0 600.0}
+WRESTLING={500.0 600.0}
+TAMING=300.0
+
+ON=@NPCRestock
+ITEM=loot_nightmare
+
+[CHARDEF c_shadow_steed]
+ID=c_horse_brown_dk
+NAME=SHadow Steed
+SOUND=snd_animals_horse1
+ICON=i_pet_horse_brown_dk
+CAN=MT_WALK|MT_RUN
+DAM={35 50}
+ARMOR=30
+RESOURCES=25 i_ribs_raw,10 i_hide
+FOODTYPE=5 t_meat_raw
+SHELTER=r_caves,r_dungeon
+DESIRES=i_gold,c_shadow_steed
+AVERSIONS=r_civilization,r_water
+TEVENTS=e_paraimmune
+
+CATEGORY=Monsters
+SUBSECTION=Miscellaneous
+DESCRIPTION=Shadow Steed
+
+ON=@Create
+NPC=brain_monster
+COLOR=01
+FAME={6000 8000}
+KARMA={-6000 -6999}
+STR={1500 1720}
+DEX={450 800}
+INT={1500 2000}
+
+PARRYING={99.0 100.0}
+MAGICRESISTANCE={99.0 100.0}
+TACTICS={99.0 100.0}
+WRESTLING={99.0 100.0}
+TAMING=300.0
+
+ON=@NPCRestock
+ITEM=loot_nightmare
+
+[CHARDEF c_arboreal_mongbat]
+ID=c_mongbat
+NAME=Mongbat
+SOUND=snd_monster_mngbat1
+ICON=i_pet_mongbat
+CAN=MT_WALK|MT_FLY
+DAM={1 2}
+ARMOR=5
+RESOURCES=3 i_ribs_raw
+FOODTYPE=5 t_meat_raw
+DESIRES=i_gold,c_arboreal_mongbat,c_mongbat
+SHELTER=r_forests,r_jungle,r_spooky,r_swamp,r_dungeon
+CATEGORY=Monsters
+SUBSECTION=Miscellaneous
+DESCRIPTION=Arboreal Mongbat
+
+ON=@Create
+NPC=brain_monster
+FAME={100 300}
+KARMA={-1000 -1999}
+STR={6 10}
+DEX={26 38}
+INT={6 14}
+
+PARRYING={25.0 38.0}
+MAGICRESISTANCE={5.0 14.0}
+TACTICS={5.0 10.0}
+WRESTLING={5.0 10.0}
+TAMING=5.0
+
+ON=@NPCRestock
+ITEM=loot_mongbat
+
+[CHARDEF c_imp]
+ID=c_mongbat
+NAME=Imp
+SOUND=snd_monster_mngbat1
+ICON=i_pet_mongbat
+DAM=3,18
+ARMOR=15
+RESOURCES=3 i_ribs_raw, 6 i_hide
+CAN=MT_FLY|MT_WALK
+FOODTYPE=9 t_meat_raw
+DESIRES=C_M_IMP
+SHELTER=r_caves,r_dungeon,r_spooky
+AVERSIONS=r_civilization,r_water
+
+CATEGORY=Monsters
+SUBSECTION=Miscellaneous
+DESCRIPTION=Imp
+
+ON=@Create
+NPC=brain_monster
+COLOR=color_red1
+FAME={100 300}
+KARMA={-2000 -2999}
+STR={76 100}
+DEX={61 80}
+INT={86 110}
+
+PARRYING={50.0 60.0}
+MAGERY={40.0 60.0}
+MAGICRESISTANCE={35.0 50.0}
+TACTICS={55.0 70.0}
+WRESTLING={60.0 75.0}
+TAMING=90.0
+
+ON=@NPCRestock
+ITEM=loot_imp
+
+[CHARDEF c_dark_form]
+ID=c_mongbat
+NAME=Dark Form
+SOUND=snd_animal_ostard_frenzied1
+ICON=i_pet_mongbat
+CAN=MT_FLY|MT_WALK
+DAM={1 2}
+ARMOR=3
+RESOURCES=3 i_ribs_raw,6 i_hide
+FOODTYPE=9 t_meat_raw
+DESIRES=c_dark_form
+SHELTER=r_caves,r_dungeon,r_spooky
+AVERSIONS=r_civilization,r_water
+
+CATEGORY=Monsters
+SUBSECTION=Miscellaneous
+DESCRIPTION=Dark Form
+
+ON=@Create
+NPC=brain_monster
+COLOR=01
+FAME={200 800}
+KARMA={-2000 -2999}
+STR={25 100}
+DEX={45 80}
+INT={1000 2000}
+
+PARRYING={50.0 60.0}
+MAGERY={300.0 400.0}
+MAGICRESISTANCE={250.0 500.0}
+EVALUATINGINTEL={500.0 650.0}
+TACTICS={0.0 10.0}
+WRESTLING={0.0 10.0}
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_energy_bolt
+ADDSPELL=s_lightning
+
+ON=@NPCRestock
+ITEM=i_gold,{120 150}
+
+[CHARDEF c_frost_ooze]
+ID=c_slime
+NAME=Frost Ooze
+SOUND=snd_monster_slime1
+CAN=MT_WALK
+DAM={2 10}
+ARMOR=8
+FOODTYPE=35 t_meat_raw
+DESIRES=c_fros_tooze,r_snow
+SHELTER=r_caves,r_dungeon,r_snow
+
+CATEGORY=Monsters
+SUBSECTION=Miscellaneous
+DESCRIPTION=Frost Ooze
+
+ON=@Create
+NPC=brain_monster
+COLOR=color_snow
+FAME={1000 2000}
+KARMA={-4000 -5999}
+STR={22 34}
+DEX={16 21}
+INT={16 20}
+
+PARRYING={15.0 21.0}
+MAGICRESISTANCE={15.0 20.0}
+TACTICS={19.0 34.0}
+WRESTLING={19.0 34.0}
+
+ON=@NPCRestock
+ITEM=loot_slime
+
+[CHARDEF c_puddle]
+ID=c_slime
+NAME=Puddle
+SOUND=snd_monster_slime1
+CAN=MT_WALK
+DAM={2 10}
+ARMOR=8
+FOODTYPE=35 t_meat_raw
+DESIRES=c_puddle,
+SHELTER=r_caves,r_dungeon
+
+CATEGORY=Monsters
+SUBSECTION=Miscellaneous
+DESCRIPTION=Puddle
+
+ON=@Create
+NPC=brain_monster
+COLOR=045A
+FAME={1000 2000}
+KARMA={-4000 -5999}
+STR={45 50}
+DEX={16 21}
+INT={16 20}
+
+PARRYING={15.0 21.0}
+MAGICRESISTANCE={15.0 20.0}
+TACTICS={19.0 34.0}
+WRESTLING={19.0 34.0}
+
+ON=@NPCRestock
+ITEM=loot_slime
+
+ON=@GetHit
+IF <HITS> > 0
+NEWNPC c_puddle
+ACT.P <P>
+HITS <STR>
+RETURN 1
+
+[CHARDEF c_ice_snake]
+ID=c_snake
+NAME=Ice Snake
+SOUND=snd_animals_snake1
+CAN=MT_WALK
+DAM={2 14}
+ARMOR=15
+RESOURCES=1 i_ribs_raw
+DESIRES=c_ice_snake,r_snow
+SHELTER=r_caves,r_dungeon,r_snow
+AVERSIONS=r_lava
+
+CATEGORY=Animals
+SUBSECTION=Land (Wild)
+DESCRIPTION=Ice Snake
+
+ON=@Create
+NPC=brain_monster
+COLOR=color_ice
+STR={42 54}
+DEX={36 45}
+INT={26 30}
+
+PARRYING={15.0 25.0}
+MAGICRESISTANCE={15.0 20.0}
+TACTICS={39.0 54.0}
+WRESTLING={39.0 54.0}
+
+ON=@NPCRestock
+ITEM=loot_ice_snake
+
+[CHARDEF c_lava_snake]
+ID=c_snake
+NAME=Lava Snake
+SOUND=snd_animals_snake1
+CAN=MT_WALK|MT_FIRE_IMMUNE
+DAM={1 8}
+ARMOR=12
+RESOURCES=1 i_ribs_raw
+DESIRES=c_lava_snake
+SHELTER=r_caves,r_dungeon,r_desert
+AVERSIONS=r_snow
+
+DESCRIPTION=Lava Snake
+SUBSECTION=Land (Wild)
+CATEGORY=Animals
+
+ON=@Create
+NPC=brain_monster
+COLOR=colors_lava
+FAME=40
+KARMA={-300 -599}
+STR={43 55}
+DEX={16 25}
+INT={6 10}
+
+PARRYING={15.0 25.0}
+MAGICRESISTANCE={15.0 20.0}
+TACTICS={19.0 34.0}
+WRESTLING={19.0 34.0}
+
+[CHARDEF c_ice_serpent]
+ID=c_giant_snake
+NAME=Ice Serpent
+SOUND=snd_monster_seaserp1
+ICON=i_pet_snake_giant
+DAM={5 19}
+ARMOR=16
+CAN=MT_WALK
+RESOURCES=20 i_ribs_raw,15 i_hide,8 i_serpent_scale
+FOODTYPE=6 t_meat_raw
+SHELTER=r_dungeon
+AVERSIONS=r_civilization
+
+CATEGORY=Monsters
+SUBSECTION=Giant Insects and Reptiles
+DESCRIPTION=Ice Serpent
+
+ON=@Create
+NPC=brain_monster
+COLOR=color_ice
+FAME={1000 2000}
+KARMA={-4000 -4999}
+STR={215 245}
+DEX={56 80}
+INT={66 85}
+
+PARRYING={45.0 60.0}
+MAGICRESISTANCE={25.0 40.0}
+TACTICS={75.0 80.0}
+WRESTLING={60.0 80.0}
+
+ON=@NPCRestock
+ITEM=loot_giant_ice_serpent
+
+[CHARDEF c_lava_serpent]
+ID=c_giant_snake
+NAME=Lava Serpent
+SOUND=snd_monster_seaserp1
+ICON=i_pet_snake_giant
+CAN=MT_WALK|MT_FIRE_IMMUNE
+DAM={7 25}
+ARMOR=20
+RESOURCES=20 i_ribs_raw,15 i_hide,8 i_serpent_scale
+FOODTYPE=6 t_meat_raw
+AVERSIONS=r_civilization
+
+CATEGORY=Monsters
+SUBSECTION=Giant Insects and Reptiles
+DESCRIPTION=Lava Serpent
+
+ON=@Create
+NPC=brain_monster
+COLOR=065A
+FAME={1000 2000}
+KARMA={-5000 -5999}
+STR={385 415}
+DEX={56 80}
+INT={66 85}
+
+PARRYING={45.0 60.0}
+MAGICRESISTANCE={25.0 40.0}
+TACTICS={65.0 70.0}
+WRESTLING={60.0 80.0}
+
+ON=@NPCRestock
+ITEM=loot_lava_lizard
+
+[CHARDEF c_silver_serpent]
+NAME=Silver Serpent
+ID=c_giant_snake
+SOUND=snd_animals_snake1
+ICON=i_pet_snake
+CAN=MT_WALK
+DAM={20 24}
+ARMOR=20
+RESOURCES=1 i_ribs_raw, 8 i_serpent_scale
+DESIRES=c_silver_serpent
+SHELTER=r_jungle
+
+CATEGORY=Monsters
+SUBSECTION=Giant Insects and Reptiles
+DESCRIPTION=Silver Serpent
+
+ON=@Create
+NPC=brain_monster
+COLOR=946
+FAME={7000 8000}
+KARMA={-4000 -4999}
+STR={160 360}
+DEX={4500 5000}
+INT={21 40}
+
+MAGICRESISTANCE={25.0 40.0}
+TACTICS={60.0 80.0}
+WRESTLING={60.0 80.0}
+TAMING=265.0
+POISONING={1500.0 2500.0}
+
+ON=@NPCRestock
+CONTAINER=i_backpack
+ITEM={random_jewel 1 0 1}
+ITEM={random_jewel 1 0 1}
+ITEM={random_jewel 1 0 1}
+
+[CHARDEF c_lava_lizard]
+ID=c_alligator
+NAME=Lava Lizard
+SOUND=snd_monster_lavalizard1
+ICON=i_pet_croc
+CAN=MT_WALK|MT_FIRE_IMMUNE
+DAM={2 28}
+ARMOR=20
+RESOURCES=6 i_ribs_raw,12 i_hide
+FOODTYPE=5 t_meat_raw
+DESIRES=r_lava,c_lava_lizard
+SHELTER=r_caves,r_lava
+AVERSIONS=r_civilization
+
+DESCRIPTION=Lava Lizard
+SUBSECTION=Giant Insects and Reptiles
+CATEGORY=Monsters
+
+ON=@Create
+NPC=brain_monster
+COLOR=colors_lava
+FAME=50
+KARMA={-600 -799}
+STR={125 150}
+DEX={56 75}
+INT={11 20}
+
+PARRYING={48.0 82.0}
+MAGICRESISTANCE={55.0 70.0}
+TACTICS={60.0 80.0}
+WRESTLING={60.0 80.0}
+TAMING=90.0
+
+ON=@NPCRestock
+ITEM=i_gold,{25 50}
+
+[CHARDEF c_skeleton_mage]
+ID=c_skeleton
+NAME=Skeleton Mage
+SOUND=snd_monster_skletn1
+CAN=MT_WALK
+DAM={2 8}
+ARMOR=19
+RESOURCES=8 i_bone
+DESIRES=c_skeleton_mage,c_skeleton,c_skeleton_w_sword,c_skeleton_archer,c_skeleton_knight,t_reagent
+SHELTER=r_spooky,r_graveyard
+
+CATEGORY=Monsters
+SUBSECTION=Undeads
+DESCRIPTION=Skeleton Mage
+
+ON=@Create
+NPC=brain_undead
+FAME={1000 2000}
+KARMA={-3000 -3999}
+COLOR=colors_red
+STR={76 100}
+DEX={56 75}
+INT={185 210}
+
+PARRYING={45.0 55.0}
+MAGERY={60.0 70.0}
+MAGICRESISTANCE={45.0 60.0}
+TACTICS={45.0 60.0}
+WRESTLING={45.0 55.0}
+
+ON=@NPCRestock
+ITEM=loot_skeletal_mage
+
+[CHARDEF c_skeleton_knight]
+ID=c_skeleton_w_sword
+NAME=Skeleton Knight
+SOUND=snd_monster_skletn1
+CAN=MT_WALK
+DAM={2 20}
+ARMOR=18
+RESOURCES=8 i_bone
+DESIRES=c_skeleton_knight,c_skeleton,c_skeleton_w_sword,c_skeleton_archer,c_skeleton_mage,i_gold
+SHELTER=r_spooky,r_graveyard
+
+CATEGORY=Monsters
+SUBSECTION=Undeads
+DESCRIPTION=Skeleton Knight
+
+ON=@Create
+NPC=brain_undead
+FAME={5000 6000}
+KARMA={-5000 -6999}
+STR={195 250}
+DEX={76 95}
+INT={36 60}
+
+PARRYING={85.0 95.0}
+MAGICRESISTANCE={65.0 80.0}
+TACTICS={85.0 100.0}
+WRESTLING={85.0 95.0}
+
+ON=@NPCRestock
+ITEM=loot_skeletal_knight
+
+[CHARDEF c_blood_knight_skeleton]
+ID=c_skeleton_w_sword
+NAME=Blood Knight
+SOUND=snd_monster_skletn1
+CAN=MT_WALK
+DAM={15 40}
+ARMOR=40
+RESOURCES=8 i_bone
+DESIRES=c_blood_knight_skeleton,i_gold
+SHELTER=r_spooky,r_graveyard
+
+CATEGORY=Monsters
+SUBSECTION=Undeads
+DESCRIPTION=Blood Knight
+
+ON=@Create
+NPC=brain_undead
+COLOR=colors_blood
+FAME={6000 8000}
+KARMA={-6000 -8999}
+STR={450 650}
+DEX={120 195}
+INT={100 160}
+
+PARRYING={185.0 195.0}
+MAGICRESISTANCE={95.0 130.0}
+TACTICS={185.0 300.0}
+ANATOMY={120.0 230.0}
+WRESTLING={185.0 195.0}
+
+ON=@NPCRestock
+ITEM=i_scimitar_power
+COLOR=colors_blood
+NAME=Scimitar of Blood
+ITEM=i_gold,{2000 3000}
+ITEM=i_wooden_shield_invulnerability
+COLOR=colors_blood
+NAME=Wooden Shield of Blood
+ITEM=i_blood_vial,{2 8}
+
+[CHARDEF c_burning_dead]
+ID=c_skeleton_w_sword
+NAME=Burning Dead
+SOUND=snd_monster_skletn1
+CAN=MT_WALK
+DAM={7 30}
+ARMOR=18
+RESOURCES=8 i_bone
+DESIRES=i_gold,t_fire,c_burning_dead
+SHELTER=r_spooky,r_lava
+
+CATEGORY=Monsters
+SUBSECTION=Undeads
+DESCRIPTION=Burning Dead
+
+ON=@Create
+NPC=brain_undead
+COLOR=0077A
+FAME={100 2000}
+KARMA={-3000 -3999}
+STR={350 450}
+DEX={135 320}
+INT={20 65}
+
+PARRYING={85.0 95.0}
+MAGICRESISTANCE={75.0 90.0}
+TACTICS={145.0 190.0}
+WRESTLING={255.0 295.0}
+SWORDSMANSHIP={255.0 295.0}
+
+ON=@NPCRestock
+ITEM=i_gold,{500 700}
+ITEM=i_cutlass_vanq
+COLOR=0077A
+NAME=Flame Sabre
+ITEM=i_wooden_shield_invulnerability
+COLOR=0077A
+NAME=Flame Shield
+
+[CHARDEF c_ghost]
+ID=c_grim_reaper
+NAME=Ghost
+SOUND=snd_monster_ghost1
+ICON=i_pet_ghoul
+CAN=MT_GHOST|MT_WALK
+DAM={12 20}
+ARMOR={20 25}
+DESIRES=c_ghost
+SHELTER=r_spooky,r_graveyard
+
+CATEGORY=Monsters
+SUBSECTION=Undeads
+DESCRIPTION=Ghost
+
+ON=@Create
+NPC=brain_undead
+COLOR=colors_gray
+KARMA={-4000 -2000}
+FAME={1500 3000}
+STR={100 125}
+DEX={90 120}
+INT={60 90}
+
+MAGICRESISTANCE={60.0 85.0}
+PARRYING={60.0 85.0}
+TACTICS={60.0 85.0}
+WRESTLING={60.0 85.0}
+
+ON=@NPCRestock
+ITEM={average_undead_backpack 1 rich_undead_backpack 1}
+ITEM={random_gold_pile 1 0 2 }
+
+[CHARDEF c_ghoul]
+ID=c_zombie
+NAME=Ghoul
+SOUND=snd_monster_zombie1
+ICON=i_pet_zombie
+CAN=MT_WALK
+DAM={4 16}
+ARMOR={15 24}
+DESIRES=c_ghoul,i_gold
+SHELTER=r_spooky,r_graveyard
+
+CATEGORY=Monsters
+SUBSECTION=Undeads
+DESCRIPTION=Ghoul
+
+ON=@Create
+NPC=brain_undead
+COLOR=colors_gray
+KARMA={-5000 -2500}
+FAME={600 900}
+STR={70 95}
+DEX={50 75}
+INT={40 65}
+
+MAGICRESISTANCE={30.0 60.0}
+PARRYING={40.0 70.0}
+TACTICS={50.0 75.0}
+WRESTLING={55.0 75.0}
+
+ON=@NPCRestock
+ITEM=loot_ghoul
+
+[CHARDEF c_mummy]
+NAME=Mummy
+ID=c_zombie
+SOUND=snd_monster_ghost1
+ICON=i_pet_zombie
+CAN=MT_WALK
+DAM={4 32}
+ARMOR=25
+DESIRES=i_gold,r_spooky,r_graveyard,c_mummy
+SHELTER=r_dungeon,r_spooky
+
+CATEGORY=Monsters
+SUBSECTION=Undeads
+DESCRIPTION=Mummy
+
+ON=@Create
+NPC=brain_undead
+COLOR=color_rock
+FAME={100 2000}
+KARMA={-4000 -4999}
+STR={345 370}
+DEX={71 90}
+INT={26 40}
+
+PARRYING={20.0 60.0}
+MAGICRESISTANCE={15.0 40.0}
+TACTICS={35.0 50.0}
+WRESTLING={35.0 50.0}
+
+ON=@NPCRestock
+ITEM=loot_mummy
+
+ON=@Hit
+IF !(RAND(2)) && (!<SRC.RESTEST i_rot_timer>)
+SRC.SYSMESSAGE You have been afflicted with the decay of the dead.
+SRC.SOUND=snd_spell_mana_drain
+SRC.EFFECT=3,0375A,6,15,1 
+SRC.NEWITEM=i_rot_timer
+SRC.ACT.EQUIP
+RETURN 0
+ELSE
+RETURN 0
+ENDIF
+
+[ITEMDEF i_rot_timer]
+NAME=Rot Timer
+ID=i_worldgem_bit
+TYPE=t_eq_script
+LAYER=layer_special
+
+ON=@Create
+ATTR=attr_invis|attr_decay
+MORE1={20 100}
+
+ON=@Equip
+TIMER=1
+SRC.SPELLEFFECT s_paralyze 1000
+
+ON=@Timer
+IF ( <cont> )
+IF ( <more1> )
+MORE1=<more1>-1
+CONT.HITPOINTS=(<CONT.HITPOINTS>+(-1))
+CONT.SOUND=snd_spell_mana_drain
+CONT.EFFECT=3,0375A,6,15,1
+TIMER=1
+RETURN 1
+ELSE
+CONT.SYSMESSAGE You are no longer afflicted by the undead decay.
+ENDIF
+ENDIF
+REMOVE
+RETURN 1
+
+[CHARDEF c_wraith]
+ID=c_spectre
+NAME=Wraith
+SOUND=snd_monster_ghost1
+ICON=i_pet_ghoul
+CAN=MT_GHOST|MT_WALK
+DAM={12 20}
+ARMOR={20 25}
+DESIRES=c_wraith,i_gold
+SHELTER=r_spooky,r_graveyard
+
+CATEGORY=Monsters
+SUBSECTION=Undeads
+DESCRIPTION=Wraith
+
+ON=@Create
+NPC=brain_undead
+COLOR=17969
+KARMA={-4000 -2000}
+FAME={1500 3000}
+STR={100 125}
+DEX={90 120}
+INT={60 90}
+
+MAGICRESISTANCE={60.0 85.0}
+PARRYING={60.0 85.0}
+TACTICS={60.0 85.0}
+WRESTLING={60.0 85.0}
+
+ON=@NPCRestock
+ITEM=loot_wraith
+
+[CHARDEF c_apparition]
+ID=c_spectre
+NAME=Apparition
+SOUND=snd_monster_ghost1
+ICON=i_pet_ghoul
+ANIM=078C7F
+CAN=MT_WALK|MT_GHOST
+DAM={9 25}
+ARMOR=14
+BLOODCOLOR=000664
+DESIRES=c_apparition
+SHELTER=r_spooky,r_dungeon,r_graveyard
+
+CATEGORY=Monsters
+SUBSECTION=Undeads
+DESCRIPTION=Apparition
+
+ON=@Create
+NPC=brain_undead
+COLOR=0664
+FAME={1200 8000}
+KARMA={-4000 -6999}
+STR={210 300}
+DEX={90 105}
+INT={120 200}
+
+PARRYING={85.0 95.0}
+MAGICRESISTANCE={85.0 90.0}
+TACTICS={145.0 160.0}
+WRESTLING={145.0 155.0}
+
+ON=@NPCRestock
+ITEM=loot_spectre
+ITEM=random_reagent,4
+ITEM=i_gold,{600 700}
+ITEM=i_bone,3
+
+[CHARDEF c_undead_lord]
+ID=c_man
+NAME=Undead Lord
+SOUND=snd_monster_ghost1
+CAN=MT_EQUIP|MT_USEHANDS|MT_WALK|MT_MALE
+DAM={7 19}
+ARMOR=12
+DESIRES=c_undead_lord,brain_undead,r_spooky
+SHELTER=r_graveyard,r_spooky,r_dungeon
+
+CATEGORY=Monsters
+SUBSECTION=Undeads
+DESCRIPTION=Undead Lord
+
+ON=@Create
+NPC=brain_undead
+COLOR=003D6
+KARMA={-5000 -8500}
+FAME={2000 4500}
+STR={150 400}
+DEX={20 45}
+INT={50 57}
+
+MAGICRESISTANCE={50.0 80.0}
+PARRYING={65.0 105.0
+TACTICS={80.0 110.0}
+SWORDSMANSHIP={90.0 100.0}
+ANATOMY={50.0 90.0}
+
+ON=@NPCRestock
+ITEM=i_platemail_chest_invulnerability
+COLOR=00750
+NAME=Rusted and Dirty Armor
+ITEM=i_platemail_leggings_invulnerability
+COLOR=00750
+NAME=Rusted and Dirty Leggings
+ITEM=i_platemail_arms_invulnerability
+COLOR=00750
+NAME=Rusted and Dirty Shoulder Plates
+ITEM=i_platemail_helm_invulnerability
+COLOR=00750
+NAME=Rusted and Dirty Helm
+ITEM=i_platemail_gorget_invulnerability
+color=00750
+NAME=Rusted and Dirty Gorget
+COLOR=00750
+NAME=Rusted and Dirty Gauntlets
+ITEM=i_cape
+COLOR=00750
+NAME=Tattered and Torn Cloak
+ITEM=i_viking_sword_vanquishing
+COLOR=00750
+NAME=Rusted and Dirty Viking Sword
+ITEM=i_heater_shield_invulnerability
+COLOR=00750
+NAME=Rusted and Dirty Shield
+ITEM=i_gold,{120 300}
+
+[CHARDEF c_ice_liche]
+ID=c_liche
+NAME=Ice Liche
+SOUND=snd_monster_liche1
+ICON=i_pet_lich
+ANIM=07BC7F
+CAN=MT_WALK|MT_USEHANDS
+DAM={4 12}
+ARMOR=12
+BLOODCOLOR=color_ice
+DESIRES=t_bone,i_gold,t_wand,t_reagent,r_snow,c_ice_liche
+SHELTER=r_dungeon,r_caves,r_spooky,r_snow,r_graveyard
+
+CATEGORY=Monsters
+SUBSECTION=Undeads
+DESCRIPTION=Ice Liche
+
+ON=@Create
+COLOR=color_ice
+NPC=brain_undead
+FAME={900 6000}
+KARMA={-6000 -8999}
+STR={85 110}
+DEX={65 95}
+INT={300 365}
+
+PARRYING={45.0 95.0}
+MAGERY={85.0 105.0}
+MAGICRESISTANCE={75.0 90.0}
+TACTICS={60.0 80.0}
+EVALUATINGINTEL={105.0 200.0}
+WRESTLING={65.0 95.0}
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_energy_bolt
+ADDSPELL=s_flamestrike
+ADDSPELL=s_explosion
+ADDSPELL=s_paralyze
+ADDSPELL=s_summon_undead
+ADDSPELL=s_animate_dead
+ADDSPELL=s_fire_bolt
+ADDSPELL=s_hallucination
+
+ON=@NPCRestock
+ITEM=loot_lich
+
+[CHARDEF c_black_liche]
+ID=c_liche
+NAME=Black Liche
+SOUND=snd_monster_liche1
+ICON=i_pet_lich
+ANIM=07BC7F
+CAN=MT_WALK|MT_USEHANDS
+DAM={9 15}
+ARMOR=16
+BLOODCOLOR=000001
+DESIRES=t_bone,i_gold,t_wand,t_reagent,c_black_liche
+SHELTER=r_dungeon,r_caves,r_spooky,r_graveyard
+
+CATEGORY=Monsters
+SUBSECTION=Undeads
+DESCRIPTION=Black Liche
+
+ON=@Create
+COLOR=000001
+NPC=brain_undead
+FAME={900 6000}
+KARMA={-6000 -8999}
+STR={200 235}
+DEX={85 98}
+INT={200 500}
+
+PARRYING={65.0 85.0}
+MAGERY={80.0 95.0}
+MAGICRESISTANCE={70.0 90.0}
+TACTICS={70.0 90.0}
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_energy_bolt
+ADDSPELL=s_flamestrike
+ADDSPELL=s_explosion
+ADDSPELL=s_paralyze
+ADDSPELL=s_summon_undead
+ADDSPELL=s_animate_dead
+ADDSPELL=s_fire_bolt
+ADDSPELL=s_Hallucination
+
+ON=@NPCRestock
+ITEM=loot_lich
+ITEM=i_dye_tub
+COLOR=01
+NAME=black dye tub
+
+[CHARDEF c_liche_lord]
+ID=c_liche
+NAME=Liche Lord
+SOUND=snd_monster_liche1
+ICON=i_pet_lich
+ANIM=07BC7F
+CAN=MT_WALK|MT_USEHANDS
+DAM={6 18}
+ARMOR=25
+BLOODCOLOR=colors_green
+DESIRES=t_bone,i_gold,t_wand,t_reagent,e_undead,c_liche,c_liche_lord
+SHELTER=r_dungeon,r_caves,r_spooky,r_graveyard
+
+CATEGORY=Monsters
+SUBSECTION=Undeads
+DESCRIPTION=Liche Lord
+
+ON=@Create
+NPC=brain_undead
+STR={415 505}
+DEX={96 115}
+INT={565 655}
+
+PARRYING={55.0 65.0}
+MAGERY={90.0 100.0}
+MAGICRESISTANCE={90.0 100.0}
+TACTICS={50.0 70.0}
+WRESTLING={60.0 80.0}
+
+FAME={9000 9500}
+KARMA={-9000 -9999}
+
+ON=@NPCRestock
+ITEM=loot_lich_lord
+
+[CHARDEF c_ancient_liche]
+ID=c_liche
+NAME=Ancient Liche
+SOUND=snd_monster_liche1
+ICON=i_pet_lich
+ANIM=07BC7F
+CAN=MT_WALK|MT_USEHANDS
+DAM={20 40}
+ARMOR=29
+BLOODCOLOR=colors_green
+DESIRES=t_bone,i_gold,t_wand,t_reagent,c_ancient_liche
+SHELTER=r_dungeon,r_caves,r_spooky,r_graveyard
+
+CATEGORY=Monsters
+SUBSECTION=Undeads
+DESCRIPTION=Ancient Liche
+
+ON=@Create
+COLOR=000751
+NPC=brain_undead
+FAME={9000 9500}
+KARMA={-9000 -9999}
+STR={1000 1500}
+DEX={500 600}
+INT={3000 5000}
+
+PARRYING={100.0 165.0}
+MAGERY={300.0 500.0}
+MAGICRESISTANCE={125.0 190.0}
+TACTICS={170.0 290.0}
+WRESTLING={120.0 150.0}
+EVALUATINGINTEL={450.0 800.0}
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_summon_daemon
+
+ON=@NPCRestock
+ITEM=i_gold,{3000 6000}
+
+[CHARDEF c_energy_vortex]
+ID=c_elem_air
+NAME=Energy Vortex
+SOUND=snd_elementl_airelem5
+ICON=i_pet_elem_air
+CAN=MT_WALK|MT_SWIM|MT_FLY|MT_FIRE_IMMUNE|MT_RUN|MT_USEHANDS
+DAM={50 100}
+ARMOR=100
+
+CATEGORY=Miscellaneous
+SUBSECTION=Blade Spirits
+DESCRIPTION=Energy Vortex
+
+ON=@Create
+NPC=brain_beserk
+COLOR=color_energy_vortex
+FAME=8000
+KARMA=-9999
+STR=9999
+DEX=9999
+INT=9999
+
+TACTICS=900.0
+WRESTLING=900.0
+POISONING=900.0
+PARRYING=900.0
+MAGERY=900.0
+EVALUATINGINTEL=900.0
+HIDING=900.0
+STEALTH=900.0
+DETECTINGHIDDEN=900.0
+MAGICRESISTANCE=900.0
+
+ITEMNEWBIE=i_light_source
+ATTR=attr_magic|attr_newbie
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_harm
+
+[CHARDEF c_doppleganger]
+ID=c_man
+NAME=Doppleganger
+CAN=MT_WALK|MT_RUN|MT_EQUIP|MT_USEHANDS
+DESIRES=i_gold
+
+CATEGORY=Civilized
+SUBSECTION=Various Evil Characters
+DESCRIPTION=Doppleganger
+
+ON=@Create
+NPC=brain_monster
+FAME=100
+KARMA=-6000
+STR=100
+DEX=100
+INT=100
+
+ON=@NPCSeeNewPlayer 
+FINDLAYER(layer_hand1).REMOVE
+FINDLAYER(layer_hand2).REMOVE
+FINDLAYER(layer_shoes).REMOVE
+FINDLAYER(layer_pants).REMOVE
+FINDLAYER(layer_shirt).REMOVE
+FINDLAYER(layer_helm).REMOVE
+FINDLAYER(layer_gloves).REMOVE
+FINDLAYER(layer_ring).REMOVE
+FINDLAYER(layer_light).REMOVE
+FINDLAYER(layer_collar).REMOVE
+FINDLAYER(layer_hair).REMOVE
+FINDLAYER(layer_half_apron).REMOVE
+FINDLAYER(layer_chest).REMOVE
+FINDLAYER(layer_wrist).REMOVE
+FINDLAYER(layer_beard).REMOVE
+FINDLAYER(layer_tunic).REMOVE
+FINDLAYER(layer_ears).REMOVE
+FINDLAYER(layer_arms).REMOVE
+FINDLAYER(layer_cape).REMOVE
+FINDLAYER(layer_robe).REMOVE
+FINDLAYER(layer_skirt).REMOVE
+FINDLAYER(layer_legs).REMOVE
+FINDLAYER(layer_light).REMOVE
+IF (<SRC.FINDLAYER(layer_hand1)> )
+NEWITEM=<SRC.FINDLAYER(layer_hand1).ID>
+ACT.COLOR=<SRC.FINDLAYER(layer_hand1).COLOR>
+ACT.ATTR=attr_newbie
+ACT.CONT=<UID>
+ENDIF
+IF (<SRC.FINDLAYER(layer_hand2)> )
+NEWITEM=<SRC.FINDLAYER(layer_hand2).ID>
+ACT.COLOR=<SRC.FINDLAYER(layer_hand2).COLOR>
+ACT.ATTR=attr_newbie
+ACT.CONT=<UID>
+ENDIF
+IF (<SRC.FINDLAYER(layer_shoes)> )
+NEWITEM=<SRC.FINDLAYER(layer_shoes).ID>
+ACT.COLOR=<SRC.FINDLAYER(layer_shoes).COLOR>
+ACT.ATTR=attr_newbie
+ACT.CONT=<UID>
+ENDIF
+IF (<SRC.FINDLAYER(layer_pants)> )
+NEWITEM=<SRC.FINDLAYER(layer_pants).ID>
+ACT.COLOR=<SRC.FINDLAYER(layer_pants).COLOR>
+ACT.ATTR=attr_newbie
+ACT.CONT=<UID>
+ENDIF
+IF (<SRC.FINDLAYER(layer_shirt)> )
+NEWITEM=<SRC.FINDLAYER(layer_shirt).ID>
+ACT.COLOR=<SRC.FINDLAYER(layer_shirt).COLOR>
+ACT.ATTR=attr_newbie
+ACT.CONT=<UID>
+ENDIF
+IF (<SRC.FINDLAYER(layer_helm)> )
+NEWITEM=<SRC.FINDLAYER(layer_helm).ID>
+ACT.COLOR=<SRC.FINDLAYER(layer_helm).COLOR>
+ACT.ATTR=attr_newbie
+ACT.CONT=<UID>
+ENDIF
+IF (<SRC.FINDLAYER(layer_gloves)> )
+NEWITEM=<SRC.FINDLAYER(layer_gloves).ID>
+ACT.COLOR=<SRC.FINDLAYER(layer_gloves).COLOR>
+ACT.ATTR=attr_newbie
+ACT.CONT=<UID>
+ENDIF
+IF (<SRC.FINDLAYER(layer_ring)> )
+NEWITEM=<SRC.FINDLAYER(layer_ring).ID>
+ACT.COLOR=<SRC.FINDLAYER(layer_ring).COLOR>
+ACT.ATTR=attr_newbie
+ACT.CONT=<UID>
+ENDIF
+IF (<SRC.FINDLAYER(layer_collar)> )
+NEWITEM=<SRC.FINDLAYER(layer_collar).ID>
+ACT.COLOR=<SRC.FINDLAYER(layer_collar).COLOR>
+ACT.ATTR=attr_newbie
+ACT.CONT=<UID>
+ENDIF
+IF (<SRC.FINDLAYER(layer_hair)> )
+NEWITEM=<SRC.FINDLAYER(layer_hair).ID>
+ACT.COLOR=<SRC.FINDLAYER(layer_hair).COLOR>
+ACT.ATTR=attr_newbie
+ACT.CONT=<UID>
+ENDIF
+IF (<SRC.FINDLAYER(layer_half_apron)> )
+NEWITEM=<SRC.FINDLAYER(layer_half_apron).ID>
+ACT.COLOR=<SRC.FINDLAYER(layer_half_apron).COLOR>
+ACT.ATTR=attr_newbie
+ACT.CONT=<UID>
+ENDIF
+IF (<SRC.FINDLAYER(layer_chest)> )
+NEWITEM=<SRC.FINDLAYER(layer_chest).ID>
+ACT.COLOR=<SRC.FINDLAYER(layer_chest).COLOR>
+ACT.ATTR=attr_newbie
+ACT.CONT=<UID>
+ENDIF
+IF (<SRC.FINDLAYER(layer_wrist)> )
+NEWITEM=<SRC.FINDLAYER(layer_wrist).ID>
+ACT.COLOR=<SRC.FINDLAYER(layer_wrist).COLOR>
+ACT.ATTR=attr_newbie
+ACT.CONT=<UID>
+ENDIF
+IF (<SRC.FINDLAYER(layer_beard)> )
+NEWITEM=<SRC.FINDLAYER(layer_beard).ID>
+ACT.COLOR=<SRC.FINDLAYER(layer_beard).COLOR>
+ACT.ATTR=attr_newbie
+ACT.CONT=<UID>
+ENDIF
+IF (<SRC.FINDLAYER(layer_tunic)> )
+NEWITEM=<SRC.FINDLAYER(layer_tunic).ID>
+ACT.COLOR=<SRC.FINDLAYER(layer_tunic).COLOR>
+ACT.ATTR=attr_newbie
+ACT.CONT=<UID>
+ENDIF
+IF (<SRC.FINDLAYER(layer_arms)> )
+NEWITEM=<SRC.FINDLAYER(layer_arms).ID>
+ACT.COLOR=<SRC.FINDLAYER(layer_arms).COLOR>
+ACT.ATTR=attr_newbie
+ACT.CONT=<UID>
+ENDIF
+IF (<SRC.FINDLAYER(layer_cape)> )
+NEWITEM=<SRC.FINDLAYER(layer_cape).ID>
+ACT.COLOR=<SRC.FINDLAYER(layer_cape).COLOR>
+ACT.ATTR=attr_newbie
+ACT.CONT=<UID>
+ENDIF
+IF (<SRC.FINDLAYER(layer_robe)> )
+NEWITEM=<SRC.FINDLAYER(layer_robe).ID>
+ACT.COLOR=<SRC.FINDLAYER(layer_robe).COLOR>
+ACT.ATTR=attr_newbie
+ACT.CONT=<UID>
+ENDIF
+IF (<SRC.FINDLAYER(layer_skirt)> )
+NEWITEM=<SRC.FINDLAYER(layer_skirt).ID>
+ACT.COLOR=<SRC.FINDLAYER(layer_skirt).COLOR>
+ACT.ATTR=attr_newbie
+ACT.CONT=<UID>
+ENDIF
+IF (<SRC.FINDLAYER(layer_legs)> )
+NEWITEM=<SRC.FINDLAYER(layer_legs).ID>
+ACT.COLOR=<SRC.FINDLAYER(layer_legs).COLOR>
+ACT.ATTR=attr_newbie
+ACT.CONT=<UID>
+ENDIF
+IF (<SRC.FINDLAYER(layer_light)> )
+NEWITEM=<SRC.FINDLAYER(layer_light).ID>
+ACT.ATTR=attr_newbie
+ACT.CONT=<UID>
+ENDIF
+IF (<SRC.FINDLAYER(layer_pack)> )
+FINDLAYER(layer_pack).COLOR=<SRC.FINDLAYER(layer_pack).COLOR>
+ENDIF
+STR=<SRC.STR>
+DEX=<SRC.DEX>
+INT=<SRC.INT>
+HITPOINTS=<SRC.STR>
+STAMINA=<SRC.DEX>
+MANA=<SRC.INT>
+MACEFIGHTING=<SRC.MACEFIGHTING>
+MAGERY=<SRC.MAGERY>
+MAGICRESISTANCE=<SRC.MAGICRESISTANCE>
+ARCHERY=<SRC.ARCHERY>
+ANATOMY=<SRC.ANATOMY>
+TACTICS=<SRC.TATICS>
+WRESTLING=<SRC.WRESTLING>
+PARRYING=<SRC.PARRYING>
+SWORDSMANSHIP=<SRC.SWORDSMANSHIP>
+COLOR=<SRC.COLOR>
+NAME=<SRC.NAME> The Doppleganger
+FAME=<SRC.FAME>
+BODY=<SRC.BODY>
+OBODY=<SRC.OBODY>
+
+ON=@NPCRestock
+ITEM={random_gold_pile 1 0 2}
+ITEM=rich_undead_backpack
+
+[CHARDEF c_leprechaun]
+ID=c_man
+NAME=Leprechaun
+CAN=MT_EQUIP|MT_USEHANDS|MT_WALK|MT_RUN
+DAM={2 10}
+ARMOR=5
+DESIRES=i_gold,c_leprechaun
+SHELTER=r_emerald_isle
+
+CATEGORY=Civilized
+SUBSECTION=Various Evil Characters
+DESCRIPTION=Leprechaun
+
+ON=@Create
+NPC=brain_monster
+COLOR=0007D2
+FAME=500
+KARMA=-20
+STR=500
+DEX=200
+INT=100
+
+MAGICRESISTANCE=200.0
+TACTICS=200.0
+WRESTLING=200.0
+
+ON=@NPCSeeNewPlayer
+SAYU You're always after me lucky charms...
+
+ON=@NPCRestock
+ITEM=01718
+COLOR=000A9
+ITEM=01539
+COLOR=000A9
+ITEM=01F9F
+COLOR=000A9
+ITEM=0170F
+COLOR=00A9F
+ITEM=i_gold,5000
+ITEM=ttm_lvl5,R5
+
+ON=@GetHit
+IF !(RAND(2)) && !(<RESTEST i_lep_timer> )
+NEWITEM=i_lep_timer
+EQUIP <ACT>
+INVIS <ACT>
+ENDIF
+IF !(RAND(5)) && (<SRC.FINDLAYER(layer_hand1)> )
+ACT=<SRC.FINDLAYER(layer_hand1).UID>
+NEWITEM=<ACT>
+ACT.CONT=<FINDLAYER(21).UID>
+SRC.FINDLAYER(layer_hand1).REMOVE
+SRC.MESSAGE Your weapon has been taken by the Leprechaun.
+ENDIF
+IF !(RAND(5)) && (<SRC.FINDLAYER(layer_hand2)> )
+ACT=<SRC.FINDLAYER(layer_hand2).UID>
+NEWITEM=<ACT>
+ACT.CONT=<FINDLAYER(21).UID>
+SRC.FINDLAYER(layer_hand2).REMOVE
+SRC.MESSAGE Your shield has been taken by the Leprechaun.
+ENDIF
+IF !(RAND(3)) && (<SRC.RESTEST i_gold,100> )
+SRC.CONSUME=100 i_gold
+SRC.MESSAGE The Leprechaun sneaks into your pouch and takes some gold.
+NEWITEM=i_gold,100
+ACT.CONT=<FINDLAYER(21).UID>
+ENDIF
+
+[ITEMDEF i_lep_timer]
+NAME=Leprechaun Timer
+ID=i_worldgem_bit
+TYPE=t_eq_script
+WEIGHT=0
+LAYER=layer_special
+
+ON=@Create
+ATTR=attr_invis|attr_decay
+//MORE1=20
+
+ON=@Equip
+//TIMER=1
+TIMER=20
+
+ON=@Timer
+CONT.INVIS
+CONT.REMOVE
+
+//IF ( <CONT> )
+//IF ( <MORE1> )
+//MORE1=<MORE1>-1
+//TIMER=1
+//RETURN 1
+//ELSE
+//CONT.INVIS
+//ENDIF
+//ENDIF
+//REMOVE
+//RETURN 1
+
+[CHARDEF c_mimic_brass_n]
+NAME=Mimic
+ID=c_grim_reaper
+DESIRES=i_gold
+
+CATEGORY=Monsters
+SUBSECTION=Miscellaneous
+DESCRIPTION=Brass Chest Mimic (N)
+
+ON=@Create
+NPC=brain_monster
+COLOR=085e
+STR={80 100}
+DEX={50 80}
+INT={60 90}
+FAME={1000 2000}
+KARMA={-4000 -5000}
+
+MAGICRESISTANCE={40.0 50.0}
+TACTICS={70.0 80.0}
+WRESTLING={80.0 90.0}
+
+ON=@Death
+SFX 011A
+SRC.NEWITEM i_loot_brass_chest_n
+SRC.ACT.TIMER 120
+SRC.REMOVE
+SRC.ACT.P <P>
+REMOVE
+RETURN 1
+
+[CHARDEF c_mimic_brass_W]
+NAME=Mimic
+ID=c_grim_reaper
+DESIRES=i_gold
+
+CATEGORY=Monsters
+SUBSECTION=Miscellaneous
+DESCRIPTION=Brass Chest Mimic (W)
+
+ON=@Create
+NPC=brain_monster
+COLOR=085E
+FAME={1000 2000}
+KARMA={-4000 -5000}
+STR={80 100}
+DEX={50 80}
+INT={60 90}
+
+MAGICRESISTANCE={40.0 50.0}
+TACTICS={70.0 80.0}
+WRESTLING={80.0 90.0}
+
+ON=@Death
+SFX 011A
+SRC.NEWITEM i_loot_brass_chest_w
+SRC.ACT.TIMER 120
+SRC.ACT.P <P>
+REMOVE
+RETURN 1
+
+[CHARDEF c_mimic_metal_n]
+NAME=Mimic
+ID=c_grim_reaper
+DESIRES=i_gold
+
+CATEGORY=Monsters
+SUBSECTION=Miscellaneous
+DESCRIPTION=Metal Chest Mimic (N)
+
+ON=@Create
+NPC=brain_monster
+COLOR=085E
+FAME={500 1500}
+KARMA={-3000 -3500}
+STR={80 100}
+DEX={50 80}
+INT={60 90}
+
+MAGICRESISTANCE={40.0 50.0}
+TACTICS={70.0 80.0}
+WRESTLING={80.0 90.0}
+
+ON=@Death
+SFX 011A
+SRC.NEWITEM i_loot_metal_chest_n
+SRC.ACT.TIMER 120
+SRC.ACT.P <P>
+REMOVE
+RETURN 1
+
+[CHARDEF c_mimic_metal_w]
+NAME=Mimic
+ID=C_grim_reaper
+DESIRES=i_gold
+
+CATEGORY=Monsters
+SUBSECTION=Miscellaneous
+DESCRIPTION=Metal Chest Mimic (W)
+
+ON=@Create
+NPC=brain_monster
+COLOR=085E
+FAME={500 1500}
+KARMA={-3000 -3500}
+STR={80 100}
+DEX={50 80}
+INT={60 90}
+
+MAGICRESISTANCE={40.0 50.0}
+TACTICS={70.0 80.0}
+WRESTLING={80.0 90.0}
+
+ON=@Death
+SFX 011A
+SRC.NEWITEM i_loot_metal_chest_w
+SRC.ACT.TIMER 120
+SRC.ACT.P <P>
+REMOVE
+RETURN 1
+
+[CHARDEF c_mimic_wood_n]
+NAME=Mimic
+ID=c_grim_reaper
+DESIRES=i_gold
+
+CATEGORY=Monsters
+SUBSECTION=Miscellaneous
+DESCRIPTION=Wood Chest Mimic (N)
+
+ON=@Create
+NPC=brain_monster
+COLOR=085E
+FAME={500 1000}
+KARMA={-3000 -3500}
+STR={70 90}
+DEX={40 60}
+INT={50 70}
+
+MAGICRESISTANCE={40.0 50.0}
+TACTICS={70.0 80.0}
+WRESTLING={80.0 90.0}
+
+ON=@Death
+SFX 011A
+SRC.NEWITEM i_loot_wood_chest_n
+SRC.ACT.TIMER 120
+SRC.ACT.P <P>
+REMOVE
+RETURN 1
+
+[CHARDEF c_mimic_wood_w]
+NAME=Mimic
+ID=c_grim_reaper
+DESIRES=i_gold
+
+CATEGORY=Monsters
+SUBSECTION=Miscellaneous
+DESCRIPTION=Wood Chest Mimic (W)
+
+ON=@Create
+NPC=brain_monster
+COLOR=085E
+FAME={500 1000}
+KARMA={-3000 -3500}
+STR={70 90}
+DEX={40 60}
+INT={50 70}
+
+MAGICRESISTANCE={40.0 50.0}
+TACTICS={70.0 80.0}
+WRESTLING={80.0 90.0}
+
+ON=@Death
+SFX 011A
+SRC.NEWITEM i_loot_wood_chest_w
+SRC.ACT.TIMER 120
+SRC.ACT.P <P>
+REMOVE
+RETURN 1
+
+[CHARDEF c_bandit_m]
+ID=c_man
+NAME=#NAMES_HUMANMALE the Bandit
+CAN=MT_EQUIP|MT_USEHANDS|MT_WALK
+DAM={5 10}
+ARMOR=6
+DESIRES=i_gold,e_notoriety,c_bandit_m,c_bandit_f
+AVERSIONS=t_trap,t_eerie_stuff
+TEVENTS=e_human_hearUnk
+TEVENTS=e_human_convinit
+TEVENTS=e_human_greet
+TEVENTS=e_human_space
+TEVENTS=e_human_needs
+TEVENTS=e_human_refuse
+TSPEECH=spk_human_prime
+TSPEECH=spk_job_brigand
+TSPEECH=spk_needs
+TSPEECH=spk_rehello
+TSPEECH=spk_human_default
+
+CATEGORY=Civilized
+SUBSECTION=Outlaws and Rogues
+DESCRIPTION=Bandit (male)
+
+ON=@Create
+NPC=brain_thief
+COLOR=colors_skin
+KARMA={-3000 -4000}
+FAME={2500 4000}
+STR={66 80}
+DEX={81 95}
+INT={61 75}
+
+HIDING={45.0 68.0}
+SNOOPING={75.0 90.0}
+LOCKPICKING={35.0 58.0}
+STEALING={75.0 90.0}
+PARRYING={55.0 78.0}
+SWORDSMANSHIP={35.0 58.0}
+WRESTLING={35.0 58.0}
+MAGICRESISTANCE={45.0 58.0}
+TACTICS={55.0 78.0}
+
+ITEMNEWBIE=random_male_hair
+COLOR=colors_hair
+ITEMNEWBIE=random_facial_hair
+COLOR=match_hair
+
+ON=@NPCRestock
+ITEM=i_shirt_plain
+COLOR=colors_all
+ITEM=random_pants
+COLOR=colors_all
+ITEM=random_shoes
+COLOR=colors_neutral
+ITEM=i_skull_cap
+COLOR=colors_all
+ITEM=random_sword
+ITEM=random_coin_purse
+
+[CHARDEF c_bandit_f]
+ID=c_woman
+NAME=#NAMES_HUMANFEMALE the Bandit
+CAN=MT_EQUIP|MT_USEHANDS|MT_WALK
+DAM={5 10}
+ARMOR=6
+DESIRES=i_gold,e_notoriety,c_bandit_m,c_bandit_f
+AVERSIONS=t_trap,t_eerie_stuff
+TEVENTS=e_human_hearUnk
+TEVENTS=e_human_convinit
+TEVENTS=e_human_greet
+TEVENTS=e_human_space
+TEVENTS=e_human_needs
+TEVENTS=e_human_refuse
+TSPEECH=spk_human_prime
+TSPEECH=spk_job_brigand
+TSPEECH=spk_needs
+TSPEECH=spk_rehello
+TSPEECH=spk_human_default
+
+CATEGORY=Civilized
+SUBSECTION=Outlaws and Rogues
+DESCRIPTION=Bandit (female)
+
+ON=@Create
+NPC=brain_thief
+COLOR=colors_skin
+KARMA={-3000 -4000}
+FAME={2500 4000}
+STR={66 80}
+DEX={81 95}
+INT={61 75}
+
+HIDING={45.0 68.0}
+SNOOPING={75.0 90.0}
+LOCKPICKING={35.0 58.0}
+STEALING={75.0 90.0}
+PARRYING={55.0 78.0}
+WRESTLING={35.0 58.0}
+SWORDSMANSHIP={35.0 58.0}
+MAGICRESISTANCE={45.0 58.0}
+TACTICS={55.0 78.0}
+
+ITEMNEWBIE=random_female_hair
+COLOR=colors_hair
+
+ON=@NPCRestock
+ITEM=i_shirt_plain
+COLOR=colors_all
+ITEM=i_skirt_long
+COLOR=colors_all
+ITEM=random_shoes
+COLOR=colors_neutral
+ITEM=i_skull_cap
+COLOR=colors_all
+ITEM=random_sword
+ITEM=random_coin_purse
+
+[CHARDEF c_brigand_warrior_m]
+ID=c_man
+NAME=#NAMES_HUMANMALE the Brigand
+CAN=MT_EQUIP|MT_USEHANDS|MT_WALK
+DAM={4 17}
+ARMOR=10
+DESIRES=i_gold,e_notoriety,c_brigand_warrior_m,c_brigand_warrior_f,c_brigand_archer_m,c_brigand_archer_f
+AVERSIONS=t_trap,t_eerie_stuff
+TEVENTS=e_human_hearUnk
+TEVENTS=e_human_convinit
+TEVENTS=e_human_greet
+TEVENTS=e_human_space
+TEVENTS=e_human_needs
+TEVENTS=e_human_refuse
+TSPEECH=spk_human_prime
+TSPEECH=spk_job_brigand
+TSPEECH=spk_needs
+TSPEECH=spk_rehello
+TSPEECH=spk_human_default
+
+CATEGORY=Civilized
+SUBSECTION=Outlaws and Rogues
+DESCRIPTION=Brigand Warrior (male)
+
+ON=@Create
+NPC=brain_thief
+COLOR=colors_skin
+FAME={200 1400}
+KARMA={-3000 -7999}
+STR={66 80}
+DEX={81 95}
+INT={61 75}
+
+CAMPING={45.0 68.0}
+HIDING={45.0 68.0}
+POISONING={35.0 58.0}
+SNOOPING={35.0 58.0}
+LOCKPICKING={35.0 58.0}
+STEALING={45.0 68.0}
+FENCING={45.0 68.0}
+PARRYING={55.0 78.0}
+SWORDSMANSHIP={35.0 58.0}
+WRESTLING={35.0 58.0}
+MACEFIGHTING={25.0 48.0}
+TACTICS={55.0 78.0}
+
+ITEMNEWBIE=random_male_hair
+COLOR=colors_hair
+
+ON=@NPCRestock
+ITEM=i_shirt_plain
+COLOR=colors_all
+ITEM=random_pants
+COLOR=colors_all
+ITEM=random_shoes
+COLOR=colors_neutral
+ITEM=random_edged_weapons
+ITEM=random_coin_purse
+
+[CHARDEF c_brigand_warrior_f]
+ID=c_woman
+NAME=#NAMES_HUMANFEMALE the Brigand
+CAN=MT_EQUIP|MT_USEHANDS|MT_WALK
+DAM={4 17}
+ARMOR=10
+DESIRES=i_gold,e_notoriety,c_brigand_warrior_m,c_brigand_warrior_f,c_brigand_archer_m,c_brigand_archer_f
+AVERSIONS=t_trap,t_eerie_stuff
+TEVENTS=e_human_hearUnk
+TEVENTS=e_human_convinit
+TEVENTS=e_human_greet
+TEVENTS=e_human_space
+TEVENTS=e_human_needs
+TEVENTS=e_human_refuse
+TSPEECH=spk_human_prime
+TSPEECH=spk_job_brigand
+TSPEECH=spk_needs
+TSPEECH=spk_rehello
+TSPEECH=spk_human_default
+
+CATEGORY=Civilized
+SUBSECTION=Outlaws and Rogues
+DESCRIPTION=Brigand Warrior (female)
+
+ON=@Create
+NPC=brain_thief
+COLOR=colors_skin
+FAME={200 1400}
+KARMA={-3000 -7999}
+STR={66 80}
+DEX={81 95}
+INT={61 75}
+
+CAMPING={45.0 68.0}
+HIDING={45.0 68.0}
+POISONING={35.0 58.0}
+SNOOPING={35.0 58.0}
+LOCKPICKING={35.0 58.0}
+STEALING={45.0 68.0}
+FENCING={45.0 68.0}
+PARRYING={55.0 78.0}
+SWORDSMANSHIP={35.0 58.0}
+WRESTLING={35.0 58.0}
+MACEFIGHTING={25.0 48.0}
+TACTICS={55.0 78.0}
+
+ITEMNEWBIE=random_female_hair
+COLOR=colors_hair
+
+ON=@NPCRestock
+ITEM=i_shirt_plain
+COLOR=colors_all
+ITEM=i_skirt_short
+COLOR=colors_all
+ITEM=random_shoes
+COLOR=colors_neutral
+ITEM=random_edged_weapons
+ITEM=random_coin_purse
+
+[CHARDEF c_brigand_archer_m]
+ID=c_man
+NAME=#NAMES_HUMANMALE the Brigand
+CAN=MT_EQUIP|MT_USEHANDS|MT_WALK
+DAM={4 17}
+ARMOR=10
+DESIRES=i_gold,e_notoriety,c_brigand_warrior_m,c_brigand_warrior_f,c_brigand_archer_m,c_brigand_archer_f
+AVERSIONS=t_trap,t_eerie_stuff
+TEVENTS=e_human_hearUnk
+TEVENTS=e_human_convinit
+TEVENTS=e_human_greet
+TEVENTS=e_human_space
+TEVENTS=e_human_needs
+TEVENTS=e_human_refuse
+TSPEECH=spk_human_prime
+TSPEECH=spk_job_brigand
+TSPEECH=spk_needs
+TSPEECH=spk_rehello
+TSPEECH=spk_human_default
+
+CATEGORY=Civilized
+SUBSECTION=Outlaws and Rogues
+DESCRIPTION=Brigand Archer (male)
+
+ON=@Create
+NPC=brain_thief
+COLOR=colors_skin
+FAME={200 1400}
+KARMA={-3000 -7999}
+STR={65 100}
+DEX={90 150}
+INT={10 65}
+
+CAMPING={45.0 68.0}
+HIDING={45.0 68.0}
+POISONING={35.0 58.0}
+SNOOPING={35.0 58.0}
+ANATOMY={80.0 100.0}
+LOCKPICKING={35.0 58.0}
+MAGICRESIST={15.0 35.0}
+STEALING={45.0 68.0}
+PARRYING={25.0 65.0}
+ARCHERY={55.0 80.0}
+TACTICS={65.0 95.0}
+
+ITEMNEWBIE=random_male_hair
+COLOR=colors_hair
+
+ON=@NPCRestock
+ITEM=i_shirt_plain
+COLOR=colors_all
+ITEM=i_skirt_short
+COLOR=colors_all
+ITEM=random_shoes
+COLOR=colors_neutral
+ITEM=random_ranged_weapons
+ITEM=random_coin_purse
+
+[CHARDEF c_brigand_archer_f]
+ID=c_woman
+NAME=#NAMES_HUMANMALE the Brigand
+CAN=MT_EQUIP|MT_USEHANDS|MT_WALK
+DAM={4 17}
+ARMOR=10
+DESIRES=i_gold,e_notoriety,c_brigand_warrior_m,c_brigand_warrior_f,c_brigand_archer_m,c_brigand_archer_f
+AVERSIONS=t_trap,t_eerie_stuff
+TEVENTS=e_human_hearUnk
+TEVENTS=e_human_convinit
+TEVENTS=e_human_greet
+TEVENTS=e_human_space
+TEVENTS=e_human_needs
+TEVENTS=e_human_refuse
+TSPEECH=spk_human_prime
+TSPEECH=spk_job_brigand
+TSPEECH=spk_needs
+TSPEECH=spk_rehello
+TSPEECH=spk_human_default
+
+CATEGORY=Civilized
+SUBSECTION=Outlaws and Rogues
+DESCRIPTION=Brigand Archer (female)
+
+ON=@Create
+NPC=brain_thief
+COLOR=colors_skin
+FAME={200 1400}
+KARMA={-3000 -7999}
+STR={65 100}
+DEX={90 150}
+INT={10 65}
+
+CAMPING={45.0 68.0}
+HIDING={45.0 68.0}
+POISONING={35.0 58.0}
+SNOOPING={35.0 58.0}
+ANATOMY={80.0 100.0}
+LOCKPICKING={35.0 58.0}
+MAGICRESIST={15.0 35.0}
+STEALING={45.0 68.0}
+PARRYING={25.0 65.0}
+ARCHERY={55.0 80.0}
+TACTICS={65.0 95.0}
+
+ITEMNEWBIE=random_female_hair
+COLOR=colors_hair
+
+ON=@NPCRestock
+ITEM=i_shirt_plain
+COLOR=colors_all
+ITEM=i_skirt_short
+COLOR=colors_all
+ITEM=random_shoes
+COLOR=colors_neutral
+ITEM=random_ranged_weapons
+ITEM=random_coin_purse
+
+[CHARDEF c_barbarian_warrior]
+ID=c_man
+NAME=#NAMES_HUMANMALE the Barbarian Warrior
+CAN=MT_EQUIP|MT_USEHANDS|MT_WALK|MT_MALE
+DAM={20 25}
+ARMOR=20
+DESIRES=i_gold,c_barbarian_warrior,c_barbarian_warrioress,c_barbarian_shaman,c_barbarian_chieftain
+TEVENTS=e_barbarian_savage_war
+TSPEECH=spk_human_prime
+TSPEECH=spk_human_default
+
+CATEGORY=Civilized
+SUBSECTION=Barbarians
+DESCRIPTION=Barbarian Warrior
+
+ON=@Create
+NPC=brain_human
+KARMA={-4000 -6000}
+FAME={3500 5000}
+STR={150 200}
+DEX={81 95}
+INT={20 30}
+TAG.RACE.MEMBEROF=barbarian
+TAG.RACE.HATE=savage
+
+MAGICRESISTANCE={20.0 35.0}
+TACTICS={80.0 95.0}
+WRESTLING={80.0 95.0}
+SWORDSMANSHIP=100.0
+PARRYING={75.0 100.0}
+
+ITEMNEWBIE=i_hair_long
+COLOR=colors_red
+ITEMNEWBIE=i_beard_short_med
+COLOR=match_hair
+
+ON=@NPCRestock
+ITEM=i_boots_calf
+COLOR=01BB
+ITEM=i_mask_deer
+ITEM=i_axe_double
+ITEM=i_leather_tunic
+ITEM=i_kilt
+COLOR=01BB
+ITEM=backpack_rich
+
+[CHARDEF c_barbarian_warrioress]
+ID=c_woman
+NAME=#NAMES_HUMANFEMALE the Barbarian Warrioress
+CAN=MT_EQUIP|MT_USEHANDS|MT_WALK|MT_FEMALE
+DAM={20 25}
+ARMOR=20
+DESIRES=i_gold,c_barbarian_warrior,c_barbarian_warrioress,c_barbarian_shaman,c_barbarian_chieftain
+TEVENTS=e_barbarian_savage_war
+TSPEECH=spk_human_prime
+TSPEECH=spk_human_default
+
+CATEGORY=Civilized
+SUBSECTION=Barbarians
+DESCRIPTION=Barbarian Warrioress
+
+ON=@Create
+NPC=brain_human
+FAME={3500 5000}
+KARMA={-4000 -6000}
+STR={90 110}
+DEX={81 95}
+INT={20 30}
+TAG.RACE.MEMBEROF=barbarian
+TAG.RACE.HATE=savage
+
+MAGICRESISTANCE={20.0 35.0}
+TACTICS={80.0 95.0}
+WRESTLING={80.0 95.0}
+SWORDSMANSHIP=100.0
+PARRYING={65.0 90.0}
+
+ITEMNEWBIE=i_hair_ponytail
+COLOR=colors_red
+
+ON=@NPCRestock
+ITEM=i_boots_thigh
+COLOR=01BB
+ITEM=i_armor_female_studded
+ITEM=i_battle_axe
+ITEM=backpack_rich
+ITEM=i_mask_deer
+
+[CHARDEF c_barbarian_shaman]
+ID=c_man
+NAME=#NAMES_HUMANMALE the Barbarian Shaman
+CAN=MT_EQUIP|MT_USEHANDS|MT_WALK|MT_MALE
+DAM={15 20}
+ARMOR=20
+DESIRES=i_gold,c_barbarian_warrior,c_barbarian_warrioress,c_barbarian_shaman,c_barbarian_chieftain
+TEVENTS=e_barbarian_savage_war
+TSPEECH=spk_human_prime
+TSPEECH=spk_human_default
+
+CATEGORY=Civilized
+SUBSECTION=Barbarians
+DESCRIPTION=Barbarian Shaman
+
+ON=@Create
+NPC=brain_human
+KARMA={-4000 -6000}
+FAME={3500 5000}
+STR={100 150}
+DEX={81 95}
+INT={20 30}
+TAG.RACE.MEMBEROF=barbarian
+TAG.RACE.HATE=savage
+
+MAGICRESISTANCE={40.0 55.0}
+MAGERY={60.0 75.0}
+TACTICS={80.0 95.0}
+WRESTLING={80.0 95.0}
+MACEFIGHTING=100.0
+PARRYING={75.0 100.0}
+
+ITEMNEWBIE=i_hair_long
+COLOR=colors_red
+ITEMNEWBIE=i_beard_short_med
+COLOR=match_hair
+
+ON=@NPCRestock
+ITEM=i_boots_calf
+COLOR=01BB
+ITEM=i_staff_gnarled
+ITEM=i_sash
+COLOR=01BB
+ITEM=i_kilt
+COLOR=01BB
+ITEM=backpack_rich
+ITEM=i_mask_tribal_red
+ITEM=random_average_magic_loot
+
+[CHARDEF c_barbarian_chieftain]
+ID=c_man
+NAME=#NAMES_HUMANMALE the Barbarian Chieftain
+CAN=MT_EQUIP|MT_USEHANDS|MT_WALK|MT_MALE
+DAM={25 28}
+ARMOR=22
+DESIRES=i_gold,c_barbarian_warrior,c_barbarian_warrioress,c_barbarian_shaman,c_barbarian_chieftain
+TEVENTS=e_barbarian_savage_war
+TSPEECH=spk_human_prime
+TSPEECH=spk_human_default
+
+CATEGORY=Civilized
+SUBSECTION=Barbarians
+DESCRIPTION=Barbarian Chieftain
+
+ON=@Create
+NPC=brain_human
+KARMA={-4500 -6500}
+FAME={4000 5500}
+STR={200 250}
+DEX={88 98}
+INT={20 30}
+TAG.RACE.MEMBEROF=barbarian
+TAG.RACE.HATE=savage
+
+MAGICRESISTANCE={20.0 35.0}
+TACTICS={90.0 100.0}
+WRESTLING={90.0 100.0}
+SWORDSMANSHIP=100.0
+PARRYING={85.0 100.0}
+
+ITEMNEWBIE=i_hair_long
+COLOR=colors_red
+ITEMNEWBIE=i_beard_long_med
+COLOR=match_hair
+
+ON=@NPCRestock
+ITEM=i_boots_calf
+COLOR=01BB
+ITEM=i_leather_tunic
+ITEM=i_kilt
+COLOR=01BB
+ITEM=backpack_rich
+ITEM=i_large_battle_axe_ruin
+ITEM=i_mask_bear
+
+[CHARDEF c_savage_warrior]
+ID=c_man
+NAME=#NAMES_HUMANMALE the Savage Warrior
+CAN=MT_EQUIP|MT_USEHANDS|MT_WALK|MT_MALE
+DAM={20 25}
+ARMOR=20
+DESIRES=i_gold,c_savage_warrior,c_savage_shaman,c_savage_chieftain
+TEVENTS=e_barbarian_savage_war
+TSPEECH=spk_human_prime
+TSPEECH=spk_human_default
+
+CATEGORY=Civilized
+SUBSECTION=Barbarians
+DESCRIPTION=Savage Warrior
+
+ON=@Create
+NPC=brain_human
+COLOR=colors_skin
+KARMA={-4000 -6000}
+FAME={3500 5000}
+STR={150 200}
+DEX={81 95}
+INT={20 30}
+TAG.RACE.MEMBEROF=savage
+TAG.RACE.HATE=barbarian
+
+MAGICRESISTANCE={20.0 35.0}
+TACTICS={80.0 95.0}
+WRESTLING={80.0 95.0}
+FENCING=100.0
+PARRYING={75.0 100.0}
+
+ITEMNEWBIE=i_hair_short
+COLOR=colors_all
+
+ON=@NPCRestock
+ITEM=i_tribal_spear
+ITEM={i_savage_mask_1 1 i_savage_mask_2 1 i_savage_mask_3 1 i_savage_mask_4 1 i_savage_mask_5 1 i_savage_mask_6 1 i_savage_mask_7 1 i_savage_mask_8 1}
+ITEM=i_tribal_berry
+ITEM=i_savage_paint_kit
+ITEM=i_gold,{120 300}
+
+[CHARDEF c_savage_shaman]
+ID=c_man
+NAME=#NAMES_HUMANMALE the Savage Shaman
+CAN=MT_EQUIP|MT_USEHANDS|MT_WALK|MT_MALE
+DAM={4 15}
+ARMOR=15
+DESIRES=i_gold,c_savage_warrior,c_savage_shaman,c_savage_chieftain
+TEVENTS=e_barbarian_savage_war
+TSPEECH=spk_human_prime
+TSPEECH=spk_human_default
+
+CATEGORY=Civilized
+SUBSECTION=Barbarians
+DESCRIPTION=Savage Shaman
+
+ON=@Create
+NPC=brain_human
+COLOR=colors_skin
+KARMA={-4000 -6000}
+FAME={3500 5000}
+STR={150 200}
+DEX={81 95}
+INT={100 300}
+TAG.RACE.MEMBEROF=savage
+TAG.RACE.HATE=barbarian
+
+MAGICRESISTANCE={130.0 235.0}
+TACTICS={50.0 75.0}
+WRESTLING={30.0 55.0}
+FENCING=60.0
+PARRYING={45.0 80.0}
+MAGERY={150.0 250.0}
+
+ITEMNEWBIE=i_hair_short
+COLOR=colors_all
+
+ITEMNEWBIE=i_spellbook
+MORE=04FFFFFFFF
+MORE2=04FFFFFFFF
+
+ON=@NPCRestock
+ITEM=i_tribal_spear
+ITEM={i_savage_mask_1 1 i_savage_mask_2 1 i_savage_mask_3 1 i_savage_mask_4 1 i_savage_mask_5 1 i_savage_mask_6 1 i_savage_mask_7 1 i_savage_mask_8 1}
+ITEM=i_tribal_berry
+ITEM=i_savage_paint_kit
+ITEM=i_gold,{120 300}
+
+[CHARDEF c_savage_chieftain]
+ID=c_man
+NAME=#NAMES_HUMANMALE the Savage Warrior
+CAN=MT_EQUIP|MT_USEHANDS|MT_WALK|MT_MALE
+DAM={20 25}
+ARMOR=20
+DESIRES=i_gold,c_savage_warrior,c_savage_shaman,c_savage_chieftain
+TEVENTS=e_barbarian_savage_war
+TSPEECH=spk_human_prime
+TSPEECH=spk_human_default
+
+CATEGORY=Civilized
+SUBSECTION=Barbarians
+DESCRIPTION=Savage Chieftain
+
+ON=@Create
+NPC=brain_human
+COLOR=colors_skin
+KARMA={-4000 -6000}
+FAME={3500 5000}
+STR={250 400}
+DEX={81 95}
+INT={20 30}
+TAG.RACE.MEMBEROF=savage
+TAG.RACE.HATE=barbarian
+
+MAGICRESISTANCE={60.0 85.0}
+TACTICS={105.0 155.0}
+WRESTLING={80.0 95.0}
+FENCING=200.0
+PARRYING={85.0 140.0}
+
+ITEMNEWBIE=i_hair_short
+COLOR=colors_all
+
+ON=@NPCRestock
+ITEM=i_tribal_spear
+ITEM={i_savage_mask_1 1 i_savage_mask_2 1 i_savage_mask_3 1 i_savage_mask_4 1 i_savage_mask_5 1 i_savage_mask_6 1 i_savage_mask_7 1 i_savage_mask_8 1}
+ITEM=i_tribal_berry
+ITEM=i_savage_paint_kit
+ITEM=i_gold,{420 600}
+
+[CHARDEF c_desert_raider]
+ID=c_man
+NAME=Desert Raider
+SOUND=snd_human_m_die_01
+CAN=MT_EQUIP|MT_USEHANDS|MT_WALK|MT_MALE
+DAM={20 25}
+ARMOR=20
+DESIRES=c_desert_raider,c_desert_rider,r_desert
+SHELTER=r_desert
+TSPEECH=spk_human_prime
+TSPEECH=spk_human_default
+
+CATEGORY=Civilized
+SUBSECTION=Barbarians
+DESCRIPTION=Desert Raider
+
+ON=@Create
+NPC=brain_monster
+KARMA={-4000 -6000}
+FAME={3500 5000}
+STR={200 250}
+DEX={81 95}
+INT={20 30}
+
+MAGICRESISTANCE={70.0 85.0}
+TACTICS={80.0 95.0}
+WRESTLING={80.0 95.0}
+SWORDSMANSHIP=100.0
+PARRYING={75.0 100.0}
+
+ON=@NPCRestock
+ITEM=i_boots_calf
+COLOR=0002C
+NAME=Desert Boots
+ITEM=i_death_shroud_new
+COLOR=0002C
+NAME=Desert Robe
+ITEM=i_bardiche
+COLOR=0002C
+NAME=Raider Axe
+ITEM=i_gold,{500 600}
+
+[CHARDEF c_desert_rider]
+ID=c_man
+NAME=Desert Rider
+SOUND=snd_human_m_die_01
+CAN=MT_EQUIP|MT_USEHANDS|MT_WALK|MT_MALE
+DAM={25 30}
+ARMOR=25
+DESIRES=c_desert_raider,c_desert_rider,r_desert
+SHELTER=r_desert
+TSPEECH=spk_human_prime
+TSPEECH=spk_human_default
+
+CATEGORY=Civilized
+SUBSECTION=Barbarians
+DESCRIPTION=Desert Rider
+
+ON=@Create
+NPC=brain_monster
+KARMA={-4000 -6000}
+FAME={3500 5000}
+STR={200 250}
+DEX={81 95}
+INT={20 30}
+
+MAGICRESISTANCE={70.0 85.0}
+TACTICS={80.0 95.0}
+WRESTLING={90.0 95.0}
+SWORDSMANSHIP=200.0
+PARRYING={75.0 100.0}
+
+ON=@NPCRestock
+ITEM=i_boots_calf
+COLOR=0002C
+NAME=Desert Boots
+ITEM=i_death_shroud_new
+COLOR=0002C
+NAME=Desert Robe
+ITEM=i_axe_exec
+COLOR=0002C
+NAME=Rider Axe
+ITEM=i_gold,{900 1600}
+ITEM=i_mt_ostard_desert
+COLOR=0002C
+NAME=Desert Chocobo
+
+ON=@SkillStart
+IF <SRC.RESTEST 1 i_mt_ostard_desert>
+RETURN 1
+ELSE
+NEWITEM=i_mt_ostard_desert
+ACT.NAME Desert Chocobo
+ACT.COLOR=0002C
+ACT.EQUIP
+RETURN 0
+ENDIF
+
+ON=@EnvironChange
+IF <SRC.RESTEST 1 i_mt_ostard_desert>
+RETURN 1
+ELSE
+NEWITEM=i_mt_ostard_desert
+ACT.NAME Desert Chocobo
+ACT.COLOR=0002C
+ACT.EQUIP
+RETURN 0
+ENDIF
+
+ON=@Timer
+TIMER=300
+IF <SRC.RESTEST 1 i_mt_ostard_desert>
+RETURN 1
+ELSE
+NEWITEM=i_mt_ostard_desert
+ACT.NAME Desert Chocobo
+ACT.COLOR=0002C
+ACT.EQUIP
+RETURN 0
+ENDIF
+
+[CHARDEF c_lost_valley_warrior]
+ID=c_man
+NAME=Lost Valley Warrior
+SOUND=snd_human_m_die_01
+CAN=MT_EQUIP|MT_USEHANDS|MT_WALK|MT_MALE
+DAM={20 25}
+ARMOR=20
+DESIRES=c_lost_valley_warrior,c_lost_valley_shaman,r_lost_valley
+SHELTER=r_valley
+TSPEECH=spk_human_prime
+TSPEECH=spk_human_default
+
+CATEGORY=Civilized
+SUBSECTION=Barbarians
+DESCRIPTION=Lost Valley Warrior
+
+ON=@Create
+NPC=brain_human
+KARMA={-4000 -6000}
+FAME={3500 5000}
+STR={300 400}
+DEX={100 150}
+INT={50 80}
+
+MAGICRESISTANCE={40.0 85.0}
+TACTICS={90.0 105.0}
+WRESTLING={80.0 95.0}
+PARRYING={95.0 130.0}
+FENCING={75.0 90.0}
+
+ITEMNEWBIE=i_hair_krisna
+COLOR=colors_all
+
+ON=@NPCRestock
+ITEM=i_mask_deer
+COLOR=1350
+ITEM=i_spear_vanq
+COLOR=1350
+NAME=Tribal Spear
+ITEM=01C09
+COLOR=1350
+ITEM=i_gold,{300 450}
+
+[CHARDEF c_lost_valley_shaman]
+ID=c_man
+NAME=Lost Valley Shaman
+SOUND=snd_human_m_die_01
+CAN=MT_EQUIP|MT_USEHANDS|MT_WALK|MT_MALE
+DAM={10 15}
+ARMOR=10
+DESIRES=c_lost_valley_warrior,c_lost_valley_shaman,r_lost_valley
+SHELTER=r_valley
+TSPEECH=spk_human_prime
+TSPEECH=spk_human_default
+
+CATEGORY=Civilized
+SUBSECTION=Barbarians
+DESCRIPTION=Lost Valley Shaman
+
+ON=@Create
+NPC=brain_human
+KARMA={-4000 -6000}
+FAME={3500 5000}
+STR={150 200}
+DEX={70 120}
+INT={240 280}
+
+MAGICRESISTANCE={90.0 125.0}
+TACTICS={50.0 80.0}
+WRESTLING={50.0 70.0}
+PARRYING={35.0 45.0}
+MAGERY={85.0 95.0}
+EVALUATINGINTEL={200.0 345.0}
+
+ITEMNEWBIE=i_hair_krisna
+COLOR=colors_all
+ITEMNEWBIE=i_spellbook
+MORE=00FFFFFFF
+MORE2=00000FFFF
+
+ON=@NPCRestock
+ITEM=i_mask_blue
+COLOR=1350
+ITEM=01C09
+COLOR=1350
+ITEM=i_gold,{300 450}
+
+[CHARDEF c_witch]
+ID=c_woman
+NAME=#NAMES_HUMANFEMALE the Witch
+CAN=MT_EQUIP|MT_USEHANDS|MT_WALK|MT_FEMALE
+DAM={15 20}
+ARMOR={15 20}
+DESIRES=t_reagent,i_gold,c_witch,c_warlock,c_black_cat
+SHELTER=r_dungeon,r_mage_tower
+TSPEECH=spk_human_prime
+TSPEECH=spk_human_default
+
+CATEGORY=Civilized
+SUBSECTION=Evil Mages
+DESCRIPTION=Witch
+
+ON=@Create
+NPC=brain_human
+COLOR=0599
+KARMA={-3000 -5000}
+FAME={2000 4000}
+STR={70 90}
+DEX={81 95}
+INT={80 100}
+
+TACTICS={70.0 90.0}
+WRESTLING={40.0 55.0}
+MACEFIGHTING={55.0 75.0}
+MAGERY={85.0 95.0}
+MAGICRESISTANCE={80.0 90.0}
+
+ITEMNEWBIE=i_hair_long
+COLOR=color_gray_dk
+
+ON=@NPCRestock
+ITEM=i_shirt_fancy
+COLOR=000000
+ITEM=i_skirt_long
+COLOR=000001
+ITEM=i_hat_wizards
+COLOR=000001
+ITEM=i_boots_calf
+COLOR=000001
+ITEM=random_potion
+ITEM=random_potion
+ITEM=i_BATWING,{1 5}
+ITEM=i_eye_of_newt,{1 5}
+ITEM=i_staff_gnarled
+ITEM=i_gold,{500 800}
+
+[CHARDEF c_high_witch]
+ID=c_woman
+NAME=#NAMES_HUMANFEMALE the High Witch
+CAN=MT_EQUIP|MT_USEHANDS|MT_WALK|MT_FEMALE
+DAM={15 23}
+ARMOR={15 21}
+DESIRES=t_reagent,i_gold,c_witch,c_warlock,c_black_cat
+SHELTER=r_dungeon,r_mage_tower
+TSPEECH=spk_human_prime
+TSPEECH=spk_job_evil_mage
+TSPEECH=spk_needs
+TSPEECH=spk_rehello
+TSPEECH=spk_human_default
+
+CATEGORY=Civilized
+SUBSECTION=Evil Mages
+DESCRIPTION=High Witch
+
+ON=@Create
+NPC=brain_human
+COLOR=0599
+KARMA={-3000 -5000}
+FAME={2000 4000}
+STR={90 110}
+DEX={81 95}
+INT={80 100}
+
+MAGICRESISTANCE={190.0 195.0}
+TACTICS={180.0 190.0}
+WRESTLING={140.0 155.0}
+MACEFIGHTING={75.0 95.0}
+MAGERY={130.0 150.0}
+
+ITEMNEWBIE=i_hair_long
+COLOR=color_gray_dk
+
+ON=@NPCRestock
+ITEM=i_dress_plain
+COLOR=000001
+ITEM=i_hat_wizards
+COLOR=000001
+ITEM=i_boots_calf
+COLOR=000001
+ITEM=random_potion
+ITEM=random_potion
+ITEM=i_batwing
+ITEM=i_batwing
+ITEM=i_eye_of_newt,{1 5}
+ITEM=i_staff_black
+ITEM=i_gold,{100 200}
+
+[CHARDEF c_warlock]
+ID=c_man
+NAME=#NAMES_HUMANMALE the Warlock
+CAN=MT_EQUIP|MT_USEHANDS|MT_WALK|MT_MALE
+DAM={20 35}
+ARMOR={15 20}
+DESIRES=t_reagent,i_gold,c_witch,c_warlock,c_black_cat
+SHELTER=r_dungeon,r_mage_tower
+TSPEECH=spk_human_prime
+TSPEECH=spk_job_evil_mage
+TSPEECH=spk_needs
+TSPEECH=spk_rehello
+TSPEECH=spk_human_default
+
+CATEGORY=Civilized
+SUBSECTION=Evil Mages
+DESCRIPTION=Warlock
+
+ON=@Create
+NPC=brain_monster
+COLOR=000599
+KARMA={-3000 -5000}
+FAME={2500 4000}
+STR={80 120}
+DEX={81 95}
+INT={80 100}
+
+MAGICRESISTANCE={90.0 95.0}
+TACTICS={70.0 90.0}
+WRESTLING={40.0 55.0}
+MAGERY={95.0 100.0}
+
+ITEMNEWBIE=i_hair_long
+COLOR=000000
+ITEMNEWBIE=i_spellbook
+MORE1=0FFFFFFFF
+MORE2=0FFFFFFFF
+
+ON=@NPCRestock
+ITEM=i_robe
+COLOR=000001
+ITEM=i_hat_wizards
+COLOR=000001
+ITEM=i_boots_calf
+COLOR=000001
+ITEM=random_jewel
+ITEM=random_upper_scroll
+ITEM=random_scroll
+
+CONTAINER=i_bag
+ITEM=i_black_pearl,{1 15}
+ITEM=i_blood_moss,{1 15}
+ITEM=i_garlic,{1 15}
+ITEM=i_ginseng,{1 15}
+ITEM=i_mandrake_root,{1 15}
+ITEM=i_nightshade,{1 15}
+ITEM=i_sulfur_ash,{1 15}
+ITEM=i_spider_silk,{1 15}
+
+[CHARDEF c_black_cat]
+ID=c_cat
+NAME=Black Cat
+SOUND=snd_animals_cat1
+CAN=MT_WALK|MT_RUN
+DAM=2
+ARMOR=4
+RESOURCES=2 i_ribs_raw
+FOODTYPE=t_meat_raw 5,t_fish 5
+DESIRES=t_reagent,i_gold,c_witch,c_warlock,c_black_cat,e_human_greet,t_window
+SHELTER=r_dungeon,r_mage_tower,r_house
+
+DESCRIPTION=Black Cat
+SUBSECTION=Evil Mages
+CATEGORY=Civilized
+
+ON=@Create
+NPC=brain_animal
+COLOR=00047F
+FAME={2500 4000}
+KARMA={-1000 -2000}
+STR=25
+DEX=35
+INT=5
+
+PARRYING=10.0
+MAGICRESISTANCE=20.0
+TACTICS=25.0
+WRESTLING=25.0
+TAMING=40.0
+
+[CHARDEF c_apprentice_mage]
+ID=c_man
+NAME=#NAMES_HUMANMALE the Apprentice Mage
+SOUND=snd_human_m_die_01
+CAN=MT_EQUIP|MT_RUN|MT_USEHANDS|MT_WALK
+DAM={5 20}
+ARMOR=10
+DESIRES=t_reagent,i_gold,c_apprentice_mage,c_mage,c_high_mage,c_arch_mage,c_summoner
+SHELTER=r_dungeon,r_mage_tower
+AVERSIONS=t_trap,t_eerie_stuff
+TSPEECH=spk_human_prime
+TSPEECH=spk_job_evil_mage
+TSPEECH=spk_needs
+TSPEECH=spk_rehello
+TSPEECH=spk_human_default
+
+CATEGORY=Civilized
+SUBSECTION=Evil Mages
+DESCRIPTION=Apprentice Mage
+
+ON=@Create
+NPC=brain_human
+COLOR=colors_skin
+FAME={1000 3000}
+KARMA={-2000 -4000}
+STR={65 80}
+DEX={45 65}
+INT={100 110}
+
+MAGICRESISTANCE={50.0 65.0}
+PARRYING={45.0 65.0}
+MAGERY={60.0 75.0}
+TACTICS={50.0 70.0}
+WRESTLING={50.0 80.0}
+EVALUATINGINTEL={45.0 65.0}
+
+ITEMNEWBIE=i_hair_long
+COLOR=colors_hair
+ITEMNEWBIE=i_beard_goatee
+COLOR=match_hair
+ITEMNEWBIE=i_spellbook
+MORE=04FFFFFFFF
+MORE2=00000004FF
+
+ON=@NPCRestock
+ITEM=i_cape
+COLOR=00001
+ITEM=01518
+COLOR=00001
+ITEM=i_kilt
+COLOR=00001
+ITEM=i_boots_calf
+COLOR=00001
+ITEM=i_sash
+COLOR=00001
+ITEM=i_gold,{50 175}
+
+[CHARDEF c_mage]
+ID=c_man
+NAME=#NAMES_HUMANMALE the Mage
+SOUND=snd_human_m_die_01
+CAN=MT_EQUIP|MT_RUN|MT_USEHANDS|MT_WALK
+DAM={5 25}
+ARMOR=12
+DESIRES=t_reagent,i_gold,c_apprentice_mage,c_mage,c_high_mage,c_arch_mage,c_summoner
+SHELTER=r_dungeon,r_mage_tower
+AVERSIONS=t_trap,t_eerie_stuff
+TSPEECH=spk_human_prime
+TSPEECH=spk_job_evil_mage
+TSPEECH=spk_needs
+TSPEECH=spk_rehello
+TSPEECH=spk_human_default
+
+CATEGORY=Civilized
+SUBSECTION=Evil Mages
+DESCRIPTION=Mage
+
+ON=@Create
+NPC=brain_human
+COLOR=colors_skin
+FAME={2000 3500}
+KARMA={-2000 -4750}
+STR={90 110}
+DEX={50 75}
+INT={200 225}
+
+MAGICRESISTANCE={95.0 105.0}
+PARRYING={65.0 70.0}
+TACTICS={75.0 90.0}
+MAGERY={100.0 125.0}
+WRESTLING={80.0 95.0}
+EVALUATINGINTEL={150.0 165.0}
+MACEFIGHTING={80.0 95.0}
+
+ITEMNEWBIE=i_hair_long
+COLOR=colors_hair
+ITEMNEWBIE=i_beard_goatee
+COLOR=match_hair
+ITEMNEWBIE=i_spellbook
+MORE=04FFFFFFFF
+MORE2=0004FFFFFF
+
+ON=@NPCRestock
+ITEM=01718
+COLOR=00001
+ITEM=i_cape
+COLOR=00001
+ITEM=01EFD
+COLOR=color_white
+ITEM=i_kilt
+COLOR=00001
+ITEM=i_boots_calf
+COLOR=00001
+ITEM=i_sash
+COLOR=00001
+ITEM=013f9
+NAME=Mage's Staff
+COLOR=07721
+ITEM=i_gold,{150 230}
+
+[CHARDEF c_high_mage]
+ID=c_man
+NAME=#NAMES_HUMANMALE the High Mage
+SOUND=snd_human_m_die_01
+CAN=MT_EQUIP|MT_RUN|MT_USEHANDS|MT_WALK
+DAM={10 30}
+ARMOR=15
+DESIRES=t_reagent,i_gold,c_apprentice_mage,c_mage,c_high_mage,c_arch_mage,c_summoner
+SHELTER=r_dungeon,r_mage_tower
+AVERSIONS=t_trap,t_eerie_stuff
+TSPEECH=spk_human_prime
+TSPEECH=spk_job_evil_mage
+TSPEECH=spk_needs
+TSPEECH=spk_rehello
+TSPEECH=spk_human_default
+
+CATEGORY=Civilized
+SUBSECTION=Evil Mages
+DESCRIPTION=High Mage
+
+ON=@Create
+NPC=brain_human
+COLOR=colors_skin
+FAME={4500 6000}
+KARMA={-5000 -6000}
+STR={300 425}
+DEX={100 150}
+INT={500 650}
+
+MAGICRESISTANCE={115.0 125.0}
+PARRYING={85.0 90.0}
+TACTICS=100.0
+WRESTLING=100.0
+MAGERY={170.0 230.0}
+EVALUATINGINTEL={205.0 280.0}
+
+ITEMNEWBIE=i_hair_long
+COLOR=colors_hair
+ITEMNEWBIE=i_beard_goatee
+COLOR=match_hair
+ITEMNEWBIE=i_spellbook
+MORE=04FFFFFFFF
+MORE2=04FFFFFFFF
+
+ON=@NPCRestock
+ITEM=01718
+COLOR=00001
+ITEM=i_cape
+COLOR=00001
+ITEM=i_robe
+COLOR=00001
+ITEM=i_boots_calf
+COLOR=00001
+ITEM=i_gold,{490 1200}
+
+[CHARDEF c_arch_mage]
+ID=c_man
+NAME=#NAMES_HUMANMALE the Arch Mage
+SOUND=snd_human_m_die_01
+CAN=MT_EQUIP|MT_RUN|MT_USEHANDS|MT_WALK
+DAM={15 35}
+ARMOR=19
+DESIRES=t_reagent,i_gold,c_apprentice_mage,c_mage,c_high_mage,c_arch_mage,c_summoner
+SHELTER=r_dungeon,r_mage_tower
+AVERSIONS=t_trap,t_eerie_stuff
+TSPEECH=spk_human_prime
+TSPEECH=spk_job_evil_mage
+TSPEECH=spk_needs
+TSPEECH=spk_rehello
+TSPEECH=spk_human_default
+
+CATEGORY=Civilized
+SUBSECTION=Evil Mages
+DESCRIPTION=Arch Mage
+
+ON=@Create
+NPC=brain_human
+COLOR=colors_skin
+FAME={9000 9999}
+KARMA={-8000 -9999}
+STR={500 650}
+DEX={175 200}
+INT={1000 2000}
+
+MAGICRESISTANCE={115.0 125.0}
+PARRYING={85.0 95.0}
+MAGERY={300.0 500.0}
+TACTICS=100.0
+WRESTLING=100.0
+EVALUATINGINTEL={450.0 600.0}
+
+ITEMNEWBIE=i_hair_long
+COLOR=colors_hair
+ITEMNEWBIE=i_beard_goatee
+COLOR=match_hair
+ITEMNEWBIE=i_spellbook
+MORE=04FFFFFFFF
+MORE2=04FFFFFFFF
+
+ON=@NPCRestock
+ITEM=i_cape
+COLOR=00001
+ITEM=i_robe
+COLOR=00001
+ITEM=i_sandals
+COLOR=00001
+ITEM=i_gold,{2350 4500}
+
+[CHARDEF c_summoner]
+ID=c_man
+NAME=#NAMES_HUMANMALE the Summoner
+SOUND=snd_human_m_die_01
+CAN=MT_EQUIP|MT_RUN|MT_USEHANDS|MT_WALK
+DAM={5 20}
+ARMOR=11
+DESIRES=t_reagent,i_gold,c_apprentice_mage,c_mage,c_high_mage,c_arch_mage,c_summoner
+SHELTER=r_dungeon,r_mage_tower
+AVERSIONS=t_trap,t_eerie_stuff
+TSPEECH=spk_human_prime
+TSPEECH=spk_job_evil_mage
+TSPEECH=spk_needs
+TSPEECH=spk_rehello
+TSPEECH=spk_human_default
+
+CATEGORY=Civilized
+SUBSECTION=Evil Mages
+DESCRIPTION=Summoner
+
+ON=@Create
+NPC=brain_human
+FAME={8000 9000}
+KARMA={-7000 -8000}
+COLOR=colors_skin
+STR={150 200}
+DEX={75 85}
+INT={500 650}
+
+MAGICRESISTANCE={75.0 85.0}
+PARRYING={80.0 85.0}
+MAGERY={100.0 150.0}
+TACTICS={85.0 95.0}
+WRESTLING={75.0 85.0}
+EVALUATINGINTEL={75.0 85.0}
+
+ITEMNEWBIE=i_hair_long
+COLOR=colors_hair
+ITEMNEWBIE=i_beard_goatee
+COLOR=match_hair
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_summon_elem_water
+ADDSPELL=s_summon_elem_earth
+ADDSPELL=s_summon_elem_air
+ADDSPELL=s_summon_elem_fire
+ADDSPELL=s_summon_daemon
+
+ON=@NPCRestock
+ITEM=01718
+ITEM=i_cape
+COLOR=00001
+ITEM=i_robe
+COLOR=00001
+ITEM=i_boots_calf
+COLOR=00001
+ITEM=i_gold,{2350 4500}
+
+[CHARDEF c_evil_knight]
+ID=c_man
+NAME=#NAMES_DREAD_LORD the Evil Knight
+SOUND=snd_human_m_die_01
+DAM={5 16}
+ARMOR=20
+DESIRES=i_gold,e_notoriety,c_evil_knight_lord,c_evil_knight
+SHELTER=r_dungeon
+AVERSIONS=t_trap,t_eerie_stuff
+TSPEECH=spk_human_prime
+TSPEECH=spk_job_evil_mage
+TSPEECH=spk_needs
+TSPEECH=spk_rehello
+TSPEECH=spk_human_default
+
+CATEGORY=Civilized
+SUBSECTION=Evil Knights
+DESCRIPTION=Evil Knight
+
+ON=@Create
+NPC=brain_monster
+COLOR=colors_skin
+FAME=8000
+KARMA=-9999
+STR={200 250}
+DEX={100 150}
+INT={71 85}
+
+PARRYING={75.0 98.0}
+SWORDSMANSHIP={80.0 95.0}
+WRESTLING={67.0 90.0}
+MAGICRESISTANCE={65.0 88.0}
+TACTICS={80.0 98.0}
+POISONING={90.0 100.0}
+DETECTINGHIDDEN={90.0 100.0}
+
+ITEMNEWBIE=random_male_hair
+COLOR=colors_hair
+ITEMNEWBIE=random_facial_hair
+COLOR=match_hair
+
+ON=@NPCRestock
+ITEM=i_platemail_gloves
+ITEM=i_platemail_helm
+ITEM=i_platemail_arms
+ITEM=i_platemail_gorget
+ITEM=i_platemail_chest
+ITEM=i_platemail_leggings
+ITEM=i_viking_sword
+ITEM=i_cape
+COLOR=020
+ITEM={ random_jewel 1 0 1 }
+ITEM={ random_jewel 1 0 1 }
+ITEM={ random_jewel 1 0 1 }
+ITEM={ random_jewel 1 0 1 }
+ITEM=i_gold,{250 450}
+
+[CHARDEF c_evil_knight_lord]
+ID=c_man
+NAME=#NAMES_DREAD_LORD the Evil Knight Lord
+SOUND=snd_human_m_die_01
+CAN=MT_WALK|MT_RUN|MT_USEHANDS|MT_EQUIP|MT_MALE
+DAM={10 20}
+ARMOR=30
+DESIRES=i_gold,e_notoriety,c_evil_knight_lord,c_evil_knight
+SHELTER=r_dungeon
+AVERSIONS=t_trap,t_eerie_stuff
+TSPEECH=spk_human_prime
+TSPEECH=spk_job_evil_mage
+TSPEECH=spk_needs
+TSPEECH=spk_rehello
+TSPEECH=spk_human_default
+
+CATEGORY=Civilized
+SUBSECTION=Evil Knights
+DESCRIPTION=Evil Knight Lord
+
+ON=@Create
+NPC=brain_monster
+COLOR=colors_skin
+FAME=9999
+KARMA=-9999
+STR={350 400}
+DEX={200 250}
+INT={200 250}
+
+PARRYING={85.0 98.0}
+SWORDSMANSHIP={90.0 95.0}
+WRESTLING={67.0 90.0}
+MAGICRESISTANCE={65.0 88.0}
+TACTICS={90.0 98.0}
+POISONING={90.0 100.0}
+MAGERY={90.0 100.0}
+
+ITEMNEWBIE=random_male_hair
+COLOR=colors_hair
+ITEMNEWBIE=random_facial_hair
+COLOR=match_hair
+
+ON=@NPCRestock
+ITEM=i_platemail_gloves
+ITEM=i_platemail_helm
+ITEM=i_platemail_arms
+ITEM=i_platemail_gorget
+ITEM=i_platemail_chest
+ITEM=i_platemail_leggings
+ITEM=i_viking_sword
+ITEM=i_cape
+COLOR=020
+ITEM={random_jewel 1 0 1}
+ITEM={random_jewel 1 0 1}
+ITEM={random_jewel 1 0 1}
+ITEM={random_jewel 1 0 1}
+ITEM=i_gold,{400 600}
+ITEM=random_upper_scroll
+ITEM=random_upper_scroll
+
+[CHARDEF c_genji_warrior]
+ID=c_man
+NAME=Genji Warrior
+SOUND=snd_human_m_die_01
+CAN=MT_EQUIP|MT_RUN|MT_USEHANDS|MT_WALK|MT_MALE
+DAM={10 25}
+ARMOR=23
+DESIRES=i_gold,c_genji_warrior,c_ronin,c_dark_samurai
+SHELTER=r_dungeon
+TSPEECH=spk_human_prime
+TSPEECH=spk_human_default
+
+CATEGORY=Civilized
+SUBSECTION=Evil Knights
+DESCRIPTION=Genji Warrior
+
+ON=@Create
+NPC=brain_human
+COLOR=colors_skin
+KARMA={-8000 -8500}
+FAME={4000 6700}
+STR={450 800}
+DEX={300 350}
+INT={50 57}
+
+MAGICRESISTANCE={70.0 90.0}
+PARRYING={95.0 125.0}
+TACTICS={100.0 150.0}
+SWORDSMANSHIP={150.0 175.0}
+ANATOMY={250.0 285.0}
+
+ITEMNEWBIE=i_hair_short
+COLOR=colors_hair
+ITEMNEWBIE=i_beard_goatee
+COLOR=match_hair
+
+ON=@NPCRestock
+ITEM=i_platemail_chest_invulnerability
+COLOR=0079b
+NAME=Genji Armor
+ITEM=i_platemail_leggings_invulnerability
+COLOR=0079b
+NAME=Genji Leggings
+ITEM=i_platemail_arms_invulnerability
+COLOR=0079b
+NAME=Genji Shoulder Plates
+ITEM=i_platemail_helm_invulnerability
+COLOR=0079b
+NAME=Genji Helm
+ITEM=i_platemail_gorget_invulnerability
+color=0079b
+NAME=Genji Gorget
+COLOR=0079b
+NAME=Genji Gloves
+ITEM=i_cape
+COLOR=0079b
+NAME=Cloak
+ITEM=0412e
+COLOR=0079b
+NAME=Master's Katana
+ITEM=i_heater_shield_invulnerability
+COLOR=0079b
+NAME=Genji Shield
+ITEM=i_gold,{500 1000}
+
+[CHARDEF c_knight_of_the_flame]
+ID=c_man
+NAME=Knight of the Flame
+SOUND=snd_human_m_die_01
+CAN=MT_EQUIP|MT_RUN|MT_USEHANDS|MT_WALK|MT_MALE
+DAM={10 25}
+ARMOR=20
+DESIRES=c_knight_of_the_flame,t_fire,c_elem_fire,c_elem_magma,c_elem_lava
+SHELTER=r_lava
+AVERSIONS=r_water
+TSPEECH=spk_human_prime
+TSPEECH=spk_human_default
+
+CATEGORY=Civilized
+SUBSECTION=Evil Knights
+DESCRIPTION=Knight of the Flame
+
+ON=@Create
+NPC=brain_human
+COLOR=0077a
+KARMA={-8000 -8500}
+FAME={5000 6700}
+STR={450 600}
+DEX={300 350}
+INT={50 57}
+
+MAGICRESISTANCE={70.0 90.0}
+PARRYING={195.0 325.0
+TACTICS={300.0 450.0}
+MAGERY={90.0 135.0}
+SWORDSMANSHIP={200.0 350.0}
+ANATOMY={150.0 200.0}
+
+ITEMNEWBIE=i_hair_short
+COLOR=0077a
+ITEMNEWBIE=i_beard_goatee
+COLOR=0077a
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_flamestrike
+
+ON=@NPCRestock
+ITEM=i_flame_armor
+ITEM=i_flame_arms
+ITEM=i_flame_leggings
+ITEM=i_flame_gorget
+ITEM=i_flame_gloves
+ITEM=i_flame_shield
+ITEM=i_flame_helm
+ITEM=i_flame_sword
+ITEM=i_gold,{540 1200}
+
+[CHARDEF c_sand_knight]
+ID=c_man
+NAME=Sand Knight
+SOUND=snd_human_m_die_01
+CAN=MT_EQUIP|MT_RUN|MT_USEHANDS|MT_WALK|MT_MALE
+DAM={10 25}
+ARMOR=23
+DESIRES=c_sand_knight,r_desert
+SHELTER=r_desert
+TSPEECH=spk_human_prime
+TSPEECH=spk_human_default
+
+CATEGORY=Civilized
+SUBSECTION=Evil Knights
+DESCRIPTION=Sand Knight
+
+ON=@Create
+NPC=brain_human
+COLOR=colors_skin
+KARMA={-8000 -8500}
+FAME={4000 6700}
+STR={450 800}
+DEX={300 350}
+INT={50 57}
+
+MAGICRESISTANCE={70.0 90.0}
+PARRYING={95.0 125.0
+TACTICS={100.0 150.0}
+SWORDSMANSHIP={150.0 175.0}
+ANATOMY={250.0 285.0}
+
+ITEMNEWBIE=i_hair_short
+COLOR=colors_hair
+ITEMNEWBIE=i_beard_goatee
+COLOR=match_hair
+
+ON=@NPCRestock
+ITEM=i_platemail_chest_invulnerability
+COLOR=002c
+NAME=Sand Armor
+ITEM=i_platemail_leggings_invulnerability
+COLOR=002c
+NAME=Sand Leggings
+ITEM=i_platemail_arms_invulnerability
+COLOR=002c
+NAME=Sand Shoulder Plates
+ITEM=i_platemail_helm_invulnerability
+COLOR=002c
+NAME=Sand Helm
+ITEM=i_platemail_gorget_invulnerability
+color=002c
+NAME=Sand Gorget
+COLOR=002c
+NAME=Sand Gloves
+ITEM=i_cape
+COLOR=002c
+NAME=Cloak
+ITEM=0412e
+COLOR=002c
+NAME=Desert Blade
+ITEM=i_heater_shield_invulnerability
+COLOR=002c
+NAME=Sand Shield
+ITEM=i_gold,{500 1000}
+
+[CHARDEF c_blood_knight_human]
+ID=c_man
+NAME=Blood Knight
+SOUND=snd_human_m_die_01
+CAN=MT_EQUIP|MT_RUN|MT_USEHANDS|MT_WALK|MT_MALE
+DAM={70 100}
+ARMOR=50
+TSPEECH=spk_human_prime
+TSPEECH=spk_human_default
+
+CATEGORY=Civilized
+SUBSECTION=Evil Knights
+DESCRIPTION=Blood Knight
+
+ON=@Create
+NPC=brain_human
+COLOR=colors_skin
+KARMA={-8000 -8500}
+FAME={6000 7700}
+STR={1245 1500}
+DEX={300 350}
+INT={50 57}
+
+MAGICRESISTANCE={70.0 90.0}
+PARRYING={195.0 325.0
+TACTICS={300.0 450.0}
+SWORDSMANSHIP={250.0 375.0}
+ANATOMY={250.0 285.0}
+
+ITEMNEWBIE=i_hair_short
+COLOR=025
+ITEMNEWBIE=i_beard_goatee
+COLOR=025
+
+ON=@NPCRestock
+ITEM=i_blood_armor
+ITEM=i_blood_arms
+ITEM=i_blood_leggings
+ITEM=i_blood_gorget
+ITEM=i_blood_gloves
+ITEM=i_blood_shield
+ITEM=i_blood_helm
+ITEM=i_cape
+COLOR=025
+NAME=Cloak of Blood
+ITEM=i_longsword_destruction
+COLOR=025
+NAME=The Bloody Tear
+ITEM=i_gold,{2500 6000}
+
+[CHARDEF c_dragoon]
+ID=c_man
+NAME=Dragoon
+SOUND=snd_human_m_die_01
+CAN=MT_EQUIP|MT_RUN|MT_USEHANDS|MT_WALK|MT_MALE
+DAM={10 25}
+ARMOR=45
+DESIRES=i_gold,c_dragon,c_dragon_red,c_dragoon
+TSPEECH=spk_human_prime
+TSPEECH=spk_human_default
+
+CATEGORY=Civilized
+SUBSECTION=Evil Knights
+DESCRIPTION=Dragoon
+
+ON=@Create
+NPC=brain_human
+COLOR=colors_skin
+KARMA=-9999
+FAME=9999
+KILLS=100
+STR={1000 1500}
+DEX={7000 9000}
+INT={450 900}
+
+MAGICRESISTANCE=500.0
+PARRYING=500.0
+TACTICS=500.0
+MAGERY=500.0
+FENCING=500.0
+ANATOMY=500.0
+
+ITEMNEWBIE=i_hair_short
+COLOR=0048a
+ITEMNEWBIE=i_beard_goatee
+COLOR=0048a
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_flamestrike
+ADDSPELL=s_energy_bolt
+ADDSPELL=s_explosion
+ADDSPELL=s_earthquake
+
+ON=@NPCRestock
+ITEM=i_platemail_chest_invulnerability
+COLOR=0048a
+NAME=Dragoon Armor
+ITEM=i_platemail_leggings_invulnerability
+COLOR=0048a
+NAME=Dragoon Leggings
+ITEM=i_platemail_arms_invulnerability
+COLOR=0048a
+NAME=Dragoon Shoulder Plates
+ITEM=01547
+COLOR=0048a
+ATTR=0020
+MOREY=120.0
+NAME=Dragoon Helm
+ITEM=i_platemail_gorget_invulnerability
+color=0048a
+NAME=Dragoon Gorget
+ITEM=i_platemail_gloves_invulnerability
+COLOR=0048a
+NAME=Dragoon Gauntlets
+ITEM=i_cape
+COLOR=0048a
+NAME=Dragoon Cloak
+ITEM=i_spear
+COLOR=0048a
+NAME=Dragoon Spear
+ITEM=i_gold,{8000 12000}
+
+[CHARDEF c_knight_of_order]
+ID=c_man
+NAME=Knight of Order
+SOUND=snd_human_m_die_01
+CAN=MT_EQUIP|MT_RUN|MT_USEHANDS|MT_WALK|MT_MALE
+DAM={70 100}
+ARMOR=50
+DESIRES=t_shrine,r_shrine
+TSPEECH=spk_human_prime
+TSPEECH=spk_human_default
+
+CATEGORY=Civilized
+SUBSECTION=Evil Knights
+DESCRIPTION=Knight of Order
+
+ON=@Create
+NPC=brain_human
+COLOR=00835
+KARMA={9900 9999}
+FAME={9900 9999}
+STR={1600 2000}
+DEX={100 350}
+INT={600 900}
+
+MAGICRESISTANCE={70.0 90.0}
+PARRYING={195.0 325.0}
+TACTICS={300.0 450.0}
+SWORDSMANSHIP={250.0 375.0}
+ANATOMY={250.0 285.0}
+
+ITEMNEWBIE=i_hair_short
+COLOR=007A1
+ITEMNEWBIE=i_beard_goatee
+COLOR=007A1
+
+ON=@NPCRestock
+ITEM=i_platemail_chest_invulnerability
+COLOR=007A1
+NAME=Order Armor
+ITEM=i_platemail_leggings_invulnerability
+COLOR=007A1
+NAME=Order Leggings
+ITEM=i_platemail_arms_invulnerability
+COLOR=007A1
+NAME=Order Shoulder Plates
+ITEM=i_platemail_helm_invulnerability
+COLOR=007A1
+NAME=Order Helm
+ITEM=i_platemail_gorget_invulnerability
+color=007A1
+NAME=Order Gorget
+COLOR=007A1
+NAME=Order Gauntlets
+ITEM=i_cape
+COLOR=00961
+NAME=Cloak of Order
+ITEM=i_viking_sword_vanquishing
+MOREY=45000
+COLOR=00187
+NAME=Order Blade
+ITEM=i_shield_order
+COLOR=00796
+NAME=Shield of Order
+ITEM=i_gold,{2500 6000}
+
+[CHARDEF c_knight_of_chaos]
+ID=c_man
+NAME=Knight of Chaos
+SOUND=snd_human_m_die_01
+CAN=MT_EQUIP|MT_RUN|MT_USEHANDS|MT_WALK|MT_MALE
+DAM={70 100}
+ARMOR=50
+TSPEECH=spk_human_prime
+TSPEECH=spk_human_default
+
+CATEGORY=Civilized
+SUBSECTION=Evil Knights
+DESCRIPTION=Knight of Chaos
+
+ON=@Create
+NPC=brain_human
+COLOR=001
+KARMA={-9900 -9999}
+FAME={9900 9999}
+STR={1600 2000}
+DEX={100 350}
+INT={600 900}
+
+MAGICRESISTANCE={70.0 90.0}
+PARRYING={195.0 325.0}
+TACTICS={300.0 450.0}
+SWORDSMANSHIP={250.0 375.0}
+ANATOMY={250.0 285.0}
+
+ITEMNEWBIE=i_hair_short
+COLOR=02
+ITEMNEWBIE=i_beard_goatee
+COLOR=02
+
+ON=@NPCRestock
+ITEM=i_platemail_chest_invulnerability
+COLOR=00796
+NAME=Chaos Armor
+ITEM=i_platemail_leggings_invulnerability
+COLOR=00796
+NAME=Chaos Leggings
+ITEM=i_platemail_arms_invulnerability
+COLOR=00796
+NAME=Chaos Shoulder Plates
+ITEM=i_platemail_helm_invulnerability
+COLOR=00796
+NAME=Chaos Helm
+ITEM=i_platemail_gorget_invulnerability
+color=00796
+NAME=Chaos Gorget
+COLOR=00796
+NAME=Chaos Gauntlets
+ITEM=i_cape
+COLOR=00001
+NAME=Chaotic Cloak
+ITEM=i_viking_sword_vanquishing
+MOREY=45000
+COLOR=00187
+NAME=Chaos Blade
+ITEM=i_shield_chaos
+COLOR=00796
+NAME=Shield of Chaos
+ITEM=i_gold,{2500 6000}
+
+[CHARDEF c_knight_of_mordor]
+ID=c_man
+NAME=Knight of Mordor
+SOUND=snd_human_m_die_01
+CAN=MT_EQUIP|MT_RUN|MT_USEHANDS|MT_WALK|MT_MALE
+DAM={30 50}
+ARMOR=35
+TSPEECH=spk_human_prime
+TSPEECH=spk_human_default
+
+CATEGORY=Civilized
+SUBSECTION=Evil Knights
+DESCRIPTION=Knight of Mordor
+
+ON=@Create
+NPC=brain_human
+COLOR=000001
+KARMA={-8000 -8500}
+FAME={5000 6700}
+STR=1000
+DEX={300 350}
+INT={50 57}
+
+MAGICRESISTANCE={70.0 90.0}
+PARRYING={195.0 325.0
+TACTICS={300.0 450.0}
+SWORDSMANSHIP={200.0 350.0}
+ANATOMY={150.0 200.0}
+
+ITEMNEWBIE=i_hair_short
+COLOR=01
+ITEMNEWBIE=i_beard_goatee
+COLOR=01
+
+ON=@NPCRestock
+ITEM=i_shadow_armor
+ITEM=i_shadow_arms
+ITEM=i_shadow_leggings
+ITEM=i_shadow_gorget
+ITEM=i_shadow_gloves
+ITEM=i_shadow_helm
+ITEM=i_cape
+COLOR=01
+NAME=Cloak of Death
+ITEM=i_longsword_destruction
+COLOR=01
+NAME=The Fallen Angel
+ITEM=i_heater_shield_invulnerability
+COLOR=01
+NAME=Evil Shield
+ITEM=i_gold,{2000 5000}
+
+[CHARDEF c_archer_of_mordor]
+ID=c_man
+NAME=Archer of Mordor
+CAN=MT_EQUIP|MT_USEHANDS|MT_WALK|MT_MALE
+DAM={10 25}
+ARMOR=15
+DESIRES=t_reagent,c_knight_of_mordor,c_archer_of_mordor,c_mage_of_mordor
+TSPEECH=spk_human_prime
+TSPEECH=spk_human_default
+
+CATEGORY=Civilized
+SUBSECTION=Evil Knights
+DESCRIPTION=Archer of Mordor
+
+ON=@Create
+NPC=brain_human
+COLOR=000001
+KARMA={-8000 -8500}
+FAME={5000 6700}
+STR=1000
+DEX={750 800}
+INT={75 80}
+
+ARCHERY={300.0 500.0}
+TACTICS={300.0 435.0}
+PARRYING={600.0 7000.0}
+ANATOMY={200.0 225.0}
+MAGICRESISTANCE={265.0 295.0}
+
+ITEMNEWBIE=i_hair_short
+COLOR=01
+ITEMNEWBIE=i_beard_goatee
+COLOR=01
+
+ON=@NPCRestock
+ITEM=i_chainmail_leggings_invulnerability
+COLOR=01
+NAME=Shadow Chainmail Leggings
+ITEM=i_chainmail_tunic_invulnerability
+COLOR=01
+NAME=Shadow Chainmail Tunic
+ITEM=i_shadow_arms
+ITEM=i_shadow_gorget
+ITEM=i_shadow_gloves
+ITEM=i_closed_helm
+ATTR=attr_magic
+MOREY=100.0
+COLOR=01
+NAME=Shadow Close Helm
+ITEM=i_bow_vanquishing
+COLOR=01
+NAME=Hades' Bow
+ITEM=i_arrow,{100 200}
+COLOR=01
+ITEM=i_cape
+COLOR=01
+NAME=Cloak of Death
+ITEM=i_boots_calf
+COLOR=01
+NAME=Black Boots
+ITEM=i_gold,{1000 1900}
+
+
+
+[CHARDEF c_mage_of_mordor]
+ID=c_man
+NAME=Mage of Mordor
+CAN=MT_EQUIP|MT_USEHANDS|MT_WALK|MT_MALE
+DAM={12 15}
+ARMOR=25
+DESIRES=t_reagent,c_knight_of_mordor,c_archer_of_mordor,c_mage_of_mordor
+TEVENTS=e_hit_invis
+TSPEECH=spk_human_prime
+TSPEECH=spk_human_default
+
+CATEGORY=Civilized
+SUBSECTION=Evil Knights
+DESCRIPTION=Mage of Mordor
+
+ON=@Create
+NPC=brain_monster
+COLOR=000001
+KARMA={-8000 -9000}
+FAME={7900 8000}
+STR={450 550}
+DEX={81 95}
+INT={1000 3000}
+
+MAGICRESISTANCE={500.0 850.0}
+MAGERY={1000.0 2000.0}
+EVALINTEL
+TACTICS={80.0 95.0}
+WRESTLING={90.0 95.0}
+PARRYING={75.0 100.0}
+
+ON=@NPCRestock
+ITEM=i_boots_calf
+COLOR=01
+NAME=Mage Boots
+ITEM=i_death_shroud_new
+COLOR=01
+NAME=Mage Robe
+ITEM=i_gold,{10000 20000}
+
+[EVENTS e_hit_invis]
+ON=@GETHIT
+IF !(<RESTEST 1 i_invis_timer> )
+NEWITEM i_cloak_invis 
+ACT.CONT=<UID>
+ENDIF
+
+[ITEMDEF i_cloak_invis]
+ID=i_cloak
+NAME=Invisibility Cloak
+LAYER=layer_special
+TYPE=t_eq_script
+
+ON=@CREATE
+ATTR=ATTR_DECAY|ATTR_MOVE_NEVER|ATTR_NEWBIE
+TIMER=1
+
+ON=@TIMER
+IF ((RAND(2))==1)
+CONT.INVIS=1
+CONT.NEWITEM i_invis_timer
+CONT.ACT.CONT=<CONT.UID>
+REMOVE
+RETURN 1
+ELSE
+REMOVE
+RETURN 1
+ENDIF
+
+[ITEMDEF i_invis_timer]
+ID=i_memory
+NAME=Invis Timer
+
+ON=@CREATE
+ATTR=ATTR_DECAY|ATTR_MOVE_NEVER|ATTR_NEWBIE
+TIMER=10  //Invis Lasts 10 Seconds
+
+ON=@TIMER
+CONT.INVIS=0
+REMOVE
+RETURN 1
+
+[CHARDEF c_wring_wraith]
+ID=c_man
+NAME=Ring Wraith
+SOUND=snd_human_m_die_01
+CAN=MT_EQUIP|MT_RUN|MT_USEHANDS|MT_WALK|MT_MALE
+DAM={45 65}
+ARMOR=255
+DESIRES=i_ring_of_power,i_the_one_ring
+AVERSIONS=t_fire
+
+CATEGORY=Civilized
+SUBSECTION=Evil Knights
+DESCRIPTION=Ring Wraith
+
+ON=@Create
+FLAGS=statf_onhorse
+COLOR=01
+STR=9000
+DEX={300 350}
+INT={5000 9000}
+
+MAGICRESISTANCE={120.0 190.0}
+PARRYING={195.0 325.0
+TACTICS={300.0 450.0}
+SWORDSMANSHIP={200.0 350.0}
+ANATOMY={250.0 200.0}
+MAGERY={300.0 450.0}
+EVALUATINGINTEL={1000.0 1345.0}
+
+NPC=brain_human
+TIMER=300
+
+KARMA={-8000 -8500}
+FAME={5000 6700}
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_poison
+ADDSPELL=s_energy_bolt
+
+ON=@NPCRestock
+ITEM=i_death_shroud_new
+COLOR=01
+NAME=Shroud of Death
+ITEM=i_cape
+COLOR=01
+NAME=Cloak of Death
+ITEM=i_longsword_destruction
+COLOR=007a0
+NAME=Wraith Sword
+ITEM=i_gold,{2000 5000}
+ITEM=i_mt_horse_gray
+COLOR=01
+NAME=Shadow Steed
+
+ON=@SkillStart
+IF <SRC.RESTEST 1 i_mt_horse_gray>
+RETURN 1
+ELSE
+NEWITEM=i_mt_horse_gray
+ACT.COLOR 000001
+ACT.NAME Shadow Steed
+ACT.EQUIP
+RETURN 0
+ENDIF
+
+ON=@EnvironChange
+IF <SRC.RESTEST 1 i_mt_horse_gray> 
+RETURN 1
+ELSE
+NEWITEM=i_mt_horse_gray
+ACT.COLOR 000001
+ACT.NAME Shadow Steed
+ACT.EQUIP
+RETURN 0
+ENDIF
+
+ON=@Timer
+TIMER 300
+IF <SRC.RESTEST 1 i_mt_horse_gray> 
+RETURN 1
+ELSE
+NEWITEM=i_mt_horse_gray
+ACT.COLOR 000001
+ACT.NAME Shadow Steed
+ACT.EQUIP
+RETURN 0
+ENDIF
+
+[CHARDEF c_follower_of_mephisto_warrior]
+ID=c_man
+NAME=Follower of Mephisto
+SOUND=snd_human_m_die_01
+CAN=MT_EQUIP|MT_RUN|MT_USEHANDS|MT_WALK|MT_MALE
+DAM={10 25}
+ARMOR=35
+DESIRES=c_follower_of_mephisto_warrior,c_follower_of_mephisto_archer,c_follower_of_mephisto_mage,c_mephisto
+TSPEECH=spk_human_prime
+TSPEECH=spk_human_default
+
+CATEGORY=Civilized
+SUBSECTION=Followers of Mephisto
+DESCRIPTION=Follower of Mephisto Warrior
+
+ON=@Create
+NPC=brain_human
+COLOR=colors_skin
+KARMA={-8000 -8500}
+FAME={5000 6700}
+STR={450 550}
+DEX={300 350}
+INT={50 57}
+
+MAGICRESISTANCE={65.0 80.0}
+PARRYING={95.0 125.0
+TACTICS={100.0 150.0}
+SWORDSMANSHIP={100.0 150.0}
+ANATOMY={150.0 200.0}
+
+ITEMNEWBIE=i_hair_short
+COLOR=00002
+ITEMNEWBIE=i_beard_goatee
+COLOR=00002
+
+ON=@NPCRestock
+ITEM=i_platemail_chest_invulnerability
+COLOR=17969
+NAME=Etherial Armor
+ITEM=i_platemail_leggings_invulnerability
+COLOR=17969
+NAME=Etherial Leggings
+ITEM=i_platemail_arms_invulnerability
+COLOR=17969
+NAME=Etherial Shoulder Plates
+ITEM=i_platemail_helm_invulnerability
+COLOR=17969
+NAME=Etherial Helmet
+ITEM=i_platemail_gorget_invulnerability
+color=17969
+NAME=Etherial Gorget
+ITEM=i_platemail_gloves_invulnerability
+COLOR=17969
+NAME=Etherial Gauntlets
+ITEM=i_cape
+COLOR=17969
+NAME=Etherial Cloak
+ITEM=i_plain_shirt
+COLOR=17969
+NAME=Etherial Shirt
+ITEM=i_kilt
+COLOR=17969
+NAME=Etherial Kilt
+ITEM=i_boots_calf
+COLOR=17969
+NAME=Etherial Boots
+ITEM=i_katana_vanquishing
+COLOR=17969
+NAME=Etherial Katana
+ITEM=i_heater_shield_invulnerability
+COLOR=17969
+NAME=Etherial Tower Shield
+ITEM=i_gold,{500 900}
+
+[CHARDEF c_follower_of_mephisto_archer]
+ID=c_man
+NAME=Follower of Mephisto
+SOUND=snd_human_m_die_01
+CAN=MT_EQUIP|MT_USEHANDS|MT_WALK|MT_MALE
+DAM={10 25}
+ARMOR=15
+DESIRES=c_follower_of_mephisto_warrior,c_follower_of_mephisto_archer,c_follower_of_mephisto_mage,c_mephisto
+TSPEECH=spk_human_prime
+TSPEECH=spk_human_default
+
+CATEGORY=Civilized
+SUBSECTION=Followers of Mephisto
+DESCRIPTION=Follower of Mephisto Archer
+
+ON=@Create
+COLOR=colors_skin
+STR={300 450}
+DEX={750 800}
+INT={75 80}
+
+ARCHERY={105.0 165.0}
+TACTICS={100.0 135.0}
+PARRYING={25.0 80.0}
+ANATOMY={200.0 225.0}
+MAGICRESISTANCE={65.0 95.0}
+
+NPC=brain_human
+
+KARMA={-8000 -8500}
+FAME={5000 6700}
+
+ITEMNEWBIE=i_hair_short
+COLOR=00002
+ITEMNEWBIE=i_beard_goatee
+COLOR=00002
+
+ON=@NPCRestock
+ITEM=i_chainmail_leggings_invulnerability
+COLOR=17969
+NAME=Etherial Chainmail Leggings
+ITEM=i_chainmail_tunic_invulnerability
+COLOR=17969
+NAME=Etherial Chainmail Tunic
+ITEM=i_platemail_gorget_invulnerability
+color=17969
+NAME=Etherial Gorget
+ITEM=DEFNAME=i_platemail_gloves_invulnerability
+COLOR=17969
+NAME=Etherial Gauntlets
+ITEM=i_platemail_arms_invulnerability
+COLOR=17969
+NAME=Etherial Shoulder Plates
+ITEM=i_closed_helm
+ATTR=attr_magic
+MOREY=100.0
+COLOR=17969
+NAME=Etherial Close Helm
+ITEM=i_bow_vanquishing
+COLOR=17969
+NAME=Etherial Bow
+ITEM=i_arrow,{100 200}
+ITEM=i_cape
+COLOR=17969
+NAME=Etherial Cloak
+ITEM=i_gold,{500 900}
+
+[CHARDEF c_follower_of_mephisto_mage]
+ID=c_man
+NAME=Follower of Mephisto
+SOUND=snd_human_m_die_01
+CAN=MT_EQUIP|MT_USEHANDS|MT_WALK|MT_MALE
+DAM={1 10}
+ARMOR=5
+DESIRES=c_follower_of_mephisto_warrior,c_follower_of_mephisto_archer,c_follower_of_mephisto_mage,c_mephisto
+TSPEECH=spk_human_prime
+TSPEECH=spk_human_default
+
+CATEGORY=Civilized
+SUBSECTION=Followers of Mephisto
+DESCRIPTION=Follower of Mephisto Mage
+
+ON=@Create
+NPC=brain_human
+COLOR=colors_skin
+KARMA={-8000 -8500}
+FAME={5000 6700}
+STR={250 320}
+DEX={150 170}
+INT={600 1050}
+
+WRESTLING={50.0 70.0}
+TACTICS={65.0 80.0}
+PARRYING={25.0 90.0}
+MAGERY={110.0 160.0}
+EVALUATINGINTEL={200.0 215.0}
+MAGICRESISTANCE={100.0 115.0}
+
+ITEMNEWBIE=i_hair_long
+COLOR=00002
+ITEMNEWBIE=i_beard_goatee
+COLOR=00002
+ITEMNEWBIE=i_spellbook
+MORE1=04FFFFFFFF
+MORE2=04FFFFFFFF
+
+ON=@NPCRestock
+ITEM=i_mask_deer
+COLOR=17969
+NAME=Etherial Deer Mask
+ITEM=i_robe
+COLOR=17969
+NAME=Etherial Robe
+ITEM=i_cape
+COLOR=17969
+NAME=Etherial Cloak
+ITEM=i_sandals
+COLOR=17969
+NAME=Etherial Sandals
+ITEM=i_gold,{500 700}
+
+[CHARDEF c_mephisto]
+ID=c_man
+NAME=Mephisto
+SOUND=snd_human_m_die_01
+CAN=MT_EQUIP|MT_USEHANDS|MT_WALK|MT_MALE
+DAM={50 75}
+ARMOR=100
+DESIRES=c_follower_of_mephisto_warrior,c_follower_of_mephisto_archer,c_follower_of_mephisto_mage,c_mephisto
+TSPEECH=spk_human_prime
+TSPEECH=spk_human_default
+
+CATEGORY=Civilized
+SUBSECTION=Followers of Mephisto
+DESCRIPTION=Mephisto
+
+ON=@Create
+NPC=brain_human
+COLOR=colors_skin
+KARMA={-9995 -9999}
+FAME={9500 9999}
+STR={1000 2000}
+DEX={1000 2000}
+INT={1000 2000}
+
+SWORDSMANSHIP={200.0 250.0}
+TACTICS={200.0 250.0}
+PARRYING={85.0 100.0}
+ANATOMY={95.0 105.0}
+MAGERY={200.0 250.0}
+EVALUATINGINTEL={300.0 450.0}
+MAGICRESISTANCE={150.0 175.0}
+
+ITEMNEWBIE=i_hair_short
+COLOR=00002
+ITEMNEWBIE=i_beard_goatee
+COLOR=00002
+ITEMNEWBIE=i_spellbook
+MORE1=04FFFFFFFF
+MORE2=04FFFFFFFF
+
+ON=@NPCRestock
+ITEM=i_platemail_chest_invulnerability
+COLOR=17969
+NAME=Etherial Armor
+MOREY=70000
+ITEM=i_platemail_leggings_invulnerability
+COLOR=17969
+NAME=Etherial Leggings
+MOREY=70000
+ITEM=i_platemail_arms_invulnerability
+COLOR=17969
+NAME=Etherial Shoulder Plates
+MOREY=70000
+ITEM=i_mask_deer
+COLOR=17969
+ATTR=attr_magic
+MOREY=70000
+NAME=Etherial Deer Mask
+ITEM=i_platemail_gorget_invulnerability
+color=17969
+NAME=Etherial Gorget
+MOREY=70000
+ITEM=i_platemail_gloves_invulnerability
+COLOR=17969
+NAME=Etherial Gauntlets
+MOREY=70000
+ITEM=i_cape
+COLOR=17969
+NAME=Etherial Cloak
+ITEM=i_shirt_plain
+COLOR=17969
+NAME=Etherial Shirt
+ITEM=i_kilt
+COLOR=17969
+NAME=Etherial Kilt
+ITEM=i_boots_calf
+COLOR=17969
+NAME=Etherial Boots
+ITEM=i_broadsword_vanquishing
+COLOR=17969
+NAME=Etherial Broadsword
+MOREY=70000
+ITEM=i_kite_shield_metal_invulnerability
+COLOR=17969
+NAME=Etherial Kite Shield
+MOREY=70000
+ITEM=i_gold,{10000 10000}
+
+[CHARDEF c_wood_elf_hunter]
+ID=c_man
+NAME=#NAMES_ELF_MALE the Wood-Elf Hunter
+SOUND=snd_human_m_die_01
+CAN=MT_EQUIP|MT_RUN|MT_USEHANDS|MT_WALK
+DAM={5 20}
+ARMOR=13
+DESIRES=c_wood_elf_hunter,c_wood_elf_warrior,c_wood_elf_archer,c_wood_elf_elite_warrior,c_wood_elf_ranger,c_wood_elf_elite_ranger
+TSPEECH=spk_human_prime
+TSPEECH=spk_human_default
+TSPEECH=spk_job_fighter
+
+CATEGORY=Civilized
+SUBSECTION=Wood Elves
+DESCRIPTION=Wood Elf hunter
+
+ON=@Create
+NPC=brain_human
+COLOR=0597
+KARMA={-2000 -3000}
+STR={40 60}
+DEX={50 70}
+INT={30 50}
+
+FENCING={40.0 60.0}
+MAGICRESISTANCE={15.0 38.0}
+TACTICS={38.0 50.0}
+WRESTLING={25.0 40.0}
+
+ITEMNEWBIE=i_hair_long
+ITEMNEWBIE=i_beard_long_med
+
+ON=@NPCRestock
+ITEM=i_leather_tunic
+ITEM=i_leather_gorget
+ITEM=i_leather_leggings
+ITEM=i_sandals
+ITEM=i_spear
+ITEM=i_gold,{25 70}
+ITEM=i_hides_cut,{1 3}
+
+[CHARDEF c_wood_elf_warrior]
+ID=c_man
+NAME=#NAMES_ELF_MALE the Wood Elf Warrior
+SOUND=snd_human_m_die_01
+CAN=MT_EQUIP|MT_RUN|MT_USEHANDS|MT_WALK
+DAM={5 10}
+ARMOR={5 10}
+DESIRES=c_wood_elf_hunter,c_wood_elf_warrior,c_wood_elf_archer,c_wood_elf_elite_warrior,c_wood_elf_ranger,c_wood_elf_elite_ranger
+TSPEECH=spk_human_prime
+TSPEECH=spk_human_default
+TSPEECH=spk_job_fighter
+
+CATEGORY=Civilized
+SUBSECTION=Wood Elves
+DESCRIPTION=Wood Elf Warrior
+
+ON=@Create
+NPC=brain_human
+COLOR=0597
+KARMA={-2000 -4000}
+STR={45 65}
+DEX={55 70}
+INT={70 100}
+
+MAGICRESISTANCE={15.0 38.0}
+SWORDSMANSHIP={60.0 80.0}
+TACTICS={50.0 80.0}
+WRESTLING={25.0 40.0}
+
+ITEMNEWBIE=i_hair_long
+
+ON=@NPCRestock
+ITEM=i_sandals
+ITEM=i_gold,{40 110}
+ITEM=i_shield_wood
+ITEM=i_longsword
+ITEM=i_studded_leather_tunic
+COLOR=0599
+ITEM=i_studded_leather_gloves
+COLOR=0599
+ITEM=i_studded_leather_leggings
+COLOR=0599
+
+[CHARDEF c_wood_elf_archer]
+ID=c_man
+NAME=#NAMES_ELF_MALE the Wood Elf Archer
+SOUND=snd_human_m_die_01
+CAN=MT_EQUIP|MT_RUN|MT_USEHANDS|MT_WALK
+DAM={5 15}
+ARMOR=9
+DESIRES=c_wood_elf_hunter,c_wood_elf_warrior,c_wood_elf_archer,c_wood_elf_elite_warrior,c_wood_elf_ranger,c_wood_elf_elite_ranger
+TSPEECH=spk_human_prime
+TSPEECH=spk_human_default
+TSPEECH=spk_job_fighter
+
+CATEGORY=Civilized
+SUBSECTION=Wood Elves
+DESCRIPTION=Wood Elf Archer
+
+ON=@Create
+NPC=brain_human
+COLOR=0597
+KARMA={-2000 -4000}
+STR={40 50}
+DEX={45 60}
+INT={30 50}
+
+ARCHERY={50.0 70.0}
+BOWCRAFT={60.0 80.0}
+MAGICRESISTANCE={15.0 38.0}
+SPIRITSPEAK={30.0 100.0}
+SWORDSMANSHIP={30.0 50.0}
+TACTICS={40.0 60.0}
+WRESTLING={25.0 40.0}
+
+ITEMNEWBIE=i_hair_long
+
+ON=@NPCRestock
+ITEM=i_arrow,{20 40}
+ITEM=i_leather_tunic
+COLOR=0599
+ITEM=i_leather_gloves
+COLOR=0599
+ITEM=i_leather_leggings
+COLOR=0599
+ITEM=i_bow
+ITEM=i_sandals
+ITEM=i_gold,{50 110}
+
+[CHARDEF c_wood_elf_elite_warrior]
+ID=c_man
+NAME=#NAMES_ELF_MALE the Wood-Elf Elite Warrior
+SOUND=snd_human_m_die_01
+CAN=MT_EQUIP|MT_RUN|MT_USEHANDS|MT_WALK
+DAM={10 30}
+ARMOR=19
+DESIRES=c_wood_elf_hunter,c_wood_elf_warrior,c_wood_elf_archer,c_wood_elf_elite_warrior,c_wood_elf_ranger,c_wood_elf_elite_ranger
+TSPEECH=spk_human_prime
+TSPEECH=spk_human_default
+TSPEECH=spk_job_fighter
+
+CATEGORY=Civilized
+SUBSECTION=Wood Elves
+DESCRIPTION=Wood Elf Elite Warrior
+
+ON=@Create
+NPC=brain_human
+COLOR=0597
+KARMA={-2000 -5000}
+STR={60 80}
+DEX={81 95}
+INT={70 100}
+
+MAGICRESISTANCE={15.0 38.0}
+SWORDSMANSHIP={60.0 100.0}
+TACTICS={50.0 100.0}
+WRESTLING={25.0 40.0}
+
+ITEMNEWBIE=i_hair_long
+ITEMNEWBIE=i_beard_goatee
+
+ON=@NPCRestock
+ITEM=i_viking_sword
+ITEM=i_shield_kite_wood
+ITEM=i_cape
+COLOR=045e
+ITEM=i_sash
+COLOR=0599
+ITEM=i_studded_leather_sleeves
+COLOR=0599
+ITEM=i_studded_leather_tunic
+COLOR=045e
+ITEM=i_studded_leather_gloves
+COLOR=045e
+ITEM=i_studded_leather_leggings
+COLOR=0599
+ITEM=i_studded_leather_gorget
+COLOR=045e
+ITEM=i_boots_calf
+COLOR=045e
+ITEM=i_gold,{90 200}
+
+[CHARDEF c_wood_elf_ranger]
+ID=c_man
+NAME=#NAMES_ELF_MALE the Wood Elf Ranger
+SOUND=snd_human_m_die_01
+CAN=MT_EQUIP|MT_RUN|MT_USEHANDS|MT_WALK
+DAM={5 20}
+ARMOR=13
+DESIRES=c_wood_elf_hunter,c_wood_elf_warrior,c_wood_elf_archer,c_wood_elf_elite_warrior,c_wood_elf_ranger,c_wood_elf_elite_ranger
+TSPEECH=spk_human_prime
+TSPEECH=spk_human_default
+TSPEECH=spk_job_fighter
+
+CATEGORY=Civilized
+SUBSECTION=Wood Elves
+DESCRIPTION=Wood Elf Ranger
+
+ON=@Create
+NPC=brain_human
+COLOR=0597
+KARMA={-2000 -3000}
+STR={40 60}
+DEX={50 70}
+INT={30 50}
+
+ARCHERY={65.0 80.0}
+BOWCRAFT={60.0 80.0}
+MAGICRESISTANCE={15.0 38.0}
+SPIRITSPEAK={30.0 100.0}
+SWORDSMANSHIP={30.0 50.0}
+TACTICS={50.0 80.0}
+WRESTLING={25.0 40.0}
+
+ITEMNEWBIE=i_hair_long
+ITEMNEWBIE=i_beard_goatee
+
+ON=@NPCRestock
+ITEM=i_studded_leather_sleeves
+COLOR=0599
+ITEM=i_studded_leather_tunic
+COLOR=0599
+ITEM=i_studded_leather_gloves
+COLOR=01bb
+ITEM=i_studded_leather_leggings
+COLOR=0599
+ITEM=i_studded_leather_gorget
+COLOR=0599
+ITEM=i_boots_calf
+COLOR=01bb
+ITEM=i_cape
+COLOR=01bb
+ITEM=i_sash
+COLOR=01bb
+ITEM=i_bow
+ITEM=i_arrow,{10 50}
+ITEM=i_gold,{50 150}
+
+[CHARDEF c_wood_elf_elite_ranger]
+ID=c_man
+NAME=#NAMES_ELF_MALE the Wood Elf Elite Ranger
+SOUND=snd_human_m_die_01
+CAN=MT_EQUIP|MT_RUN|MT_USEHANDS|MT_WALK
+DAM={15 30}
+ARMOR=19
+DESIRES=c_wood_elf_hunter,c_wood_elf_warrior,c_wood_elf_archer,c_wood_elf_elite_warrior,c_wood_elf_ranger,c_wood_elf_elite_ranger
+TSPEECH=spk_human_prime
+TSPEECH=spk_human_default
+TSPEECH=spk_job_fighter
+
+CATEGORY=Civilized
+SUBSECTION=Wood Elves
+DESCRIPTION=Wood Elf Elite Ranger
+
+ON=@Create
+NPC=brain_human
+COLOR=0597
+KARMA={-2000 -4000}
+STR={60 80}
+DEX={81 95}
+INT={70 100}
+
+MAGICRESISTANCE={15.0 38.0}
+TACTICS={50.0 100.0}
+WRESTLING={25.0 40.0}
+ARCHERY={80.0 100.0}
+BOWCRAFT={60.0 80.0}
+SWORDSMANSHIP={50.0 70.0}
+
+ITEMNEWBIE=i_hair_long
+ITEMNEWBIE=i_beard_goatee
+
+ON=@NPCRestock
+ITEM=i_cape
+COLOR=045e
+ITEM=i_studded_leather_gloves
+COLOR=045e
+ITEM=i_studded_leather_tunic
+COLOR=045e
+ITEM=i_studded_leather_gorget
+COLOR=045e
+ITEM=i_studded_leather_leggings
+COLOR=0599
+ITEM=i_studded_leather_sleeves
+COLOR=0599
+ITEM=i_boots_calf
+COLOR=045e
+ITEM=i_sash
+COLOR=0599
+ITEM=i_bow
+COLOR=045e
+ITEM=i_arrow,{10 30}
+ITEM=i_gold,{80 200}
+
+[CHARDEF c_sprite]
+ID=c_woman
+NAME=#NAMES_ELF_FEMALE the Sprite
+CAN=MT_WALK|MT_FLY|MT_FEMALE
+DESIRES=i_gold,e_notoriety
+AVERSIONS=t_trap,t_eerie_stuff
+DAM={6 10}
+ARMOR=8
+
+TSPEECH=spk_human_prime
+TSPEECH=spk_human_default
+
+ON=@Create
+COLOR=045e
+
+STR={86 90}
+DEX={91 100}
+INT={71 85}
+
+FENCING={65.0 88.0}
+WRESTLING={35.0 58.0}
+MAGICRESISTANCE={60.0 80.0}
+TACTICS={75.0 85.0}
+
+NPC=brain_human
+
+KARMA={-1500 -6000}
+FAME={1200 3200}
+
+ITEMNEWBIE=i_hair_ponytail
+COLOR=0597
+
+ON=@NPCRestock
+ITEM=i_armor_female_plate
+COLOR=0599
+ITEM=i_kryss
+COLOR=0599
+ITEM=i_boots_calf
+COLOR=0599
+ITEM=i_cape
+COLOR=0599
+ITEM=random_coin_purse
+ITEM={ backpack_meager 1 backpack_average 2 }
+
+CATEGORY=Civilized
+SUBSECTION=Sprites
+DESCRIPTION=Sprite
+
+[CHARDEF c_sprite_archer]
+NAME=#NAMES_ELF_FEMALE the Sprite Archer
+ID=c_woman
+
+DAM=6,10
+//ARMOR=
+
+CAN=MT_WALK|MT_FLY|MT_FEMALE
+DESIRES=i_gold,e_notoriety
+AVERSIONS=t_trap,t_eerie_stuff
+
+TSPEECH=spk_human_prime
+TSPEECH=spk_human_default
+
+ON=@Create
+COLOR=045e
+STR={86 90}
+DEX={91 100}
+INT={71 85}
+
+
+ARCHERY={65.0 88.0}
+WRESTLING={35.0 58.0}
+MAGICRESISTANCE={50.0 60.0}
+TACTICS={75.0 85.0}
+
+NPC=brain_human
+
+KARMA={-1500 -6000}
+FAME={1200 3200}
+
+ITEMNEWBIE=i_hair_KRISNA
+COLOR=0597
+
+ON=@NPCRestock
+ITEM=i_arrow,{20 40}
+ITEM=i_leather_tunic
+COLOR=0595
+ITEM=i_leather_gloves
+COLOR=0595
+ITEM=i_leather_leggings
+COLOR=0595
+ITEM=i_bow
+ITEM=i_boots_calf
+COLOR=0599
+ITEM=i_cape
+COLOR=0599
+ITEM=random_coin_purse
+ITEM={ backpack_meager 1 backpack_average 2 }
+
+CATEGORY=Civilized
+SUBSECTION=Sprites
+DESCRIPTION=Sprite Archer
+
+[CHARDEF c_sprite_mage]
+NAME=#NAMES_ELF_FEMALE the Sprite Mage
+ID=c_woman
+DAM=6,10
+//ARMOR=
+DESIRES=i_gold,e_notoriety
+AVERSIONS=t_trap,t_eerie_stuff
+
+CAN=MT_WALK|MT_FLY|MT_FEMALE
+
+TSPEECH=spk_human_prime
+TSPEECH=spk_human_default
+
+ON=@Create
+COLOR=045e
+STR={86 90}
+DEX={91 100}
+INT={71 85}
+
+WRESTLING={58.0 78.0}
+MAGICRESISTANCE={60.0 80.0}
+MAGERY={65.0 85.0}
+
+NPC=brain_thief
+
+KARMA={-1500 -6000}
+FAME={1200 3200}
+
+ITEMNEWBIE=i_hair_ponytail
+COLOR=0597
+
+ON=@NPCRestock
+ITEM=i_robe
+COLOR=0599
+ITEM=i_sandals
+COLOR=0599
+ITEM=random_coin_purse
+ITEM=backpack_average
+ITEM=random_scroll
+ITEM=random_scroll
+
+CATEGORY=Civilized
+SUBSECTION=Sprites
+DESCRIPTION=Sprite Mage
+
+[CHARDEF c_sprite_sorceress]
+ID=c_woman
+NAME=#NAMES_ELF_FEMALE the Sprite Sorceress
+
+DAM={6 10}
+ARMOR=10
+
+DESIRES=i_gold,e_notoriety
+AVERSIONS=t_trap,t_eerie_stuff
+
+CAN=MT_WALK|MT_FLY|MT_FEMALE
+
+TSPEECH=spk_human_prime
+TSPEECH=spk_human_default
+
+ON=@Create
+COLOR=045e
+STR={86 95}
+DEX={91 100}
+INT={71 85}
+
+WRESTLING={68.0 88.0}
+MAGICRESISTANCE={70.0 85.0}
+MAGERY={75.0 95.0}
+
+KARMA={-2000 -6500}
+FAME={1700 3700}
+
+NPC=brain_thief
+
+ITEMNEWBIE=i_hair_long
+COLOR=0
+
+ON=@NPCRestock
+ITEM=i_hat_wizards
+COLOR=0599
+ITEM=i_robe
+COLOR=0595
+ITEM=i_sandals
+COLOR=0599
+ITEM=random_coin_purse
+ITEM=backpack_average
+ITEM=random_upper_scroll
+ITEM=random_scroll
+
+CATEGORY=Civilized
+SUBSECTION=Sprites
+DESCRIPTION=Sprite Sorceress
+
+[CHARDEF c_frost_elf_warrior]
+ID=c_man
+NAME=#NAMES_ELF_MALE the Frost Elf Warrior
+CAN=MT_EQUIP|MT_USEHANDS|MT_WALK|MT_MALE
+DAM={10 20}
+ARMOR=15
+TSPEECH=spk_human_prime
+TSPEECH=spk_human_default
+
+CATEGORY=Civilized
+SUBSECTION=Frost Elves
+DESCRIPTION=Frost Elf Warrior
+
+ON=@Create
+NPC=brain_human
+COLOR=05D
+KARMA={-3000 -4000}
+FAME={2500 4000}
+STR={80 100}
+DEX={81 95}
+INT={50 60}
+
+MAGICRESISTANCE={35.0 45.0}
+TACTICS={70.0 90.0}
+WRESTLING={40.0 55.0}
+SWORDSMANSHIP={70.0 90.0}
+
+ITEMNEWBIE=i_hair_krisna
+
+ON=@NPCRestock
+ITEM=i_gold,{80 100}
+ITEM=i_studded_leather_tunic
+ITEM=i_tunic
+ITEM=random_shoes
+COLOR=01BB
+ITEM=i_halberd
+ITEM=random_jewel
+
+[CHARDEF c_frost_elf_warrioress]
+ID=c_woman
+NAME=#NAMES_ELF_FEMALE the Frost Elf Warrioress
+CAN=MT_EQUIP|MT_USEHANDS|MT_WALK|MT_FEMALE
+DAM={10 20}
+ARMOR=15
+TSPEECH=spk_human_prime
+TSPEECH=spk_human_default
+
+ON=@Create
+NPC=brain_human
+COLOR=05D
+KARMA={-3000 -4000}
+FAME={2500 4000}
+STR={80 100}
+DEX={81 95}
+INT={50 60}
+
+MAGICRESISTANCE={35.0 45.0}
+TACTICS={70.0 90.0}
+WRESTLING={40.0 55.0}
+MACEFIGHTING={70.0 90.0}
+
+ITEMNEWBIE=i_hair_long
+
+ON=@NPCRestock
+ITEM=i_gold,{80 100}
+ITEM=i_armor_female_studded
+ITEM=random_shoes
+COLOR=01bb
+ITEM=i_staff_quarter
+ITEM=random_jewel
+
+CATEGORY=Civilized
+SUBSECTION=Frost Elves
+DESCRIPTION=Frost Elf Warrioress
+
+[CHARDEF c_frost_elf_archer]
+ID=c_man
+NAME=#NAMES_ELF_MALE the Frost Elf Archer
+CAN=MT_EQUIP|MT_USEHANDS|MT_WALK|MT_MALE
+DAM={10 20}
+ARMOR=15
+TSPEECH=spk_human_prime
+TSPEECH=spk_human_default
+
+CATEGORY=Civilized
+SUBSECTION=Frost Elves
+DESCRIPTION=Frost Elf Archer
+
+ON=@Create
+NPC=brain_human
+COLOR=05D
+KARMA={-3000 -4000}
+FAME={2500 4000}
+STR={70 90}
+DEX={81 95}
+INT={50 60}
+
+ARCHERY={70.0 90.0}
+MAGICRESISTANCE={20.0 30.0}
+TACTICS={70.0 90.0}
+WRESTLING={25.0 40.0}
+
+ITEMNEWBIE=i_hair_krisna
+
+ON=@NPCRestock
+ITEM=i_studded_leather_tunic
+ITEM=i_tunic
+ITEM=random_shoes
+COLOR=01BB
+ITEM=i_bow
+ITEM=i_arrow,{10 50}
+ITEM=random_jewel
+ITEM=i_gold,{60 80}
+
+[CHARDEF c_frost_elf_shaman]
+ID=c_man
+NAME=#NAMES_ELF_MALE the Frost Elf Shaman
+CAN=MT_EQUIP|MT_USEHANDS|MT_WALK|MT_MALE
+DAM={15 20}
+ARMOR={15 20}
+TSPEECH=spk_human_prime
+TSPEECH=spk_human_default
+
+CATEGORY=Civilized
+SUBSECTION=Frost Elves
+DESCRIPTION=Frost Elf Shaman
+
+ON=@Create
+NPC=brain_human
+COLOR=05d
+KARMA={-3000 -5000}
+FAME={2500 4000}
+STR={80 120}
+DEX={81 95}
+INT={80 100}
+
+MAGICRESISTANCE={60.0 75.0}
+TACTICS={70.0 90.0}
+WRESTLING={40.0 55.0}
+MAGERY={75.0 85.0}
+
+ITEMNEWBIE=i_hair_krisna
+ITEMNEWBIE=i_spellbook
+MORE1=0FFFFFFFF
+MORE2=0FFFFFFFF
+
+ON=@NPCRestock
+ITEM=i_gold,{80 100}
+ITEM=i_robe
+ITEM=random_shoes
+COLOR=01BB
+ITEM=random_jewel
+ITEM=random_scroll
+ITEM=random_scroll
+CONTAINER=i_bag
+ITEM=i_black_pearl,15
+ITEM=i_blood_moss,15
+ITEM=i_garlic,50
+ITEM=i_ginseng,15
+ITEM=i_mandrake_root,15
+ITEM=i_nightshade,15
+ITEM=i_sulfur_ash,15
+ITEM=i_spider_silk,15
+
+[CHARDEF c_frost_elf_chieftan]
+ID=c_man
+NAME=#NAMES_ELF_MALE the Frost Elf Chieftain
+CAN=MT_EQUIP|MT_USEHANDS|MT_WALK|MT_MALE
+DAM={20 25}
+ARMOR=20
+TSPEECH=spk_human_prime
+TSPEECH=spk_human_default
+
+CATEGORY=Civilized
+SUBSECTION=Frost Elves
+DESCRIPTION=Frost Elf Chieftain
+
+ON=@Create
+NPC=brain_human
+COLOR=05D
+KARMA={-4000 -6000}
+FAME={3500 5000}
+STR={150 200}
+DEX={81 95}
+INT={50 60}
+
+MAGICRESISTANCE={60.0 75.0}
+TACTICS={70.0 90.0}
+WRESTLING={40.0 55.0}
+SWORDSMANSHIP=100.0
+PARRYING={75.0 100.0}
+
+ITEMNEWBIE=i_hair_krisna
+
+ON=@NPCRestock
+ITEM=i_gold,{80 100}
+ITEM=i_studded_leather_tunic
+ITEM=i_tunic
+ITEM=i_pants_long
+ITEM=random_shoes
+COLOR=01bb
+ITEM=i_viking_sword
+ITEM=i_shield_kite_metal
+ITEM=random_jewel
+ITEM=random_average_magic_loot
+ITEM=backpack_loaded
+
+[CHARDEF c_dark_elf_grunt]
+ID=c_man
+NAME=#NAMES_ELF_MALE the Dark Elf Grunt
+SOUND=snd_human_m_die_01
+CAN=MT_EQUIP|MT_RUN|MT_USEHANDS|MT_WALK
+DAM={10 20}
+ARMOR=15
+TSPEECH=spk_human_prime
+TSPEECH=spk_human_default
+TSPEECH=spk_job_fighter
+
+CATEGORY=Civilized
+SUBSECTION=Dark Elves
+DESCRIPTION=Dark Elf Grunt
+
+ON=@Create
+NPC=brain_human
+COLOR=0597
+KARMA={-3000 -4000}
+FAME={2000 3000}
+STR={50 70}
+DEX={61 80}
+INT={50 60}
+
+ARCHERY={60.0 80.0}
+FENCING={60.0 80.0}
+MACEFIGHTING={60.0 80.0}
+MAGICRESISTANCE={15.0 38.0}
+SWORDSMANSHIP={60.0 80.0}
+TACTICS={60.0 90.0}
+WRESTLING={25.0 40.0}
+
+ITEMNEWBIE=i_beard_goatee
+ITEMNEWBIE=i_hair_long
+
+ON=@NPCRestock
+ITEM=i_gold,{50 150}
+ITEM=i_bone_chest
+COLOR=0455
+ITEM=i_bone_gloves
+COLOR=0455
+ITEM=i_bone_helmet
+COLOR=0455
+ITEM=i_boots_calf
+COLOR=0455
+ITEM=i_studded_leather_leggings
+COLOR=0455
+ITEM=i_shield_wood
+ITEM=i_axe_war
+
+[CHARDEF c_dark_elf_fighter]
+ID=c_man
+NAME=#NAMES_ELF_MALE the Dark Elf Fighter
+SOUND=snd_human_m_die_01
+CAN=MT_EQUIP|MT_RUN|MT_USEHANDS|MT_WALK
+DAM={10 20}
+ARMOR=15
+TSPEECH=spk_human_prime
+TSPEECH=spk_human_default
+TSPEECH=spk_job_fighter
+
+CATEGORY=Civilized
+SUBSECTION=Dark Elves
+DESCRIPTION=Dark Elf Fighter
+
+ON=@Create
+NPC=brain_human
+COLOR=0597
+KARMA={-3000 -4000}
+FAME={2000 3500}
+STR={50 70}
+DEX={61 80}
+INT={50 60}
+
+ARCHERY={60.0 80.0}
+FENCING={60.0 80.0}
+MACEFIGHTING={60.0 80.0}
+MAGICRESISTANCE={15.0 38.0}
+SWORDSMANSHIP={60.0 80.0}
+TACTICS={60.0 90.0}
+WRESTLING={25.0 40.0}
+
+ITEMNEWBIE=i_beard_goatee
+ITEMNEWBIE=i_hair_long
+
+ON=@NPCRestock
+ITEM=i_gold,{80 200}
+ITEM=i_bone_chest
+COLOR=0455
+ITEM=i_bone_gloves
+COLOR=0455
+ITEM=i_bone_helmet
+COLOR=0455
+ITEM=i_boots_calf
+COLOR=0455
+ITEM=i_studded_leather_leggings
+COLOR=0455
+ITEM=i_shield_wood
+ITEM=i_broadsword
+
+[CHARDEF c_dark_elf_warrior_mace]
+ID=c_man
+NAME=#NAMES_ELF_MALE the Dark Elf Warrior
+SOUND=snd_human_m_die_01
+CAN=MT_EQUIP|MT_RUN|MT_USEHANDS|MT_WALK
+DAM={10 20}
+ARMOR=15
+TSPEECH=spk_human_prime
+TSPEECH=spk_human_default
+TSPEECH=spk_job_fighter
+
+CATEGORY=Civilized
+SUBSECTION=Dark Elves
+DESCRIPTION=Dark Elf Warrior (mace)
+
+ON=@Create
+NPC=brain_human
+COLOR=0597
+KARMA={-3000 -5000}
+FAME={2500 4000}
+STR={50 70}
+DEX={61 80}
+INT={50 60}
+
+FENCING={60.0 80.0}
+MACEFIGHTING={60.0 80.0}
+MAGICRESISTANCE={15.0 38.0}
+SWORDSMANSHIP={60.0 80.0}
+TACTICS={60.0 90.0}
+WRESTLING={25.0 40.0}
+
+ITEMNEWBIE=i_beard_goatee
+ITEMNEWBIE=i_hair_long
+
+ON=@NPCRestock
+ITEM=i_gold,{70 200}
+ITEM=i_bone_chest
+COLOR=0455
+ITEM=i_bone_gloves
+COLOR=0455
+ITEM=i_bone_helmet
+COLOR=0455
+ITEM=i_boots_calf
+COLOR=0455
+ITEM=i_war_mace
+ITEM=i_wooden_shield
+ITEM=i_studded_leather_leggings
+COLOR=0455
+
+[CHARDEF c_dark_elf_warrior_sword]
+NAME=#NAMES_ELF_MALE the Dark Elf Warrior
+SOUND=snd_human_m_die_01
+ID=c_man
+CAN=MT_EQUIP|MT_RUN|MT_USEHANDS|MT_WALK
+DAM={15 30}
+ARMOR=19
+TSPEECH=spk_human_prime
+TSPEECH=spk_human_default
+TSPEECH=spk_job_fighter
+
+CATEGORY=Civilized
+SUBSECTION=Dark Elves
+DESCRIPTION=Dark Elf Warrior (sword)
+
+ON=@Create
+NPC=brain_human
+COLOR=0597
+KARMA={-3000 -5000}
+FAME={2500 4000}
+STR={70 90}
+DEX={81 95}
+INT={70 100}
+
+MAGICRESISTANCE={15.0 38.0}
+SWORDSMANSHIP={60.0 100.0}
+TACTICS={50.0 100.0}
+WRESTLING={25.0 40.0}
+
+ITEMNEWBIE=i_beard_goatee
+ITEMNEWBIE=i_hair_long
+
+ON=@NPCRestock
+ITEM=i_viking_sword
+ITEM=i_bone_chest
+COLOR=0455
+ITEM=i_bone_gloves
+COLOR=0455
+ITEM=i_bone_helmet
+COLOR=0455
+ITEM=i_chainmail_leggings
+COLOR=0455
+ITEM=i_boots_calf
+COLOR=0455
+ITEM=i_cape
+COLOR=0455
+ITEM=i_heater_shield
+ITEM=i_gold,{100 300}
+
+[CHARDEF c_dark_elf_warrior_axe]
+ID=c_man
+NAME=#NAMES_ELF_MALE the Dark Elf Warrior
+SOUND=snd_human_m_die_01
+CAN=MT_EQUIP|MT_RUN|MT_USEHANDS|MT_WALK
+DAM={15 30}
+ARMOR=19
+TSPEECH=spk_human_prime
+TSPEECH=spk_human_default
+TSPEECH=spk_job_fighter
+
+CATEGORY=Civilized
+SUBSECTION=Dark Elves
+DESCRIPTION=Dark Elf Warrior (battle axe)
+
+ON=@Create
+NPC=brain_human
+COLOR=0597
+KARMA={-3000 -5000}
+FAME={2500 4000}
+STR={70 90}
+DEX={81 95}
+INT={70 100}
+
+ARCHERY={75.0 100.0}
+MACEFIGHTING={75.0 100.0}
+MAGICRESISTANCE={15.0 38.0}
+PARRYING={40.0 50.0}
+SWORDSMANSHIP={75.0 100.0}
+TACTICS={75.0 100.0}
+WRESTLING={25.0 40.0}
+
+ITEMNEWBIE=i_hair_long
+ITEMNEWBIE=i_beard_goatee
+
+ON=@NPCRestock
+ITEM=i_gold,{100 300}
+ITEM=i_bone_chest
+COLOR=0455
+ITEM=i_bone_gloves
+COLOR=0455
+ITEM=i_bone_helmet
+COLOR=0455
+ITEM=i_chainmail_leggings
+COLOR=0455
+ITEM=i_boots_calf
+COLOR=0455
+ITEM=i_cape
+COLOR=0455
+ITEM=i_battle_axe
+
+[CHARDEF c_ent]
+ID=c_reaper
+NAME=Ent
+SOUND=snd_monster_reaper1
+ICON=i_pet_reaper
+CAN=MT_WALK
+DAM={8 15}
+ARMOR=100
+RESOURCES=i_log 90
+FOODTYPE=t_tree 15
+DESIRES=r_foliage,c_ent,c_elder_ent
+SHELTER=r_jungle,r_swamp,r_forests
+
+CATEGORY=Monsters
+SUBSECTION=Ents
+DESCRIPTION=Ent
+
+ON=@Create
+NPC=brain_animal
+STR={500 1400}
+DEX={10 50}
+INT={1000 5000}
+
+PARRYING={100.0 150.0}
+MAGERY={100.0 150.0}
+MAGICRESISTANCE={100.0 150.0}
+TACTICS={100.0 150.0}
+WRESTLING={100.0 150.0}
+
+FAME={1000 3000}
+KARMA={3000 5999}
+
+ON=@NPCRestock
+ITEM=i_dead_wood,{100 200}
+ITEM=i_gold,{150 450}
+
+[CHARDEF c_elder_ent]
+ID=c_reaper
+NAME=Elder Ent
+SOUND=snd_monster_reaper1
+ICON=i_pet_reaper
+CAN=MT_WALK
+DAM={30 100}
+ARMOR=255
+RESOURCES=i_log 900
+FOODTYPE=t_tree 500
+DESIRES=r_foliage,c_ent,c_elder_ent
+SHELTER=r_jungle,r_swamp,r_forests
+
+CATEGORY=Monsters
+SUBSECTION=Ents
+DESCRIPTION=Elder Ent
+
+ON=@Create
+NPC=brain_animal
+STR={5000 14000}
+DEX={20 60}
+INT={10000 30000}
+
+PARRYING={1000.0 1500.0}
+MAGERY={1000.0 1500.0}
+MAGICRESISTANCE={1000.0 1500.0}
+TACTICS={1000.0 1500.0}
+WRESTLING={1000.0 1500.0}
+
+FAME={9000 9500}
+KARMA=10000
+
+ON=@NPCRestock
+ITEM=i_dead_wood,{1000 2000}
+ITEM=i_gold,{1500 4500}
+[EOF]

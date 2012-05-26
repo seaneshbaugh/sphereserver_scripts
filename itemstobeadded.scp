@@ -1,0 +1,2185 @@
+[ITEMDEF i_bandage_timer]
+ID=i_memory
+NAME=Bandages Timer
+TYPE=t_eq_script
+
+CATEGORY=Items by Professions
+SUBSECTION=Healer
+DESCRIPTION=Bandages Timer
+
+ON=@Create
+ATTR attr_decay|attr_invis
+
+ON=@Equip
+TIMER 2
+
+ON=@Timer
+REMOVE
+RETURN 1
+
+[ITEMDEF i_hair_tie]
+ID=i_fishing_weight
+NAME=Hair Tie
+TYPE=0
+
+ON=@Create
+COLOR=038a
+
+ON=@DClick
+IF <SRC.FINDLAYER(11).ID>==i_hair_long
+SRC.FINDLAYER(11).ID=i_hair_ponytail
+ELSEIF <SRC.FINDLAYER(11).ID>==i_hair_ponytail
+SRC.FINDLAYER(11).ID=i_hair_long
+ENDIF
+RETURN 1
+
+[ITEMDEF i_pouch_magictrap]
+ID=i_pouch
+NAME=Belt Pouch
+
+CATEGORY=Provisions - Miscellaneous
+SUBSECTION=Containers
+DESCRIPTION=Magic Trap Pouch
+
+ON=@Create
+MOREX 0
+
+ON=@SpellEffect
+IF (<ARGN>==13) //magic trap 
+MOREX 1 //make the chest trapped
+ELSEIF (<ARGN>==14) //magic untrap
+MOREX 0 //make the chest untrapped
+ENDIF
+
+ON=@DClick
+IF <MOREX>==1
+SRC.DAMAGE {1 5}
+MOREX 0
+RETURN 0
+ELSE
+RETURN 0
+ENDIF
+
+[ITEMDEF i_black_ground]
+ID=053f
+NAME=nothing
+
+CATEGORY=Buildings - Floors
+SUBSECTION=Cave Floor
+DESCRIPTION=Black Ground
+
+ON=@Create
+COLOR=01
+
+[ITEMDEF i_book_of_hell]
+ID=i_book_open
+NAME=Book of Hell
+
+CATEGORY=Items by Professions
+SUBSECTION=Scribe
+DESCRIPTION=Book of Hell
+
+ON=@Create
+MORE=b_hitchhiker
+
+ON=@DClick
+SRC.EFFECT=3,i_fire_column,6,15,1
+SRC.SOUND=snd_spell_flamestrike
+SRC.DAMAGE={5 20}
+
+[ITEMDEF i_fire_storm]
+ID=i_fx_explode
+NAME=Fire Storm
+TYPE=t_spell
+
+CATEGORY=Animations
+SUBSECTION=Fire Storm
+DESCRIPTION=Fire Storm
+
+ON=@Create
+ATTR=attr_magic|attr_move_never
+MORE=0
+MOREP=42,55,99
+TIMER=1
+
+ON=@DClick
+MORE=<MORE>+1
+IF (<MORE> > 15)
+REMOVE
+RETURN 1
+ENDIF
+MOREP=<LINK.P>
+VAR.NEG=RAND(2)
+VAR.TX=RAND(6)
+IF (<VAR.NEG> == 1)
+MOREX= <MOREX> - <VAR.TX>
+ELSE
+MOREX= <MOREX> + <VAR.TX>
+ENDIF
+VAR.NEG=RAND(2)
+VAR.TY=RAND(6)
+IF (<VAR.NEG> == 1)
+MOREY= <MOREY> - <VAR.TY>
+ELSE
+MOREY= <MOREY> + <VAR.TY>
+ENDIF
+ATTR=attr_move_never|attr_invis|attr_magic
+P=<MOREP>
+ATTR=attr_magic|attr_move_never
+MOREP=42,55,99
+TIMER=1
+RETURN 1
+
+[ITEMDEF i_ale_amber]
+NAME=Amber Ale
+ID=i_bottle_ale
+TYPE=t_booze
+VALUE={8 12}
+WEIGHT=1
+
+CATEGORY=Items by Professions
+SUBSECTION=Barkeep
+DESCRIPTION=Amber Ale
+
+ON=@Create
+COLOR=color_red2
+
+[ITEMDEF i_ale_honey]
+NAME=Honey Ale
+ID=i_bottle_ale
+TYPE=t_booze
+VALUE={8 12}
+WEIGHT=1
+
+CATEGORY=Items by Professions
+SUBSECTION=Barkeep
+DESCRIPTION=Honey Ale
+
+ON=@Create
+COLOR=color_o_gold
+
+[ITEMDEF i_ale_brown]
+NAME=Brown Ale
+ID=i_bottle_ale
+TYPE=t_booze
+VALUE={8 12}
+WEIGHT=1
+
+CATEGORY=Items by Professions
+SUBSECTION=Barkeep
+DESCRIPTION=Brown Ale
+
+ON=@Create
+COLOR=colors_brown
+
+[ITEMDEF i_ale_spiced]
+NAME=Spiced Ale
+ID=i_bottle_ale
+TYPE=t_booze
+VALUE={8 12}
+WEIGHT=1
+
+CATEGORY=Items by Professions
+SUBSECTION=Barkeep
+DESCRIPTION=Spiced Ale
+
+ON=@Create
+COLOR=02c
+
+[ITEMDEF i_ale_smoked]
+NAME=Smoked Porter
+ID=i_bottle_ale
+TYPE=t_booze
+VALUE={8 12}
+WEIGHT=1
+
+CATEGORY=Items by Professions
+SUBSECTION=Barkeep
+DESCRIPTION=Smoked Porter
+
+ON=@Create
+COLOR=color_gray_dk
+
+[ITEMDEF i_ale_stout]
+NAME=Stout
+ID=i_bottle_ale
+TYPE=t_booze
+VALUE={8 12}
+WEIGHT=1
+
+CATEGORY=Items by Professions
+SUBSECTION=Barkeep
+DESCRIPTION=Stout Ale
+
+ON=@Create
+COLOR=color_o_blackrock
+
+[ITEMDEF i_ale_oktoberfest]
+NAME=Oktoberfest Ale
+ID=i_bottle_ale
+TYPE=t_booze
+VALUE={10 15}
+WEIGHT=1
+
+CATEGORY=Items by Professions
+SUBSECTION=Barkeep
+DESCRIPTION=Oktoberfest Ale
+
+ON=@Create
+COLOR=colors_orange
+
+[ITEMDEF i_desert_rose]
+ID=0c85
+NAME=Desert Rose
+
+DESCRIPTION=Desert Rose
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+
+ON=@Create
+COLOR=00020
+
+[ITEMDEF i_lightning_sound_maker]
+ID=i_memory
+TYPE=t_eq_script
+NAME=Lightning Sound Maker
+
+On=@CREATE
+ATTR=attr_newbie
+TIMER=3
+
+ON=@EQUIUP
+TIMER=3
+
+ON=@TIMER
+SOUND snd_spell_lightning
+TIMER=3
+
+[ITEMDEF i_laserpointer]
+ID=0f8a
+NAME=Laser pointer
+
+ON=@CREATE
+COLOR=026
+
+ON=@DCLICK
+SRC.SYSMESSAGE Where would you like to point?
+TARGETG
+RETURN 1
+
+ON=@TargOn_Item
+SRC.TARG.SAY=*<SRC.NAME> points at <SRC.TARG.NAME>*
+SRC.TARG.EFFECT=3,0374a,6,15,1
+SRC.NEWITEM i_laserpointerrelease
+SRC.ACT.EQUIP
+SRC.ACT.LINK = <SRC.TARG.UID>
+SRC.TAG.LaserPointerColor=<SRC.TARG.COLOR>
+SRC.TARG.COLOR=026
+RETURN 1
+
+ON=@targon_char
+SRC.TARG.SAY=*<SRC.NAME> points at <SRC.TARG.NAME>*
+SRC.TARG.EFFECT=3,0374a,6,15,1
+RETURN 1
+
+ON=@targon_ground
+VAR.P=<SRC.TARGP>
+SRC.NEWITEM=i_reddot
+SRC.ACT.P=<VAR.P>
+SRC.ACT.SAY=*<SRC.NAME> points to this spot*
+RETURN 1
+
+ON=@TIMER
+LINK.COLOR=<VAR.COLOR>
+RETURN 1
+
+[ITEMDEF i_laserpointerrelease]
+NAME=Laser Pointer Release
+ID=i_handr_1
+TYPE=t_eq_script
+WEIGHT=0
+LAYER=layer_special
+
+ON=@CREATE
+  ATTR=attr_invis|attr_decay
+
+ON=@EQUIP
+  TIMER=1
+  RETURN 1
+
+ON=@Timer
+  LINK.COLOR = <CONT.TAG.LaserPointerColor>
+  REMOVE
+  RETURN 1
+
+[ITEMDEF i_reddot]
+ID=i_gold
+NAME=Red Dot
+
+ON=@create
+TIMER=2
+COLOR=026
+ATTR=ATTR_DECAY
+
+ON=@TIMER
+REMOVE
+
+[ITEMDEF i_hitching_post]
+NAME=Hitching Post
+ID=014e7
+WEIGHT=500
+ON=@DCLICK
+SRC.SYSMESSAGE Target the creature to hitch.
+TARGET
+
+ON=@TARGON_ITEM
+SRC.SYSMESSAGE Items can not be hitched!
+RETURN 1
+
+ON=@TARGON_CHAR
+IF (<SRC.TARG.BODY>==c_man) | | (<SRC.TARG.BODY>==c_woman)
+SRC.SYSMESSAGE You can not hitch a human.
+RETURN 1
+ELSEIF (<SRC.TARG.FLAGS>&040000) && <SRC.TARG.ISMYPET>
+SRC.TARG.FLAGS=<SRC.TARG.FLAGS>&~040000
+SRC.SYSMESSAGE You have released <SRC.TARG.NAME> from the hitching post!
+RETURN 1
+ELSE
+SRC.TARG.FLAGS=<SRC.TARG.FLAGS>|040000
+SRC.SYSMESSAGE <SRC.TARG.NAME> is hitched!
+RETURN 1
+ENDIF
+
+CATEGORY=Items by Professions
+SUBSECTION=Animal Tamer
+DESCRIPTION=Hitching Post
+
+[ITEMDEF i_dye_tub_armor]
+ID=i_dye_tub
+NAME=Armor Dye Tub
+TYPE=t_dye_vat
+VALUE=25000
+WEIGHT=8
+
+CATEGORY=Items by Professions
+SUBSECTION=Blacksmith
+DESCRIPTION=Armor Dye Tub
+
+RESOURCES=5 i_log
+SKILLMAKE=CARPENTRY 50.0, t_carpentry
+RESOURCES2=10 i_board
+
+ON=@DCLICK
+IF (<SRC.TARG.TOPOBJ.DISTANCE>>=3) || (<SRC.TARG.CANSEELOS>!=1)
+SRC.MESSAGE=You can't reach that.
+Return 1
+ELSE
+TARGET Select the armor to dye.
+Return 1
+ENDIF
+
+ON=@TARGON_CHAR
+IF (<SRC.TARG.DISTANCE>>=5) || (<SRC.TARG.CANSEELOS>!=1)
+SRC.SYSMESSAGE=You can't reach that.
+Return 1
+ELSE
+SRC.SYSMESSAGE=That is not a piece of armor.
+Return 1
+
+ON=@TARGON_ITEM
+IF (<SRC.TARG.TOPOBJ.BODY>) && (<SRC.TARG.TOPOBJ.UID>!=<SRC.UID>)
+Return 1
+ELSEIF (<SRC.TARG.CANSEELOS>!=1) || (<SRC.TARG.TOPOBJ.DISTANCE>>=4)
+SRC.SYSMESSAGE=You can't reach that.
+Return 1
+ELSEIF (<SRC.TARG.TYPE>!=t_armor) && (<SRC.TARG.TYPE>!=t_armor_leather) && (<SRC.TARG.TYPE>!=t_leather)
+SRC.SYSMESSAGE=That is not a piece of armor.
+Return 1
+ELSE
+SRC.TARG.COLOR=<color>
+SRC.TARG.UPDATE
+SRC.SOUND 023e
+RETURN 1
+ENDIF
+
+[ITEMDEF i_dye_tub_furniture]
+ID=i_dye_tub
+NAME=Furniture Dye Tub
+TYPE=T_DYE_VAT
+VALUE=25000
+WEIGHT=8
+
+CATEGORY=Items by Professions
+SUBSECTION=Carpenter
+DESCRIPTION=Armor Dye Tub
+
+RESOURCES=5 i_log
+SKILLMAKE=CARPENTRY 50.0, t_carpentry
+RESOURCES2=10 i_board
+
+ON=@DCLICK
+IF (<SRC.TARG.TOPOBJ.DISTANCE>>=3) || (<SRC.TARG.CANSEELOS>!=1)
+SRC.MESSAGE=You can't reach that.
+Return 1
+ELSE
+TARGET Select the furniture to dye.
+Return 1
+ENDIF
+
+ON=@TARGON_CHAR
+IF (<SRC.TARG.DISTANCE>>=5) || (<SRC.TARG.CANSEELOS>!=1)
+SRC.SYSMESSAGE=You can't reach that.
+Return 1
+ELSE
+SRC.SYSMESSAGE=That is not a piece of furniture.
+Return 1
+
+ON=@TARGON_ITEM
+IF (<SRC.TARG.TOPOBJ.BODY>) && (<SRC.TARG.TOPOBJ.UID>!=<SRC.UID>)
+Return 1
+ELSEIF (<SRC.TARG.CANSEELOS>!=1) || (<SRC.TARG.TOPOBJ.DISTANCE>>=4)
+SRC.SYSMESSAGE=You can't reach that.
+Return 1
+ELSEIF (<SRC.TARG.TYPE>!=t_table) && (<SRC.TARG.TYPE>!=t_chair) && (<SRC.TARG.TYPE>!=t_container) && (<SRC.TARG.TYPE>!=t_bed) && (<SRC.TARG.TYPE>!=t_stone_guild) && (<SRC.TARG.TYPE>!=t_loom) &&
+(<SRC.TARG.TYPE>!=t_spinwheel) && (<SRC.TARG.TYPE>!=t_train_dummy) && (<SRC.TARG.TYPE>!=t_train_pickpocket)
+SRC.SYSMESSAGE=That is not a piece of furniture.
+Return 1
+ELSE
+SRC.TARG.COLOR=<color>
+SRC.TARG.UPDATE
+SRC.SOUND 023e
+RETURN 1
+ENDIF
+
+[ITEMDEF i_mana_infinate]
+NAME=Mana Crystal
+ID=01f19
+
+ON=@CREATE
+COLOR=0482
+
+ON=@dclick
+SRC.MANA=<SRC.INT>
+SRC.SOUND=00f9
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Mana Crystals
+DESCRIPTION=Mana Crystal
+
+[ITEMDEF i_mana_timed]
+NAME=Mana Crystal
+ID=01f19
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Mana Crystals
+DESCRIPTION=Mana Crystal (Timed)
+
+ON=@Create
+ATTR=attr_newbie|attr_move_never
+COLOR=0482
+
+ON=@Dclick
+IF !<TIMER>
+IF <SRC.MEDITATION><=20.0
+SRC.MANA <SRC.MANA>+5
+SRC.SOUND 00f9
+ElseIf (<SRC.MEDITATION>>20.0) && (<SRC.MEDITATION><=50.0)
+SRC.MANA <SRC.MANA>+10
+SRC.SOUND 00f9
+ElseIf (<SRC.MEDITATION>>50.0) && (<SRC.MEDITATION><=75.0)
+SRC.MANA <SRC.MANA>+20
+SRC.SOUND 00f9
+ElseIf (<SRC.MEDITATION>>75.0) && (<SRC.MEDITATION><100.0)
+SRC.MANA <SRC.MANA>+40
+SRC.SOUND 00f9
+ELSE
+SRC.MANA <SRC.MANA>+50
+SRC.SOUND 00f9
+ENDIF
+TIMER 10
+ELSE
+SRC.SYSMESSAGE You must wait to use this again.
+ENDIF
+RETURN 1
+
+ON=@Timer
+RETURN 1
+
+[ITEMDEF i_bless_deed]
+ID=i_deed
+NAME=Bless Deed
+
+CATEGORY=Provisions - Deeds
+SUBSECTION=Miscellaneous
+DESCRIPTION=Bless Deed
+
+ON=@DClick
+TARGET Choose an item to bless!
+
+ON=@TargOn_Item
+IF (<SRC.TARG.ATTR>&04)
+SRC.MESSAGE This item is already blessed!
+ELSEIF (<SRC.TARG.CONT.CONT.UID>!=<SRC.UID> )
+SRC.MESSAGE The item must be in your pack.
+ELSE
+SRC.TARG.ATTR = <SRC.TARG.ATTR> + 04
+SRC.TARG.NAME = a Blessed <SRC.TARG.NAME>
+REMOVE
+ENDIF
+
+[ITEMDEF i_full_spellbook]
+ID=i_spellbook
+NAME=Spellbook
+TYPE=t_spellbook
+
+ON=@CREATE
+ATTR=attr_magic|attr_newbie
+MORE=04ffffffff
+MORE2=04ffffffff
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Magical Items
+DESCRIPTION=Full Spellbook
+
+[ITEMDEF i_newbied_rune]
+ID=i_rune_marker
+TYPE=t_rune
+
+Category=Provisions - Alchemy & Magic
+SUBSECTION=Magical Items
+DESCRIPTION=Newbied Rune
+
+ON@Create
+ATTR=attr_newbie
+
+[ITEMDEF i_item_repair]
+NAME=Item Repair Stone
+ID=0edc
+TYPE=t_normal
+
+CATEGORY=Provisions - Miscellaneous
+SUBSECTION=Vending Machines
+DESCRIPTION=Repair Stone
+
+ON=@CREATE
+COLOR=0480
+
+ON=@DClick
+IF <SRC.RESTEST 10 i_gold>
+TARGET What would you like to repair?
+ELSE
+SRC.MESSAGE You lack 10 gold pieces to pay for the repairs.
+RETURN 1
+ENDIF
+
+ON=@TargOn_Item
+SRC.TARG.MORE1H=999
+SRC.TARG.MORE1L=999
+SRC.CONSUME 10 i_GOLD
+SRC.MESSAGE Thank you. Your item has been repaired.
+RETURN 1
+
+[ITEMDEF i_pile_snow]
+ID=0913
+Name=Pile of Snow
+TYPE=t_crystal_ball
+
+ON=@Create
+Color=0481
+Attr=attr_newbie|attr_move_always
+TIMER=20
+
+ON=@DCLICK
+IF (<TIMER> >= 1)
+SRC.SYSMESSAGE The snow is not ready to be packed yet.
+SRC.SYSMESSAGE Keep trying.
+Return 1
+ELSE
+TARGET You carefully pack the snow into a ball...
+ON=@TARGON_CHAR
+IF (<SRC.TARG.SERIAL> != <SRC.SERIAL>)
+IF (<SRC.TARG.RESTEST 1 i_pile_snow> )
+SRC.ANIM 11
+SRC.TARG.EFFECT=0,0f27,7
+SRC.TARG.ANIM 20
+src.targ.newitem=i_snow_debris
+SRC.TARG.ACT.P=<src.targ.p>
+SOUND 0145
+SRC.SYSMESSAGE You hit <SRC.TARG.NAME> with a snowball!
+SRC.TARG.SYSMESSAGE <src.name> threw a snowball at you!
+TIMER=(10)
+RETURN 1
+ELSE
+SRC.SYSMESSAGE You can only throw a snowball at something that can throw one back.
+TIMER=(10)
+RETURN 1
+ENDIF
+ELSE
+SRC.SYSMESSAGE You cannot throw a snowball at yourself!
+TIMER=(10)
+RETURN 1
+ENDIF
+
+ON=@TARGON_ITEM
+SRC.SYSMESSAGE That isn't a person!!
+TIMER=(10)
+RETURN 1
+ON=@TARGON_GROUND
+RETURN 1
+
+ON=@TIMER
+TIMER=0
+RETURN 1
+
+CATEGORY=Miscellaneous
+SUBSECTION=Snow Piles
+DESCRIPTION=Pile of Snow
+
+[ITEMDEF i_snow_debris]
+Name=Snow Debris
+ID=03728
+
+ON=@CREATE
+ATTR=attr_decay
+Color=0482
+Timer=1
+
+CATEGORY=Miscellaneous
+SUBSECTION=Snow Piles
+DESCRIPTION=Pile of Snow
+
+[ITEMDEF i_dragon_mail]
+ID=i_platemail_chest
+NAME=Dragon Mail
+TYPE=t_armor
+VALUE=15000
+
+ON=@Create
+COLOR=021
+HITPOINTS=100
+
+ON=@Damage
+CONT.EFFECT 2,i_fx_sparkle,1,15,1
+RETURN 1
+
+[ITEMDEF i_dragon_claw]
+NAME=Dragon Claw
+ID=01414
+TYPE=t_armor
+TWOHANDS=Y
+SKILL=Wrestling
+VALUE=15000
+REQSTR=30
+WEIGHT=1
+DAM={10 25}
+
+CATEGORY=Provisions - Weapons - Magic
+SUBSECTION=Special
+DESCRIPTION=Dragon Claw
+
+ON=@Create
+COLOR=021
+HITPOINTS=100
+
+ON=@Equip
+SRC.SOUND 016B
+SRC.WRESTLING = (<SRC.WRESTLING> + 50.0)
+SRC.TACTICS = (<SRC.TACTICS> + 50.0)
+
+ON=@Unequip
+SRC.SOUND 016e
+SRC.WRESTLING = (<SRC.WRESTLING> - 50.0)
+SRC.TACTICS = (<SRC.TACTICS> - 50.0)
+
+[ITEMDEF i_Dragon_Spirit_Cloak]
+ID=i_cape
+NAME=Cloak of the Dragon Spirit
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Dragon Spirit Cloak
+
+ON=@Create
+COLOR=0846
+
+ON=@Equip
+SRC.EVENTS=+e_dspirit
+SRC.TAG.DRAGON_SPIRIT_STREAM=<UID>
+RETURN 0
+
+ON=@unEquip
+SRC.EVENTS=-e_dspirit
+SRC.TAG.DRAGON_SPIRIT_STREAM=0
+RETURN 0
+
+[ITEMDEF Shield_of_reflection]
+NAME=Shield of Reflection
+ID=i_heater_shield
+TYPE=t_shield
+TWOHANDS=N
+SKILL=Parrying
+VALUE=10500
+REQSTR=50
+WEIGHT=3
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Shields
+DESCRIPTION=Shield of Reflection
+
+ON=@CREATE
+COLOR=0481
+
+ON=@EQUIP
+TIMER=600
+CONT.SYSMESSAGE You feel reflective towards magic.
+CONT.SPELLEFFECT s_magic_reflection,1000
+RETURN 0
+
+ON=@TIMER
+CONT.SPELLEFFECT s_magic_reflection,1000
+CONT.SYSMESSAGE You feel reflective towards magic.
+TIMER 60
+
+ON=@UNEQUIP
+TIMER -1
+CONT.SYSMESSAGE You no longer feel reflective towards magic.
+CONT.FINDID.i_rune_magic_reflection.REMOVE
+RETURN 0
+
+[ITEMDEF i_death_shroud_new]
+ID=0204E
+NAME=Death Shroud
+TYPE=t_armor
+TWOHANDS=N
+SKILL=Swordsmanship
+VALUE=10500
+REQSTR=50
+WEIGHT=3
+
+TYPE=t_clothing
+
+ON=@Create
+HITPOINTS=999
+
+CATEGORY=Provisions - GM Items
+SUBSECTION=Special Items
+DESCRIPTION=Non-Decay Death Shroud
+
+[ITEMDEF i_wizards_robe]
+DEFNAME=i_wizards_robe
+ID=i_robe_gm
+TYPE=t_clothing
+VALUE=1000000
+NAME=Wizards Robe
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Wizard's Robe
+
+ON=@EQUIP
+SRC.SYSMESSAGE You feel anceint magical energy enter your mind.
+SRC.EVALUATING INTELLIGENCE=<SRC.EVALUATING INTELLIGENCE>+15.0
+SRC.MAGERY<SRC.MAGERY> +15.0
+SRC.MEDITATION<SRC.MEDITATION> +15.0
+SRC.ANIM 011
+SRC.EFFECT=3,I_FX_glow_spike,6,15,1
+
+ON=@UNEQUIP
+SRC.SYSMESSAGE You feel the ancient magical energy leave your mind.
+SRC.EVALUATING INTELLIGENCE=<SRC.EVALUATING INTELLIGENCE> +-15.0
+SRC.MAGERY=<SRC.MAGERY> +-15.0
+SRC.MEDITATION=<SRC.MEDITATION> +-15.0
+SRC.ANIM 021
+
+ON=@CREATE
+COLOR=904
+HITPOINTS=2000
+
+[ITEMDEF i_helm_orc_evil]
+TYPE=T_ARMOR
+FLIP=1
+ID=01f0b
+ARMOR=20
+REQSTR=1
+VALUE=1,10
+WEIGHT=5
+CATEGORY=Provisions - Armor
+SUBSECTION=Helmets
+DESCRIPTION=Orc Helm
+DUPELIST=01f0c
+NAME=Evil Orc Helm
+
+ON=@Create
+HITPOINTS={31 70}
+COLOR=00022
+
+ON=@EQUIP
+
+IF <SRC.KARMA> > -500
+SRC.KARMA=<SRC.KARMA>+-1000
+SRC.SYSMESSAGE=You have a moderate amount of some karma!
+ENDIF
+
+SRC.TAG.MASKSTR=<SRC.STR>
+SRC.TAG.MASKDEX=<SRC.DEX>
+SRC.TAG.MASKINT=<SRC.INT>
+
+SRC.STR=<SRC.STR>+10
+IF <SRC.DEX> = <SRC.INT>
+SRC.INT=<SRC.INT>+-10
+ELSE
+IF <SRC.DEX> < <SRC.INT>
+SRC.INT=<SRC.INT>+-10
+ELSE
+SRC.DEX=<SRC.DEX>+-10
+ENDIF
+ENDIF
+
+ON=@UNEQUIP
+SRC.STR=<SRC.TAG.MASKSTR>
+SRC.DEX=<SRC.TAG.MASKDEX>
+SRC.INT=<SRC.TAG.MASKINT>
+
+[ITEMDEF i_phoenix_gloves]
+DEFNAME=i_phoenix_gloves
+ID=013eb
+NAME=Pheonix Gloves
+SKILLMAKE=BLACKSMITHING 200.0
+WEIGHT=2
+ARMOR=22
+REQSTR=20
+VALUE=50000
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Phoenix Gloves
+
+ON=@Create
+COLOR=0f3
+HITPOINTS={41 51}
+
+[ITEMDEF i_phoenix_sleeves]
+DEFNAME=i_phoenix_sleeves
+ID=013ee
+NAME=Pheonix Sleeves
+WEIGHT=13
+ARMOR=22
+REQSTR=20
+VALUE=50000
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Phoenix Sleeves
+
+ON=@Create
+COLOR=0f3
+HITPOINTS={41 51}
+
+[ITEMDEF i_phoenix_leggings]
+DEFNAME=i_phoenix_leggings
+ID=013f0
+NAME=Pheonix Leggings
+WEIGHT=15
+ARMOR=22
+REQSTR=20
+VALUE=50000
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Phoenix Leggings
+
+ON=@Create
+COLOR=0f3
+HITPOINTS={41 51}
+
+[ITEMDEF i_phoenix_gorget]
+DEFNAME=i_phoenix_gorget
+ID=013d6
+NAME=Pheonix Gorget
+WEIGHT=3
+ARMOR=16
+REQSTR=25
+VALUE=50000
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Phoenix Gorget
+
+ON=@Create
+COLOR=0f3
+HITPOINTS={36 44}
+
+[ITEMDEF i_phoenix_tunic]
+DEFNAME=i_phoenix_tunic
+ID=i_ringmail_tunic
+NAME=Pheonix Tunic
+WEIGHT=15
+ARMOR=22
+REQSTR=20
+VALUE=50000
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Phoenix Tunic
+
+ON=@Create
+COLOR=0f3
+HITPOINTS={41 51}
+
+[ITEMDEF i_phoenix_helm]
+DEFNAME=i_phoenix_helm
+ID=01408
+NAME=Pheonix Helm
+WEIGHT=7
+ARMOR=30
+REQSTR=40
+VALUE=50000
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Phoenix Helm
+
+ON=@Create
+COLOR=0f3
+HITPOINTS={36 44}
+
+[ITEMDEF i_daemon_arms]
+DEFNAME=i_daemon_arms
+ID=i_bone_arms
+NAME=Daemon Bone Arms
+TYPE=t_armor_leather
+RESOURCES=2 i_reag_daemon_bone
+WEIGHT=2
+ARMOR=30
+REQSTR=40
+VALUE=10000
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Daemon Bone Arms
+
+ON=@Create
+COLOR=089e
+HITPOINTS={26 30}
+
+[ITEMDEF i_daemon_armor]
+DEFNAME=i_daemon_armor
+ID=i_bone_chest
+NAME=Daemon Bone Armor
+TYPE=t_armor_leather
+RESOURCES=10 i_reag_daemon_bone, 1 i_HIDE
+WEIGHT=11
+ARMOR=30
+REQSTR=40
+VALUE=10000
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Daemon Bone Tunic
+
+ON=@Create
+COLOR=089e
+HITPOINTS={26 30}
+
+[ITEMDEF i_daemon_gloves]
+DEFNAME=i_daemon_gloves
+ID=i_bone_gloves
+NAME=Daemon Bone Gloves
+TYPE=t_armor_leather
+RESOURCES=3 i_reag_daemon_bone
+WEIGHT=3
+ARMOR=30
+REQSTR=40
+VALUE=10000
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Daemon Bone Gloves
+
+ON=@Create
+COLOR=089e
+HITPOINTS={26 30 }
+
+[ITEMDEF i_daemon_helm]
+DEFNAME=i_deamon_helm
+ID=i_bone_helmet
+NAME=Daemon Bone Helm
+TYPE=t_armor_leather
+RESOURCES=4 i_reag_daemon_bone
+WEIGHT=4
+ARMOR=30
+REQSTR=40
+VALUE=10000
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Daemon Bone Helm
+
+ON=@Create
+COLOR=089e
+HITPOINTS={26 30}
+
+[ITEMDEF i_daemon_legs]
+DEFNAME=i_daemon_legs
+ID=i_bone_leggings
+NAME=Daemon Bone Leggings
+TYPE=t_armor_leather
+RESOURCES=6 i_reag_daemon_bone
+WEIGHT=6
+ARMOR=30
+VALUE=10000
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Daemon Bone Legs
+
+ON=@Create
+COLOR=089e
+HITPOINTS={26 30}
+
+[ITEMDEF i_air_sword]
+ID=i_broadsword
+NAME=Air Sword
+TYPE=t_weapon_sword
+TWOHANDS=N
+SKILL=Swordsmanship
+VALUE=5000
+REQSTR=50
+WEIGHT=3
+
+CATEGORY=Provisions - Weapons - Magic
+SUBSECTION=Special
+DESCRIPTION=Air Sword
+
+ON=@CREATE
+COLOR=004f1
+HITPOINTS={90 100}
+ATTR=ATTR_MAGIC
+
+ON=@DAMAGE
+SRC.EFFECT=3,I_FX_glow_spike,6,15,1
+SOUND=snd_ELEMENTL_AIRELEM1
+VAR.TACTDAM <EVAL <CONT.TACTICS>>
+VAR.STRDAM <EVAL <CONT.STR>>
+VAR.BASEDAM <EVAL <VAR.TACTDAM>+<VAR.STRDAM>>
+VAR.DIVDAM <EVAL <VAR.BASEDAM>/100>
+VAR.RANDDAM <EVAL RAND(30)>
+VAR.ACTUALDAM <EVAL <VAR.DIVDAM>+<VAR.RANDDAM>>
+SRC.HITS <SRC.HITS>+-<EVAL <VAR.ACTUALDAM>>
+SRC.FIX
+
+[ITEMDEF i_air_bow]
+ID=i_bow
+NAME=Air Bow
+TYPE=t_weapon_bow
+TWOHANDS=Y
+SKILL=Archery
+VALUE=5000
+REQSTR=30
+WEIGHT=7
+
+CATEGORY=Provisions - Weapons - Magic
+SUBSECTION=Special
+DESCRIPTION=Air Bow
+
+ON=@CREATE
+COLOR=004f1
+HITPOINTS={90 100}
+ATTR=ATTR_MAGIC
+
+ON=@DAMAGE
+SRC.EFFECT=3,I_FX_glow_spike,6,15,1
+SOUND=snd_ELEMENTL_AIRELEM1
+VAR.TACTDAM <EVAL <CONT.TACTICS>>
+VAR.STRDAM <EVAL <CONT.STR>>
+VAR.BASEDAM <EVAL <VAR.TACTDAM>+<VAR.STRDAM>>
+VAR.DIVDAM <EVAL <VAR.BASEDAM>/100>
+VAR.RANDDAM <EVAL RAND(30)>
+VAR.ACTUALDAM <EVAL <VAR.DIVDAM>+<VAR.RANDDAM>>
+SRC.HITS <SRC.HITS>+-<EVAL <VAR.ACTUALDAM>>
+SRC.FIX
+
+[ITEMDEF i_water_sword]
+ID=i_broadsword
+NAME=Water Sword
+TYPE=t_weapon_sword
+TWOHANDS=N
+SKILL=Swordsmanship
+VALUE=5000
+REQSTR=50
+WEIGHT=3
+
+CATEGORY=Provisions - Weapons - Magic
+SUBSECTION=Special
+DESCRIPTION=Water Sword
+
+ON=@CREATE
+COLOR=007a2
+HITPOINTS={90 100}
+ATTR=ATTR_MAGIC
+
+ON=@DAMAGE
+SRC.EFFECT=3,I_FX_vortex,6,15,1
+SOUND=0117
+VAR.TACTDAM <EVAL <CONT.TACTICS>>
+VAR.STRDAM <EVAL <CONT.STR>>
+VAR.BASEDAM <EVAL <VAR.TACTDAM>+<VAR.STRDAM>>
+VAR.DIVDAM <EVAL <VAR.BASEDAM>/100>
+VAR.RANDDAM <EVAL RAND(30)>
+VAR.ACTUALDAM <EVAL <VAR.DIVDAM>+<VAR.RANDDAM>>
+SRC.HITS <SRC.HITS>+-<EVAL <VAR.ACTUALDAM>>
+SRC.FIX
+
+[ITEMDEF i_water_bow]
+ID=i_bow
+NAME=Water Bow
+TYPE=t_weapon_bow
+TWOHANDS=Y
+SKILL=Archery
+VALUE=5000
+REQSTR=30
+WEIGHT=7
+
+CATEGORY=Provisions - Weapons - Magic
+SUBSECTION=Special
+DESCRIPTION=Water Bow
+
+ON=@CREATE
+COLOR=007a2
+HITPOINTS={90 100}
+ATTR=ATTR_MAGIC
+
+ON=@DAMAGE
+SRC.EFFECT=3,I_FX_vortex,6,15,1
+SOUND=0117
+VAR.TACTDAM <EVAL <CONT.TACTICS>>
+VAR.STRDAM <EVAL <CONT.STR>>
+VAR.BASEDAM <EVAL <VAR.TACTDAM>+<VAR.STRDAM>>
+VAR.DIVDAM <EVAL <VAR.BASEDAM>/100>
+VAR.RANDDAM <EVAL RAND(30)>
+VAR.ACTUALDAM <EVAL <VAR.DIVDAM>+<VAR.RANDDAM>>
+SRC.HITS <SRC.HITS>+-<EVAL <VAR.ACTUALDAM>>
+SRC.FIX
+
+[ITEMDEF i_earth_sword]
+ID=i_broadsword
+NAME=Earth Sword
+TYPE=t_weapon_sword
+TWOHANDS=N
+SKILL=Swordsmanship
+VALUE=5000
+REQSTR=50
+WEIGHT=3
+
+CATEGORY=Provisions - Weapons - Magic
+SUBSECTION=Special
+DESCRIPTION=Earth Sword
+
+ON=@CREATE
+COLOR=color_rock
+HITPOINTS={90 100}
+ATTR=attr_magic
+
+ON=@DAMAGE
+SRC.EFFECT=3,I_FX_SPARKLE,6,15,1
+SOUND=0027
+VAR.TACTDAM <EVAL <CONT.TACTICS>>
+VAR.STRDAM <EVAL <CONT.STR>>
+VAR.BASEDAM <EVAL <VAR.TACTDAM>+<VAR.STRDAM>>
+VAR.DIVDAM <EVAL <VAR.BASEDAM>/100>
+VAR.RANDDAM <EVAL RAND(30)>
+VAR.ACTUALDAM <EVAL <VAR.DIVDAM>+<VAR.RANDDAM>>
+SRC.HITS <SRC.HITS>+-<EVAL <VAR.ACTUALDAM>>
+SRC.FIX
+
+[ITEMDEF i_earth_bow]
+ID=i_bow
+NAME=Earth Bow
+TYPE=t_weapon_bow
+TWOHANDS=Y
+SKILL=Archery
+VALUE=5000
+REQSTR=30
+WEIGHT=7
+
+CATEGORY=Provisions - Weapons - Magic
+SUBSECTION=Special
+DESCRIPTION=Earth Bow
+
+ON=@CREATE
+COLOR=color_rock
+HITPOINTS={90 100}
+ATTR=ATTR_MAGIC
+
+ON=@DAMAGE
+SRC.EFFECT=3,I_FX_SPARKLE,6,15,1
+SOUND=0027
+VAR.TACTDAM <EVAL <CONT.TACTICS>>
+VAR.STRDAM <EVAL <CONT.STR>>
+VAR.BASEDAM <EVAL <VAR.TACTDAM>+<VAR.STRDAM>>
+VAR.DIVDAM <EVAL <VAR.BASEDAM>/100>
+VAR.RANDDAM <EVAL RAND(30)>
+VAR.ACTUALDAM <EVAL <VAR.DIVDAM>+<VAR.RANDDAM>>
+SRC.HITS <SRC.HITS>+-<EVAL <VAR.ACTUALDAM>>SRC.FIX
+
+[ITEMDEF i_flame_sword]
+NAME=Flame Sword
+ID=i_broadsword
+TYPE=t_weapon_sword
+TWOHANDS=N
+SKILL=Swordsmanship
+VALUE=5000
+REQSTR=50
+WEIGHT=3
+
+CATEGORY=Provisions - Weapons - Magic
+SUBSECTION=Special
+DESCRIPTION=Flame Sword
+
+ON=@CREATE
+COLOR=0486
+HITPOINTS={90 100}
+ATTR=ATTR_MAGIC
+
+ON=@DAMAGE
+SRC.EFFECT=3,i_FIRE_COLUMN,6,15,1
+SOUND=snd_SPELL_FIRE_BOLT
+VAR.TACTDAM <EVAL <CONT.TACTICS>>
+VAR.STRDAM <EVAL <CONT.STR>>
+VAR.BASEDAM <EVAL <VAR.TACTDAM>+<VAR.STRDAM>>
+VAR.DIVDAM <EVAL <VAR.BASEDAM>/100>
+VAR.RANDDAM <EVAL RAND(30)>
+VAR.ACTUALDAM <EVAL <VAR.DIVDAM>+<VAR.RANDDAM>>
+SRC.HITS <SRC.HITS>+-<EVAL <VAR.ACTUALDAM>>
+SRC.FIX
+
+[ITEMDEF i_flame_bow]
+NAME=Flame Bow
+ID=i_bow
+TYPE=t_weapon_bow
+TWOHANDS=Y
+SKILL=Archery
+VALUE=5000
+REQSTR=30
+WEIGHT=7
+
+CATEGORY=Provisions - Weapons - Magic
+SUBSECTION=Special
+DESCRIPTION=Flame Bow
+
+ON=@CREATE
+COLOR=0486
+HITPOINTS={90 100}
+ATTR=ATTR_MAGIC
+
+ON=@DAMAGE
+SRC.EFFECT=3,i_FIRE_COLUMN,6,15,1
+SOUND=snd_SPELL_FIRE_BOLT
+VAR.TACTDAM <EVAL <CONT.TACTICS>>
+VAR.STRDAM <EVAL <CONT.STR>>
+VAR.BASEDAM <EVAL <VAR.TACTDAM>+<VAR.STRDAM>>
+VAR.DIVDAM <EVAL <VAR.BASEDAM>/100>
+VAR.RANDDAM <EVAL RAND(30)>
+VAR.ACTUALDAM <EVAL <VAR.DIVDAM>+<VAR.RANDDAM>>
+SRC.HITS <SRC.HITS>+-<EVAL <VAR.ACTUALDAM>>
+SRC.FIX
+
+[ITEMDEF i_lightning_sword]
+NAME=Thunder Sabre
+ID=i_broadsword
+TYPE=t_weapon_sword
+TWOHANDS=N
+SKILL=Swordsmanship
+VALUE=5000
+REQSTR=50
+WEIGHT=3
+
+CATEGORY=Provisions - Weapons - Magic
+SUBSECTION=Special
+DESCRIPTION=Lightning Sword
+
+ON=@Create
+COLOR=007a2
+HITPOINTS={90 100}
+ATTR=ATTR_MAGIC
+
+on=@Damage
+SFX=011D
+SRC.EFFECT=1,1
+VAR.TACTDAM <EVAL <CONT.TACTICS>>
+VAR.STRDAM <EVAL <CONT.STR>>
+VAR.BASEDAM <EVAL <VAR.TACTDAM>+<VAR.STRDAM>>
+VAR.DIVDAM <EVAL <VAR.BASEDAM>/100>
+VAR.RANDDAM <EVAL RAND(30)>
+VAR.ACTUALDAM <EVAL <VAR.DIVDAM>+<VAR.RANDDAM>>
+SRC.HITS <SRC.HITS>+-<EVAL <VAR.ACTUALDAM>>
+SRC.FIX
+
+[ITEMDEF i_lightning_bow]
+NAME=Lightning Bow
+ID=i_bow
+TYPE=t_weapon_bow
+TWOHANDS=Y
+SKILL=Archery
+VALUE=5000
+REQSTR=30
+WEIGHT=7
+
+CATEGORY=Provisions - Weapons - Magic
+SUBSECTION=Special
+DESCRIPTION=Lightning Bow
+
+ON=@Create
+COLOR=007a2
+HITPOINTS={90 100}
+ATTR=ATTR_MAGIC
+
+on=@Damage
+SFX=011D
+SRC.EFFECT=1,1
+VAR.TACTDAM <EVAL <CONT.TACTICS>>
+VAR.STRDAM <EVAL <CONT.STR>>
+VAR.BASEDAM <EVAL <VAR.TACTDAM>+<VAR.STRDAM>>
+VAR.DIVDAM <EVAL <VAR.BASEDAM>/100>
+VAR.RANDDAM <EVAL RAND(30)>
+VAR.ACTUALDAM <EVAL <VAR.DIVDAM>+<VAR.RANDDAM>>
+SRC.HITS <SRC.HITS>+-<EVAL <VAR.ACTUALDAM>>
+SRC.FIX
+
+[ITEMDEF i_ice_sword]
+NAME=Ice Sword
+ID=i_broadsword
+TYPE=t_weapon_sword
+TWOHANDS=N
+SKILL=Swordsmanship
+VALUE=5000
+REQSTR=50
+WEIGHT=3
+DAM=1
+
+CATEGORY=Provisions - Weapons - Magic
+SUBSECTION=Special
+DESCRIPTION=Ice Sword
+
+ON=@CREATE
+COLOR=color_ice
+HITPOINTS={90 100}
+ATTR=ATTR_MAGIC
+
+ON=@DAMAGE
+SOUND 00FC
+SRC.NEWITEM i_fire_column
+SRC.ACT.COLOR 0480
+SRC.ACT.P <SRC.TARG.P>
+VAR.TACTDAM <CONT.TACTICS>
+VAR.STRDAM <CONT.STR>
+VAR.BASEDAM <VAR.TACTDAM> + <VAR.STRDAM>
+VAR.DIVDAM <VAR.BASEDAM> / 100
+VAR.RANDDAM RAND(30)
+VAR.ACTUALDAM <VAR.DIVDAM> + <VAR.RANDDAM>
+SRC.HITS <SRC.HITS> + -<VAR.ACTUALDAM>
+SRC.FIX
+
+[ITEMDEF i_ice_dagger]
+ID=0f51
+NAME=Dagger of Ice
+TYPE=t_weapon_fence
+TWOHANDS=N
+SKILL=Fencing
+VALUE=5000
+REQSTR=10
+WEIGHT=2
+
+CATEGORY=Provisions - Weapons - Magic
+SUBSECTION=Special
+DESCRIPTION=Dagger of Ice
+
+ON=@CREATE
+HITPOINTS={90 100}
+COLOR=00790
+ATTR=ATTR_MAGIC
+
+ON=@DAMAGE
+SRC.SFX snd_spell_bless
+SRC.EFFECT 3,0373a,6,15,1
+VAR.TACTDAM <EVAL <CONT.TACTICS>>
+VAR.STRDAM <EVAL <CONT.STR>>
+VAR.BASEDAM <EVAL <VAR.TACTDAM>+<VAR.STRDAM>>
+VAR.DIVDAM <EVAL <VAR.BASEDAM>/100>
+VAR.RANDDAM <EVAL RAND(15)>
+VAR.ACTUALDAM <EVAL <VAR.DIVDAM>+<VAR.RANDDAM>>
+SRC.HITS <SRC.HITS>+-<EVAL <VAR.ACTUALDAM>>
+SRC.FIX
+
+[ITEMDEF i_poison_blade]
+NAME=Poison Blade
+ID=i_broadsword
+TYPE=t_weapon_sword
+TWOHANDS=N
+SKILL=Swordsmanship
+VALUE=5000
+REQSTR=50
+WEIGHT=3
+DAM={12 35}
+
+CATEGORY=Provisions - Weapons - Magic
+SUBSECTION=Special
+DESCRIPTION=Poison Sword
+
+ON=@CREATE
+COLOR=000786
+HITPOINTS={90 100}
+ATTR=attr_magic
+
+ON=@DAMAGE
+SRC.EFFECT=3,i_fx_sparkle,6,15,1
+SOUND=snd_spell_posion
+SRC.SPELLEFFECT s_poison,500.0
+RETURN 1
+
+[ITEMDEF i_blood_sword]
+NAME=Blood Sword
+ID=i_broadsword
+TYPE=t_weapon_sword
+TWOHANDS=N
+SKILL=Swordsmanship
+VALUE=5000
+REQSTR=50
+WEIGHT=3
+DAM={12 35}
+
+CATEGORY=Provisions - Weapons - Magic
+SUBSECTION=Special
+DESCRIPTION=Blood Sword
+
+ON=@CREATE
+COLOR=000786
+HITPOINTS={90 100}
+ATTR=attr_magic
+
+ON=@DAMAGE
+SRC.EFFECT=3,i_fx_sparkle,6,15,1
+SOUND=snd_spell_mana_drain
+IF (<CONT.HITS> < <CONT.STR>)
+CONT.HITS <CONT.HITS>+<SRC.DAM>
+
+[ITEMDEF i_shadow_sword]
+ID=i_broadsword
+NAME=Shadow Sword
+TYPE=t_weapon_sword
+TWOHANDS=N
+SKILL=Swordsmanship
+VALUE=5000
+REQSTR=50
+WEIGHT=3
+
+CATEGORY=Provisions - Weapons - Magic
+SUBSECTION=Special
+DESCRIPTION=Shadow Sword
+
+ON=@Create
+COLOR=color_rock
+HITPOINTS={90 100}
+ATTR=attr_magic
+
+ON=@Damage
+IF !(RAND(9)) && (!<SRC.RESTEST i_shadow_timer>)
+SRC.SYSMESSAGE You have been cursed
+SRC.SOUND=snd_spell_mana_drain
+SRC.EFFECT=3,0375A,6,15,1
+SRC.NEWITEM=i_shadow_timer
+SRC.ACT.EQUIP
+RETURN 0
+ELSE
+RETURN 0
+ENDIF
+
+[ITEMDEF i_shadow_timer]
+ID=i_worldgem_bit
+NAME=Shadow Timer
+TYPE=t_eq_script
+LAYER=layer_special
+
+ON=@Create
+ATTR=attr_invis|attr_decay
+MORE1={20 100}
+
+ON=@Equip
+TIMER=1
+SRC.SPELLEFFECT s_paralyze 1000
+
+ON=@Timer
+IF ( <cont> )
+IF ( <more1> )
+MORE1=<more1>-1
+CONT.HITPOINTS=(<CONT.HITPOINTS>+(-1))
+CONT.SOUND=snd_spell_mana_drain
+CONT.EFFECT=3,0375A,6,15,1
+TIMER=1
+RETURN 1
+ELSE
+CONT.SYSMESSAGE You are no longer cursed.
+ENDIF
+ENDIF
+REMOVE
+RETURN 1
+
+[ITEMDEF i_dragon_sword]
+ID=i_broadsword
+NAME=Dragon Sword
+TYPE=t_weapon_sword
+TWOHANDS=N
+SKILL=Swordsmanship
+VALUE=10000
+REQSTR=50
+WEIGHT=2
+
+CATEGORY=Provisions - Weapons - Magic
+SUBSECTION=Special
+DESCRIPTION=Dragon Sword
+
+ON=@Create
+HITPOINTS=700
+COLOR=00036
+
+ON=@DAMAGE
+IF <SRC.NPC>==13
+SRC.DAMAGE {100 200}
+ELSE
+SRC.DAMAGE {0 5}
+ENDIF
+RETURN 0
+
+[ITEMDEF i_dragon_bow]
+ID=i_bow
+NAME=Dragon Bow
+TYPE=t_weapon_bow
+TWOHANDS=Y
+SKILL=Archery
+VALUE=10000
+REQSTR=30
+WEIGHT=7
+
+CATEGORY=Provisions - Weapons - Magic
+SUBSECTION=Special
+DESCRIPTION=Dragon Bow
+
+ON=@Create
+COLOR=00036
+HITPOINTS=700
+
+ON=@DAMAGE
+IF <SRC.NPC>==13
+SRC.DAMAGE {100 200}
+ELSE
+SRC.DAMAGE {0 5}
+ENDIF
+RETURN 0
+
+[ITEMDEF i_dragon_mace]
+ID=i_mace_war
+NAME=Dragon Mace
+TYPE=t_weapon_mace_staff
+TWOHANDS=N
+SKILL=Macefighting
+VALUE=10000
+REQSTR=50
+WEIGHT=5
+
+CATEGORY=Provisions - Weapons - Magic
+SUBSECTION=Special
+DESCRIPTION=Dragon Mace
+
+ON=@Create
+COLOR=00036
+HITPOINTS=700
+
+ON=@DAMAGE
+IF <SRC.NPC>==13
+SRC.DAMAGE {100 200}
+ELSE
+SRC.DAMAGE {0 5}
+ENDIF
+RETURN 0
+
+[ITEMDEF i_dragon_halberd]
+ID=i_halberd
+NAME=Dragon Halberd
+TYPE=T_WEAPON_SWORD
+TWOHANDS=Y
+SKILL=Swordsmanship
+VALUE=10000
+REQSTR=55
+WEIGHT=9
+
+CATEGORY=Provisions - Weapons - Magic
+SUBSECTION=Special
+DESCRIPTION=Dragon Halberd
+
+ON=@Create
+COLOR=00036
+HITPOINTS=700
+
+ON=@DAMAGE
+IF <SRC.NPC>==13
+SRC.DAMAGE {100 200}
+ELSE
+SRC.DAMAGE {0 5}
+ENDIF
+RETURN 0
+
+[ITEMDEF i_silver_broadsword]
+ID=i_broadsword
+NAME=Silver Broadsword
+TYPE=T_WEAPON_SWORD
+TWOHANDS=N
+SKILL=Swordsmanship
+VALUE=5000
+REQSTR=50
+WEIGHT=2
+DAM={5 24}
+RESOURCES=7 i_ingot_silver
+SKILLMAKE=BLACKSMITHING 55.8, MAGERY 100.0
+
+ON=@Create
+HITPOINTS={90 100}
+COLOR=color_o_silver
+ATTR=attr_magic
+
+ON=@Equip
+SRC.EVENTS=+e_SilverWeapon
+
+ON=@Unequip
+SRC.EVENTS=-e_SilverWeapon
+
+CATEGORY=Provisions - Weapons - Magic
+SUBSECTION=Special
+DESCRIPTION=Silver Broad Sword
+
+[ITEMDEF i_sword_undead]
+NAME=Dead Blade
+ID=i_sword_viking
+TYPE=T_WEAPON_SWORD
+TWOHANDS=N
+SKILL=Swordsmanship
+VALUE=7500
+REQSTR=55
+WEIGHT=5
+DAM={12 30}
+
+ON=@CREATE
+COLOR=008a0
+HITPOINTS=500
+ATTR=ATTR_MAGIC
+
+ON=@EQUIP
+IF !<SECTOR.isdark>
+SRC.TAG.STR=<SRC.DEADBLADESTR>
+SRC.STR=<SRC.STR> + (-10)
+ELSE
+SRC.TAG.STR=<SRC.DEADBLADESTR>
+SRC.STR=<SRC.STR> + (10)
+ENDIF
+
+ON=@UNEQUIP
+SRC.STR=<SRC.TAG.DEADBLADESTR>
+
+ON=@Damage
+IF <SRC.NPC> == 12
+SRC.DAMAGE = (<SRC.DAMAGE> * (-1))
+CONT.HITS +- <SRC.DAMAGE>
+SRC.FIX
+CONT.FIX
+ELSE
+SRC.DAMAGE = (<SRC.DAMAGE> * (2))
+SRC.SPELLEFFECT s_paralyze,1000
+SRC.FIX
+
+CATEGORY=Provisions - Weapons - Magic
+SUBSECTION=Special
+DESCRIPTION=Dead Blade
+
+[ITEMDEF i_sword_magebane]
+NAME=Sword of Mages Bane
+ID=i_broadsword
+TYPE=T_WEAPON_SWORD
+TWOHANDS=N
+SKILL=Swordsmanship
+VALUE=9000
+REQSTR=50
+WEIGHT=2
+
+CATEGORY=Provisions - Weapons - Magic
+SUBSECTION=Special
+DESCRIPTION=Sword of Mage Bane
+
+ON=@Create
+COLOR=0786
+HITPOINTS=500
+ATTR=ATTR_MAGIC
+
+ON=@DAMAGE
+SRC.SPELLEFFECT 41 1000
+SRC.SPELLEFFECT 31 1000
+RETURN 0
+
+[ITEMDEF i_sword_wounding]
+NAME=Sword of Wounding
+ID=i_sword_viking
+TYPE=T_WEAPON_SWORD
+TWOHANDS=N
+SKILL=Swordsmanship
+VALUE=3000
+REQSTR=55
+WEIGHT=5
+DAM={10 40}
+
+CATEGORY=Provisions - Weapons - Magic
+SUBSECTION=Special
+DESCRIPTION=Sword of Wounding
+
+ON=@Create
+HITPOINTS={200 210}
+COLOR=0790
+ATTR=ATTR_MAGIC
+
+ON=@DAMAGE
+IF RAND(2)
+CONT.SYSMESSAGE You seriously wound <SRC.NAME>.
+SRC.SYSMESSAGE You recieve a serious wound from <CONT.NAME>'s Sword of Wounding.
+SRC.SOUND=SND_SPELL_HARM
+SRC.EFFECT=3,0375A,6,15,1
+SRC.HITS= (<SRC.HITS>+(-15))
+ELSEIF RAND(3)
+CONT.SYSMESSAGE You moderatly wound <SRC.NAME>.
+SRC.SYSMESSAGE You recieve a moderate wound from <CONT.NAME>'s Sword of Wounding.
+SRC.SOUND=SND_SPELL_HARM
+SRC.EFFECT=3,0375A,6,15,1
+SRC.HITS= (<SRC.HITS>+(-10))
+ELSEIF RAND(4)
+CONT.SYSMESSAGE You slightly wound <SRC.NAME>.
+SRC.SYSMESSAGE You recieve a slight wound from <CONT.NAME>'s Sword of Wounding.
+SRC.SOUND=SND_SPELL_HARM
+SRC.EFFECT=3,0375A,6,15,1
+SRC.HITS= (<SRC.HITS>+(-5))
+ENDIF
+ENDIF
+ENDIF
+RETURN 0
+
+[ITEMDEF i_soul_theif]
+Name=Soul Theif
+ID=013b5
+TYPE=T_WEAPON_SWORD
+TWOHANDS=N
+SKILL=Swordsmanship
+VALUE=30000
+REQSTR=50
+WEIGHT=3
+DAM={12 30}
+
+CATEGORY=Provisions - Weapons - Magic
+SUBSECTION=Special
+DESCRIPTION=Soul Theif
+
+ON=@Create
+COLOR=0433
+HITPOINTS=110
+ATTR=ATTR_MAGIC
+
+ON=@damage
+VAR.X=RAND(100)
+IF X==0
+sysmessage You Steal <src.name>'s Soul
+SOUND=0230
+SRC.EFFECT=3,i_fx_curse,6,15,1
+SRC.DAMAGE=9999
+ENDIF
+
+[ITEMDEF i_paladin_sword]
+NAME=Paladin Sword
+ID=i_broadsword
+TYPE=t_weapon_sword
+TWOHANDS=N
+SKILL=Swordsmanship
+VALUE=90000
+REQSTR=100
+WEIGHT=2
+DAM={50 100}
+
+CATEGORY=Provisions - Weapons - Magic
+SUBSECTION=Special
+DESCRIPTION=Paladin's Sword
+
+ON=@Create
+COLOR=000000
+HITPOINTS=60000
+ATTR=ATTR_MAGIC
+
+ON=@EQUIP
+COLOR=0819
+SRC.EFFECT=1,03709,6,15,1
+SRC.EFFECT=spell_lightning
+SRC.MESSAGE You begin to feel a spirit of holiness flow into your body.
+SRC.SOUND 0028
+SRC.SWORDSMANSHIP= (<SRC.SWORDSMANSHIP>+100.0)
+SRC.TACTICS= (<SRC.TACTICS>+100.0)
+SRC.DEX= (<SRC.DEX>+50)
+SRC.INT= (<SRC.INT>+25)
+SRC.STR= (<SRC.STR>+50)
+SRC.FIX
+
+ON=@UNEQUIP
+COLOR=000000
+SRC.EFFECT=spell_lightning
+SRC.SOUND 0028
+SRC.MESSAGE You feel the spirit of holiness flow out of your body.
+SRC.SWORDSMANSHIP=(<SRC.SWORDSMANSHIP>+-100.0)
+SRC.TACTICS=(<SRC.TACTICS>+-100.0)
+SRC.DEX=(<SRC.DEX>+-50)
+SRC.INT=(<SRC.INT>+-25)
+SRC.STR=(<SRC.STR>+-50)
+SRC.FIX
+
+[ITEMDEF i_ragnarok]
+ID=i_broadsword
+NAME=The Ragnarok
+TYPE=t_weapon_sword
+SKILL=SWORDSMANSHIP
+VALUE=100000000
+REQSTR=100
+WEIGHT=1
+DAM=255
+TWOHANDS=N
+
+CATEGORY=Provisions - Weapons - Magic
+SUBSECTION=Hero Weapons
+DESCRIPTION=The Ragnarok
+
+ON@Create
+ATTR=attr_magic|attr_decay_never
+MOREY=9999999999999999999.0
+
+ON=@Equip
+SRC.EVENTS +e_hero_weapon
+RETURN 0
+
+ON=@UnEquip
+SRC.EVENTS -e_hero_weapon
+RETURN 0
+
+[ITEMDEF i_excalibur]
+ID=i_broadsword
+NAME=The Excalibur
+TYPE=t_weapon_sword
+SKILL=SWORDSMANSHIP
+VALUE=100000000
+REQSTR=100
+WEIGHT=1
+DAM=255
+TWOHANDS=Y
+
+CATEGORY=Provisions - Weapons - Magic
+SUBSECTION=Hero Weapons
+DESCRIPTION=The Excalibur
+
+ON@Create
+ATTR=attr_magic|attr_decay_never
+MOREY=9999999999999999999.0
+
+ON=@Equip
+SRC.EVENTS +e_hero_weapon
+RETURN 0
+
+ON=@UnEquip
+SRC.EVENTS -e_hero_weapon
+RETURN 0
+
+[ITEMDEF i_masamune]
+ID=i_katana
+NAME=The Masamune
+TYPE=t_weapon_sword
+SKILL=SWORDSMANSHIP
+VALUE=100000000
+REQSTR=100
+WEIGHT=.01
+DAM=255
+TWOHANDS=N
+
+CATEGORY=Provisions - Weapons - Magic
+SUBSECTION=Hero Weapons
+DESCRIPTION=The Masamune
+
+ON@Create
+ATTR=attr_magic|attr_decay_never
+MOREY=9999999999999999999.0
+
+@PickUp_Ground
+SRC.EVENTS +e_hero_weapon
+SRC.LINK <UID>
+RETURN 0
+
+@PickUp_Pack
+SRC.EVENTS +e_hero_weapon
+SRC.LINK <UID>
+RETURN 0
+
+ON=@Equip
+SRC.EVENTS +e_hero_weapon
+SRC.LINK <UID>
+RETURN 0
+
+[EVENTS e_hero_weapon]
+ON=@Death
+SRC.EVENTS -e_hero_weapon
+LINK.REMOVE
+NEWITEM <LINK>
+ACT.P <P>
+
+[ITEMDEF i_samurai_sword]
+ID=i_katana
+NAME=Glowing Katana
+SKILL=SWORDSMANSHIP
+DAM={4 23}
+REQSTR=60
+TWOHANDS=N
+WEIGHT=0.1
+
+CATEGORY=Provisions - Weapons - Magic
+SUBSECTION=Special
+DESCRIPTION=Samurai's Katana
+
+ON=@Create
+COLOR=color_o_iron
+ATTR=0020
+MOREY=1700
+HITPOINTS=1500
+
+ON=@Equip
+SRC.TAG.BEFORESAMURAICOLOR=<SRC.COLOR>
+SRC.COLOR=0783
+SRC.DEX=(<SRC.DEX> + (30))
+SRC.STR=(<SRC.STR> + (10))
+SRC.TACTICS=(<SRC.TACTICS> + (25.0))
+SRC.SWORDSMANSHIP=(<SRC.SWORDSMANSHIP> + (25.0))
+SRC.MESSAGE You notice the appearence of your weapon has changed.
+NAME=Samurai Sword
+SRC.NEWITEM=i_samurai_tunic
+SRC.ACT.EQUIP
+SRC.NEWITEM=i_samurai_leggings
+SRC.ACT.EQUIP
+SRC.NEWITEM=i_samurai_helmet
+SRC.ACT.EQUIP
+SRC.NEWITEM=i_samurai_gloves
+SRC.ACT.EQUIP
+SRC.NEWITEM=i_samurai_arms
+SRC.ACT.EQUIP
+SRC.NEWITEM=i_samurai_sandals
+SRC.ACT.EQUIP
+SRC.NEWITEM=i_samurai_gorget
+SRC.ACT.EQUIP
+
+ON=@Unequip
+SRC.COLOR=<SRC.TAG.BEFORESAMURAICOLOR>
+SRC.MESSAGE You notice the appearence of your weapon has changed.
+NAME=Glowing Katana
+SRC.DEX=(<SRC.DEX>+(-30))
+SRC.STR=(<SRC.STR>+(-10))
+SRC.TACTICS=(<SRC.TACTICS>+(-25.0))
+SRC.SWORDSMANSHIP=(SRC.SWORDSMANSHIP>+(-25.0))
+SRC.CONSUME=i_samurai_tunic
+SRC.CONSUME=i_samurai_leggings
+SRC.CONSUME=i_samurai_helmet
+SRC.CONSUME=i_samurai_gloves
+SRC.CONSUME=i_samurai_arms
+SRC.CONSUME=i_samurai_sandals
+SRC.CONSUME=i_samurai_gorget
+
+ON=@Targon_Char
+SRC.CAST s_fireball
+return 0
+
+ON=@Damage
+SRC.SFX snd_spell_lightning
+SRC.EFFECT=1,1
+
+[ITEMDEF i_samurai_tunic]
+ID=i_chainmail_tunic
+NAME=Samurai Tunic
+ARMOR=60
+
+ON=@Create
+HITPOINTS=1500
+COLOR=0493
+ATTR=00020
+MOREY=1700
+
+[ITEMDEF i_samurai_leggings]
+ID=i_chainmail_leggings
+NAME=Samurai Leggings
+ARMOR=60
+
+ON=@Create
+HITPOINTS=1500
+COLOR=0493
+ATTR=00020
+MOREY=1700
+
+[ITEMDEF i_samurai_helmet]
+ID=i_nose_helm
+NAME=Samurai Helm
+ARMOR=60
+
+ON=@Create
+HITPOINTS=1500
+COLOR=0493
+ATTR=00020
+MOREY=1700
+
+[ITEMDEF i_samurai_gloves]
+ID=i_ringmail_gloves
+NAME=samurai gloves
+ARMOR=60
+
+ON=@Create
+HITPOINTS=1500
+COLOR=0493
+ATTR=00020
+MOREY=1700
+
+[ITEMDEF i_samurai_arms]
+ID=i_ringmail_sleeves
+NAME=samurai arms
+ARMOR=60
+
+ON=@Create
+HITPOINTS=1500
+COLOR=0493
+ATTR=00020
+MOREY=1700
+
+[ITEMDEF i_samurai_sandals]
+ID=i_sandals
+NAME=samurai sandals
+ARMOR=10
+
+ON=@Create
+HITPOINTS=1500
+COLOR=0999
+ATTR=00020
+MOREY=1000
+
+[ITEMDEF i_samurai_gorget]
+ID=i_studded_leather_gorget
+NAME=samurai Gorget
+ARMOR=35
+
+ON=@Create
+HITPOINTS=1500
+COLOR=0493
+ATTR=00020
+MOREY=1700
+
+[ITEMDEF i_powder_keg]
+ID=i_wood_keg
+NAME=Powder Keg
+TYPE=t_normal
+
+CATEGORY=Provisions - Miscellaneous
+SUBSECTION=Explosives
+DESCRIPTION=Powder Keg
+
+ON=@Create
+MORE1=11
+
+ON=@Click
+IF <SRC.RESTEST i_torch_lit>
+SRC.MESSAGE Carefull! You'll blow yourself up!
+ELSE
+SRC.MESSAGE The keg appears to be full of gunpowder.
+ENDIF
+RETURN 0
+
+ON=@Dclick
+IF <SRC.RESTEST i_torch_lit>
+SRC.CONSUME=i_torch_lit
+SRC.MESSAGE You have lit the fuse!
+SRC.MESSAGE Now would be a good time to run!!
+SRC.NEWITEM=i_powder_keg_timer
+SRC.ACT.LINK=<UID>
+SRC.ACT.EQUIP
+TIMER=1
+ELSE
+IF <SRC.RESTEST i_torch>
+SRC.MESSAGE You need to light the torch first.
+ELSE
+SRC.MESSAGE You have no torch to light the fuse.
+ENDIF
+ENDIF
+RETURN 1
+
+ON=@Timer
+IF ( <MORE1> )
+MORE1=<MORE1>-1
+TIMER=1
+RETURN 1
+ELSE
+TYPE t_explosion
+LINK <UID>
+MOREX 100
+MOREY 090
+MOREZ 4
+P <P>
+TIMERD 1
+SOUND=snd_spell_explosion
+REMOVE
+
+[ITEMDEF i_powder_keg_explosion]
+ID=i_fx_explode
+
+CATEGORY=Provisions - Miscellaneous
+SUBSECTION=Explosives
+DESCRIPTION=Powder Keg Explosion
+
+ON=@Create
+MORE2=0
+MOREP=0,0,0
+TIMER=10
+ATTR=02
+TYPE=t_explosion
+
+ON=@Timer
+REMOVE
+
+[ITEMDEF i_powder_keg_timer]
+ID=i_worldgem_bit
+NAME=Powder Keg Timer
+TYPE=t_eq_script
+LAYER=layer_special
+WEIGHT=0
+
+CATEGORY=Provisions - Miscellaneous
+SUBSECTION=Explosives
+DESCRIPTION=Powder Keg Timer
+
+ON=@Create
+ATTR=attr_invis|attr_decay
+MORE1=10
+
+ON=@Equip
+TIMER=1
+
+ON=@Timer
+IF ( <CONT> )
+IF ( <MORE1> )
+CONT.MESSAGE <VALSTR(<more1> )>
+MORE1=<MORE1>-1
+TIMER=1
+RETURN 1
+ELSE
+CONT.MESSAGE You take cover.
+CONT.NEWITEM i_powder_keg_explosion
+CONT.ACT.P=<LINK.P>
+REMOVE
+RETURN 1
+
+[EOF]

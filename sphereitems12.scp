@@ -1,0 +1,1079 @@
+[ITEMDEF i_rock_armor]
+ID=i_platemail_chest
+NAME=Rock Armor
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Rock Armor
+
+ON=@Create
+MOREY=100.0
+ATTR=attr_magic
+HITPOINTS=90
+COLOR=00723
+
+[ITEMDEF i_rock_leggings]
+ID=i_platemail_leggings
+NAME=Rock Leggings
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Rock Leggings
+
+ON=@Create
+MOREY=100.0
+ATTR=attr_magic
+HITPOINTS=90
+COLOR=00723
+
+[ITEMDEF i_rock_arms]
+ID=i_platemail_arms
+NAME=Rock Arm Plates
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Rock Arm Plates
+
+ON=@Create
+MOREY=100.0
+ATTR=attr_magic
+HITPOINTS=90
+COLOR=00723
+
+[ITEMDEF i_rock_helm]
+ID=i_platemail_helm
+NAME=Rock Helm
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Rock Helm
+
+ON=@Create
+ATTR=attr_magic
+MOREY=100.0
+HITPOINTS=90
+COLOR=00723
+
+[ITEMDEF i_rock_gorget]
+ID=i_platemail_gorget
+NAME=Rock Gorget
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Rock Gorget
+
+ON=@Create
+MOREY=100.0
+ATTR=attr_magic
+HITPOINTS=90
+COLOR=00723
+
+[ITEMDEF i_rock_gloves]
+ID=i_platemail_gloves
+NAME=Rock Gauntlets
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Rock Gauntlets
+
+ON=@Create
+MOREY=100.0
+ATTR=attr_magic
+HITPOINTS=90
+COLOR=00723
+
+[ITEMDEF i_rock_shield]
+ID=i_heater_shield
+NAME=Rock Shield
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Rock Shield
+
+ON=@Create
+MOREY=100.0
+ATTR=attr_magic
+HITPOINTS=90
+COLOR=00723
+
+[ITEMDEF i_aqua_armor]
+ID=i_platemail_chest
+NAME=Aqua Armor
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Aqua Armor
+
+ON=@Create
+MOREY=100.0
+ATTR=attr_magic
+HITPOINTS=90
+COLOR=00070
+
+[ITEMDEF i_aqua_leggings]
+ID=i_platemail_leggings
+NAME=Aqua Leggings
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Aqua Leggings
+
+ON=@Create
+MOREY=100.0
+ATTR=attr_magic
+HITPOINTS=90
+COLOR=00070
+
+[ITEMDEF i_aqua_arms]
+ID=i_platemail_arms
+NAME=Aqua Arm Plates
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Aqua Arm Plates
+
+ON=@Create
+MOREY=100.0
+ATTR=attr_magic
+HITPOINTS=90
+COLOR=00723
+
+[ITEMDEF i_aqua_helm]
+ID=i_platemail_helm
+NAME=Aqua Helm
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Aqua Helm
+
+ON=@Create
+MOREY=100.0
+ATTR=attr_magic
+HITPOINTS=90
+COLOR=00070
+
+[ITEMDEF i_aqua_gorget]
+ID=i_platemail_gorget
+NAME=Aqua Gorget
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Aqua Gorget
+
+ON=@Create
+MOREY=100.0
+ATTR=attr_magic
+HITPOINTS=90
+COLOR=00070
+
+[ITEMDEF i_aqua_gloves]
+ID=i_platemail_gloves
+NAME=Aqua Gauntlets
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Aqua Gauntlets
+
+ON=@Create
+MOREY=100.0
+ATTR=attr_magic
+HITPOINTS=90
+COLOR=00070
+
+[ITEMDEF i_aqua_shield]
+ID=i_heater_shield
+NAME=Aqua Shield
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Aqua Shield
+
+ON=@Create
+MOREY=100.0
+ATTR=attr_magic
+HITPOINTS=90
+COLOR=00070
+
+[ITEMDEF i_flame_armor]
+ID=i_platemail_chest
+NAME=Flame Armor
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Flame Armor
+
+ON=@Create
+MOREY=100.0
+ATTR=attr_magic
+HITPOINTS=90
+COLOR=0077A
+
+[ITEMDEF i_flame_leggings]
+ID=i_platemail_leggings
+NAME=Flame Leggings
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Flame Leggings
+
+ON=@Create
+MOREY=100.0
+ATTR=attr_magic
+HITPOINTS=90
+COLOR=0077A
+
+[ITEMDEF i_flame_arms]
+ID=i_platemail_arms
+NAME=Flame Arm Plates
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Flame Arm Plates
+
+ON=@Create
+MOREY=100.0
+ATTR=attr_magic
+HITPOINTS=90
+COLOR=0077A
+
+[ITEMDEF i_flame_helm]
+ID=i_platemail_helm
+NAME=Flame Helm
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Flame Helm
+
+ON=@Create
+MOREY=100.0
+ATTR=attr_magic
+HITPOINTS=90
+COLOR=0077A
+
+[ITEMDEF i_flame_gorget]
+ID=i_platemail_gorget
+NAME=Flame Gorget
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Flame Gorget
+
+ON=@Create
+MOREY=100.0
+ATTR=attr_magic
+HITPOINTS=90
+COLOR=0077A
+
+[ITEMDEF i_flame_gloves]
+ID=i_platemail_gloves
+NAME=Flame Gauntlets
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Flame Gauntlets
+
+ON=@Create
+MOREY=100.0
+ATTR=attr_magic
+HITPOINTS=90
+COLOR=0077A
+
+[ITEMDEF i_flame_shield]
+ID=i_heater_shield
+NAME=Flame Shield
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Flame Shield
+
+ON=@Create
+MOREY=100.0
+ATTR=attr_magic
+HITPOINTS=90
+COLOR=0077A
+
+[ITEMDEF i_wind_armor]
+ID=i_platemail_chest
+NAME=Wind Armor
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Wind Armor
+
+ON=@Create
+MOREY=100.0
+ATTR=attr_magic
+HITPOINTS=90
+COLOR=00492
+
+[ITEMDEF i_wind_leggings]
+ID=i_platemail_leggings
+NAME=Wind Leggings
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Wind Leggings
+
+ON=@Create
+MOREY=100.0
+ATTR=attr_magic
+HITPOINTS=90
+COLOR=00492
+
+[ITEMDEF i_wind_arms]
+ID=i_platemail_arms
+NAME=Wind Arm Plates
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Wind Arm Plates
+
+ON=@Create
+MOREY=100.0
+ATTR=attr_magic
+HITPOINTS=90
+COLOR=00492
+
+[ITEMDEF i_wind_helm]
+ID=i_platemail_helm
+NAME=Wind Helm
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Wind Helm
+
+ON=@Create
+MOREY=100.0
+ATTR=attr_magic
+HITPOINTS=90
+COLOR=00492
+
+[ITEMDEF i_wind_gorget]
+ID=i_platemail_gorget
+NAME=Wind Gorget
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Wind Gorget
+
+ON=@Create
+MOREY=100.0
+ATTR=attr_magic
+HITPOINTS=90
+COLOR=00492
+
+[ITEMDEF i_wind_gloves]
+ID=i_platemail_gloves
+NAME=Wind Gauntlets
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Wind Gauntlets
+
+ON=@Create
+MOREY=100.0
+ATTR=attr_magic
+HITPOINTS=90
+COLOR=00492
+
+[ITEMDEF i_wind_shield]
+ID=i_heater_shield
+NAME=Wind Shield
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Wind Shield
+
+ON=@Create
+MOREY=100.0
+ATTR=attr_magic
+HITPOINTS=90
+COLOR=00492
+
+[ITEMDEF i_lightning_armor]
+ID=i_platemail_chest
+NAME=Lightning Armor
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Lightning Armor
+
+ON=@Create
+MOREY=100.0
+ATTR=attr_magic
+HITPOINTS=90
+COLOR=000790
+
+[ITEMDEF i_lightning_leggings]
+ID=i_platemail_leggings
+NAME=Lightning Leggings
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Lightning Leggings
+
+ON=@Create
+MOREY=100.0
+ATTR=attr_magic
+HITPOINTS=90
+COLOR=000790
+
+[ITEMDEF i_lightning_arms]
+ID=i_platemail_arms
+NAME=Lightning Arm Plates
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Lightning Arm Plates
+
+ON=@Create
+MOREY=100.0
+ATTR=attr_magic
+HITPOINTS=90
+COLOR=000790
+
+[ITEMDEF i_lightning_helm]
+ID=i_platemail_helm
+NAME=Lightning Helm
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Lightning Helm
+
+ON=@Create
+MOREY=100.0
+ATTR=attr_magic
+HITPOINTS=90
+COLOR=000790
+
+[ITEMDEF i_lightning_gorget]
+ID=i_platemail_gorget
+NAME=Lightning Gorget
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Lightning Gorget
+
+ON=@Create
+MOREY=100.0
+ATTR=attr_magic
+HITPOINTS=90
+COLOR=000790
+
+[ITEMDEF i_lightning_gloves]
+ID=i_platemail_gloves
+NAME=Lightning Gauntlets
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Lightning Gauntlets
+
+ON=@Create
+MOREY=100.0
+ATTR=attr_magic
+HITPOINTS=90
+COLOR=000790
+
+[ITEMDEF i_lightning_shield]
+ID=i_heater_shield
+NAME=Lightning Shield
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Lightning Shield
+
+ON=@Create
+MOREY=100.0
+ATTR=attr_magic
+HITPOINTS=90
+COLOR=000790
+
+[ITEMDEF i_ice_armor]
+ID=i_platemail_chest
+NAME=Ice Armor
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Ice Armor
+
+ON=@Create
+MOREY=100.0
+ATTR=attr_magic
+HITPOINTS=90
+COLOR=color_ice
+
+[ITEMDEF i_ice_leggings]
+ID=i_platemail_leggings
+NAME=Ice Leggings
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Ice Leggings
+
+ON=@Create
+MOREY=100.0
+ATTR=attr_magic
+HITPOINTS=90
+COLOR=color_ice
+
+[ITEMDEF i_ice_arms]
+ID=i_platemail_arms
+NAME=Ice Arm Plates
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Ice Arm Plates
+
+ON=@Create
+MOREY=100.0
+ATTR=attr_magic
+HITPOINTS=90
+COLOR=color_ice
+
+[ITEMDEF i_ice_helm]
+ID=i_platemail_helm
+NAME=Ice Helm
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Ice Helm
+
+ON=@Create
+MOREY=100.0
+ATTR=attr_magic
+HITPOINTS=90
+COLOR=color_ice
+
+[ITEMDEF i_ice_gorget]
+ID=i_platemail_gorget
+NAME=Ice Gorget
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Ice Gorget
+
+ON=@Create
+MOREY=100.0
+ATTR=attr_magic
+HITPOINTS=90
+COLOR=color_ice
+
+[ITEMDEF i_ice_gloves]
+ID=i_platemail_gloves
+NAME=Ice Gauntlets
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Ice Gauntlets
+
+ON=@Create
+MOREY=100.0
+ATTR=attr_magic
+HITPOINTS=90
+COLOR=color_ice
+
+[ITEMDEF i_ice_shield]
+ID=i_heater_shield
+NAME=Ice Shield
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Ice Shield
+
+ON=@Create
+MOREY=100.0
+ATTR=attr_magic
+HITPOINTS=90
+COLOR=color_ice
+
+[ITEMDEF i_frost_armor]
+ID=i_platemail_chest
+NAME=Frost Armor
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Frost Armor
+
+ON=@Create
+MOREY=100.0
+ATTR=attr_magic
+HITPOINTS=90
+COLOR=color_snow
+
+[ITEMDEF i_frost_leggings]
+ID=i_platemail_leggings
+NAME=Frost Leggings
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Frost Leggings
+
+ON=@Create
+MOREY=100.0
+ATTR=attr_magic
+HITPOINTS=90
+COLOR=color_snow
+
+[ITEMDEF i_frost_arms]
+ID=i_platemail_arms
+NAME=Frost Arm Plates
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Frost Arm Plates
+
+ON=@Create
+MOREY=100.0
+ATTR=attr_magic
+HITPOINTS=90
+COLOR=color_snow
+
+[ITEMDEF i_frost_helm]
+ID=i_platemail_helm
+NAME=Frost Helm
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Frost Helm
+
+ON=@Create
+MOREY=100.0
+ATTR=attr_magic
+HITPOINTS=90
+COLOR=color_snow
+
+[ITEMDEF i_frost_gorget]
+ID=i_platemail_gorget
+NAME=Frost Gorget
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Frost Gorget
+
+ON=@Create
+MOREY=100.0
+ATTR=attr_magic
+HITPOINTS=90
+COLOR=color_snow
+
+[ITEMDEF i_frost_gloves]
+ID=i_platemail_gloves
+NAME=Frost Gauntlets
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Frost Gauntlets
+
+ON=@Create
+MOREY=100.0
+ATTR=attr_magic
+HITPOINTS=90
+COLOR=color_snow
+
+[ITEMDEF i_frost_shield]
+ID=i_heater_shield
+NAME=Frost Shield
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Frost Shield
+
+ON=@Create
+MOREY=100.0
+ATTR=attr_magic
+HITPOINTS=90
+COLOR=color_snow
+
+[ITEMDEF i_toxic_armor]
+ID=i_platemail_chest
+NAME=Toxic Armor
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Toxic Armor
+
+ON=@Create
+MOREY=100.0
+ATTR=attr_magic
+HITPOINTS=90
+COLOR=000786
+
+[ITEMDEF i_toxic_leggings]
+ID=i_platemail_leggings
+NAME=Toxic Leggings
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Toxic Leggings
+
+ON=@Create
+MOREY=100.0
+ATTR=attr_magic
+HITPOINTS=90
+COLOR=000786
+
+[ITEMDEF i_toxic_arms]
+ID=i_platemail_arms
+NAME=Toxic Arm Plates
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Toxic Arm Plates
+
+ON=@Create
+MOREY=100.0
+ATTR=attr_magic
+HITPOINTS=90
+COLOR=000786
+
+[ITEMDEF i_toxic_helm]
+ID=i_platemail_helm
+NAME=Toxic Helm
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Toxic Helm
+
+ON=@Create
+MOREY=100.0
+ATTR=attr_magic
+HITPOINTS=90
+COLOR=000786
+
+[ITEMDEF i_toxic_gorget]
+ID=i_platemail_gorget
+NAME=Toxic Gorget
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Toxic Gorget
+
+ON=@Create
+MOREY=100.0
+ATTR=attr_magic
+HITPOINTS=90
+COLOR=000786
+
+[ITEMDEF i_toxic_gloves]
+ID=i_platemail_gloves
+NAME=Toxic Gauntlets
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Toxic Gauntlets
+
+ON=@Create
+MOREY=100.0
+ATTR=attr_magic
+HITPOINTS=90
+COLOR=000786
+
+[ITEMDEF i_toxic_shield]
+ID=i_heater_shield
+NAME=Toxic Shield
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Toxic Shield
+
+ON=@Create
+MOREY=100.0
+ATTR=attr_magic
+HITPOINTS=90
+COLOR=000786
+
+[ITEMDEF i_swamp_armor]
+ID=i_platemail_chest
+NAME=Swamp Armor
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Swamp Armor
+
+ON=@Create
+MOREY=100.0
+ATTR=attr_magic
+HITPOINTS=90
+COLOR=00078A
+
+[ITEMDEF i_swamp_leggings]
+ID=i_platemail_leggings
+NAME=Swamp Leggings
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Swamp Leggings
+
+ON=@Create
+MOREY=100.0
+ATTR=attr_magic
+HITPOINTS=90
+COLOR=00078A
+
+[ITEMDEF i_swamp_arms]
+ID=i_platemail_arms
+NAME=Swamp Arm Plates
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Swamp Arm Plates
+
+ON=@Create
+MOREY=100.0
+ATTR=attr_magic
+HITPOINTS=90
+COLOR=00078A
+
+[ITEMDEF i_swamp_helm]
+ID=i_platemail_helm
+NAME=Swamp Helm
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Swamp Helm
+
+ON=@Create
+MOREY=100.0
+ATTR=attr_magic
+HITPOINTS=90
+COLOR=00078A
+
+[ITEMDEF i_swamp_gorget]
+ID=i_platemail_gorget
+NAME=Swamp Gorget
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Swamp Gorget
+
+ON=@Create
+MOREY=100.0
+ATTR=attr_magic
+HITPOINTS=90
+COLOR=00078A
+
+[ITEMDEF i_swamp_gloves]
+ID=i_platemail_gloves
+NAME=Swamp Gauntlets
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Swamp Gauntlets
+
+ON=@Create
+MOREY=100.0
+ATTR=attr_magic
+HITPOINTS=90
+COLOR=00078A
+
+[ITEMDEF i_swamp_shield]
+ID=i_heater_shield
+NAME=Swamp Shield
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Swamp Shield
+
+ON=@Create
+MOREY=100.0
+ATTR=attr_magic
+HITPOINTS=90
+COLOR=00078A
+
+[ITEMDEF i_blood_armor]
+ID=i_platemail_chest
+NAME=Blood Armor
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Blood Armor
+
+ON=@Create
+MOREY=100.0
+ATTR=attr_magic
+HITPOINTS=90
+COLOR=0000ED
+
+[ITEMDEF i_blood_leggings]
+ID=i_platemail_leggings
+NAME=Blood Leggings
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Blood Leggings
+
+ON=@Create
+MOREY=100.0
+ATTR=attr_magic
+HITPOINTS=90
+COLOR=0000ED
+
+[ITEMDEF i_blood_arms]
+ID=i_platemail_arms
+NAME=Blood Arm Plates
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Blood Arm Plates
+
+ON=@Create
+MOREY=100.0
+ATTR=attr_magic
+HITPOINTS=90
+COLOR=0000ED
+
+[ITEMDEF i_blood_helm]
+ID=i_platemail_helm
+NAME=Blood Helm
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Blood Helm
+
+ON=@Create
+MOREY=100.0
+ATTR=attr_magic
+HITPOINTS=90
+COLOR=0000ED
+
+[ITEMDEF i_blood_gorget]
+ID=i_platemail_gorget
+NAME=Blood Gorget
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Blood Gorget
+
+ON=@Create
+MOREY=100.0
+ATTR=attr_magic
+HITPOINTS=90
+COLOR=0000ED
+
+[ITEMDEF i_blood_gloves]
+ID=i_platemail_gloves
+NAME=Blood Gauntlets
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Blood Gauntlets
+
+ON=@Create
+MOREY=100.0
+ATTR=attr_magic
+HITPOINTS=90
+COLOR=0000ED
+
+[ITEMDEF i_blood_shield]
+ID=i_heater_shield
+NAME=Blood Shield
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Blood Shield
+
+ON=@Create
+MOREY=100.0
+ATTR=attr_magic
+HITPOINTS=90
+COLOR=0000ED
+
+[ITEMDEF i_shadow_armor]
+ID=i_platemail_chest
+NAME=Shadow Armor
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Shadow Armor
+
+ON=@Create
+MOREY=100.0
+ATTR=attr_magic
+HITPOINTS=90
+COLOR=000001
+
+[ITEMDEF i_shadow_leggings]
+ID=i_platemail_leggings
+NAME=Shadow Leggings
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Shadow Leggings
+
+ON=@Create
+MOREY=100.0
+ATTR=attr_magic
+HITPOINTS=90
+COLOR=000001
+
+[ITEMDEF i_shadow_arms]
+ID=i_platemail_arms
+NAME=Shadow Arm Plates
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Shadow Arm Plates
+
+ON=@Create
+MOREY=100.0
+ATTR=attr_magic
+HITPOINTS=90
+COLOR=000001
+
+[ITEMDEF i_shadow_helm]
+ID=i_platemail_helm
+NAME=Shadow Helm
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Shadow Helm
+
+ON=@Create
+MOREY=100.0
+ATTR=attr_magic
+HITPOINTS=90
+COLOR=000001
+
+[ITEMDEF i_shadow_gorget]
+ID=i_platemail_gorget
+NAME=Shadow Gorget
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Shadow Gorget
+
+ON=@Create
+MOREY=100.0
+ATTR=attr_magic
+HITPOINTS=90
+COLOR=000001
+
+[ITEMDEF i_shadow_gloves]
+ID=i_platemail_gloves
+NAME=Shadow Gauntlets
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Shadow Gauntlets
+
+ON=@Create
+MOREY=100.0
+ATTR=attr_magic
+HITPOINTS=90
+COLOR=000001
+
+[ITEMDEF i_shadow_shield]
+ID=i_heater_shield
+NAME=Shadow Shield
+
+CATEGORY=Provisions - Armor - Magic
+SUBSECTION=Special
+DESCRIPTION=Shadow Shield
+
+ON=@Create
+MOREY=100.0
+ATTR=attr_magic
+HITPOINTS=90
+COLOR=000001
+
+[EOF]

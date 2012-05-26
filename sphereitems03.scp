@@ -1,0 +1,2262 @@
+[ITEMDEF i_thaumatergy_spellbook]
+NAME=Thaumatergy Book
+ID=i_spellbook
+TYPE=t_spellbook
+
+ON=@Create
+COLOR=0492
+ATTR=attr_newbie
+
+ON=@DClick
+DIALOG d_thaumatergy_spellbook
+RETURN 1 
+
+[ITEMDEF i_necromancy_book] 
+NAME=Necromancy Book
+ID=i_spellbook
+TYPE=t_spellbook
+
+ON=@Create
+COLOR=0492
+ATTR=attr_newbie
+
+ON=@Click
+IF <SRC.NECROMANCY> >= 3000
+SRC.SAY Necro Dominus
+RETURN 0
+
+ON=@DClick
+DIALOG d_nec
+RETURN 1
+
+[ITEMDEF i_potion_keg]
+ID=i_wood_keg
+NAME=empty potion Keg
+TYPE=t_script
+VALUE={200 300}
+WEIGHT=40
+RESOURCES=i_board 8,i_barrel_tap 1,i_barrel_hoops 1
+SKILLMAKE=TINKERING 65.0,t_tinker_tools
+
+CATEGORY=Provisions - Alchemy & Magic 
+SUBSECTION=Potions
+DESCRIPTION=Empty Potion Keg
+
+ON=@Create
+MOREP=0 0 0 //number of potions stored in keg
+MORE1=0 //store BASEID of first potion (i_potion_heal)
+MORE2=0 //store skillvalue off added potion
+
+ON=@DClick
+TARGET What potion would you like to fill the keg with?
+RETURN 1
+
+ON=@TargOn_Item
+IF (<SRC.ACTION> != -1 )
+SRC.SYSMESSAGE You are too busy to use this right now.
+RETURN 1
+ELSEIF <SRC.TARG.BASEID>==i_bottle_empty
+IF 0 >= <MOREX>
+SRC.SYSMESSAGE You can't use this on a empty keg!
+RETURN 1
+ENDIF
+IF ( <SRC.TARG.TOPOBJ.UID> != <SRC.UID> )
+SRC.SYSMESSAGE The empty bottle should be in your backpack!
+RETURN 1
+ENDIF
+SRC.SYSMESSAGE You fill an empty bottle.
+SOUND=snd_z_end_liquid
+SRC.NEWITEM=<MORE1>
+SRC.ACT.MORE2=<MORE2> //restore skillvalue 
+SRC.ACT.ATTR=0
+SRC.ACT.TIMER=-1
+SRC.ACT.BOUNCE
+MOREX=<MOREX> - 1
+IF (<MOREX> == 0)
+NAME= //set original name
+MORE1=0 //clear potion id
+MORE2=0 //clear makeskillvalue
+ELSE
+NAME=a <SRC.ACT.NAME> Keg(<MOREX>)
+ENDIF
+SRC.TARG.CONSUME 1
+RETURN 1
+ELSEIF <SRC.TARG.TYPE> != t_potion
+SRC.SYSMESSAGE Thats not a potion!
+RETURN 1
+ELSEIF <MORE1> && (<SRC.TARG.BASEID>!=<MORE1>)
+SRC.SYSMESSAGE You can't mix potion types!
+RETURN 1
+ELSEIF (<MOREX> > 99) //max 100 potion
+SRC.SYSMESSAGE You can't fit any more potions in the keg.
+RETURN 1
+ELSEIF (<MOREX>==0)
+MORE1=<SRC.TARG.BASEID> // store potion baseid i_potion_xxx
+ELSEIF (<MORE1>!=<SRC.TARG.BASEID>)
+SRC.SYSMESSAGE You can't fill up the keg with this potions!
+RETURN 1
+ENDIF
+MORE2=(<MORE2>*<MOREX>)
+MOREX=(<MOREX> + 1)
+MORE2=(<MORE2> + <SRC.TARG.MORE2>) //store average makeskillvalue
+MORE2=(<MORE2> / <MOREX>)
+NAME=a <SRC.TARG.NAME> Keg(<MOREX>)
+SRC.SOUND=snd_Z_END_LIQUID
+SRC.SYSMESSAGE You fill up the keg with a <SRC.TARG.NAME> Potion!
+SRC.TARG.REMOVE
+SRC.NEWITEM=i_bottle_empty
+SRC.ACT.ATTR=0
+SRC.ACT.TIMER=-1
+SRC.ACT.BOUNCE
+RETURN 1
+
+[ITEMDEF i_lesser_heal_potion]
+ID=i_bottle_yellow
+NAME=Lesser Heal Potion
+TYPE=t_potion
+VALUE=10
+RESOURCES=i_ginseng,i_bottle_empty
+SKILLMAKE=ALCHEMY 0.1
+TDATA1=i_bottle_empty
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Potions
+DESCRIPTION=Lesser Heal Potion
+
+ON=@Create
+MORE1=s_heal
+MORE2=50.0
+
+[ITEMDEF i_heal_potion]
+ID=i_bottle_yellow
+NAME=Heal Potion
+TYPE=t_potion
+VALUE=25
+RESOURCES=i_ginseng 3,i_bottle_empty
+SKILLMAKE=ALCHEMY 15.1
+TDATA1=i_bottle_empty
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Potions
+DESCRIPTION=Heal Potion
+
+ON=@Create
+MORE1=s_greater_heal
+MORE2=75.0
+
+[ITEMDEF i_greater_heal_potion]
+ID=i_bottle_yellow
+NAME=Greater Heal
+TYPE=t_potion
+VALUE=50
+RESOURCES=i_ginseng 7,i_bottle_empty
+SKILLMAKE=ALCHEMY 55.1
+TDATA1=i_bottle_empty
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Potions
+DESCRIPTION=Greater Heal Potion
+
+ON=@Create
+MORE1=s_greater_heal
+MORE2=100.0
+
+[ITEMDEF i_refresh_potion]
+ID=i_bottle_red
+NAME=Refresh Potion
+TYPE=t_potion
+VALUE=30
+RESOURCES=i_black_pearl,i_bottle_empty
+SKILLMAKE=ALCHEMY 0.1
+TDATA1=i_bottle_empty
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Potions
+DESCRIPTION=Refresh Potion
+
+ON=@Create
+MORE1=s_refresh
+MORE2=50.0
+
+[ITEMDEF i_total_refresh_potion]
+ID=i_bottle_red
+NAME=Total Refresh Potion
+TYPE=t_potion
+VALUE=60
+RESOURCES=i_black_pearl 5,i_bottle_empty
+SKILLMAKE=ALCHEMY 25.1
+TDATA1=i_bottle_empty
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Potions
+DESCRIPTION=Total Refresh Potion
+
+ON=@Create
+MORE1=s_refresh
+MORE2=100.0
+
+[ITEMDEF i_restoration_potion]
+ID=i_bottle_white
+NAME=Restoration Potion
+TYPE=t_potion
+VALUE=50
+RESOURCES=i_black_pearl,i_mandrake_root,i_bottle_empty
+SKILLMAKE=ALCHEMY 15.1
+TDATA1=i_bottle_empty
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Potions
+DESCRIPTION=Restoration Potion
+
+ON=@Create
+COLOR=007a6
+MORE1=s_restore
+MORE2=50.0
+
+[ITEMDEF i_greater_restoration_potion]
+ID=i_bottle_white
+NAME=Greater Restoration Potion
+TYPE=t_potion
+VALUE=100
+RESOURCES=i_black_pearl,i_mandrake_root 2,i_bottle_empty
+SKILLMAKE=ALCHEMY 15.1
+TDATA1=i_bottle_empty
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Potions
+DESCRIPTION=Greater Restoration Potion
+
+ON=@Create
+COLOR=007a6
+MORE1=s_restore
+MORE2=100.0
+
+[ITEMDEF i_mana_refresh_potion]
+ID=i_bottle_white
+NAME=Mana Refresh Potion
+TYPE=t_potion
+VALUE=25
+RESOURCES=i_eye_of_newt 3,i_bottle_empty
+SKILLMAKE=ALCHEMY 65.1
+TDATA1=i_bottle_empty
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Potions
+DESCRIPTION=Mana Refresh Potion
+
+ON=@Create
+COLOR=color_gray_lt
+MORE1=s_mana
+MORE2=50.0
+
+[ITEMDEF i_total_mana_refresh_potion]
+ID=i_bottle_white
+NAME=Total Mana Refresh Potion
+TYPE=t_potion
+VALUE=50
+RESOURCES=i_eye_of_newt 6,i_bottle_empty
+SKILLMAKE=ALCHEMY 95.1
+TDATA1=i_bottle_empty
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Potions
+DESCRIPTION=Total Mana Refresh Potion
+
+ON=@Create
+COLOR=color_gray_lt
+MORE1=s_mana
+MORE2=100.0
+
+[ITEMDEF i_bottle_of_pepsi]
+ID=0e2b
+NAME=Bottle of Pepsi
+TYPE=0
+VALUE=300
+RESOURCES=i_black_pearl 3,i_mandrake_root 2,i_bottle_empty
+SKILLMAKE=ALCHEMY 300.0
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Potions
+DESCRIPTION=Bottle of Pepsi
+
+ON=@Create
+COLOR=007a2
+
+ON=@DClick
+SRC.HITS <SRC.STR>
+SRC.STAMINA <SRC.DEX>
+SRC.MANA <SRC.MANA>
+SRC.CONSUME 1 i_bottle_of_pepsi
+SRC.SOUND 0031
+SRC.SYSMESSAGE You feel refreshed as you drink the delicious Pepsi.
+RETURN 1
+
+[ITEMDEF i_lesser_cure_potion]
+NAME=Lesser Cure Potion
+ID=i_bottle_orange
+TYPE=t_potion
+VALUE=15
+RESOURCES=i_garlic,i_bottle_empty
+SKILLMAKE=ALCHEMY 0.1
+TDATA1=i_bottle_empty
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Potions
+DESCRIPTION=Lesser Cure Potion
+
+ON=@Create
+MORE1=s_cure
+MORE2=40.0
+
+[ITEMDEF i_cure_potion]
+ID=i_bottle_orange
+NAME=Cure Potion
+TYPE=t_potion
+VALUE=20
+RESOURCES=i_garlic 3,i_bottle_empty
+SKILLMAKE=ALCHEMY 25.1
+TDATA1=i_bottle_empty
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Potions
+DESCRIPTION=Cure Potion
+
+ON=@Create
+MORE1=s_cure
+MORE2=60.0
+
+[ITEMDEF i_greater_cure_potion]
+ID=i_bottle_orange
+NAME=Greater Cure Potion
+TYPE=t_potion
+VALUE=45
+RESOURCES=i_garlic 3,i_bottle_empty
+SKILLMAKE=ALCHEMY 65.1
+TDATA1=i_bottle_empty
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Potions
+DESCRIPTION=Cure Potion
+
+ON=@Create
+MORE1=s_archcure
+MORE2=101.0
+
+[ITEMDEF i_agility_potion]
+ID=i_bottle_blue
+NAME=Agility Potion
+TYPE=t_potion
+VALUE=25
+RESOURCES=i_blood_moss,i_bottle_empty
+SKILLMAKE=ALCHEMY 15.1
+TDATA1=i_bottle_empty
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Potions
+DESCRIPTION=Agility Potion
+
+ON=@Create
+MORE1=s_agility
+MORE2={15.1 60.0}
+
+[ITEMDEF i_greater_agility_potion]
+ID=i_bottle_blue
+NAME=Greater Agility Potion
+TYPE=t_potion
+VALUE=50
+RESOURCES=i_blood_moss 3, i_bottle_empty
+SKILLMAKE=ALCHEMY 35.1
+TDATA1=i_bottle_empty
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Potions
+DESCRIPTION=Greater Agility Potion
+
+ON=@Create
+MORE1=s_agility
+MORE2={70.1 80.0}
+
+[ITEMDEF i_strength_potion]
+ID=i_bottle_white
+NAME=Strength Potion
+TYPE=t_potion
+VALUE=25
+RESOURCES=i_mandrake_root 2,i_bottle_empty
+SKILLMAKE=ALCHEMY 25.1
+TDATA1=i_bottle_empty
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Potions
+DESCRIPTION=Strength Potion
+
+ON=@Create
+MORE1=s_strength
+MORE2=60.0
+
+[ITEMDEF i_greater_strength_potion]
+ID=i_bottle_white
+NAME=Greater Strength Potion
+TYPE=t_potion
+VALUE=50
+RESOURCES=i_mandrake_root 5, i_bottle_empty
+SKILLMAKE=ALCHEMY 45.1
+TDATA1=i_bottle_empty
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Potions
+DESCRIPTION=Greater Strength Potion
+
+ON=@Create
+MORE1=s_strength
+MORE2=100.0
+
+[ITEMDEF i_cleverness_potion]
+ID=i_bottle_white
+NAME=Cleverness Potion
+TYPE=t_potion
+VALUE=25
+RESOURCES=i_fertile_dirt,i_bottle_empty
+SKILLMAKE=ALCHEMY 25.1
+TDATA1=i_bottle_empty
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Potions
+DESCRIPTION=Cleverness Potion
+
+ON=@Create
+MORE1=s_cunning
+MORE2=70.0
+
+[ITEMDEF i_greater_cleverness_potion]
+ID=i_bottle_white
+NAME=GreaterCleverness Potion
+TYPE=t_potion
+VALUE=25
+RESOURCES=i_fertile_dirt 2,i_bottle_empty
+SKILLMAKE=ALCHEMY 45.1
+TDATA1=i_bottle_empty
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Potions
+DESCRIPTION=Greater Cleverness Potion
+
+ON=@Create
+MORE1=s_cunning
+MORE2=100.0
+
+[ITEMDEF i_nightsight_potion]
+ID=i_bottle_black
+NAME=Nightsight Potion
+TYPE=t_potion
+VALUE=20
+RESOURCES=i_spider_silk 1,i_bottle_empty
+SKILLMAKE=ALCHEMY 0.1
+TDATA1=i_bottle_empty
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Potions
+DESCRIPTION=Nightsight Potion
+
+ON=@Create
+MORE1=s_night_sight
+MORE2=3000.0
+
+[ITEMDEF i_lesser_explosion_potion]
+ID=i_bottle_purple
+NAME=Lesser Explosion Potion
+TYPE=t_potion
+VALUE=40
+RESOURCES=i_sulfur_ash 3,i_bottle_empty
+SKILLMAKE=ALCHEMY 5.1
+TDATA1=0
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Potions
+DESCRIPTION=Lesser Explosion Potion
+
+ON=@Create
+MORE1=s_explosion
+MORE2=50.0
+
+[ITEMDEF i_explosion_potion]
+ID=i_bottle_purple
+NAME=Explosion Potion
+TYPE=t_potion
+VALUE=60
+RESOURCES=i_sulfur_ash 5,i_bottle_empty
+SKILLMAKE=ALCHEMY 35.1
+TDATA1=0
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Potions
+DESCRIPTION=Explosion Potion
+
+ON=@Create
+MORE1=s_explosion
+MORE2=80.0
+
+[ITEMDEF i_greater_explosion_potion]
+ID=i_bottle_purple
+NAME=Greater Explosion
+TYPE=t_potion
+VALUE=100
+RESOURCES=i_sulfur_ash 10,i_bottle_empty
+SKILLMAKE=ALCHEMY 65.1
+TDATA1=0
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Potions
+DESCRIPTION=Greater Explosion Potion
+
+ON=@Create
+MORE1=s_explosion
+MORE2=130.0
+
+[ITEMDEF i_lava_bomb_potion]
+ID=i_bottle_red
+NAME=Lava Bomb
+TYPE=t_potion
+VALUE=30
+RESOURCES=i_volcanic_ash 6,i_bottle_empty
+SKILLMAKE=ALCHEMY 95.1
+TDATA1=0
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Potions
+DESCRIPTION=Lava Bomb Potion
+
+ON=@Create
+COLOR=color_violet_lt
+MORE1=s_lava
+MORE2=50.0
+
+[ITEMDEF i_lesser_poison_potion]
+ID=i_bottle_green
+NAME=Lesser Poison Potion
+TYPE=t_potion
+VALUE=20
+RESOURCES=i_nightshade 1,i_bottle_empty
+SKILLMAKE=ALCHEMY 0.1
+TDATA1=i_bottle_empty
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Potions
+DESCRIPTION=Lesser Poison Potion
+
+ON=@Create
+MORE1=s_poison
+MORE2=40.0
+
+[ITEMDEF i_poison_potion]
+ID=i_bottle_green
+NAME=Poison Potion
+TYPE=t_potion
+VALUE=50
+RESOURCES=i_nightshade 2,i_bottle_empty
+SKILLMAKE=ALCHEMY 50.0
+TDATA1=i_bottle_empty
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Potions
+DESCRIPTION=Lesser Poison Potion
+
+ON=@Create
+MORE1=s_poison
+MORE2=50.0
+
+[ITEMDEF i_greater_poison_potion]
+ID=i_bottle_green
+NAME=Greater Poison Potion
+TYPE=t_potion
+VALUE=100
+RESOURCES=i_nightshade 4,i_bottle_empty
+SKILLMAKE=ALCHEMY 100.0
+TDATA1=i_bottle_empty
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Potions
+DESCRIPTION=Lesser Poison Potion
+
+ON=@Create
+MORE1=s_poison
+MORE2=90.0
+
+[ITEMDEF i_deadly_poison_potion]
+ID=i_bottle_green
+NAME=Deadly Poison Potion
+TYPE=t_potion
+VALUE=200
+RESOURCES=i_nightshade 8,i_bottle_empty
+SKILLMAKE=ALCHEMY 300.0
+TDATA1=i_bottle_empty
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Potions
+DESCRIPTION=Lesser Poison Potion
+
+ON=@Create
+MORE1=s_poison
+MORE2=105.0
+
+[ITEMDEF i_clumsiness_potion]
+ID=i_bottle_white
+NAME=Clumsiness Potion
+TYPE=t_potion
+VALUE=30
+RESOURCES=i_blood_moss,i_blackmoor,i_bottle_empty
+SKILLMAKE=ALCHEMY 95.1
+TDATA1=i_bottle_empty
+
+ON=@Create
+COLOR=02
+MORE1=s_clumsy
+MORE2=70.0
+
+[ITEMDEF i_confusion_potion]
+ID=i_bottle_white
+NAME=Confusion Potion
+TYPE=t_potion
+VALUE=30
+RESOURCES=i_nightshade,i_fertile_dirt,i_bottle_empty
+SKILLMAKE=ALCHEMY 95.1
+TDATA1=i_bottle_empty
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Potions
+DESCRIPTION=Confusion Potion
+
+ON=@Create
+COLOR=0146b
+MORE1=s_feeblemind
+MORE2=50.0
+
+[ITEMDEF i_weakness_potion]
+ID=i_bottle_white
+NAME=Weakness Potion
+TYPE=t_potion
+VALUE=30
+RESOURCES=i_mandrake_root,i_blackmoor,i_bottle_empty
+SKILLMAKE=ALCHEMY 95.1
+TDATA1=i_bottle_empty
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Potions
+DESCRIPTION=Weakness Potion
+
+ON=@Create
+COLOR=0a12
+MORE1=s_weaken
+MORE2=50.0
+
+[ITEMDEF i_shrink_potion]
+ID=i_bottle_white
+NAME=Shrink Potion
+TYPE=t_potion
+VALUE=25
+RESOURCES=i_batwing 2,i_bottle_empty
+SKILLMAKE=ALCHEMY 100.0
+TDATA1=i_bottle_empty
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Potions
+DESCRIPTION=Shrink Potion
+
+ON=@Create
+COLOR=color_gray_lt
+MORE1=s_shrink
+MORE2=100.0
+
+[ITEMDEF i_trance_potion]
+ID=i_bottle_white
+NAME=Trance Potion
+TYPE=t_potion
+VALUE=25
+RESOURCES=i_black_pearl,i_mandrake_root,i_blackmoor,i_bottle_empty
+SKILLMAKE=ALCHEMY 15.1
+TDATA1=i_bottle_empty
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Potions
+DESCRIPTION=Greater Trance Potion
+
+ON=@Create
+COLOR=099
+MORE1=s_trance
+MORE2=50.0
+
+[ITEMDEF i_greater_trance_potion]
+ID=i_bottle_white
+NAME=Greater Trance Potion
+TYPE=t_potion
+VALUE=50
+RESOURCES=i_black_pearl,i_mandrake_root,i_blackmoor 2,i_bottle_empty
+SKILLMAKE=ALCHEMY 30.1
+TDATA1=i_bottle_empty
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Potions
+DESCRIPTION=Greater Trance Potion
+
+ON=@Create
+COLOR=099
+MORE1=s_trance
+MORE2=100.0
+
+[ITEMDEF i_lesser_forgetfulness_potion]
+ID=i_bottle_white
+NAME=Lesser Forgetfulness
+TYPE=t_potion
+VALUE=75
+RESOURCES=i_blackmoor,i_bottle_empty
+SKILLMAKE=ALCHEMY 15.1
+TDATA1=i_bottle_empty
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Potions
+DESCRIPTION=Lesser Forgetfulness Potion
+
+ON=@Create
+COLOR=045
+MORE1=s_forget
+MORE2=40.0
+
+[ITEMDEF i_forgetfulness_potion]
+ID=i_bottle_white
+NAME=Forgetfulness Potion
+TYPE=t_potion
+VALUE=100
+RESOURCES=i_blackmoor 2,i_bottle_empty
+SKILLMAKE=ALCHEMY 30.1
+TDATA1=i_bottle_empty
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Potions
+DESCRIPTION=Forgetfulness Potion
+
+ON=@Create
+COLOR=045
+MORE1=s_forget
+MORE2=60.0
+
+[ITEMDEF i_greater_forgetfulness_potion]
+ID=i_bottle_white
+NAME=Greater Forgetfulness Potion
+TYPE=t_potion
+VALUE=125
+RESOURCES=i_blackmoor, 2 i_blackmoor, i_bottle_empty
+SKILLMAKE=ALCHEMY 70.1
+TDATA1=i_bottle_empty
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Potions
+DESCRIPTION=Greater Forgetfulness Potion
+
+ON=@Create
+COLOR=045
+MORE1=s_forget
+MORE2=100.0
+
+[ITEMDEF i_sustenance_potion]
+ID=i_bottle_white
+NAME=Sustenance Potion
+TYPE=t_potion
+VALUE=35
+RESOURCES=i_ginseng,i_mandrake_root,i_bottle_empty
+SKILLMAKE=ALCHEMY 15.1
+TDATA1=i_bottle_empty
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Potions
+DESCRIPTION=Sustenance Potion
+
+ON=@Create
+MORE1=s_Sustenance
+MORE2=100.0
+
+[ITEMDEF i_lesser_float_potion]
+ID=i_bottle_white
+NAME=Lesser Float Potion
+TYPE=t_potion
+VALUE=15
+RESOURCES=i_pumice,i_bottle_empty
+SKILLMAKE=ALCHEMY 15.1
+TDATA1=i_bottle_empty
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Potions
+DESCRIPTION=Lesser Float Potion
+
+ON=@Create
+COLOR=color_cyan
+MORE1=s_float
+MORE2=33.3
+
+[ITEMDEF i_float_potion]
+ID=i_bottle_white
+NAME=Float Potion
+TYPE=t_potion
+VALUE=45
+RESOURCES=i_pumice 3,i_bottle_empty
+SKILLMAKE=ALCHEMY 35.1
+TDATA1=i_bottle_empty
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Potions
+DESCRIPTION=Float Potion
+
+ON=@Create
+COLOR=color_cyan
+MORE1=s_float
+MORE2=66.3
+
+[ITEMDEF i_greater_float_potion]
+ID=i_bottle_white
+NAME=Greater Float Potion
+TYPE=t_potion
+VALUE=65
+RESOURCES=i_pumice 6,i_bottle_empty
+SKILLMAKE=ALCHEMY 65.1
+TDATA1=i_bottle_empty
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Potions
+DESCRIPTION=Float Potion
+
+ON=@Create
+COLOR=color_cyan
+MORE1=s_float
+MORE2=100.0
+
+[ITEMDEF i_gender_swap_potion]
+ID=i_bottle_white
+NAME=Gender Swap Potion
+TYPE=t_potion
+VALUE=50
+
+RESOURCES=i_blood_moss,i_ginseng,i_mandrake_root,i_blackmoor,i_bottle_empty
+SKILLMAKE=ALCHEMY 15.1
+TDATA1=i_bottle_empty
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Potions
+DESCRIPTION=Gender Swap Potion
+
+ON=@Create
+COLOR=0b34
+MORE1=s_gender_swap
+MORE2=100.0
+
+[ITEMDEF i_beastform_potion]
+ID=i_bottle_white
+NAME=Beastform Potion
+TYPE=t_potion
+VALUE=45
+RESOURCES=i_blood_moss,i_ginseng,i_bottle_empty
+SKILLMAKE=ALCHEMY 55.1
+TDATA1=i_bottle_empty
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Potions
+DESCRIPTION=Beastform Potion
+
+ON=@Create
+MORE1=s_beastform
+MORE2=60.0
+
+[ITEMDEF i_monster_form_potion]
+ID=i_bottle_white
+NAME=Monster Form Potion
+TYPE=t_potion
+VALUE=50
+RESOURCES=i_blood_moss,i_mandrake_root,i_bottle_empty
+SKILLMAKE=ALCHEMY 75.1
+TDATA1=i_bottle_empty
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Potions
+DESCRIPTION=Monster Form Potion
+
+ON=@Create
+MORE1=s_monster_form
+MORE2=100.0
+
+[ITEMDEF i_chameleon_skin_potion]
+ID=i_bottle_white
+NAME=Chameleon Skin Potion
+TYPE=t_potion
+VALUE=50
+RESOURCES=i_garlic,i_spider_silk,i_bottle_empty
+SKILLMAKE=ALCHEMY 95.1
+TDATA1=i_bottle_empty
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Potions
+DESCRIPTION=Chameleon Skin Potion
+
+
+ON=@Create
+MORE1=s_Chameleon
+MORE2=60.0
+
+[ITEMDEF i_invisibility_potion]
+ID=i_bottle_white
+NAME=Invisibility Potion
+TYPE=t_potion
+VALUE=70
+RESOURCES=i_wyrm_heart 4,i_bottle_empty
+SKILLMAKE=ALCHEMY 100.0
+TDATA1=i_bottle_empty
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Potions
+DESCRIPTION=Invisibility Potion
+
+ON=@Create
+COLOR=color_spectral
+MORE1=s_invisibility
+MORE2=100.0
+
+[ITEMDEF i_particle_form_potion]
+ID=i_bottle_white
+NAME=Particle Form Potion
+TYPE=t_potion
+VALUE=80
+RESOURCES=i_black_pearl,i_blood_moss,i_bottle_empty
+SKILLMAKE=ALCHEMY 90.1
+TDATA1=i_bottle_empty
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Potions
+DESCRIPTION=Particle Form Potion
+
+ON=@Create
+MORE1=s_particle_form
+MORE2=60.0
+
+[ITEMDEF i_stoneskin_potion]
+ID=i_bottle_white
+NAME=Stoneskin Potion
+TYPE=t_potion
+VALUE=90
+RESOURCES=i_garlic,i_ginseng,i_mandrake_root,i_bottle_empty
+SKILLMAKE=ALCHEMY 150.0
+TDATA1=i_bottle_empty
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Potions
+DESCRIPTION=Stoneskin Potion
+
+ON=@Create
+MORE1=s_stoneskin
+MORE2=100.0
+
+[ITEMDEF i_steelskin_potion]
+ID=i_bottle_white
+NAME=Steelskin Potion
+TYPE=t_potion
+VALUE=100
+RESOURCES=i_garlic,i_ginseng,i_mandrake_root 2,i_bottle_empty
+SKILLMAKE=ALCHEMY 300.0
+TDATA1=i_bottle_empty
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Potions
+DESCRIPTION=Steelskin Potion
+
+ON=@Create
+MORE1=s_steelskin
+MORE2=100.0
+
+[ITEMDEF i_shield_potion]
+ID=i_bottle_white
+NAME=Shield Potion
+TYPE=t_potion
+VALUE=200
+RESOURCES=i_garlic,i_sulfur_ash,i_bottle_empty
+SKILLMAKE=ALCHEMY 300.0
+TDATA1=i_bottle_empty
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Potions
+DESCRIPTION=Shield Potion
+
+ON=@Create
+MORE1=s_shield
+MORE2=100.0
+
+[ITEMDEF i_mage_hat]
+ID=i_wizards_hat
+Name=Mage Hat
+TYPE=t_clothing
+DYE=1
+VALUE=400
+WEIGHT=1
+ARMOR=4
+RESOURCES=i_hat_wizards, i_cunning_scroll
+SKILLMAKE=TAILORING 60.0,MAGERY 60.0,t_sewing_kit
+
+CATEGORY=Provisions - Clothes - Magic
+SUBSECTION=Hats
+DESCRIPTION=Wizards Hat
+
+ON=@Create
+COLOR=02
+HITPOINTS=100
+
+ON=@Equip
+SRC.MAGERY <SRC.MAGERY>+10.0
+RETURN 1
+
+ON=@UnEquip
+SRC.MAGERY <SRC.MAGERY>+-10.0
+RETURN 1
+
+[ITEMDEF i_communication_crystal_500]
+ID=i_crystal_red
+NAME=Communication Crystal
+TYPE=t_comm_crystal
+VALUE=81
+WEIGHT=1
+
+CATEGORY=Provisions - Miscellaneous
+SUBSECTION=Communication Crystals
+DESCRIPTION=Communication Crystal (500)
+
+ON=@Create
+MORE=500
+
+[ITEMDEF i_communication_crystal_1000]
+ID=i_crystal_green
+NAME=Communication Crystal
+TYPE=t_comm_crystal
+VALUE=158
+WEIGHT=1
+
+CATEGORY=Provisions - Miscellaneous
+SUBSECTION=Communication Crystals
+DESCRIPTION=Communication Crystal (1000)
+
+ON=@Create
+MORE=1000
+
+[ITEMDEF i_communication_crystal_2000]
+ID=i_crystal_green
+NAME=Communication Crystal
+TYPE=t_comm_crystal
+VALUE=310
+WEIGHT=1
+
+CATEGORY=Provisions - Miscellaneous
+SUBSECTION=Communication Crystals
+DESCRIPTION=Communication Crystal (2000)
+
+ON=@Create
+MORE=2000
+
+[ITEMDEF i_wand_clumsy]
+
+ID=i_wand_1
+TYPE=T_WAND
+RESOURCES=i_wand_1,10 i_scroll_clumsy
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Wands
+DESCRIPTION=Wand of Clumsiness
+
+ON=@Create
+ATTR=attr_magic
+MOREX=s_clumsy
+MOREY=50.0
+MORE2=10// charges
+
+[ITEMDEF 04642]
+DEFNAME=i_wand_create_food
+ID=i_wand_2
+TYPE=T_WAND
+RESOURCES=i_wand_2,10 i_scroll_create_food
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Wands
+DESCRIPTION=Wand of Create Food
+
+ON=@Create
+ATTR=attr_magic
+MOREX=s_create_food
+MOREY=50.0
+MORE2=10
+
+[ITEMDEF 04643]
+//a magic wand of Feeblemind
+DEFNAME=i_wand_Feeblemind
+ID=i_wand_3
+TYPE=T_WAND
+RESOURCES=i_wand_3,10 i_scroll_Feeblemind
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Wands
+DESCRIPTION=Wand of Feeblemindness
+
+ON=@Create
+MOREX=s_Feeblemind
+MOREY=50.0
+MORE2=10
+ATTR=attr_magic
+
+[ITEMDEF 04644]
+//a magic wand of Heal
+DEFNAME=i_wand_Heal
+ID=i_wand_4
+TYPE=T_WAND
+RESOURCES=i_wand_4,10 i_scroll_heal
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Wands
+DESCRIPTION=Wand of Healing
+
+ON=@Create
+MOREX=s_heal
+MOREY=50.0
+MORE2=10
+ATTR=attr_magic
+
+[ITEMDEF 04645]
+//a magic wand of Magic Arrow
+DEFNAME=i_wand_magic_arrow
+ID=i_wand_1
+TYPE=T_WAND
+RESOURCES=i_wand_1,10 i_scroll_magic_arrow
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Wands
+DESCRIPTION=Wand of Magic Arrow
+
+ON=@Create
+MOREX=s_magic_arrow
+MOREY=50.0
+MORE2=10
+ATTR=attr_magic
+
+[ITEMDEF 04646]
+//a magic wand of Night Sight
+DEFNAME=i_wand_night_sight
+ID=i_wand_2
+TYPE=T_WAND
+RESOURCES=i_wand_2,10 i_scroll_night_sight
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Wands
+DESCRIPTION=Wand of Night Sight
+
+ON=@Create
+MOREX=s_night_sight
+MOREY=50.0
+MORE2=10
+ATTR=attr_magic
+
+[ITEMDEF 04647]
+//a magic wand of Reactive Armor
+DEFNAME=i_wand_react_armor
+ID=i_wand_3
+TYPE=T_WAND
+RESOURCES=i_wand_3,10 i_scroll_reactive_armor
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Wands
+DESCRIPTION=Wand of Reactive Armor
+
+ON=@Create
+MOREX=s_reactive_armor
+MOREY=50.0
+MORE2=10
+ATTR=attr_magic
+
+[ITEMDEF 04648]
+//a magic wand of Weaken
+DEFNAME=i_wand_weaken
+ID=i_wand_4
+TYPE=T_WAND
+RESOURCES=i_wand_4,10 i_scroll_weaken
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Wands
+DESCRIPTION=Wand of Weaken
+
+ON=@Create
+MOREX=s_weaken
+MOREY=50.0
+MORE2=10
+ATTR=attr_magic
+
+[ITEMDEF 04649]
+//a magic wand of Agility
+DEFNAME=i_wand_Agility
+ID=i_wand_1
+TYPE=T_WAND
+RESOURCES=i_wand_1,10 i_scroll_agility
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Wands
+DESCRIPTION=Wand of Agility
+
+ON=@Create
+MOREX=s_Agility
+MOREY=50.0
+MORE2=10
+ATTR=attr_magic
+
+[ITEMDEF 04650]
+DEFNAME=i_wand_CUNNING
+ID=i_wand_2
+TYPE=T_WAND
+RESOURCES=i_wand_2,10 i_scroll_cunning
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Wands
+DESCRIPTION=Wand of Cunning
+
+ON=@Create
+MOREX=s_Cunning
+MOREY=50.0
+MORE2=10
+ATTR=attr_magic
+
+[ITEMDEF 04651]
+DEFNAME=i_wand_CURE
+ID=i_wand_3
+TYPE=T_WAND
+RESOURCES=i_wand_3,10 i_scroll_cure
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Wands
+DESCRIPTION=Wand of Cure
+
+ON=@Create
+MOREX=s_cure
+MOREY=50.0
+MORE2=10
+ATTR=attr_magic
+
+[ITEMDEF 04652]
+DEFNAME=i_wand_HARM
+ID=i_wand_4
+TYPE=T_WAND
+RESOURCES=i_wand_4,10 i_scroll_harm
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Wands
+DESCRIPTION=Wand of Harm
+
+ON=@Create
+MOREX=s_harm
+MOREY=50.0
+MORE2=10
+ATTR=attr_magic
+
+[ITEMDEF 04653]
+DEFNAME=i_wand_MAGIC_TRAP
+ID=i_wand_1
+TYPE=T_WAND
+RESOURCES=i_wand_1,10 i_scroll_magic_trap
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Wands
+DESCRIPTION=Wand of Magic Trap
+
+ON=@Create
+MOREX=s_magic_trap
+MOREY=50.0
+MORE2=10
+ATTR=attr_magic
+
+[ITEMDEF 04654]
+DEFNAME=i_wand_MAGIC_UNTRAP
+ID=i_wand_2
+TYPE=T_WAND
+RESOURCES=i_wand_2,10 i_scroll_magic_untrap
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Wands
+DESCRIPTION=Wand of Magic Untrap
+
+ON=@Create
+MOREX=s_magic_untrap
+MOREY=50.0
+MORE2=10
+ATTR=attr_magic
+
+[ITEMDEF 04655]
+DEFNAME=i_wand_Protection
+ID=i_wand_3
+TYPE=T_WAND
+RESOURCES=i_wand_3,10 i_scroll_protection
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Wands
+DESCRIPTION=Wand of Protection
+
+ON=@Create
+MOREX=s_protection
+MOREY=50.0
+MORE2=10
+ATTR=attr_magic
+
+[ITEMDEF 04656]
+DEFNAME=i_wand_Strength
+ID=i_wand_4
+TYPE=T_WAND
+RESOURCES=i_wand_4,10 i_scroll_strength
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Wands
+DESCRIPTION=Wand of Strength
+
+ON=@Create
+MOREX=s_strength
+MOREY=50.0
+MORE2=10
+ATTR=attr_magic
+
+[ITEMDEF 04657]
+DEFNAME=i_wand_Bless
+ID=i_wand_1
+TYPE=T_WAND
+RESOURCES=i_wand_1,10 i_scroll_bless
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Wands
+DESCRIPTION=Wand of Blessing
+
+ON=@Create
+MOREX=s_bless
+MOREY=50.0
+MORE2=10
+ATTR=attr_magic
+
+[ITEMDEF 04658]
+DEFNAME=i_wand_Fireball
+ID=i_wand_2
+TYPE=T_WAND
+RESOURCES=i_wand_2,10 i_scroll_fireball
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Wands
+DESCRIPTION=Wand of Fireballs
+
+ON=@Create
+MOREX=s_fireball
+MOREY=50.0
+MORE2=10
+ATTR=attr_magic
+
+[ITEMDEF 04659]
+DEFNAME=i_wand_Magic_Lock
+ID=i_wand_3
+TYPE=T_WAND
+RESOURCES=i_wand_3,10 i_scroll_magic_lock
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Wands
+DESCRIPTION=Wand of Magic Lock
+
+ON=@Create
+MOREX=s_magic_lock
+MOREY=50.0
+MORE2=10
+ATTR=attr_magic
+
+[ITEMDEF 04660]
+DEFNAME=i_wand_Poison
+ID=i_wand_4
+TYPE=T_WAND
+RESOURCES=i_wand_4,10 i_scroll_poison
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Wands
+DESCRIPTION=Wand of Poison
+
+ON=@Create
+MOREX=s_poison
+MOREY=50.0
+MORE2=10
+ATTR=attr_magic
+
+[ITEMDEF 04661]
+DEFNAME=i_wand_telekinesis
+ID=i_wand_1
+TYPE=T_WAND
+RESOURCES=i_wand_1,10 i_scroll_telekinesis
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Wands
+DESCRIPTION=Wand of telekinesis
+
+ON=@Create
+MOREX=s_telekinesis
+MOREY=50.0
+MORE2=10
+ATTR=attr_magic
+
+[ITEMDEF 04662]
+DEFNAME=i_wand_TELEPORT
+ID=i_wand_2
+TYPE=T_WAND
+RESOURCES=i_wand_2,10 i_scroll_teleport
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Wands
+DESCRIPTION=Wand of Teleport
+
+ON=@Create
+MOREX=s_teleport
+MOREY=50.0
+MORE2=10
+ATTR=attr_magic
+
+[ITEMDEF 04663]
+DEFNAME=i_wand_Unlock
+ID=i_wand_3
+TYPE=T_WAND
+RESOURCES=i_wand_3,10 i_scroll_unlock
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Wands
+DESCRIPTION=Wand of Unlock
+
+ON=@Create
+MOREX=s_unlock
+MOREY=50.0
+MORE2=10
+ATTR=attr_magic
+
+[ITEMDEF 04664]
+DEFNAME=i_wand_Wall_of_Stone
+ID=i_wand_4
+TYPE=T_WAND
+RESOURCES=i_wand_4,10 i_scroll_wall_of_stone
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Wands
+DESCRIPTION=Wand of Wall of Stone
+
+ON=@Create
+MOREX=s_wall_of_stone
+MOREY=50.0
+MORE2=10
+ATTR=attr_magic
+
+[ITEMDEF 04665]
+DEFNAME=i_wand_archcure
+ID=i_wand_1
+TYPE=T_WAND
+RESOURCES=i_wand_1,10 i_scroll_archcure
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Wands
+DESCRIPTION=Wand of Arch Cure
+
+ON=@Create
+MOREX=s_archcure
+MOREY=50.0
+MORE2=10
+ATTR=attr_magic
+
+[ITEMDEF 04666]
+DEFNAME=i_wand_archprotection
+ID=i_wand_2
+TYPE=T_WAND
+RESOURCES=i_wand_2,10 i_scroll_archprotection
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Wands
+DESCRIPTION=Wand of Arch Protection
+
+ON=@Create
+MOREX=s_archprotection
+MOREY=50.0
+MORE2=10
+ATTR=attr_magic
+
+[ITEMDEF 04667]
+DEFNAME=i_wand_CURSE
+ID=i_wand_3
+TYPE=T_WAND
+RESOURCES=i_wand_3,10 i_scroll_curse
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Wands
+DESCRIPTION=Wand of Curse
+
+ON=@Create
+MOREX=s_curse
+MOREY=50.0
+MORE2=10
+ATTR=attr_magic
+
+[ITEMDEF 04668]
+//a magic wand of Fire Field
+DEFNAME=i_wand_FIRE_FIELD
+ID=i_wand_4
+TYPE=T_WAND
+RESOURCES=i_wand_4,10 i_scroll_fire_field
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Wands
+DESCRIPTION=Wand of Fire Field
+
+ON=@Create
+MOREX=s_fire_field
+MOREY=50.0
+MORE2=10
+ATTR=attr_magic
+
+[ITEMDEF 04669]
+//a magic wand of Greater Heal
+DEFNAME=i_wand_GREATER_HEAL
+ID=i_wand_1
+TYPE=T_WAND
+RESOURCES=i_wand_1,10 i_scroll_greater_heal
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Wands
+DESCRIPTION=Wand of Greater Heal
+
+ON=@Create
+MOREX=s_greater_heal
+MOREY=50.0
+MORE2=10
+ATTR=attr_magic
+
+[ITEMDEF 04670]
+//a magic wand of Lightning
+DEFNAME=i_wand_LIGHTNING
+ID=i_wand_2
+TYPE=T_WAND
+RESOURCES=i_wand_2,10 i_scroll_lightning
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Wands
+DESCRIPTION=Wand of Lightning
+
+ON=@Create
+MOREX=s_lightning
+MOREY=50.0
+MORE2=10
+ATTR=attr_magic
+
+[ITEMDEF 04671]
+//a magic wand of Mana Drain
+DEFNAME=i_wand_MANA_DRAIN
+ID=i_wand_3
+TYPE=T_WAND
+RESOURCES=i_wand_3,10 i_scroll_mana_drain
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Wands
+DESCRIPTION=Wand of Mana Drain
+
+ON=@Create
+MOREX=s_mana_drain
+MOREY=50.0
+MORE2=10
+ATTR=attr_magic
+
+[ITEMDEF 04672]
+//a magic wand of Recall
+DEFNAME=i_wand_RECALL
+ID=i_wand_4
+TYPE=T_WAND
+RESOURCES=i_wand_4,10 i_scroll_recall
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Wands
+DESCRIPTION=Wand of Recall
+
+ON=@Create
+MOREX=s_recall
+MOREY=50.0
+MORE2=10
+ATTR=attr_magic
+
+[ITEMDEF 04673]
+//a magic wand of Blade Spirit
+DEFNAME=i_wand_BLADE_SPIRITS
+ID=i_wand_1
+TYPE=T_WAND
+RESOURCES=i_wand_1,10 i_scroll_blade_spirits
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Wands
+DESCRIPTION=Wand of Blade Spirits
+
+ON=@Create
+MOREX=s_blade_spirits
+MOREY=50.0
+MORE2=10
+ATTR=attr_magic
+
+[ITEMDEF 04674]
+//a magic wand of Dispel Field
+DEFNAME=i_wand_DISPEL_FIELD
+ID=i_wand_2
+TYPE=T_WAND
+RESOURCES=i_wand_2,10 i_scroll_dispel_field
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Wands
+DESCRIPTION=Wand of Dispel Field
+
+ON=@Create
+MOREX=s_dispel_field
+MOREY=50.0
+MORE2=10
+ATTR=attr_magic
+
+[ITEMDEF 04675]
+//a magic wand of Incognito
+DEFNAME=i_wand_INCOGNITO
+ID=i_wand_3
+TYPE=T_WAND
+RESOURCES=i_wand_3,10 i_scroll_incognito
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Wands
+DESCRIPTION=Wand of Incognito
+
+ON=@Create
+MOREX=s_incognito
+MOREY=50.0
+MORE2=10
+ATTR=attr_magic
+
+[ITEMDEF 04676]
+//a magic wand of Magic Reflect
+DEFNAME=i_wand_MAGIC_REFLECTION
+ID=i_wand_4
+TYPE=T_WAND
+RESOURCES=i_wand_4,10 i_scroll_magic_reflection
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Wands
+DESCRIPTION=Wand of Magic Reflect
+
+ON=@Create
+MOREX=s_magic_reflection
+MOREY=50.0
+MORE2=10
+ATTR=attr_magic
+
+[ITEMDEF 04677]
+//a magic wand of Mind Blast
+DEFNAME=i_wand_MIND_BLAST
+ID=i_wand_1
+TYPE=T_WAND
+RESOURCES=i_wand_1,10 i_scroll_mind_blast
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Wands
+DESCRIPTION=Wand of Mind Blast
+
+ON=@Create
+MOREX=s_mind_blast
+MOREY=50.0
+MORE2=10
+ATTR=attr_magic
+
+[ITEMDEF 04678]
+//a magic wand of Paralyze
+DEFNAME=i_wand_PARALYZE
+ID=i_wand_2
+TYPE=T_WAND
+RESOURCES=i_wand_2,10 i_scroll_paralyze
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Wands
+DESCRIPTION=Wand of Paralyzation
+
+ON=@Create
+MOREX=s_paralyze
+MOREY=50.0
+MORE2=10
+ATTR=attr_magic
+
+[ITEMDEF 04679]
+//a magic wand of Poison Field
+DEFNAME=i_wand_POISON_FIELD
+ID=i_wand_3
+TYPE=T_WAND
+RESOURCES=i_wand_3,10 i_scroll_poison_field
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Wands
+DESCRIPTION=Wand of Poison Field
+
+ON=@Create
+MOREX=s_poison_field
+MOREY=50.0
+MORE2=10
+ATTR=attr_magic
+
+[ITEMDEF 04680]
+//a magic wand of Summon Creature
+DEFNAME=i_wand_SUMMON_CREATURE
+ID=i_wand_4
+TYPE=T_WAND
+RESOURCES=i_wand_4,10 i_scroll_summon_creature
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Wands
+DESCRIPTION=Wand of Summon Creature
+
+ON=@Create
+MOREX=s_summon_creature
+MOREY=50.0
+MORE2=10
+ATTR=attr_magic
+
+[ITEMDEF 04681]
+//a magic wand of Dispel
+DEFNAME=i_wand_DISPEL
+ID=i_wand_1
+TYPE=T_WAND
+RESOURCES=i_wand_1,10 i_scroll_dispel
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Wands
+DESCRIPTION=Wand of Dispel
+
+ON=@Create
+MOREX=s_dispel
+MOREY=50.0
+MORE2=10
+ATTR=attr_magic
+
+[ITEMDEF 04682]
+//a magic wand of Energy Bolt
+DEFNAME=i_wand_ENERGY_BOLT
+ID=i_wand_2
+TYPE=T_WAND
+RESOURCES=i_wand_2,10 i_scroll_energy_bolt
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Wands
+DESCRIPTION=Wand of Energy Bolt
+
+ON=@Create
+MOREX=s_energy_bolt
+MOREY=50.0
+MORE2=10
+ATTR=attr_magic
+
+[ITEMDEF 04683]
+//a magic wand of Explosion
+DEFNAME=i_wand_EXPLOSION
+ID=i_wand_3
+TYPE=T_WAND
+RESOURCES=i_wand_3,10 i_scroll_explosion
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Wands
+DESCRIPTION=Wand of Explosion
+
+ON=@Create
+MOREX=s_explosion
+MOREY=50.0
+MORE2=10
+ATTR=attr_magic
+
+[ITEMDEF 04684]
+//a magic wand of Invisibility
+DEFNAME=i_wand_INVISIBILITY
+ID=i_wand_4
+TYPE=T_WAND
+RESOURCES=i_wand_4,10 i_scroll_invisibility
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Wands
+DESCRIPTION=Wand of Invisibility
+
+ON=@Create
+MOREX=s_invisibility
+MOREY=50.0
+MORE2=10
+ATTR=attr_magic
+
+[ITEMDEF 04685]
+//a magic wand of Mark
+DEFNAME=i_wand_MARK
+ID=i_wand_1
+TYPE=T_WAND
+RESOURCES=i_wand_1,10 i_scroll_mark
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Wands
+DESCRIPTION=Wand of Mark
+
+ON=@Create
+MOREX=s_mark
+MOREY=50.0
+MORE2=10
+ATTR=attr_magic
+
+[ITEMDEF 04686]
+//a magic wand of Mass Curse
+DEFNAME=i_wand_MASS_CURSE
+ID=i_wand_2
+TYPE=T_WAND
+RESOURCES=i_wand_2,10 i_scroll_mass_curse
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Wands
+DESCRIPTION=Wand of Mass Cure
+
+ON=@Create
+MOREX=s_mass_curse
+MOREY=50.0
+MORE2=10
+ATTR=attr_magic
+
+[ITEMDEF 04687]
+//a magic wand of Paralyze Field
+DEFNAME=i_wand_PARALYZE_FIELD
+ID=i_wand_3
+TYPE=T_WAND
+RESOURCES=i_wand_3,10 i_scroll_paralyze_field
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Wands
+DESCRIPTION=Wand of Paralyze Field
+
+ON=@Create
+MOREX=s_paralyzation_field
+MOREY=50.0
+MORE2=10
+ATTR=attr_magic
+
+[ITEMDEF 04688]
+//a magic wand of Reveal
+DEFNAME=i_wand_REVEAL
+ID=i_wand_4
+TYPE=T_WAND
+RESOURCES=i_wand_4,10 i_scroll_reveal
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Wands
+DESCRIPTION=Wand of Reveal
+
+ON=@Create
+MOREX=s_reveal
+MOREY=50.0
+MORE2=10
+ATTR=attr_magic
+
+[ITEMDEF 04689]
+//a magic wand of Chain Lightning
+DEFNAME=i_wand_chain_lightning
+ID=i_wand_1
+TYPE=T_WAND
+RESOURCES=i_wand_1,10 i_scroll_chain_lightning
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Wands
+DESCRIPTION=Wand of Chain Lightning
+
+ON=@Create
+MOREX=s_chain_lightning
+MOREY=50.0
+MORE2=10
+ATTR=attr_magic
+
+[ITEMDEF 04690]
+//a magic wand of Energy Field
+DEFNAME=i_wand_energy_field
+ID=i_wand_2
+TYPE=T_WAND
+RESOURCES=i_wand_2,10 i_scroll_energy_field
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Wands
+DESCRIPTION=Wand of Energy Field
+
+ON=@Create
+MOREX=s_energy_field
+MOREY=50.0
+MORE2=10
+ATTR=attr_magic
+
+[ITEMDEF 04691]
+//a magic wand of Flame Strike
+DEFNAME=i_wand_flamestrike
+ID=i_wand_3
+TYPE=T_WAND
+RESOURCES=i_wand_3,10 i_scroll_flamestrike
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Wands
+DESCRIPTION=Wand of Flame Strike
+
+ON=@Create
+MOREX=s_flamestrike
+MOREY=50.0
+MORE2=10
+ATTR=attr_magic
+
+[ITEMDEF 04692]
+//a magic wand of Gate Travel
+DEFNAME=i_wand_gate_travel
+ID=i_wand_4
+TYPE=T_WAND
+RESOURCES=i_wand_4,10 i_scroll_gate_travel
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Wands
+DESCRIPTION=Wand of Gate Travel
+
+ON=@Create
+MOREX=s_gate_travel
+MOREY=50.0
+MORE2=10
+ATTR=attr_magic
+
+[ITEMDEF 04693]
+//a magic wand of Mana Vampire
+DEFNAME=i_wand_mana_vampire
+ID=i_wand_1
+TYPE=T_WAND
+RESOURCES=i_wand_1,10 i_scroll_mana_vampire
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Wands
+DESCRIPTION=Wand of Mana Vampire
+
+ON=@Create
+MOREX=s_mana_vampire
+MOREY=50.0
+MORE2=10
+ATTR=attr_magic
+
+[ITEMDEF 04694]
+//a magic wand of Mass Dispel
+DEFNAME=i_wand_mass_dispel
+ID=i_wand_2
+TYPE=T_WAND
+RESOURCES=i_wand_2,10 i_scroll_mass_dispel
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Wands
+DESCRIPTION=Wand of Mass Dispel
+
+ON=@Create
+MOREX=s_mass_dispel
+MOREY=50.0
+MORE2=10
+ATTR=attr_magic
+
+[ITEMDEF 04695]
+//a magic wand of Meteor Swarm
+DEFNAME=i_wand_meteor_swarm
+ID=i_wand_3
+TYPE=T_WAND
+RESOURCES=i_wand_3,10 i_scroll_meteor_swarm
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Wands
+DESCRIPTION=Wand of Meteor Storm
+
+ON=@Create
+MOREX=s_meteor_swarm
+MOREY=50.0
+MORE2=10
+ATTR=attr_magic
+
+[ITEMDEF 04696]
+//a magic wand of Polymorph
+DEFNAME=i_wand_polymorph
+ID=i_wand_4
+TYPE=T_WAND
+RESOURCES=i_wand_4,10 i_scroll_polymorph
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Wands
+DESCRIPTION=Wand of Polymorph
+
+ON=@Create
+MOREX=s_polymorph
+MOREY=50.0
+MORE2=10
+ATTR=attr_magic
+
+[ITEMDEF 04697]
+//a magic wand of Earthquake
+DEFNAME=i_wand_earthquake
+ID=i_wand_1
+TYPE=T_WAND
+RESOURCES=i_wand_1,10 i_scroll_earthquake
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Wands
+DESCRIPTION=Wand of Earthquake
+
+ON=@Create
+MOREX=s_earthquake
+MOREY=50.0
+MORE2=10
+ATTR=attr_magic
+
+[ITEMDEF 04698]
+//a magic wand of Energy Vortex
+DEFNAME=i_wand_energy_vortex
+ID=i_wand_2
+TYPE=T_WAND
+RESOURCES=i_wand_2,10 i_scroll_energy_vortex
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Wands
+DESCRIPTION=Wand of Energy Vortex
+
+ON=@Create
+MOREX=s_energy_vortex
+MOREY=50.0
+MORE2=10
+ATTR=attr_magic
+
+[ITEMDEF 04699]
+//a magic wand of Resurrection
+DEFNAME=i_wand_resurrection
+ID=i_wand_3
+TYPE=T_WAND
+RESOURCES=i_wand_3,10 i_scroll_resurrection
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Wands
+DESCRIPTION=Wand of Resurrection
+
+ON=@Create
+MOREX=s_resurrection
+MOREY=50.0
+MORE2=10
+ATTR=attr_magic
+
+[ITEMDEF 0469a]
+DEFNAME=i_wand_summon_elem_air
+ID=i_wand_4
+TYPE=T_WAND
+RESOURCES=i_wand_4,10 i_scroll_summon_elem_air
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Wands
+DESCRIPTION=Wand of Summon Air Elemental
+
+ON=@Create
+MOREX=s_summon_elem_air
+MOREY=50.0
+MORE2=10
+ATTR=attr_magic
+
+[ITEMDEF 0469b]
+DEFNAME=i_wand_summon_daemon
+ID=i_wand_1
+TYPE=T_WAND
+RESOURCES=i_wand_1,10 i_scroll_summon_daemon
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Wands
+DESCRIPTION=Wand of Summon Daemon
+
+ON=@Create
+MOREX=s_summon_daemon
+MOREY=50.0
+MORE2=10
+ATTR=attr_magic
+
+[ITEMDEF 0469c]
+DEFNAME=i_wand_summon_elem_earth
+ID=i_wand_2
+TYPE=T_WAND
+RESOURCES=i_wand_2,10 i_scroll_summon_elem_earth
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Wands
+DESCRIPTION=Wand of Summon Earth Elemental
+
+ON=@Create
+MOREX=s_summon_elem_earth
+MOREY=50.0
+MORE2=10
+ATTR=attr_magic
+
+[ITEMDEF 0469d]
+DEFNAME=i_wand_summon_elem_fire
+ID=i_wand_3
+TYPE=T_WAND
+RESOURCES=i_wand_3,10 i_scroll_summon_elem_fire
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Wands
+DESCRIPTION=Wand of Summon Fire Elemental
+
+ON=@Create
+MOREX=s_summon_elem_fire
+MOREY=50.0
+MORE2=10
+ATTR=attr_magic
+
+[ITEMDEF 0469e]
+DEFNAME=i_wand_summon_elem_water
+ID=i_wand_4
+TYPE=T_WAND
+RESOURCES=i_wand_4,10 i_scroll_summon_elem_water
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Wands
+DESCRIPTION=Wand of Summon Water Elemental
+
+
+ON=@Create
+MOREX=s_summon_elem_water
+MOREY=50.0
+MORE2=10
+ATTR=attr_magic
+
+[ITEMDEF 0464a]
+DEFNAME=i_wand_summon_undead
+ID=i_wand_4
+TYPE=T_WAND
+RESOURCES=i_wand_4,10 i_scroll_x_green2
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Wands
+DESCRIPTION=Wand of Summon Undead
+
+ON=@Create
+MOREX=s_summon_undead
+MOREY=50.0
+MORE2=10
+ATTR=attr_magic
+
+[ITEMDEF 0464b]
+DEFNAME=i_wand_animate_dead
+ID=i_wand_4
+TYPE=T_WAND
+RESOURCES=i_wand_4,10 i_scroll_x_teal2
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Wands
+DESCRIPTION=Wand of Animate Dead
+
+ON=@Create
+MOREX=s_animate_dead
+MOREY=50.0
+MORE2=10
+ATTR=attr_magic
+
+[ITEMDEF 0464c]
+DEFNAME=i_wand_bone_armor
+ID=i_wand_4
+TYPE=T_WAND
+RESOURCES=i_wand_4,10 i_scroll_x_brown2
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Wands
+DESCRIPTION=Wand of Bone Armor
+
+ON=@Create
+ATTR=attr_magic
+MOREX=s_bone_armor
+MOREY=50.0
+MORE2=10
+
+[ITEMDEF 0464d]
+DEFNAME=i_wand_light
+ID=i_wand_4
+TYPE=T_WAND
+RESOURCES=i_wand_4,10 i_scroll_x_red
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Wands
+DESCRIPTION=Wand of Light
+
+ON=@Create
+ATTR=attr_magic
+MOREX=s_light
+MOREY=50.0
+MORE2=10
+
+[ITEMDEF 0464e]
+DEFNAME=i_wand_fire_bolt
+ID=i_wand_4
+TYPE=T_WAND
+RESOURCES=i_wand_4,10 i_scroll_x_blue
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Wands
+DESCRIPTION=Wand of Fire Bolt
+
+ON=@Create
+ATTR=attr_magic
+MOREX=s_Fire_Bolt
+MOREY=50.0
+MORE2=10
+
+[ITEMDEF 0464f]
+DEFNAME=i_wand_HALLUCINATION
+ID=i_wand_4
+TYPE=T_WAND
+RESOURCES=i_wand_4,10 i_scroll_MIND_BLAST
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Wands
+DESCRIPTION=Wand of Hallucination
+
+ON=@Create
+ATTR=attr_magic
+MOREX=s_Hallucination
+MOREY=50.0
+MORE2=10
+
+[ITEMDEF i_wand_FIREWORKS]
+ID=i_wand_3
+NAME=Fireworks Wand with 20 charges
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Wands
+DESCRIPTION=Fireworks Wand
+
+ON=@Create
+ATTR=attr_magic
+more2=10// init number of charges
+
+ON=@DCLICK
+IF <moreY> == 0
+moreY=50.0// mark the wand as "primed"
+more2=10// init number of charges
+ENDIF
+IF <more2> <= 0
+SRC.MESSAGE This is out of charges
+RETURN 1
+ENDIF
+
+more2=<more2> - 1
+NAME=Fireworks Wand  with <more2> charges
+
+SRC.NEWITEM=i_fx_curse
+SRC.ACT.NAME=fireworks display
+SRC.ACT.MOVE=-2+RAND(5),-2+RAND(5),20+RAND(12)
+SRC.ACT.TIMER=5
+SRC.ACT.SOUND=011c
+
+SRC.NEWITEM=i_fx_curse
+SRC.ACT.NAME=fireworks display
+SRC.ACT.COLOR=2
+SRC.ACT.MOVE=-2+RAND(5),-2+RAND(5),20+RAND(12)
+SRC.ACT.TIMER=6
+SRC.ACT.SOUND=011e
+
+SRC.NEWITEM=i_fx_curse
+SRC.ACT.NAME=fireworks display
+SRC.ACT.COLOR=481
+SRC.ACT.MOVE=-2+RAND(5),-2+RAND(5),20+RAND(12)
+SRC.ACT.TIMER=4
+SRC.ACT.SOUND=011c
+
+RETURN 1
+
+[EOF]

@@ -1,0 +1,21 @@
+[SPEECH spk_job_peasant]
+DEFAULT=Eh?
+
+ON=Hail
+ON=Hi
+ON=Greet
+ON=Hello
+SAY=Oh. Beg yer pardon.
+
+ON=Job
+ON=What do you do
+SAY=I does what I can.
+
+ON=Bye
+ON=Goodbye
+ON=Farewell
+SAY=Eh.
+BYE
+RETURN 1
+
+[EOF]

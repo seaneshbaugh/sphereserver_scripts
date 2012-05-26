@@ -1,0 +1,831 @@
+// This file contains all the various ores and their respective ingots.It also
+// has the colors of the ores defined as an ore color. In addition there is the
+// region resource definitions for all the ores and gems.
+
+// ORE		SKILL	VALUE
+// Rusty Iron	0.0	1
+// Tin		10.0	3
+// Brass	25.0	5
+// Old Copper	33.0	7
+// Iron		50.0	9
+// Dull Copper	60.0	11
+// Rose Iron	70.0	15
+// Copper	80.0	17
+// Shadow Iron	95.0	20
+// Bronze	100.0	30
+// Silver	125.0	40
+// Gold		150.0	50
+// Agapite	160.0	60
+// Verite	175.0	80
+// Valorite	200.0	90
+// Bloodrock	225.0	92
+// Titanium	250.0	95
+// Mythril	295.0	97
+// Adamantine	300.0	100
+// Blackrock	300.0	200
+
+[DEFNAME color_ore]
+color_o_rustyiron	0750
+color_o_tin		08fd
+color_o_brass		0035
+color_o_oldcopper	0590
+color_o_iron		0000
+color_o_dullcopper	060a
+color_o_roseiron	0665
+color_o_copper		0641
+color_o_shadowiron	0770
+color_o_bronze		06d6
+color_o_silver		0231
+color_o_gold		045e
+color_o_agapite		0400
+color_o_verite		07d1
+color_o_valorite	0515
+color_o_bloodrock	04c2
+color_o_titanium	0835
+color_o_mythril		052d
+color_o_adamantine	07a1
+color_o_blackrock	0455
+
+//Ores
+[ITEMDEF i_ore_rustyiron]
+ID=i_ore_iron
+NAME=Rusty Iron Ore
+VALUE=1
+WEIGHT=2
+SKILLMAKE=MINING 0.0
+TDATA1=i_ingot_rustyiron
+
+CATEGORY=Items by Professions
+SUBSECTION=Blacksmith
+DESCRIPTION=Rusty Iron Ore
+
+ON=@Create
+COLOR=color_o_rustyiron
+
+[ITEMDEF i_ore_tin]
+ID=i_ore_iron
+NAME=Tin Ore
+VALUE=3
+WEIGHT=2
+SKILLMAKE=MINING 10.0
+TDATA1=i_ingot_tin
+
+CATEGORY=Items by Professions
+SUBSECTION=Blacksmith
+DESCRIPTION=Tin Ore
+
+ON=@Create
+COLOR=color_o_tin
+
+[ITEMDEF i_ore_brass]
+ID=i_ore_iron
+NAME=Brass Ore
+VALUE=5
+WEIGHT=2
+SKILLMAKE=MINING 25.0
+TDATA1=i_ingot_brass
+
+CATEGORY=Items by Professions
+SUBSECTION=Blacksmith
+DESCRIPTION=Brass Ore
+
+ON=@Create
+COLOR=color_o_brass
+
+[ITEMDEF i_ore_oldcopper]
+ID=i_ore_iron
+NAME=Old Copper Ore
+VALUE=7
+WEIGHT=2
+SKILLMAKE=MINING 33.0
+TDATA1=i_ingot_oldcopper
+
+CATEGORY=Items by Professions
+SUBSECTION=Blacksmith
+DESCRIPTION=Old Copper Ore
+
+ON=@Create
+COLOR=color_o_oldcopper
+
+[ITEMDEF i_ore_dullcopper]
+ID=i_ore_iron
+NAME=Dull Copper Ore
+VALUE=11
+WEIGHT=2
+SKILLMAKE=MINING 60.0
+TDATA1=i_ingot_dullcopper
+
+CATEGORY=Items by Professions
+SUBSECTION=Blacksmith
+DESCRIPTION=Dull Copper Ore
+
+ON=@Create
+COLOR=color_o_dullcopper
+
+[ITEMDEF i_ore_roseiron]
+ID=i_ore_iron
+NAME=Rose Iron Ore
+VALUE=15
+WEIGHT=2
+SKILLMAKE=MINING 70.0
+TDATA1=i_ingot_rose
+
+CATEGORY=Items by Professions
+SUBSECTION=Blacksmith
+DESCRIPTION=Rose Iron Ore
+
+ON=@Create
+COLOR=color_o_roseiron
+
+[ITEMDEF i_ore_copper]
+ID=i_ore_iron
+NAME=Copper Ore
+VALUE=17
+WEIGHT=2
+SKILLMAKE=MINING 80.0
+TDATA1=i_ingot_copper
+
+CATEGORY=Items by Professions
+SUBSECTION=Blacksmith
+DESCRIPTION=Copper Ore
+
+ON=@Create
+COLOR=color_o_copper
+
+[ITEMDEF i_ore_shadowiron]
+ID=i_ore_iron
+NAME=Shadow Iron Ore
+VALUE=20
+WEIGHT=2
+SKILLMAKE=MINING 95.0
+TDATA1=i_ingot_shadow
+
+CATEGORY=Items by Professions
+SUBSECTION=Blacksmith
+DESCRIPTION=Shadow Iron Ore
+
+ON=@Create
+COLOR=color_o_shadowiron
+
+[ITEMDEF i_ore_bronze]
+ID=i_ore_iron
+NAME=Bronze Ore
+VALUE=30
+WEIGHT=2
+SKILLMAKE=MINING 100.0
+TDATA1=i_ingot_bronze
+
+CATEGORY=Items by Professions
+SUBSECTION=Blacksmith
+DESCRIPTION=Bronze Ore
+
+ON=@Create
+COLOR=color_o_bronze
+
+[ITEMDEF i_ore_silver]
+ID=i_ore_iron
+NAME=Silver Ore
+VALUE=40
+WEIGHT=2
+SKILLMAKE=MINING 125.0
+TDATA1=i_ingot_silver
+
+CATEGORY=Items by Professions
+SUBSECTION=Blacksmith
+DESCRIPTION=Silver Ore
+
+ON=@Create
+COLOR=color_o_silver
+
+[ITEMDEF i_ore_gold]
+ID=i_ore_iron
+NAME=Gold Ore
+WEIGHT=2
+VALUE=50
+SKILLMAKE=MINING 150.0
+TDATA1=i_ingot_gold
+
+CATEGORY=Items by Professions
+SUBSECTION=Blacksmith
+DESCRIPTION=Gold Ore
+
+ON=@Create
+COLOR=color_o_gold
+
+[ITEMDEF i_ore_agapite]
+ID=i_ore_iron
+NAME=Agapite Ore
+VALUE=60
+WEIGHT=2
+SKILLMAKE=MINING 160.0
+TDATA1=i_ingot_agapite
+
+CATEGORY=Items by Professions
+SUBSECTION=Blacksmith
+DESCRIPTION=Agapite Ore
+
+ON=@Create
+COLOR=color_o_agapite
+
+[ITEMDEF i_ore_verite]
+ID=i_ore_iron
+NAME=Verite Ore
+SKILLMAKE=MINING 175.0
+TDATA1=i_ingot_verite
+VALUE=80
+
+CATEGORY=Items by Professions
+SUBSECTION=Blacksmith
+DESCRIPTION=Verite Ore
+
+ON=@Create
+COLOR=color_o_verite
+
+[ITEMDEF i_ore_valorite]
+ID=i_ore_iron
+NAME=Valorite Ore
+SKILLMAKE=MINING 200.0
+TDATA1=i_ingot_valorite
+VALUE=90
+
+ON=@Create
+COLOR=color_o_valorite
+
+CATEGORY=Items by Professions
+SUBSECTION=Blacksmith
+DESCRIPTION=Valorite Ore
+
+[ITEMDEF i_ore_bloodrock]
+ID=i_ore_iron
+NAME=Bloodrock Ore
+VALUE=92
+WEIGHT=2
+SKILLMAKE=MINING 225.0
+TDATA1=i_ingot_bloodrock
+
+CATEGORY=Items by Professions
+SUBSECTION=Blacksmith
+DESCRIPTION=Bloodrock Ore
+
+ON=@Create
+COLOR=color_o_bloodrock
+
+[ITEMDEF i_ore_titanium]
+ID=i_ore_iron
+NAME=Titanium Ore
+VALUE=95
+WEIGHT=2
+SKILLMAKE=MINING 250.0
+TDATA1=i_ingot_titanium
+
+CATEGORY=Items by Professions
+SUBSECTION=Blacksmith
+DESCRIPTION=Titanium Ore
+
+ON=@Create
+COLOR=color_o_titanium
+
+[ITEMDEF i_ore_mythril]
+ID=i_ore_iron
+NAME=Mythril Ore
+VALUE=97
+WEIGHT=2
+SKILLMAKE=MINING 295.0
+TDATA1=i_ingot_mythril
+
+CATEGORY=Items by Professions
+SUBSECTION=Blacksmith
+DESCRIPTION=Mythril Ore
+
+ON=@Create
+COLOR=color_o_mythril
+
+[ITEMDEF i_ore_adamantine]
+ID=i_ore_iron
+NAME=Adamantine Ore
+VALUE=100
+WEIGHT=2
+SKILLMAKE=MINING 300.0
+TDATA1=i_ingot_adamantine
+
+CATEGORY=Items by Professions
+SUBSECTION=Blacksmith
+DESCRIPTION=Adamantine Ore
+
+ON=@Create
+COLOR=color_o_adamantine
+
+[ITEMDEF i_ore_blackrock]
+ID=i_ore_iron
+NAME=Blackrock Ore
+VALUE=200
+WEIGHT=2
+SKILLMAKE=MINING 300.0
+TDATA1=i_ingot_blackrock
+
+CATEGORY=Items by Professions
+SUBSECTION=Blacksmith
+DESCRIPTION=Blackrock Ore
+
+ON=@Create
+COLOR=color_o_blackrock
+
+//Ingots
+[ITEMDEF i_ingot_rustyiron]
+ID=i_ingot_iron
+NAME=Rusty Iron Ingot
+VALUE=1
+WEIGHT=1
+RESOURCES=i_ore_rusty
+SKILLMAKE=MINING 0.0
+TDATA1=0.0
+TDATA2=0.0
+
+CATEGORY=Items by Professions
+SUBSECTION=Blacksmith
+DESCRIPTION=Rusty Iron Ingot
+
+ON=@Create
+COLOR=color_o_rustyiron
+
+[ITEMDEF i_ingot_tin]
+ID=i_ingot_iron
+NAME=Tin Ingot
+VALUE=3
+WEIGHT=1
+RESOURCES=i_ore_tin
+SKILLMAKE=MINING 10.0
+TDATA1=10.0
+TDATA2=10.0
+
+CATEGORY=Items by Professions
+SUBSECTION=Blacksmith
+DESCRIPTION=Tin Ingot
+
+ON=@Create
+COLOR=color_o_tin
+
+[ITEMDEF i_ingot_brass]
+ID=i_ingot_iron
+NAME=Brass Ingot
+VALUE=5
+WEIGHT=1
+RESOURCES=i_ore_brass
+SKILLMAKE=MINING 25.0
+TDATA1=25.0
+TDATA2=25.0
+
+CATEGORY=Items by Professions
+SUBSECTION=Blacksmith
+DESCRIPTION=Brass Ingot
+
+ON=@Create
+COLOR=color_o_brass
+
+[ITEMDEF i_ingot_oldcopper]
+ID=i_ingot_iron
+NAME=Old Copper Ingot
+VALUE=7
+WEIGHT=1
+RESOURCES=i_ore_oldcopper
+SKILLMAKE=MINING 33.0
+TDATA1=33.0
+TDATA2=33.0
+
+CATEGORY=Items by Professions
+SUBSECTION=Blacksmith
+DESCRIPTION=Old Copper Ingot
+
+ON=@Create
+COLOR=color_o_oldcopper
+
+[ITEMDEF i_ingot_dullcopper]
+ID=i_ingot_iron
+NAME=Dull Copper Ingot
+VALUE=11
+WEIGHT=1
+RESOURCES=i_ore_dullcopper
+SKILLMAKE=MINING 60.0
+TDATA1=60.0
+TDATA2=60.0
+
+CATEGORY=Items by Professions
+SUBSECTION=Blacksmith
+DESCRIPTION=Dull Copper Ingot
+
+ON=@Create
+COLOR=color_o_dullcopper
+
+[ITEMDEF i_ingot_roseiron]
+ID=i_ingot_iron
+NAME=Rose Iron Ingot
+VALUE=15
+WEIGHT=1
+RESOURCES=i_ore_roseiron
+SKILLMAKE=MINING 70.0
+TDATA1=70.0
+TDATA2=70.0
+
+CATEGORY=Items by Professions
+SUBSECTION=Blacksmith
+DESCRIPTION=Rose Ingot
+
+ON=@Create
+COLOR=color_o_roseiron
+
+[ITEMDEF i_ingot_shadowiron]
+ID=i_ingot_iron
+NAME=Shadow Iron Ingot
+VALUE=20
+WEIGHT=1
+RESOURCES=i_ore_shadowiron
+SKILLMAKE=MINING 95.0
+TDATA1=95.0
+TDATA2=95.0
+
+CATEGORY=Items by Professions
+SUBSECTION=Blacksmith
+DESCRIPTION=Shadow Iron Ingot
+
+ON=@Create
+COLOR=color_o_shadowiron
+
+[ITEMDEF i_ingot_bronze]
+NAME=Bronze Ingot
+ID=i_ingot_iron
+VALUE=30
+WEIGHT=1
+RESOURCES=i_ore_bronze
+SKILLMAKE=MINING 100.0
+TDATA1=100.0
+TDATA2=100.0
+
+CATEGORY=Items by Professions
+SUBSECTION=Blacksmith
+DESCRIPTION=Bronze Ingot
+
+ON=@Create
+COLOR=color_o_bronze
+
+[ITEMDEF i_ingot_agapite]
+ID=i_ingot_iron
+NAME=Agapite
+VALUE=60
+WEIGHT=1
+SKILLMAKE=MINING 160.0
+TDATA1=160.0
+TDATA2=160.0
+RESOURCES=i_ore_agapite
+
+CATEGORY=Items by Professions
+SUBSECTION=Blacksmith
+DESCRIPTION=Agapite Ingot
+
+ON=@Create
+COLOR=color_o_agapite
+
+[ITEMDEF i_ingot_verite]
+NAME=Verite Ingot
+ID=i_ingot_iron
+VALUE=80
+WEIGHT=1
+RESOURCES=i_ore_verite
+SKILLMAKE=MINING 175.0
+TDATA1=175.0
+TDATA2=175.0
+
+CATEGORY=Items by Professions
+SUBSECTION=Blacksmith
+DESCRIPTION=Verite Ingot
+
+ON=@Create
+COLOR=color_o_verite
+
+[ITEMDEF i_ingot_valorite]
+NAME=Valorite Ingot
+ID=i_ingot_iron
+VALUE=90
+WEIGHT=1
+RESOURCES=i_ore_valorite
+SKILLMAKE=MINING 200.0
+TDATA1=200.0
+TDATA2=200.0
+
+CATEGORY=Items by Professions
+SUBSECTION=Blacksmith
+DESCRIPTION=Valorite Ingot
+
+ON=@Create
+COLOR=color_o_valorite
+
+[ITEMDEF i_ingot_bloodrock]
+ID=i_ingot_iron
+NAME=Blood Rock Ingot
+VALUE=92
+WEIGHT=1
+RESOURCES=i_ore_bloodrock
+SKILLMAKE=MINING 225.0
+TDATA1=225.0
+TDATA2=225.0
+
+CATEGORY=Items by Professions
+SUBSECTION=Blacksmith
+DESCRIPTION=Blood Rock Ingot
+
+ON=@Create
+COLOR=color_o_bloodrock
+
+[ITEMDEF i_ingot_titanium]
+ID=i_ingot_iron
+NAME=Titanium Ingot
+VALUE=95
+WEIGHT=.1
+RESOURCES=i_ore_mythril
+SKILLMAKE=MINING 250.0
+TDATA1=250.0
+TDATA2=250.0
+
+CATEGORY=Items by Professions
+SUBSECTION=Blacksmith
+DESCRIPTION=Titanium Ingot
+
+ON=@Create
+COLOR=color_o_titanium
+
+[ITEMDEF i_ingot_mythril]
+ID=i_ingot_iron
+NAME=Mythril Ingot
+VALUE=97
+WEIGHT=1
+RESOURCES=i_ore_mythril
+SKILLMAKE=MINING 295.0
+TDATA1=295.0
+TDATA2=295.0
+
+CATEGORY=Items by Professions
+SUBSECTION=Blacksmith
+DESCRIPTION=Mythril Ingot
+
+ON=@Create
+COLOR=color_o_mythril
+
+[ITEMDEF i_ingot_adamantine]
+ID=i_ingot_iron
+NAME=Adamantine Ingot
+VALUE=100
+WEIGHT=1
+RESOURCES=i_ore_adamantine
+SKILLMAKE=MINING 300.0
+TDATA1=300.0
+TDATA2=300.0
+
+CATEGORY=Items by Professions
+SUBSECTION=Blacksmith
+DESCRIPTION=Adamantine Ingot
+
+ON=@Create
+COLOR=color_o_adamantine
+
+[ITEMDEF i_ingot_blackrock]
+ID=i_ingot_iron
+NAME=Black Rock Ingot
+VALUE=200
+WEIGHT=1
+RESOURCES=i_ore_blackrock
+SKILLMAKE=MINING 300.0
+TDATA1=300.0
+TDATA2=300.0
+
+CATEGORY=Items by Professions
+SUBSECTION=Blacksmith
+DESCRIPTION=Black Rock Ingot
+
+ON=@Create
+COLOR=color_o_blackrock
+
+//Region Resources
+[REGIONRESOURCE mr_rustyiron]
+SKILL_LO=1.0
+SKILL_HI=30.0
+AMOUNT_LO=8
+AMOUNT_HI=21
+REAP=i_ore_rustyiron
+REGEN=60*60*10
+
+[REGIONRESOURCE mr_tin]
+SKILL_LO=1.0
+SKILL_HI=30.0
+AMOUNT_LO=8
+AMOUNT_HI=21
+REAP=i_ore_tin
+REGEN=60*60*10
+
+[REGIONRESOURCE mr_brass]
+SKILL_LO=1.0
+SKILL_HI=30.0
+AMOUNT_LO=8
+AMOUNT_HI=21
+REAP=i_ore_brass
+REGEN=60*60*10
+
+[REGIONRESOURCE mr_oldcopper]
+SKILL_LO=1.0
+SKILL_HI=30.0
+AMOUNT_LO=7
+AMOUNT_HI=18
+REAP=i_ore_oldcopper
+REGEN=60*60*10
+
+[REGIONRESOURCE mr_iron]
+SKILL_LO=1.0
+SKILL_HI=30.0
+AMOUNT_LO=9
+AMOUNT_HI=30
+REAP=i_ore_iron
+REGEN=60*60*10
+
+[REGIONRESOURCE mr_dullcopper]
+SKILL_LO=1.0
+SKILL_HI=30.0
+AMOUNT_LO=5
+AMOUNT_HI=25
+REAP=i_ore_dullcopper
+REGEN=60*60*10
+
+[REGIONRESOURCE mr_roseiron]
+SKILL_LO=30.0
+SKILL_HI=60.0
+AMOUNT_LO=3
+AMOUNT_HI=9
+REAP=i_ore_roseiron
+REGEN=60*60*10
+
+[REGIONRESOURCE mr_copper]
+SKILL_LO=30.0
+SKILL_HI=60.0
+AMOUNT_LO=5
+AMOUNT_HI=20
+REAP=i_ore_copper
+REGEN=60*60*10
+
+[REGIONRESOURCE mr_shadowiron]
+SKILL_LO=30.0
+SKILL_HI=60.0
+AMOUNT_LO=5
+AMOUNT_HI=16
+REAP=i_ore_shadowiron
+REGEN=60*60*10
+
+[REGIONRESOURCE mr_bronze]
+SKILL_LO=1.0
+SKILL_HI=30.0
+AMOUNT_LO=4
+AMOUNT_HI=12
+REAP=i_ore_bronze
+REGEN=60*60*10
+
+[REGIONRESOURCE mr_silver]
+SKILL_LO=30.0
+SKILL_HI=60.0
+AMOUNT_LO=1
+AMOUNT_HI=2
+REAP=i_ore_silver
+REGEN=60*60*10
+
+[REGIONRESOURCE mr_gold]
+SKILL_LO=30.0
+SKILL_HI=60.0
+AMOUNT_LO=3
+AMOUNT_HI=10
+REAP=i_ore_gold
+REGEN=60*60*10
+
+[REGIONRESOURCE mr_agapite]
+SKILL_LO=30.0
+SKILL_HI=60.0
+AMOUNT_LO=3
+AMOUNT_HI=8
+REAP=i_ore_agapite
+REGEN=60*60*10
+
+[REGIONRESOURCE mr_verite]
+SKILL_LO=30.0
+SKILL_HI=60.0
+AMOUNT_LO=2
+AMOUNT_HI=6
+REAP=i_ore_verite
+REGEN=60*60*10
+
+[REGIONRESOURCE mr_Valorite]
+SKILL_LO=60.0
+SKILL_HI=110.0
+AMOUNT_LO=2
+AMOUNT_HI=4
+REAP=i_ore_valorite
+REGEN=60*60*10
+
+[REGIONRESOURCE mr_bloodrock]
+SKILL_LO=30.0
+SKILL_HI=60.0
+AMOUNT_LO=3
+AMOUNT_HI=6
+REAP=i_ore_bloodrock
+REGEN=60*60*10
+
+[REGIONRESOURCE mr_titanium]
+SKILL_LO=80.0
+SKILL_HI=99.0
+AMOUNT_LO=3
+AMOUNT_HI=9
+REAP=i_ore_titanium
+REGEN=60*60*10
+
+[REGIONRESOURCE mr_mythril]
+SKILL_LO=60.0
+SKILL_HI=110.0
+AMOUNT_LO=2
+AMOUNT_HI=3
+REAP=i_ore_mythril
+REGEN=60*60*10
+
+[REGIONRESOURCE mr_adamantine]
+SKILL_LO=80.0
+SKILL_HI=99.0
+AMOUNT_LO=3
+AMOUNT_HI=9
+REAP=i_ore_adamantine
+REGEN=60*60*10
+
+[REGIONRESOURCE mr_blackrock]
+SKILL_LO=60.0
+SKILL_HI=110.0
+AMOUNT_LO=1
+AMOUNT_HI=3
+REAP=i_ore_blackrock
+REGEN=60*60*10
+
+[REGIONRESOURCE mr_diamond]
+SKILL_LO=60.0
+SKILL_HI=110.0
+AMOUNT_LO=1
+AMOUNT_HI=4
+REAP=i_diamond
+REGEN=60*60*10
+
+[REGIONRESOURCE mr_ruby]
+SKILL_LO=60.0
+SKILL_HI=110.0
+AMOUNT_LO=1
+AMOUNT_HI=4
+REAP=i_ruby
+REGEN=60*60*10
+
+[REGIONRESOURCE mr_citrine]
+SKILL_LO=60.0
+SKILL_HI=110.0
+AMOUNT_LO=1
+AMOUNT_HI=4
+REAP=i_citrine
+REGEN=60*60*10
+
+[REGIONRESOURCE mr_emerald]
+SKILL_LO=60.0
+SKILL_HI=110.0
+AMOUNT_LO=1
+AMOUNT_HI=4
+REAP=i_Emerald
+REGEN=60*60*10
+
+[REGIONRESOURCE mr_star_sapphire]
+SKILL_LO=60.0
+SKILL_HI=110.0
+AMOUNT_LO=1
+AMOUNT_HI=4
+REAP=i_Star_Sapphire
+REGEN=60*60*10
+
+[REGIONRESOURCE mr_sapphire]
+SKILL_LO=60.0
+SKILL_HI=110.0
+AMOUNT_LO=1
+AMOUNT_HI=4
+REAP=i_sapphire
+REGEN=60*60*10
+
+[REGIONRESOURCE mr_amethyst]
+SKILL_LO=60.0
+SKILL_HI=110.0
+AMOUNT_LO=1
+AMOUNT_HI=4
+REAP=i_amethyst
+REGEN=60*60*10
+
+[REGIONRESOURCE mr_tourmaline]
+SKILL_LO=60.0
+SKILL_HI=110.0
+AMOUNT_LO=1
+AMOUNT_HI=4
+REAP=i_tourmaline
+REGEN=60*60*10
+
+[EOF]

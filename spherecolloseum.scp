@@ -1,0 +1,146 @@
+
+ON=5//
+IF <VAR.COMBAT1>==1
+SRC.SYSMESSAGE Please wait untill the arena is free. The current battle should be over shortly.
+ELSE
+SRC.NEWITEM i_colloseum_memory1
+SRC.ACT.EQUIP
+RETURN 1
+ENDIF
+
+ON=7
+IF <VAR.COMBAT2>==1
+SRC.SYSMESSAGE Please wait untill the arena is free. The current battle should be over shortly.
+ELSEIF <SRC.RESTEST 1000 i_gold>
+SRC.NEWITEM i_colloseum_memory2
+SRC.ACT.EQUIP
+RETURN 1
+ELSE
+SRC.SYSMESSAGE For this type of combat there is a 1000 gold fee. You lack 1000 gold to pay.
+RETURN 1
+ENDIF
+
+[ITEMDEF i_colloseum_memory1]
+ID=i_memory
+NAME=Colloseum Memory 1
+TYPE=t_eq_script
+
+ON=@Create
+ATTR attr_invis
+
+ON=@Equip
+TARGET Select the item you wish to bet.
+
+ON=@TargOn_Char
+SRC.SYSMESSAGE That is not an item.
+REMOVE
+RETURN 1
+
+ON=@TargOn_Item
+IF <SRC.TARG.CONT>!=<SRC.UID>
+SRC.SYSMESSAGE The item must be in your pack
+REMOVE
+RETURN 1
+ELSEIF <SRC.TARG.ATTR>!=attr_newbie
+SRC.SYSMESSAGE You cannot bet blessed items.
+REMOVE
+RETURN 1
+ELSE
+IF <SRC.TARG.TYPE>==t_gold
+VAR.COMBAT1MONSTER c_arch_daemon
+VAR.COMBAT1REWARD i_gold,<SRC.TARG.AMOUNT>
+ELSEIF
+
+
+
+
+ENDIF
+SRC.TAG.PREVFAME <SRC.FAME>
+SRC.TAG.PREVKARMA <SRC.KARMA>
+SRC.GO <xxxx,yyyy,zz>
+VAR.COMBAT1 1
+SRC.NEWNPC <VAR.COMBAT1MONSTER>
+SRC.ACT.FLAGS <FLAGS>&statf_conjured
+SRC.ACT.LINK <SRC.UID>
+SRC.ACT.EVENTS +e_colloseum_monster1
+SRC.ACT.P <xxxx,yyyy,zz>
+SRC.EVENTS +e_colloseum_combat1
+RETURN 1
+
+[EVENTS e_colloseum_combat1]
+ON=@Death
+SRC.ACT.REMOVE
+SRC.RESSURECT
+SRC.HITS <SRC.STR>
+SRC.FAME <TAG.PREVFAME>
+SRC.KARMA <TAG.PREVKARMA>
+TAG.PREVFAME
+TAG.PREVKARMA
+SRC.GO <xxxx,yyyy,zz>
+SRC.SYSMESSAGE Thank you for fighting at the Colloseum, please come again!
+
+[EVENTS e_colloseum_monster1]
+ON=@Death
+ACT.GO <xxxx,yyyy,zz>
+SRC.SYSMESSAGE Thank you for fighting at the Colloseum, please come again!
+SRC.FAME <TAG.PREVFAME>
+SRC.KARMA <TAG.PREVKARMA>
+TAG.PREVFAME
+TAG.PREVKARMA
+ACT.NEWITEM <VAR.COMBAT1REWARD>
+ACT.ACT.BOUNCE
+RETURN 1
+
+[ITEMDEF i_colloseum_memory2]
+ID=i_memory
+NAME=Colloseum Memory 2
+TYPE=t_eq_script
+
+ON=@Create
+ATTR attr_invis
+
+ON=@Equip
+SRC.TAG.PREVFAME <SRC.FAME>
+SRC.TAG.PREVKARMA <SRC.KARMA>
+SRC.GO <xxxx,yyyy,zz>
+VAR.COMBAT2 1
+SRC.NEWNPC c_monster1
+SRC.ACT.FLAGS <FLAGS>&statf_conjured
+SRC.ACT.EVENTS +e_colloseum_monster2
+SRC.ACT.P <xxxx,yyyy,zz>
+SRC.ACT.TAG.MONSTERNUMBER 1
+SRC.EVENTS +e_colloseum_combat2
+SRC.TAG.COMBAT2POINTS 0
+RETURN 1
+
+[EVENTS e_colloseum_combat2]
+ON=@Death
+SRC.ACT.REMOVE
+SRC.RESSURECT
+SRC.HITS <SRC.STR>
+SRC.FAME <TAG.PREVFAME>
+SRC.KARMA <TAG.PREVKARMA>
+TAG.PREVFAME
+TAG.PREVKARMA
+SRC.GO <xxxx,yyyy,zz>
+SRC.SYSMESSAGE Thank you for fighting at the Colloseum, please come again!
+SRC.SYSMESSAGE You gained <SRC.TAG.COMBAT2POINTS> points from your fight(s).
+
+[EVENTS e_colloseum_monster2]
+ON=@Death
+IF <SRC.TAG.MONSTERNUMBER>==1
+SRC.ACT.TAG.COMBAT2POINTS <SRC.ACT.TAG.COMBAT2POINTS>+10
+SRC.NEWNPC c_monster2
+SRC.ACT.FLAGS <FLAGS>&statf_conjured
+SRC.ACT.EVENTS +e_colloseum_monster2
+SRC.ACT.P <xxxx,yyyy,zz>
+SRC.ACT.TAG.MONSTERNUMBER 2
+ELSEIF <SRC.TAG.MONSTERNUMBER>==2
+SRC.ACT.TAG.COMBAT2POINTS <SRC.ACT.TAG.COMBAT2POINTS>+20
+SRC.NEWNPC c_monster3
+SRC.ACT.FLAGS <FLAGS>&statf_conjured
+SRC.ACT.EVENTS +e_colloseum_monster2
+SRC.ACT.P <xxxx,yyyy,zz>
+SRC.ACT.TAG.MONSTERNUMBER 3
+ELSEIF <SRC.TAG.MONSTERNUMBER>==3
+//repeat for all 99 monsters

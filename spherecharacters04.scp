@@ -1,0 +1,1176 @@
+[CHARDEF c_crow]
+ID=c_bird
+NAME=Crow
+SOUND=snd_animals_crow1
+ICON=i_pet_bird
+CAN=MT_WALK|MT_FLY
+DAM=1
+ARMOR=1
+RESOURCES=i_ribs_raw 2,i_feather 25
+FOODTYPE=t_crops 25,t_grain 25
+DESIRES=c_crow,t_crops
+SHELTER=t_crops,t_grain
+AVERSIONS=e_carnivores,r_water,i_scarecrow
+
+DESCRIPTION=Crow
+SUBSECTION=Air (Wild)
+CATEGORY=Animals
+
+ON=@Create
+NPC=brain_animal
+COLOR=colors_black
+FAME=10
+KARMA={-1 -99}
+STR=6
+DEX=25
+INT={6 10}
+
+PARRYING=5.0
+MAGICRESISTANCE=5.0
+TACTICS=4.0
+WRESTLING=5.0
+TAMING=15.0
+
+[CHARDEF c_magpie]
+ID=c_bird
+NAME=Magpie
+SOUND=snd_animals_frstbrd1
+ICON=i_pet_bird
+CAN=MT_WALK|MT_FLY
+DAM=1
+ARMOR=1
+RESOURCES=i_ribs_raw 2,i_feather 25
+FOODTYPE= t_fruit 25,t_crops 25,t_grain 25
+DESIRES=c_bird,c_magpie,
+SHELTER=r_foliage,r_forest
+AVERSIONS=e_carnivores,r_water
+
+DESCRIPTION=Magpie
+SUBSECTION=Air (Wild)
+CATEGORY=Animals
+
+ON=@Create
+NPC=brain_animal
+COLOR=colors_black
+FAME=30
+KARMA={-1 -99}
+STR=9
+DEX=25
+INT=5
+
+PARRYING=5.0
+MAGICRESISTANCE=5.0
+TACTICS=4.0
+WRESTLING=5.0
+TAMING=15.0
+
+[CHARDEF c_tropical_bird]
+ID=c_bird
+NAME=#NAMES_TROPICAL_BIRDS
+SOUND=snd_animals_parrot1
+ICON=i_pet_bird
+CAN=MT_WALK|MT_FLY
+DAM=1
+ARMOR=1
+RESOURCES=i_ribs_raw 2,i_feather 25
+FOODTYPE=t_crops 3,t_fruit 6
+DESIRES=c_tropical_bird,c_bird,r_jungle
+SHELTER=r_foliage,r_jungle
+AVERSIONS=r_civilization
+
+DESCRIPTION=Tropical Bird
+SUBSECTION=Air (Wild)
+CATEGORY=Animals
+
+ON=@Create
+NPC=brain_animal
+COLOR=colors_bird
+FAME=10
+KARMA={-1 -99}
+STR={1 4}
+DEX={26 35}
+INT={1 4}
+
+PARRYING=4.0
+MAGICRESISTANCE=4.0
+TACTICS=4.0
+WRESTLING=4.0
+TAMING=10.0
+
+[CHARDEF c_raven]
+ID=c_bird
+NAME=Raven
+SOUND=snd_animals_raven1
+ICON=i_pet_raven
+CAN=MT_WALK|MT_FLY
+DAM=1
+ARMOR=3
+RESOURCES=i_ribs_raw 2,i_feather 25
+FOODTYPE=t_crops 15,t_grain 15
+DESIRES=c_raven
+SHELTER=r_spooky,r_forest
+AVERSIONS=r_civilization,r_water
+
+DESCRIPTION=Raven
+SUBSECTION=Air (Wild)
+CATEGORY=Animals
+
+ON=@Create
+NPC=brain_animal
+COLOR=colors_black
+FAME=5
+KARMA={-1 -99}
+STR=9
+DEX=25
+INT=5
+
+PARRYING=5.0
+MAGICRESISTANCE=5.0
+TACTICS=6.0
+WRESTLING=6.0
+
+[CHARDEF c_jungle_bird]
+ID=c_bird
+NAME=Jungle Bird
+SOUND=snd_animals_jungbrd1
+ICON=i_pet_bird
+CAN=MT_WALK|MT_FLY
+DAM=1
+ARMOR=1
+RESOURCES=i_ribs_raw 2,i_feather 25
+FOODTYPE=t_crops 3,t_fruit 6
+DESIRES=c_bird,c_jungle_bird,r_jungle
+SHELTER=r_foliage,r_jungle
+AVERSIONS=r_civilization
+
+DESCRIPTION=Tropical Bird
+SUBSECTION=Air (Wild)
+CATEGORY=Animals
+
+ON=@Create
+NPC=brain_animal
+COLOR=colors_bird
+FAME=10
+KARMA={-1 -99}
+STR={1 4}
+DEX={26 35}
+INT={1 4}
+
+PARRYING=4.0
+MAGICRESISTANCE=4.0
+TACTICS=4.0
+WRESTLING=4.0
+TAMING=10.0
+
+[CHARDEF c_black_mustang]
+ID=c_horse_brown_dk
+NAME=Mustang
+SOUND=snd_animals_horse1
+ICON=i_pet_horse_brown_dk
+CAN=MT_WALK|MT_RUN
+DAM={3 4}
+ARMOR=9
+RESOURCES=i_ribs_raw 15,i_hide 10
+FOODTYPE=t_crops 55,t_fruit 55,t_grain 55,t_grass 64
+DESIRES=e_horses,c_man,c_woman
+SHELTER=r_stables,e_human_greet
+AVERSIONS=e_carnivores3
+TEVENTS=e_horses
+
+CATEGORY=Animals
+SUBSECTION=Land (Wild)
+DESCRIPTION=Horse (Black Mustang)
+
+ON=@Create
+NPC=brain_animal
+COLOR=0455
+FAME=0
+KARMA={-1 -99}
+STR={100 180}
+DEX={90 130}
+INT={6 10}
+
+PARRYING={35.0 45.0}
+MAGICRESISTANCE={25.0 30.0}
+TACTICS={29.0 44.0}
+WRESTLING={29.0 44.0}
+TAMING=98.0
+
+[CHARDEF c_crimson_mustang]
+ID=c_horse_brown_dk
+NAME=Mustang
+SOUND=snd_animals_horse1
+ICON=i_pet_horse_brown_dk
+CAN=MT_WALK|MT_RUN
+DAM={3 4}
+ARMOR=9
+RESOURCES=15 i_ribs_raw, 10 i_hide
+FOODTYPE=t_crops 55,t_fruit 55,t_grain 55,t_grass 64
+DESIRES=e_horses,c_man,c_woman
+SHELTER=r_stables,e_human_greet
+AVERSIONS=e_carnivores3
+TEVENTS=e_horses
+
+CATEGORY=Animals
+SUBSECTION=Land (Wild)
+DESCRIPTION=Horse (Crimson Mustang)
+
+ON=@Create
+NPC=brain_animal
+COLOR=01B6
+FAME=0
+KARMA={-1 -99}
+STR={100 180}
+DEX={90 130}
+INT={6 10}
+
+PARRYING={35.0 45.0}
+MAGICRESISTANCE={25.0 30.0}
+TACTICS={29.0 44.0}
+WRESTLING={29.0 44.0}
+TAMING=96.0
+
+[CHARDEF c_sky-grey_mustang]
+ICON=i_pet_horse_brown_dk
+NAME=Mustang
+SOUND=snd_animals_horse1
+ID=c_horse_brown_dk
+CAN=MT_WALK|MT_RUN
+DAM={3,4}
+ARMOR=9
+RESOURCES=i_ribs_raw 15,i_hide 10
+FOODTYPE=t_crops 55,t_fruit 55,t_grain 55,t_grass 64
+DESIRES=e_horses,c_man,c_woman
+SHELTER=r_stables,e_human_greet
+AVERSIONS=e_carnivores3
+TEVENTS=e_horses
+
+CATEGORY=Animals
+SUBSECTION=Land (Wild)
+DESCRIPTION=Horse (Sky-Grey Mustang)
+
+ON=@Create
+NPC=brain_animal
+COLOR=031C
+FAME=0
+KARMA={-1 -99}
+STR={100 180}
+DEX={90 130}
+INT={6 10}
+
+PARRYING={35.0 45.0}
+MAGICRESISTANCE={25.0 30.0}
+TACTICS={29.0 44.0}
+WRESTLING={29.0 44.0}
+TAMING=94.0
+
+[CHARDEF c_willimate_mustang]
+ID=c_horse_gray
+NAME=Mustang
+SOUND=snd_animals_horse1
+ICON=i_pet_horse_brown_dk
+CAN=MT_WALK|MT_RUN
+DAM={3 4}
+ARMOR=9
+RESOURCES=i_ribs_raw 15,i_hide 10
+FOODTYPE=t_crops 55,t_fruit 55,t_grain 55,t_grass 64
+DESIRES=e_horses,c_man,c_woman
+SHELTER=r_stables,e_human_greet
+AVERSIONS=e_carnivores3
+TEVENTS=e_horses
+
+CATEGORY=Animals
+SUBSECTION=Land (Wild)
+DESCRIPTION=Horse (Willimate Mustang)
+
+ON=@Create
+NPC=brain_animal
+COLOR=0158
+FAME=0
+KARMA={-1 -99}
+STR={100 180}
+DEX={90 130}
+INT={6 10}
+
+PARRYING={35.0 45.0}
+MAGICRESISTANCE={25.0 30.0}
+TACTICS={29.0 44.0}
+WRESTLING={29.0 44.0}
+TAMING=92.0
+
+[CHARDEF c_pamamino_mustang]
+ID=c_horse_gray
+NAME=Mustang
+SOUND=snd_animals_horse1
+ICON=i_pet_horse_brown_dk
+CAN=MT_WALK|MT_RUN
+DAM={3 4}
+ARMOR=9
+RESOURCES=i_ribs_raw 15,i_hide 10
+FOODTYPE=t_crops 55,t_fruit 55,t_grain 55,t_grass 64
+DESIRES=e_horses,c_man,c_woman
+SHELTER=r_STABLES,e_human_greet
+AVERSIONS=e_carnivores3
+TEVENTS=e_horses
+
+CATEGORY=Animals
+SUBSECTION=Land (Wild)
+DESCRIPTION=Horse (Pamamino Mustang)
+
+ON=@Create
+NPC=brain_animal
+COLOR=033
+FAME=0
+KARMA={-1 -99}
+STR={100 180}
+DEX={90 130}
+INT={6 10}
+
+PARRYING={35.0 45.0}
+MAGICRESISTANCE={25.0 30.0}
+TACTICS={29.0 44.0}
+WRESTLING={29.0 44.0}
+TAMING=90.0
+
+[CHARDEF c_sky_mustang]
+ID=c_horse_brown_lt
+NAME=Mustang
+SOUND=snd_animals_horse1
+ICON=i_pet_horse_brown_dk
+CAN=MT_WALK|MT_RUN
+DAM={3 4}
+ARMOR=9
+RESOURCES=i_ribs_raw 15,i_hide 10
+FOODTYPE=t_crops 55,t_fruit 55,t_grain 55,t_grass 64
+DESIRES=e_horses,c_man,c_woman
+SHELTER=r_stables,e_human_greet
+AVERSIONS=e_carnivores3
+TEVENTS=e_horses
+
+CATEGORY=Animals
+SUBSECTION=Land (Wild)
+DESCRIPTION=Horse (Sky Mustang)
+
+ON=@Create
+NPC=brain_animal
+COLOR=0263
+FAME=0
+KARMA={-1 -99}
+STR={100 180}
+DEX={90 130}
+INT={6 10}
+
+PARRYING={35.0 45.0}
+MAGICRESISTANCE={25.0 30.0}
+TACTICS={29.0 44.0}
+WRESTLING={29.0 44.0}
+TAMING=88.0
+
+
+[CHARDEF c_red_road_mustang]
+ID=c_horse_gray
+NAME=Mustang
+SOUND=snd_animals_horse1
+ICON=i_pet_horse_brown_dk
+CAN=MT_WALK|MT_RUN
+DAM={3 4}
+ARMOR=9
+RESOURCES=i_ribs_raw 15,i_hide 10
+FOODTYPE=t_crops 55,t_fruit 55,t_grain 55,t_grass 64
+DESIRES=e_horses,c_man,c_woman
+SHELTER=r_stables,e_human_greet
+AVERSIONS=e_carnivores3
+TEVENTS=e_horses
+
+CATEGORY=Animals
+SUBSECTION=Land (Wild)
+DESCRIPTION=Horse (Red Roan Mustang)
+
+ON=@Create
+NPC=brain_animal
+COLOR=0279
+FAME=0
+KARMA={-1 -99}
+STR={100 180}
+DEX={90 130}
+INT={6 10}
+
+PARRYING={35.0 45.0}
+MAGICRESISTANCE={25.0 30.0}
+TACTICS={29.0 44.0}
+WRESTLING={29.0 44.0}
+TAMING=86.0
+
+[CHARDEF c_chocolate_mustang]
+ID=c_horse_brown_dk
+NAME=Mustang
+SOUND=snd_animals_horse1
+ICON=i_pet_horse_brown_dk
+CAN=MT_WALK|MT_RUN
+DAM={3 4}
+ARMOR=9
+RESOURCES=i_ribs_raw 15,i_hide 10
+FOODTYPE=t_crops 55,t_fruit 55,t_grain 55,t_grass 64
+DESIRES=e_horses,c_man,c_woman
+SHELTER=r_stables,e_human_greet
+AVERSIONS=e_carnivores3
+TEVENTS=e_horses
+
+CATEGORY=Animals
+SUBSECTION=Land (Wild)
+DESCRIPTION=Horse (Chocolate Mustang)
+
+ON=@Create
+NPC=brain_animal
+COLOR=01BB
+FAME=0
+KARMA={-1 -99}
+STR={100 180}
+DEX={90 130}
+INT={6 10}
+
+PARRYING={35.0 45.0}
+MAGICRESISTANCE={25.0 30.0}
+TACTICS={29.0 44.0}
+WRESTLING={29.0 44.0}
+TAMING=84.0
+
+[CHARDEF c_roan_mustang]
+ID=c_horse_gray
+NAME=Mustang
+SOUND=snd_animals_horse1
+ICON=i_pet_horse_brown_dk
+CAN=MT_WALK|MT_RUN
+DAM={3 4}
+ARMOR=9
+RESOURCES=i_ribs_raw 15,i_hide 10
+FOODTYPE=t_crops 55,t_fruit 55,t_grain 55,t_grass 64
+DESIRES=e_horses,c_man,c_woman
+SHELTER=r_stables,e_human_greet
+AVERSIONS=e_carnivores3
+TEVENTS=e_horses
+
+CATEGORY=Animals
+SUBSECTION=Land (Wild)
+DESCRIPTION=Horse (Roan Mustang)
+
+ON=@Create
+NPC=brain_animal
+COLOR=01BB
+FAME=0
+KARMA={-1 -99}
+STR={100 180}
+DEX={90 130}
+INT={6 10}
+
+PARRYING={35.0 45.0}
+MAGICRESISTANCE={25.0 30.0}
+TACTICS={29.0 44.0}
+WRESTLING={29.0 44.0}
+TAMING=82.0
+
+[CHARDEF c_grey_mustang]
+ID=c_horse_gray
+NAME=Mustang
+SOUND=snd_animals_horse1
+ICON=i_pet_horse_brown_dk
+CAN=MT_WALK|MT_RUN
+DAM={3 4}
+ARMOR=9
+RESOURCES=i_ribs_raw 15,i_hide 10
+FOODTYPE=t_crops 55,t_fruit 55,t_grain 55,t_grass 64
+DESIRES=e_horses,c_man,c_woman
+SHELTER=r_stables,e_human_greet
+AVERSIONS=e_carnivores3
+TEVENTS=e_horses
+
+CATEGORY=Animals
+SUBSECTION=Land (Wild)
+DESCRIPTION=Horse (Grey Mustang)
+
+ON=@Create
+NPC=brain_animal
+COLOR=03E7
+FAME=0
+KARMA={-1 -99}
+STR={100 180}
+DEX={90 130}
+INT={6 10}
+
+PARRYING={35.0 45.0}
+MAGICRESISTANCE={25.0 30.0}
+TACTICS={29.0 44.0}
+WRESTLING={29.0 44.0}
+TAMING=80.0
+
+[CHARDEF c_snow_horse]
+ID=c_horse_brown_lt
+NAME=Snow Horse
+SOUND=snd_animals_horse1
+ICON=i_pet_horse_brown_dk
+CAN=MT_WALK|MT_RUN
+DAM={3 4}
+ARMOR=9
+RESOURCES=i_ribs_raw 15,i_hide 10
+FOODTYPE=t_crop 55,t_fruit 55,t_grain 55,t_grass 576
+DESIRES=r_snow,c_man,c_woman,r_stables
+SHELTER=r_stables
+
+CATEGORY=Animals
+SUBSECTION=Land (Wild)
+DESCRIPTION=Snow Horse
+
+ON=@Create
+NPC=brain_animal
+COLOR=color_snow
+FAME=0
+KARMA=-1
+STR={100 250}
+DEX={125 175}
+INT={26 50}
+
+PARRYING={35.0 45.0}
+MAGICRESISTANCE={25.0 30.0}
+TACTICS={29.0 44.0}
+WRESTLING={29.0 44.0}
+TAMING=92.0
+
+[CHARDEF c_lion]
+ID=c_panther
+NAME=Mountain Lion
+SOUND=snd_animals_lion1
+ICON=i_pet_panther
+CAN=MT_WALK|MT_RUN
+DAM={2 12}
+ARMOR=8
+RESOURCES=6 i_ribs_raw,2 i_fur_dark
+FOODTYPE=15 t_meat_raw
+DESIRES=c_lion,r_foliage
+SHELTER=r_caves,r_mountains,r_forests
+AVERSIONS=r_civilization,r_water
+
+CATEGORY=Animals
+SUBSECTION=Land (Wild)
+DESCRIPTION=Lion
+
+ON=@Create
+NPC=brain_animal
+COLOR=colors_yellow
+FAME=100
+KARMA={-300 -399}
+STR={55 80}
+DEX={65 85}
+INT={25 50}
+
+PARRYING={55.0 65.0}
+MAGICRESISTANCE={15.0 30.0}
+TACTICS={45.0 60.0}
+WRESTLING={45.0 60.0}
+TAMING=55.0
+
+[CHARDEF c_cougar]
+ID=c_panther
+NAME=Cougar
+SOUND=snd_animals_cougar1
+ICON=i_pet_panther
+CAN=MT_WALK|MT_RUN
+DAM={2 12}
+ARMOR=8
+RESOURCES=6 i_ribs_raw,2 i_fur_dark
+FOODTYPE=15 t_meat_raw
+DESIRES=c_cougar,r_foliage
+SHELTER=r_caves,r_mountains,r_forests
+AVERSIONS=r_civilization,r_water
+
+CATEGORY=Animals
+SUBSECTION=Land (Wild)
+DESCRIPTION=Cougar
+
+ON=@Create
+NPC=brain_animal
+FAME=100
+KARMA={-300 -399}
+STR={55 80}
+DEX={65 85}
+INT={25 50}
+
+PARRYING={55.0 65.0}
+MAGICRESISTANCE={15.0 30.0}
+TACTICS={45.0 60.0}
+WRESTLING={45.0 60.0}
+TAMING=55.0
+
+[CHARDEF c_snow_leopard]
+ID=c_panther
+NAME=Snow Leopard
+SOUND=snd_animals_panther1
+ICON=i_pet_panther
+CAN=MT_WALK
+DAM=2 10}
+ARMOR=12
+RESOURCES=i_ribs_raw 6, 2 i_fur_light 2
+FOODTYPE=15 t_meat_raw
+DESIRES=r_snow,c_snow_leopard
+SHELTER=r_snow,r_mountains,r_caves
+AVERSIONS=r_civilization,r_water
+
+CATEGORY=Animals
+SUBSECTION=Land (Wild)
+DESCRIPTION=Snow Leopard
+
+ON=@Create
+NPC=brain_animal
+COLOR=colors_white
+FAME=75
+KARMA={-300 -399}
+STR={56 80}
+DEX={66 85}
+INT={26 50}
+
+PARRYING={55.0 65.0}
+MAGICRESISTANCE={25.0 35.0}
+TACTICS={45.0 60.0}
+WRESTLING={40.0 50.0}
+TAMING=65.0
+
+[CHARDEF c_mountain_goat]
+ID=c_goat
+NAME=Mountain Goat
+SOUND=snd_animals_goat1
+ICON=i_pet_goat
+CAN=MT_WALK
+DAM={3 7}
+ARMOR=8
+RESOURCES=i_ribs_raw 16,i_hide 12
+FOODTYPE=t_foliage 5,t_fruit 5,64 t_grass 64
+DESIRES=c_goat,c_mountain_goat
+SHELTER=r_forests,r_mountains
+AVERSIONS=r_civilization,e_carnivores3
+
+CATEGORY=Animals
+SUBSECTION=Land (Wild)
+DESCRIPTION=Mountain Goat
+
+ON=@Create
+NPC=brain_animal
+COLOR=color_snow
+FAME=40
+KARMA={-199 -299}
+STR={22 64}
+DEX={56 75}
+INT={16 30}
+
+PARRYING={45.0 55.0}
+MAGICRESISTANCE={25.0 30.0}
+TACTICS={29.0 44.0}
+WRESTLING={29.0 44.0}
+TAMING=20.0
+
+[CHARDEF c_jackrabbit]
+ID=c_rabbit
+NAME=Jackrabbit
+SOUND=snd_animals_rabbit3
+ICON=i_pet_rabbit_2
+CAN=MT_WALK|MT_RUN
+DAM={1 2}
+ARMOR=2
+RESOURCES=2 i_ribs_raw,1 i_fur_dark
+FOODTYPE=t_crops 55,t_foliage 55,t_grass 64
+DESIRES=t_crops,c_jackrabbit
+SHELTER=r_plains
+AVERSIONS=e_carnivores2
+
+CATEGORY=Animals
+SUBSECTION=Land (Wild)
+DESCRIPTION=Jackrabbit
+
+ON=@Create
+NPC=brain_animal
+COLOR=colors_brown
+FAME=10
+KARMA={-1 -99}
+STR=5
+DEX=14
+INT=15
+
+PARRYING=5.0
+MAGICRESISTANCE=5.0
+TACTICS=5.0
+WRESTLING=5.0
+TAMING=5.0
+
+[CHARDEF c_sewer_rat]
+ID=c_rat
+NAME=Sewer Rat
+SOUND=snd_animals_rat1
+ICON=i_pet_rat
+CAN=MT_WALK
+DAM={1 2}
+ARMOR=3
+RESOURCES=2 i_ribs_raw
+FOODTYPE=t_food 5
+DESIRES=c_rat,c_giant_rat,c_sewer_rat,r_darkness
+SHELTER=r_sewers,t_garbage,r_spooky
+AVERSIONS=r_light,e_human_greet,e_carnivores
+
+CATEGORY=Animals
+SUBSECTION=Land (Wild)
+DESCRIPTION=Sewer Rat
+
+ON=@Create
+NPC=brain_animal
+COLOR=colors_brown
+FAME=15
+KARMA={-1 -99}
+STR=9
+DEX=25
+INT={6 10}
+
+PARRYING=5.0
+MAGICRESISTANCE=5.0
+TACTICS=5.0
+WRESTLING=5.0
+TAMING=20.0
+
+[CHARDEF c_gray_wolf]
+ID=c_wolf
+NAME=Gray Wolf
+SOUND=snd_animals_wolf1
+ICON=i_pet_wolf_gray
+CAN=MT_WALK|MT_RUN
+DAM={2 8}
+ARMOR=9
+RESOURCES=3 i_ribs_raw, 3 i_fur_light
+FOODTYPE=15 t_meat_raw
+DESIRES=c_gray_wolf
+SHELTER=r_forests,r_caves,r_mountains
+AVERSIONS=r_civilization
+
+CATEGORY=Animals
+SUBSECTION=Land (Wild)
+DESCRIPTION=Gray Wolf
+
+ON=@Create
+NPC=brain_animal
+COLOR=colors_gray
+FAME=150
+KARMA={-300 -399}
+STR={56 80}
+DEX={56 75}
+INT={31 55}
+
+PARRYING={45.0 55.0}
+MAGICRESISTANCE={20.0 35.0}
+TACTICS={45.0 60.0}
+WRESTLING={45.0 60.0}
+TAMING=65.0
+
+[CHARDEF c_white_wolf]
+ID=c_wolf
+NAME=White Wolf
+SOUND=snd_animals_wolf1
+CAN=MT_WALK|MT_RUN
+DAM={2 8}
+ARMOR=8
+RESOURCES=i_ribs_raw 3,i_fur_light 3
+FOODTYPE=t_meat_raw 15
+DESIRES=c_white_wolf,c_wolf,r_snow
+SHELTER=r_snow,r_caves
+AVERSIONS=r_civilization
+
+CATEGORY=Animals
+SUBSECTION=Land (Wild)
+DESCRIPTION=White Wolf
+
+ON=@Create
+NPC=brain_animal
+COLOR=color_frost
+FAME=175
+KARMA={-400 -599}
+STR={56 80}
+DEX={56 75}
+INT={31 55}
+
+PARRYING={45.0 55.0}
+MAGICRESISTANCE={20.0 35.0}
+TACTICS={45.0 60.0}
+WRESTLING={45.0 60.0}
+TAMING=75.0
+
+[CHARDEF c_black_bear]
+ID=c_brown_bear
+NAME=Black Bear
+SOUND=snd_animals_bear1
+ICON=i_pet_bear_black
+CAN=MT_WALK
+DAM={2 12}
+ARMOR=8
+RESOURCES=i_ribs_raw 9
+FOODTYPE=t_fish 5,t_fruit 5,t_meat_raw 15
+DESIRES=c_black_bear
+SHELTER=r_forests,r_caves
+AVERSIONS=r_civilization
+
+CATEGORY=Animals
+SUBSECTION=Land (Wild)
+DESCRIPTION=Black Bear
+
+ON=@Create
+NPC=brain_animal
+COLOR=colors_black
+FAME=10
+KARMA={-300 -399}
+STR={75 100}
+DEX={55 75}
+INT={10 14}
+
+PARRYING={25.0 45.0}
+MAGICRESISTANCE={20.0 40.0}
+TACTICS={40.0 60.0}
+WRESTLING={40.0 60.0}
+TAMING=50.0
+
+[CHARDEF c_yellow_chocobo]
+ID=c_frenzied_ostard
+NAME=Yellow Chocobo
+SOUND=snd_animal_ostard_frenzied1
+ICON=i_pet_frenzied_ostard
+ANIM=01FFF
+CAN=MT_WALK
+DAM={2 12}
+ARMOR=11
+RESOURCES=15 i_ribs_raw
+FOODTYPE=t_crops 55,t_fruit 55,t_grass 64
+DESIRES=c_yellow_chocobo
+SHELTER=r_stables,r_jungle,r_forest
+
+CATEGORY=Animals
+SUBSECTION=Land (Wild)
+DESCRIPTION=Yellow Chocobo
+
+ON=@Create
+NPC=brain_animal
+COLOR=00035
+FAME=0
+KARMA={-200 -399}
+STR={94 170}
+DEX={96 115}
+INT={6 10}
+
+PARRYING={75.0 85.0}
+MAGICRESISTANCE={75.0 80.0}
+TACTICS={79.0 94.0}
+WRESTLING={79.0 94.0}
+TAMING=50.0
+
+[CHARDEF c_green_chocobo]
+ID=c_frenzied_ostard
+NAME=Green Chocobo
+SOUND=snd_animal_ostard_frenzied1
+ICON=i_pet_frenzied_ostard
+ANIM=01FFF
+CAN=MT_WALK|MT_RUN
+DAM={5 12}
+ARMOR=13
+RESOURCES=15 i_ribs_raw
+FOODTYPE=t_crops 55,t_fruit 55,t_grass 64
+DESIRES=c_green_chocobo
+SHELTER=r_stables,r_jungle,r_forest
+
+CATEGORY=Animals
+SUBSECTION=Land (Wild)
+DESCRIPTION=Green Chocobo
+
+ON=@Create
+NPC=brain_animal
+COLOR=078B
+FAME=0
+KARMA={-200 -399}
+STR={94 170}
+DEX={96 115}
+INT={6 10}
+
+PARRYING={75.0 85.0}
+MAGICRESISTANCE={75.0 80.0}
+TACTICS={79.0 94.0}
+WRESTLING={79.0 94.0}
+TAMING=75.0
+
+[CHARDEF c_red_chocobo]
+ID=c_frenzied_ostard
+NAME=Red Chocobo
+SOUND=snd_animal_ostard_frenzied1
+ICON=i_pet_frenzied_ostard
+ANIM=01FFF
+CAN=MT_WALK|MT_RUN
+DAM={5 12}
+ARMOR=13
+RESOURCES=15 i_ribs_raw
+FOODTYPE=t_crops 55,t_fruit 55,t_grass 64
+DESIRES=c_red_chocobo
+SHELTER=r_stables,r_jungle,r_forest
+
+CATEGORY=Animals
+SUBSECTION=Land (Wild)
+DESCRIPTION=Red Chocobo
+
+ON=@Create
+NPC=brain_animal
+COLOR=00799
+FAME=0
+KARMA={-200 -399}
+STR={94 170}
+DEX={96 115}
+INT={6 10}
+
+PARRYING={75.0 85.0}
+MAGICRESISTANCE={75.0 80.0}
+TACTICS={79.0 94.0}
+WRESTLING={79.0 94.0}
+TAMING=200.0
+
+[CHARDEF c_light_blue_chocobo]
+ID=c_frenzied_ostard
+NAME=Light Blue Chocobo
+SOUND=snd_animal_ostard_frenzied1
+ICON=i_pet_frenzied_ostard
+ANIM=01FFF
+CAN=MT_WALK|MT_RUN|MT_SWIM
+DAM={4 13}
+ARMOR=15
+RESOURCES=15 i_ribs_raw
+FOODTYPE=t_crops 55,t_fruit 55,t_grass 64
+DESIRES=c_light_blue_chocobo
+SHELTER=r_stables,r_jungle,r_forest
+
+CATEGORY=Animals
+SUBSECTION=Land (Wild)
+DESCRIPTION=Light Blue Chocobo
+
+ON=@Create
+NPC=brain_animal
+COLOR=0078A
+FAME=0
+KARMA={-200 -3599}
+STR={94 170}
+DEX={96 115}
+INT={6 10}
+
+PARRYING={75.0 85.0}
+MAGICRESISTANCE={75.0 80.0}
+TACTICS={79.0 94.0}
+WRESTLING={79.0 94.0}
+TAMING=100.0
+
+[CHARDEF c_dark_blue_chocobo]
+ID=c_frenzied_ostard
+NAME=Dark Blue Chocobo
+SOUND=snd_animal_osatard_frenzied1
+ICON=i_pet_frenzied_ostard
+ANIM=01FFF
+CAN=MT_WALK|MT_RUN|MT_SWIM
+DAM={6 16}
+ARMOR=14
+RESOURCES=15 i_ribs_raw
+FOODTYPE=t_crops 55,t_fruit 55,t_grass 64
+DESIRES=c_dark_blue_chocobo
+SHELTER=r_stables,r_jungle,r_forest
+
+CATEGORY=Animals
+SUBSECTION=Land (Wild)
+DESCRIPTION=Dark Blue Chocobo
+
+ON=@Create
+NPC=brain_animal
+COLOR=007AB
+FAME=0
+KARMA={-200 -399}
+STR={94 170}
+DEX={96 115}
+INT={6 10}
+
+PARRYING={75.0 85.0}
+MAGICRESISTANCE={75.0 80.0}
+TACTICS={79.0 94.0}
+WRESTLING={79.0 94.0}
+TAMING=175.0
+
+[CHARDEF c_white_chocobo]
+ID=c_frenzied_ostard
+NAME=White Chocobo
+SOUND=snd_animal_ostard_frenzied1
+ICON=i_pet_frenzied_ostard
+ANIM=01FFF
+CAN=MT_WALK
+DAM={6 18}
+ARMOR=15
+RESOURCES=15 i_ribs_raw
+FOODTYPE=t_crops 55,t_fruit 55,t_grass 64
+DESIRES=c_white_chocobo
+SHELTER=r_stables,r_jungle,r_forest
+
+CATEGORY=Animals
+SUBSECTION=Land (Wild)
+DESCRIPTION=White Chocobo
+
+ON=@Create
+NPC=brain_animal
+COLOR=007A1
+TAG.WHITECHOCOBO 1
+FAME=0
+KARMA={-400 -599}
+STR={94 170}
+DEX={96 115}
+INT={6 10}
+
+PARRYING={75.0 85.0}
+MAGICRESISTANCE={75.0 80.0}
+TACTICS={79.0 94.0}
+WRESTLING={79.0 94.0}
+
+ON=@NPCSeeNewPlayer
+SRC.EVENTS +e_white_chocobo
+
+[EVENTS e_white_chocobo]
+ON=@Click
+IF <SRC.DISTANCE> <= 5
+IF <SRC.TAG.WHITECHOCOBO>
+<SRC.MANA>=<SRC.INT>
+SRC.MESSAGE The White Chocobo restores your mana.
+RETURN 1
+ENDIF
+ENDIF
+
+[CHARDEF c_black_chocobo]
+ID=c_frenzied_ostard
+NAME=Black Chocobo
+SOUND=snd_animal_ostard_frenzied1
+ICON=i_pet_frenzied_ostard
+ANIM=01FFF
+CAN=MT_WALK|MT_RUN|MT_SWIM
+DAM={6 18}
+ARMOR=15
+RESOURCES=15 i_ribs_raw
+FOODTYPE=t_crops 55,t_fruit 55,t_grass 64
+DESIRES=c_black_chocobo
+SHELTER=r_stables,r_jungle,r_forest
+
+CATEGORY=Animals
+SUBSECTION=Land (Wild)
+DESCRIPTION=Black Chocobo
+
+ON=@Create
+NPC=brain_animal
+COLOR=00455
+FAME=0
+KARMA={-200 -399}
+STR={94 170}
+DEX={96 115}
+INT={6 10}
+
+PARRYING={75.0 85.0}
+MAGICRESISTANCE={75.0 80.0}
+TACTICS={79.0 94.0}
+WRESTLING={79.0 94.0}
+TAMING=285.0
+
+[CHARDEF c_golden_chocobo]
+ID=c_frenzied_ostard
+NAME=Golden Chocobo
+SOUND=snd_animal_ostard_frenzied1
+ICON=i_pet_frenzied_ostard
+ANIM=01FFF
+CAN=MT_WALK|MT_RUN|MT_SWIM|MT_FLY
+DAM={8 23}
+ARMOR=15
+RESOURCES=15 i_ribs_raw
+FOODTYPE=t_crops 55,t_fruit 55,t_grass 64
+DESIRES=c_golden_chocobo
+SHELTER=r_stables,r_jungle,r_forest
+
+CATEGORY=Animals
+SUBSECTION=Land (Wild)
+DESCRIPTION=Golden Chocobo
+
+ON=@Create
+NPC=brain_animal
+COLOR=007AD
+FAME=0
+KARMA={-200 -399}
+STR={500 1000}
+DEX={500 900}
+INT={600 1000}
+
+PARRYING=300.0
+MAGICRESISTANCE=300.0
+TACTICS=300.0
+WRESTLING=300.0
+TAMING=300.0
+
+[CHARDEF c_frost_chocobo]
+ID=c_frenzied_ostard
+NAME=Frost Chocobo
+SOUND=snd_animal_ostard_frenzied1
+ICON=i_pet_frenzied_ostard
+ANIM=01FFF
+CAN=MT_WALK|MT_RUN|MT_FLY
+DAM={5 12}
+ARMOR=7
+RESOURCES=15 i_ribs_raw
+FOODTYPE=t_crops 55,t_fruit 55,t_grass 64
+SHELTER=r_stables,r_snow
+DESIRES=r_snow,c_frost_chocobo
+
+CATEGORY=Animals
+SUBSECTION=Land (Wild)
+DESCRIPTION=Frost Chocobo
+
+ON=@Create
+NPC=brain_animal
+COLOR=00790
+FAME=0
+KARMA={-400 -499}
+STR={94 170}
+DEX={96 115}
+INT={6 10}
+
+PARRYING={75.0 85.0}
+MAGICRESISTANCE={75.0 80.0}
+TACTICS={79.0 94.0}
+WRESTLING={79.0 94.0}
+TAMING=150.0
+
+[CHARDEF c_camel]
+ID=c_llama
+NAME=Camel
+SOUND=snd_animals_llama3
+ICON=i_pet_llama
+CAN=MT_WALK|MT_RUN
+ANIM=01FFF
+DAM=2,6
+ARMOR=8
+RESOURCES=i_ribs_raw 7,i_fur_light 2
+FOODTYPE=t_crops 5,t_fruit 5,t_grain 5, 5 i_hay 5,t_grass 64
+DESIRES=c_camel,spk_human_prime,r_desert
+SHELTER=r_stables,spk_human_prime,r_desert
+
+CATEGORY=Animals
+SUBSECTION=Land (Domestic)
+DESCRIPTION=Camel
+
+ON=@Create
+NPC=brain_animal
+COLOR=0015F
+FAME=10
+KARMA={-1 -99}
+STR={21 49}
+DEX={36 55}
+INT={16 30}
+
+PARRYING={35.0 45.0}
+MAGICRESISTANCE={15.0 20.0}
+TACTICS={19.0 29.0}
+WRESTLING={19.0 29.0}
+TAMING=20.0
+
+[EOF]

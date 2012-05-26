@@ -1,0 +1,3554 @@
+// ****************************************************************************
+// SPHERE by : Menasoft ©1997-2000
+// www.sphereserver.com
+// All SPHERE script files and formats are copyright Menasoft & Partners.
+// This file may be freely edited for personal use, but may not be distributed
+// in whole or in part, in any format without express written permission from
+// Menasoft & Partners.  All donations and contributions
+// become the property of Menasoft & Partners.
+// ****************************************************************************
+// FILE LAST UPDATED: Monday, April 9, 2001
+// House Menu System v6.0e created by Vaticus
+
+VERSION=0.55
+
+[DIALOG d_house_public]                // INFO
+0,0                                    // Position
+resizepic 100 100 2600 400 300         // Curved Grey background 
+page 0                                 // Page 0
+resizepic 116 165 5100 369 25          // Square Grey box
+button 150 366 247 248 1 0 0           // Okay, button 0
+gumppic 230 65 100                     // Top Sign Gump
+croppedtext 250 105 105 20 46 14       // Sign Gump Name
+text 125 168 0 0                       // Info
+button 170 169 5209 5003 0 1 1         // Opens Info
+text 230 168 0 1                       // Friends      
+button 310 169 5209 5003 0 2 2         // Opens Friends
+text 375 168 0 2                       // Options
+button 455 169 5209 5003 0 3 3         // Opens Options
+page 1                                 // Page 1
+text 245 205 995 3                     // Owner Text
+text 320 205 0000 4                    // Owner Name
+text 140 240 995 5                     // Lock Down
+text 357 240 0000 6                    // Lock Down #
+text 140 260 995 7                     // Secure Items
+text 350 260 0000 8                    // Secure Items #
+text 140 296 995 9                     // House Visits
+text 415 296 0000 10                   // Visit #
+text 245 365 995 11                    // Change Name
+text 140 315 995 12                    // Properly Placed
+text 140 333 995 13                    // Modern Design
+button 425 365 2714 2715 1 0 4         // Name Change
+page 2                                 // Page 2    
+text 153 194 995 15                    // Coowner Text
+button 125 194 2714 2714 1 2 5         // List Coowner B
+text 340 194 995 16                    // Friends Text
+button 310 194 2714 2714 1 2 6         // List Friends B
+text 153 216 995 17                    // Coowner Text
+button 125 216 2714 2714 1 2 7         // Add Coowner B
+text 340 216 995 18                    // Friends Text
+button 310 216 2714 2714 1 2 8         // Add Friend B
+text 153 238 995 19                    // Remove Text C
+button 125 238 2714 2714 1 2 9         // Remove Coowner B
+text 340 238 995 20                    // Remove Text F
+button 310 238 2714 2714 1 2 10        // Remove Friends B
+text 340 260 995 21                    // Clear List Text
+button 310 260 2714 2714 1 2 11        // Clear List B
+text 153 260 995 33                    // Clear List Co Text
+button 125 260 2714 2714 1 2 75        // Clear List Co B
+text 225 281 995 22                    // Ban Text
+button 195 281 2714 2714 1 2 12        // Ban Button
+text 225 302 995 23                    // Eject Text
+button 195 302 2714 2714 1 2 13        // Eject Button
+text 225 324 995 24                    // Ban Text
+button 195 324 2714 2714 1 2 14        // Ban Button
+text 225 346 995 25                    // Lift Ban Text
+button 195 346 2714 2714 1 2 15        // Lift Ban Button
+page 3                                 // Page 3
+text 180 195 995 26                    // Transfer Text
+button 155 195 2714 2714 1 3 16        // Transfer Button
+text 180 225 995 27                    // Demolish Text
+button 155 225 2714 2714 1 3 17        // Demolish Button  
+text 180 255 995 28                    // Change Sign T
+button 155 255 2714 2714 0 4 18        // Change Sign B
+text 180 285 995 29                    // Access Bank T
+button 155 285 2714 2714 1 3 19        // Access Bank B   
+text 180 315 995 30                    // Declare Private T
+button 155 315 2714 2714 1 3 20        // Declare Private B
+page 4                                 // Page 4
+button 140 203 210 211 1 4 21          // Sign Button
+tilepic 149 195 2980                   // Sign Picture
+button 140 238 210 211 1 4 22          // Sign Button
+tilepic 149 230 2982                   // Sign Picture
+button 140 273 210 211 1 4 23          // Sign Button
+tilepic 149 265 2984                   // Sign Picture
+button 140 308 210 211 1 4 24          // Sign Button
+tilepic 149 300 2986                   // Sign Picture
+button 195 203 210 211 1 4 25          // Sign Button
+tilepic 204 195 2988                   // Sign Picture
+button 195 238 210 211 1 4 26          // Sign Button
+tilepic 204 230 2990                   // Sign Picture
+button 195 273 210 211 1 4 27          // Sign Button
+tilepic 204 265 2992                   // Sign Picture
+button 195 308 210 211 1 4 28          // Sign Button
+tilepic 204 300 2994                   // Sign Picture
+button 250 203 210 211 1 4 29          // Sign Button
+tilepic 259 195 2996                   // Sign Picture
+button 250 238 210 211 1 4 30          // Sign Button
+tilepic 259 230 2998                   // Sign Picture
+button 250 273 210 211 1 4 31          // Sign Button
+tilepic 259 265 3000                   // Sign Picture
+button 250 308 210 211 1 4 32          // Sign Button
+tilepic 259 300 3002                   // Sign Picture
+button 305 203 210 211 1 4 33          // Sign Button
+tilepic 314 195 3004                   // Sign Picture
+button 305 238 210 211 1 4 34          // Sign Button
+tilepic 314 230 3006                   // Sign Picture
+button 305 273 210 211 1 4 35          // Sign Button
+tilepic 314 265 3008                   // Sign Picture
+button 305 308 210 211 1 4 36          // Sign Button
+tilepic 314 300 3010                   // Sign Picture
+button 360 203 210 211 1 4 37          // Sign Button
+tilepic 369 195 3012                   // Sign Picture
+button 360 238 210 211 1 4 38          // Sign Button
+tilepic 369 230 3014                   // Sign Picture
+button 360 273 210 211 1 4 39          // Sign Button
+tilepic 369 265 3016                   // Sign Picture
+button 360 308 210 211 1 4 40          // Sign Button
+tilepic 369 300 3018                   // Sign Picture
+button 415 203 210 211 1 4 41          // Sign Button
+tilepic 424 195 3020                   // Sign Picture
+button 415 238 210 211 1 4 42          // Sign Button
+tilepic 424 230 3022                   // Sign Picture
+button 415 273 210 211 1 4 43          // Sign Button
+tilepic 424 265 3024                   // Sign Picture
+button 415 308 210 211 1 4 44          // Sign Button
+tilepic 424 300 3026                   // Sign Picture
+text 275 363 995 31                    // Guild Text
+button 425 360 252 253 0 5 45          // Guild Section
+page 5                                 // Page 5
+button 140 203 210 211 1 5 46          // Sign Button
+tilepic 149 195 3028                   // Sign Picture
+button 140 238 210 211 1 5 47          // Sign Button
+tilepic 149 230 3030                   // Sign Picture
+button 140 273 210 211 1 5 48          // Sign Button
+tilepic 149 265 3032                   // Sign Picture
+button 140 308 210 211 1 5 49          // Sign Button
+tilepic 149 300 3034                   // Sign Picture
+button 140 343 210 211 1 5 50          // Sign Button
+tilepic 149 335 3036                   // Sign Picture
+button 195 203 210 211 1 5 51          // Sign Button
+tilepic 204 195 3038                   // Sign Picture
+button 195 238 210 211 1 5 52          // Sign Button
+tilepic 204 230 3040                   // Sign Picture
+button 195 273 210 211 1 5 53          // Sign Button
+tilepic 204 265 3042                   // Sign Picture
+button 195 308 210 211 1 5 54          // Sign Button
+tilepic 204 300 3044                   // Sign Picture
+button 195 343 210 211 1 5 55          // Sign Button
+tilepic 204 335 3046                   // Sign Picture
+button 250 203 210 211 1 5 56          // Sign Button
+tilepic 259 195 3048                   // Sign Picture
+button 250 238 210 211 1 5 57          // Sign Button
+tilepic 259 230 3050                   // Sign Picture
+button 250 273 210 211 1 5 58          // Sign Button
+tilepic 259 265 3052                   // Sign Picture
+button 250 308 210 211 1 5 59          // Sign Button
+tilepic 259 300 3054                   // Sign Picture
+button 250 343 210 211 1 5 60          // Sign Button
+tilepic 259 335 3056                   // Sign Picture
+button 305 203 210 211 1 5 61          // Sign Button
+tilepic 314 195 3058                   // Sign Picture
+button 305 238 210 211 1 5 62          // Sign Button
+tilepic 314 230 3060                   // Sign Picture
+button 305 273 210 211 1 5 63          // Sign Button
+tilepic 314 265 3062                   // Sign Picture
+button 305 308 210 211 1 5 64          // Sign Button
+tilepic 314 300 3064                   // Sign Picture
+button 305 343 210 211 1 5 65          // Sign Button
+tilepic 314 335 3066                   // Sign Picture
+button 360 203 210 211 1 5 66          // Sign Button
+tilepic 369 195 3068                   // Sign Picture
+button 360 238 210 211 1 5 67          // Sign Button
+tilepic 369 230 3070                   // Sign Picture
+button 360 273 210 211 1 5 68          // Sign Button
+tilepic 369 265 3072                   // Sign Picture
+button 360 308 210 211 1 5 69          // Sign Button
+tilepic 369 300 3074                   // Sign Picture
+button 360 343 210 211 1 5 70          // Sign Button
+tilepic 369 335 3076                   // Sign Picture
+button 415 203 210 211 1 5 71          // Sign Button
+tilepic 424 195 3078                   // Sign Picture
+button 415 238 210 211 1 5 72          // Sign Button
+tilepic 424 230 3080                   // Sign Picture
+button 415 273 210 211 1 5 73          // Sign Button
+tilepic 424 265 3082                   // Sign Picture
+button 415 308 210 211 1 5 74          // Sign Button
+tilepic 424 300 3084                   // Sign Picture
+text 275 363 995 32                    // Shop Test
+button 425 360 250 251 0 4             // Shop Section
+
+[DIALOG d_house_public TEXT]
+INFO                                   // Line 0
+FRIENDS
+OPTIONS
+Owned by  
+<SRC.UID.<MORE>.NAME>                                        
+Number of locked down items:           // Line 5
+<EVAL <TAG.LOCKNUMBER>> out of <MOREY>
+Number of secure containers: 
+<EVAL <TAG.SECURENUMBER>> out of <MOREZ>
+Number of visits this house has had:                  
+<MOREM>                 // Line 10
+Change this house's name!
+This house is properly placed.
+This house is of <TAG.HOUSEDESIGN> design.
+<LINK.NAME>
+List of Co-owners                      // Line 15
+List of Friends
+Add a Co-owner
+Add a Friend
+Remove a Co-owner
+Remove a Friend                        // Line 20
+Clear Friends list
+Ban someone from the house
+Eject someone from the house
+View list of banned people
+Lift a ban                             // Line 25
+Transfer ownership of the house
+Demolish the house & get a deed back
+Change the sign type
+Access your bank account
+Declare this building to be private    // Line 30
+Guild Sign Choices
+Shop Sign Choices
+Clear Co-owner List
+                  
+[DIALOG d_house_public BUTTON]
+ONBUTTON=0
+ONBUTTON=4
+SRC.SYSMESSAGE To change your houses name, use your house key on the sign.
+DIALOG d_house_public
+RETURN 1
+ONBUTTON=5
+DIALOG d_house_colist
+RETURN 1
+ONBUTTON=6
+DIALOG d_house_flist
+RETURN 1
+ONBUTTON=7
+IF (<SRC.UID>==<MORE>)
+SRC.NEWITEM=i_coown
+SRC.ACT.LINK=<UID>
+SRC.ACT.CONT=<SRC.UID>
+SRC.ACT.TARGET Target the person you wish to name a co-owner of your household.
+RETURN 1
+ELSE
+SRC.SYSMESSAGE Only the house owner may add co-owners.
+DIALOG d_house_public
+RETURN 1
+ONBUTTON=8
+IF (<SRC.UID>==<MORE>) || (<TAG.CO1UID>==<SRC.UID>) || (<TAG.CO2UID>==<SRC.UID>) || (<TAG.CO3UID>==<SRC.UID>) || (<TAG.CO4UID>==<SRC.UID>) || (<TAG.CO5UID>==<SRC.UID>) || (<TAG.CO6UID>==<SRC.UID>) || (<TAG.CO7UID>==<SRC.UID>) || (<TAG.CO8UID>==<SRC.UID>)
+SRC.NEWITEM=i_friends
+SRC.ACT.LINK=<UID>
+SRC.ACT.CONT=<SRC.UID>
+SRC.ACT.TARGET Target the person you wish to name a friend of your household.
+RETURN 1
+ELSE 
+SRC.SYSMESSAGE Only the house owner may add friends.
+DIALOG d_house_public
+RETURN 1
+ONBUTTON=9
+IF (<SRC.UID>==<MORE>)
+DIALOG d_house_removec
+RETURN 1
+ELSE 
+SRC.SYSMESSAGE Only the house owner may remove co-owners.
+DIALOG d_house_public
+RETURN 1
+ONBUTTON=10
+IF (<SRC.UID>==<MORE>) || (<TAG.CO1UID>==<SRC.UID>) || (<TAG.CO2UID>==<SRC.UID>) || (<TAG.CO3UID>==<SRC.UID>) || (<TAG.CO4UID>==<SRC.UID>) || (<TAG.CO5UID>==<SRC.UID>) || (<TAG.CO6UID>==<SRC.UID>) || (<TAG.CO7UID>==<SRC.UID>) || (<TAG.CO8UID>==<SRC.UID>)
+DIALOG d_house_rfriend
+RETURN 1
+ELSE 
+SRC.SYSMESSAGE Only the house owner may remove friends.
+DIALOG d_house_flist
+RETURN 1
+ONBUTTON=11
+IF (<SRC.UID>==<MORE>) || (<TAG.CO1UID>==<SRC.UID>) || (<TAG.CO2UID>==<SRC.UID>) || (<TAG.CO3UID>==<SRC.UID>) || (<TAG.CO4UID>==<SRC.UID>) || (<TAG.CO5UID>==<SRC.UID>) || (<TAG.CO6UID>==<SRC.UID>) || (<TAG.CO7UID>==<SRC.UID>) || (<TAG.CO8UID>==<SRC.UID>)
+DIALOG d_house_rfriend_all
+RETURN 1
+ELSE 
+SRC.SYSMESSAGE Only the house owner may remove friends.
+DIALOG d_house_public
+RETURN 1
+ONBUTTON=12
+MOREX 4
+TARGET Target the individual to ban from this house.
+RETURN 1
+ONBUTTON=13
+MOREX 5
+TARGET Target the individual to eject from this house.
+RETURN 1
+ONBUTTON=14
+DIALOG d_house_elist
+RETURN 1
+ONBUTTON=15
+DIALOG d_house_liftban
+RETURN 1
+ONBUTTON=16
+IF !(<SRC.UID>==<MORE>)
+SRC.SYSMESSAGE Only the owner may transfer ownership of this house.
+DIALOG d_house_public
+RETURN 1
+ELSEIF (<SRC.REGION.FLAGS>==01092) || (<SRC.REGION.FLAGS>==01192)
+SRC.SYSMESSAGE You can only do this from outside the building.
+DIALOG d_house_public
+RETURN 1
+ELSE
+MOREX 7
+TARGET Target the person whom you wish to give this house.
+RETURN 1
+ONBUTTON=17
+IF (<LINK.TAG.HOUSEGUILD>==1)
+SRC.SYSMESSAGE You cannot redeed the house with a guildstone inside.
+SRC.SYSMESSAGE Redeeding the house has failed.
+DIALOG d_house_public
+RETURN 1
+ELSEIF (<SRC.UID>==<MORE>)
+DIALOG d_house_redeed
+RETURN 1
+ELSE
+SRC.SYSMESSAGE Only the owner may use this option.
+DIALOG d_house_public
+RETURN 1
+ONBUTTON=18
+ONBUTTON=19
+SRC.BANKSELF
+RETURN 1
+ONBUTTON=20
+IF (<EVAL <TAG.VENDORS>><=0)
+REGION.EVENTS r_house_private
+REGION.EVENTS -r_house_public
+TAG.TYPE=private
+LINK.MOREY 0
+VAR.HOUSETYPE=<LINK.TYPE>
+VAR.HOUSEPOSITION=<LINK.P>
+VAR.HOUSENAME=<LINK.NAME>
+LINK.ID=0bd2
+LINK.TYPE=<VAR.HOUSETYPE>
+LINK.P=<VAR.HOUSEPOSITION>
+LINK.NAME=<VAR.HOUSENAME>
+SRC.RESEND
+SRC.SYSMESSAGE This house is now private.
+DIALOG d_house_private
+RETURN 1
+ELSE
+SRC.SYSMESSAGE You have vendors working out of this building. It cannot be declared private until there are no vendors in place.
+RETURN 1
+ONBUTTON=21
+VAR.HOUSETYPE=<LINK.TYPE>
+VAR.HOUSEPOSITION=<LINK.P>
+VAR.HOUSENAME=<LINK.NAME>
+SRC.RESEND
+LINK.ID=0ba4
+LINK.TYPE=<VAR.HOUSETYPE>
+LINK.P=<VAR.HOUSEPOSITION>
+LINK.NAME=<VAR.HOUSENAME>
+SRC.RESEND
+DIALOG d_house_public
+RETURN 1
+ONBUTTON=22
+VAR.HOUSETYPE=<LINK.TYPE>
+VAR.HOUSEPOSITION=<LINK.P>
+VAR.HOUSENAME=<LINK.NAME>
+LINK.ID=0ba6
+LINK.TYPE=<VAR.HOUSETYPE>
+LINK.P=<VAR.HOUSEPOSITION>
+LINK.NAME=<VAR.HOUSENAME>
+SRC.RESEND
+DIALOG d_house_public
+RETURN 1
+ONBUTTON=23
+VAR.HOUSETYPE=<LINK.TYPE>
+VAR.HOUSEPOSITION=<LINK.P>
+VAR.HOUSENAME=<LINK.NAME>
+LINK.ID=0ba8
+LINK.TYPE=<VAR.HOUSETYPE>
+LINK.P=<VAR.HOUSEPOSITION>
+LINK.NAME=<VAR.HOUSENAME>
+SRC.RESEND
+DIALOG d_house_public
+RETURN 1
+ONBUTTON=24
+VAR.HOUSETYPE=<LINK.TYPE>
+VAR.HOUSEPOSITION=<LINK.P>
+VAR.HOUSENAME=<LINK.NAME>
+LINK.ID=0baa
+LINK.TYPE=<VAR.HOUSETYPE>
+LINK.P=<VAR.HOUSEPOSITION>
+LINK.NAME=<VAR.HOUSENAME>
+SRC.RESEND
+DIALOG d_house_public
+RETURN 1
+ONBUTTON=25
+VAR.HOUSETYPE=<LINK.TYPE>
+VAR.HOUSEPOSITION=<LINK.P>
+VAR.HOUSENAME=<LINK.NAME>
+LINK.ID=0bac
+LINK.TYPE=<VAR.HOUSETYPE>
+LINK.P=<VAR.HOUSEPOSITION>
+LINK.NAME=<VAR.HOUSENAME>
+SRC.RESEND
+DIALOG d_house_public
+RETURN 1
+ONBUTTON=26
+VAR.HOUSETYPE=<LINK.TYPE>
+VAR.HOUSEPOSITION=<LINK.P>
+VAR.HOUSENAME=<LINK.NAME>
+LINK.ID=0bae
+LINK.TYPE=<VAR.HOUSETYPE>
+LINK.P=<VAR.HOUSEPOSITION>
+LINK.NAME=<VAR.HOUSENAME>
+SRC.RESEND
+DIALOG d_house_public
+RETURN 1
+ONBUTTON=27
+VAR.HOUSETYPE=<LINK.TYPE>
+VAR.HOUSEPOSITION=<LINK.P>
+VAR.HOUSENAME=<LINK.NAME>
+LINK.ID=0bb0
+LINK.TYPE=<VAR.HOUSETYPE>
+LINK.P=<VAR.HOUSEPOSITION>
+LINK.NAME=<VAR.HOUSENAME>
+SRC.RESEND
+DIALOG d_house_public
+RETURN 1
+ONBUTTON=28
+VAR.HOUSETYPE=<LINK.TYPE>
+VAR.HOUSEPOSITION=<LINK.P>
+VAR.HOUSENAME=<LINK.NAME>
+LINK.ID=0bb2
+LINK.TYPE=<VAR.HOUSETYPE>
+LINK.P=<VAR.HOUSEPOSITION>
+LINK.NAME=<VAR.HOUSENAME>
+SRC.RESEND
+DIALOG d_house_public
+RETURN 1
+ONBUTTON=29
+VAR.HOUSETYPE=<LINK.TYPE>
+VAR.HOUSEPOSITION=<LINK.P>
+VAR.HOUSENAME=<LINK.NAME>
+LINK.ID=0bb4
+LINK.TYPE=<VAR.HOUSETYPE>
+LINK.P=<VAR.HOUSEPOSITION>
+LINK.NAME=<VAR.HOUSENAME>
+SRC.RESEND
+DIALOG d_house_public
+RETURN 1
+ONBUTTON=30
+VAR.HOUSETYPE=<LINK.TYPE>
+VAR.HOUSEPOSITION=<LINK.P>
+VAR.HOUSENAME=<LINK.NAME>
+LINK.ID=0bb6
+LINK.TYPE=<VAR.HOUSETYPE>
+LINK.P=<VAR.HOUSEPOSITION>
+LINK.NAME=<VAR.HOUSENAME>
+SRC.RESEND
+DIALOG d_house_public
+RETURN 1
+ONBUTTON=31
+VAR.HOUSETYPE=<LINK.TYPE>
+VAR.HOUSEPOSITION=<LINK.P>
+VAR.HOUSENAME=<LINK.NAME>
+LINK.ID=0bb8
+LINK.TYPE=<VAR.HOUSETYPE>
+LINK.P=<VAR.HOUSEPOSITION>
+LINK.NAME=<VAR.HOUSENAME>
+SRC.RESEND
+DIALOG d_house_public
+RETURN 1
+ONBUTTON=32
+VAR.HOUSETYPE=<LINK.TYPE>
+VAR.HOUSEPOSITION=<LINK.P>
+VAR.HOUSENAME=<LINK.NAME>
+LINK.ID=0bba
+LINK.TYPE=<VAR.HOUSETYPE>
+LINK.P=<VAR.HOUSEPOSITION>
+LINK.NAME=<VAR.HOUSENAME>
+SRC.RESEND
+DIALOG d_house_public
+RETURN 1
+ONBUTTON=33
+VAR.HOUSETYPE=<LINK.TYPE>
+VAR.HOUSEPOSITION=<LINK.P>
+VAR.HOUSENAME=<LINK.NAME>
+LINK.ID=0bbc
+LINK.TYPE=<VAR.HOUSETYPE>
+LINK.P=<VAR.HOUSEPOSITION>
+LINK.NAME=<VAR.HOUSENAME>
+SRC.RESEND
+DIALOG d_house_public
+RETURN 1
+ONBUTTON=34
+VAR.HOUSETYPE=<LINK.TYPE>
+VAR.HOUSEPOSITION=<LINK.P>
+VAR.HOUSENAME=<LINK.NAME>
+LINK.ID=0bbe
+LINK.TYPE=<VAR.HOUSETYPE>
+LINK.P=<VAR.HOUSEPOSITION>
+LINK.NAME=<VAR.HOUSENAME>
+SRC.RESEND
+DIALOG d_house_public
+RETURN 1
+ONBUTTON=35
+VAR.HOUSETYPE=<LINK.TYPE>
+VAR.HOUSEPOSITION=<LINK.P>
+VAR.HOUSENAME=<LINK.NAME>
+LINK.ID=0bc0
+LINK.TYPE=<VAR.HOUSETYPE>
+LINK.P=<VAR.HOUSEPOSITION>
+LINK.NAME=<VAR.HOUSENAME>
+SRC.RESEND
+DIALOG d_house_public
+RETURN 1
+ONBUTTON=36
+VAR.HOUSETYPE=<LINK.TYPE>
+VAR.HOUSEPOSITION=<LINK.P>
+VAR.HOUSENAME=<LINK.NAME>
+LINK.ID=0bc2
+LINK.TYPE=<VAR.HOUSETYPE>
+LINK.P=<VAR.HOUSEPOSITION>
+LINK.NAME=<VAR.HOUSENAME>
+SRC.RESEND
+DIALOG d_house_public
+RETURN 1
+ONBUTTON=37
+VAR.HOUSETYPE=<LINK.TYPE>
+VAR.HOUSEPOSITION=<LINK.P>
+VAR.HOUSENAME=<LINK.NAME>
+LINK.ID=0bc4
+LINK.TYPE=<VAR.HOUSETYPE>
+LINK.P=<VAR.HOUSEPOSITION>
+LINK.NAME=<VAR.HOUSENAME>
+SRC.RESEND
+DIALOG d_house_public
+RETURN 1
+ONBUTTON=38
+VAR.HOUSETYPE=<LINK.TYPE>
+VAR.HOUSEPOSITION=<LINK.P>
+VAR.HOUSENAME=<LINK.NAME>
+LINK.ID=0bc6
+LINK.TYPE=<VAR.HOUSETYPE>
+LINK.P=<VAR.HOUSEPOSITION>
+LINK.NAME=<VAR.HOUSENAME>
+SRC.RESEND
+DIALOG d_house_public
+RETURN 1
+ONBUTTON=39
+VAR.HOUSETYPE=<LINK.TYPE>
+VAR.HOUSEPOSITION=<LINK.P>
+VAR.HOUSENAME=<LINK.NAME>
+LINK.ID=0bc8
+LINK.TYPE=<VAR.HOUSETYPE>
+LINK.P=<VAR.HOUSEPOSITION>
+LINK.NAME=<VAR.HOUSENAME>
+SRC.RESEND
+DIALOG d_house_public
+RETURN 1
+ONBUTTON=40
+VAR.HOUSETYPE=<LINK.TYPE>
+VAR.HOUSEPOSITION=<LINK.P>
+VAR.HOUSENAME=<LINK.NAME>
+LINK.ID=0bca
+LINK.TYPE=<VAR.HOUSETYPE>
+LINK.P=<VAR.HOUSEPOSITION>
+LINK.NAME=<VAR.HOUSENAME>
+SRC.RESEND
+DIALOG d_house_public
+RETURN 1
+ONBUTTON=41
+VAR.HOUSETYPE=<LINK.TYPE>
+VAR.HOUSEPOSITION=<LINK.P>
+VAR.HOUSENAME=<LINK.NAME>
+LINK.ID=0bcc
+LINK.TYPE=<VAR.HOUSETYPE>
+LINK.P=<VAR.HOUSEPOSITION>
+LINK.NAME=<VAR.HOUSENAME>
+SRC.RESEND
+DIALOG d_house_public
+RETURN 1
+ONBUTTON=42
+VAR.HOUSETYPE=<LINK.TYPE>
+VAR.HOUSEPOSITION=<LINK.P>
+VAR.HOUSENAME=<LINK.NAME>
+LINK.ID=0bce
+LINK.TYPE=<VAR.HOUSETYPE>
+LINK.P=<VAR.HOUSEPOSITION>
+LINK.NAME=<VAR.HOUSENAME>
+SRC.RESEND
+DIALOG d_house_public
+RETURN 1
+ONBUTTON=43
+VAR.HOUSETYPE=<LINK.TYPE>
+VAR.HOUSEPOSITION=<LINK.P>
+VAR.HOUSENAME=<LINK.NAME>
+LINK.ID=0bd0
+LINK.TYPE=<VAR.HOUSETYPE>
+LINK.P=<VAR.HOUSEPOSITION>
+LINK.NAME=<VAR.HOUSENAME>
+SRC.RESEND
+DIALOG d_house_public
+RETURN 1
+ONBUTTON=44
+VAR.HOUSETYPE=<LINK.TYPE>
+VAR.HOUSEPOSITION=<LINK.P>
+VAR.HOUSENAME=<LINK.NAME>
+LINK.ID=0bd2
+LINK.TYPE=<VAR.HOUSETYPE>
+LINK.P=<VAR.HOUSEPOSITION>
+LINK.NAME=<VAR.HOUSENAME>
+SRC.RESEND
+DIALOG d_house_public
+RETURN 1
+ONBUTTON=45
+ONBUTTON=46
+VAR.HOUSETYPE=<LINK.TYPE>
+VAR.HOUSEPOSITION=<LINK.P>
+VAR.HOUSENAME=<LINK.NAME>
+LINK.ID=0bd4
+LINK.TYPE=<VAR.HOUSETYPE>
+LINK.P=<VAR.HOUSEPOSITION>
+LINK.NAME=<VAR.HOUSENAME>
+SRC.RESEND
+DIALOG d_house_public
+RETURN 1
+ONBUTTON=47
+VAR.HOUSETYPE=<LINK.TYPE>
+VAR.HOUSEPOSITION=<LINK.P>
+VAR.HOUSENAME=<LINK.NAME>
+LINK.ID=0bd6
+LINK.TYPE=<VAR.HOUSETYPE>
+LINK.P=<VAR.HOUSEPOSITION>
+LINK.NAME=<VAR.HOUSENAME>
+SRC.RESEND
+DIALOG d_house_public
+RETURN 1
+ONBUTTON=48
+VAR.HOUSETYPE=<LINK.TYPE>
+VAR.HOUSEPOSITION=<LINK.P>
+VAR.HOUSENAME=<LINK.NAME>
+LINK.ID=0bd8
+LINK.TYPE=<VAR.HOUSETYPE>
+LINK.P=<VAR.HOUSEPOSITION>
+LINK.NAME=<VAR.HOUSENAME>
+SRC.RESEND
+DIALOG d_house_public
+RETURN 1
+ONBUTTON=49
+VAR.HOUSETYPE=<LINK.TYPE>
+VAR.HOUSEPOSITION=<LINK.P>
+VAR.HOUSENAME=<LINK.NAME>
+LINK.ID=0bda
+LINK.TYPE=<VAR.HOUSETYPE>
+LINK.P=<VAR.HOUSEPOSITION>
+LINK.NAME=<VAR.HOUSENAME>
+SRC.RESEND
+DIALOG d_house_public
+RETURN 1
+ONBUTTON=50
+VAR.HOUSETYPE=<LINK.TYPE>
+VAR.HOUSEPOSITION=<LINK.P>
+VAR.HOUSENAME=<LINK.NAME>
+LINK.ID=0bdc
+LINK.TYPE=<VAR.HOUSETYPE>
+LINK.P=<VAR.HOUSEPOSITION>
+LINK.NAME=<VAR.HOUSENAME>
+SRC.RESEND
+DIALOG d_house_public
+RETURN 1
+ONBUTTON=51
+VAR.HOUSETYPE=<LINK.TYPE>
+VAR.HOUSEPOSITION=<LINK.P>
+VAR.HOUSENAME=<LINK.NAME>
+LINK.ID=0bde
+LINK.TYPE=<VAR.HOUSETYPE>
+LINK.P=<VAR.HOUSEPOSITION>
+LINK.NAME=<VAR.HOUSENAME>
+SRC.RESEND
+DIALOG d_house_public
+RETURN 1
+ONBUTTON=52
+VAR.HOUSETYPE=<LINK.TYPE>
+VAR.HOUSEPOSITION=<LINK.P>
+VAR.HOUSENAME=<LINK.NAME>
+LINK.ID=0be0
+LINK.TYPE=<VAR.HOUSETYPE>
+LINK.P=<VAR.HOUSEPOSITION>
+LINK.NAME=<VAR.HOUSENAME>
+SRC.RESEND
+DIALOG d_house_public
+RETURN 1
+ONBUTTON=53
+VAR.HOUSETYPE=<LINK.TYPE>
+VAR.HOUSEPOSITION=<LINK.P>
+VAR.HOUSENAME=<LINK.NAME>
+LINK.ID=0be2
+LINK.TYPE=<VAR.HOUSETYPE>
+LINK.P=<VAR.HOUSEPOSITION>
+LINK.NAME=<VAR.HOUSENAME>
+SRC.RESEND
+DIALOG d_house_public
+RETURN 1
+ONBUTTON=54
+VAR.HOUSETYPE=<LINK.TYPE>
+VAR.HOUSEPOSITION=<LINK.P>
+VAR.HOUSENAME=<LINK.NAME>
+LINK.ID=0be4
+LINK.TYPE=<VAR.HOUSETYPE>
+LINK.P=<VAR.HOUSEPOSITION>
+LINK.NAME=<VAR.HOUSENAME>
+SRC.RESEND
+DIALOG d_house_public
+RETURN 1
+ONBUTTON=55
+VAR.HOUSETYPE=<LINK.TYPE>
+VAR.HOUSEPOSITION=<LINK.P>
+VAR.HOUSENAME=<LINK.NAME>
+LINK.ID=0be6
+LINK.TYPE=<VAR.HOUSETYPE>
+LINK.P=<VAR.HOUSEPOSITION>
+LINK.NAME=<VAR.HOUSENAME>
+SRC.RESEND
+DIALOG d_house_public
+RETURN 1
+ONBUTTON=56
+VAR.HOUSETYPE=<LINK.TYPE>
+VAR.HOUSEPOSITION=<LINK.P>
+VAR.HOUSENAME=<LINK.NAME>
+LINK.ID=0be8
+LINK.TYPE=<VAR.HOUSETYPE>
+LINK.P=<VAR.HOUSEPOSITION>
+LINK.NAME=<VAR.HOUSENAME>
+SRC.RESEND
+DIALOG d_house_public
+RETURN 1
+ONBUTTON=57
+VAR.HOUSETYPE=<LINK.TYPE>
+VAR.HOUSEPOSITION=<LINK.P>
+VAR.HOUSENAME=<LINK.NAME>
+LINK.ID=0bea
+LINK.TYPE=<VAR.HOUSETYPE>
+LINK.P=<VAR.HOUSEPOSITION>
+LINK.NAME=<VAR.HOUSENAME>
+SRC.RESEND
+DIALOG d_house_public
+RETURN 1
+ONBUTTON=58
+VAR.HOUSETYPE=<LINK.TYPE>
+VAR.HOUSEPOSITION=<LINK.P>
+VAR.HOUSENAME=<LINK.NAME>
+LINK.ID=0bec
+LINK.TYPE=<VAR.HOUSETYPE>
+LINK.P=<VAR.HOUSEPOSITION>
+LINK.NAME=<VAR.HOUSENAME>
+SRC.RESEND
+DIALOG d_house_public
+RETURN 1
+ONBUTTON=59
+VAR.HOUSETYPE=<LINK.TYPE>
+VAR.HOUSEPOSITION=<LINK.P>
+VAR.HOUSENAME=<LINK.NAME>
+LINK.ID=0bee
+LINK.TYPE=<VAR.HOUSETYPE>
+LINK.P=<VAR.HOUSEPOSITION>
+LINK.NAME=<VAR.HOUSENAME>
+SRC.RESEND
+DIALOG d_house_public
+RETURN 1
+ONBUTTON=60
+VAR.HOUSETYPE=<LINK.TYPE>
+VAR.HOUSEPOSITION=<LINK.P>
+VAR.HOUSENAME=<LINK.NAME>
+LINK.ID=0bf0
+LINK.TYPE=<VAR.HOUSETYPE>
+LINK.P=<VAR.HOUSEPOSITION>
+LINK.NAME=<VAR.HOUSENAME>
+SRC.RESEND
+DIALOG d_house_public
+RETURN 1
+ONBUTTON=61
+VAR.HOUSETYPE=<LINK.TYPE>
+VAR.HOUSEPOSITION=<LINK.P>
+VAR.HOUSENAME=<LINK.NAME>
+LINK.ID=0bf2
+LINK.TYPE=<VAR.HOUSETYPE>
+LINK.P=<VAR.HOUSEPOSITION>
+LINK.NAME=<VAR.HOUSENAME>
+SRC.RESEND
+DIALOG d_house_public
+RETURN 1
+ONBUTTON=62
+VAR.HOUSETYPE=<LINK.TYPE>
+VAR.HOUSEPOSITION=<LINK.P>
+VAR.HOUSENAME=<LINK.NAME>
+LINK.ID=0bf4
+LINK.TYPE=<VAR.HOUSETYPE>
+LINK.P=<VAR.HOUSEPOSITION>
+LINK.NAME=<VAR.HOUSENAME>
+SRC.RESEND
+DIALOG d_house_public
+RETURN 1
+ONBUTTON=63
+VAR.HOUSETYPE=<LINK.TYPE>
+VAR.HOUSEPOSITION=<LINK.P>
+VAR.HOUSENAME=<LINK.NAME>
+LINK.ID=0bf6
+LINK.TYPE=<VAR.HOUSETYPE>
+LINK.P=<VAR.HOUSEPOSITION>
+LINK.NAME=<VAR.HOUSENAME>
+SRC.RESEND
+DIALOG d_house_public
+RETURN 1
+ONBUTTON=64
+VAR.HOUSETYPE=<LINK.TYPE>
+VAR.HOUSEPOSITION=<LINK.P>
+VAR.HOUSENAME=<LINK.NAME>
+LINK.ID=0bf8
+LINK.TYPE=<VAR.HOUSETYPE>
+LINK.P=<VAR.HOUSEPOSITION>
+LINK.NAME=<VAR.HOUSENAME>
+SRC.RESEND
+DIALOG d_house_public
+RETURN 1
+ONBUTTON=65
+VAR.HOUSETYPE=<LINK.TYPE>
+VAR.HOUSEPOSITION=<LINK.P>
+VAR.HOUSENAME=<LINK.NAME>
+LINK.ID=0bfa
+LINK.TYPE=<VAR.HOUSETYPE>
+LINK.P=<VAR.HOUSEPOSITION>
+LINK.NAME=<VAR.HOUSENAME>
+SRC.RESEND
+DIALOG d_house_public
+RETURN 1
+ONBUTTON=66
+VAR.HOUSETYPE=<LINK.TYPE>
+VAR.HOUSEPOSITION=<LINK.P>
+VAR.HOUSENAME=<LINK.NAME>
+LINK.ID=0bfc
+LINK.TYPE=<VAR.HOUSETYPE>
+LINK.P=<VAR.HOUSEPOSITION>
+LINK.NAME=<VAR.HOUSENAME>
+SRC.RESEND
+DIALOG d_house_public
+RETURN 1
+ONBUTTON=67
+VAR.HOUSETYPE=<LINK.TYPE>
+VAR.HOUSEPOSITION=<LINK.P>
+VAR.HOUSENAME=<LINK.NAME>
+LINK.ID=0bfe
+LINK.TYPE=<VAR.HOUSETYPE>
+LINK.P=<VAR.HOUSEPOSITION>
+LINK.NAME=<VAR.HOUSENAME>
+SRC.RESEND
+DIALOG d_house_public
+RETURN 1
+ONBUTTON=68
+VAR.HOUSETYPE=<LINK.TYPE>
+VAR.HOUSEPOSITION=<LINK.P>
+VAR.HOUSENAME=<LINK.NAME>
+LINK.ID=0c00
+LINK.TYPE=<VAR.HOUSETYPE>
+LINK.P=<VAR.HOUSEPOSITION>
+LINK.NAME=<VAR.HOUSENAME>
+SRC.RESEND
+DIALOG d_house_public
+RETURN 1
+ONBUTTON=69
+VAR.HOUSETYPE=<LINK.TYPE>
+VAR.HOUSEPOSITION=<LINK.P>
+VAR.HOUSENAME=<LINK.NAME>
+LINK.ID=0c02
+LINK.TYPE=<VAR.HOUSETYPE>
+LINK.P=<VAR.HOUSEPOSITION>
+LINK.NAME=<VAR.HOUSENAME>
+SRC.RESEND
+DIALOG d_house_public
+RETURN 1
+ONBUTTON=70
+VAR.HOUSETYPE=<LINK.TYPE>
+VAR.HOUSEPOSITION=<LINK.P>
+VAR.HOUSENAME=<LINK.NAME>
+LINK.ID=0c04
+LINK.TYPE=<VAR.HOUSETYPE>
+LINK.P=<VAR.HOUSEPOSITION>
+LINK.NAME=<VAR.HOUSENAME>
+SRC.RESEND
+DIALOG d_house_public
+RETURN 1
+ONBUTTON=71
+VAR.HOUSETYPE=<LINK.TYPE>
+VAR.HOUSEPOSITION=<LINK.P>
+VAR.HOUSENAME=<LINK.NAME>
+LINK.ID=0c06
+LINK.TYPE=<VAR.HOUSETYPE>
+LINK.P=<VAR.HOUSEPOSITION>
+LINK.NAME=<VAR.HOUSENAME>
+SRC.RESEND
+DIALOG d_house_public
+RETURN 1
+ONBUTTON=72
+VAR.HOUSETYPE=<LINK.TYPE>
+VAR.HOUSEPOSITION=<LINK.P>
+VAR.HOUSENAME=<LINK.NAME>
+LINK.ID=0c08
+LINK.TYPE=<VAR.HOUSETYPE>
+LINK.P=<VAR.HOUSEPOSITION>
+LINK.NAME=<VAR.HOUSENAME>
+SRC.RESEND
+DIALOG d_house_public
+RETURN 1
+ONBUTTON=73
+VAR.HOUSETYPE=<LINK.TYPE>
+VAR.HOUSEPOSITION=<LINK.P>
+VAR.HOUSENAME=<LINK.NAME>
+LINK.ID=0c0a
+LINK.TYPE=<VAR.HOUSETYPE>
+LINK.P=<VAR.HOUSEPOSITION>
+LINK.NAME=<VAR.HOUSENAME>
+SRC.RESEND
+DIALOG d_house_public
+RETURN 1
+ONBUTTON=74
+VAR.HOUSETYPE=<LINK.TYPE>
+VAR.HOUSEPOSITION=<LINK.P>
+VAR.HOUSENAME=<LINK.NAME>
+LINK.ID=0c0c
+LINK.TYPE=<VAR.HOUSETYPE>
+LINK.P=<VAR.HOUSEPOSITION>
+LINK.NAME=<VAR.HOUSENAME>
+SRC.RESEND
+DIALOG d_house_public
+RETURN 1
+ONBUTTON=75
+IF (<SRC.UID>==<MORE>)
+DIALOG d_house_rcoowner_all
+RETURN 1
+ELSE
+SRC.SYSMESSAGE Only the house owner may remove co-owners.
+DIALOG d_house_public
+RETURN 1
+
+[DIALOG d_house_private]               // INFO
+0,0                                    // Position
+resizepic 100 100 2600 400 300         // Curved Grey background 
+page 0                                 // Page 0
+resizepic 116 165 5100 369 25          // Square Grey box
+button 150 366 247 248 1 0 0           // Okay, button 0
+gumppic 230 65 100                     // Top Sign Gump
+croppedtext 250 105 105 20 46 12       // Sign Gump Name
+text 125 168 0 0                       // Info
+button 170 169 5209 5003 0 1 1         // Opens Info
+text 230 168 0 1                       // Friends      
+button 310 169 5209 5003 0 2 2         // Opens Friends
+text 375 168 0 2                       // Options
+button 455 169 5209 5003 0 3 3         // Opens Options
+page 1                                 // Page 1
+text 245 205 995 3                     // Owner Text
+text 320 205 0 4                       // Owner Name
+text 140 240 995 5                     // Lock Down
+text 357 240 0 6                       // Lock Down #
+text 140 260 995 7                     // Secure Items
+text 350 260 0 8                       // Secure Items #
+text 245 365 995 9                     // Change Name
+text 140 315 995 10                    // Properly Placed
+text 140 333 995 11                    // Modern Design
+button 425 365 2714 2715 1 1 4         // Name Change
+page 2                                 // Page 2    
+text 153 194 995 13                    // Coowner Text
+button 125 194 2714 2714 1 2 5         // List Coowner B
+text 340 194 995 14                    // Friends Text
+button 310 194 2714 2714 1 2 6         // List Friends B
+text 153 216 995 15                    // Coowner Text
+button 125 216 2714 2714 1 2 7         // Add Coowner B
+text 340 216 995 16                    // Friends Text
+button 310 216 2714 2714 1 2 8         // Add Friend B
+text 153 238 995 17                    // Remove Text C
+button 125 238 2714 2714 1 2 9         // Remove Coowner B
+text 340 238 995 18                    // Remove Text F
+button 310 238 2714 2714 1 2 10        // Remove Friends B
+text 340 260 995 19                    // Clear List Text
+button 310 260 2714 2714 1 2 11        // Clear List B
+text 153 260 995 30                    // Clear List Co Text
+button 125 260 2714 2714 1 2 21        // Clear List Co B
+text 225 281 995 20                    // Ban Text
+button 195 281 2714 2714 1 2 12        // Ban Button
+text 225 302 995 21                    // Eject Text
+button 195 302 2714 2714 1 2 13        // Eject Button
+text 225 324 995 22                    // Ban Text
+button 195 324 2714 2714 1 2 14        // Ban Button
+text 225 346 995 23                    // Lift Ban Text
+button 195 346 2714 2714 1 2 15        // Lift Ban Button
+page 3                                 // Page 3
+text 185 195 995 24                    // Transfer Text
+button 155 195 2714 2714 1 3 16        // Transfer Button
+text 185 225 995 25                    // Demolish Text
+button 155 225 2714 2714 1 3 17        // Demolish Button  
+text 185 255 995 26                    // Change Locks T
+button 155 255 2714 2714 1 3 18        // Change Locks B
+text 185 285 995 27                    // Declare Public T
+text 185 305 995 28                    // Declare Public T
+button 155 285 2714 2714 1 3 19        // Declare Public B   
+text 185 335 995 29                    // Access Bank T
+button 155 335 2714 2714 1 3 20        // Access Bank B
+     
+[DIALOG d_house_private TEXT]
+INFO                                   // Line 0
+FRIENDS
+OPTIONS
+Owned by  
+<SRC.UID.<MORE>.NAME>                                       
+Number of locked down items:           // Line 5
+<EVAL <TAG.LOCKNUMBER>> out of <MOREY>
+Number of secure containers: 
+<EVAL <TAG.SECURENUMBER>> out of <MOREZ>     
+Change this house's name!
+This house is properly placed.         // Line 10
+This house is of <TAG.HOUSEDESIGN> design.
+<LINK.NAME>
+List of Co-owners                      
+List of Friends
+Add a Co-owner                         // Line 15
+Add a Friend
+Remove a Co-owner
+Remove a Friend                        
+Clear Friends list
+Ban someone from the house             // Line 20
+Eject someone from the house           
+View list of banned people
+Lift a ban                             
+Transfer ownership of the house
+Demolish the house & get a deed back   // Line 25
+Change the house locks
+Declare this building to be public. This
+will make your front door unlockable!
+Access your bank account  
+Clear Co-owner list             
+                                      
+[DIALOG d_house_private BUTTON]
+ONBUTTON=0
+ONBUTTON=4
+SRC.SYSMESSAGE To change your houses name, use your house key on the sign.
+DIALOG d_house_private
+RETURN 1
+ONBUTTON=5
+DIALOG d_house_colist
+RETURN 1
+ONBUTTON=6
+DIALOG d_house_flist
+RETURN 1
+ONBUTTON=7
+IF (<SRC.UID>==<MORE>)
+SRC.NEWITEM=i_coown
+SRC.ACT.LINK=<UID>
+SRC.ACT.CONT=<SRC.UID>
+SRC.ACT.TARGET Target the person you wish to name a co-owner of your household.
+RETURN 1
+ELSE
+SRC.SYSMESSAGE Only the house owner may add co-owners.
+DIALOG d_house_private
+RETURN 1
+ONBUTTON=8
+IF (<SRC.UID>==<MORE>) || (<TAG.CO1UID>==<SRC.UID>) || (<TAG.CO2UID>==<SRC.UID>) || (<TAG.CO3UID>==<SRC.UID>) || (<TAG.CO4UID>==<SRC.UID>) || (<TAG.CO5UID>==<SRC.UID>) || (<TAG.CO6UID>==<SRC.UID>) || (<TAG.CO7UID>==<SRC.UID>) || (<TAG.CO8UID>==<SRC.UID>)
+SRC.NEWITEM=i_friends
+SRC.ACT.LINK=<UID>
+SRC.ACT.CONT=<SRC.UID>
+SRC.ACT.TARGET Target the person you wish to name a friend of your household.
+RETURN 1
+ELSE 
+SRC.SYSMESSAGE Only house owners may add friends.
+DIALOG d_house_private
+RETURN 1
+ONBUTTON=9
+IF (<SRC.UID>==<MORE>)
+DIALOG d_house_removec
+RETURN 1
+ELSE 
+SRC.SYSMESSAGE Only the house owner may remove co-owners.
+DIALOG d_house_private
+RETURN 1
+ONBUTTON=10
+IF (<SRC.UID>==<MORE>) || (<TAG.CO1UID>==<SRC.UID>) || (<TAG.CO2UID>==<SRC.UID>) || (<TAG.CO3UID>==<SRC.UID>) || (<TAG.CO4UID>==<SRC.UID>) || (<TAG.CO5UID>==<SRC.UID>) || (<TAG.CO6UID>==<SRC.UID>) || (<TAG.CO7UID>==<SRC.UID>) || (<TAG.CO8UID>==<SRC.UID>)
+DIALOG d_house_rfriend
+RETURN 1
+ELSE 
+SRC.SYSMESSAGE Only house owners may remove friends.
+DIALOG d_house_private
+RETURN 1
+ONBUTTON=11
+IF (<SRC.UID>==<MORE>) || (<TAG.CO1UID>==<SRC.UID>) || (<TAG.CO2UID>==<SRC.UID>) || (<TAG.CO3UID>==<SRC.UID>) || (<TAG.CO4UID>==<SRC.UID>) || (<TAG.CO5UID>==<SRC.UID>) || (<TAG.CO6UID>==<SRC.UID>) || (<TAG.CO7UID>==<SRC.UID>) || (<TAG.CO8UID>==<SRC.UID>)
+DIALOG d_house_rfriend_all
+ELSE 
+SRC.SYSMESSAGE Only the house owner may remove friends.
+DIALOG d_house_private
+RETURN 1
+ONBUTTON=12
+MOREX 4
+TARGET Target the individual to ban from this house.
+RETURN 1
+ONBUTTON=13
+MOREX 5
+TARGET Target the individual to eject from this house.
+RETURN 1
+ONBUTTON=14
+DIALOG d_house_elist
+ONBUTTON=15
+DIALOG d_house_liftban
+ONBUTTON=16
+IF !(<SRC.UID>==<MORE>)
+SRC.SYSMESSAGE Only the owner may transfer ownership of this house.
+DIALOG d_house_private
+RETURN 1
+ELSEIF (<SRC.REGION.FLAGS>==01092) || (<SRC.REGION.FLAGS>==01192)
+SRC.SYSMESSAGE You can only do this from outside the building.
+DIALOG d_house_private
+RETURN 1
+ELSE
+MOREX 7
+TARGET Target the person whom you wish to give this house.
+RETURN 1
+ONBUTTON=17
+IF (<TAG.HOUSEGUILD>==1)
+SRC.SYSMESSAGE You cannot redeed the house with a guildstone inside.
+SRC.SYSMESSAGE Redeeding the house has failed.
+DIALOG d_house_private
+RETURN 1
+ELSEIF (<SRC.UID>==<MORE>)
+DIALOG d_house_redeed
+RETURN 1
+ELSE
+SRC.SYSMESSAGE Only the owner may use this option.
+DIALOG d_house_private
+RETURN 1
+ONBUTTON=18
+IF !<SRC.RESTEST 1 i_key_copper>
+SRC.SYSMESSAGE You must have a key on you in order to change house locks.
+SRC.SYSMESSAGE Lock change failed.
+DIALOG d_house_private
+RETURN 1
+ELSEIF (<SRC.UID>==<MORE>)
+SRC.SYSMESSAGE The locks on your front door have been changed, and new master keys have been placed in your bank and in your backpack.
+SRC.CONSUME 1 i_key_copper
+SRC.NEWITEM i_key_copper
+SRC.ACT.MORE <SRC.ACT.UID>
+SRC.ACT.MORE2 <SRC.ACT.UID>
+SRC.ACT.BOUNCE
+VAR.KEYMORE <SRC.ACT.UID>
+SRC.NEWITEM i_key_copper
+SRC.ACT.MORE <VAR.KEYMORE>
+SRC.ACT.MORE2 <VAR.KEYMORE>
+SRC.ACT.P <SRC.FINDLAYER(29).UID>
+MORE2 <VAR.KEYMORE>
+LINK.MORE <VAR.KEYMORE>
+DIALOG d_house_private
+RETURN 1
+ELSE
+SRC.SYSMESSAGE Only the owner may change the house locks.
+DIALOG d_house_private
+RETURN 1
+ONBUTTON=19
+TAG.TYPE public
+REGION.EVENTS r_house_public
+REGION.EVENTS -r_house_private
+LINK.MOREY 1
+SRC.SYSMESSAGE This house is now public. Friends of the house may now have vendors working out of this building.
+DIALOG d_house_public
+RETURN 1
+ONBUTTON=20
+SRC.BANKSELF
+RETURN 1
+ONBUTTON=21
+IF (<SRC.UID>==<MORE>)
+DIALOG d_house_rcoowner_all
+RETURN 1
+ELSE
+SRC.SYSMESSAGE Only the house owner may remove co-owners.
+DIALOG d_house_private
+RETURN 1
+
+[DIALOG d_house_staff]                 // Staff Control
+0,0                                    // Position
+resizepic 100 100 2600 400 300         // Curved Grey background 
+page 0                                 // Page 0
+resizepic 116 165 5100 369 25          // Square Grey box
+button 150 366 247 248 1 0 0           // Okay, button 0
+gumppic 230 65 100                     // Top Sign Gump
+text 280 85 46 12                      // Sign Gump Name
+text 272 105 46 34                     // Sign Gump Name
+text 280 125 46 35                     // Sign Gump Name
+text 125 168 0 0                       // Info
+button 170 169 5209 5003 0 1 1         // Opens Info
+text 230 168 0 1                       // Friends      
+button 310 169 5209 5003 0 2 2         // Opens Friends
+text 375 168 0 2                       // Options
+button 455 169 5209 5003 0 3 3         // Opens Options
+page 1                                 // Page 1
+text 200 200 995 3                     // Owner Text
+text 280 200 0 4                       // Owner Name
+text 200 220 995 36                    // Account Text
+text 280 220 0 37                      // Account Name
+text 140 245 995 5                     // Lock Down
+text 357 245 0 6                       // Lock Down #
+text 140 265 995 7                     // Secure Items
+text 350 265 0 8                       // Secure Items #
+text 140 285 995 30                    // House Visits
+text 415 285 0000 31                   // Visit #
+text 230 365 995 32                    // Coordinates             
+text 350 365 0000 33                   // Coordinate #
+text 140 315 995 10                    // House Name
+text 245 315 0 38                      // House Name
+text 140 333 995 11                    // House Type Text
+text 318 333 0 39                      // House Type
+page 2                                 // Page 2    
+text 153 194 995 13                    // Coowner Text
+button 125 194 2714 2714 1 2 5         // List Coowner B
+text 340 194 995 14                    // Friends Text
+button 310 194 2714 2714 1 2 6         // List Friends B
+text 153 216 995 15                    // Coowner Text
+button 125 216 2714 2714 1 2 7         // Add Coowner B
+text 340 216 995 16                    // Friends Text
+button 310 216 2714 2714 1 2 8         // Add Friend B
+text 153 238 995 17                    // Remove Text C
+button 125 238 2714 2714 1 2 9         // Remove Coowner B
+text 340 238 995 18                    // Remove Text F
+button 310 238 2714 2714 1 2 10        // Remove Friends B
+text 340 260 995 19                    // Clear List Text
+button 310 260 2714 2714 1 2 11        // Clear List B
+text 153 260 995 40                    // Clear List Co Text
+button 125 260 2714 2714 1 2 21        // Clear List Co B
+text 225 324 995 22                    // Ban Text
+button 195 324 2714 2714 1 2 14        // Ban Button
+text 225 346 995 23                    // Lift Ban Text
+button 195 346 2714 2714 1 2 15        // Lift Ban Button
+page 3                                 // Page 3
+text 185 195 995 24                    // Transfer Text
+button 155 195 2714 2714 1 3 16        // Transfer Button
+text 185 225 995 25                    // Demolish Text
+button 155 225 2714 2714 1 3 17        // Demolish Button  
+text 185 255 995 26                    // Relieve T
+button 155 255 2714 2714 1 3 18        // Relieve B
+text 185 285 995 27                    // Declare Public T
+text 185 305 995 28                    // Declare Public T
+button 155 285 2714 2714 1 3 19        // Declare Public B   
+text 185 335 995 29                    // Access ACP T
+button 155 335 2714 2714 1 3 20        // Access ACP B
+
+[DIALOG d_house_staff TEXT]
+INFO                                   // Line 0
+FRIENDS
+OPTIONS
+Owned by 
+<SRC.UID.<MORE>.NAME>            
+Number of locked down items:           // Line 5
+<EVAL <TAG.LOCKNUMBER>> out of <MOREY>
+Number of secure containers: 
+<EVAL <TAG.SECURENUMBER>> out of <MOREZ>   
+Change this house's name!
+House's name:       		       // Line 10
+This house is currently: 
+Staff
+List of Co-owners                      
+List of Friends
+Add a Co-owner                         // Line 15
+Add a Friend
+Remove a Co-owner
+Remove a Friend                        
+Clear Friends list
+Ban someone from the house             // Line 20
+Eject someone from the house           
+View list of banned people
+Lift a ban                             
+Transfer this house to another character
+Remove house in exchange for its deed  // Line 25
+Releave ownership of this house
+Declare this building to be public. This
+will make your front door unlockable!
+Access Admin Control Panel           
+Number of visits this house has had:   // Line 30                
+<MOREM>       
+House location:
+<P>
+Control
+Panel                                  // Line 35
+Account of
+<SRC.UID.<MORE>.ACCOUNT> 
+<LINK.NAME>
+<TAG.TYPE>
+Clear Co-owner List
+
+[DIALOG d_house_staff BUTTON]  
+ONBUTTON=0
+ONBUTTON=4
+SRC.SYSMESSAGE To change your houses name, use your house key on the sign
+RETURN 1
+ONBUTTON=5
+DIALOG d_house_colist
+ONBUTTON=6
+DIALOG d_house_flist
+ONBUTTON=7
+SRC.NEWITEM=i_coown
+SRC.ACT.LINK=<UID>
+SRC.ACT.CONT=<SRC.UID>
+SRC.ACT.TARGET Target the person you wish to name a co-owner of <SRC.UID.<LINK.MORE>.NAME>'s household.
+RETURN 1
+ONBUTTON=8
+SRC.NEWITEM=i_friends
+SRC.ACT.LINK=<UID>
+SRC.ACT.CONT=<SRC.UID>
+SRC.ACT.TARGET Target the person you wish to name a friend of <SRC.UID.<LINK.MORE>.NAME>'s household.
+RETURN 1
+ONBUTTON=9
+DIALOG d_house_removec
+RETURN 1
+ONBUTTON=10
+DIALOG d_house_rfriend
+RETURN 1
+ONBUTTON=11
+DIALOG d_house_rfriend_all
+RETURN 1
+ONBUTTON=14
+DIALOG d_house_elist
+RETURN 1
+ONBUTTON=15
+DIALOG d_house_liftban
+RETURN 1
+ONBUTTON=16
+MOREX 7
+TARGET Target the person whom you wish to give this house.
+RETURN 1
+ONBUTTON=17
+IF (<LINK.TAG.HOUSEGUILD>==1)
+SRC.SYSMESSAGE You cannot redeed the house with a guildstone inside.
+SRC.SYSMESSAGE Redeeding the house has failed.
+DIALOG d_house_staff
+RETURN 1
+ELSE
+DIALOG d_house_redeed
+RETURN 1
+ONBUTTON=18
+SRC.SYSMESSAGE This house has been relieved of ownership!
+SRC.LINK.MORE=0
+TYPE t_sign_gump
+SRC.RESEND
+ONBUTTON=19
+REGION.EVENTS r_house_public
+REGION.EVENTS -r_house_private
+TAG.TYPE=public
+LINK.MOREY 1
+SRC.RESEND
+SRC.SYSMESSAGE This house is now public. Friends of the house may now have vendors working out of this building.
+DIALOG d_house_public
+RETURN 1
+ONBUTTON=20
+SRC.ADMIN
+RETURN 1
+ONBUTTON=21
+DIALOG d_house_rcoowner_all
+RETURN 1
+
+[DIALOG d_house_placed]               // Main
+0,0                                   // Position
+resizepic 190 175 5054 280 120        // Curved Grey background 
+resizepic 200 185 3000 260 100        // Curved Grey background 
+text 215 200 995 0                    // Place House Text
+text 245 253 0000 1                   // Continue Text
+button 210 253 4005 4006 1 0 1        // Opens Options
+text 385 253 0000 2                   // Cancel Text
+button 350 253 4005 4006 1 0 2        // Opens Options
+
+[DIALOG d_house_placed TEXT]
+Place house here?
+CONTINUE
+CANCEL
+
+[DIALOG d_house_placed BUTTON]
+ONBUTTON=0
+SRC.NEWITEM i_deed
+SRC.ACT.MORE <ID>
+SRC.ACT.NAME Deed to a <NAME>
+SRC.ACT.CONT <SRC.FINDLAYER(29).UID>
+SRC.ACT.ATTR 0004
+REMOVE
+RETURN 1
+ONBUTTON=1
+RETURN 1
+ONBUTTON=2
+SRC.NEWITEM i_deed
+SRC.ACT.MORE <ID>
+SRC.ACT.NAME Deed to a <NAME>
+SRC.ACT.CONT <SRC.FINDLAYER(29).UID>
+SRC.ACT.ATTR 0004
+REMOVE
+RETURN 1
+
+[DIALOG d_house_condemn]              // Main
+0,0                                   // Position
+resizepic 200 175 5054 400 300        // Curved Grey background 
+resizepic 210 185 3000 380 280        // Curved White background 
+resizepic 220 195 3000 360 100        // Curved White box 
+text 260 315 0000 0                   // Continue Text
+button 220 315 4005 4006 1 0 1        // Continue Button
+text 260 340 0000 1                   // Cancel Text
+button 220 340 4005 4006 1 0 2        // Cancel Button
+text 230 200 0000 2                   // Description
+text 230 215 0000 3                   // Description
+text 230 230 0000 4                   // Description
+text 230 245 0000 5                   // Description
+text 230 272 0000 6                   // Description
+text 227 400 995 7                    // Confirm Message 1
+text 227 415 995 8                    // Confirm Message 2
+text 227 430 995 9                    // Confirm Message 3
+
+[DIALOG d_house_condemn TEXT]
+Forget it, I wish to keep my other house(s).
+Okay that is fine.
+If you place this house, any of your houses on 
+this account will not refresh and they will 
+eventually decay, unless you redeed the houses or
+transfer them to other players.
+Be forwarned, this is permanant.
+Choosing 'Okay' will condemn your other house(s).
+The will decay in seven days from placement of
+this house.
+
+[DIALOG d_house_condemn BUTTON]
+ONBUTTON=0
+SRC.NEWITEM i_deed
+SRC.ACT.MORE <ID>
+SRC.ACT.NAME Deed to a <NAME>
+SRC.ACT.CONT <SRC.FINDLAYER(29).UID>
+SRC.ACT.ATTR 0004
+REMOVE
+RETURN 1
+ONBUTTON=1
+SRC.NEWITEM i_deed
+SRC.ACT.MORE <ID>
+SRC.ACT.NAME Deed to a <NAME>
+SRC.ACT.CONT <SRC.FINDLAYER(29).UID>
+SRC.ACT.ATTR 0004
+REMOVE
+RETURN 1
+ONBUTTON=2
+RETURN 1
+
+[DIALOG d_house_nonown]
+0,0
+gumppic 250 180 100                   // Top Sign Gump
+croppedtext 270 218 105 20 46 0       // Sign Gump Name
+
+[DIALOG d_house_nonown TEXT]         
+<LINK.NAME>                           // Sign Gump Name Text
+
+[DIALOG d_house_nonown BUTTON] 
+ONBUTTON=0                            // Cancel
+ONBUTTON=1                            // Okay Button
+
+[DIALOG d_house_colist]               // Coowner List                                               
+0,0                                   // Position
+resizepic 100 100 2600 400 300        // Grey background 
+resizepic 147 359 5100 310 25         // Square Grey Box
+button 270 360 247 248 1 0 1          // Okay, Button 0
+text 215 118 995 0                    // Title
+text 170 160 0 1                      // Names
+text 170 180 0 2                      // Names
+text 170 200 0 3                      // Names
+text 170 220 0 4                      // Names
+text 170 240 0 5                      // Names
+text 170 260 0 6                      // Names
+text 170 280 0 7                      // Names
+text 170 300 0 8                      // Names
+
+[DIALOG d_house_colist TEXT]
+Co-owners of the house   
+<TAG.CO1NAME>
+<TAG.CO2NAME>
+<TAG.CO3NAME>
+<TAG.CO4NAME>
+<TAG.CO5NAME>
+<TAG.CO6NAME>
+<TAG.CO7NAME>
+<TAG.CO8NAME>
+
+[DIALOG d_house_colist BUTTON]  
+ONBUTTON=0                            // Cancel
+IF (<LINK.MOREY>==0)
+DIALOG d_house_private
+RETURN 1
+ELSEIF (<LINK.MOREY>==1)
+DIALOG d_house_public
+RETURN 1
+ENDIF
+ONBUTTON=1                            // Okay Button
+IF (<LINK.MOREY>==0)
+DIALOG d_house_private
+RETURN 1
+ELSEIF (<LINK.MOREY>==1)
+DIALOG d_house_public
+RETURN 1
+ENDIF
+
+[DIALOG d_house_flist]                // Friends list
+0,0                                   // Postion
+page 0                                // Page 0
+resizepic 100 100 2600 400 300        // Grey background 
+resizepic 147 359 5100 310 25         // Square Grey box
+text 245 118 995 0                    // Title
+button 270 360 247 248 1 0 1          // Okay, button 1
+page 1                                // Page 1
+text 170 160 0 1                      // Names
+text 170 180 0 2                      // Names
+text 170 200 0 3                      // Names
+text 170 220 0 4                      // Names
+text 170 240 0 5                      // Names
+text 170 260 0 6                      // Names
+text 170 280 0 7                      // Names
+text 170 300 0 8                      // Names
+button 425 363 5224 5224 0 2          // Next Page
+page 2                                // Page 2
+text 170 160 0 9                      // Names
+text 170 180 0 10                     // Names
+text 170 200 0 11                     // Names
+text 170 220 0 12                     // Names
+text 170 240 0 13                     // Names
+text 170 260 0 14                     // Names
+text 170 280 0 15                     // Names
+text 170 300 0 16                     // Names
+button 160 363 5223 5223 0 1          // Previous Page
+button 425 363 5224 5224 0 3          // Next Page
+page 3                                // Page 3
+text 170 160 0 17                     // Names
+text 170 180 0 18                     // Names
+text 170 200 0 19                     // Names
+text 170 220 0 20                     // Names
+button 160 363 5223 5223 0 2          // Previous Page
+
+[DIALOG d_house_flist TEXT]
+Friends List               // Line 0
+<TAG.F1NAME>   
+<TAG.F2NAME>   
+<TAG.F3NAME>   
+<TAG.F4NAME>   
+<TAG.F5NAME>   
+<TAG.F6NAME>   
+<TAG.F7NAME>   
+<TAG.F8NAME>   
+<TAG.F9NAME>   
+<TAG.F10NAME>   
+<TAG.F11NAME> 
+<TAG.F12NAME>   
+<TAG.F13NAME>   
+<TAG.F14NAME>   
+<TAG.F15NAME>   
+<TAG.F16NAME>   
+<TAG.F17NAME>   
+<TAG.F18NAME>   
+<TAG.F19NAME>   
+<TAG.F20NAME> 
+
+[DIALOG d_house_flist BUTTON]  
+ONBUTTON=0                            // Cancel
+IF (<LINK.MOREY>==0)
+DIALOG d_house_private
+RETURN 1
+ELSEIF (<LINK.MOREY>==1)
+DIALOG d_house_public
+RETURN 1
+ENDIF
+ONBUTTON=1                            // Okay Button
+IF (<LINK.MOREY>==0)
+DIALOG d_house_private
+RETURN 1
+ELSEIF (<LINK.MOREY>==1)
+DIALOG d_house_public
+RETURN 1
+ENDIF
+
+
+[DIALOG d_house_elist]                // Enemies list
+0,0                                   // Postion
+page 0				      // Page 0
+resizepic 100 100 2600 400 300        // Grey background 
+resizepic 147 359 5100 310 25         // Square Grey box
+text 215 118 995 0                    // Title
+button 270 360 247 248 1 0 1          // Okay, button 1
+page 1				      // Page 1
+text 180 155 0 1                      // Banned Name
+text 180 180 0 2                      // Banned Name
+text 180 205 0 3                      // Banned Name
+text 180 230 0 4                      // Banned Name
+text 180 255 0 5                      // Banned Name
+text 180 280 0 6                      // Banned Name
+text 180 305 0 7                      // Banned Name
+button 425 363 5224 5224 0 2          // Next Page
+page 2				      // Page 2
+text 180 155 0 8                      // Banned Name
+text 180 180 0 9                      // Banned Name
+text 180 205 0 10                     // Banned Name
+text 180 230 0 11                     // Banned Name
+text 180 255 0 12                     // Banned Name
+text 180 280 0 13                     // Banned Name
+text 180 305 0 14                     // Banned Name
+button 160 363 5223 5223 0 1          // Previous Page
+button 425 363 5224 5224 0 3          // Next Page
+page 3				      // Page 3
+text 180 155 0 15                     // Banned Name
+text 180 180 0 16                     // Banned Name
+text 180 205 0 17                     // Banned Name
+text 180 230 0 18                     // Banned Name
+text 180 255 0 19                     // Banned Name
+text 180 280 0 20                     // Banned Name
+text 180 305 0 21                     // Banned Name
+button 160 363 5223 5223 0 2          // Previous Page
+button 425 363 5224 5224 0 4          // Next Page
+page 4				      // Page 4
+text 180 155 0 22                     // Banned Name
+text 180 180 0 23                     // Banned Name
+text 180 205 0 24                     // Banned Name
+text 180 230 0 25                     // Banned Name
+text 180 255 0 26                     // Banned Name
+text 180 280 0 27                     // Banned Name
+text 180 305 0 28                     // Banned Name
+button 160 363 5223 5223 0 3          // Previous Page
+button 425 363 5224 5224 0 5          // Next Page
+page 5				      // Page 5
+text 180 155 0 29                     // Banned Name
+text 180 180 0 30                     // Banned Name
+text 180 205 0 31                     // Banned Name
+text 180 230 0 32                     // Banned Name
+text 180 255 0 33                     // Banned Name
+text 180 280 0 34                     // Banned Name
+text 180 305 0 35                     // Banned Name
+button 160 363 5223 5223 0 4          // Previous Page
+button 425 363 5224 5224 0 6          // Next Page
+page 6				      // Page 6
+text 180 155 0 36                     // Banned Name
+text 180 180 0 37                     // Banned Name
+text 180 205 0 38                     // Banned Name
+text 180 230 0 39                     // Banned Name
+text 180 255 0 40                     // Banned Name
+text 180 280 0 41                     // Banned Name
+text 180 305 0 42                     // Banned Name
+button 160 363 5223 5223 0 5          // Previous Page
+button 425 363 5224 5224 0 7          // Next Page
+page 7				      // Page 7
+text 180 155 0 43                     // Banned Name
+text 180 180 0 44                     // Banned Name
+text 180 205 0 45                     // Banned Name
+text 180 230 0 46                     // Banned Name
+text 180 255 0 47                     // Banned Name
+text 180 280 0 48                     // Banned Name
+text 180 305 0 49                     // Banned Name
+button 160 363 5223 5223 0 6          // Previous Page
+button 425 363 5224 5224 0 8          // Next Page
+page 8				      // Page 8
+text 180 155 0 50                     // Banned Name
+button 160 363 5223 5223 0 7          // Previous Page
+
+[DIALOG d_house_elist TEXT]
+Enemies of the house                  // Line 0
+<TAG.BAN1NAME>
+<TAG.BAN2NAME>
+<TAG.BAN3NAME>
+<TAG.BAN4NAME>
+<TAG.BAN5NAME>
+<TAG.BAN6NAME>
+<TAG.BAN7NAME>
+<TAG.BAN8NAME>
+<TAG.BAN9NAME>
+<TAG.BAN10NAME>
+<TAG.BAN11NAME>
+<TAG.BAN12NAME>
+<TAG.BAN13NAME>
+<TAG.BAN14NAME>
+<TAG.BAN15NAME>
+<TAG.BAN16NAME>
+<TAG.BAN17NAME>
+<TAG.BAN18NAME>
+<TAG.BAN19NAME>
+<TAG.BAN20NAME>
+<TAG.BAN21NAME>
+<TAG.BAN22NAME>
+<TAG.BAN23NAME>
+<TAG.BAN24NAME>
+<TAG.BAN25NAME>
+<TAG.BAN26NAME>
+<TAG.BAN27NAME>
+<TAG.BAN28NAME>
+<TAG.BAN29NAME>
+<TAG.BAN30NAME>
+<TAG.BAN31NAME>
+<TAG.BAN32NAME>
+<TAG.BAN33NAME>
+<TAG.BAN34NAME>
+<TAG.BAN35NAME>
+<TAG.BAN36NAME>
+<TAG.BAN37NAME>
+<TAG.BAN38NAME>
+<TAG.BAN39NAME>
+<TAG.BAN40NAME>
+<TAG.BAN41NAME>
+<TAG.BAN42NAME>
+<TAG.BAN43NAME>
+<TAG.BAN44NAME>
+<TAG.BAN45NAME>
+<TAG.BAN46NAME>
+<TAG.BAN47NAME>
+<TAG.BAN48NAME>
+<TAG.BAN49NAME>
+<TAG.BAN50NAME>
+
+[DIALOG d_house_elist BUTTON]
+ONBUTTON=0                            // Cancel
+IF (<LINK.MOREY>==0)
+DIALOG d_house_private
+RETURN 1
+ELSEIF (<LINK.MOREY>==1)
+DIALOG d_house_public
+RETURN 1
+ENDIF
+ONBUTTON=1                            // Okay Button
+IF (<LINK.MOREY>==0)
+DIALOG d_house_private
+RETURN 1
+ELSEIF (<LINK.MOREY>==1)
+DIALOG d_house_public
+RETURN 1
+ENDIF
+
+[DIALOG d_house_liftban]              // Remove Friend
+0,0                                   // Postion
+page 0                                // Page 0
+resizepic 100 100 2600 400 300        // Grey background 
+resizepic 147 359 5100 310 25         // Square Grey box
+text 185 118 995 0                    // Title
+button 270 360 247 248 1 0 1          // Okay, button 1
+button 145 335 2714 2714 1 0 2        // Remove Button
+text 165 335 995 51                    // Remove Text
+page 1                                // Page 1
+button 425 363 5224 5224 0 2 16       // Next Page
+text 180 155 0 1                      // Banned Name
+button 150 155 210 211 1 0 3          // Banned Button
+text 180 180 0 2                      // Banned Name
+button 150 180 210 211 1 0 4          // Banned Button
+text 180 205 0 3                      // Banned Name
+button 150 205 210 211 1 0 5          // Banned Button
+text 180 230 0 4                      // Banned Name
+button 150 230 210 211 1 0 6          // Banned Button
+text 180 255 0 5                      // Banned Name
+button 150 255 210 211 1 0 7          // Banned Button
+text 180 280 0 6                      // Banned Name
+button 150 280 210 211 1 0 8          // Banned Button
+text 180 305 0 7                      // Banned Name
+button 150 305 210 211 1 0 9          // Banned Button
+button 425 363 5224 5224 0 2          // Next Page
+page 2				      // Page 2
+text 180 155 0 8                      // Banned Name
+button 150 155 210 211 1 0 10         // Banned Button
+text 180 180 0 9                      // Banned Name
+button 150 180 210 211 1 0 11         // Banned Button
+text 180 205 0 10                     // Banned Name
+button 150 205 210 211 1 0 12         // Banned Button
+text 180 230 0 11                     // Banned Name
+button 150 230 210 211 1 0 13         // Banned Button
+text 180 255 0 12                     // Banned Name
+button 150 255 210 211 1 0 14         // Banned Button
+text 180 280 0 13                     // Banned Name
+button 150 280 210 211 1 0 15         // Banned Button
+text 180 305 0 14                     // Banned Name
+button 150 305 210 211 1 0 16          // Banned Button
+button 160 363 5223 5223 0 1          // Previous Page
+button 425 363 5224 5224 0 3          // Next Page
+page 3				      // Page 3
+text 180 155 0 15                     // Banned Name
+button 150 155 210 211 1 0 17         // Banned Button
+text 180 180 0 16                     // Banned Name
+button 150 180 210 211 1 0 18         // Banned Button
+text 180 205 0 17                     // Banned Name
+button 150 205 210 211 1 0 19         // Banned Button
+text 180 230 0 18                     // Banned Name
+button 150 230 210 211 1 0 20         // Banned Button
+text 180 255 0 19                     // Banned Name
+button 150 255 210 211 1 0 21         // Banned Button
+text 180 280 0 20                     // Banned Name
+button 150 280 210 211 1 0 22         // Banned Button
+text 180 305 0 21                     // Banned Name
+button 150 305 210 211 1 0 23         // Banned Button
+button 160 363 5223 5223 0 2          // Previous Page
+button 425 363 5224 5224 0 4          // Next Page
+page 4				      // Page 4
+text 180 155 0 22                     // Banned Name
+button 150 155 210 211 1 0 24         // Banned Button
+text 180 180 0 23                     // Banned Name
+button 150 180 210 211 1 0 25         // Banned Button
+text 180 205 0 24                     // Banned Name
+button 150 205 210 211 1 0 26         // Banned Button
+text 180 230 0 25                     // Banned Name
+button 150 230 210 211 1 0 27         // Banned Button
+text 180 255 0 26                     // Banned Name
+button 150 255 210 211 1 0 28         // Banned Button
+text 180 280 0 27                     // Banned Name
+button 150 280 210 211 1 0 29         // Banned Button
+text 180 305 0 28                     // Banned Name
+button 150 305 210 211 1 0 30         // Banned Button
+button 160 363 5223 5223 0 3          // Previous Page
+button 425 363 5224 5224 0 5          // Next Page
+page 5				      // Page 5
+text 180 155 0 29                     // Banned Name
+button 150 155 210 211 1 0 31         // Banned Button
+text 180 180 0 30                     // Banned Name
+button 150 180 210 211 1 0 32         // Banned Button
+text 180 205 0 31                     // Banned Name
+button 150 205 210 211 1 0 33         // Banned Button
+text 180 230 0 32                     // Banned Name
+button 150 230 210 211 1 0 34         // Banned Button
+text 180 255 0 33                     // Banned Name
+button 150 255 210 211 1 0 35         // Banned Button
+text 180 280 0 34                     // Banned Name
+button 150 280 210 211 1 0 35         // Banned Button
+text 180 305 0 35                     // Banned Name
+button 150 305 210 211 1 0 37         // Banned Button
+button 160 363 5223 5223 0 4          // Previous Page
+button 425 363 5224 5224 0 6          // Next Page
+page 6				      // Page 6
+text 180 155 0 36                     // Banned Name
+button 150 155 210 211 1 0 38         // Banned Button
+text 180 180 0 37                     // Banned Name
+button 150 180 210 211 1 0 39         // Banned Button
+text 180 205 0 38                     // Banned Name
+button 150 205 210 211 1 0 40         // Banned Button
+text 180 230 0 39                     // Banned Name
+button 150 230 210 211 1 0 41         // Banned Button
+text 180 255 0 40                     // Banned Name
+button 150 255 210 211 1 0 42         // Banned Button
+text 180 280 0 41                     // Banned Name
+button 150 280 210 211 1 0 43         // Banned Button
+text 180 305 0 42                     // Banned Name
+button 150 305 210 211 1 0 44         // Banned Button
+button 160 363 5223 5223 0 5          // Previous Page
+button 425 363 5224 5224 0 7          // Next Page
+page 7				      // Page 7
+text 180 155 0 43                     // Banned Name
+button 150 155 210 211 1 0 45         // Banned Button
+text 180 180 0 44                     // Banned Name
+button 150 180 210 211 1 0 46         // Banned Button
+text 180 205 0 45                     // Banned Name
+button 150 205 210 211 1 0 47         // Banned Button
+text 180 230 0 46                     // Banned Name
+button 150 230 210 211 1 0 48         // Banned Button
+text 180 255 0 47                     // Banned Name
+button 150 255 210 211 1 0 49         // Banned Button
+text 180 280 0 48                     // Banned Name
+button 150 280 210 211 1 0 50         // Banned Button
+text 180 305 0 49                     // Banned Name
+button 150 305 210 211 1 0 51         // Banned Button
+button 160 363 5223 5223 0 6          // Previous Page
+button 425 363 5224 5224 0 8          // Next Page
+page 8				      // Page 8
+text 180 155 0 50                     // Banned Name
+button 150 155 210 211 1 0 52         // Banned Button
+button 160 363 5223 5223 0 7          // Previous Page
+
+[DIALOG d_house_liftban TEXT]
+Lift a ban from the house        // Line 0
+<TAG.BAN1NAME>
+<TAG.BAN2NAME>
+<TAG.BAN3NAME>
+<TAG.BAN4NAME>
+<TAG.BAN5NAME>
+<TAG.BAN6NAME>
+<TAG.BAN7NAME>
+<TAG.BAN8NAME>
+<TAG.BAN9NAME>
+<TAG.BAN10NAME>
+<TAG.BAN11NAME>
+<TAG.BAN12NAME>
+<TAG.BAN13NAME>
+<TAG.BAN14NAME>
+<TAG.BAN15NAME>
+<TAG.BAN16NAME>
+<TAG.BAN17NAME>
+<TAG.BAN18NAME>
+<TAG.BAN19NAME>
+<TAG.BAN20NAME>
+<TAG.BAN21NAME>
+<TAG.BAN22NAME>
+<TAG.BAN23NAME>
+<TAG.BAN24NAME>
+<TAG.BAN25NAME>
+<TAG.BAN26NAME>
+<TAG.BAN27NAME>
+<TAG.BAN28NAME>
+<TAG.BAN29NAME>
+<TAG.BAN30NAME>
+<TAG.BAN31NAME>
+<TAG.BAN32NAME>
+<TAG.BAN33NAME>
+<TAG.BAN34NAME>
+<TAG.BAN35NAME>
+<TAG.BAN36NAME>
+<TAG.BAN37NAME>
+<TAG.BAN38NAME>
+<TAG.BAN39NAME>
+<TAG.BAN40NAME>
+<TAG.BAN41NAME>
+<TAG.BAN42NAME>
+<TAG.BAN43NAME>
+<TAG.BAN44NAME>
+<TAG.BAN45NAME>
+<TAG.BAN46NAME>
+<TAG.BAN47NAME>
+<TAG.BAN48NAME>
+<TAG.BAN49NAME>
+<TAG.BAN50NAME>  
+Remove now!
+
+[DIALOG d_house_liftban BUTTON]  
+ONBUTTON=0                            // Cancel
+IF (<LINK.MOREY>==0)
+DIALOG d_house_private
+RETURN 1
+ELSEIF (<LINK.MOREY>==1)
+DIALOG d_house_public
+RETURN 1
+ENDIF
+ONBUTTON=1                            // Okay Button
+IF (<LINK.MOREY>==0)
+DIALOG d_house_private
+RETURN 1
+ELSEIF (<LINK.MOREY>==1)
+DIALOG d_house_public
+RETURN 1
+ENDIF
+ONBUTTON=2
+SRC.SYSMESSAGE You must select someone to remove first.
+ONBUTTON=3
+IF (<TAG.BAN1>>0)
+SRC.SYSMESSAGE The ban is lifted.
+REGION.TAG.BAN1=0
+TAG.BAN1=0
+TAG.BAN1NAME= 
+RETURN 1
+DIALOG d_house_liftban
+ELSE
+SRC.SYSMESSAGE There is nobody in this slot.
+DIALOG d_house_liftban
+RETURN 1
+ONBUTTON=4
+IF (<TAG.BAN2>>0)
+SRC.SYSMESSAGE The ban is lifted.
+REGION.TAG.BAN2=0
+TAG.BAN2=0
+TAG.BAN2NAME= 
+DIALOG d_house_liftban
+RETURN 1
+ELSE
+SRC.SYSMESSAGE There is nobody in this slot.
+DIALOG d_house_liftban
+RETURN 1
+ONBUTTON=5
+IF (<TAG.BAN3>>0)
+SRC.SYSMESSAGE The ban is lifted.
+REGION.TAG.BAN3=0
+TAG.BAN3=0
+TAG.BAN3NAME= 
+DIALOG d_house_liftban
+RETURN 1
+ELSE
+SRC.SYSMESSAGE There is nobody in this slot.
+DIALOG d_house_liftban
+RETURN 1
+ONBUTTON=6
+IF (<TAG.BAN4>>0)
+SRC.SYSMESSAGE The ban is lifted.
+REGION.TAG.BAN4=0
+TAG.BAN4=0
+TAG.BAN4NAME= 
+DIALOG d_house_liftban
+RETURN 1
+ELSE
+SRC.SYSMESSAGE There is nobody in this slot.
+DIALOG d_house_liftban
+RETURN 1
+ONBUTTON=7
+IF (<TAG.BAN5>>0)
+SRC.SYSMESSAGE The ban is lifted.
+REGION.TAG.BAN5=0
+TAG.BAN5=0
+TAG.BAN5NAME= 
+DIALOG d_house_liftban
+RETURN 1
+ELSE
+SRC.SYSMESSAGE There is nobody in this slot.
+DIALOG d_house_liftban
+RETURN 1
+ONBUTTON=8
+IF (<TAG.BAN6>>0)
+SRC.SYSMESSAGE The ban is lifted.
+REGION.TAG.BAN6=0
+TAG.BAN6=0
+TAG.BAN6NAME= 
+DIALOG d_house_liftban
+RETURN 1
+ELSE
+SRC.SYSMESSAGE There is nobody in this slot.
+DIALOG d_house_liftban
+RETURN 1
+ONBUTTON=9
+IF (<TAG.BAN7>>0)
+SRC.SYSMESSAGE The ban is lifted.
+REGION.TAG.BAN7=0
+TAG.BAN7=0
+TAG.BAN7NAME= 
+DIALOG d_house_liftban
+RETURN 1
+ELSE
+SRC.SYSMESSAGE There is nobody in this slot.
+DIALOG d_house_liftban
+RETURN 1
+ONBUTTON=10
+IF (<TAG.BAN8>>0)
+SRC.SYSMESSAGE The ban is lifted.
+REGION.TAG.BAN8=0
+TAG.BAN8=0
+TAG.BAN8NAME= 
+DIALOG d_house_liftban
+RETURN 1
+ELSE
+SRC.SYSMESSAGE There is nobody in this slot.
+DIALOG d_house_liftban
+RETURN 1
+ONBUTTON=11
+IF (<TAG.BAN9>>0)
+SRC.SYSMESSAGE The ban is lifted.
+REGION.TAG.BAN9=0
+TAG.BAN9=0
+TAG.BAN9NAME= 
+DIALOG d_house_liftban
+RETURN 1
+ELSE
+SRC.SYSMESSAGE There is nobody in this slot.
+DIALOG d_house_liftban
+RETURN 1
+ONBUTTON=12
+IF (<TAG.BAN10>>0)
+SRC.SYSMESSAGE The ban is lifted.
+REGION.TAG.BAN10=0
+TAG.BAN10=0
+TAG.BAN10NAME= 
+DIALOG d_house_liftban
+RETURN 1
+ELSE
+SRC.SYSMESSAGE There is nobody in this slot.
+DIALOG d_house_liftban
+RETURN 1
+ONBUTTON=13
+IF (<TAG.BAN11>>0)
+SRC.SYSMESSAGE The ban is lifted.
+REGION.TAG.BAN11=0
+TAG.BAN11=0
+TAG.BAN11NAME= 
+DIALOG d_house_liftban
+RETURN 1
+ELSE
+SRC.SYSMESSAGE There is nobody in this slot.
+DIALOG d_house_liftban
+RETURN 1
+ONBUTTON=14
+IF (<TAG.BAN12>>0)
+SRC.SYSMESSAGE The ban is lifted.
+REGION.TAG.BAN12=0
+TAG.BAN12=0
+TAG.BAN12NAME= 
+DIALOG d_house_liftban
+RETURN 1
+ELSE
+SRC.SYSMESSAGE There is nobody in this slot.
+DIALOG d_house_liftban
+RETURN 1
+ONBUTTON=15
+IF (<TAG.BAN13>>0)
+SRC.SYSMESSAGE The ban is lifted.
+REGION.TAG.BAN13=0
+TAG.BAN13=0
+TAG.BAN13NAME= 
+DIALOG d_house_liftban
+RETURN 1
+ELSE
+SRC.SYSMESSAGE There is nobody in this slot.
+DIALOG d_house_liftban
+RETURN 1
+ONBUTTON=16
+IF (<TAG.BAN14>>0)
+SRC.SYSMESSAGE The ban is lifted.
+REGION.TAG.BAN14=0
+TAG.BAN14=0
+TAG.BAN14NAME= 
+DIALOG d_house_liftban
+RETURN 1
+ELSE
+SRC.SYSMESSAGE There is nobody in this slot.
+DIALOG d_house_liftban
+RETURN 1
+ONBUTTON=17
+IF (<TAG.BAN15>>0)
+SRC.SYSMESSAGE The ban is lifted.
+REGION.TAG.BAN15=0
+TAG.BAN15=0
+TAG.BAN15NAME= 
+DIALOG d_house_liftban
+RETURN 1
+ELSE
+SRC.SYSMESSAGE There is nobody in this slot.
+DIALOG d_house_liftban
+RETURN 1
+ONBUTTON=18
+IF (<TAG.BAN16>>0)
+SRC.SYSMESSAGE The ban is lifted.
+REGION.TAG.BAN16=0
+TAG.BAN16=0
+TAG.BAN16NAME= 
+DIALOG d_house_liftban
+RETURN 1
+ELSE
+SRC.SYSMESSAGE There is nobody in this slot.
+DIALOG d_house_liftban
+RETURN 1
+ONBUTTON=19
+IF (<TAG.BAN17>>0)
+SRC.SYSMESSAGE The ban is lifted.
+REGION.TAG.BAN17=0
+TAG.BAN17=0
+TAG.BAN17NAME= 
+DIALOG d_house_liftban
+RETURN 1
+ELSE
+SRC.SYSMESSAGE There is nobody in this slot.
+DIALOG d_house_liftban
+RETURN 1
+ONBUTTON=20
+IF (<TAG.BAN18>>0)
+SRC.SYSMESSAGE The ban is lifted.
+REGION.TAG.BAN18=0
+TAG.BAN18=0
+TAG.BAN18NAME= 
+DIALOG d_house_liftban
+RETURN 1
+ELSE
+SRC.SYSMESSAGE There is nobody in this slot.
+DIALOG d_house_liftban
+RETURN 1
+ONBUTTON=21
+IF (<TAG.BAN19>>0)
+SRC.SYSMESSAGE The ban is lifted.
+REGION.TAG.BAN19=0
+TAG.BAN19=0
+TAG.BAN19NAME= 
+DIALOG d_house_liftban
+RETURN 1
+ELSE
+SRC.SYSMESSAGE There is nobody in this slot.
+DIALOG d_house_liftban
+RETURN 1
+ONBUTTON=22
+IF (<TAG.BAN20>>0)
+SRC.SYSMESSAGE The ban is lifted.
+REGION.TAG.BAN20=0
+TAG.BAN20=0
+TAG.BAN20NAME= 
+DIALOG d_house_liftban
+RETURN 1
+ELSE
+SRC.SYSMESSAGE There is nobody in this slot.
+DIALOG d_house_liftban
+RETURN 1
+ONBUTTON=23
+IF (<TAG.BAN21>>0)
+SRC.SYSMESSAGE The ban is lifted.
+REGION.TAG.BAN21=0
+TAG.BAN21=0
+TAG.BAN21NAME= 
+DIALOG d_house_liftban
+RETURN 1
+ELSE
+SRC.SYSMESSAGE There is nobody in this slot.
+DIALOG d_house_liftban
+RETURN 1
+ONBUTTON=24
+IF (<TAG.BAN22>>0)
+SRC.SYSMESSAGE The ban is lifted.
+REGION.TAG.BAN22=0
+TAG.BAN22=0
+TAG.BAN22NAME= 
+DIALOG d_house_liftban
+RETURN 1
+ELSE
+SRC.SYSMESSAGE There is nobody in this slot.
+DIALOG d_house_liftban
+RETURN 1
+ONBUTTON=25
+IF (<TAG.BAN23>>0)
+SRC.SYSMESSAGE The ban is lifted.
+REGION.TAG.BAN23=0
+TAG.BAN23=0
+TAG.BAN23NAME= 
+DIALOG d_house_liftban
+RETURN 1
+ELSE
+SRC.SYSMESSAGE There is nobody in this slot.
+DIALOG d_house_liftban
+RETURN 1
+ONBUTTON=26
+IF (<TAG.BAN24>>0)
+SRC.SYSMESSAGE The ban is lifted.
+REGION.TAG.BAN24=0
+TAG.BAN24=0
+TAG.BAN24NAME= 
+DIALOG d_house_liftban
+RETURN 1
+ELSE
+SRC.SYSMESSAGE There is nobody in this slot.
+DIALOG d_house_liftban
+RETURN 1
+ONBUTTON=27
+IF (<TAG.BAN25>>0)
+SRC.SYSMESSAGE The ban is lifted.
+REGION.TAG.BAN25=0
+TAG.BAN25=0
+TAG.BAN25NAME= 
+DIALOG d_house_liftban
+RETURN 1
+ELSE
+SRC.SYSMESSAGE There is nobody in this slot.
+DIALOG d_house_liftban
+RETURN 1
+ONBUTTON=28
+IF (<TAG.BAN26>>0)
+SRC.SYSMESSAGE The ban is lifted.
+REGION.TAG.BAN26=0
+TAG.BAN26=0
+TAG.BAN26NAME= 
+DIALOG d_house_liftban
+RETURN 1
+ELSE
+SRC.SYSMESSAGE There is nobody in this slot.
+DIALOG d_house_liftban
+RETURN 1
+ONBUTTON=29
+IF (<TAG.BAN27>>0)
+SRC.SYSMESSAGE The ban is lifted.
+REGION.TAG.BAN27=0
+TAG.BAN27=0
+TAG.BAN27NAME= 
+DIALOG d_house_liftban
+RETURN 1
+ELSE
+SRC.SYSMESSAGE There is nobody in this slot.
+DIALOG d_house_liftban
+RETURN 1
+ONBUTTON=30
+IF (<TAG.BAN28>>0)
+SRC.SYSMESSAGE The ban is lifted.
+REGION.TAG.BAN28=0
+TAG.BAN28=0
+TAG.BAN28NAME= 
+DIALOG d_house_liftban
+RETURN 1
+ELSE
+SRC.SYSMESSAGE There is nobody in this slot.
+DIALOG d_house_liftban
+RETURN 1
+ONBUTTON=31
+IF (<TAG.BAN9>>0)
+SRC.SYSMESSAGE The ban is lifted.
+REGION.TAG.BAN29=0
+TAG.BAN29=0
+TAG.BAN29NAME= 
+DIALOG d_house_liftban
+RETURN 1
+ELSE
+SRC.SYSMESSAGE There is nobody in this slot.
+DIALOG d_house_liftban
+RETURN 1
+ONBUTTON=32
+IF (<TAG.BAN30>>0)
+SRC.SYSMESSAGE The ban is lifted.
+REGION.TAG.BAN30=0
+TAG.BAN30=0
+TAG.BAN30NAME= 
+DIALOG d_house_liftban
+RETURN 1
+ELSE
+SRC.SYSMESSAGE There is nobody in this slot.
+DIALOG d_house_liftban
+RETURN 1
+ONBUTTON=33
+IF (<TAG.BAN31>>0)
+SRC.SYSMESSAGE The ban is lifted.
+REGION.TAG.BAN31=0
+TAG.BAN31=0
+TAG.BAN31NAME= 
+DIALOG d_house_liftban
+RETURN 1
+ELSE
+SRC.SYSMESSAGE There is nobody in this slot.
+DIALOG d_house_liftban
+RETURN 1
+ONBUTTON=34
+IF (<TAG.BAN32>>0)
+SRC.SYSMESSAGE The ban is lifted.
+REGION.TAG.BAN32=0
+TAG.BAN32=0
+TAG.BAN32NAME= 
+DIALOG d_house_liftban
+RETURN 1
+ELSE
+SRC.SYSMESSAGE There is nobody in this slot.
+DIALOG d_house_liftban
+RETURN 1
+ONBUTTON=35
+IF (<TAG.BAN33>>0)
+SRC.SYSMESSAGE The ban is lifted.
+REGION.TAG.BAN33=0
+TAG.BAN33=0
+TAG.BAN3NAME= 
+DIALOG d_house_liftban
+RETURN 1
+ELSE
+SRC.SYSMESSAGE There is nobody in this slot.
+DIALOG d_house_liftban
+RETURN 1
+ONBUTTON=36
+IF (<TAG.BAN34>>0)
+SRC.SYSMESSAGE The ban is lifted.
+REGION.TAG.BAN34=0
+TAG.BAN34=0
+TAG.BAN34NAME= 
+DIALOG d_house_liftban
+RETURN 1
+ELSE
+SRC.SYSMESSAGE There is nobody in this slot.
+DIALOG d_house_liftban
+RETURN 1
+ONBUTTON=37
+IF (<TAG.BAN35>>0)
+SRC.SYSMESSAGE The ban is lifted.
+REGION.TAG.BAN35=0
+TAG.BAN35=0
+TAG.BAN35NAME= 
+DIALOG d_house_liftban
+RETURN 1
+ELSE
+SRC.SYSMESSAGE There is nobody in this slot.
+DIALOG d_house_liftban
+RETURN 1
+ONBUTTON=38
+IF (<TAG.BAN36>>0)
+SRC.SYSMESSAGE The ban is lifted.
+REGION.TAG.BAN36=0
+TAG.BAN36=0
+TAG.BAN36NAME= 
+DIALOG d_house_liftban
+RETURN 1
+ELSE
+SRC.SYSMESSAGE There is nobody in this slot.
+DIALOG d_house_liftban
+RETURN 1
+ONBUTTON=39
+IF (<TAG.BAN37>>0)
+SRC.SYSMESSAGE The ban is lifted.
+REGION.TAG.BAN37=0
+TAG.BAN37=0
+TAG.BAN37NAME= 
+DIALOG d_house_liftban
+RETURN 1
+ELSE
+SRC.SYSMESSAGE There is nobody in this slot.
+DIALOG d_house_liftban
+RETURN 1
+ONBUTTON=40
+IF (<TAG.BAN38>>0)
+SRC.SYSMESSAGE The ban is lifted.
+REGION.TAG.BAN38=0
+TAG.BAN38=0
+TAG.BAN38NAME= 
+DIALOG d_house_liftban
+RETURN 1
+ELSE
+SRC.SYSMESSAGE There is nobody in this slot.
+DIALOG d_house_liftban
+RETURN 1
+ONBUTTON=41
+IF (<TAG.BAN39>>0)
+SRC.SYSMESSAGE The ban is lifted.
+REGION.TAG.BAN39=0
+TAG.BAN39=0
+TAG.BAN39NAME= 
+DIALOG d_house_liftban
+RETURN 1
+ELSE
+SRC.SYSMESSAGE There is nobody in this slot.
+DIALOG d_house_liftban
+RETURN 1
+ONBUTTON=42
+IF (<TAG.BAN40>>0)
+SRC.SYSMESSAGE The ban is lifted.
+REGION.TAG.BAN40=0
+TAG.BAN40=0
+TAG.BAN40NAME= 
+DIALOG d_house_liftban
+RETURN 1
+ELSE
+SRC.SYSMESSAGE There is nobody in this slot.
+DIALOG d_house_liftban
+RETURN 1
+ONBUTTON=43
+IF (<TAG.BAN41>>0)
+SRC.SYSMESSAGE The ban is lifted.
+REGION.TAG.BAN41=0
+TAG.BAN41=0
+TAG.BAN41NAME= 
+DIALOG d_house_liftban
+RETURN 1
+ELSE
+SRC.SYSMESSAGE There is nobody in this slot.
+DIALOG d_house_liftban
+RETURN 1
+ONBUTTON=44
+IF (<TAG.BAN42>>0)
+SRC.SYSMESSAGE The ban is lifted.
+REGION.TAG.BAN42=0
+TAG.BAN42=0
+TAG.BAN42NAME= 
+DIALOG d_house_liftban
+RETURN 1
+ELSE
+SRC.SYSMESSAGE There is nobody in this slot.
+DIALOG d_house_liftban
+RETURN 1
+ONBUTTON=45
+IF (<TAG.BAN43>>0)
+SRC.SYSMESSAGE The ban is lifted.
+REGION.TAG.BAN43=0
+TAG.BAN43=0
+TAG.BAN43NAME= 
+DIALOG d_house_liftban
+RETURN 1
+ELSE
+SRC.SYSMESSAGE There is nobody in this slot.
+DIALOG d_house_liftban
+RETURN 1
+ONBUTTON=46
+IF (<TAG.BAN44>>0)
+SRC.SYSMESSAGE The ban is lifted.
+REGION.TAG.BAN44=0
+TAG.BAN44=0
+TAG.BAN44NAME= 
+DIALOG d_house_liftban
+RETURN 1
+ELSE
+SRC.SYSMESSAGE There is nobody in this slot.
+DIALOG d_house_liftban
+RETURN 1
+ONBUTTON=47
+IF (<TAG.BAN45>>0)
+SRC.SYSMESSAGE The ban is lifted.
+REGION.TAG.BAN45=0
+TAG.BAN45=0
+TAG.BAN45NAME= 
+DIALOG d_house_liftban
+RETURN 1
+ELSE
+SRC.SYSMESSAGE There is nobody in this slot.
+DIALOG d_house_liftban
+RETURN 1
+ONBUTTON=48
+IF (<TAG.BAN46>>0)
+SRC.SYSMESSAGE The ban is lifted.
+REGION.TAG.BAN46=0
+TAG.BAN46=0
+TAG.BAN46NAME= 
+DIALOG d_house_liftban
+RETURN 1
+ELSE
+SRC.SYSMESSAGE There is nobody in this slot.
+DIALOG d_house_liftban
+RETURN 1
+ONBUTTON=49
+IF (<TAG.BAN47>>0)
+SRC.SYSMESSAGE The ban is lifted.
+REGION.TAG.BAN47=0
+TAG.BAN47=0
+TAG.BAN47NAME= 
+DIALOG d_house_liftban
+RETURN 1
+ELSE
+SRC.SYSMESSAGE There is nobody in this slot.
+DIALOG d_house_liftban
+RETURN 1
+ONBUTTON=50
+IF (<TAG.BAN48>>0)
+SRC.SYSMESSAGE The ban is lifted.
+REGION.TAG.BAN48=0
+TAG.BAN48=0
+TAG.BAN48NAME= 
+DIALOG d_house_liftban
+RETURN 1
+ELSE
+SRC.SYSMESSAGE There is nobody in this slot.
+DIALOG d_house_liftban
+RETURN 1
+ONBUTTON=51
+IF (<TAG.BAN49>>0)
+SRC.SYSMESSAGE The ban is lifted.
+REGION.TAG.BAN49=0
+TAG.BAN49=0
+TAG.BAN49NAME= 
+DIALOG d_house_liftban
+RETURN 1
+ELSE
+SRC.SYSMESSAGE There is nobody in this slot.
+DIALOG d_house_liftban
+RETURN 1
+ONBUTTON=52
+IF (<TAG.BAN50>>0)
+SRC.SYSMESSAGE The ban is lifted.
+REGION.TAG.BAN50=0
+TAG.BAN50=0
+TAG.BAN50NAME= 
+DIALOG d_house_liftban
+RETURN 1
+ELSE
+SRC.SYSMESSAGE There is nobody in this slot.
+DIALOG d_house_liftban
+RETURN 1
+
+[DIALOG d_house_removec]              // Remove Coowner
+0,0                                   // Postion
+page 0                                // Page 0
+resizepic 100 100 2600 400 300        // Grey background 
+resizepic 147 359 5100 310 25         // Square Grey box
+text 185 118 995 0                    // Title
+button 270 360 247 248 1 0 1          // Okay, button 1
+button 145 335 2714 2714 1 0 2        // Remove Button
+text 165 335 995 1                    // Remove Text
+page 1                                // Page 1
+button 150 155 210 211 1 0 3          // Co-owner 1 B
+button 150 180 210 211 1 0 4          // Co-owner 2 B
+button 150 205 210 211 1 0 5          // Co-owner 3 B
+button 150 230 210 211 1 0 6          // Co-owner 4 B
+button 150 255 210 211 1 0 7          // Co-owner 5 B
+button 150 280 210 211 1 0 8          // Co-owner 6 B
+button 150 305 210 211 1 0 9          // Co-owner 7 B
+text 180 155 0 2                      // Co-owner 1
+text 180 180 0 3                      // Co-owner 2
+text 180 205 0 4                      // Co-owner 3
+text 180 230 0 5                      // Co-owner 4
+text 180 255 0 6                      // Co-owner 5
+text 180 280 0 7                      // Co-owner 6
+text 180 305 0 8                      // Co-owner 7
+button 425 363 5224 5224 0 2          // Next Page
+page 2                                // Page 2
+button 150 155 210 211 1 0 10         // Co-owner 8 B
+text 180 305 0 9                      // Co-owner 8 
+button 160 363 5223 5223 0 1          // Previous Page
+                    
+[DIALOG d_house_removec TEXT]
+Remove a co-owner from the house      // Line 0
+Remove now!
+<TAG.CO1NAME>
+<TAG.CO2NAME>
+<TAG.CO3NAME>
+<TAG.CO4NAME>
+<TAG.CO5NAME>
+<TAG.CO6NAME>
+<TAG.CO7NAME>
+<TAG.CO8NAME>
+
+[DIALOG d_house_removec BUTTON]
+ONBUTTON=0                            // Cancel
+IF (<LINK.MOREY>==0)
+DIALOG d_house_private
+RETURN 1
+ELSEIF (<LINK.MOREY>==1)
+DIALOG d_house_public
+RETURN 1
+ENDIF
+ONBUTTON=1                            // Okay Button
+IF (<LINK.MOREY>==0)
+DIALOG d_house_private
+RETURN 1
+ELSEIF (<LINK.MOREY>==1)
+DIALOG d_house_public
+RETURN 1
+ENDIF
+ONBUTTON=2
+SRC.SYSMESSAGE You must select someone to remove first.
+ONBUTTON=3
+IF (<SRC.UID>==<MORE>) || (<SRC.ACCOUNT.PLEVEL>>=4)
+SRC.SYSMESSAGE <TAG.CO1NAME> has been removed as a co-ownership of the house.
+REGION.TAG.CO1UID=0
+TAG.CO1NAME=  
+TAG.CO1UID=0
+ELSE
+SRC.SYSMESSAGE Only owners may remove friends from the house!
+RETURN 1
+ONBUTTON=4
+IF (<SRC.UID>==<MORE>) || (<SRC.ACCOUNT.PLEVEL>>=4)
+SRC.SYSMESSAGE <TAG.CO1NAME> has been removed as a co-ownership of the house.
+REGION.TAG.CO2UID=0
+TAG.CO2NAME=  
+TAG.CO2UID=0
+ELSE
+SRC.SYSMESSAGE Only owners may remove friends from the house!
+RETURN 1
+ONBUTTON=5
+IF (<SRC.UID>==<MORE>) || (<SRC.ACCOUNT.PLEVEL>>=4)
+SRC.SYSMESSAGE <TAG.CO1NAME> has been removed as a co-ownership of the house.
+REGION.TAG.CO3UID=0
+TAG.CO3NAME=  
+TAG.CO3UID=0
+ELSE
+SRC.SYSMESSAGE Only owners may remove friends from the house!
+RETURN 1
+ONBUTTON=6
+IF (<SRC.UID>==<MORE>) || (<SRC.ACCOUNT.PLEVEL>>=4)
+SRC.SYSMESSAGE <TAG.CO1NAME> has been removed as a co-ownership of the house.
+REGION.TAG.CO4UID=0
+TAG.CO4NAME=  
+TAG.CO4UID=0
+ELSE
+SRC.SYSMESSAGE Only owners may remove friends from the house!
+RETURN 1
+ONBUTTON=7
+IF (<SRC.UID>==<MORE>) || (<SRC.ACCOUNT.PLEVEL>>=4)
+SRC.SYSMESSAGE <TAG.CO1NAME> has been removed as a co-ownership of the house.
+REGION.TAG.CO5UID=0
+TAG.CO5NAME=  
+TAG.CO5UID=0
+ELSE
+SRC.SYSMESSAGE Only owners may remove friends from the house!
+RETURN 1
+ONBUTTON=8
+IF (<SRC.UID>==<MORE>) || (<SRC.ACCOUNT.PLEVEL>>=4)
+SRC.SYSMESSAGE <TAG.CO1NAME> has been removed as a co-ownership of the house.
+REGION.TAG.CO6UID=0
+TAG.CO6NAME=  
+TAG.CO6UID=0
+ELSE
+SRC.SYSMESSAGE Only owners may remove friends from the house!
+RETURN 1
+ONBUTTON=9
+IF (<SRC.UID>==<MORE>) || (<SRC.ACCOUNT.PLEVEL>>=4)
+SRC.SYSMESSAGE <TAG.CO1NAME> has been removed as a co-ownership of the house.
+REGION.TAG.CO7UID=0
+TAG.CO7NAME=  
+TAG.CO7UID=0
+ELSE
+SRC.SYSMESSAGE Only owners may remove friends from the house!
+RETURN 1
+ONBUTTON=10
+IF (<SRC.UID>==<MORE>) || (<SRC.ACCOUNT.PLEVEL>>=4)
+SRC.SYSMESSAGE <TAG.CO1NAME> has been removed as a co-ownership of the house.
+REGION.TAG.CO8UID=0
+TAG.CO8NAME=  
+TAG.CO8UID=0
+ELSE
+SRC.SYSMESSAGE Only owners may remove friends from the house!
+RETURN 1
+
+[DIALOG d_house_rfriend]              // Remove Friend
+0,0                                   // Postion
+page 0                                // Page 0
+resizepic 100 100 2600 400 300        // Grey background 
+resizepic 147 359 5100 310 25         // Square Grey box
+text 185 118 995 0                    // Title
+button 270 360 247 248 1 0 1          // Okay, button 1
+button 145 335 2714 2714 1 0 2        // Remove Button
+text 165 335 995 1                    // Remove Text
+page 1                                // Page 1
+button 150 155 210 211 1 0 3          // Friend 1 B
+button 150 180 210 211 1 0 4          // Friend 2 B
+button 150 205 210 211 1 0 5          // Friend 3 B
+button 150 230 210 211 1 0 6          // Friend 4 B
+button 150 255 210 211 1 0 7          // Friend 5 B
+button 150 280 210 211 1 0 8          // Friend 6 B
+button 150 305 210 211 1 0 9          // Friend 7 B
+text 180 155 0 2                      // Friend 1
+text 180 180 0 3                      // Friend 2
+text 180 205 0 4                      // Friend 3
+text 180 230 0 5                      // Friend 4
+text 180 255 0 6                      // Friend 5
+text 180 280 0 7                      // Friend 6
+text 180 305 0 8                      // Friend 7
+button 425 363 5224 5224 0 2          // Next Page
+page 2                                // Page 2
+button 150 155 210 211 1 0 10         // Friend 8 B
+button 150 180 210 211 1 0 11         // Friend 9 B
+button 150 205 210 211 1 0 12         // Friend 10 B
+button 150 230 210 211 1 0 13         // Friend 11 B
+button 150 255 210 211 1 0 14         // Friend 12 B
+button 150 280 210 211 1 0 15         // Friend 13 B
+button 150 305 210 211 1 0 16         // Friend 14 B
+text 180 305 0 9                      // Friend 8                      
+text 180 278 0 10                     // Friend 9
+text 180 293 0 11                     // Friend 10
+text 180 308 0 12                     // Friend 11
+text 180 255 0 13                     // Friend 12
+text 180 280 0 14                     // Friend 13
+text 180 305 0 15                     // Friend 14
+button 160 363 5223 5223 0 1          // Previous Page
+button 425 363 5224 5224 0 3          // Next Page
+page 3                                // Page 3
+button 150 155 210 211 1 0 17         // Friend 15 B
+button 150 180 210 211 1 0 18         // Friend 16 B
+button 150 205 210 211 1 0 19         // Friend 17 B
+button 150 230 210 211 1 0 20         // Friend 18 B
+button 150 255 210 211 1 0 21         // Friend 19 B
+button 150 280 210 211 1 0 21         // Friend 20 B
+text 180 305 0 16                     // Friend 15                      
+text 180 278 0 17                     // Friend 16
+text 180 293 0 18                     // Friend 17
+text 180 308 0 19                     // Friend 18
+text 180 255 0 20                     // Friend 19
+text 180 280 0 21                     // Friend 20
+button 160 363 5223 5223 0 2          // Previous Page
+
+[DIALOG d_house_rfriend TEXT]
+Remove a friend from the house        // Line 0
+Remove now!
+<TAG.F1NAME>   
+<TAG.F2NAME>   
+<TAG.F3NAME>   
+<TAG.F4NAME>   
+<TAG.F5NAME>   
+<TAG.F6NAME>   
+<TAG.F7NAME>   
+<TAG.F8NAME>   
+<TAG.F9NAME>   
+<TAG.F10NAME>   
+<TAG.F11NAME> 
+<TAG.F12NAME>   
+<TAG.F13NAME>   
+<TAG.F14NAME>   
+<TAG.F15NAME>   
+<TAG.F16NAME>   
+<TAG.F17NAME>   
+<TAG.F18NAME>   
+<TAG.F19NAME>   
+<TAG.F20NAME>
+
+[DIALOG d_house_rfriend BUTTON]  
+ONBUTTON=0                            // Cancel
+IF (<LINK.MOREY>==0)
+DIALOG d_house_private
+RETURN 1
+ELSEIF (<LINK.MOREY>==1)
+DIALOG d_house_public
+RETURN 1
+ENDIF
+ONBUTTON=1                            // Okay Button
+IF (<LINK.MOREY>==0)
+DIALOG d_house_private
+RETURN 1
+ELSEIF (<LINK.MOREY>==1)
+DIALOG d_house_public
+RETURN 1
+ENDIF
+ONBUTTON=2
+SRC.SYSMESSAGE You must select someone to remove first.
+ONBUTTON=3
+IF (<SRC.UID>==<MORE>) || (<SRC.ACCOUNT.PLEVEL>>=4)
+SRC.SYSMESSAGE <TAG.F1NAME> has been removed from friendship of the house.
+REGION.TAG.F1UID=0
+TAG.F1NAME=  
+TAG.F1UID=0
+ELSE
+SRC.SYSMESSAGE Only owners may remove friends from the house!
+RETURN 1
+ONBUTTON=4
+IF (<SRC.UID>==<MORE>) || (<SRC.ACCOUNT.PLEVEL>>=4)
+SRC.SYSMESSAGE <TAG.F2NAME> has been removed from friendship of the house.
+REGION.TAG.F2UID=0
+TAG.F2NAME=  
+TAG.F2UID=0
+ELSE
+SRC.SYSMESSAGE Only owners may remove friends from the house!
+RETURN 1
+ONBUTTON=5
+IF (<SRC.UID>==<MORE>) || (<SRC.ACCOUNT.PLEVEL>>=4)
+SRC.SYSMESSAGE <TAG.F3NAME> has been removed from friendship of the house.
+REGION.TAG.F3UID=0
+TAG.F3NAME=  
+TAG.F3UID=0
+ELSE
+SRC.SYSMESSAGE Only owners may remove friends from the house!
+RETURN 1
+ONBUTTON=6
+IF (<SRC.UID>==<MORE>) || (<SRC.ACCOUNT.PLEVEL>>=4)
+SRC.SYSMESSAGE <TAG.F4NAME> has been removed from friendship of the house.
+REGION.TAG.F4UID=0
+TAG.F4NAME=  
+TAG.F4UID=0
+ELSE
+SRC.SYSMESSAGE Only owners may remove friends from the house!
+RETURN 1
+ONBUTTON=7
+IF (<SRC.UID>==<MORE>) || (<SRC.ACCOUNT.PLEVEL>>=4)
+SRC.SYSMESSAGE <TAG.F5NAME> has been removed from friendship of the house.
+REGION.TAG.F5UID=0
+TAG.F5NAME=  
+TAG.F5UID=0
+ELSE
+SRC.SYSMESSAGE Only owners may remove friends from the house!
+RETURN 1
+ONBUTTON=8
+IF (<SRC.UID>==<MORE>) || (<SRC.ACCOUNT.PLEVEL>>=4)
+SRC.SYSMESSAGE <TAG.F6NAME> has been removed from friendship of the house.
+REGION.TAG.F6UID=0
+TAG.F6NAME=  
+TAG.F6UID=0
+ELSE
+SRC.SYSMESSAGE Only owners may remove friends from the house!
+RETURN 1
+ONBUTTON=9
+IF (<SRC.UID>==<MORE>) || (<SRC.ACCOUNT.PLEVEL>>=4)
+SRC.SYSMESSAGE <TAG.F7NAME> has been removed from friendship of the house.
+REGION.TAG.F7UID=0
+TAG.F7NAME=  
+TAG.F7UID=0
+ELSE
+SRC.SYSMESSAGE Only owners may remove friends from the house!
+RETURN 1
+ONBUTTON=10
+IF (<SRC.UID>==<MORE>) || (<SRC.ACCOUNT.PLEVEL>>=4)
+SRC.SYSMESSAGE <TAG.F8NAME> has been removed from friendship of the house.
+REGION.TAG.F8UID=0
+TAG.F8NAME=  
+TAG.F8UID=0
+ELSE
+SRC.SYSMESSAGE Only owners may remove friends from the house!
+RETURN 1
+ONBUTTON=11
+IF (<SRC.UID>==<MORE>) || (<SRC.ACCOUNT.PLEVEL>>=4)
+SRC.SYSMESSAGE <TAG.F9NAME> has been removed from friendship of the house.
+REGION.TAG.F9UID=0
+TAG.F9NAME=  
+TAG.F9UID=0
+ELSE
+SRC.SYSMESSAGE Only owners may remove friends from the house!
+RETURN 1
+ONBUTTON=12
+IF (<SRC.UID>==<MORE>) || (<SRC.ACCOUNT.PLEVEL>>=4)
+SRC.SYSMESSAGE <TAG.F11NAME> has been removed from friendship of the house.
+REGION.TAG.F10UID=0
+TAG.F10NAME=  
+TAG.F10UID=0
+ELSE
+SRC.SYSMESSAGE Only owners may remove friends from the house!
+RETURN 1
+ONBUTTON=13
+IF (<SRC.UID>==<MORE>) || (<SRC.ACCOUNT.PLEVEL>>=4)
+SRC.SYSMESSAGE <TAG.F11NAME> has been removed from friendship of the house.
+REGION.TAG.F11UID=0
+TAG.F11NAME=  
+TAG.F1UID=0
+ELSE
+SRC.SYSMESSAGE Only owners may remove friends from the house!
+RETURN 1
+ONBUTTON=14
+IF (<SRC.UID>==<MORE>) || (<SRC.ACCOUNT.PLEVEL>>=4)
+SRC.SYSMESSAGE <TAG.F12NAME> has been removed from friendship of the house.
+REGION.TAG.F12UID=0
+TAG.F12NAME=  
+TAG.F12UID=0
+ELSE
+SRC.SYSMESSAGE Only owners may remove friends from the house!
+RETURN 1
+ONBUTTON=15
+IF (<SRC.UID>==<MORE>) || (<SRC.ACCOUNT.PLEVEL>>=4)
+SRC.SYSMESSAGE <TAG.F13NAME> has been removed from friendship of the house.
+REGION.TAG.F13UID=0
+TAG.F13NAME=  
+TAG.F13UID=0
+ELSE
+SRC.SYSMESSAGE Only owners may remove friends from the house!
+RETURN 1
+ONBUTTON=16
+IF (<SRC.UID>==<MORE>) || (<SRC.ACCOUNT.PLEVEL>>=4)
+SRC.SYSMESSAGE <TAG.F14NAME> has been removed from friendship of the house.
+REGION.TAG.F14UID=0
+TAG.F14NAME=  
+TAG.F14UID=0
+ELSE
+SRC.SYSMESSAGE Only owners may remove friends from the house!
+RETURN 1
+ONBUTTON=17
+IF (<SRC.UID>==<MORE>) || (<SRC.ACCOUNT.PLEVEL>>=4)
+SRC.SYSMESSAGE <TAG.F15NAME> has been removed from friendship of the house.
+REGION.TAG.F15UID=0
+TAG.F15NAME=  
+TAG.F15UID=0
+ELSE
+SRC.SYSMESSAGE Only owners may remove friends from the house!
+RETURN 1
+ONBUTTON=18
+IF (<SRC.UID>==<MORE>) || (<SRC.ACCOUNT.PLEVEL>>=4)
+SRC.SYSMESSAGE <TAG.F16NAME> has been removed from friendship of the house.
+REGION.TAG.F16UID=0
+TAG.F16NAME=  
+TAG.F16UID=0
+ELSE
+SRC.SYSMESSAGE Only owners may remove friends from the house!
+RETURN 1
+ONBUTTON=19
+IF (<SRC.UID>==<MORE>) || (<SRC.ACCOUNT.PLEVEL>>=4)
+SRC.SYSMESSAGE <TAG.F17NAME> has been removed from friendship of the house.
+REGION.TAG.F17UID=0
+TAG.F17NAME=  
+TAG.F17UID=0
+ELSE
+SRC.SYSMESSAGE Only owners may remove friends from the house!
+RETURN 1
+ONBUTTON=20
+IF (<SRC.UID>==<MORE>) || (<SRC.ACCOUNT.PLEVEL>>=4)
+SRC.SYSMESSAGE <TAG.F18NAME> has been removed from friendship of the house.
+REGION.TAG.F18UID=0
+TAG.F18NAME=  
+TAG.F18UID=0
+ELSE
+SRC.SYSMESSAGE Only owners may remove friends from the house!
+RETURN 1
+ONBUTTON=21
+IF (<SRC.UID>==<MORE>) || (<SRC.ACCOUNT.PLEVEL>>=4)
+SRC.SYSMESSAGE <TAG.F19NAME> has been removed from friendship of the house.
+REGION.TAG.F19UID=0
+TAG.F19NAME=  
+TAG.F19UID=0
+ELSE
+SRC.SYSMESSAGE Only owners may remove friends from the house!
+RETURN 1
+ONBUTTON=22
+IF (<SRC.UID>==<MORE>) || (<SRC.ACCOUNT.PLEVEL>>=4)
+SRC.SYSMESSAGE <TAG.F20NAME> has been removed from friendship of the house.
+REGION.TAG.F20UID=0
+TAG.F20NAME=  
+TAG.F20UID=0
+ELSE
+SRC.SYSMESSAGE Only owners may remove friends from the house!
+RETURN 1
+
+[DIALOG d_house_redeed]               // Main
+0,0                                   // Position
+resizepic 200 175 5054 400 240        // Curved Grey background 
+resizepic 210 185 3000 380 220        // Curved White background 
+resizepic 220 195 3000 360 100        // Curved White box 
+text 260 315 0000 0                   // Continue Text
+button 220 315 4005 4006 1 0 1        // Continue Button
+text 260 340 0000 1                   // Cancel Text
+text 260 355 0000 2                   // Cancel Text
+button 220 340 4005 4006 1 0 2        // Cancel Button
+text 230 200 0000 3                   // Description
+text 230 215 0000 4                   // Description
+text 230 230 0000 5                   // Description
+
+[DIALOG d_house_redeed TEXT]
+No, I don't want to lose my vendors!
+Yes, demolish the house and put my deed in 
+my bank box.
+Turning your house into a deed will dismiss any 
+vendors that are associated with this house.
+Are you sure you want to do this?
+
+[DIALOG d_house_redeed BUTTON]
+ONBUTTON=0
+IF (<LINK.MOREY>==0)
+DIALOG d_house_private
+RETURN 1
+ELSEIF (<LINK.MOREY>==1)
+DIALOG d_house_public
+RETURN 1
+ENDIF
+ONBUTTON=1
+IF (<LINK.MOREY>==0)
+DIALOG d_house_private
+RETURN 1
+ELSEIF (<LINK.MOREY>==1)
+DIALOG d_house_public
+RETURN 1
+ENDIF
+ONBUTTON=2
+IF (<BASEID>==0)
+SRC.SYSMESSAGE You cannot demolish a city house!
+RETURN 1
+ELSE
+SRC.NEWITEM i_deed
+SRC.ACT.MORE <ID>
+SRC.ACT.NAME Deed to a <NAME>
+SRC.ACT.CONT <SRC.FINDLAYER(29).UID>
+SRC.ACT.ATTR 0004
+REMOVE
+RETURN 1
+
+[DIALOG d_house_rfriend_all]          // Main
+0,0                                   // Position
+resizepic 200 175 5054 400 240        // Curved Grey background 
+resizepic 210 185 3000 380 220        // Curved White background 
+resizepic 220 195 3000 360 100        // Curved White box 
+text 260 315 0000 0                   // Continue Text
+button 220 315 4005 4006 1 0 1        // Continue Button
+text 260 340 0000 1                   // Cancel Text
+button 220 340 4005 4006 1 0 2        // Cancel Button
+text 230 200 0000 2                   // Description
+text 230 215 0000 3                   // Description
+text 230 230 0000 4                   // Description
+text 230 245 0000 5                   // Description
+text 230 272 0000 6                   // Description
+
+[DIALOG d_house_rfriend_all TEXT]
+No, I do not want to do this after all.
+Yes, go ahead and remove all my friends.
+If you go ahead with this option, all the current
+friendships will be removed from the house, and
+any vendors associated with said friends will be
+made unwelcome.
+Are you sure you want to do this?
+
+[DIALOG d_house_rfriend_all BUTTON]
+ONBUTTON=0
+IF (<LINK.MOREY>==0)
+DIALOG d_house_private
+RETURN 1
+ELSEIF (<LINK.MOREY>==1)
+DIALOG d_house_public
+RETURN 1
+ENDIF
+ONBUTTON=1
+IF (<LINK.MOREY>==0)
+DIALOG d_house_private
+RETURN 1
+ELSEIF (<LINK.MOREY>==1)
+DIALOG d_house_public
+RETURN 1
+ENDIF
+ONBUTTON=2
+IF (<TAG.F1UID>==0) && (<TAG.F2UID>==0) && (<TAG.F3UID>==0) && (<TAG.F4UID>==0) && (<TAG.F5UID>==0) && (<TAG.F6UID>==0) && (<TAG.F7UID>==0) && (<TAG.F8UID>==0)
+SRC.SYSMESSAGE You dont have a Friends List yet!
+RETURN 1
+ELSE
+TAG.F1UID=0
+TAG.F1NAME= 
+REGION.TAG.F1UID=0
+TAG.F2UID=0
+TAG.F2NAME= 
+REGION.TAG.F2UID=0
+TAG.F3UID=0
+TAG.F3NAME= 
+REGION.TAG.F3UID=0
+TAG.F4UID=0
+TAG.F4NAME= 
+REGION.TAG.F4UID=0
+TAG.F5UID=0
+TAG.F5NAME= 
+REGION.TAG.F5UID=0
+TAG.F6UID=0
+TAG.F6NAME= 
+REGION.TAG.F6UID=0
+TAG.F7UID=0
+TAG.F7NAME= 
+REGION.TAG.F7UID=0
+TAG.F8UID=0
+TAG.F8NAME= 
+REGION.TAG.F8UID=0
+TAG.F9UID=0
+TAG.F9NAME= 
+REGION.TAG.F9UID=0
+TAG.F10UID=0
+TAG.F10NAME= 
+REGION.TAG.F10UID=0
+TAG.F11UID=0
+TAG.F11NAME= 
+REGION.TAG.F11UID=0
+TAG.F12UID=0
+TAG.F12NAME= 
+REGION.TAG.F12UID=0
+TAG.F13UID=0
+TAG.F13NAME= 
+REGION.TAG.F13UID=0
+TAG.F14UID=0
+TAG.F14NAME= 
+REGION.TAG.F14UID=0
+TAG.F15UID=0
+TAG.F15NAME= 
+REGION.TAG.F15UID=0
+TAG.F16UID=0
+TAG.F16NAME= 
+REGION.TAG.F16UID=0
+TAG.F17UID=0
+TAG.F17NAME= 
+REGION.TAG.F17UID=0
+TAG.F18UID=0
+TAG.F18NAME= 
+REGION.TAG.F18UID=0
+TAG.F19UID=0
+TAG.F19NAME= 
+REGION.TAG.F19UID=0
+TAG.F20UID=0
+TAG.F20NAME= 
+REGION.TAG.F20UID=0
+SRC.SYSMESSAGE Your friends have been successfully removed.
+RETURN 1
+
+[DIALOG d_house_rcoowner_all]         // Main
+0,0                                   // Position
+resizepic 200 175 5054 400 240        // Curved Grey background 
+resizepic 210 185 3000 380 220        // Curved White background 
+resizepic 220 195 3000 360 100        // Curved White box 
+text 260 315 0000 0                   // Continue Text
+button 220 315 4005 4006 1 0 1        // Continue Button
+text 260 340 0000 1                   // Cancel Text
+button 220 340 4005 4006 1 0 2        // Cancel Button
+text 230 200 0000 2                   // Description
+text 230 215 0000 3                   // Description
+text 230 230 0000 4                   // Description
+text 230 245 0000 5                   // Description
+text 230 272 0000 6                   // Description
+
+[DIALOG d_house_rcoowner_all TEXT]
+No, I do not want to do this after all.
+Yes, go ahead and remove all my co-owners.
+If you go ahead with this option, all the current
+co-owners will be removed from the house, and
+any vendors associated with said friends will be
+made unwelcome.
+Are you sure you want to do this?
+
+[DIALOG d_house_rcoowner_all BUTTON]
+ONBUTTON=0
+IF (<LINK.MOREY>==0)
+DIALOG d_house_private
+RETURN 1
+ELSEIF (<LINK.MOREY>==1)
+DIALOG d_house_public
+RETURN 1
+ENDIF
+ONBUTTON=1
+IF (<LINK.MOREY>==0)
+DIALOG d_house_private
+RETURN 1
+ELSEIF (<LINK.MOREY>==1)
+DIALOG d_house_public
+RETURN 1
+ENDIF
+ONBUTTON=2
+IF (<TAG.CO1UID>==0) && (<TAG.CO2UID>==0) && (<TAG.CO3UID>==0) && (<TAG.CO4UID>==0) && (<TAG.CO5UID>==0) && (<TAG.CO6UID>==0) && (<TAG.CO7UID>==0) && (<TAG.CO8UID>==0)
+SRC.SYSMESSAGE You dont have a Co-owner List yet!
+RETURN 1
+ELSE
+TAG.CO1UID=0
+TAG.CO1NAME= 
+REGION.TAG.CO1UID=0
+TAG.CO2UID=0
+TAG.CO2NAME= 
+REGION.TAG.CO2UID=0
+TAG.CO3UID=0
+TAG.CO3NAME= 
+REGION.TAG.CO3UID=0
+TAG.CO4UID=0
+TAG.CO4NAME= 
+REGION.TAG.CO4UID=0
+TAG.CO5UID=0
+TAG.CO5NAME= 
+REGION.TAG.CO5UID=0
+TAG.CO6UID=0
+TAG.CO6NAME= 
+REGION.TAG.CO6UID=0
+TAG.CO7UID=0
+TAG.CO7NAME= 
+REGION.TAG.CO7UID=0
+TAG.CO8UID=0
+TAG.CO8NAME= 
+REGION.TAG.CO8UID=0
+SRC.SYSMESSAGE Your co-owners have been successfully removed.
+RETURN 1
+
+[ITEMDEF i_friends]  // Friends Memory
+NAME=Friends Memory
+ID=i_handr_1
+TYPE=T_EQ_SCRIPT
+LAYER=30
+
+ON=@CREATE
+ATTR=attr_decay
+
+ON=@EQUIP
+TIMER=30
+
+ON=@TARGON_CHAR
+IF (<LINK.TAG.F1UID>==<SRC.TARG.UID>) || (<LINK.TAG.F2UID>==<SRC.TARG.UID>) || (<LINK.TAG.F3UID>==<SRC.TARG.UID>) || (<LINK.TAG.F4UID>==<SRC.TARG.UID>) || (<LINK.TAG.F5UID>==<SRC.TARG.UID>) || (<LINK.TAG.F6UID>==<SRC.TARG.UID>) || (<LINK.TAG.F7UID>==<SRC.TARG.UID>) || (<LINK.TAG.F8UID>==<SRC.TARG.UID>) || (<LINK.TAG.F9UID>==<SRC.TARG.UID>) || (<LINK.TAG.F10UID>==<SRC.TARG.UID>) || (<LINK.TAG.F11UID>==<SRC.TARG.UID>) || (<LINK.TAG.F12UID>==<SRC.TARG.UID>) || (<LINK.TAG.F13UID>==<SRC.TARG.UID>) || (<LINK.TAG.F14UID>==<SRC.TARG.UID>) || (<LINK.TAG.F15UID>==<SRC.TARG.UID>) || (<LINK.TAG.F16UID>==<SRC.TARG.UID>) || (<LINK.TAG.F17UID>==<SRC.TARG.UID>) || (<LINK.TAG.F18UID>==<SRC.TARG.UID>) || (<LINK.TAG.F19UID>==<SRC.TARG.UID>) || (<LINK.TAG.F20UID>==<SRC.TARG.UID>)
+SRC.SYSMESSAGE That person is already a friend of the house!
+REMOVE
+RETURN 1
+ELSEIF (<LINK.TAG.CO1UID>==<SRC.TARG.UID>) || (<LINK.TAG.CO2UID>==<SRC.TARG.UID>) || (<LINK.TAG.CO3UID>==<SRC.TARG.UID>) || (<LINK.TAG.CO4UID>==<SRC.TARG.UID>) || (<LINK.TAG.CO5UID>==<SRC.TARG.UID>) || (<LINK.TAG.CO6UID>==<SRC.TARG.UID>) || (<LINK.TAG.CO7UID>==<SRC.TARG.UID>) || (<LINK.TAG.CO8UID>==<SRC.TARG.UID>)
+SRC.SYSMESSAGE That person is a co-owner of the house!
+REMOVE
+RETURN 1
+ELSEIF !<SRC.TARG.BODY>==c_man || !<SRC.TARG.BODY>==c_woman
+SRC.SYSMESSAGE That can't be a friend of the house.
+REMOVE
+RETURN 1
+ELSEIF (<SRC.TARG.UID>==<LINK.MORE>)
+SRC.SYSMESSAGE This person is already an owner of the house!
+REMOVE
+RETURN 1
+ELSEIF (<LINK.TAG.F1UID>=0)
+LINK.TAG.F1UID=<SRC.TARG.UID>
+LINK.TAG.F1NAME=<SRC.TARG.NAME>
+LINK.REGION.TAG.F1UID=<SRC.TARG.UID>
+SRC.SYSMESSAGE <SRC.TARG.NAME> has been made a friend of the house.
+SRC.TARG.SYSMESSAGE You have been made a friend of this house.
+REMOVE
+RETURN 1
+ELSEIF (<LINK.TAG.F2UID>=0)
+LINK.TAG.F2UID=<SRC.TARG.UID>
+LINK.TAG.F2NAME=<SRC.TARG.NAME>
+LINK.REGION.TAG.F2UID=<SRC.TARG.UID>
+SRC.SYSMESSAGE <SRC.TARG.NAME> has been made a friend of the house.
+SRC.TARG.SYSMESSAGE You have been made a friend of this house.
+REMOVE
+RETURN 1
+ELSEIF (<LINK.TAG.F3UID>=0)
+LINK.TAG.F3UID=<SRC.TARG.UID>
+LINK.TAG.F3NAME=<SRC.TARG.NAME>
+LINK.REGION.TAG.F3UID=<SRC.TARG.UID>
+SRC.SYSMESSAGE <SRC.TARG.NAME> has been made a friend of the house.
+SRC.TARG.SYSMESSAGE You have been made a friend of this house.
+REMOVE
+RETURN 1
+ELSEIF (<LINK.TAG.F4UID>=0)
+LINK.TAG.F4UID=<SRC.TARG.UID>
+LINK.TAG.F4NAME=<SRC.TARG.NAME>
+LINK.REGION.TAG.F4UID=<SRC.TARG.UID>
+SRC.SYSMESSAGE <SRC.TARG.NAME> has been made a friend of the house.
+SRC.TARG.SYSMESSAGE You have been made a friend of this house.
+REMOVE
+RETURN 1
+ELSEIF (<LINK.TAG.F5UID>=0)
+LINK.TAG.F5UID=<SRC.TARG.UID>
+LINK.TAG.F5NAME=<SRC.TARG.NAME>
+LINK.REGION.TAG.F5UID=<SRC.TARG.UID>
+SRC.SYSMESSAGE <SRC.TARG.NAME> has been made a friend of the house.
+SRC.TARG.SYSMESSAGE You have been made a friend of this house.
+REMOVE
+RETURN 1
+ELSEIF (<LINK.TAG.F6UID>=0)
+LINK.TAG.F6UID=<SRC.TARG.UID>
+LINK.TAG.F6NAME=<SRC.TARG.NAME>
+LINK.REGION.TAG.F6UID=<SRC.TARG.UID>
+SRC.SYSMESSAGE <SRC.TARG.NAME> has been made a friend of the house.
+SRC.TARG.SYSMESSAGE You have been made a friend of this house.
+REMOVE
+RETURN 1
+ELSEIF (<LINK.TAG.F7UID>=0)
+LINK.TAG.F7UID=<SRC.TARG.UID>
+LINK.TAG.F7NAME=<SRC.TARG.NAME>
+LINK.REGION.TAG.F7UID=<SRC.TARG.UID>
+SRC.SYSMESSAGE <SRC.TARG.NAME> has been made a friend of the house.
+SRC.TARG.SYSMESSAGE You have been made a friend of this house.
+REMOVE
+RETURN 1
+ELSEIF (<LINK.TAG.F8UID>=0)
+LINK.TAG.F8UID=<SRC.TARG.UID>
+LINK.TAG.F8NAME=<SRC.TARG.NAME>
+LINK.REGION.TAG.F8UID=<SRC.TARG.UID>
+SRC.SYSMESSAGE <SRC.TARG.NAME> has been made a friend of the house.
+SRC.TARG.SYSMESSAGE You have been made a friend of this house.
+REMOVE
+RETURN 1
+ELSEIF (<LINK.TAG.F9UID>=0)
+LINK.TAG.F9UID=<SRC.TARG.UID>
+LINK.TAG.F9NAME=<SRC.TARG.NAME>
+LINK.REGION.TAG.F9UID=<SRC.TARG.UID>
+SRC.SYSMESSAGE <SRC.TARG.NAME> has been made a friend of the house.
+SRC.TARG.SYSMESSAGE You have been made a friend of this house.
+REMOVE
+RETURN 1
+ELSEIF (<LINK.TAG.F10UID>=0)
+LINK.TAG.F10UID=<SRC.TARG.UID>
+LINK.TAG.F10NAME=<SRC.TARG.NAME>
+LINK.REGION.TAG.F10UID=<SRC.TARG.UID>
+SRC.SYSMESSAGE <SRC.TARG.NAME> has been made a friend of the house.
+SRC.TARG.SYSMESSAGE You have been made a friend of this house.
+REMOVE
+RETURN 1
+ELSEIF (<LINK.TAG.F11UID>=0)
+LINK.TAG.F11UID=<SRC.TARG.UID>
+LINK.TAG.F11NAME=<SRC.TARG.NAME>
+LINK.REGION.TAG.F11UID=<SRC.TARG.UID>
+SRC.SYSMESSAGE <SRC.TARG.NAME> has been made a friend of the house.
+SRC.TARG.SYSMESSAGE You have been made a friend of this house.
+REMOVE
+RETURN 1
+ELSEIF (<LINK.TAG.F12UID>=0)
+LINK.TAG.F12UID=<SRC.TARG.UID>
+LINK.TAG.F12NAME=<SRC.TARG.NAME>
+LINK.REGION.TAG.F12UID=<SRC.TARG.UID>
+SRC.SYSMESSAGE <SRC.TARG.NAME> has been made a friend of the house.
+SRC.TARG.SYSMESSAGE You have been made a friend of this house.
+REMOVE
+RETURN 1
+ELSEIF (<LINK.TAG.F13UID>=0)
+LINK.TAG.F13UID=<SRC.TARG.UID>
+LINK.TAG.F13NAME=<SRC.TARG.NAME>
+LINK.REGION.TAG.F13UID=<SRC.TARG.UID>
+SRC.SYSMESSAGE <SRC.TARG.NAME> has been made a friend of the house.
+SRC.TARG.SYSMESSAGE You have been made a friend of this house.
+REMOVE
+RETURN 1
+ELSEIF (<LINK.TAG.F14UID>=0)
+LINK.TAG.F14UID=<SRC.TARG.UID>
+LINK.TAG.F14NAME=<SRC.TARG.NAME>
+LINK.REGION.TAG.F14UID=<SRC.TARG.UID>
+SRC.SYSMESSAGE <SRC.TARG.NAME> has been made a friend of the house.
+SRC.TARG.SYSMESSAGE You have been made a friend of this house.
+REMOVE
+RETURN 1
+ELSEIF (<LINK.TAG.F15UID>=0)
+LINK.TAG.F15UID=<SRC.TARG.UID>
+LINK.TAG.F15NAME=<SRC.TARG.NAME>
+LINK.REGION.TAG.F15UID=<SRC.TARG.UID>
+SRC.SYSMESSAGE <SRC.TARG.NAME> has been made a friend of the house.
+SRC.TARG.SYSMESSAGE You have been made a friend of this house.
+REMOVE
+RETURN 1
+ELSEIF (<LINK.TAG.F16UID>=0)
+LINK.TAG.F16UID=<SRC.TARG.UID>
+LINK.TAG.F16NAME=<SRC.TARG.NAME>
+LINK.REGION.TAG.F16UID=<SRC.TARG.UID>
+SRC.SYSMESSAGE <SRC.TARG.NAME> has been made a friend of the house.
+SRC.TARG.SYSMESSAGE You have been made a friend of this house.
+REMOVE
+RETURN 1
+ELSEIF (<LINK.TAG.F17UID>=0)
+LINK.TAG.F17UID=<SRC.TARG.UID>
+LINK.TAG.F17NAME=<SRC.TARG.NAME>
+LINK.REGION.TAG.F17UID=<SRC.TARG.UID>
+SRC.SYSMESSAGE <SRC.TARG.NAME> has been made a friend of the house.
+SRC.TARG.SYSMESSAGE You have been made a friend of this house.
+REMOVE
+RETURN 1
+ELSEIF (<LINK.TAG.F18UID>=0)
+LINK.TAG.F18UID=<SRC.TARG.UID>
+LINK.TAG.F18NAME=<SRC.TARG.NAME>
+LINK.REGION.TAG.F18UID=<SRC.TARG.UID>
+SRC.SYSMESSAGE <SRC.TARG.NAME> has been made a friend of the house.
+SRC.TARG.SYSMESSAGE You have been made a friend of this house.
+REMOVE
+RETURN 1
+ELSEIF (<LINK.TAG.F19UID>=0)
+LINK.TAG.F19UID=<SRC.TARG.UID>
+LINK.TAG.F19NAME=<SRC.TARG.NAME>
+LINK.REGION.TAG.F19UID=<SRC.TARG.UID>
+SRC.SYSMESSAGE <SRC.TARG.NAME> has been made a friend of the house.
+SRC.TARG.SYSMESSAGE You have been made a friend of this house.
+REMOVE
+RETURN 1
+ELSEIF (<LINK.TAG.F20UID>=0)
+LINK.TAG.F20UID=<SRC.TARG.UID>
+LINK.TAG.F20NAME=<SRC.TARG.NAME>
+LINK.REGION.TAG.F20UID=<SRC.TARG.UID>
+SRC.SYSMESSAGE <SRC.TARG.NAME> has been made a friend of the house.
+SRC.TARG.SYSMESSAGE You have been made a friend of this house.
+REMOVE
+RETURN 1
+ELSE
+SRC.SYSMESSAGE You cannot add anymore friends.
+SRC.SYSMESSAGE Try removing any unwanted friends to create more space for new ones.
+RETURN 1
+ENDIF
+
+ON=@TARGON_ITEM
+SRC.SYSMESSAGE That can't be a friend of the house.
+RETURN 1
+
+ON=@Timer
+REMOVE
+RETURN 1
+
+[ITEMDEF i_coown]
+NAME=Co-owner Memory
+ID=i_handr_1
+TYPE=T_EQ_SCRIPT
+LAYER=30
+
+ON=@CREATE
+ATTR=attr_decay
+
+ON=@EQUIP
+TIMER=30
+
+ON=@TARGON_CHAR
+IF (<LINK.TAG.F1UID>==<SRC.TARG.UID>) || (<LINK.TAG.F2UID>==<SRC.TARG.UID>) || (<LINK.TAG.F3UID>==<SRC.TARG.UID>) || (<LINK.TAG.F4UID>==<SRC.TARG.UID>) || (<LINK.TAG.F5UID>==<SRC.TARG.UID>) || (<LINK.TAG.F6UID>==<SRC.TARG.UID>) || (<LINK.TAG.F7UID>==<SRC.TARG.UID>) || (<LINK.TAG.F8UID>==<SRC.TARG.UID>) || (<LINK.TAG.F9UID>==<SRC.TARG.UID>) || (<LINK.TAG.F10UID>==<SRC.TARG.UID>) || (<LINK.TAG.F11UID>==<SRC.TARG.UID>) || (<LINK.TAG.F12UID>==<SRC.TARG.UID>) || (<LINK.TAG.F13UID>==<SRC.TARG.UID>) || (<LINK.TAG.F14UID>==<SRC.TARG.UID>) || (<LINK.TAG.F15UID>==<SRC.TARG.UID>) || (<LINK.TAG.F16UID>==<SRC.TARG.UID>) || (<LINK.TAG.F17UID>==<SRC.TARG.UID>) || (<LINK.TAG.F18UID>==<SRC.TARG.UID>) || (<LINK.TAG.F19UID>==<SRC.TARG.UID>) || (<LINK.TAG.F20UID>==<SRC.TARG.UID>)
+SRC.SYSMESSAGE That person is a friend of the house!
+REMOVE
+RETURN 1
+ELSEIF (<LINK.TAG.CO1UID>==<SRC.TARG.UID>) || (<LINK.TAG.CO2UID>==<SRC.TARG.UID>) || (<LINK.TAG.CO3UID>==<SRC.TARG.UID>) || (<LINK.TAG.CO4UID>==<SRC.TARG.UID>) || (<LINK.TAG.CO5UID>==<SRC.TARG.UID>) || (<LINK.TAG.CO6UID>==<SRC.TARG.UID>) || (<LINK.TAG.CO7UID>==<SRC.TARG.UID>) || (<LINK.TAG.CO8UID>==<SRC.TARG.UID>)
+SRC.SYSMESSAGE That person is already a co-owner of the house!
+REMOVE
+RETURN 1
+ELSEIF !<SRC.TARG.BODY>==c_man || !<SRC.TARG.BODY>==c_woman 
+SRC.SYSMESSAGE That can't be a friend of the house.
+REMOVE
+RETURN 1
+ELSEIF (<SRC.TARG.UID>==<LINK.MORE>)
+SRC.SYSMESSAGE This person is already the house owner!
+REMOVE
+REMOVE
+RETURN 1
+ELSEIF (<LINK.TAG.CO1UID>=0)
+LINK.TAG.CO1UID=<SRC.TARG.UID>
+LINK.TAG.CO1NAME=<SRC.TARG.NAME>
+LINK.REGION.TAG.CO1UID=<SRC.TARG.UID>
+SRC.SYSMESSAGE <SRC.TARG.NAME> has been made a co-owner of the house.
+SRC.TARG.SYSMESSAGE You have been made a co-owner of this house.
+REMOVE
+RETURN 1
+ELSEIF (<LINK.TAG.CO2UID>=0)
+LINK.TAG.CO2UID=<SRC.TARG.UID>
+LINK.TAG.CO2NAME=<SRC.TARG.NAME>
+LINK.REGION.TAG.CO2UID=<SRC.TARG.UID>
+SRC.SYSMESSAGE <SRC.TARG.NAME> has been made a co-owner of the house.
+SRC.TARG.SYSMESSAGE You have been made a co-owner of this house.
+REMOVE
+RETURN 1
+ELSEIF (<LINK.TAG.CO3UID>=0)
+LINK.TAG.CO3UID=<SRC.TARG.UID>
+LINK.TAG.CO3NAME=<SRC.TARG.NAME>
+LINK.REGION.TAG.CO3UID=<SRC.TARG.UID>
+SRC.SYSMESSAGE <SRC.TARG.NAME> has been made a co-owner of the house.
+SRC.TARG.SYSMESSAGE You have been made a co-owner of this house.
+REMOVE
+RETURN 1
+ELSEIF (<LINK.TAG.CO4UID>=0)
+LINK.TAG.CO4UID=<SRC.TARG.UID>
+LINK.TAG.CO4NAME=<SRC.TARG.NAME>
+LINK.REGION.TAG.CO4UID=<SRC.TARG.UID>
+SRC.SYSMESSAGE <SRC.TARG.NAME> has been made a co-owner of the house.
+SRC.TARG.SYSMESSAGE You have been made a co-owner of this house.
+REMOVE
+RETURN 1
+ELSEIF (<LINK.TAG.CO5UID>=0)
+LINK.TAG.FCOUID=<SRC.TARG.UID>
+LINK.TAG.CO5NAME=<SRC.TARG.NAME>
+LINK.REGION.TAG.CO5UID=<SRC.TARG.UID>
+SRC.SYSMESSAGE <SRC.TARG.NAME> has been made a co-owner of the house.
+SRC.TARG.SYSMESSAGE You have been made a co-owner of this house.
+REMOVE
+RETURN 1
+ELSEIF (<LINK.TAG.CO6UID>=0)
+LINK.TAG.CO6UID=<SRC.TARG.UID>
+LINK.TAG.CO6NAME=<SRC.TARG.NAME>
+LINK.REGION.TAG.CO6UID=<SRC.TARG.UID>
+SRC.SYSMESSAGE <SRC.TARG.NAME> has been made a co-owner of the house.
+SRC.TARG.SYSMESSAGE You have been made a co-owner of this house.
+REMOVE
+RETURN 1
+ELSEIF (<LINK.TAG.CO7UID>=0)
+LINK.TAG.CO7UID=<SRC.TARG.UID>
+LINK.TAG.CO7NAME=<SRC.TARG.NAME>
+LINK.REGION.TAG.CO7UID=<SRC.TARG.UID>
+SRC.SYSMESSAGE <SRC.TARG.NAME> has been made a co-owner of the house.
+SRC.TARG.SYSMESSAGE You have been made a co-owner of this house.
+REMOVE
+RETURN 1
+ELSEIF (<LINK.TAG.CO8UID>=0)
+LINK.TAG.CO8UID=<SRC.TARG.UID>
+LINK.TAG.CO8NAME=<SRC.TARG.NAME>
+LINK.REGION.TAG.CO8UID=<SRC.TARG.UID>
+SRC.SYSMESSAGE <SRC.TARG.NAME> has been made a co-owner of the house.
+SRC.TARG.SYSMESSAGE You have been made a co-owner of this house.
+REMOVE
+RETURN 1
+ELSE
+SRC.SYSMESSAGE You cannot add anymore co-owners.
+SRC.SYSMESSAGE Try removing any unwanted co-owners to create more space for new ones.
+RETURN 1
+ENDIF
+
+ON=@TARGON_ITEM
+SRC.SYSMESSAGE That can't be a co-owner of the house.
+RETURN 1
+
+ON=@Timer
+REMOVE
+RETURN 1
+
+[REGIONTYPE r_house_public]
+DEFNAME=r_house_public
+
+ON=@ENTER
+SRC.EVENTS +e_house
+RETURN 0
+
+ON=@STEP
+IF (<SRC.REGION.TAG.BAN1>==<SRC.UID>) || (<SRC.REGION.TAG.BAN2>==<SRC.UID>) || (<SRC.REGION.TAG.BAN3>==<SRC.UID>) || (<SRC.REGION.TAG.BAN4>==<SRC.UID>) || (<SRC.REGION.TAG.BAN5>==<SRC.UID>) || (<SRC.REGION.TAG.BAN6>==<SRC.UID>) || (<SRC.REGION.TAG.BAN7>==<SRC.UID>) || (<SRC.REGION.TAG.BAN8>==<SRC.UID>) || (<SRC.REGION.TAG.BAN9>==<SRC.UID>) || (<SRC.REGION.TAG.BAN10>==<SRC.UID>) || (<SRC.REGION.TAG.BAN11>==<SRC.UID>) || (<SRC.REGION.TAG.BAN12>==<SRC.UID>) || (<SRC.REGION.TAG.BAN13>==<SRC.UID>) || (<SRC.REGION.TAG.BAN14>==<SRC.UID>) || (<SRC.REGION.TAG.BAN15>==<SRC.UID>) || (<SRC.REGION.TAG.BAN16>==<SRC.UID>) || (<SRC.REGION.TAG.BAN17>==<SRC.UID>) || (<SRC.REGION.TAG.BAN18>==<SRC.UID>) || (<SRC.REGION.TAG.BAN19>==<SRC.UID>) || (<SRC.REGION.TAG.BAN20>==<SRC.UID>) || (<SRC.REGION.TAG.BAN21>==<SRC.UID>) || (<SRC.REGION.TAG.BAN22>==<SRC.UID>) || (<SRC.REGION.TAG.BAN23>==<SRC.UID>) || (<SRC.REGION.TAG.BAN24>==<SRC.UID>) || (<SRC.REGION.TAG.BAN25>==<SRC.UID>) || (<SRC.REGION.TAG.BAN26>==<SRC.UID>) || (<SRC.REGION.TAG.BAN27>==<SRC.UID>) || (<SRC.REGION.TAG.BAN28>==<SRC.UID>) || (<SRC.REGION.TAG.BAN29>==<SRC.UID>) || (<SRC.REGION.TAG.BAN30>==<SRC.UID>) || (<SRC.REGION.TAG.BAN31>==<SRC.UID>) || (<SRC.REGION.TAG.BAN32>==<SRC.UID>) || (<SRC.REGION.TAG.BAN33>==<SRC.UID>) || (<SRC.REGION.TAG.BAN34>==<SRC.UID>) || (<SRC.REGION.TAG.BAN35>==<SRC.UID>) || (<SRC.REGION.TAG.BAN36>==<SRC.UID>) || (<SRC.REGION.TAG.BAN37>==<SRC.UID>) || (<SRC.REGION.TAG.BAN38>==<SRC.UID>) || (<SRC.REGION.TAG.BAN39>==<SRC.UID>) || (<SRC.REGION.TAG.BAN40>==<SRC.UID>) || (<SRC.REGION.TAG.BAN41>==<SRC.UID>) || (<SRC.REGION.TAG.BAN42>==<SRC.UID>) || (<SRC.REGION.TAG.BAN43>==<SRC.UID>) || (<SRC.REGION.TAG.BAN44>==<SRC.UID>) || (<SRC.REGION.TAG.BAN45>==<SRC.UID>) || (<SRC.REGION.TAG.BAN46>==<SRC.UID>) || (<SRC.REGION.TAG.BAN47>==<SRC.UID>) || (<SRC.REGION.TAG.BAN48>==<SRC.UID>) || (<SRC.REGION.TAG.BAN49>==<SRC.UID>) || (<SRC.REGION.TAG.BAN50>==<SRC.UID>)
+SRC.SYSMESSAGE You cannot enter!
+SRC.MOVE 0 1
+RETURN 1
+ELSE
+SRC.EVENTS +e_house
+RETURN 0
+
+ON=@EXIT
+SRC.EVENTS -e_house
+RETURN 0
+
+[REGIONTYPE r_house_private]
+DEFNAME=r_house_private
+
+ON=@ENTER
+SRC.EVENTS +e_house
+RETURN 0
+
+ON=@STEP
+IF (<SRC.REGION.TAG.BAN1>==<SRC.UID>) || (<SRC.REGION.TAG.BAN2>==<SRC.UID>) || (<SRC.REGION.TAG.BAN3>==<SRC.UID>) || (<SRC.REGION.TAG.BAN4>==<SRC.UID>) || (<SRC.REGION.TAG.BAN5>==<SRC.UID>) || (<SRC.REGION.TAG.BAN6>==<SRC.UID>) || (<SRC.REGION.TAG.BAN7>==<SRC.UID>) || (<SRC.REGION.TAG.BAN8>==<SRC.UID>) || (<SRC.REGION.TAG.BAN9>==<SRC.UID>) || (<SRC.REGION.TAG.BAN10>==<SRC.UID>) || (<SRC.REGION.TAG.BAN11>==<SRC.UID>) || (<SRC.REGION.TAG.BAN12>==<SRC.UID>) || (<SRC.REGION.TAG.BAN13>==<SRC.UID>) || (<SRC.REGION.TAG.BAN14>==<SRC.UID>) || (<SRC.REGION.TAG.BAN15>==<SRC.UID>) || (<SRC.REGION.TAG.BAN16>==<SRC.UID>) || (<SRC.REGION.TAG.BAN17>==<SRC.UID>) || (<SRC.REGION.TAG.BAN18>==<SRC.UID>) || (<SRC.REGION.TAG.BAN19>==<SRC.UID>) || (<SRC.REGION.TAG.BAN20>==<SRC.UID>) || (<SRC.REGION.TAG.BAN21>==<SRC.UID>) || (<SRC.REGION.TAG.BAN22>==<SRC.UID>) || (<SRC.REGION.TAG.BAN23>==<SRC.UID>) || (<SRC.REGION.TAG.BAN24>==<SRC.UID>) || (<SRC.REGION.TAG.BAN25>==<SRC.UID>) || (<SRC.REGION.TAG.BAN26>==<SRC.UID>) || (<SRC.REGION.TAG.BAN27>==<SRC.UID>) || (<SRC.REGION.TAG.BAN28>==<SRC.UID>) || (<SRC.REGION.TAG.BAN29>==<SRC.UID>) || (<SRC.REGION.TAG.BAN30>==<SRC.UID>) || (<SRC.REGION.TAG.BAN31>==<SRC.UID>) || (<SRC.REGION.TAG.BAN32>==<SRC.UID>) || (<SRC.REGION.TAG.BAN33>==<SRC.UID>) || (<SRC.REGION.TAG.BAN34>==<SRC.UID>) || (<SRC.REGION.TAG.BAN35>==<SRC.UID>) || (<SRC.REGION.TAG.BAN36>==<SRC.UID>) || (<SRC.REGION.TAG.BAN37>==<SRC.UID>) || (<SRC.REGION.TAG.BAN38>==<SRC.UID>) || (<SRC.REGION.TAG.BAN39>==<SRC.UID>) || (<SRC.REGION.TAG.BAN40>==<SRC.UID>) || (<SRC.REGION.TAG.BAN41>==<SRC.UID>) || (<SRC.REGION.TAG.BAN42>==<SRC.UID>) || (<SRC.REGION.TAG.BAN43>==<SRC.UID>) || (<SRC.REGION.TAG.BAN44>==<SRC.UID>) || (<SRC.REGION.TAG.BAN45>==<SRC.UID>) || (<SRC.REGION.TAG.BAN46>==<SRC.UID>) || (<SRC.REGION.TAG.BAN47>==<SRC.UID>) || (<SRC.REGION.TAG.BAN48>==<SRC.UID>) || (<SRC.REGION.TAG.BAN49>==<SRC.UID>) || (<SRC.REGION.TAG.BAN50>==<SRC.UID>)
+SRC.SYSMESSAGE You cannot enter!
+SRC.MOVE 0 1
+RETURN 1
+ELSE
+SRC.EVENTS +e_house
+RETURN 0
+
+ON=@EXIT
+SRC.EVENTS -e_house
+RETURN 0
+
+[REGIONTYPE r_house_guarded]
+DEFNAME=r_house_guarded
+
+ON=@ENTER
+SRC.EVENTS +e_house
+RETURN 0
+
+ON=@STEP
+IF (<SRC.REGION.TAG.BAN1>==<SRC.UID>) || (<SRC.REGION.TAG.BAN2>==<SRC.UID>) || (<SRC.REGION.TAG.BAN3>==<SRC.UID>) || (<SRC.REGION.TAG.BAN4>==<SRC.UID>) || (<SRC.REGION.TAG.BAN5>==<SRC.UID>) || (<SRC.REGION.TAG.BAN6>==<SRC.UID>) || (<SRC.REGION.TAG.BAN7>==<SRC.UID>) || (<SRC.REGION.TAG.BAN8>==<SRC.UID>) || (<SRC.REGION.TAG.BAN9>==<SRC.UID>) || (<SRC.REGION.TAG.BAN10>==<SRC.UID>) || (<SRC.REGION.TAG.BAN11>==<SRC.UID>) || (<SRC.REGION.TAG.BAN12>==<SRC.UID>) || (<SRC.REGION.TAG.BAN13>==<SRC.UID>) || (<SRC.REGION.TAG.BAN14>==<SRC.UID>) || (<SRC.REGION.TAG.BAN15>==<SRC.UID>) || (<SRC.REGION.TAG.BAN16>==<SRC.UID>) || (<SRC.REGION.TAG.BAN17>==<SRC.UID>) || (<SRC.REGION.TAG.BAN18>==<SRC.UID>) || (<SRC.REGION.TAG.BAN19>==<SRC.UID>) || (<SRC.REGION.TAG.BAN20>==<SRC.UID>) || (<SRC.REGION.TAG.BAN21>==<SRC.UID>) || (<SRC.REGION.TAG.BAN22>==<SRC.UID>) || (<SRC.REGION.TAG.BAN23>==<SRC.UID>) || (<SRC.REGION.TAG.BAN24>==<SRC.UID>) || (<SRC.REGION.TAG.BAN25>==<SRC.UID>) || (<SRC.REGION.TAG.BAN26>==<SRC.UID>) || (<SRC.REGION.TAG.BAN27>==<SRC.UID>) || (<SRC.REGION.TAG.BAN28>==<SRC.UID>) || (<SRC.REGION.TAG.BAN29>==<SRC.UID>) || (<SRC.REGION.TAG.BAN30>==<SRC.UID>) || (<SRC.REGION.TAG.BAN31>==<SRC.UID>) || (<SRC.REGION.TAG.BAN32>==<SRC.UID>) || (<SRC.REGION.TAG.BAN33>==<SRC.UID>) || (<SRC.REGION.TAG.BAN34>==<SRC.UID>) || (<SRC.REGION.TAG.BAN35>==<SRC.UID>) || (<SRC.REGION.TAG.BAN36>==<SRC.UID>) || (<SRC.REGION.TAG.BAN37>==<SRC.UID>) || (<SRC.REGION.TAG.BAN38>==<SRC.UID>) || (<SRC.REGION.TAG.BAN39>==<SRC.UID>) || (<SRC.REGION.TAG.BAN40>==<SRC.UID>) || (<SRC.REGION.TAG.BAN41>==<SRC.UID>) || (<SRC.REGION.TAG.BAN42>==<SRC.UID>) || (<SRC.REGION.TAG.BAN43>==<SRC.UID>) || (<SRC.REGION.TAG.BAN44>==<SRC.UID>) || (<SRC.REGION.TAG.BAN45>==<SRC.UID>) || (<SRC.REGION.TAG.BAN46>==<SRC.UID>) || (<SRC.REGION.TAG.BAN47>==<SRC.UID>) || (<SRC.REGION.TAG.BAN48>==<SRC.UID>) || (<SRC.REGION.TAG.BAN49>==<SRC.UID>) || (<SRC.REGION.TAG.BAN50>==<SRC.UID>)
+SRC.SYSMESSAGE You cannot enter!
+SRC.MOVE 0 1
+RETURN 1
+ELSE
+SRC.EVENTS +e_house
+RETURN 0
+
+ON=@EXIT
+SRC.EVENTS -e_house
+RETURN 0

@@ -1,0 +1,75 @@
+[SPEECH spk_player]
+ON=home home home
+IF <STATF> & statf_dead
+GO <HOME>
+ENDIF
+
+ON=I must consider my sins
+
+ON=I resign from my guild
+
+ON=I resign from my town
+
+ON=Guard help *
+ON=Guards*
+ON=Help Guards*
+
+[SPEECH spk_pet]
+// pets that cannot talk
+ON=ATTACK
+ON=COME
+ON=DEFEND ME
+ON=DISMISS
+ON=DROP	// "give" ?
+ON=DROP ALL
+ON=FETCH
+ON=FOLLOW
+ON=FOLLOW ME
+ON=FRIEND
+ON=GO
+ON=GUARD
+ON=GUARD ME
+ON=KILL
+ON=RELEASE
+ON=SPEAK
+ON=STAY
+ON=STAY HERE
+ON=STOP
+ON=TRANSFER
+
+[SPEECH spk_hireling]
+// pets that can talk.
+ON=ATTACK
+ON=BOUGHT
+ON=CASH
+ON=COME
+ON=DEFEND ME
+ON=DISMISS
+ON=DROP	// "give" ?
+ON=DROP ALL
+ON=EQUIP
+ON=EQUIP ALL
+ON=FETCH
+ON=FOLLOW
+ON=FOLLOW ME
+ON=FRIEND
+ON=GET DRESSED
+ON=GO
+ON=GUARD
+ON=GUARD ME
+ON=INVENTORY
+ON=KILL
+ON=PRICE // may have args ?
+ON=RECIEVED
+ON=RELEASE
+ON=SAMPLES
+ON=SPEAK
+ON=STATUS
+ON=STAY
+ON=STAY HERE
+ON=STOCK
+ON=STOP
+ON=SUIT UP
+ON=TRANSFER
+
+[EOF]

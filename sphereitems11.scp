@@ -1,0 +1,2685 @@
+// Agapite can only be worn by good. rejects evil.
+// Shadow can only be worn by evil. will poison good people.
+
+[ITEMDEF i_rustyiron_buckler]
+ID=i_buckler
+NAME=Rusty Iron Buckler
+TYPE=t_armor
+FLIP=1
+VALUE=6
+REQSTR=20
+WEIGHT=5
+ARMOR=2
+RESOUCES=i_ingot_rustyiron 6
+SKILLMAKE=BLACKSMITHING 0.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Rusty Iron
+DESCRIPTION=Buckler
+
+ON=@Create
+COLOR=color_o_rustyiron
+HITPOINTS=100
+
+[ITEMDEF i_rustyiron_metal_shield]
+ID=i_metal_shield
+NAME=Rusty Iron Metal Shield
+TYPE=t_armor
+FLIP=1
+VALUE=9
+REQSTR=20
+WEIGHT=7
+ARMOR=3
+RESOUCES=i_ingot_rustyiron 9
+SKILLMAKE=BLACKSMITHING 0.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Rusty Iron
+DESCRIPTION=Metal Shield
+
+ON=@Create
+COLOR=color_o_rustyiron
+HITPOINTS=100
+
+[ITEMDEF i_rustyiron_round_shield]
+ID=i_round_shield
+NAME=Rusty Iron Round Shield
+TYPE=t_armor
+FLIP=1
+VALUE=12
+REQSTR=20
+WEIGHT=9
+ARMOR=4
+RESOUCES=i_ingot_rustyiron 12
+SKILLMAKE=BLACKSMITHING 0.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Rusty Iron
+DESCRIPTION=Round Shield
+
+ON=@Create
+COLOR=color_o_rustyiron
+HITPOINTS=100
+
+[ITEMDEF i_rustyiron_kite_shield_wood]
+ID=i_kite_shield_wood
+NAME=Rusty Iron Kite Shield
+TYPE=t_armor
+FLIP=1
+VALUE=14
+REQSTR=20
+WEIGHT=14
+ARMOR=6
+RESOUCES=i_ingot_rustyiron 14
+SKILLMAKE=BLACKSMITHING 0.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Rusty Iron
+DESCRIPTION=Kite Shield (wood)
+
+ON=@Create
+COLOR=color_o_rustyiron
+HITPOINTS=100
+
+[ITEMDEF i_rustyiron_kite_shield_metal]
+ID=i_kite_shield_metal
+NAME=Rusty Iron Kite Shield
+TYPE=t_armor
+FLIP=1
+VALUE=16
+REQSTR=25
+WEIGHT=12
+ARMOR=8
+RESOUCES=i_ingot_rustyiron 16
+SKILLMAKE=BLACKSMITHING 0.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Rusty Iron
+DESCRIPTION=Kite Shield (metal)
+
+ON=@Create
+COLOR=color_o_rustyiron
+HITPOINTS=100
+
+[ITEMDEF i_rustyiron_heater_shield]
+ID=i_heater_shield
+NAME=Rusty Iron Heater Shield
+TYPE=t_armor
+FLIP=1
+VALUE=18
+REQSTR=20
+WEIGHT=14
+ARMOR=10
+RESOUCES=i_ingot_rustyiron 18
+SKILLMAKE=BLACKSMITHING 0.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Rusty Iron
+DESCRIPTION=Heater Shield
+
+ON=@Create
+COLOR=color_o_rustyiron
+HITPOINTS=100
+
+[ITEMDEF i_rustyiron_bascinet]
+ID=i_bascinet
+NAME=Rusty Iron Bascinet
+TYPE=t_armor
+FLIP=1
+VALUE=15
+REQSTR=20
+WEIGHT=11
+ARMOR=12
+RESOUCES=i_ingot_rustyiron 15
+SKILLMAKE=BLACKSMITHING 0.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Rusty Iron
+DESCRIPTION=Bascinet
+
+ON=@Create
+COLOR=color_o_rustyiron
+HITPOINTS=100
+
+[ITEMDEF i_rustyiron_helmet]
+ID=i_helmet
+NAME=Rusty Iron Helmet
+TYPE=t_armor
+FLIP=1
+VALUE=15
+REQSTR=20
+WEIGHT=11
+ARMOR=12
+RESOUCES=i_ingot_rustyiron 15
+SKILLMAKE=BLACKSMITHING 0.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Rusty Iron
+DESCRIPTION=Helmet
+
+ON=@Create
+COLOR=color_o_rustyiron
+HITPOINTS=100
+
+[ITEMDEF i_rustyiron_nose_helm]
+ID=i_nose_helm
+NAME=Rusty Iron Nose Helm
+TYPE=t_armor
+FLIP=1
+VALUE=15
+REQSTR=20
+WEIGHT=11
+ARMOR=12
+RESOUCES=i_ingot_rustyiron 15
+SKILLMAKE=BLACKSMITHING 0.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Rusty Iron
+DESCRIPTION=Nose Helm
+
+ON=@Create
+COLOR=color_o_rustyiron
+HITPOINTS=100
+
+[ITEMDEF i_rustyiron_closed_helm]
+ID=i_closed_helm
+NAME=Rusty Iron Closed Helm
+TYPE=t_armor
+FLIP=1
+VALUE=15
+REQSTR=20
+WEIGHT=11
+ARMOR=12
+RESOUCES=i_ingot_rustyiron 15
+SKILLMAKE=BLACKSMITHING 0.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Rusty Iron
+DESCRIPTION=Closed Helm
+
+ON=@Create
+COLOR=color_o_rustyiron
+HITPOINTS=100
+
+[ITEMDEF i_rustyiron_ringmail_tunic]
+ID=i_ringmail_tunic
+NAME=Rusty Iron Ringmail Tunic
+TYPE=t_armor
+FLIP=1
+VALUE=18
+REQSTR=20
+WEIGHT=14
+ARMOR=10
+RESOUCES=i_ingot_rustyiron 18
+SKILLMAKE=BLACKSMITHING 0.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Rusty Iron
+DESCRIPTION=Ringmail Tunic
+
+ON=@Create
+COLOR=color_o_rustyiron
+HITPOINTS=100
+
+[ITEMDEF i_rustyiron_ringmail_leggings]
+ID=i_ringmail_leggings
+NAME=Rusty Iron Ringmail Leggings
+TYPE=t_armor
+FLIP=1
+VALUE=16
+REQSTR=20
+WEIGHT=14
+ARMOR=10
+RESOUCES=i_ingot_rustyiron 16
+SKILLMAKE=BLACKSMITHING 0.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Rusty Iron
+DESCRIPTION=Ringmail Leggings
+
+ON=@Create
+COLOR=color_o_rustyiron
+HITPOINTS=100
+
+[ITEMDEF i_rustyiron_ringmail_sleeves]
+ID=i_ringmail_sleeves
+NAME=Rusty Iron Ringmail Sleeves
+TYPE=t_armor
+FLIP=1
+VALUE=14
+REQSTR=20
+WEIGHT=11
+ARMOR=10
+RESOUCES=i_ingot_rustyiron 14
+SKILLMAKE=BLACKSMITHING 0.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Rusty Iron
+DESCRIPTION=Ringmail Sleeves
+
+ON=@Create
+COLOR=color_o_rustyiron
+HITPOINTS=100
+
+[ITEMDEF i_rustyiron_ringmail_gloves]
+ID=i_ringmail_gloves
+NAME=Rusty Iron Ringmail Gloves
+TYPE=t_armor
+FLIP=1
+VALUE=3
+REQSTR=20
+WEIGHT=2
+ARMOR=10
+RESOUCES=i_ingot_rustyiron 3
+SKILLMAKE=BLACKSMITHING 0.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Rusty Iron
+DESCRIPTION=Ringmail Gloves
+
+ON=@Create
+COLOR=color_o_rustyiron
+HITPOINTS=100
+
+[ITEMDEF i_rustyiron_chainmail_tunic]
+ID=i_chainmail_tunic
+NAME=Rusty Iron Chainmail Tunic
+TYPE=t_armor
+FLIP=1
+VALUE=20
+REQSTR=20
+WEIGHT=15
+ARMOR=19
+RESOUCES=i_ingot_rustyiron 20
+SKILLMAKE=BLACKSMITHING 0.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Rusty Iron
+DESCRIPTION=Chainmail Tunic
+
+ON=@Create
+COLOR=color_o_rustyiron
+HITPOINTS=100
+
+[ITEMDEF i_rustyiron_chainmail_leggings]
+ID=i_chainmail_leggings
+NAME=Rusty Iron Chainmail Leggings
+TYPE=t_armor
+FLIP=1
+VALUE=18
+REQSTR=20
+WEIGHT=14
+ARMOR=19
+RESOUCES=i_ingot_rustyiron 18
+SKILLMAKE=BLACKSMITHING 0.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Rusty Iron
+DESCRIPTION=Chainmail Leggings
+
+ON=@Create
+COLOR=color_o_rustyiron
+HITPOINTS=100
+
+[ITEMDEF i_rustyiron_chainmail_coif]
+ID=i_chainmail_coif
+NAME=Rusty Iron Chainmail Coif
+TYPE=t_armor
+FLIP=1
+VALUE=10
+REQSTR=20
+WEIGHT=8
+ARMOR=19
+RESOUCES=i_ingot_rustyiron 10
+SKILLMAKE=BLACKSMITHING 0.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Rusty Iron
+DESCRIPTION=Chainmail Coif
+
+ON=@Create
+COLOR=color_o_rustyiron
+HITPOINTS=100
+
+[ITEMDEF i_rustyiron_platemail_chest]
+ID=i_platemail_chest
+NAME=Rusty Iron Platemail
+TYPE=t_armor
+FLIP=1
+VALUE=25
+REQSTR=60
+WEIGHT=19
+ARMOR=25
+RESOUCES=i_ingot_rustyiron 25
+SKILLMAKE=BLACKSMITHING 0.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Rusty Iron
+DESCRIPTION=Platemail Chest
+
+ON=@Create
+COLOR=color_o_rustyiron
+HITPOINTS=100
+
+[ITEMDEF i_rustyiron_platemail_leggings]
+ID=i_platemail_leggings
+NAME=Rusty Iron Platemail Leggings
+TYPE=t_armor
+FLIP=1
+VALUE=20
+REQSTR=60
+WEIGHT=15
+ARMOR=25
+RESOUCES=i_ingot_rustyiron 20
+SKILLMAKE=BLACKSMITHING 0.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Rusty Iron
+DESCRIPTION=Platemail Leggings
+
+ON=@Create
+COLOR=color_o_rustyiron
+HITPOINTS=100
+
+[ITEMDEF i_rustyiron_platemail_arms]
+ID=i_platemail_arms
+NAME=Rusty Iron Platemail Arms
+TYPE=t_armor
+FLIP=1
+VALUE=18
+REQSTR=60
+WEIGHT=14
+ARMOR=25
+RESOUCES=i_ingot_rustyiron 18
+SKILLMAKE=BLACKSMITHING 0.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Rusty Iron
+DESCRIPTION=Platemail Arms
+
+ON=@Create
+COLOR=color_o_rustyiron
+HITPOINTS=100
+
+[ITEMDEF i_rustyiron_platemail_gloves]
+ID=i_platemail_gloves
+NAME=Rusty Iron Platemail Gloves
+TYPE=t_armor
+FLIP=1
+VALUE=12
+REQSTR=60
+WEIGHT=9
+ARMOR=25
+RESOUCES=i_ingot_rustyiron 12
+SKILLMAKE=BLACKSMITHING 0.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Rusty Iron
+DESCRIPTION=Platemail Gloves
+
+ON=@Create
+COLOR=color_o_rustyiron
+HITPOINTS=100
+
+[ITEMDEF i_rustyiron_platemail_helm]
+ID=i_platemail_helm
+NAME=Rusty Iron Plate Helm
+TYPE=t_armor
+FLIP=1
+VALUE=15
+REQSTR=60
+WEIGHT=11
+ARMOR=25
+RESOUCES=i_ingot_rustyiron 15
+SKILLMAKE=BLACKSMITHING 0.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Rusty Iron
+DESCRIPTION=Plate Helm
+
+ON=@Create
+COLOR=color_o_rustyiron
+HITPOINTS=100
+
+[ITEMDEF i_tin_buckler]
+ID=i_buckler
+NAME=Tin Buckler
+TYPE=t_armor
+FLIP=1
+VALUE=18
+REQSTR=20
+WEIGHT=5
+ARMOR=3
+RESOUCES=i_ingot_tin 6
+SKILLMAKE=BLACKSMITHING 10.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Tin
+DESCRIPTION=Buckler
+
+ON=@Create
+COLOR=color_o_tin
+HITPOINTS=100
+
+[ITEMDEF i_tin_metal_shield]
+ID=i_metal_shield
+NAME=Tin Metal Shield
+TYPE=t_armor
+FLIP=1
+VALUE=27
+REQSTR=20
+WEIGHT=7
+ARMOR=4
+RESOUCES=i_ingot_tin 9
+SKILLMAKE=BLACKSMITHING 10.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Tin
+DESCRIPTION=Metal Shield
+
+ON=@Create
+COLOR=color_o_tin
+HITPOINTS=100
+
+[ITEMDEF i_tin_round_shield]
+ID=i_round_shield
+NAME=Tin Round Shield
+TYPE=t_armor
+FLIP=1
+VALUE=36
+REQSTR=20
+WEIGHT=9
+ARMOR=5
+RESOUCES=i_ingot_tin 12
+SKILLMAKE=BLACKSMITHING 10.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Tin
+DESCRIPTION=Round Shield
+
+ON=@Create
+COLOR=color_o_tin
+HITPOINTS=100
+
+[ITEMDEF i_tin_kite_shield_wood]
+ID=i_kite_shield_wood
+NAME=Tin Kite Shield
+TYPE=t_armor
+FLIP=1
+VALUE=42
+REQSTR=20
+WEIGHT=14
+ARMOR=8
+RESOUCES=i_ingot_tin 14
+SKILLMAKE=BLACKSMITHING 10.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Tin
+DESCRIPTION=Kite Shield (wood)
+
+ON=@Create
+COLOR=color_o_tin
+HITPOINTS=100
+
+[ITEMDEF i_tin_kite_shield_metal]
+ID=i_kite_shield_metal
+NAME=Tin Kite Shield
+TYPE=t_armor
+FLIP=1
+VALUE=48
+REQSTR=25
+WEIGHT=12
+ARMOR=10
+RESOUCES=i_ingot_tin 16
+SKILLMAKE=BLACKSMITHING 10.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Tin
+DESCRIPTION=Kite Shield (metal)
+
+ON=@Create
+COLOR=color_o_tin
+HITPOINTS=100
+
+[ITEMDEF i_tin_heater_shield]
+ID=i_heater_shield
+NAME=Tin Heater Shield
+TYPE=t_armor
+FLIP=1
+VALUE=54
+REQSTR=20
+WEIGHT=14
+ARMOR=13
+RESOUCES=i_ingot_tin 18
+SKILLMAKE=BLACKSMITHING 10.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Tin
+DESCRIPTION=Heater Shield
+
+ON=@Create
+COLOR=color_o_tin
+HITPOINTS=100
+
+[ITEMDEF i_tin_bascinet]
+ID=i_bascinet
+NAME=Tin Bascinet
+TYPE=t_armor
+FLIP=1
+VALUE=45
+REQSTR=20
+WEIGHT=11
+ARMOR=16
+RESOUCES=i_ingot_tin 15
+SKILLMAKE=BLACKSMITHING 10.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Tin
+DESCRIPTION=Bascinet
+
+ON=@Create
+COLOR=color_o_tin
+HITPOINTS=100
+
+[ITEMDEF i_tin_helmet]
+ID=i_helmet
+NAME=Tin Helmet
+TYPE=t_armor
+FLIP=1
+VALUE=45
+REQSTR=20
+WEIGHT=11
+ARMOR=16
+RESOUCES=i_ingot_tin 15
+SKILLMAKE=BLACKSMITHING 10.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Tin
+DESCRIPTION=Helmet
+
+ON=@Create
+COLOR=color_o_tin
+HITPOINTS=100
+
+[ITEMDEF i_tin_nose_helm]
+ID=i_nose_helm
+NAME=Tin Nose Helm
+TYPE=t_armor
+FLIP=1
+VALUE=45
+REQSTR=20
+WEIGHT=11
+ARMOR=16
+RESOUCES=i_ingot_tin 15
+SKILLMAKE=BLACKSMITHING 10.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Tin
+DESCRIPTION=Nose Helm
+
+ON=@Create
+COLOR=color_o_tin
+HITPOINTS=100
+
+[ITEMDEF i_tin_closed_helm]
+ID=i_closed_helm
+NAME=Tin Closed Helm
+TYPE=t_armor
+FLIP=1
+VALUE=45
+REQSTR=20
+WEIGHT=11
+ARMOR=16
+RESOUCES=i_ingot_tin 15
+SKILLMAKE=BLACKSMITHING 10.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Tin
+DESCRIPTION=Closed Helm
+
+ON=@Create
+COLOR=color_o_tin
+HITPOINTS=100
+
+[ITEMDEF i_tin_ringmail_tunic]
+ID=i_ringmail_tunic
+NAME=Tin Ringmail Tunic
+TYPE=t_armor
+FLIP=1
+VALUE=54
+REQSTR=20
+WEIGHT=14
+ARMOR=15
+RESOUCES=i_ingot_tin 18
+SKILLMAKE=BLACKSMITHING 10.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Tin
+DESCRIPTION=Ringmail Tunic
+
+ON=@Create
+COLOR=color_o_tin
+HITPOINTS=100
+
+[ITEMDEF i_tin_ringmail_leggings]
+ID=i_ringmail_leggings
+NAME=Tin Ringmail Leggings
+TYPE=t_armor
+FLIP=1
+VALUE=36
+REQSTR=20
+WEIGHT=14
+ARMOR=15
+RESOUCES=i_ingot_tin 16
+SKILLMAKE=BLACKSMITHING 10.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Tin
+DESCRIPTION=Ringmail Leggings
+
+ON=@Create
+COLOR=color_o_tin
+HITPOINTS=100
+
+[ITEMDEF i_tin_ringmail_sleeves]
+ID=i_ringmail_sleeves
+NAME=Tin Ringmail Sleeves
+TYPE=t_armor
+FLIP=1
+VALUE=42
+REQSTR=20
+WEIGHT=11
+ARMOR=15
+RESOUCES=i_ingot_tin 14
+SKILLMAKE=BLACKSMITHING 10.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Tin
+DESCRIPTION=Ringmail Sleeves
+
+ON=@Create
+COLOR=color_o_tin
+HITPOINTS=100
+
+[ITEMDEF i_tin_ringmail_gloves]
+ID=i_ringmail_gloves
+NAME=Tin Ringmail Gloves
+TYPE=t_armor
+FLIP=1
+VALUE=9
+REQSTR=20
+WEIGHT=2
+ARMOR=15
+RESOUCES=i_ingot_tin 3
+SKILLMAKE=BLACKSMITHING 10.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Tin
+DESCRIPTION=Ringmail Gloves
+
+ON=@Create
+COLOR=color_o_tin
+HITPOINTS=100
+
+[ITEMDEF i_tin_chainmail_tunic]
+ID=i_chainmail_tunic
+NAME=Tin Chainmail Tunic
+TYPE=t_armor
+FLIP=1
+VALUE=60
+REQSTR=20
+WEIGHT=15
+ARMOR=21
+RESOUCES=i_ingot_tin 20
+SKILLMAKE=BLACKSMITHING 10.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Tin
+DESCRIPTION=Chainmail Tunic
+
+ON=@Create
+COLOR=color_o_tin
+HITPOINTS=100
+
+[ITEMDEF i_tin_chainmail_leggings]
+ID=i_chainmail_leggings
+NAME=Tin Chainmail Leggings
+TYPE=t_armor
+FLIP=1
+VALUE=54
+REQSTR=20
+WEIGHT=14
+ARMOR=21
+RESOUCES=i_ingot_tin 18
+SKILLMAKE=BLACKSMITHING 10.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Tin
+DESCRIPTION=Chainmail Leggings
+
+ON=@Create
+COLOR=color_o_tin
+HITPOINTS=100
+
+[ITEMDEF i_tin_chainmail_coif]
+ID=i_chainmail_coif
+NAME=Tin Chainmail Coif
+TYPE=t_armor
+FLIP=1
+VALUE=30
+REQSTR=20
+WEIGHT=8
+ARMOR=21
+RESOUCES=i_ingot_tin 10
+SKILLMAKE=BLACKSMITHING 10.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Tin
+DESCRIPTION=Chainmail Coif
+
+ON=@Create
+COLOR=color_o_tin
+HITPOINTS=100
+
+[ITEMDEF i_tin_platemail_chest]
+ID=i_platemail_chest
+NAME=Tin Platemail
+TYPE=t_armor
+FLIP=1
+VALUE=75
+REQSTR=60
+WEIGHT=19
+ARMOR=30
+RESOUCES=i_ingot_tin 25
+SKILLMAKE=BLACKSMITHING 10.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Tin
+DESCRIPTION=Platemail Chest
+
+ON=@Create
+COLOR=color_o_tin
+HITPOINTS=100
+
+[ITEMDEF i_tin_platemail_leggings]
+ID=i_platemail_leggings
+NAME=Tin Platemail Leggings
+TYPE=t_armor
+FLIP=1
+VALUE=60
+REQSTR=60
+WEIGHT=15
+ARMOR=30
+RESOUCES=i_ingot_tin 20
+SKILLMAKE=BLACKSMITHING 10.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Tin
+DESCRIPTION=Platemail Leggings
+
+ON=@Create
+COLOR=color_o_tin
+HITPOINTS=100
+
+[ITEMDEF i_tin_platemail_arms]
+ID=i_platemail_arms
+NAME=Tin Platemail Arms
+TYPE=t_armor
+FLIP=1
+VALUE=54
+REQSTR=60
+WEIGHT=14
+ARMOR=30
+RESOUCES=i_ingot_tin 18
+SKILLMAKE=BLACKSMITHING 10.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Tin
+DESCRIPTION=Platemail Arms
+
+ON=@Create
+COLOR=color_o_tin
+HITPOINTS=100
+
+[ITEMDEF i_tin_platemail_gloves]
+ID=i_platemail_gloves
+NAME=Tin Platemail Gloves
+TYPE=t_armor
+FLIP=1
+VALUE=36
+REQSTR=60
+WEIGHT=9
+ARMOR=30
+RESOUCES=i_ingot_tin 12
+SKILLMAKE=BLACKSMITHING 10.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Tin
+DESCRIPTION=Platemail Gloves
+
+ON=@Create
+COLOR=color_o_tin
+HITPOINTS=100
+
+[ITEMDEF i_tin_platemail_helm]
+ID=i_platemail_helm
+NAME=Tin Plate Helm
+TYPE=t_armor
+FLIP=1
+VALUE=45
+REQSTR=60
+WEIGHT=11
+ARMOR=30
+RESOUCES=i_ingot_tin 15
+SKILLMAKE=BLACKSMITHING 10.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Tin
+DESCRIPTION=Plate Helm
+
+ON=@Create
+COLOR=color_o_tin
+HITPOINTS=100
+
+[ITEMDEF i_brass_buckler]
+ID=i_buckler
+NAME=Brass Buckler
+TYPE=t_armor
+FLIP=1
+VALUE=30
+REQSTR=20
+WEIGHT=5
+ARMOR=5
+RESOUCES=i_ingot_brass 6
+SKILLMAKE=BLACKSMITHING 25.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Brass
+DESCRIPTION=Buckler
+
+ON=@Create
+COLOR=color_o_brass
+HITPOINTS=100
+
+[ITEMDEF i_brass_metal_shield]
+ID=i_metal_shield
+NAME=Brass Metal Shield
+TYPE=t_armor
+FLIP=1
+VALUE=45
+REQSTR=20
+WEIGHT=7
+ARMOR=6
+RESOUCES=i_ingot_brass 9
+SKILLMAKE=BLACKSMITHING 25.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Brass
+DESCRIPTION=Metal Shield
+
+ON=@Create
+COLOR=color_o_brass
+HITPOINTS=100
+
+[ITEMDEF i_brass_round_shield]
+ID=i_round_shield
+NAME=Brass Round Shield
+TYPE=t_armor
+FLIP=1
+VALUE=60
+REQSTR=20
+WEIGHT=9
+ARMOR=7
+RESOUCES=i_ingot_brass 12
+SKILLMAKE=BLACKSMITHING 25.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Brass
+DESCRIPTION=Round Shield
+
+ON=@Create
+COLOR=color_o_brass
+HITPOINTS=100
+
+[ITEMDEF i_brass_kite_shield_wood]
+ID=i_kite_shield_wood
+NAME=Brass Kite Shield
+TYPE=t_armor
+FLIP=1
+VALUE=60
+REQSTR=20
+WEIGHT=14
+ARMOR=11
+RESOUCES=i_ingot_brass 14
+SKILLMAKE=BLACKSMITHING 25.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Brass
+DESCRIPTION=Kite Shield (wood)
+
+ON=@Create
+COLOR=color_o_brass
+HITPOINTS=100
+
+[ITEMDEF i_brass_kite_shield_metal]
+ID=i_kite_shield_metal
+NAME=Brass Kite Shield
+TYPE=t_armor
+FLIP=1
+VALUE=80
+REQSTR=25
+WEIGHT=12
+ARMOR=13
+RESOUCES=i_ingot_brass 16
+SKILLMAKE=BLACKSMITHING 25.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Brass
+DESCRIPTION=Kite Shield (metal)
+
+ON=@Create
+COLOR=color_o_brass
+HITPOINTS=100
+
+[ITEMDEF i_brass_heater_shield]
+ID=i_heater_shield
+NAME=Brass Heater Shield
+TYPE=t_armor
+FLIP=1
+VALUE=90
+REQSTR=20
+WEIGHT=14
+ARMOR=16
+RESOUCES=i_ingot_brass 18
+SKILLMAKE=BLACKSMITHING 25.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Brass
+DESCRIPTION=Heater Shield
+
+ON=@Create
+COLOR=color_o_brass
+HITPOINTS=100
+
+[ITEMDEF i_brass_bascinet]
+ID=i_bascinet
+NAME=Brass Bascinet
+TYPE=t_armor
+FLIP=1
+VALUE=75
+REQSTR=20
+WEIGHT=11
+ARMOR=22
+RESOUCES=i_ingot_brass 15
+SKILLMAKE=BLACKSMITHING 25.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Brass
+DESCRIPTION=Bascinet
+
+ON=@Create
+COLOR=color_o_brass
+HITPOINTS=100
+
+[ITEMDEF i_brass_helmet]
+ID=i_helmet
+NAME=Brass Helmet
+TYPE=t_armor
+FLIP=1
+VALUE=75
+REQSTR=20
+WEIGHT=11
+ARMOR=22
+RESOUCES=i_ingot_brass 15
+SKILLMAKE=BLACKSMITHING 25.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Brass
+DESCRIPTION=Helmet
+
+ON=@Create
+COLOR=color_o_brass
+HITPOINTS=100
+
+[ITEMDEF i_brass_nose_helm]
+ID=i_nose_helm
+NAME=Brass Nose Helm
+TYPE=t_armor
+FLIP=1
+VALUE=75
+REQSTR=20
+WEIGHT=11
+ARMOR=22
+RESOUCES=i_ingot_brass 15
+SKILLMAKE=BLACKSMITHING 25.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Brass
+DESCRIPTION=Nose Helm
+
+ON=@Create
+COLOR=color_o_brass
+HITPOINTS=100
+
+[ITEMDEF i_brass_closed_helm]
+ID=i_closed_helm
+NAME=Brass Closed Helm
+TYPE=t_armor
+FLIP=1
+VALUE=75
+REQSTR=20
+WEIGHT=11
+ARMOR=22
+RESOUCES=i_ingot_brass 15
+SKILLMAKE=BLACKSMITHING 25.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Brass
+DESCRIPTION=Closed Helm
+
+ON=@Create
+COLOR=color_o_brass
+HITPOINTS=100
+
+[ITEMDEF i_brass_ringmail_tunic]
+ID=i_ringmail_tunic
+NAME=Brass Ringmail Tunic
+TYPE=t_armor
+FLIP=1
+VALUE=90
+REQSTR=20
+WEIGHT=14
+ARMOR=17
+RESOUCES=i_ingot_brass 18
+SKILLMAKE=BLACKSMITHING 25.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Brass
+DESCRIPTION=Ringmail Tunic
+
+ON=@Create
+COLOR=color_o_brass
+HITPOINTS=100
+
+[ITEMDEF i_brass_ringmail_leggings]
+ID=i_ringmail_leggings
+NAME=Brass Ringmail Leggings
+TYPE=t_armor
+FLIP=1
+VALUE=80
+REQSTR=20
+WEIGHT=14
+ARMOR=17
+RESOUCES=i_ingot_brass 16
+SKILLMAKE=BLACKSMITHING 25.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Brass
+DESCRIPTION=Ringmail Leggings
+
+ON=@Create
+COLOR=color_o_brass
+HITPOINTS=100
+
+[ITEMDEF i_brass_ringmail_sleeves]
+ID=i_ringmail_sleeves
+NAME=Brass Ringmail Sleeves
+TYPE=t_armor
+FLIP=1
+VALUE=60
+REQSTR=20
+WEIGHT=11
+ARMOR=17
+RESOUCES=i_ingot_brass 14
+SKILLMAKE=BLACKSMITHING 25.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Brass
+DESCRIPTION=Ringmail Sleeves
+
+ON=@Create
+COLOR=color_o_brass
+HITPOINTS=100
+
+[ITEMDEF i_brass_ringmail_gloves]
+ID=i_ringmail_gloves
+NAME=Brass Ringmail Gloves
+TYPE=t_armor
+FLIP=1
+VALUE=15
+REQSTR=20
+WEIGHT=2
+ARMOR=17
+RESOUCES=i_ingot_brass 3
+SKILLMAKE=BLACKSMITHING 25.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Brass
+DESCRIPTION=Ringmail Gloves
+
+ON=@Create
+COLOR=color_o_brass
+HITPOINTS=100
+
+[ITEMDEF i_brass_chainmail_tunic]
+ID=i_chainmail_tunic
+NAME=Brass Chainmail Tunic
+TYPE=t_armor
+FLIP=1
+VALUE=100
+REQSTR=20
+WEIGHT=15
+ARMOR=23
+RESOUCES=i_ingot_brass 20
+SKILLMAKE=BLACKSMITHING 25.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Brass
+DESCRIPTION=Chainmail Tunic
+
+ON=@Create
+COLOR=color_o_brass
+HITPOINTS=100
+
+[ITEMDEF i_brass_chainmail_leggings]
+ID=i_chainmail_leggings
+NAME=Brass Chainmail Leggings
+TYPE=t_armor
+FLIP=1
+VALUE=90
+REQSTR=20
+WEIGHT=14
+ARMOR=23
+RESOUCES=i_ingot_brass 18
+SKILLMAKE=BLACKSMITHING 25.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Brass
+DESCRIPTION=Chainmail Leggings
+
+ON=@Create
+COLOR=color_o_brass
+HITPOINTS=100
+
+[ITEMDEF i_brass_chainmail_coif]
+ID=i_chainmail_coif
+NAME=Brass Chainmail Coif
+TYPE=t_armor
+FLIP=1
+VALUE=50
+REQSTR=20
+WEIGHT=8
+ARMOR=23
+RESOUCES=i_ingot_brass 10
+SKILLMAKE=BLACKSMITHING 25.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Brass
+DESCRIPTION=Chainmail Coif
+
+ON=@Create
+COLOR=color_o_brass
+HITPOINTS=100
+
+[ITEMDEF i_brass_platemail_chest]
+ID=i_platemail_chest
+NAME=Brass Platemail
+TYPE=t_armor
+FLIP=1
+VALUE=125
+REQSTR=60
+WEIGHT=19
+ARMOR=33
+RESOUCES=i_ingot_brass 25
+SKILLMAKE=BLACKSMITHING 25.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Brass
+DESCRIPTION=Platemail Chest
+
+ON=@Create
+COLOR=color_o_brass
+HITPOINTS=100
+
+[ITEMDEF i_brass_platemail_leggings]
+ID=i_platemail_leggings
+NAME=Brass Platemail Leggings
+TYPE=t_armor
+FLIP=1
+VALUE=100
+REQSTR=60
+WEIGHT=15
+ARMOR=33
+RESOUCES=i_ingot_brass 20
+SKILLMAKE=BLACKSMITHING 25.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Brass
+DESCRIPTION=Platemail Leggings
+
+ON=@Create
+COLOR=color_o_brass
+HITPOINTS=100
+
+[ITEMDEF i_brass_platemail_arms]
+ID=i_platemail_arms
+NAME=Brass Platemail Arms
+TYPE=t_armor
+FLIP=1
+VALUE=90
+REQSTR=60
+WEIGHT=14
+ARMOR=33
+RESOUCES=i_ingot_brass 18
+SKILLMAKE=BLACKSMITHING 25.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Brass
+DESCRIPTION=Platemail Arms
+
+ON=@Create
+COLOR=color_o_brass
+HITPOINTS=100
+
+[ITEMDEF i_brass_platemail_gloves]
+ID=i_platemail_gloves
+NAME=Brass Platemail Gloves
+TYPE=t_armor
+FLIP=1
+VALUE=60
+REQSTR=60
+WEIGHT=9
+ARMOR=33
+RESOUCES=i_ingot_brass 12
+SKILLMAKE=BLACKSMITHING 25.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Brass
+DESCRIPTION=Platemail Gloves
+
+ON=@Create
+COLOR=color_o_brass
+HITPOINTS=100
+
+[ITEMDEF i_brass_platemail_helm]
+ID=i_platemail_helm
+NAME=Brass Plate Helm
+TYPE=t_armor
+FLIP=1
+VALUE=75
+REQSTR=60
+WEIGHT=11
+ARMOR=33
+RESOUCES=i_ingot_brass 15
+SKILLMAKE=BLACKSMITHING 25.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Brass
+DESCRIPTION=Plate Helm
+
+ON=@Create
+COLOR=color_o_brass
+HITPOINTS=100
+
+
+
+
+
+
+[FUNCTION f_shadow_curse]
+IF <CONT.KARMA> > 0
+EMOTE glows green.
+EFFECT 3,i_fx_curse,6,15,1
+SOUND snd_spell_curse
+CONT.SPELLEFFECT s_poison,1500
+TIMER 20
+ENDIF
+
+ON=@Equip
+TIMER 1
+
+ON=@Timer
+IF <CONT>
+f_shadow_curse
+RETURN 1
+ENDIF
+
+[FUNCTION f_agapite_drop]
+IF <CONT.KARMA> < 0
+EMOTE glows red.
+EFFECT 3,i_fx_curse,6,15,1
+SOUND snd_spell_curse
+DROP
+ENDIF
+TIMER=60
+
+ON=@Equip
+TIMER 1
+
+ON=@Timer
+IF <CONT>
+f_agapite_drop
+RETURN 1
+ENDIF
+
+[ITEMDEF i_oldcopper_buckler]
+ID=i_buckler
+NAME=Old Copper Buckler
+TYPE=t_armor
+FLIP=1
+VALUE=42
+REQSTR=20
+WEIGHT=5
+ARMOR=6
+RESOUCES=i_ingot_oldcopper 6
+SKILLMAKE=BLACKSMITHING 50.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Old Copper
+DESCRIPTION=Buckler
+
+ON=@Create
+COLOR=color_o_oldcopper
+HITPOINTS=100
+
+[ITEMDEF i_oldcopper_metal_shield]
+ID=i_metal_shield
+NAME=Old Copper Metal Shield
+TYPE=t_armor
+FLIP=1
+VALUE=63
+REQSTR=20
+WEIGHT=7
+ARMOR=8
+RESOUCES=i_ingot_oldcopper 9
+SKILLMAKE=BLACKSMITHING 50.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Old Copper
+DESCRIPTION=Metal Shield
+
+ON=@Create
+COLOR=color_o_oldcopper
+HITPOINTS=100
+
+[ITEMDEF i_oldcopper_round_shield]
+ID=i_round_shield
+NAME=Old Copper Round Shield
+TYPE=t_armor
+FLIP=1
+VALUE=84
+REQSTR=20
+WEIGHT=9
+ARMOR=9
+RESOUCES=i_ingot_oldcopper 12
+SKILLMAKE=BLACKSMITHING 50.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Old Copper
+DESCRIPTION=Round Shield
+
+ON=@Create
+COLOR=color_o_oldcopper
+HITPOINTS=100
+
+[ITEMDEF i_oldcopper_kite_shield_wood]
+ID=i_kite_shield_wood
+NAME=Old Copper Kite Shield
+TYPE=t_armor
+FLIP=1
+VALUE=98
+REQSTR=20
+WEIGHT=14
+ARMOR=14
+RESOUCES=i_ingot_oldcopper 14
+SKILLMAKE=BLACKSMITHING 50.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Old Copper
+DESCRIPTION=Kite Shield (wood)
+
+ON=@Create
+COLOR=color_o_oldcopper
+HITPOINTS=100
+
+[ITEMDEF i_oldcopper_kite_shield_metal]
+ID=i_kite_shield_metal
+NAME=Old Copper Kite Shield
+TYPE=t_armor
+FLIP=1
+VALUE=112
+REQSTR=25
+WEIGHT=12
+ARMOR=16
+RESOUCES=i_ingot_oldcopper 16
+SKILLMAKE=BLACKSMITHING 50.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Old Copper
+DESCRIPTION=Kite Shield (metal)
+
+ON=@Create
+COLOR=color_o_oldcopper
+HITPOINTS=100
+
+[ITEMDEF i_oldcopper_heater_shield]
+ID=i_heater_shield
+NAME=Old Copper Heater Shield
+TYPE=t_armor
+FLIP=1
+VALUE=126
+REQSTR=20
+WEIGHT=14
+ARMOR=19
+RESOUCES=i_ingot_oldcopper 18
+SKILLMAKE=BLACKSMITHING 50.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Old Copper
+DESCRIPTION=Heater Shield
+
+ON=@Create
+COLOR=color_o_oldcopper
+HITPOINTS=100
+
+[ITEMDEF i_oldcopper_bascinet]
+ID=i_bascinet
+NAME=Old Copper Bascinet
+TYPE=t_armor
+FLIP=1
+VALUE=105
+REQSTR=20
+WEIGHT=11
+ARMOR=27
+RESOUCES=i_ingot_oldcopper 15
+SKILLMAKE=BLACKSMITHING 50.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Old Copper
+DESCRIPTION=Bascinet
+
+ON=@Create
+COLOR=color_o_oldcopper
+HITPOINTS=100
+
+[ITEMDEF i_oldcopper_helmet]
+ID=i_helmet
+NAME=Old Copper Helmet
+TYPE=t_armor
+FLIP=1
+VALUE=105
+REQSTR=20
+WEIGHT=11
+ARMOR=27
+RESOUCES=i_ingot_oldcopper 15
+SKILLMAKE=BLACKSMITHING 50.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Old Copper
+DESCRIPTION=Helmet
+
+ON=@Create
+COLOR=color_o_oldcopper
+HITPOINTS=100
+
+[ITEMDEF i_oldcopper_nose_helm]
+ID=i_nose_helm
+NAME=Old Copper Nose Helm
+TYPE=t_armor
+FLIP=1
+VALUE=105
+REQSTR=20
+WEIGHT=11
+ARMOR=27
+RESOUCES=i_ingot_oldcopper 15
+SKILLMAKE=BLACKSMITHING 50.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Old Copper
+DESCRIPTION=Nose Helm
+
+ON=@Create
+COLOR=color_o_oldcopper
+HITPOINTS=100
+
+[ITEMDEF i_oldcopper_closed_helm]
+ID=i_closed_helm
+NAME=Old Copper Closed Helm
+TYPE=t_armor
+FLIP=1
+VALUE=105
+REQSTR=20
+WEIGHT=11
+ARMOR=27
+RESOUCES=i_ingot_oldcopper 15
+SKILLMAKE=BLACKSMITHING 50.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Old Copper
+DESCRIPTION=Closed Helm
+
+ON=@Create
+COLOR=color_o_oldcopper
+HITPOINTS=100
+
+[ITEMDEF i_oldcopper_ringmail_tunic]
+ID=i_ringmail_tunic
+NAME=Old Copper Ringmail Tunic
+TYPE=t_armor
+FLIP=1
+VALUE=126
+REQSTR=20
+WEIGHT=14
+ARMOR=20
+RESOUCES=i_ingot_oldcopper 18
+SKILLMAKE=BLACKSMITHING 50.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Old Copper
+DESCRIPTION=Ringmail Tunic
+
+ON=@Create
+COLOR=color_o_oldcopper
+HITPOINTS=100
+
+[ITEMDEF i_oldcopper_ringmail_leggings]
+ID=i_ringmail_leggings
+NAME=Old Copper Ringmail Leggings
+TYPE=t_armor
+FLIP=1
+VALUE=112
+REQSTR=20
+WEIGHT=14
+ARMOR=20
+RESOUCES=i_ingot_oldcopper 16
+SKILLMAKE=BLACKSMITHING 50.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Old Copper
+DESCRIPTION=Ringmail Leggings
+
+ON=@Create
+COLOR=color_o_oldcopper
+HITPOINTS=100
+
+[ITEMDEF i_oldcopper_ringmail_sleeves]
+ID=i_ringmail_sleeves
+NAME=Old Copper Ringmail Sleeves
+TYPE=t_armor
+FLIP=1
+VALUE=98
+REQSTR=20
+WEIGHT=11
+ARMOR=20
+RESOUCES=i_ingot_oldcopper 14
+SKILLMAKE=BLACKSMITHING 50.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Old Copper
+DESCRIPTION=Ringmail Sleeves
+
+ON=@Create
+COLOR=color_o_oldcopper
+HITPOINTS=100
+
+[ITEMDEF i_oldcopper_ringmail_gloves]
+ID=i_ringmail_gloves
+NAME=Old Copper Ringmail Gloves
+TYPE=t_armor
+FLIP=1
+VALUE=21
+REQSTR=20
+WEIGHT=2
+ARMOR=20
+RESOUCES=i_ingot_oldcopper 3
+SKILLMAKE=BLACKSMITHING 50.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Old Copper
+DESCRIPTION=Ringmail Gloves
+
+ON=@Create
+COLOR=color_o_oldcopper
+HITPOINTS=100
+
+[ITEMDEF i_oldcopper_chainmail_tunic]
+ID=i_chainmail_tunic
+NAME=Old Copper Chainmail Tunic
+TYPE=t_armor
+FLIP=1
+VALUE=140
+REQSTR=20
+WEIGHT=15
+ARMOR=25
+RESOUCES=i_ingot_oldcopper 20
+SKILLMAKE=BLACKSMITHING 50.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Old Copper
+DESCRIPTION=Chainmail Tunic
+
+ON=@Create
+COLOR=color_o_oldcopper
+HITPOINTS=100
+
+[ITEMDEF i_oldcopper_chainmail_leggings]
+ID=i_chainmail_leggings
+NAME=Old Copper Chainmail Leggings
+TYPE=t_armor
+FLIP=1
+VALUE=126
+REQSTR=20
+WEIGHT=14
+ARMOR=25
+RESOUCES=i_ingot_oldcopper 18
+SKILLMAKE=BLACKSMITHING 50.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Old Copper
+DESCRIPTION=Chainmail Leggings
+
+ON=@Create
+COLOR=color_o_oldcopper
+HITPOINTS=100
+
+[ITEMDEF i_oldcopper_chainmail_coif]
+ID=i_chainmail_coif
+NAME=Old Copper Chainmail Coif
+TYPE=t_armor
+FLIP=1
+VALUE=70
+REQSTR=20
+WEIGHT=8
+ARMOR=25
+RESOUCES=i_ingot_oldcopper 10
+SKILLMAKE=BLACKSMITHING 50.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Old Copper
+DESCRIPTION=Chainmail Coif
+
+ON=@Create
+COLOR=color_o_oldcopper
+HITPOINTS=100
+
+[ITEMDEF i_oldcopper_platemail_chest]
+ID=i_platemail_chest
+NAME=Old Copper Platemail
+TYPE=t_armor
+FLIP=1
+VALUE=175
+REQSTR=60
+WEIGHT=19
+ARMOR=37
+RESOUCES=i_ingot_oldcopper 25
+SKILLMAKE=BLACKSMITHING 50.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Old Copper
+DESCRIPTION=Platemail Chest
+
+ON=@Create
+COLOR=color_o_oldcopper
+HITPOINTS=100
+
+[ITEMDEF i_oldcopper_platemail_leggings]
+ID=i_platemail_leggings
+NAME=Old Copper Platemail Leggings
+TYPE=t_armor
+FLIP=1
+VALUE=140
+REQSTR=60
+WEIGHT=15
+ARMOR=37
+RESOUCES=i_ingot_oldcopper 20
+SKILLMAKE=BLACKSMITHING 50.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Old Copper
+DESCRIPTION=Platemail Leggings
+
+ON=@Create
+COLOR=color_o_oldcopper
+HITPOINTS=100
+
+[ITEMDEF i_oldcopper_platemail_arms]
+ID=i_platemail_arms
+NAME=Old Copper Platemail Arms
+TYPE=t_armor
+FLIP=1
+VALUE=126
+REQSTR=60
+WEIGHT=14
+ARMOR=37
+RESOUCES=i_ingot_oldcopper 18
+SKILLMAKE=BLACKSMITHING 50.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Old Copper
+DESCRIPTION=Platemail Arms
+
+ON=@Create
+COLOR=color_o_oldcopper
+HITPOINTS=100
+
+[ITEMDEF i_oldcopper_platemail_gloves]
+ID=i_platemail_gloves
+NAME=Old Copper Platemail Gloves
+TYPE=t_armor
+FLIP=1
+VALUE=84
+REQSTR=60
+WEIGHT=9
+ARMOR=37
+RESOUCES=i_ingot_oldcopper 12
+SKILLMAKE=BLACKSMITHING 50.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Old Copper
+DESCRIPTION=Platemail Gloves
+
+ON=@Create
+COLOR=color_o_oldcopper
+HITPOINTS=100
+
+[ITEMDEF i_oldcopper_platemail_helm]
+ID=i_platemail_helm
+NAME=Old Copper Plate Helm
+TYPE=t_armor
+FLIP=1
+VALUE=105
+REQSTR=60
+WEIGHT=11
+ARMOR=37
+RESOUCES=i_ingot_oldcopper 15
+SKILLMAKE=BLACKSMITHING 50.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Old Copper
+DESCRIPTION=Plate Helm
+
+ON=@Create
+COLOR=color_o_oldcopper
+HITPOINTS=100
+
+[ITEMDEF i_dullcopper_buckler]
+ID=i_buckler
+NAME=Dull Copper Buckler
+TYPE=t_armor
+FLIP=1
+VALUE=66
+REQSTR=20
+WEIGHT=5
+ARMOR=8
+RESOUCES=i_ingot_dullcopper 6
+SKILLMAKE=BLACKSMITHING 60.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Dull Copper
+DESCRIPTION=Buckler
+
+ON=@Create
+COLOR=color_o_dullcopper
+HITPOINTS=100
+
+[ITEMDEF i_dullcopper_metal_shield]
+ID=i_metal_shield
+NAME=Dull Copper Metal Shield
+TYPE=t_armor
+FLIP=1
+VALUE=99
+REQSTR=20
+WEIGHT=7
+ARMOR=11
+RESOUCES=i_ingot_dullcopper 9
+SKILLMAKE=BLACKSMITHING 60.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Dull Copper
+DESCRIPTION=Metal Shield
+
+ON=@Create
+COLOR=color_o_dullcopper
+HITPOINTS=100
+
+[ITEMDEF i_dullcopper_round_shield]
+ID=i_round_shield
+NAME=Dull Copper Round Shield
+TYPE=t_armor
+FLIP=1
+VALUE=121
+REQSTR=20
+WEIGHT=9
+ARMOR=13
+RESOUCES=i_ingot_dullcopper 12
+SKILLMAKE=BLACKSMITHING 60.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Dull Copper
+DESCRIPTION=Round Shield
+
+ON=@Create
+COLOR=color_o_dullcopper
+HITPOINTS=100
+
+[ITEMDEF i_dullcopper_kite_shield_wood]
+ID=i_kite_shield_wood
+NAME=Dull Copper Kite Shield
+TYPE=t_armor
+FLIP=1
+VALUE=154
+REQSTR=20
+WEIGHT=14
+ARMOR=19
+RESOUCES=i_ingot_dullcopper 14
+SKILLMAKE=BLACKSMITHING 60.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Dull Copper
+DESCRIPTION=Kite Shield (wood)
+
+ON=@Create
+COLOR=color_o_dullcopper
+HITPOINTS=100
+
+[ITEMDEF i_dullcopper_kite_shield_metal]
+ID=i_kite_shield_metal
+NAME=Dull Copper Kite Shield
+TYPE=t_armor
+FLIP=1
+VALUE=176
+REQSTR=25
+WEIGHT=12
+ARMOR=23
+RESOUCES=i_ingot_dullcopper 16
+SKILLMAKE=BLACKSMITHING 60.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Dull Copper
+DESCRIPTION=Kite Shield (metal)
+
+ON=@Create
+COLOR=color_o_dullcopper
+HITPOINTS=100
+
+[ITEMDEF i_dullcopper_heater_shield]
+ID=i_heater_shield
+NAME=Dull Copper Heater Shield
+TYPE=t_armor
+FLIP=1
+VALUE=198
+REQSTR=20
+WEIGHT=14
+ARMOR=26
+RESOUCES=i_ingot_dullcopper 18
+SKILLMAKE=BLACKSMITHING 60.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Dull Copper
+DESCRIPTION=Heater Shield
+
+ON=@Create
+COLOR=color_o_dullcopper
+HITPOINTS=100
+
+[ITEMDEF i_dullcopper_bascinet]
+ID=i_bascinet
+NAME=Dull Copper Bascinet
+TYPE=t_armor
+FLIP=1
+VALUE=165
+REQSTR=20
+WEIGHT=11
+ARMOR=32
+RESOUCES=i_ingot_dullcopper 15
+SKILLMAKE=BLACKSMITHING 60.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Dull Copper
+DESCRIPTION=Bascinet
+
+ON=@Create
+COLOR=color_o_dullcopper
+HITPOINTS=100
+
+[ITEMDEF i_dullcopper_helmet]
+ID=i_helmet
+NAME=Dull Copper Helmet
+TYPE=t_armor
+FLIP=1
+VALUE=165
+REQSTR=20
+WEIGHT=11
+ARMOR=32
+RESOUCES=i_ingot_dullcopper 15
+SKILLMAKE=BLACKSMITHING 60.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Dull Copper
+DESCRIPTION=Helmet
+
+ON=@Create
+COLOR=color_o_dullcopper
+HITPOINTS=100
+
+[ITEMDEF i_dullcopper_nose_helm]
+ID=i_nose_helm
+NAME=Dull Copper Nose Helm
+TYPE=t_armor
+FLIP=1
+VALUE=165
+REQSTR=20
+WEIGHT=11
+ARMOR=32
+RESOUCES=i_ingot_dullcopper 15
+SKILLMAKE=BLACKSMITHING 60.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Dull Copper
+DESCRIPTION=Nose Helm
+
+ON=@Create
+COLOR=color_o_dullcopper
+HITPOINTS=100
+
+[ITEMDEF i_dullcopper_closed_helm]
+ID=i_closed_helm
+NAME=Dull Copper Closed Helm
+TYPE=t_armor
+FLIP=1
+VALUE=165
+REQSTR=20
+WEIGHT=11
+ARMOR=32
+RESOUCES=i_ingot_dullcopper 15
+SKILLMAKE=BLACKSMITHING 60.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Dull Copper
+DESCRIPTION=Closed Helm
+
+ON=@Create
+COLOR=color_o_dullcopper
+HITPOINTS=100
+
+[ITEMDEF i_dullcopper_ringmail_tunic]
+ID=i_ringmail_tunic
+NAME=Dull Copper Ringmail Tunic
+TYPE=t_armor
+FLIP=1
+VALUE=198
+REQSTR=20
+WEIGHT=11
+ARMOR=25
+RESOUCES=i_ingot_dullcopper 18
+SKILLMAKE=BLACKSMITHING 60.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Dull Copper
+DESCRIPTION=Ringmail Tunic
+
+ON=@Create
+COLOR=color_o_dullcopper
+HITPOINTS=100
+
+[ITEMDEF i_dullcopper_ringmail_leggings]
+ID=i_ringmail_leggings
+NAME=Dull Copper Ringmail Leggings
+TYPE=t_armor
+FLIP=1
+VALUE=176
+REQSTR=20
+WEIGHT=14
+ARMOR=25
+RESOUCES=i_ingot_dullcopper 16
+SKILLMAKE=BLACKSMITHING 60.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Dull Copper
+DESCRIPTION=Ringmail Leggings
+
+ON=@Create
+COLOR=color_o_dullcopper
+HITPOINTS=100
+
+[ITEMDEF i_dullcopper_ringmail_sleeves]
+ID=i_ringmail_sleeves
+NAME=Dull Copper Ringmail Sleeves
+TYPE=t_armor
+FLIP=1
+VALUE=154
+REQSTR=20
+WEIGHT=11
+ARMOR=25
+RESOUCES=i_ingot_dullcopper 14
+SKILLMAKE=BLACKSMITHING 60.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Dull Copper
+DESCRIPTION=Ringmail Sleeves
+
+ON=@Create
+COLOR=color_o_dullcopper
+HITPOINTS=100
+
+[ITEMDEF i_dullcopper_ringmail_gloves]
+ID=i_ringmail_gloves
+NAME=Dull Copper Ringmail Gloves
+TYPE=t_armor
+FLIP=1
+VALUE=33
+REQSTR=20
+WEIGHT=2
+ARMOR=25
+RESOUCES=i_ingot_dullcopper 3
+SKILLMAKE=BLACKSMITHING 60.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Dull Copper
+DESCRIPTION=Ringmail Gloves
+
+ON=@Create
+COLOR=color_o_dullcopper
+HITPOINTS=100
+
+[ITEMDEF i_dullcopper_chainmail_tunic]
+ID=i_chainmail_tunic
+NAME=Dull Copper Chainmail Tunic
+TYPE=t_armor
+FLIP=1
+VALUE=220
+REQSTR=20
+WEIGHT=15
+ARMOR=30
+RESOUCES=i_ingot_dullcopper 20
+SKILLMAKE=BLACKSMITHING 60.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Dull Copper
+DESCRIPTION=Chainmail Tunic
+
+ON=@Create
+COLOR=color_o_dullcopper
+HITPOINTS=100
+
+[ITEMDEF i_dullcopper_chainmail_leggings]
+ID=i_chainmail_leggings
+NAME=Dull Copper Chainmail Leggings
+TYPE=t_armor
+FLIP=1
+VALUE=198
+REQSTR=20
+WEIGHT=14
+ARMOR=30
+RESOUCES=i_ingot_dullcopper 18
+SKILLMAKE=BLACKSMITHING 60.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Dull Copper
+DESCRIPTION=Chainmail Leggings
+
+ON=@Create
+COLOR=color_o_dullcopper
+HITPOINTS=100
+
+[ITEMDEF i_dullcopper_chainmail_coif]
+ID=i_chainmail_coif
+NAME=Dull Copper Chainmail Coif
+TYPE=t_armor
+FLIP=1
+VALUE=110
+REQSTR=20
+WEIGHT=8
+ARMOR=30
+RESOUCES=i_ingot_dullcopper 10
+SKILLMAKE=BLACKSMITHING 60.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Dull Copper
+DESCRIPTION=Chainmail Coif
+
+ON=@Create
+COLOR=color_o_dullcopper
+HITPOINTS=100
+
+[ITEMDEF i_dullcopper_platemail_chest]
+ID=i_platemail_chest
+NAME=Dull Copper Platemail
+TYPE=t_armor
+FLIP=1
+VALUE=275
+REQSTR=60
+WEIGHT=19
+ARMOR=42
+RESOUCES=i_ingot_dullcopper 25
+SKILLMAKE=BLACKSMITHING 60.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Dull Copper
+DESCRIPTION=Platemail Chest
+
+ON=@Create
+COLOR=color_o_dullcopper
+HITPOINTS=100
+
+[ITEMDEF i_dullcopper_platemail_leggings]
+ID=i_platemail_leggings
+NAME=Dull Copper Platemail Leggings
+TYPE=t_armor
+FLIP=1
+VALUE=220
+REQSTR=60
+WEIGHT=15
+ARMOR=42
+RESOUCES=i_ingot_dullcopper 20
+SKILLMAKE=BLACKSMITHING 60.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Dull Copper
+DESCRIPTION=Platemail Leggings
+
+ON=@Create
+COLOR=color_o_dullcopper
+HITPOINTS=100
+
+[ITEMDEF i_dullcopper_platemail_arms]
+ID=i_platemail_arms
+NAME=Dull Copper Platemail Arms
+TYPE=t_armor
+FLIP=1
+VALUE=198
+REQSTR=60
+WEIGHT=14
+ARMOR=42
+RESOUCES=i_ingot_dullcopper 18
+SKILLMAKE=BLACKSMITHING 60.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Dull Copper
+DESCRIPTION=Platemail Arms
+
+ON=@Create
+COLOR=color_o_dullcopper
+HITPOINTS=100
+
+[ITEMDEF i_dullcopper_platemail_gloves]
+ID=i_platemail_gloves
+NAME=Dull Copper Platemail Gloves
+TYPE=t_armor
+FLIP=1
+VALUE=121
+REQSTR=60
+WEIGHT=9
+ARMOR=42
+RESOUCES=i_ingot_dullcopper 12
+SKILLMAKE=BLACKSMITHING 60.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Dull Copper
+DESCRIPTION=Platemail Gloves
+
+ON=@Create
+COLOR=color_o_dullcopper
+HITPOINTS=100
+
+[ITEMDEF i_dullcopper_platemail_helm]
+ID=i_platemail_helm
+NAME=Dull Copper Plate Helm
+TYPE=t_armor
+FLIP=1
+VALUE=165
+REQSTR=60
+WEIGHT=11
+ARMOR=42
+RESOUCES=i_ingot_dullcopper 15
+SKILLMAKE=BLACKSMITHING 60.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Dull Copper
+DESCRIPTION=Plate Helm
+
+ON=@Create
+COLOR=color_o_dullcopper
+HITPOINTS=100
+
+[ITEMDEF i_roseiron_buckler]
+ID=i_buckler
+NAME=Rose Iron Buckler
+TYPE=t_armor
+FLIP=1
+VALUE=90
+REQSTR=20
+WEIGHT=5
+ARMOR=9
+RESOUCES=i_ingot_roseiron 6
+SKILLMAKE=BLACKSMITHING 70.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Rose Iron
+DESCRIPTION=Buckler
+
+ON=@Create
+COLOR=color_o_roseiron
+HITPOINTS=100
+
+[ITEMDEF i_roseiron_metal_shield]
+ID=i_metal_shield
+NAME=Rose Iron Metal Shield
+TYPE=t_armor
+FLIP=1
+VALUE=135
+REQSTR=20
+WEIGHT=7
+ARMOR=14
+RESOUCES=i_ingot_roseiron 9
+SKILLMAKE=BLACKSMITHING 70.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Rose Iron
+DESCRIPTION=Metal Shield
+
+ON=@Create
+COLOR=color_o_roseiron
+HITPOINTS=100
+
+[ITEMDEF i_roseiron_round_shield]
+ID=i_round_shield
+NAME=Rose Iron Round Shield
+TYPE=t_armor
+FLIP=1
+VALUE=180
+REQSTR=20
+WEIGHT=9
+ARMOR=16
+RESOUCES=i_ingot_roseiron 12
+SKILLMAKE=BLACKSMITHING 70.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Rose Iron
+DESCRIPTION=Round Shield
+
+ON=@Create
+COLOR=color_o_roseiron
+HITPOINTS=100
+
+[ITEMDEF i_roseiron_kite_shield_wood]
+ID=i_kite_shield_wood
+NAME=Rose Iron Kite Shield
+TYPE=t_armor
+FLIP=1
+VALUE=210
+REQSTR=20
+WEIGHT=14
+ARMOR=23
+RESOUCES=i_ingot_roseiron 14
+SKILLMAKE=BLACKSMITHING 70.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Rose Iron
+DESCRIPTION=Kite Shield (wood)
+
+ON=@Create
+COLOR=color_o_roseiron
+HITPOINTS=100
+
+[ITEMDEF i_roseiron_kite_shield_metal]
+ID=i_kite_shield_metal
+NAME=Rose Iron Kite Shield
+TYPE=t_armor
+FLIP=1
+VALUE=240
+REQSTR=25
+WEIGHT=12
+ARMOR=27
+RESOUCES=i_ingot_roseiron 16
+SKILLMAKE=BLACKSMITHING 70.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Rose Iron
+DESCRIPTION=Kite Shield (metal)
+
+ON=@Create
+COLOR=color_o_roseiron
+HITPOINTS=100
+
+[ITEMDEF i_roseiron_heater_shield]
+ID=i_heater_shield
+NAME=Rose Iron Heater Shield
+TYPE=t_armor
+FLIP=1
+VALUE=270
+REQSTR=20
+WEIGHT=14
+ARMOR=29
+RESOUCES=i_ingot_roseiron 18
+SKILLMAKE=BLACKSMITHING 70.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Rose Iron
+DESCRIPTION=Heater Shield
+
+ON=@Create
+COLOR=color_o_roseiron
+HITPOINTS=100
+
+[ITEMDEF i_roseiron_bascinet]
+ID=i_bascinet
+NAME=Rose Iron Bascinet
+TYPE=t_armor
+FLIP=1
+VALUE=225
+REQSTR=20
+WEIGHT=11
+ARMOR=34
+RESOUCES=i_ingot_roseiron 15
+SKILLMAKE=BLACKSMITHING 70.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Rose Iron
+DESCRIPTION=Bascinet
+
+ON=@Create
+COLOR=color_o_roseiron
+HITPOINTS=100
+
+[ITEMDEF i_roseiron_helmet]
+ID=i_helmet
+NAME=Rose Iron Helmet
+TYPE=t_armor
+FLIP=1
+VALUE=225
+REQSTR=20
+WEIGHT=11
+ARMOR=34
+RESOUCES=i_ingot_roseiron 15
+SKILLMAKE=BLACKSMITHING 70.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Rose Iron
+DESCRIPTION=Helmet
+
+ON=@Create
+COLOR=color_o_roseiron
+HITPOINTS=100
+
+[ITEMDEF i_roseiron_nose_helm]
+ID=i_nose_helm
+NAME=Rose Iron Nose Helm
+TYPE=t_armor
+FLIP=1
+VALUE=225
+REQSTR=20
+WEIGHT=11
+ARMOR=34
+RESOUCES=i_ingot_roseiron 15
+SKILLMAKE=BLACKSMITHING 70.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Rose Iron
+DESCRIPTION=Nose Helm
+
+ON=@Create
+COLOR=color_o_roseiron
+HITPOINTS=100
+
+[ITEMDEF i_roseiron_closed_helm]
+ID=i_closed_helm
+NAME=Rose Iron Closed Helm
+TYPE=t_armor
+FLIP=1
+VALUE=225
+REQSTR=20
+WEIGHT=11
+ARMOR=34
+RESOUCES=i_ingot_roseiron 15
+SKILLMAKE=BLACKSMITHING 70.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Rose Iron
+DESCRIPTION=Closed Helm
+
+ON=@Create
+COLOR=color_o_roseiron
+HITPOINTS=100
+
+[ITEMDEF i_roseiron_ringmail_tunic]
+ID=i_ringmail_tunic
+NAME=Rose Iron Ringmail Tunic
+TYPE=t_armor
+FLIP=1
+VALUE=270
+REQSTR=20
+WEIGHT=11
+ARMOR=27
+RESOUCES=i_ingot_roseiron 18
+SKILLMAKE=BLACKSMITHING 70.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Rose Iron
+DESCRIPTION=Ringmail Tunic
+
+ON=@Create
+COLOR=color_o_roseiron
+HITPOINTS=100
+
+[ITEMDEF i_roseiron_ringmail_leggings]
+ID=i_ringmail_leggings
+NAME=Rose Iron Ringmail Leggings
+TYPE=t_armor
+FLIP=1
+VALUE=240
+REQSTR=20
+WEIGHT=14
+ARMOR=27
+RESOUCES=i_ingot_roseiron 16
+SKILLMAKE=BLACKSMITHING 70.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Rose Iron
+DESCRIPTION=Ringmail Leggings
+
+ON=@Create
+COLOR=color_o_roseiron
+HITPOINTS=100
+
+[ITEMDEF i_roseiron_ringmail_sleeves]
+ID=i_ringmail_sleeves
+NAME=Rose Iron Ringmail Sleeves
+TYPE=t_armor
+FLIP=1
+VALUE=210
+REQSTR=20
+WEIGHT=11
+ARMOR=27
+RESOUCES=i_ingot_roseiron 14
+SKILLMAKE=BLACKSMITHING 70.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Rose Iron
+DESCRIPTION=Ringmail Sleeves
+
+ON=@Create
+COLOR=color_o_roseiron
+HITPOINTS=100
+
+[ITEMDEF i_roseiron_ringmail_gloves]
+ID=i_ringmail_gloves
+NAME=Rose Iron Ringmail Gloves
+TYPE=t_armor
+FLIP=1
+VALUE=33
+REQSTR=20
+WEIGHT=2
+ARMOR=27
+RESOUCES=i_ingot_roseiron 3
+SKILLMAKE=BLACKSMITHING 70.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Rose Iron
+DESCRIPTION=Ringmail Gloves
+
+ON=@Create
+COLOR=color_o_roseiron
+HITPOINTS=100
+
+[ITEMDEF i_roseiron_chainmail_tunic]
+ID=i_chainmail_tunic
+NAME=Rose Iron Chainmail Tunic
+TYPE=t_armor
+FLIP=1
+VALUE=300
+REQSTR=20
+WEIGHT=15
+ARMOR=32
+RESOUCES=i_ingot_roseiron 20
+SKILLMAKE=BLACKSMITHING 70.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Rose Iron
+DESCRIPTION=Chainmail Tunic
+
+ON=@Create
+COLOR=color_o_roseiron
+HITPOINTS=100
+
+[ITEMDEF i_roseiron_chainmail_leggings]
+ID=i_chainmail_leggings
+NAME=Rose Iron Chainmail Leggings
+TYPE=t_armor
+FLIP=1
+VALUE=270
+REQSTR=20
+WEIGHT=14
+ARMOR=32
+RESOUCES=i_ingot_roseiron 18
+SKILLMAKE=BLACKSMITHING 70.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Rose Iron
+DESCRIPTION=Chainmail Leggings
+
+ON=@Create
+COLOR=color_o_roseiron
+HITPOINTS=100
+
+[ITEMDEF i_roseiron_chainmail_coif]
+ID=i_chainmail_coif
+NAME=Rose Iron Chainmail Coif
+TYPE=t_armor
+FLIP=1
+VALUE=150
+REQSTR=20
+WEIGHT=8
+ARMOR=32
+RESOUCES=i_ingot_roseiron 10
+SKILLMAKE=BLACKSMITHING 70.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Rose Iron
+DESCRIPTION=Chainmail Coif
+
+ON=@Create
+COLOR=color_o_roseiron
+HITPOINTS=100
+
+[ITEMDEF i_roseiron_platemail_chest]
+ID=i_platemail_chest
+NAME=Rose Iron Platemail
+TYPE=t_armor
+FLIP=1
+VALUE=375
+REQSTR=60
+WEIGHT=19
+ARMOR=44
+RESOUCES=i_ingot_roseiron 25
+SKILLMAKE=BLACKSMITHING 70.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Rose Iron
+DESCRIPTION=Platemail Chest
+
+ON=@Create
+COLOR=color_o_roseiron
+HITPOINTS=100
+
+[ITEMDEF i_roseiron_platemail_leggings]
+ID=i_platemail_leggings
+NAME=Rose Iron Platemail Leggings
+TYPE=t_armor
+FLIP=1
+VALUE=300
+REQSTR=60
+WEIGHT=15
+ARMOR=44
+RESOUCES=i_ingot_roseiron 20
+SKILLMAKE=BLACKSMITHING 70.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Rose Iron
+DESCRIPTION=Platemail Leggings
+
+ON=@Create
+COLOR=color_o_roseiron
+HITPOINTS=100
+
+[ITEMDEF i_roseiron_platemail_arms]
+ID=i_platemail_arms
+NAME=Rose Iron Platemail Arms
+TYPE=t_armor
+FLIP=1
+VALUE=270
+REQSTR=60
+WEIGHT=14
+ARMOR=44
+RESOUCES=i_ingot_roseiron 18
+SKILLMAKE=BLACKSMITHING 70.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Rose Iron
+DESCRIPTION=Platemail Arms
+
+ON=@Create
+COLOR=color_o_roseiron
+HITPOINTS=100
+
+[ITEMDEF i_roseiron_platemail_gloves]
+ID=i_platemail_gloves
+NAME=Rose Iron Platemail Gloves
+TYPE=t_armor
+FLIP=1
+VALUE=180
+REQSTR=60
+WEIGHT=9
+ARMOR=44
+RESOUCES=i_ingot_roseiron 12
+SKILLMAKE=BLACKSMITHING 70.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Rose Iron
+DESCRIPTION=Platemail Gloves
+
+ON=@Create
+COLOR=color_o_roseiron
+HITPOINTS=100
+
+[ITEMDEF i_roseiron_platemail_helm]
+ID=i_platemail_helm
+NAME=Rose Iron Plate Helm
+TYPE=t_armor
+FLIP=1
+VALUE=225
+REQSTR=60
+WEIGHT=11
+ARMOR=44
+RESOUCES=i_ingot_roseiron 15
+SKILLMAKE=BLACKSMITHING 70.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Rose Iron
+DESCRIPTION=Plate Helm
+
+ON=@Create
+COLOR=color_o_roseiron
+HITPOINTS=100
+
+[EOF]

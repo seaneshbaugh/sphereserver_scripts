@@ -1,0 +1,293 @@
+[REGIONRESOURCE mr_nothing]
+REAP=i_unused
+REGEN=60*60*10
+
+[REGIONRESOURCE mr_fish1]
+SKILL_LO=1.0
+SKILL_HI=100.0
+AMOUNT_LO=9
+AMOUNT_HI=30
+REAP=i_fish_big_1
+REGEN=60*60*10
+
+[REGIONRESOURCE mr_fish2]
+SKILL_LO=1.0
+SKILL_HI=100.0
+REAP=i_fish_big_2
+AMOUNT_LO=9
+AMOUNT_HI=30
+REGEN=60*60*10
+
+[REGIONRESOURCE mr_fish3]
+SKILL_LO=1.0
+SKILL_HI=100.0
+AMOUNT_LO=9
+AMOUNT_HI=30
+REAP=i_fish_big_3
+REGEN=60*60*10
+
+[REGIONRESOURCE mr_fish4]
+SKILL_LO=1.0
+SKILL_HI=100.0
+AMOUNT_LO=9
+AMOUNT_HI=30
+REAP=i_fish_big_4
+REGEN=60*60*10
+
+[REGIONRESOURCE mr_tree]
+SKILL_LO=1.0
+SKILL_HI=80.0
+AMOUNT_LO=100
+AMOUNT_HI=1000
+REAP=i_log
+REGEN=60*60*10
+
+[REGIONRESOURCE mr_grass]
+AMOUNT_LO=9
+AMOUNT_HI=30
+REGEN=60*60*10
+REAP=i_hay_sheaf
+
+[REGIONTYPE r_default]
+ON=@Enter
+SRC.MIDILIST=midi_britain1,midi_foresta,midi_junglea,midi_mountaina,midi_plains,midi_victory
+
+ON=@CliPeriodic
+SRC.MIDILIST=midi_britain1,midi_foresta,midi_junglea,midi_mountaina,midi_plains,midi_victory
+
+[REGIONTYPE r_default_rock t_rock]
+RESOURCES=50.0 mr_rustyiron
+RESOURCES=50.0 mr_tin
+RESOURCES=25.0 mr_brass
+RESOURCES=22.5 mr_oldcopper
+RESOURCES=20.0 mr_iron
+RESOURCES=17.5 mr_dullcopper
+RESOURCES=15.0 mr_roseiron
+RESOURCES=12.5 mr_copper
+RESOURCES=10.0 mr_shadowiron
+RESOURCES=7.5 mr_bronze
+RESOURCES=5.0 mr_silver
+RESOURCES=2.5 mr_gold
+RESOURCES=2.0 mr_agapite
+RESOURCES=1.5 mr_verite
+RESOURCES=1.0 mr_valorite
+RESOURCES=.5 mr_bloodrock
+RESOURCES=.4 mr_titanium
+RESOURCES=.3 mr_mythril
+RESOURCES=.2 mr_adamantine
+RESOURCES=.1 mr_blackrock
+RESOURCES=0.05 mr_diamond
+
+[REGIONTYPE r_default_water t_water]
+RESOURCES=10.0 mr_nothing
+RESOURCES=10.0 mr_fish1
+RESOURCES=10.0 mr_fish2
+RESOURCES=10.0 mr_fish3
+RESOURCES=10.0 mr_fish4
+
+[REGIONTYPE r_default_tree t_tree]
+RESOURCES=1.0 mr_tree
+
+[REGIONTYPE r_default_grass t_grass]
+RESOURCES=1.0 mr_grass
+
+[REGIONTYPE r_water t_water]
+RESOURCES=10.0 mr_nothing
+RESOURCES=10.0 mr_fish1
+RESOURCES=10.0 mr_fish2
+RESOURCES=10.0 mr_fish3
+RESOURCES=10.0 mr_fish4
+
+ON=@RegPeriodic
+SRC.SFX={025,1,026,1,027,1,010,1,011,1,012,1,013,1}
+
+[REGIONTYPE r_brit t_rock]
+RESOURCES=100.0 mr_iron
+
+ON=@Enter
+SRC.MESSAGE You have arived in the town of Britain.
+SRC.MESSAGE You are now under the protection of the town guards.
+SRC.MIDILIST=midi_britain1,midi_britain2
+
+ON=@CliPeriodic
+SRC.MIDILIST=midi_britain1,midi_britain2
+
+[REGIONTYPE r_brit_castle]
+ON=@Enter
+SRC.MESSAGE You are now in Lord British's Castle.
+SRC.MIDILIST=midi_lbcastle
+
+ON=@CliPeriodic
+SRC.MIDILIST=midi_lbcastle
+
+[REGIONTYPE r_guard_tower]
+ON=@Enter
+SRC.MIDILIST=midi_foresta
+
+ON=@CliPeriodic
+SRC.MIDILIST=midi_foresta
+
+[REGIONTYPE r_black_castle]
+ON=@Enter
+SRC.MESSAGE You are now in Lord Blackthorn's Castle.
+SRC.MIDILIST=midi_btcastle
+
+ON=@CliPeriodic
+SRC.MIDILIST=midi_btcastle
+
+[REGIONTYPE r_bucs_den]
+ON=@Enter
+IF <SRC.KILLS> > 5
+SRC.MESSAGE Welcome to Buccaneer's Den <SRC.NAME>. As a murderer you may feel at home here.
+SRC.MIDILIST=midi_bucsden
+RETURN 1
+ELSE
+SRC.MIDILIST=midi_bucsden
+ENDIF
+
+ON=@CliPeriodic
+SRC.MIDILIST=midi_bucsden
+
+[REGIONTYPE r_spooky t_rock]
+RESOURCES=500.0 mr_iron
+RESOURCES=500.0 mr_shadowiron
+
+ON=@Enter
+SRC.MIDILIST=midi_approach
+IF <NPC>!=brain_undead && <SRC.TAG.RACE>!=Vampire
+SRC.MESSAGE The stench of death surrounds you...
+IF !<RAND(5)>
+NEWNPC c_skeleton
+ACT.P <SRC.P>+<0,-4>
+NEWNPC c_skeleton_w_sword
+ACT.P <SRC.P>+<3,-2>
+NEWNPC c_zombie
+ACT.P <SRC.P>+<-5,3>
+NEWNPC {c_skeleton 1 c_skeleton_w_axe 1 c_ghoul 3}
+ACT.P <SRC.P>+<-3,-1>
+
+ON=@CliPeriodic
+SRC.MIDILIST=midi_approach
+IF <NPC>!=brain_undead && <SRC.TAG.RACE>!=Vampire
+SRC.MESSAGE The stench of death surrounds you...
+IF !<RAND(5)>
+NEWNPC c_skeleton
+ACT.P <SRC.P>+<0,-4>
+NEWNPC c_skeleton_w_sword
+ACT.P <SRC.P>+<3,-2>
+NEWNPC c_zombie
+ACT.P <SRC.P>+<-5,3>
+NEWNPC {c_skeleton 1 c_skeleton_w_axe 1 c_ghoul 3}
+ACT.P <SRC.P>+<-3,-1>
+
+[REGIONTYPE r_dungeon t_rock]
+RESOURCES=500.0 mr_iron
+RESOURCES=500.0 mr_shadowiron
+
+ON=@Enter
+SRC.MESSAGE You can sense evil in your presence.
+
+[REGIONTYPE r_plains]
+ON=@RegPeriodic
+SRC.SFX={0a 1 0b 1}
+
+[REGIONTYPE r_forests]
+ON=@RegPeriodic
+IF <SRC.SECTOR.ISNIGHTTIME>
+SRC.SFX={00,2,01,2,02,2,07d,1}
+ELSE
+SRC.SFX={08,10,09,10,0219,1,07d,1}
+ENDIF
+
+[REGIONTYPE r_jungle]
+ON=@RegPeriodic
+IF <SRC.SECTOR.ISNIGHTTIME>
+SRC.SFX={0c,2,0d,2,0b3,1}
+ELSE
+SRC.SFX={03,2,04,2,05,2,0b3,1}
+ENDIF
+
+[REGIONTYPE r_swamp t_rock]
+ON=@RegPeriodic
+SRC.SFX={0e,10,0f,10,022,1,023,1,024,1,0267,1}
+
+[REGIONTYPE r_guardpost]
+
+[REGIONTYPE r_docks]
+
+[REGIONTYPE r_desert]
+
+[REGIONTYPE r_foliage]
+
+[REGIONTYPE r_civilization]
+
+[REGIONTYPE r_caves t_rock]
+RESOURCES=50.0 mr_rustyiron
+RESOURCES=50.0 mr_tin
+RESOURCES=25.0 mr_brass
+RESOURCES=22.5 mr_oldcopper
+RESOURCES=20.0 mr_iron
+RESOURCES=17.5 mr_dullcopper
+RESOURCES=15.0 mr_roseiron
+RESOURCES=12.5 mr_copper
+RESOURCES=10.0 mr_shadowiron
+RESOURCES=7.5 mr_bronze
+RESOURCES=5.0 mr_silver
+RESOURCES=2.5 mr_gold
+RESOURCES=2.0 mr_agapite
+RESOURCES=1.5 mr_verite
+RESOURCES=1.0 mr_valorite
+RESOURCES=1.0 mr_bloodrock
+RESOURCES=1.0 mr_titanium
+RESOURCES=1.0 mr_mythril
+RESOURCES=1.0 mr_adamantine
+RESOURCES=.5 mr_blackrock
+RESOURCES=0.1 mr_diamond
+
+[REGIONTYPE r_stables]
+
+[REGIONTYPE r_house]
+
+[REGIONTYPE r_snow]
+ON=@Enter
+IF <SRC.TAG.RACE>!=Frost Elf
+SRC.MESSAGE You feel a cold chill run through your body as the artic wind begins to blow.
+ELSE
+SRC.MESSAGE You feel at home in the frigid artic climate.
+ENDIF
+
+[REGIONTYPE r_magical]
+ON=@Enter
+SRC.TAG.MAGICALREGIONSTRTAG <SRC.STR>
+SRC.STR <SRC.MAGERY>
+SRC.EVENTS +e_mage_tower
+
+ON=@Exit
+SRC.STR <SRC.TAG.MAGICALREGIONSTRTAG>
+SRC.TAG.MAGICALREGIONSTRTAG
+SRC.EVENTS -e_mage_tower
+
+[REGIONTYPE r_mountains]
+
+[REGIONTYPE r_jail]
+
+[REGIONTYPE r_darkness]
+
+[REGIONTYPE r_light]
+
+[REGIONTYPE r_orc_camp]
+ON=@Enter
+IF <SRC.TAG.RACE>!=Orc
+SRC.MESSAGE You notice a foul stench in the air, like one of body odor and rotting flesh...
+ELSE
+SRC.MESSAGE You notice a sweet smell, the smell of your Orcish brethren cooking a fresh kill.
+ENDIF
+
+[REGIONTYPE r_sewers]
+ON=@Enter
+SRC.MESSAGE You notice a foul smell in the air about you.
+
+[REGIONTYPE r_magical]
+
+[EOF]
+

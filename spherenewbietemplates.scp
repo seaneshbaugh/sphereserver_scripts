@@ -1,0 +1,221 @@
+[NEWBIE male_default]
+ITEMNEWBIE=i_shirt_plain
+COLOR=colors_all
+ITEMNEWBIE=random_pants
+COLOR=colors_neutral
+ITEMNEWBIE=random_shoes
+COLOR=colors_neutral
+ITEMNEWBIE=i_gold,10000
+ITEMNEWBIE=i_thaumatergy_spellbook
+
+[NEWBIE female_default]
+ITEMNEWBIE=i_shirt_plain
+COLOR=colors_all
+ITEMNEWBIE=random_skirt
+COLOR=colors_neutral
+ITEMNEWBIE=random_shoes
+COLOR=colors_neutral
+ITEMNEWBIE=i_gold,10000
+ITEMNEWBIE=i_thaumatergy_spellbook
+
+[NEWBIE ALCHEMY]
+ITEMNEWBIE=i_mortar_pestle
+ITEMNEWBIE=i_bottle_empty,4
+ITEMNEWBIE=i_black_pearl,4
+ITEMNEWBIE=i_garlic,4
+ITEMNEWBIE=i_ginseng,4
+ITEMNEWBIE=i_spider_silk,4
+ITEMNEWBIE=i_robe
+COLOR=colors_red
+
+[NEWBIE ANATOMY]
+ITEMNEWBIE=i_robe
+COLOR=colors_yellow
+ITEMNEWBIE=i_bandage,3
+
+[NEWBIE ANIMALLORE]
+ITEMNEWBIE=i_robe
+COLOR=colors_green
+ITEMNEWBIE=i_sheperds_crook
+
+[NEWBIE ITEMID]
+ITEMNEWBIE=i_staff_gnarled
+
+[NEWBIE ARMSLORE]
+ITEMNEWBIE=random_start_weapon
+
+[NEWBIE PARRYING]
+ITEMNEWBIE=i_wooden_shield
+
+[NEWBIE BEGGING]
+ITEMNEWBIE=i_staff_gnarled
+
+[NEWBIE BLACKSMITHING]
+ITEMNEWBIE={i_hammer_sledge 1 i_tongs 1 i_hammer_smith 1}
+ITEMNEWBIE=i_apron_half
+COLOR=colors_brown
+ITEMNEWBIE=i_ingot_iron,100
+
+[NEWBIE BOWCRAFT]
+ITEMNEWBIE=i_log,100
+ITEMNEWBIE=i_feather,50
+ITEMNEWBIE=i_arrow_shaft,50
+
+[NEWBIE PEACEMAKING]
+ITEMNEWBIE=random_instrument
+
+[NEWBIE CAMPING]
+ITEMNEWBIE=i_kindling,5
+ITEMNEWBIE=i_bedroll
+
+[NEWBIE CARPENTRY]
+ITEMNEWBIE={i_saw_dovetail 1 i_hammer 1 i_plane_moulding 1 i_nails 1 i_plane_jointing 1 i_plane_smoothing 1 i_saw 1 i_scorp 1 i_inshave 1}
+ITEMNEWBIE=i_log,100
+ITEMNEWBIE=i_board,100
+ITEMNEWBIE=i_apron_half
+COLOR=colors_brown
+
+[NEWBIE CARTOGRAPHY]
+ITEMNEWBIE=i_map_blank,4
+ITEMNEWBIE=i_sextant
+
+[NEWBIE COOKING]
+ITEMNEWBIE={i_fish_big_1 1 i_eggs_fresh 1 i_bird_raw 1 i_ribs_raw 1 i_dough 1 i_cookie_mix 1 i_pie_unbaked 1 i_pizza_uncooked 1 i_chicken_leg 1 i_lamb_leg_raw 1 i_flour_sack 1}
+ITEMNEWBIE={i_fish_big_2 1 i_eggs_fresh 1 i_bird_raw 1 i_ribs_raw 1 i_dough 1 i_cookie_mix 1 i_pie_unbaked 1 i_pizza_uncooked 1 i_chicken_leg 1 i_lamb_leg_raw 1 i_flour_sack 1}
+ITEMNEWBIE={i_fish_big_3 1 i_eggs_fresh 1 i_bird_raw 1 i_ribs_raw 1 i_dough 1 i_cookie_mix 1 i_pie_unbaked 1 i_pizza_uncooked 1 i_chicken_leg 1 i_lamb_leg_raw 1 i_flour_sack 1}
+ITEMNEWBIE=i_flour_sack
+ITEMNEWBIE=i_pitcher_water
+ITEMNEWBIE=i_kindling,2
+
+[NEWBIE DetectingHidden]
+ITEMNEWBIE=i_cape
+COLOR=01
+
+[NEWBIE ENTICEMENT]
+ITEMNEWBIE=random_instrument
+
+[NEWBIE EvaluatingIntel]
+
+[NEWBIE HEALING]
+ITEMNEWBIE=i_bandage,5
+ITEMNEWBIE=i_scissors
+
+[NEWBIE FISHING]
+ITEMNEWBIE=i_fishing_pole
+ITEMNEWBIE=i_hat_floppy
+COLOR=colors_brown
+
+[NEWBIE FORENSICS]
+
+[NEWBIE HERDING]
+ITEMNEWBIE=i_sheperds_crook
+
+[NEWBIE HIDING]
+ITEMNEWBIE=i_cape
+COLOR=01
+
+[NEWBIE PROVOCATION]
+ITEMNEWBIE=random_instrument
+
+[NEWBIE INSCRIPTION]
+ITEMNEWBIE=i_scroll_blank,2
+ITEMNEWBIE=i_book_sm
+
+[NEWBIE LOCKPICKING]
+ITEMNEWBIE=i_lockpick,5
+
+[NEWBIE MAGERY]
+ITEMNEWBIE=i_summoning_spellbook
+ITEMNEWBIE=i_runebook
+ITEMNEWBIE=i_apocrathy_spellbook
+ITEMNEWBIE=i_theugery_spellbook
+ITEMNEWBIE=i_black_pearl,3
+ITEMNEWBIE=i_blood_moss,3
+ITEMNEWBIE=i_garlic,3
+ITEMNEWBIE=i_ginseng,3
+ITEMNEWBIE=i_nightshade,3
+ITEMNEWBIE=i_sulfur_ash,3
+ITEMNEWBIE=i_spider_silk,3
+ITEMNEWBIE=i_mandrake_root,3
+ITEMNEWBIE={i_scroll_night_sight 1 i_scroll_clumsy 1 i_scroll_create_food 1}
+ITEMNEWBIE={i_scroll_feeblemind 1 i_scroll_heal 1 i_scroll_magic_arrow 1}
+ITEMNEWBIE={i_scroll_night_sight 1 i_scroll_weaken 1}
+
+[NEWBIE MAGICRESISTANCE]
+
+[NEWBIE TACTICS]
+ITEMNEWBIE=random_weapon
+
+[NEWBIE SNOOPING]
+ITEMNEWBIE=i_lockpick,4
+
+[NEWBIE MUSICIANSHIP]
+ITEMNEWBIE=random_instrument
+
+[NEWBIE POISONING]
+ITEMNEWBIE=i_potion_poison,2
+
+[NEWBIE ARCHERY]
+ITEMNEWBIE=i_bow
+ITEMNEWBIE=i_arrow,25
+
+[NEWBIE SPIRITSPEAK]
+ITEMNEWBIE=i_cape
+COLOR=colors_black
+
+[NEWBIE STEALING]
+ITEMNEWBIE=i_lockpick,4
+
+[NEWBIE TAILORING]
+ITEMNEWBIE=i_sewing_kit
+ITEMNEWBIE=i_cloth
+COLOR=colors_neutral
+ITEMNEWBIE=i_cloth
+COLOR=colors_neutral
+ITEMNEWBIE=i_cloth
+COLOR=colors_neutral
+ITEMNEWBIE=i_cloth
+COLOR=colors_neutral
+
+[NEWBIE TAMING]
+ITEMNEWBIE=i_sheperds_crook
+
+[NEWBIE TASTEID]
+ITEMNEWBIE=random_potion
+ITEMNEWBIE=random_potion
+ITEMNEWBIE=random_potion
+
+[NEWBIE TINKERING]
+ITEMNEWBIE={i_clock_frame 1 i_clock_parts 1 i_axel_and_gears 1 i_gears 1 i_hinge 1 i_sextant_parts 1 i_sticks 1 i_springs 1 i_tinker_tools 1}
+ITEMNEWBIE=i_tinker_tools
+ITEMNEWBIE=i_apron_half
+COLOR=colors_brown
+
+[NEWBIE TRACKING]
+ITEMNEWBIE=i_knife_skinning
+ITEMNEWBIE=i_boots_calf
+COLOR=colors_brown
+
+[NEWBIE VETERINARY]
+ITEMNEWBIE=i_bandage,5
+ITEMNEWBIE=i_scissors
+
+[NEWBIE SWORDSMANSHIP]
+ITEMNEWBIE=i_longsword
+
+[NEWBIE MACEFIGHTING]
+ITEMNEWBIE=i_mace
+
+[NEWBIE FENCING]
+ITEMNEWBIE=i_spear
+
+[NEWBIE WRESTLING]
+ITEMNEWBIE=i_leather_gloves
+
+[NEWBIE LUMBERJACKING]
+ITEMNEWBIE=i_hatchet
+
+[NEWBIE MINING]
+ITEMNEWBIE={i_pickaxe 1 i_shovel 1}
+
+[EOF]

@@ -1,0 +1,638 @@
+[ITEMDEF i_landmine]
+ID=
+
+[TYPEDEF t_landmine]
+ON=@Step
+IF <MORE>==0
+EFFECT 3,i_fx_explode
+SOUND snd_spell_explosion
+SRC.DAMAGE {<MORE> <MORE2>}
+MORE 1
+RETURN 0
+
+ON=@DClick
+IF <SRC.TINKERING> < <MOREX>
+TRIGGER @Step
+ELSEIF <SRC.RESTEST 1 i_tinker_tools>
+SRC.MESSAGE You disarm the mine successfully.
+MORE 1
+RETURN 0
+ELSEIF RAND(2)
+SRC.MESSAGE You disarm the mine successfully.
+MORE 1
+RETURN 0
+ELSE
+SRC.MESSAGE You fail to disarm the mine.
+TRIGGER @Step
+ENDIF
+
+[TYPEDEF t_vending_machine]
+ON=@DClick
+IF <SRC.RESTEST 10 i_gold>
+SRC.NEWITEM={i_ham 1 i_fruit_apple 1 i_bread_loaf 1 i_bacon_slice 1 i_ribs_cooked 1 i_sausages 1}
+SRC.ACT.BOUNCE
+SRC.CONSUME=10 i_gold
+SRC.MESSAGE That will be 10 Gold Thank Thee.
+SOUND 0F7
+RETURN 1
+ELSE
+MESSAGE You lack 10 Gold to pay.
+ENDIF
+
+[TYPEDEF t_windgate]
+ON=@Step
+IF <SRC.MAGERY> > 70.0
+SRC.MESSAGE Welcome to Wind!
+SRC.GO Wind
+ELSE
+SRC.MESSAGE You are not a worthy mage to enter Wind!
+ENDIF
+RETURN 1
+
+[TYPEDEF t_sex_change]
+ON=@DClick
+IF ( <SRC.FLAGS> & 0400 )
+SRC.SPELLEFFECT s_dispel 1000
+ENDIF
+IF ( <SRC.BODY> == c_man )
+SRC.BODY=c_woman
+ELSEIF ( <SRC.BODY> == c_woman )
+SRC.BODY=c_man
+ELSE
+RETURN 1
+ENDIF
+SRC.NEWITEM=i_fire_column
+SRC.ACT.ATTR attr_can_decay|attr_move_never
+SRC.ACT.TIMER 2
+SRC.SOUND=snd_spell_explosion
+SRC.UPDATE
+REMOVE
+RETURN 1
+
+[TYPEDEF t_guild_door]
+//In order to use, create a door, and set the type to t_guild_door then
+//link the DOOR to the GUILDSTONE,DO NOT LINK THE GUILDSTONE TO THE DOOR!
+//YOUR GUILDSTONE WILL DISAPPEAR IN THE NEXT SAVE!
+
+ON=@DClick
+IF (<SRC.MEMORYFINDTYPE.0400.LINK> == <LINK>)
+MOREP=<P>
+SRC.MESSAGE You've been allowed to pass through the door magically.
+SRC.GO <MOREP>
+ELSE
+SRC.MESSAGE The door seems magically locked.
+ENDIF
+RETURN 1
+
+[TYPEDEF t_evil_res]
+ON=@Step
+IF (<SRC.KILLS> >= 5) && (<SRC.FLAGS>&2) && (<SRC.KARMA> <= 0)
+SRC.MESSAGE Your spirit rejoins your body.
+SRC.RESURRECT
+SRC.HITS <SRC.STR>
+SRC.UPDATE
+ELSEIF (<SRC.KILLS> >= 5) && !(<SRC.FLAGS>&2) && (<SRC.KARMA> <= 0)
+SRC.MESSAGE You feel energized!
+SRC.HITS <SRC.STR>
+ELSE
+SRC.MESSAGE You cannot use this.
+ENDIF
+
+ON=@Dclick
+TRIGGER=@Step
+
+[TYPEDEF t_good_res]
+ON=@Step
+IF (<SRC.KILLS> < 5) && (<SRC.FLAGS>&2) && (<SRC.KARMA> >= 0)
+SRC.MESSAGE Your spirit rejoins your body.
+SRC.RESURRECT
+SRC.HITS <SRC.STR>
+SRC.UPDATE
+ELSEIF (<SRC.KILLS> < 5) && !(<SRC.FLAGS>&2) && (<SRC.KARMA> >= 0)
+SRC.MESSAGE You feel energized!
+SRC.HITS <SRC.STR>
+ELSE
+SRC.MESSAGE You cannot use this.
+ENDIF
+
+ON=@Dclick
+TRIGGER=@Step
+
+[TYPEDEF t_gm_everything_gate]
+ON=@Step
+SRC.ALLSKILLS=3000
+SRC.STR=300
+SRC.DEX=300
+SRC.INT=300
+SRC.MANA=300
+SRC.HITPOINTS=300
+SRC.STAMINA=300
+RETURN 1
+
+ON=@DClick
+TRIGGER @Step
+
+[TYPEDEF t_kill_removal]
+ON=@DClick
+IF <SRC.KILLS> > 0
+IF <SRC.RESTEST 1000 i_gold>
+SRC.KILLS <SRC.KILLS>+ -1
+SRC.CONSUME 1000 i_gold
+SRC.MESSAGE You have been forgiven of one of the lives you have taken.
+ELSE
+SRC.MESSAGE You need 1000 gold peices to be pardoned of a murder.
+ENDIF
+ELSE
+SRC.MESSAGE You have not killed anyone.
+ENDIF
+
+[TYPEDEF t_orc_invasion]
+ON=@DClick
+SRC.NEWITEM=i_monster_invasion
+SRC.ACT.P=<LINK.P>
+SRC.ACT.MOREX 1
+RETURN 1
+
+[TYPEDEF t_goblin_invasion]
+ON=@DClick
+SRC.NEWITEM=i_monster_invasion
+SRC.ACT.P=<LINK.P>
+SRC.ACT.MOREX 2
+RETURN 1
+
+[TYPEDEF t_lizardman_invasion]
+ON=@DClick
+SRC.NEWITEM=i_monster_invasion
+SRC.ACT.P=<LINK.P>
+SRC.ACT.MOREX 3
+RETURN 1
+
+[TYPEDEF t_ratman_invasion]
+ON=@DClick
+SRC.NEWITEM=i_monster_invasion
+SRC.ACT.P=<LINK.P>
+SRC.ACT.MOREX 4
+RETURN 1
+
+[TYPEDEF t_troll_invasion]
+ON=@DClick
+SRC.NEWITEM=i_monster_invasion
+SRC.ACT.P=<LINK.P>
+SRC.ACT.MOREX 5
+RETURN 1
+
+[TYPEDEF t_undead_invasion]
+ON=@DClick
+SRC.NEWITEM=i_monster_invasion
+SRC.ACT.P=<LINK.P>
+SRC.ACT.MOREX 6
+RETURN 1
+
+//to use the above item types make an item that is the trigger
+//such as a switch or rock or something, then set its type to
+//t_whatever_invasion, replace whatever with the type of invasion
+//you wish to start. you can add different types of invasions
+//if you want to, just copy and paste and change what the morex
+//value will be set to. when you have created the trigger item,
+//link it to another nearby item, most likely you'll want one
+//that is invisible or not very noticeable. when the trigger
+//item is double clicked it will create the monster invasion
+//item and depending on what the morex value was set to it'll
+//spawn random monsters.
+
+[ITEMDEF i_monster_invasion]
+ID=i_hole
+TYPE=t_spawn_char
+
+ON=@Create
+TIMER=1
+MOREP=0,1,3
+MORE2=0
+ATTR=attr_move_never|attr_invis
+IF <MOREX>==1
+MORE {c_orc 1 c_orc_mage 1 c_orc_bomber 1 c_orc_captain 1 c_orc_lord 1}
+ELSEIF <MOREX>==2
+MORE {c_goblin 1 c_goblin_mage 1 c_goblin_shaman 1 c_goblin_chief 1 c_goblin_lord 1}
+ELSEIF <MOREX>==3
+MORE {c_lizardman 1 c_lizardman_spear 1 c_lizardman_mace 1}
+ELSEIF <MOREX>==4
+MORE {c_ratman 1 c_ratman_w_mace 1 c_ratman_w_sword 1}
+ELSEIF <MOREX>==5
+MORE {c_troll 1 c_troll_w_axe 1 c_troll_berserker 1}
+ELSEIF <MOREX>==6
+MORE {c_skeleton_archer 1 c_mummy 1 c_liche_lord 1}
+ELSE
+MORE {c_orc 1 c_ettin 1 c_skeleton 1 c_ratman}
+ENDIF
+
+ON=@Timer
+IF <AMOUNT>==0
+REMOVE
+RETURN 1
+ENDIF
+IF <MORE2>==1
+MOREP=1,1,3
+AMOUNT=0
+RETURN 0
+ENDIF
+
+[TYPEDEF t_chest_locked]
+//This is how you make a chest with a lock. Add any item, then give it this trigger. Double click on the trigger to get a chest with 2 keys.
+//It should be easy to add to the skills section.
+
+ON=@DClick
+SRC.NEWITEM={ i_key_copper 1 i_key_gold 1 i_key_iron 1 i_key_rusty 1 }
+VAR.KEY=<SRC.ACT.SERIAL>
+SRC.ACT.MORE1=<VAR.KEY>
+SRC.ACT.DUPE
+SRC.ACT.BOUNCE
+SRC.NEWITEM={ i_chest_metal 1 i_chest_metal_brass 1 i_chest_wooden_brass 1 }
+SRC.ACT.BOUNCE
+SRC.ACT.MORE1=<VAR.KEY>
+
+//How do you give or set a trigger to an item?
+//set type t_chest_trap
+//How to make a trapped chest #1
+//add i_chest_trap
+//set type t_chest_trap
+
+// A player needs tinkering and gears to open this chest. You can set the following commands:
+// /set more min // the min damage the trap will do.
+// /set more2 max // the max damage the trap will do.
+// /set morex amount // refers to the min amount a players tinkering has to be to disarm the chest.
+
+// for the chests + locks use (/set type 8001)
+
+
+// might not work!!!!!
+
+// I have an item that used to function properly, where when you would double click it it would open a menu via the following command
+
+[TYPEDEF t_goshrine]
+ON=@DClick
+SRC.MENU m_goshrine
+
+[MENU m_goshrine]
+Where would you like to go?
+0 Shrine of Compassion
+go 1856 876 0
+0 Shrine of Honesty
+go 4216 563 36
+0 Shrine of Honor
+go 1729 3527 3
+0 Shrine of Humility
+go 4274 3699 0
+0 Shrine of Justice
+go 1301 632 16
+0 Shrine of Sacrifice
+go 3354 287 4
+0 Shrine of Spirituality
+go 1600 2490 10
+0 Shrine of Valor
+go 2495 3931 0
+
+[ITEMDEF i_trapped_chest]
+ID={i_chest_metal 1 i_chest_metal_brass 1 i_chest_wooden_brass 1}
+TYPE=t_trapped_chest
+
+CATEGORY=Provisions - Miscellaneous
+SUBSECTION=Containers
+DESCRIPTION=Trapped Chest
+
+ON=@Create
+ATTR attr_move_never
+MORE {1 20}
+MORE2 {30 50}
+MOREX {200 1000}
+
+[TYPEDEF t_trapped_chest]
+ON=@DClick
+IF <SRC.TINKERING> < <MOREX>
+SRC.MESSAGE You fail to disarm the trap.
+SRC.DAMAGE {<MORE> <MORE2>}
+SRC.ACT.ATTR attr_can_decay|attr_move_never
+SRC.ACT.TIMER 2
+SRC.UPDATE
+SOUND snd_spell_explosion
+TYPE t_container
+RETURN 0
+ELSE
+IF <SRC.RESTEST 1 i_tinker_tools>
+SRC.MESSAGE You disarm the trap successfully.
+TYPE t_container
+RETURN 0
+ELSE
+IF RAND(2)
+SRC.MESSAGE You disarm the trap successfully.
+TYPE t_container
+RETURN 0
+ELSE
+SRC.MESSAGE You fail to disarm the trap.
+SRC.DAMAGE {<MORE> <MORE2>}
+SRC.ACT.ATTR attr_can_decay|attr_move_never
+SRC.ACT.TIMER 2
+SRC.UPDATE
+SOUND snd_spell_explosion
+TYPE t_container
+RETURN 0
+ENDIF
+ENDIF
+
+[TYPEDEF t_slot_machine]
+ON=@DClick
+IF <SRC.RESTEST 1 i_Slot_Machine_Token>
+SRC.CONSUME 1 i_Slot_Machine_Token
+MORE = <MORE> + 1
+IF RAND(10) == 0
+SRC.MESSAGE You've won!!!
+SRC.NEWITEM i_Slot_Machine_Token
+SRC.ACT.AMOUNT <MORE>
+SRC.ACT.BOUNCE
+MORE = 0
+RETURN 0
+ELSE
+SRC.MESSAGE Sorry... Try again.
+RETURN 0
+ENDIF
+RETURN 0
+ELSE
+SRC.MESSAGE You don't have a slot machine token in your backpack.
+RETURN 1
+ENDIF
+
+[TYPEDEF t_slot_machine_token]
+ON=@DCclick
+IF <CONT> == <SRC.FINDLAYER(21).SERIAL>
+SRC.SYSMESSAGE Select Slot Machine
+TARGET
+RETURN 0
+ELSE
+SRC.MESSAGE This token must be in your backpack.
+RETURN 1
+ENDIF
+
+ON=@TargOn_Item
+IF <SRC.TARG.TYPE> == t_slot_machine
+SRC.CONSUME 1 i_slot_machine_token
+MORE = <MORE> + 1
+IF RAND(10) == 0
+SRC.MESSAGE You've won!!!
+SRC.NEWITEM i_slot_machine_token
+SRC.ACT.AMOUNT <MORE>
+SRC.ACT.BOUNCE
+MORE = 0
+RETURN 0
+ELSE
+SRC.MESSAGE Sorry... Try again.
+RETURN 0
+ENDIF
+RETURN 0
+ELSE
+SRC.MESSAGE That is not a Slot Machine
+RETURN 1
+ENDIF
+
+[TYPEDEF t_mimic_chest_brass_n]
+ON=@Create
+ATTR=08010
+
+ON=@Click
+IF <MORE>=0
+MORE=<EVAL RAND(5)> + 2
+ENDIF
+MESSAGE a metal chest (<EVAL <MORE>> items)
+RETURN 1
+
+ON=@DClick
+SRC.DAMAGE=1
+SRC.HITS=( <SRC.HITS> - {20 30} )
+SRC.NEWNPC c_mimic_brass_n
+SRC.ACT.P=<P>
+SRC.ACT.UPDATE
+MORE=<SRC.ACT.UID>
+SRC.NEWITEM i_mimic_re
+SRC.ACT.CONT=<MORE>
+SRC.ACT.LINK=<SRC.UID>
+SRC.ACT.MORE=i_mimic_chest_brass_n
+SRC.MESSAGE Thou has been tricked
+REMOVE
+SRC.UPDATE
+RETURN 1
+
+[TYPEDEF t_mimic_chest_brass_w]
+ON=@Create
+ATTR=08010
+
+ON=@Click
+IF <MORE>=0
+MORE=<EVAL RAND(5)> + 2
+ENDIF
+MESSAGE a metal chest (<EVAL <MORE>> items)
+RETURN 1
+
+ON=@DClick
+SRC.DAMAGE=1
+SRC.HITS=( <SRC.HITS> - {20 30} )
+SRC.NEWNPC c_mimic_brass_w
+SRC.ACT.P=<P>
+SRC.ACT.UPDATE
+MORE=<SRC.ACT.UID>
+SRC.NEWITEM i_mimic_re
+SRC.ACT.CONT=<MORE>
+SRC.ACT.LINK=<SRC.UID>
+SRC.ACT.MORE=i_mimic_chest_brass_w
+SRC.MESSAGE Thou has been tricked
+REMOVE
+SRC.UPDATE
+RETURN 1
+
+[TYPEDEF t_mimic_chest_metal_n]
+ON=@Create
+ATTR=08010
+
+ON=@Click
+IF <MORE>=0
+MORE=<EVAL RAND(5)> + 2
+ENDIF
+MESSAGE a metal chest (<EVAL <MORE>> items)
+RETURN 1
+
+ON=@DClick
+SRC.DAMAGE=1
+SRC.HITS=( <SRC.HITS> - {10 20} )
+SRC.NEWNPC c_mimic_metal_n
+SRC.ACT.P=<P>
+SRC.ACT.UPDATE
+MORE=<SRC.ACT.UID>
+SRC.NEWITEM i_mimic_re
+SRC.ACT.CONT=<MORE>
+SRC.ACT.LINK=<SRC.UID>
+SRC.ACT.MORE=i_mimic_chest_metal_n
+SRC.MESSAGE Thou has been tricked
+REMOVE
+SRC.UPDATE
+RETURN 1
+
+[TYPEDEF t_mimic_chest_metal_w]
+ON=@Create
+ATTR=08010
+
+ON=@Click
+IF <MORE>=0
+MORE=<EVAL RAND(5)> + 2
+ENDIF
+MESSAGE a metal chest (<EVAL <MORE>> items)
+RETURN 1
+
+ON=@DClick
+SRC.DAMAGE=1
+SRC.HITS=( <SRC.HITS> - {10 20} )
+SRC.NEWNPC c_mimic_metal_w
+SRC.ACT.P=<P>
+SRC.ACT.UPDATE
+MORE=<SRC.ACT.UID>
+SRC.NEWITEM i_mimic_re
+SRC.ACT.CONT=<MORE>
+SRC.ACT.LINK=<SRC.UID>
+SRC.ACT.MORE=i_mimic_chest_metal_w
+SRC.MESSAGE Thou has been tricked
+REMOVE
+SRC.UPDATE
+RETURN 1
+
+[TYPEDEF t_mimic_chest_wood_n]
+ON=@Create
+ATTR=08010
+
+ON=@Click
+IF <MORE>=0
+MORE=<EVAL RAND(5)> + 2
+ENDIF
+MESSAGE a metal chest (<EVAL <MORE>> items)
+RETURN 1
+
+ON=@DClick
+SRC.DAMAGE=1
+SRC.HITS=( <SRC.HITS> - {0 10} )
+SRC.NEWNPC c_mimic_wood_n
+SRC.ACT.P=<P>
+SRC.ACT.UPDATE
+MORE=<SRC.ACT.UID>
+SRC.NEWITEM i_mimic_re
+SRC.ACT.CONT=<MORE>
+SRC.ACT.LINK=<SRC.UID>
+SRC.ACT.MORE=i_mimic_chest_wood_n
+SRC.MESSAGE Thou has been tricked
+REMOVE
+SRC.UPDATE
+RETURN 1
+
+[TYPEDEF t_mimic_chest_wood_w]
+ON=@Create
+ATTR=08010
+
+ON=@Click
+IF <MORE>=0
+MORE=<EVAL RAND(5)> + 2
+ENDIF
+MESSAGE a metal chest (<EVAL <MORE>> items)
+RETURN 1
+
+ON=@DClick
+SRC.DAMAGE=1
+SRC.HITS=( <SRC.HITS> - {0 10} )
+SRC.NEWNPC c_mimic_wood_w
+SRC.ACT.P=<P>
+SRC.ACT.UPDATE
+MORE=<SRC.ACT.UID>
+SRC.NEWITEM i_mimic_re
+SRC.ACT.CONT=<MORE>
+SRC.ACT.LINK=<SRC.UID>
+SRC.ACT.MORE=i_mimic_chest_wood_w
+SRC.MESSAGE Thou has been tricked
+REMOVE
+SRC.UPDATE
+RETURN 1
+
+[ITEMDEF i_mimic_re]
+ID=i_handr_1
+TYPE=t_eq_script
+LAYER=30
+
+ON=@CREATE
+TIMER=60*2
+
+ON=@TIMER
+LINK.NEWITEM <MORE>
+LINK.ACT.P=<CONT.P>
+CONT.REMOVE
+REMOVE
+RETURN 0
+
+[ITEMDEF i_mimic_brass_n]
+ID=0E40
+NAME=metal chest
+
+CATEGORY=Miscellaneous
+SUBSECTION=Containers - Mimics
+DESCRIPTION=Mimic Brass Chest (N)
+
+ON=@Timer
+TYPE=t_mimic_chest_brass_n
+
+[ITEMDEF i_mimic_brass_w]
+ID=0E41
+NAME=metal chest
+
+CATEGORY=Miscellaneous
+SUBSECTION=Containers - Mimics
+DESCRIPTION=Mimic Brass Chest (W)
+
+ON=@Timer
+TYPE=t_mimic_chest_brass_w
+
+[ITEMDEF i_mimic_metal_n]
+ID=0E7C
+NAME=metal chest
+
+CATEGORY=Miscellaneous
+SUBSECTION=Containers - Mimics
+DESCRIPTION=Mimic Metal Chest (N)
+
+ON=@Timer
+TYPE=t_mimic_chest_metal_n
+
+[ITEMDEF i_mimic_metal_w]
+ID=09AB
+NAME=metal chest
+
+CATEGORY=Miscellaneous
+SUBSECTION=Containers - Mimics
+DESCRIPTION=Mimic Metal Chest (W)
+
+ON=@Timer
+TYPE=t_mimic_chest_metal_w
+
+[ITEMDEF i_mimic_wood_n]
+ID=0E42
+NAME=wood chest
+
+CATEGORY=Miscellaneous
+SUBSECTION=Containers - Mimics
+DESCRIPTION=Mimic Wood Chest (N)
+
+ON=@Timer
+TYPE=t_mimic_chest_wood_n
+
+[ITEMDEF i_mimic_wood_w]
+ID=0E43
+NAME=wood chest
+
+CATEGORY=Miscellaneous
+SUBSECTION=Containers - Mimics
+DESCRIPTION=Mimic Wood Chest (W)
+
+ON=@Timer
+TYPE=t_mimic_chest_wood_w
+
+[EOF]

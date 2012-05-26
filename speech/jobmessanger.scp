@@ -1,0 +1,89 @@
+[SPEECH spk_job_messanger]
+ON=*job*
+ON=*work*
+ON=*what*do*do*
+ON=*profession*
+ON=*occupation*
+ON=*Runner*
+	IF ( <SRC.KARMA.WICKED> || <SRC.KARMA.BELLIGERANT> )
+		IF ( <COMPLEXITY.HIGH> || <COMPLEXITY.MEDIUM> )
+			IF ( RAND(2) > 1 )
+				SAY I carry messages to and from places.
+			ELSE
+				SAY I carry messages. Pardon me, I need to be off.
+				I.LEAVE
+			ENDIF
+		ELSE
+			IF ( RAND(2) > 1 )
+				SAY I carry messages around.
+			ELSE
+				SAY I carry messages. Pardon me, I got to go.
+				I.LEAVE
+			ENDIF
+		ENDIF
+	ELIF ( <SRC.KARMA.NEUTRAL> )
+		IF ( <COMPLEXITY.HIGH> || <COMPLEXITY.MEDIUM> )
+			IF ( RAND(2) > 1 )
+				SAY I carry messages to and from places in order to further communication.
+			ELSE
+				SAY I am a message carrier. Pardon me, I need to be running.
+				I.LEAVE
+			ENDIF
+		ELSE
+			IF ( RAND(2) > 1 )
+				SAY I carry messages all around for people.
+			ELSE
+				SAY I am a message carrier. Pardon me, I gotta be off.
+				I.LEAVE
+			ENDIF
+		ENDIF
+	ELSE
+		IF ( <COMPLEXITY.HIGH> || <COMPLEXITY.MEDIUM> )
+			IF ( RAND(2) > 1 )
+				SAY I carry messages back and forth in order to keep people informed of events and information.
+			ELSE
+				SAY I am a message carrier. Pardon me, I'm running behind schedule.
+				I.LEAVE
+			ENDIF
+		ELSE
+			IF ( RAND(2) > 1 )
+				SAY I carry messages back and forth to keep people better informed.
+			ELSE
+				SAY I am a message carrier. Pardon me, I'm running behind.
+				I.LEAVE
+			ENDIF
+		ENDIF
+	ENDIF
+ON=*message*
+	IF ( <SRC.KARMA.WICKED> || <SRC.KARMA.BELLIGERANT> )
+		IF ( <COMPLEXITY.HIGH> || <COMPLEXITY.MEDIUM> )
+			DORAND 2
+				SAY Only the recipient can know the message.
+				SAY I cannot tell thee the contents of the messages I carry.
+			ENDDO
+		ELSE
+			DORAND 2
+				SAY Only the person I take the message to can know what it is.
+				SAY I can't tell what the message is.
+			ENDDO
+		ENDIF
+	ELIF ( <SRC.KARMA.NEUTRAL> )
+		IF ( <COMPLEXITY.HIGH> || <COMPLEXITY.MEDIUM> )
+			DORAND 2
+				SAY I am not allowed to relay the messages to anyone but the proper recipient.
+				SAY I cannot share with thee any messages unless thou art the recipient. And I know that thou art not.
+			ENDDO
+		ELSE
+			DORAND 2
+				SAY I ain't allowed to give the messages to anyone but the proper person.
+				SAY I can't share with thee any messages unless thou'rt the person the message is for. And I know that thou aren't.
+			ENDDO
+		ENDIF
+	ELSE
+		IF ( <COMPLEXITY.HIGH> || <COMPLEXITY.MEDIUM> )
+			SAY I am not allowed to relay the messages to anyone but the proper recipient.
+		ELSE
+			SAY I'm not allowed to give the messages to anyone but the proper people.
+		ENDIF
+	ENDIF
+[EOF]

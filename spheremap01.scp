@@ -1,0 +1,32 @@
+[AREA %SERVNAME%]
+DEFNAME=a_world
+GROUP=The World
+TITLE=The Land of Darkness
+CLASS=11
+FLAGS=
+RECT=0,0,6144,4096
+P=1323,1624,55,255
+RAINCHANCE=032
+COLDCHANCE=0A
+RESOURCES=r_default_rock,r_default_water,r_default_tree,r_default_grass
+EVENTS=r_default
+
+[AREA North Ice Isle]
+DEFNAME=a_north_ice_isle
+GROUP=Artic Regions
+TITLE=The Northern Ice Isle
+CLASS=
+FLAGS=0400
+RECT=121,32,561,382
+RECT=190,26,716,260
+RECT=146,299,588,388
+RECT=355,353,518,471
+P=381,218
+RAINCHANCE=064
+COLDCHANCE=064
+RESOURCES=
+EVENTS=r_snow
+
+
+
+[EOF]
